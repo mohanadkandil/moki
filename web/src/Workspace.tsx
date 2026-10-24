@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
+import { lazy, Suspense, useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { MessageScroller } from "@shadcn/react/message-scroller";
 import {
   ArrowUp,
@@ -30,65 +30,17 @@ import {
   Info,
 } from "lucide-react";
 import { Ink } from "./brand";
+import { useLiveRun } from "./useLiveRun";
+import RunActivity from "./RunActivity";
+import BoardPreview from "./BoardPreview";
+import { useInspiration } from "./useInspiration";
+import InspirationPicker from "./InspirationPicker";
+import WorkerDesktop from "./WorkerDesktop";
 import "./workspace.css";
 
+const ProductScene = lazy(() => import("./ProductScene"));
+
 type View = "product" | "checks" | "showcase" | "files";
-type Concept = {
-  id: string;
-  name: string;
-  image: string;
-  color: string;
-  caption: string;
-};
-const concepts: Concept[] = [
-  {
-    id: "timer",
-    name: "Pebble",
-    image: "/images/pebble.webp",
-    color: "#f6e5aa",
-    caption: "A little more focus.",
-  },
-  {
-    id: "synth",
-    name: "Pocket synth",
-    image: "/images/pocket-synth.webp",
-    color: "#bccdeb",
-    caption: "Good things make noise.",
-  },
-  {
-    id: "lamp",
-    name: "Little sun",
-    image: "/images/little-sun.webp",
-    color: "#e7bcb1",
-    caption: "Your own little sun.",
-  },
-];
-const plan = [
-  {
-    icon: Box,
-    title: "Shape & enclosure",
-    detail: "Form, materials, and how the pieces fit.",
-    tab: "product" as View,
-  },
-  {
-    icon: CircuitBoard,
-    title: "Electronics & behavior",
-    detail: "The board, connections, and controls.",
-    tab: "product" as View,
-  },
-  {
-    icon: ScanLine,
-    title: "Fit & checks",
-    detail: "Evidence from the actual design files.",
-    tab: "checks" as View,
-  },
-  {
-    icon: ImageIcon,
-    title: "Story & showcase",
-    detail: "A first impression for your invention.",
-    tab: "showcase" as View,
-  },
-];
 const tabs = [
   { key: "product", title: "Product", icon: Box },
   { key: "showcase", title: "Showcase", icon: ImageIcon },
@@ -107,30 +59,20 @@ function downloadText(name: string, text: string) {
 
 export default function Workspace({
   brief,
+  project,
   reference,
   onBack,
 }: {
   brief: string;
+  project: {id:string;title:string;status:string;assistantMessage?:string;error?:string};
   reference: File | null;
   onBack: () => void;
 }) {
-  const initialConcept = /timer|focus/i.test(brief)
-    ? concepts[0]!
-    : /synth|music/i.test(brief)
-      ? concepts[1]!
-      : /lamp|light/i.test(brief)
-        ? concepts[2]!
-        : null;
-  const [concept, setConcept] = useState<Concept | null>(initialConcept);
-  const [title, setTitle] = useState(
-    initialConcept
-      ? `${initialConcept.name} ${initialConcept.id === "timer" ? "— focus timer" : "— concept"}`
-      : "Untitled invention",
-  );
+  const [title, setTitle] = useState(project.title);
+  const titleEdited = useRef(false);
   const [view, setView] = useState<View>("product");
   const [chatOpen, setChatOpen] = useState(true);
   const [detailsOpen, setDetailsOpen] = useState(false);
-  const [referencesOpen, setReferencesOpen] = useState(false);
   const [watchOpen, setWatchOpen] = useState(false);
   const [zoom, setZoom] = useState(1);
   const [input, setInput] = useState("");
@@ -138,45 +80,44 @@ export default function Workspace({
   const [attachment, setAttachment] = useState<File | null>(reference);
   const [attachmentError, setAttachmentError] = useState("");
   const [showcaseRatio, setShowcaseRatio] = useState("4 / 3");
-  const [headline, setHeadline] = useState(initialConcept?.name || "");
+  const [headline, setHeadline] = useState(project.title);
   const [description, setDescription] = useState(brief);
   const [filePreview, setFilePreview] = useState("brief");
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
-  const referenceDialog = useRef<HTMLDialogElement>(null);
   const titleRef = useRef<HTMLInputElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
   const [fullscreen, setFullscreen] = useState(false);
+  const [representation, setRepresentation] = useState<'3d' | 'reference' | 'board'>('reference');
+  const [resetKey, setResetKey] = useState(0);
+  const inspiration = useInspiration(brief, project.id);
+  const live = useLiveRun(brief, inspiration.set?.id, inspiration.selected?.id, project.id);
+  const [directionsOpen, setDirectionsOpen] = useState(false);
+  const [worker, setWorker] = useState<'mechanical' | 'electrical' | null>(null);
+  const choosing = !inspiration.selected || directionsOpen;
+  const referenceImage = inspiration.selected?.imageUrl;
+  const model = live.run?.artifacts.find(a => a.name === 'product.glb');
+  const boardGeometry = live.run?.artifacts.find(a => a.name === 'pcb-geometry.json');
+  const showModel = representation === '3d' && model;
+  useEffect(() => { if (model) setRepresentation('3d'); }, [model?.url]);
 
   useEffect(() => {
     document.title = `${title || "Untitled invention"} — Moki`;
   }, [title]);
-  useEffect(() => {
-    if (referencesOpen) referenceDialog.current?.showModal();
-    else referenceDialog.current?.close();
-  }, [referencesOpen]);
   useEffect(() => {
     const listener = () => setFullscreen(Boolean(document.fullscreenElement));
     document.addEventListener("fullscreenchange", listener);
     return () => document.removeEventListener("fullscreenchange", listener);
   }, []);
 
-  const briefFile = useMemo(
-    () =>
-      `# ${title || "Untitled invention"}\n\n## Original idea\n\n${brief}\n\n${notes.length ? "## Refinements\n\n" + notes.map((n) => "- " + n.text).join("\n") + "\n\n" : ""}${attachment ? "## Reference\n\n" + attachment.name + " (local reference, not uploaded)\n\n" : ""}## Status\n\nDesign brief only. No CAD, PCB, firmware, or validation outputs have been generated.\n${concept ? "\nGallery reference: " + concept.name + ". Illustrative imagery, not current CAD.\n" : ""}`,
-    [title, brief, notes, attachment, concept],
-  );
+  useEffect(() => { if (!titleEdited.current) { setTitle(project.title); setHeadline(project.title); } }, [project.title]);
+  const briefFile = useMemo(() => `# ${title}\n\n${brief}\n\n${notes.map(n => '- ' + n.text).join('\n')}\n\nDirection: ${inspiration.selected?.title || 'Not selected'}\nRun: ${live.run?.status || 'Not started'}\n${live.run?.artifacts.map(a => a.name + ': ' + a.url).join('\n') || 'No engineering artifacts yet.'}\n`, [title, brief, notes, inspiration.selected?.title, live.run]);
 
   function addNote(event?: FormEvent) {
     event?.preventDefault();
     if (!input.trim()) return;
     setNotes((n) => [...n, { id: crypto.randomUUID(), text: input.trim() }]);
     setInput("");
-  }
-  function chooseConcept(c: Concept) {
-    setConcept(c);
-    setZoom(1);
-    setReferencesOpen(false);
   }
   function changeView(next: View) {
     setView(next);
@@ -207,10 +148,8 @@ export default function Workspace({
               className="studio-project-title"
               value={title}
               maxLength={70}
-              onChange={(e) => setTitle(e.target.value)}
-              onBlur={() => {
-                if (!title.trim()) setTitle("Untitled invention");
-              }}
+              onChange={(e) => { titleEdited.current = true; setTitle(e.target.value); }}
+              onBlur={() => { if (title.trim()) void fetch(`/api/projects/${project.id}/title`, {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({title})}); }}
               aria-label="Project name"
             />
             <button
@@ -222,10 +161,13 @@ export default function Workspace({
           </div>
           <span className="studio-draft-label">
             <span />
-            Concept
+            {live.running ? 'Running' : model ? 'CAD study' : inspiration.selected ? 'Direction selected' : 'Exploring'}
           </span>
         </div>
         <div className="studio-header-actions">
+          <button className="studio-run-button" disabled={live.running || !inspiration.selected} onClick={() => { void live.start(); setWatchOpen(true); setRepresentation('3d'); }} title="Continue with the selected direction and run the design workers">
+            {live.running ? 'Workshop running…' : inspiration.selected ? 'Continue with this direction' : 'Choose a direction first'}
+          </button>
           <button
             className={`studio-icon-button ${watchOpen ? "selected" : ""}`}
             onClick={() => setWatchOpen(!watchOpen)}
@@ -283,47 +225,13 @@ export default function Workspace({
                     )}
                   </MessageScroller.Item>
                   <MessageScroller.Item messageId="workshop-intro">
-                    <div className="studio-assistant-label">
-                      <Ink />
-                      <span>Moki</span>
-                    </div>
-                    <div className="studio-assistant-message">
-                      <p>
-                        Choose a visual starting point, or add more detail to
-                        your brief.
-                      </p>
-                    </div>
-                    <details className="studio-plan">
-                      <summary>
-                        <span className="studio-plan-dot" />
-                        <span>The making plan</span>
-                        <small>4 stages</small>
-                        <ChevronDown size={13} />
-                      </summary>
-                      <div className="studio-plan-items">
-                        {plan.map(
-                          (
-                            { icon: Icon, title: itemTitle, detail, tab },
-                            i,
-                          ) => (
-                            <button
-                              key={itemTitle}
-                              onClick={() => changeView(tab)}
-                            >
-                              <span className="plan-step-icon">
-                                <Icon size={15} />
-                              </span>
-                              <span>
-                                <strong>{itemTitle}</strong>
-                                <small>{detail}</small>
-                              </span>
-                              <span className="plan-step-index">0{i + 1}</span>
-                            </button>
-                          ),
-                        )}
-                      </div>
-                    </details>
+                    {project.assistantMessage ? <><div className="studio-assistant-label"><Ink/><span>Moki</span></div><div className="studio-assistant-message"><p>{project.assistantMessage}</p></div></> : <p className="studio-run-scope" role="status">{project.error || 'Moki is reading your brief…'}</p>}
+                    <div className="studio-inspiration-progress" role="status">{inspiration.set?.status === 'completed' ? inspiration.selected ? `Selected: ${inspiration.selected.title}` : 'Four directions are ready. Choose one to continue.' : inspiration.error || 'Generating four visual directions with BFL…'}</div>
                   </MessageScroller.Item>
+                  {(live.run || live.error) && <MessageScroller.Item messageId="live-run">
+                    {live.run && <RunActivity run={live.run} onOpenWorker={setWorker}/>}
+                    {live.error && <p className="studio-run-error" role="alert">{live.error}</p>}
+                  </MessageScroller.Item>}
                   {notes.map((note) => (
                     <MessageScroller.Item
                       key={note.id}
@@ -527,38 +435,33 @@ export default function Workspace({
             }
           >
             {view === "product" && (
+              choosing ? <div className="studio-directions-view"><InspirationPicker set={inspiration.set} selectedId={inspiration.selected?.id} onSelect={id => { void inspiration.choose(id); setDirectionsOpen(false); setRepresentation('reference'); }} onRetry={() => void inspiration.retry()}/>{inspiration.error && <div className="studio-inspiration-error" role="alert">{inspiration.error}<button onClick={() => void inspiration.retry()}>Try again</button></div>}</div> :
               <div className="studio-product-view" ref={stageRef}>
-                <div
-                  className="studio-artboard"
-                  style={{ backgroundColor: concept?.color || "#fcfbf7" }}
-                >
+                <div className="studio-artboard">
                   <div className="studio-artboard-top">
                     <div className="studio-representation-control">
-                      <span className="active">
+                      {model && <button className={representation === '3d' ? 'active' : ''} onClick={() => setRepresentation('3d')}><Box size={12} />CAD study</button>}
+                      <button className={representation === 'reference' ? 'active' : ''} onClick={() => setRepresentation('reference')}>
                         <ImageIcon size={12} />
-                        Reference image
-                      </span>
-                      <button
-                        disabled
-                        title="CAD view becomes available when a model is generated"
-                      >
-                        <Box size={12} />
-                        CAD
+                        Reference
                       </button>
+                      {boardGeometry && <button className={representation === 'board' ? 'active' : ''} onClick={() => setRepresentation('board')}><CircuitBoard size={12}/>Board</button>}
                     </div>
                     <button
                       className="studio-reference-button"
-                      onClick={() => setReferencesOpen(true)}
+                      onClick={() => setDirectionsOpen(true)}
                     >
-                      Explore references <Plus size={13} />
+                      Four directions <Plus size={13} />
                     </button>
                   </div>
-                  {concept ? (
+                  {showModel ? <div className="studio-model-stage"><Suspense fallback={<div className="studio-scene-loading">Loading 3D view…</div>}><ProductScene modelUrl={model?.url} zoom={zoom} resetKey={resetKey}/></Suspense></div>
+                  : representation === 'board' && boardGeometry ? <BoardPreview url={boardGeometry.url}/>
+                  : referenceImage ? (
                     <div className="studio-concept-image-wrap">
                       <img
                         className="studio-concept-image"
-                        src={concept.image}
-                        alt={`${concept.name}: illustrative gallery reference, not generated CAD`}
+                        src={referenceImage}
+                        alt={`${inspiration.selected?.title}: visual concept, not generated CAD`}
                         style={{ transform: `scale(${zoom})` }}
                       />
                     </div>
@@ -571,7 +474,7 @@ export default function Workspace({
                       <p>Add a reference to your product canvas.</p>
                       <button
                         className="studio-export"
-                        onClick={() => setReferencesOpen(true)}
+                        onClick={() => setDirectionsOpen(true)}
                       >
                         Explore references <ArrowUpRight size={14} />
                       </button>
@@ -580,7 +483,7 @@ export default function Workspace({
                   <div className="studio-canvas-tools">
                     <button
                       aria-label="Zoom out"
-                      disabled={!concept || zoom <= 0.8}
+                      disabled={(!referenceImage && !model) || zoom <= 0.8}
                       onClick={() => setZoom((z) => Math.max(0.8, z - 0.1))}
                     >
                       <Minus size={15} />
@@ -588,7 +491,7 @@ export default function Workspace({
                     <span>{Math.round(zoom * 100)}%</span>
                     <button
                       aria-label="Zoom in"
-                      disabled={!concept || zoom >= 1.5}
+                      disabled={(!referenceImage && !model) || zoom >= 1.5}
                       onClick={() => setZoom((z) => Math.min(1.5, z + 0.1))}
                     >
                       <Plus size={15} />
@@ -596,7 +499,7 @@ export default function Workspace({
                     <i />
                     <button
                       aria-label="Reset canvas view"
-                      onClick={() => setZoom(1)}
+                      onClick={() => { setZoom(1); setResetKey(k => k + 1); }}
                     >
                       <Focus size={15} />
                     </button>
@@ -615,8 +518,11 @@ export default function Workspace({
                 <div className="studio-product-status">
                   <span>
                     <Info size={13} />
-                    {concept
-                      ? "Concept imagery · no engineering geometry yet"
+                    {model && representation === '3d'
+                      ? "Daytona CAD study · generated from your selected direction"
+                      : boardGeometry && representation === 'board' ? 'Measured board outline · circuit design remains unverified'
+                      : referenceImage
+                      ? representation === '3d' ? "CAD geometry study · functional checks remain incomplete" : "BFL visual direction · not engineering geometry"
                       : "Your canvas is ready for a reference"}
                   </span>
                   <button onClick={() => changeView("checks")}>
@@ -627,14 +533,15 @@ export default function Workspace({
             )}
             {view === "checks" && (
               <section className="studio-checks-view">
+                {live.run && <RunActivity run={live.run} onOpenWorker={setWorker}/>}
                 <div className="studio-check-summary">
                   <span className="studio-check-summary-icon">
                     <ScanLine size={24} strokeWidth={1.3} />
                   </span>
                   <div>
-                    <strong>No checks have run yet</strong>
+                    <strong>{live.run?.report?.fit ? 'Product checks remain incomplete' : 'No product checks have run yet'}</strong>
                     <p>
-                      Engineering artifacts are needed before these can begin.
+                      {live.run?.report?.geometry ? 'Saved STEP geometry has been checked. Electrical function, component clearances and firmware remain unverified.' : 'Actual engineering artifacts are needed before these checks can begin.'}
                     </p>
                   </div>
                   <span className="studio-neutral-badge">Not checked</span>
@@ -715,21 +622,21 @@ export default function Workspace({
                     className="studio-showcase-image"
                     style={{ aspectRatio: showcaseRatio }}
                   >
-                    {concept ? (
+                    {live.run?.artifacts.some(a => a.name === 'showcase.mp4') ? <video controls playsInline preload="metadata" src={live.run.artifacts.find(a => a.name === 'showcase.mp4')!.url}/> : referenceImage ? (
                       <img
-                        src={concept.image}
-                        alt={`${concept.name} gallery reference`}
+                        src={referenceImage}
+                        alt={`${inspiration.selected?.title} visual direction`}
                       />
                     ) : (
                       <div>
                         <ImageIcon size={35} strokeWidth={1} />
                         <p>Choose a reference to explore a composition.</p>
-                        <button onClick={() => setReferencesOpen(true)}>
+                        <button onClick={() => setDirectionsOpen(true)}>
                           Explore references
                         </button>
                       </div>
                     )}
-                    <span>Reference image</span>
+                    <span>{live.run?.artifacts.some(a => a.name === 'showcase.mp4') ? 'FLUX 3 · 10-second concept film' : 'Selected visual concept'}</span>
                   </div>
                   <div className="studio-showcase-editor">
                     <label htmlFor="showcase-headline">Headline</label>
@@ -764,6 +671,7 @@ export default function Workspace({
             {view === "files" && (
               <section className="studio-files-view">
                 <div className="studio-files-heading">
+                  {live.run?.artifacts.length ? <div className="studio-artifact-links">{live.run.artifacts.map(a => <a key={a.name} href={a.url} download={a.name}><Download size={12}/>{a.name}</a>)}</div> : null}
                   <button
                     className="studio-export"
                     onClick={() => downloadText("project-brief.md", briefFile)}
@@ -845,11 +753,9 @@ export default function Workspace({
                   </button>
                 </div>
                 <span className="studio-section-kicker">REPRESENTATION</span>
-                <h3>{concept ? concept.name : "No reference selected"}</h3>
+                <h3>{inspiration.selected?.title || "No direction selected"}</h3>
                 <p>
-                  {concept
-                    ? "Illustrative gallery reference. This image was created before your project and is not derived from its engineering geometry."
-                    : "Your project begins with a brief. You can add a visual reference to the canvas."}
+                  {inspiration.selected ? 'This direction was generated by BFL for your brief. CAD outputs appear only when the engineering workers save them.' : 'Four visual directions are generated from your brief before engineering starts.'}
                 </p>
                 <dl>
                   <div>
@@ -858,15 +764,15 @@ export default function Workspace({
                   </div>
                   <div>
                     <dt>CAD geometry</dt>
-                    <dd>Not generated</dd>
+                    <dd>{model ? 'Generated STEP + GLB' : 'Not generated'}</dd>
                   </div>
                   <div>
                     <dt>PCB geometry</dt>
-                    <dd>Not generated</dd>
+                    <dd>{boardGeometry ? 'Proposed PCB outline' : 'Not generated'}</dd>
                   </div>
                   <div>
                     <dt>Checked dimensions</dt>
-                    <dd>None yet</dd>
+                    <dd>{live.run?.report?.electrical ? `${live.run.report.electrical.width} × ${live.run.report.electrical.height} mm board` : 'None yet'}</dd>
                   </div>
                 </dl>
                 <span className="studio-section-kicker">
@@ -889,7 +795,7 @@ export default function Workspace({
               <div>
                 <Layers size={15} />
                 <strong>Workshop activity</strong>
-                <span>No jobs running</span>
+                <span>{live.running ? 'Live run' : live.run ? 'Latest run' : 'Ready'}</span>
                 <button
                   className="studio-icon-button"
                   onClick={() => setWatchOpen(false)}
@@ -898,15 +804,15 @@ export default function Workspace({
                   <X size={15} />
                 </button>
               </div>
-              <p>
-                Engineering execution is not connected to this workspace yet.
-                Live tool actions, worker views, and validation evidence will
-                appear here when it is.
-              </p>
+              {live.run ? <div className="studio-worker-captures">{['mechanical', 'electrical'].map(role => {
+                const capture = live.run!.artifacts.find(a => a.name === `moki-${role}.png`);
+                return <div key={role}><button className="studio-worker-link" onClick={() => setWorker(role as 'mechanical' | 'electrical')}>Daytona · {role} · Open live desktop ↗</button>{capture ? <button onClick={() => setWorker(role as 'mechanical' | 'electrical')}><img src={capture.url} alt={`Latest ${role} worker capture`}/></button> : <p>{live.running ? 'Waiting for worker capture…' : 'No capture available.'}</p>}</div>;
+              })}</div> : <p>Start a live test to see actual worker steps and captures here.</p>}
             </div>
           )}
         </section>
       </main>
+      {worker && <WorkerDesktop role={worker} onClose={() => setWorker(null)}/>}
       <button
         className="studio-mobile-chat-toggle"
         onClick={() => setChatOpen(!chatOpen)}
@@ -915,44 +821,7 @@ export default function Workspace({
         {chatOpen ? <Box size={18} /> : <MessageSquare size={18} />}
         <span>{chatOpen ? "View product" : "Your workshop"}</span>
       </button>
-      <dialog
-        ref={referenceDialog}
-        className="studio-reference-dialog"
-        aria-labelledby="studio-references-title"
-        onCancel={() => setReferencesOpen(false)}
-        onClick={(e) => {
-          if (e.target === e.currentTarget) setReferencesOpen(false);
-        }}
-      >
-        <div className="studio-reference-dialog-heading">
-          <div>
-            <span className="studio-section-kicker">A PLACE TO START</span>
-            <h2 id="studio-references-title">Reference gallery</h2>
-          </div>
-          <button
-            className="studio-icon-button"
-            aria-label="Close reference gallery"
-            onClick={() => setReferencesOpen(false)}
-          >
-            <X size={18} />
-          </button>
-        </div>
-        <p>
-          These are gallery concepts to explore, not designs generated from your
-          brief.
-        </p>
-        <div>
-          {concepts.map((c) => (
-            <button key={c.id} onClick={() => chooseConcept(c)}>
-              <img src={c.image} alt={c.caption} />
-              <span>
-                {c.name}
-                <ArrowUpRight size={14} />
-              </span>
-            </button>
-          ))}
-        </div>
-      </dialog>
+
     </div>
   );
 }

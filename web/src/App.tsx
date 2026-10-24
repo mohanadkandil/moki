@@ -1,5 +1,8 @@
 import { Ink, LivingField } from "./brand";
 import Workspace from "./Workspace";
+import GalleryPreview from "./GalleryPreview";
+import RecentProjects from './RecentProjects';
+import type { Project as WorkshopProject } from '../../server/project-store';
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import {
   ArrowUpRight,
@@ -19,6 +22,7 @@ import {
 } from "lucide-react";
 
 type Project = {
+  concept: "timer" | "synth" | "lamp";
   name: string;
   category: "Everyday objects" | "Electronics";
   image: string;
@@ -29,6 +33,7 @@ type Project = {
 };
 const projects: Project[] = [
   {
+    concept: "timer",
     name: "A little more focus.",
     category: "Electronics",
     image: "/images/pebble.webp",
@@ -40,6 +45,7 @@ const projects: Project[] = [
     number: "01",
   },
   {
+    concept: "synth",
     name: "Good things make noise.",
     category: "Electronics",
     image: "/images/pocket-synth.webp",
@@ -51,6 +57,7 @@ const projects: Project[] = [
     number: "02",
   },
   {
+    concept: "lamp",
     name: "Your own little sun.",
     category: "Everyday objects",
     image: "/images/little-sun.webp",
@@ -64,20 +71,53 @@ const projects: Project[] = [
 ];
 
 export default function App() {
-  const demoBrief =
-    new URLSearchParams(window.location.search).get("demo") === "timer"
-      ? projects[0]!.prompt
-      : "";
-  const [idea, setIdea] = useState(demoBrief);
+  const initialId = window.location.pathname.match(/^\/workshop\/([a-f0-9-]{36})$/)?.[1];
+  const [idea, setIdea] = useState('');
   const [paused, setPaused] = useState(false);
   const [filter, setFilter] = useState("All ideas");
   const [selected, setSelected] = useState<Project | null>(null);
-  const [draft, setDraft] = useState<string | null>(demoBrief || null);
+  const [project, setProject] = useState<WorkshopProject | null>(null);
+  const [opening, setOpening] = useState(Boolean(initialId));
+  const [starting, setStarting] = useState(false);
+  const draft = project?.brief ?? null;
   const [reference, setReference] = useState<File | null>(null);
   const [fileError, setFileError] = useState("");
   const input = useRef<HTMLTextAreaElement>(null);
   const fileInput = useRef<HTMLInputElement>(null);
   const dialog = useRef<HTMLDialogElement>(null);
+  useEffect(() => {
+    let cancelled = false;
+    let request: AbortController | undefined;
+    function openLocation() {
+      request?.abort();
+      const id = window.location.pathname.match(/^\/workshop\/([a-f0-9-]{36})$/)?.[1];
+      if (!id) { setProject(null); setOpening(false); return; }
+      const controller = new AbortController(); request = controller;
+      setOpening(true); setFileError('');
+      fetch(`/api/projects/${id}`, {signal:controller.signal}).then(r => { if (!r.ok) throw new Error(); return r.json(); }).then(value => {
+        if (!cancelled && !controller.signal.aborted) setProject(value);
+      }).catch(() => {
+        if (!cancelled && !controller.signal.aborted) { setProject(null); setFileError('This workshop could not be opened.'); }
+      }).finally(() => { if (!cancelled && !controller.signal.aborted) setOpening(false); });
+    }
+    openLocation();
+    window.addEventListener('popstate', openLocation);
+    return () => { cancelled = true; request?.abort(); window.removeEventListener('popstate', openLocation); };
+  }, []);
+  useEffect(() => {
+    if (!project || project.status !== 'planning') return;
+    let cancelled = false; let timer: ReturnType<typeof setTimeout>;
+    async function poll() {
+      try {
+        const r = await fetch(`/api/projects/${project!.id}`);
+        if (!r.ok) throw new Error();
+        const value = await r.json(); if (cancelled) return;
+        setProject(value); if (value.status === 'planning') timer = setTimeout(poll, 1000);
+      } catch { if (!cancelled) timer = setTimeout(poll, 2000); }
+    }
+    timer = setTimeout(poll, 500);
+    return () => { cancelled = true; clearTimeout(timer); };
+  }, [project?.id, project?.status]);
 
   useEffect(() => {
     if (selected) dialog.current?.showModal();
@@ -109,19 +149,27 @@ export default function App() {
     setSelected(null);
     requestAnimationFrame(focusComposer);
   }
-  function submit(event?: FormEvent) {
+  async function submit(event?: FormEvent) {
     event?.preventDefault();
-    if (!idea.trim()) return;
-    setDraft(idea.trim());
-    window.scrollTo(0, 0);
+    if (!idea.trim() || starting) return;
+    setStarting(true); setFileError('');
+    try {
+      const response = await fetch('/api/projects', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ brief: idea.trim() }) });
+      const value = await response.json(); if (!response.ok) throw new Error(value.error || 'Could not create your workshop');
+      setProject(value); window.history.pushState({}, '', `/workshop/${value.id}`); window.scrollTo(0, 0);
+    } catch (error) { setFileError(error instanceof Error ? error.message : 'Could not create your workshop'); }
+    finally { setStarting(false); }
   }
 
-  if (draft !== null) {
+  if (opening) return <div className="studio-opening" role="status">Opening your workshop…</div>;
+  if (project) {
     return (
       <Workspace
-        brief={draft}
+        key={project.id}
+        project={project}
+        brief={project.brief}
         reference={reference}
-        onBack={() => setDraft(null)}
+        onBack={() => { setProject(null); window.history.pushState({}, '', '/'); }}
       />
     );
   }
@@ -204,7 +252,7 @@ export default function App() {
               <button
                 className="send-button"
                 type="submit"
-                disabled={!idea.trim()}
+                disabled={!idea.trim() || starting}
                 aria-label="Start your project"
               >
                 <ArrowUp size={21} />
@@ -248,6 +296,7 @@ export default function App() {
         </div>
       </div>
 
+      <RecentProjects />
       <section
         className="ideas-section"
         id="ideas"
@@ -299,13 +348,7 @@ export default function App() {
                 aria-label={`Explore ${p.name}`}
               >
                 <div className="project-image" style={{ background: p.color }}>
-                  <img
-                    src={p.image}
-                    alt={p.description}
-                    loading="lazy"
-                    width="1280"
-                    height="960"
-                  />
+                  <GalleryPreview concept={p.concept} image={p.image} description={p.description} />
                   <span className="project-label">CONCEPT {p.number}</span>
                   <span className="project-open">
                     <ArrowUpRight size={19} />

@@ -1,32 +1,38 @@
-# Moki workshop editor
+# Workshop implementation
 
-Implemented 24 October 2026 after the user rejected the initial beige brief-only placeholder as visually disconnected from the landing page.
+Verified locally on 24 October 2026.
 
-## Design requirements from user feedback
+Every landing submission creates a unique persisted project and opens `/workshop/<project-id>`. The server generates the initial project title and acknowledgment through OpenAI. There are no fabricated engineering chat results. Four BFL inspiration images are generated before engineering; the user selects one and explicitly continues. Saved project IDs isolate repeated briefs.
 
-- Full-viewport application, consistent with the landing's Manrope, Ink logo, warm white, charcoal, and restrained blue control accents.
-- No italic serif, decorative arrows, editorial slogans, or repeated promotional headings inside the editor.
-- Conversation beside a large product canvas. Main navigation is Product and Showcase. Checks, files, and details are secondary tools, not another marketing page or a status-card dashboard.
-- A small collapsed making plan can disclose proposed stages. Do not claim execution or successful checks from a static plan.
+The current run performs electrical physical planning, writes and reopens a KiCad PCB outline, transfers measured dimensions/hole positions with an artifact hash, generates prompt/image-guided build123d source in Daytona, exports STEP and GLB, and independently reopens the STEP to check solids and dimensions. Actual KiCad and FreeCAD documents are displayed on their desktops. New runs open fresh empty Moki-owned workspaces, preserving previous artifacts and keeping the VMs running.
 
-## Implemented interactions
+The Product view offers actual generated CAD, the selected BFL reference and a measured board-outline view. Showcase offers a ten-second BFL film based on the selected image. The film is not CAD-grounded. Checks and files are secondary controls; fresh read-only desktop frames open from electrical/mechanical stages. Warm white, charcoal, Manrope and restrained blue accents carry the landing design into the workspace.
 
-The conversation uses the actual headless `MessageScroller` from `@shadcn/react@0.3.1`, styled with Moki CSS. It keeps a constrained, independently scrolling thread, stable message IDs and user anchors, and a jump-to-latest action. There is no Next.js, Tailwind, AI Gateway, or AI SDK migration required for this primitive. More research and official references are in [AI interface components](../research/ai-interface-components.md).
+## Electronics gap
 
-Users can rename the project, add refinements to its brief, attach a local reference, collapse the conversation, choose a gallery reference, zoom the reference image, change showcase crop, edit showcase copy, and export actual Markdown brief/story notes. Files previews the same current brief, including refinements. Empty engineering folders contain no fabricated files.
+The current electrical output is an outline with mounting holes. It has no functional schematic, selected component BOM, net connectivity, placed components, routed circuit or firmware. Geometry checks do not establish electrical correctness or real component fit. Manufacturing release remains blocked, and the UI states that a design study was generated.
 
-The Product view clearly distinguishes a reference image from CAD; unavailable CAD mode is disabled. Gallery reference choice is explicitly independent of engineering generation. Known timer/synth/lamp prompts initially select the corresponding gallery reference; other prompts start without an image. No arbitrary object is passed off as a generated result. Image zoom is a 2D reference-image operation, not a CAD camera.
+The intended functional path is:
 
-The Checks tool lists the required artifacts and Not run states. Activity states that no engineering jobs are connected. The assistant-like guidance is fixed product onboarding, not a model response. Appending a refinement updates local state; it does not schedule work or infer a design change.
+1. Requirements, power budget, exact components and datasheets.
+2. Schematic, footprints and independent connection review; run ERC.
+3. Update PCB from the schematic; place components and route copper.
+4. Run DRC and schematic/PCB parity checks; resolve findings.
+5. Export populated board geometry and verify enclosure clearances, connectors and mounting positions against the same revision.
+6. Generate Gerbers, drills, BOM and placement files after checks. Build and test a physical prototype before claiming operation.
 
-## Access
+Mechanical exploration can proceed in parallel, but final fit must use actual component and PCB geometry. KiCad's [workflow documentation](https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html) and [CLI reference](https://docs.kicad.org/9.0/en/cli/cli.html) describe schematic-to-PCB transfer and ERC/DRC tooling. ERC/DRC alone do not prove functionality.
 
-Run `npm run dev`; submit an idea at http://127.0.0.1:5173/ or open http://127.0.0.1:5173/?demo=timer for the gallery-based example. All project state is session-only and resets on reload.
+## Persistence and recovery
 
-## Engineering boundary
+Local `var/projects`, `var/inspirations` and `var/runs` retain project metadata, direction images, stage events, reports and downloads. Server-side lookup restores the latest run without depending on browser storage. Existing inspiration sets are reused on reopen rather than generating new paid images. Interrupted runs are marked as interrupted after server restart. This is a local file store, not a deployed database.
 
-Still required: authenticated server endpoints, streaming model responses, durable product/revision state and artifacts, actual CAD/PCB viewers, worker jobs, real tool traces, validator evidence, and CAD-grounded generated showcase assets. The existing OpenAI/Daytona runtime is not yet attached to these controls.
+The landing page polls real project summaries and links back into saved workshops. Artifact downloads are allowlisted per manifest; PCB filenames containing underscores are supported and use attachment headers.
 
-## Verification
+## Reliability verification
 
-Typecheck, production build, and the existing revision-gate tests pass. Browser checks verified full-height desktop layout, local refinement submission and input clearing, the same refinement appearing in the brief file preview, all four engineering checks remaining Not run, Product/Showcase navigation, and absence of the removed marketing headings. A same-origin 390 × 844 iframe verified the mobile conversation/product toggle and no horizontal overflow; native preview resizing remains unavailable in this session.
+A saved run reproduced a whole-root React crash when measured hole objects were rendered as a React child. The UI now renders their count, including legacy numeric reports; SSR regressions cover both. An app error boundary retains a recovery path if a different render fails.
+
+StrictMode also exposed shared Three.js loader cancellation: cleanup from one mount aborted another mount's request. Each ProductScene now owns its fetch and cancellation. Actual GLB rendering, repeated mounts, missing/malformed files, unavailable WebGL and context-loss fallbacks were exercised.
+
+The exact reported workshop, saved artifact bytes, board view, showcase video and downloads were checked against local generated files. An HTTP regression covers the real API route for `board.kicad_pcb`, exact download bytes and missing/unpublished artifacts. No additional paid design runs are required for these regressions.

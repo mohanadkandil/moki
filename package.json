@@ -15,6 +15,8 @@
     "test": "tsx --test tests/*.test.ts",
     "doctor": "tsx scripts/doctor.ts",
     "openai:check": "tsx scripts/openai-check.ts",
+    "infra:check": "tsx scripts/infra-check.ts",
+    "environments:keep-running": "tsx scripts/keep-workers-running.ts",
     "environments:setup": "tsx scripts/environments.ts setup",
     "environments:status": "tsx scripts/environments.ts status",
     "environments:stop": "tsx scripts/environments.ts stop",
@@ -31,12 +33,14 @@
     "openai": "7.43.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
+    "three": "^0.186.0",
     "zod": "^4.1.0"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
+    "@types/three": "^0.186.0",
     "@vitejs/plugin-react": "^6.1.2",
     "tsx": "^4.20.0",
     "typescript": "^5.9.0",

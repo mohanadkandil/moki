@@ -1,73 +1,57 @@
 # Moki
 
-Your idea's workshop: describe an invention, develop its mechanical and electronic design, try its behavior, and prepare its showcase and launch materials.
+Describe a physical product, choose a visual direction, and develop a first-pass CAD study in a saved workshop.
 
-This repository includes a local React landing page and workshop editor, the agent/runtime foundation, and two isolated Daytona engineering desktops. The editor captures a session-only brief and refinements; it does not yet launch engineering jobs. The complete invention workflow remains to be connected.
-
-## Current stack
-
-- TypeScript and Node 22+.
-- React + Vite for the local web experience, with self-hosted Manrope typography.
-- OpenAI Agents SDK (`@openai/agents`) for manager/specialist orchestration.
-- Official OpenAI SDK (`openai`) for direct Responses and optional Decisions calls.
-- Daytona SDK (`@daytona/sdk`) for desktop controls, processes and file access.
-- FreeCAD + build123d for mechanical work; KiCad for electronics.
-- BFL API planned for CAD-grounded showcase imagery. Current gallery illustrations were generated with Codex image generation.
-
-The Codex SDK is a future option for repository-oriented coding workers. It is not the primary desktop orchestrator. See [SDK decision](docs/sdk-decision.md) and [verified environments](docs/environments.md).
-
-## Web preview
-
-```sh
-npm ci
-npm run dev
-```
-
-Open http://127.0.0.1:5173/. The hero fills the viewport, with a procedural animated blue dither field, a logo-only Ink mark, and a central idea composer. The gallery supports filtering, concept detail dialogs, and using an example as a prompt. Submission opens the full-viewport workshop: conversation and refinements on the left, Product and Showcase views on the right, with checks/files/details behind tool buttons. References remain local to the session. No model request or engineering tool runs from the editor yet.
-
-Open http://127.0.0.1:5173/?demo=timer for a direct workshop preview seeded with the timer gallery brief. It uses the same editor as a submitted prompt; its image is explicitly a gallery reference, not CAD generated from the brief. See [workshop scope](docs/product/workshop.md).
-
-`npm run build` creates the static frontend in `dist/web`; `npm run preview` serves that build on port 4173. Service keys stay in the server-side runtime and are not used by the frontend. The image prompts and asset provenance are in [landing assets](docs/product/landing-assets.md).
-
-## Engineering setup
+## Run locally
 
 ```sh
 npm ci
 cp .env.example .env
-npm run doctor
+# Configure server-side OpenAI and BFL keys, then authenticate Daytona.
 daytona login
-npm run environments:setup
+npm run dev
 ```
 
-Put service keys in `.env` locally. The CLI setup commands can use your existing Daytona login; app-runtime SDK calls need `DAYTONA_API_KEY`. OpenAI and BFL keys are not required to provision the engineering desktops, and no model request is made by setup.
+Open http://127.0.0.1:5173/. Every submitted prompt creates a new saved workshop. The landing page lists real saved projects, including running jobs, so you can return later. Example cards supply a prompt; they do not stand in for generated project results.
+
+The workshop generates four BFL visual directions first. After selection, Continue starts model-guided board-envelope planning and mechanical CAD generation on two Daytona desktops. Product displays the generated GLB, selected reference, or measured board outline. Click an engineering stage to watch fresh desktop frames. Showcase plays a saved ten-second BFL concept film.
+
+**Current engineering limit:** electronics are a proposed PCB outline and mounting holes only. No schematic, populated/routed circuit, firmware, ERC, or DRC is generated. Mechanical STEP geometry is independently reopened and measured, but real component envelopes and assembly fit remain unverified. The concept film follows the selected image, not the exported CAD. A completed computation means a design study was generated; manufacturing release remains blocked.
+
+Projects, inspiration images, job events, reports and artifacts persist under ignored local `var/`. Reopening a project restores its latest saved run without starting a new model job. An interrupted server process is reported as interrupted, not silently restarted. This is local JSON/file persistence, not a hosted database; retain `var/` to retain projects. Credentials stay server-side in ignored `.env` or the local authenticated Daytona profile.
+
+`npm run build` creates `dist/web`. `npm run preview` serves only that static frontend; the API bridge runs with `npm run dev` and is required for live workshops.
+
+## Runtime
+
+- React + Vite, Manrope, Three.js and headless shadcn conversation components.
+- Official OpenAI SDK Responses calls for the live planning/CAD path. The OpenAI Agents SDK manager/specialist foundation is available separately; the live path is a server-coordinated sequence with measured file handoffs.
+- Daytona SDK for isolated Linux desktops, commands, files and read-only live views.
+- KiCad 9 and FreeCAD 1, with a separate compatible build123d CAD-skill environment.
+- BFL for four inspiration images and a ten-second concept showcase.
+
+The server records artifact hashes and actual stage events. Engineering claims require file-based checker evidence; model descriptions do not count as passing checks. See [workshop scope](docs/product/workshop.md), [environments](docs/environments.md), [architecture](docs/architecture.md), and [SDK decision](docs/sdk-decision.md).
+
+## Engineering setup and checks
 
 ```sh
+npm run doctor
+npm run environments:setup -- --use-cli-profile
+npm run environments:keep-running -- --use-cli-profile
 npm run environments:status
-npm run environments:stop
-npm run openai:check
 npm run desktops:check -- --use-cli-profile
 npm run typecheck
 npm test
+npm run build
 ```
 
-The setup is idempotent by environment name. Only Moki's two environments are managed. Each uses Linux, 2 vCPUs, 4 GiB RAM, no GPU, idle-stop after 20 minutes, and retains its filesystem when stopped. Setup does not place manufacturing orders or start any model run. The 4 GiB allocation lets both run within the current account's 10 GiB memory quota.
+The two workers each use 2 vCPUs and 4 GiB RAM. Idle stop, auto-pause and TTL are disabled; automatic deletion is disabled. New design runs open fresh empty Moki-owned documents while retaining all previous run files. Workers remain running until explicitly stopped. See [environment details](docs/environments.md) for provider archive behavior.
 
-`desktops:check` starts desktop services, launches the actual design app, checks display geometry, and saves screenshots under ignored `var/`. Its optional `--use-cli-profile` explicitly reuses the authenticated local Daytona profile in memory; it never copies credentials into the repository. App-runtime access still uses a server-side `DAYTONA_API_KEY`.
+`npm run openai:check` makes small paid API calls to verify Responses and manager/validator delegation. `npm run infra:check -- --use-cli-profile` runs an explicit fixed-geometry diagnostic, separate from the website's prompt-driven pipeline. These commands do not establish circuit functionality.
 
-`openai:check` makes small paid model requests using the local server-side key. It checks the Responses API and Moki's manager-to-validator delegation with shared product/revision context. The sample has no artifacts: the expected outcome is blocked for missing evidence. It does not run CAD or PCB validation. A sanitized timestamped result is saved under ignored `var/checks/openai.json`; raw API errors and credentials are not logged. The check follows the official [Responses quickstart](https://developers.openai.com/api/docs/quickstart) and [Agents SDK quickstart](https://developers.openai.com/api/docs/guides/agents/quickstart), using the locally installed SDK types.
+## Product and research
 
-## Coordination and validators
-
-The orchestrator owns a versioned product contract. Workers publish immutable artifacts plus measured geometry, input revisions and hashes. A new PCB revision invalidates dependent enclosure/fit-check/showcase outputs. Validation results are accepted only for the artifact hashes actually tested.
-
-The validators inspect real files and executable evidence: board rules, solid geometry, fit, compilation and simulation. An agent's explanation is not itself a passing check. See [architecture](docs/architecture.md).
-
-## Product direction
-
-One warm, capable Moki represents the workshop; mechanical, electrical, firmware and validation workers appear as clearly labeled roles. The invention is the centerpiece. The user selected the Ink character direction; production artwork and the proposed web-app interface remain to be implemented.
-
-- [Web-app design proposal](docs/product/web-app.md): the calm, rounded Moki Workshop direction.
-- [Character direction](docs/product/character.md): the selected Ink silhouette and an attentive workshop persona.
-- [Landing-page direction](docs/product/landing.md): the implemented design and interaction scope.
-- [CAD skill research](docs/research/cad-skills.md) and [electrical skill research](docs/research/electrical-skills.md): source-reviewed candidates, compatibility constraints, and proposed benchmarks. Research does not mean these skills are installed in the workers.
+- [Character](docs/product/character.md): selected Ink mascot.
+- [Landing](docs/product/landing.md): full-viewport animated blue field, logo-only navigation, compact composer.
+- [CAD research](docs/research/cad-skills.md), [electrical research](docs/research/electrical-skills.md), [3D previews](docs/research/threejs-preview.md).
 - [Editable pipeline diagram](docs/pipeline/invention-platform.excalidraw).

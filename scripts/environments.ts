@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import { readFile } from 'node:fs/promises';
+import { setTimeout } from 'node:timers/promises';
 import { cli, environments, listEnvironments } from './lib/cli.js';
 
 const operation = process.argv[2] ?? 'status';
@@ -22,13 +23,23 @@ for (const environment of environments) {
   }
   if (!existing) {
     await cli(['create', '--snapshot', 'daytona-medium', '--name', environment.name,
-      '--target', process.env.DAYTONA_TARGET || 'eu', '--auto-stop', '20', '--auto-archive', '60',
+      '--target', process.env.DAYTONA_TARGET || 'eu', '--auto-stop', '0', '--auto-archive', '0',
       '--auto-delete', '-1', '--label', 'app=moki', '--label', `role=${environment.role}`,
       '--env', 'VNC_RESOLUTION=1440x900'], 180_000);
-  } else if (existing.state !== 'started') {
+  } else if (!['started', 'starting', 'restoring', 'pending_start'].includes(existing.state)) {
     await cli(['start', existing.id], 180_000);
   }
   bootstraps.push(async () => {
+    // Start returns before an archived filesystem has finished restoring.
+    const deadline = Date.now() + 180_000;
+    while (true) {
+      const ready = (await listEnvironments()).find(item => item.name === environment.name);
+      if (ready?.state === 'started') break;
+      if (Date.now() > deadline || ready?.state === 'error') {
+        throw new Error(`${environment.name}: not ready (${ready?.state ?? 'missing'})`);
+      }
+      await setTimeout(1500);
+    }
     console.log(`${environment.name}: installing/checking design tools`);
     const bootstrap = await readFile(new URL('./bootstrap-desktop.py', import.meta.url), 'utf8');
     const result = await cli(['exec', environment.name, '--timeout', '1200', '--', '/usr/bin/python3', '-c', bootstrap, environment.role], 1_230_000);

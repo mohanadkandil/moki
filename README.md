@@ -13,7 +13,7 @@ This repository starts with the agent/runtime foundation and two isolated Dayton
 - FreeCAD + build123d for mechanical work; KiCad for electronics.
 - BFL API for concept exploration and CAD-grounded showcase imagery.
 
-The Codex SDK is a future option for repository-oriented coding workers. It is not the primary desktop orchestrator. See [SDK decision](docs/sdk-decision.md).
+The Codex SDK is a future option for repository-oriented coding workers. It is not the primary desktop orchestrator. See [SDK decision](docs/sdk-decision.md) and [verified environments](docs/environments.md).
 
 ## Setup
 
@@ -48,3 +48,7 @@ The validators inspect real files and executable evidence: board rules, solid ge
 ## Product direction
 
 One warm, capable Moki represents the workshop; mechanical, electrical, firmware and validation workers appear as clearly labeled roles. The invention is the centerpiece. Character and web-app proposals are recorded in `docs/product/`; visual direction remains a design proposal until selected.
+
+- [Web-app design proposal](docs/product/web-app.md): the calm, rounded Moki Workshop direction.
+- [Character proposal](docs/product/character.md): a distinctive living-prototype silhouette and an attentive workshop persona.
+- [Editable pipeline diagram](docs/pipeline/invention-platform.excalidraw).

@@ -1,28 +1,11 @@
 import 'dotenv/config';
-import { readFile, mkdir, writeFile } from 'node:fs/promises';
-import { homedir } from 'node:os';
-import { join } from 'node:path';
+import { mkdir, writeFile } from 'node:fs/promises';
 import { setTimeout } from 'node:timers/promises';
-import { Daytona } from '@daytona/sdk';
 import { environments } from './lib/cli.js';
-import { createDaytonaClient } from '../src/runtime/providers.js';
+import { createSetupDaytonaClient, safeError } from './lib/daytona-client.js';
 
-async function client(): Promise<Daytona> {
-  if (process.env.DAYTONA_API_KEY) return createDaytonaClient();
-  if (!process.argv.includes('--use-cli-profile')) throw new Error('Set DAYTONA_API_KEY or explicitly pass --use-cli-profile');
-  const configPath = process.platform === 'darwin'
-    ? join(homedir(), 'Library/Application Support/daytona/config.json')
-    : join(process.env.XDG_CONFIG_HOME || join(homedir(), '.config'), 'daytona/config.json');
-  const config = JSON.parse(await readFile(configPath, 'utf8'));
-  const profile = config.profiles?.find((p: { id: string; name: string }) => p.id === config.activeProfile || p.name === config.activeProfile);
-  if (!profile || new URL(profile.api.url).origin !== 'https://app.daytona.io') throw new Error('Expected an authenticated official Daytona profile');
-  // Credentials stay in memory, are sent only to the pinned official endpoint, and are never logged or copied to .env.
-  return new Daytona({ apiUrl: 'https://app.daytona.io/api', apiKey: profile.api.key || undefined,
-    jwtToken: profile.api.key ? undefined : profile.api.token?.accessToken,
-    organizationId: profile.activeOrganizationId, target: 'eu' });
-}
-
-const daytona = await client();
+async function main() {
+const daytona = await createSetupDaytonaClient(process.argv.includes('--use-cli-profile'));
 await mkdir('var/screenshots', { recursive: true });
 for (const environment of environments) {
   const sandbox = await daytona.get(environment.name);
@@ -44,4 +27,12 @@ for (const environment of environments) {
   await writeFile(`var/screenshots/${environment.name}.png`, Buffer.from(screenshot.screenshot, 'base64'));
   if (!windows.windows?.some(w => /freecad|kicad/i.test(w.title || ''))) throw new Error(`${environment.name}: design application window did not appear; inspect saved screenshot and application.log`);
   console.log(JSON.stringify({ name: environment.name, state: sandbox.state, display: { width: primary.width, height: primary.height }, windows: windows.windows?.map(w => w.title), screenshot: `var/screenshots/${environment.name}.png` }));
+}
+}
+
+try { await main(); }
+catch (error) {
+  // Avoid logging SDK request objects: they may contain authentication headers.
+  console.error(safeError(error));
+  process.exitCode = 1;
 }

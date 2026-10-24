@@ -17,4 +17,3 @@ Documentation checked:
 - https://www.daytona.io/docs/en/computer-use/
 
 Installed package types and the lockfile pin the integration surface. No live AI calls are part of the initial environment setup.
-

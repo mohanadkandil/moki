@@ -1,6 +1,6 @@
 # Moki: character direction
 
-The user selected the name **Moki** on 24 October 2026. The following visual direction is a recommendation from three independent product, character-design and voice explorations, not a finalized mascot asset.
+The user selected the name **Moki** and chose the **Ink** character direction on 24 October 2026 after reviewing Orb, Loop, Ink, and Living Prototype studies. Ink is the chosen visual direction; production vector artwork and animation remain to be refined.
 
 ## Recommended role
 
@@ -8,18 +8,19 @@ One attentive workshop partner represents the product. The invention stays cente
 
 Moki is warm, curious and exact. It notices practical details, asks useful questions and makes the process understandable. It celebrates the user's decisions and verified outcomes. It distinguishes proposed designs, checked artifacts, simulation and physical results.
 
-## Recommended visual exploration: the living prototype
+## Selected visual direction: Ink
 
-A thick, softly rounded orange ribbon bends into a squat arch. The open arch between its short feet is its recognizable negative space. Small dark eyes sit directly on the material. Warm ivory, cupped hands hold and inspect the user's invention.
+A soft, almost circular charcoal silhouette has a small off-center scoop in its upper-right edge. Two warm ivory eyes give the abstract form a curious, attentive presence. Keep its shape simple and its expression readable at small sizes.
 
-- Kiln orange `#E87942`, deep ink `#242622`, warm ivory `#F3EBDD`.
-- Matte molded material or ceramic; restrained highlights and tangible thickness.
-- Recognizable as a silhouette at icon size; richer material at hero size.
-- Signature motion: a blank strip folds into Moki; Moki later frames the finished invention with the same shape.
+- Reference: [Ink concept board](character-studies/03-ink.png).
+- Charcoal body, warm ivory eyes and background, with orange reserved for a small optional accent.
+- Flat graphic form; no limbs, costume, goggles, or robot face panel.
+- Expression comes from gaze, blinks, slight tilt, and restrained squash and stretch.
+- The public character is still named Moki; Ink names the visual direction.
 
-The alternative is a pocket workshop automaton with a flip-down inspection visor. The original goggles/pencil seed is friendly, but the design researchers found it less distinctive. If retained, put the pencil through the goggle strap and simplify other accessories.
+## Earlier explorations
 
-Before final art, compare three silhouette studies in the same neutral pose and lighting. Do not choose based on elaborate backgrounds.
+The earlier Living Prototype recommendation was a rounded orange ribbon folded into an arch with ivory hands. Orb, Loop, the ribbon, and the original goggles/pencil companion remain historical alternatives. Their silhouettes and accessories are not part of the selected Ink direction.
 
 ## Interaction states
 

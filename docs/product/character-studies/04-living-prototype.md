@@ -1,0 +1,9 @@
+# 04 / Living prototype
+
+Unselected concept generated with Codex built-in image generation, 24 October 2026. Visually reviewed for the orange arch silhouette, ivory hands, and folded-strip origin. Raster concept study, not a finalized vector mascot.
+
+[View image](04-living-prototype.png)
+
+## Exact prompt
+
+Use case: stylized-concept. Asset type: Moki mascot concept board, direction 04 THE LIVING PROTOTYPE. Primary request: visualize a small curious workshop companion formed from ONE thick broad softly rounded orange ribbon bent into a low inverted U arch. The ribbon has a broad flat front face and substantial rounded thickness, like a molded ceramic strip, NOT a cylindrical tube. Its two short ends touch the ground as feet, leaving a clear arch-shaped open space underneath. Two tiny dark eyes sit directly on the upper orange front surface. Two small warm ivory cupped mitten hands emerge at its sides, one raised in a quiet curious gesture. No separate head, no torso, no mouth, no goggles, no clothing, no screen. The bend and the negative-space arch define the character. Premium tactile design object, restrained matte ceramic or molded polymer, kiln orange #E87942, ink eyes #242622, hands #F3EBDD. Warm off-white studio backdrop, soft grounded shadows, refined editorial art direction, lots of whitespace. Landscape board: one large three-quarter hero on left, three small studies on right of the SAME character: attentive front pose, gently leaning to inspect something, and a flat orange ribbon beside a partially folded arch to communicate its folding origin. Keep the arch squat and adorable but sophisticated. Tiny understated lower-left label exactly '04 / LIVING PROTOTYPE'. No other text, no props, no extra characters, no existing logos. This must be a little living arch with hands, not a ring, not a doughnut, not a robot with a face panel.

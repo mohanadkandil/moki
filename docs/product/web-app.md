@@ -8,7 +8,7 @@ Build **Moki Workshop**: a quiet, warm workspace whose largest surface is the th
 
 The feeling should be a beautiful working notebook beside a physical prototype. Premium comes from consistent proportions, excellent type, believable materials, clear states, and careful transitions. Round the objects people touch; keep documents, engineering evidence, and lists precise.
 
-The proposed character can be the bent orange arch creature with ivory hands or the earlier goggles companion. The interface should work with either. Do not draw a new mascot for each specialist agent. The product the user is making must remain visually distinct from Moki.
+The user selected the Ink character direction: a soft charcoal silhouette with a small scoop and warm ivory eyes. Use this single Moki identity throughout the app; see [character direction](character.md). The product the user is making must remain visually distinct from Moki.
 
 ## Two directions
 
@@ -140,7 +140,7 @@ These values are proposed tokens. Validate contrast in implementation and at pro
 | Main text | Warm ink `#242321` |
 | Secondary text | `#68665F`; never reduce opacity on text to fake hierarchy |
 | Fine border | `#DEDCD5`; actual stroke boundaries where needed |
-| Brand accent | Vermilion `#D64B2D`; reserve for primary action, selected control, and Moki |
+| Brand accent | Vermilion `#D64B2D`; reserve for primary action, selected control, and an optional small character accent; Moki's body stays charcoal |
 | Accent text | Dark rust `#A9361F` on light ground |
 | Success | `#3D7055`, paired with text/icon |
 | Caution | `#996510`, paired with text/icon |
@@ -160,7 +160,7 @@ Avoid blueprint blue and construction-yellow branding. The product should feel c
 ## Character placement and motion
 
 - Moki exists at the top of the companion panel as a 40–48 px presence; 72–96 px for first-run and a brief meaningful completion moment.
-- A focused look or subtle hand movement acknowledges a real task transition. No constant bobbing, typing pantomime, petting loop, or floating character following the cursor.
+- A focused gaze, blink, or subtle tilt acknowledges a real task transition. Ink has no hands. No constant bobbing, typing pantomime, petting loop, or floating character following the cursor.
 - Same identity everywhere. The specialists appear as named roles in work details, not a collection of competing avatars.
 - Voice: curious, capable, candid. “The USB opening is too narrow. I'm widening it by 0.8 mm.” Never “Our autonomous mechanical optimization agent is leveraging…”.
 - Hover/focus: 120–160 ms. Panels: 180–220 ms. Camera framing: 300–450 ms. Character milestone gesture: <600 ms, once. Respect reduced motion and never animate numerical evidence to suggest precision.

@@ -17,7 +17,7 @@ The composer supports text, Shift+Enter newlines, Enter submission, and one loca
 
 Gallery filters change the visible collection. A project opens in a native dialog, with Escape support, a starting prompt, and an explicit illustrative-concept boundary. Make it your own copies that prompt into the composer.
 
-Submission opens an editable brief in local React state. It is session-only, with no database, account, or model request. All engineering roles show Not started; no fake generation progress or validation badges are shown. The OpenAI runtime integration is separately verified by `npm run openai:check`, not connected to this frontend yet.
+Submission opens the [workshop editor](workshop.md), replacing the initial brief-only placeholder. Its conversation, refinements, showcase text and references remain in session-only React state, with no database, account, or model request. Checks stay Not run until real evidence exists. The OpenAI runtime integration is separately verified by `npm run openai:check`, not connected to this frontend yet.
 
 The background has a pause control and honors reduced motion. Its rendering is throttled and pauses progression while the document is hidden. Ink is represented by an editable SVG silhouette based on the selected character study, with no raster-generation call needed for the small interface mark.
 
@@ -25,6 +25,6 @@ The background has a pause control and honors reduced motion. Its rendering is t
 
 TypeScript, production build, and the existing artifact-revision tests pass. Browser review verified the hero's dimensions match a 1536 × 960 viewport and a same-origin 390 × 844 iframe viewport, with no horizontal overflow. Native preview resizing timed out, so the iframe was used for mobile CSS-layout verification; this is not a physical-device test.
 
-Browser interactions checked: category filtering, project dialog opening, example-to-prompt transfer, and submission to the brief view. Native browser screenshots were inspected. The gallery's three WebP images total about 154 KB. Fonts are bundled locally. Production frontend JavaScript is about 76 KB compressed.
+Browser interactions checked: category filtering, project dialog opening, example-to-prompt transfer, and submission to the editor. Native browser screenshots were inspected. The gallery's three WebP images total about 154 KB. Fonts are bundled locally. With the workshop and Message Scroller included, production frontend JavaScript is about 87 KB compressed.
 
 Run `npm run dev` and open http://127.0.0.1:5173/. The static build is `dist/web`.

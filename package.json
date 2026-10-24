@@ -25,6 +25,7 @@
     "@daytona/sdk": "0.226.1",
     "@fontsource-variable/manrope": "^5.3.0",
     "@openai/agents": "0.21.0",
+    "@shadcn/react": "^0.3.1",
     "dotenv": "^17.2.0",
     "lucide-react": "^1.61.0",
     "openai": "7.43.0",

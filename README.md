@@ -2,7 +2,7 @@
 
 Your idea's workshop: describe an invention, develop its mechanical and electronic design, try its behavior, and prepare its showcase and launch materials.
 
-This repository includes a local React landing page, the agent/runtime foundation, and two isolated Daytona engineering desktops. The landing prompt captures an editable session-only brief; it does not yet launch engineering jobs. The complete invention workflow remains to be connected.
+This repository includes a local React landing page and workshop editor, the agent/runtime foundation, and two isolated Daytona engineering desktops. The editor captures a session-only brief and refinements; it does not yet launch engineering jobs. The complete invention workflow remains to be connected.
 
 ## Current stack
 
@@ -23,7 +23,9 @@ npm ci
 npm run dev
 ```
 
-Open http://127.0.0.1:5173/. The hero fills the viewport, with a procedural animated blue dither field, a logo-only Ink mark, and a central idea composer. The gallery supports filtering, concept detail dialogs, and using an example as a prompt. The prompt opens an editable brief for this browser session; it makes no model request and runs no engineering tools. References remain local to the session.
+Open http://127.0.0.1:5173/. The hero fills the viewport, with a procedural animated blue dither field, a logo-only Ink mark, and a central idea composer. The gallery supports filtering, concept detail dialogs, and using an example as a prompt. Submission opens the full-viewport workshop: conversation and refinements on the left, Product and Showcase views on the right, with checks/files/details behind tool buttons. References remain local to the session. No model request or engineering tool runs from the editor yet.
+
+Open http://127.0.0.1:5173/?demo=timer for a direct workshop preview seeded with the timer gallery brief. It uses the same editor as a submitted prompt; its image is explicitly a gallery reference, not CAD generated from the brief. See [workshop scope](docs/product/workshop.md).
 
 `npm run build` creates the static frontend in `dist/web`; `npm run preview` serves that build on port 4173. Service keys stay in the server-side runtime and are not used by the frontend. The image prompts and asset provenance are in [landing assets](docs/product/landing-assets.md).
 

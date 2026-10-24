@@ -1,0 +1,42 @@
+{
+  "react": {
+    "source": "https://cdn.simpleicons.org/react",
+    "bytes": 2941
+  },
+  "vite": {
+    "source": "https://cdn.simpleicons.org/vite",
+    "bytes": 462
+  },
+  "nodejs": {
+    "source": "https://cdn.simpleicons.org/nodedotjs",
+    "bytes": 1623
+  },
+  "typescript": {
+    "source": "https://cdn.simpleicons.org/typescript",
+    "bytes": 1309
+  },
+  "kicad": {
+    "source": "https://cdn.simpleicons.org/kicad",
+    "bytes": 3265
+  },
+  "freecad": {
+    "source": "https://cdn.simpleicons.org/freecad",
+    "bytes": 525
+  },
+  "threejs": {
+    "source": "https://cdn.simpleicons.org/threedotjs",
+    "bytes": 912
+  },
+  "openai": {
+    "source": "https://raw.githubusercontent.com/lobehub/lobe-icons/master/packages/static-svg/icons/openai.svg",
+    "bytes": 1687
+  },
+  "daytona": {
+    "source": "https://framerusercontent.com/images/Sg9zE3EMDPr8DFon0ERhWoHkso.svg",
+    "bytes": 12124
+  },
+  "bfl": {
+    "source": "https://bfl.ai/",
+    "bytes": 7220
+  }
+}

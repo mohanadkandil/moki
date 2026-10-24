@@ -1,0 +1,29 @@
+{
+  "name": "moki",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Moki: an invention-to-launch workshop with coordinated design agents and evidence-backed validation.",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "doctor": "tsx scripts/doctor.ts",
+    "environments:setup": "tsx scripts/environments.ts setup",
+    "environments:status": "tsx scripts/environments.ts status",
+    "environments:stop": "tsx scripts/environments.ts stop",
+    "desktops:check": "tsx scripts/desktop-check.ts"
+  },
+  "dependencies": {
+    "@daytona/sdk": "0.226.1",
+    "@openai/agents": "0.21.0",
+    "dotenv": "^17.2.0",
+    "openai": "7.43.0",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}

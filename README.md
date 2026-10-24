@@ -9,7 +9,7 @@
   </p>
 </div>
 
-![Moki's landing page, with its blue animated field, idea composer and example projects](docs/media/landing.png)
+![Moki's hero, with its blue animated field and idea composer](docs/media/landing.png)
 
 Moki starts with a product idea. Describe what you want to make, choose a visual direction, and open a workshop where design agents work through a first CAD study. You can inspect the model in 3D, watch the engineering desktops, and return to the saved project later.
 

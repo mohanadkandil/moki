@@ -1,0 +1,8 @@
+.connection-changes{padding:16px 0;border-top:1px solid var(--lab-line,#dfe2df);font-size:13px;line-height:1.5}
+.connection-changes summary{cursor:pointer;font-size:14px;font-weight:650;list-style-position:outside;margin-left:14px}
+.connection-changes p{margin:10px 0;color:var(--lab-muted,#525c55)}
+.connection-changes section{margin-top:15px}.connection-changes h3{font-size:13px;font-weight:600;margin:0 0 6px}
+.connection-changes ul{margin:0;padding-left:18px}.connection-changes li{margin:5px 0;overflow-wrap:anywhere}
+.connection-changes li span{font-variant-numeric:tabular-nums;font-weight:600}
+.connection-changes button{border:0;padding:0;background:transparent;color:inherit;font:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer;text-align:left}
+.connection-changes button:hover{text-decoration-thickness:2px}.connection-changes :focus-visible{outline:2px solid currentColor;outline-offset:4px}

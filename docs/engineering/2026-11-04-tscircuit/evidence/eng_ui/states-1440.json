@@ -1,0 +1,65 @@
+{
+  "viewport": [
+    1440,
+    900
+  ],
+  "results": {
+    "design build lists enclosure.step": {
+      "ok": true,
+      "detail": "[\"board.tsx\",\"circuit.json\",\"schematic.svg\",\"pcb.svg\",\"board.glb\",\"gerbers.zip\",\"bom.csv\",\"pnp.csv\",\"enclosure-base.stl\",\"enclosure-lid.stl\",\"enclosure.step\",\"assembly.glb\",\"enclosure.json\",\"firmware.zip\",\"firmware-build.json\",\"receipt.json\"]"
+    },
+    "Enclosure tab offers STEP download": {
+      "ok": true
+    },
+    "back keeps lab state": {
+      "ok": true
+    },
+    "repeat build reports cache hit": {
+      "ok": true,
+      "detail": "Total18.9 s18,867 mscache hit -> Total18.7 s18,687 mscache hit"
+    },
+    "shrink edit applied": {
+      "ok": true
+    },
+    "edited source shows DRC errors": {
+      "ok": true,
+      "detail": "GeneratedFrom your edited TSXChecked by DRC68 errors, 19 warningsFirmware not compiledEdited source has no firmwareNot physically testedNothing fabricated or powered"
+    },
+    "edited source says firmware skipped with reason": {
+      "ok": true,
+      "detail": "Not compiledEdited TSX has no verified design graph or firmware pin mapNo firmware in this buildThe firmware stage was skipped: Edited TSX has no verified desig"
+    },
+    "failed job shows the error": {
+      "ok": true,
+      "detail": "This build failed. EDA render failed (exit 1): 1 | export default function Board() { return <board width={ }\n                                                            ^\nerror: Unexpected }\n    at /h"
+    },
+    "editor keeps broken text": {
+      "ok": true
+    },
+    "failed job does not claim a clean DRC": {
+      "ok": true,
+      "detail": "GeneratedNo outputChecked by DRCDid not runFirmware not compiledEdited source has no firmwareNot physically testedNothing fabricated or powered"
+    },
+    "failed job says the last good build is still shown": {
+      "ok": true
+    },
+    "arrow key moves to the next tab": {
+      "ok": true
+    },
+    "Home key goes to the first tab": {
+      "ok": true
+    },
+    "zoom button changes the drawing transform": {
+      "ok": true,
+      "detail": "translate(0px, 0px) scale(1) -> translate(-175.75px, -54.5px) scale(1.25)"
+    },
+    "every listed file downloads": {
+      "ok": true,
+      "detail": "[\"board.tsx\",\"circuit.json\",\"schematic.svg\",\"pcb.svg\",\"board.glb\",\"gerbers.zip\",\"bom.csv\",\"pnp.csv\",\"enclosure-base.stl\",\"enclosure-lid.stl\",\"assembly.glb\",\"enclosure.json\",\"receipt.json\"]"
+    },
+    "no horizontal overflow": {
+      "ok": true
+    }
+  },
+  "console": []
+}

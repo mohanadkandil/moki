@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-11-04T14:37:09.192301+00:00",
+  "command": "MOKI_BASE_PATH=/app/moki/ npm run build",
+  "exitCode": 0,
+  "scope": "Final UI production rebuild after fix_ui completion; generated HTML asset paths and targets checked",
+  "htmlSha256": "34c17072e197478bf99d9f8b97b114db720f42549429fc2a213835286a7f11e1",
+  "htmlAssetUrls": [
+    "/app/moki/favicon.svg",
+    "/app/moki/assets/index-DZnP08Fn.js",
+    "/app/moki/assets/jsx-runtime-B4UN2VIk.js",
+    "/app/moki/assets/index-DHj8Y_Nb.css"
+  ]
+}

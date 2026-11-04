@@ -1,0 +1,152 @@
+{
+  "schema": "moki.circuit-preview/1",
+  "template": "temp-monitor",
+  "title": "Temperature monitor",
+  "parts": [
+    {
+      "id": "U1",
+      "module": "esp32-devkitc-v4",
+      "role": "Runs the firmware and supplies 3.3 V from its USB-powered regulator."
+    },
+    {
+      "id": "U2",
+      "module": "ssd1306-oled-128x64-i2c",
+      "role": "Shows the current temperature."
+    },
+    {
+      "id": "U3",
+      "module": "bme280-i2c-4pin",
+      "role": "Measures temperature, humidity and pressure."
+    },
+    {
+      "id": "BZ1",
+      "module": "piezo-passive-12mm",
+      "role": "Sounds the temperature alert."
+    }
+  ],
+  "nets": [
+    {
+      "id": "+3V3",
+      "name": "+3V3",
+      "kind": "power",
+      "endpoints": [
+        {
+          "part": "U1",
+          "pin": "3V3"
+        },
+        {
+          "part": "U2",
+          "pin": "VCC"
+        },
+        {
+          "part": "U3",
+          "pin": "VIN"
+        }
+      ],
+      "why": "One 3.3 V supply from the ESP32 board’s regulator. Every part here runs at 3.3 V, so its signals match the ESP32’s 3.3 V logic.",
+      "volts": 3.3
+    },
+    {
+      "id": "GND",
+      "name": "GND",
+      "kind": "ground",
+      "endpoints": [
+        {
+          "part": "BZ1",
+          "pin": "-"
+        },
+        {
+          "part": "U1",
+          "pin": "GND"
+        },
+        {
+          "part": "U2",
+          "pin": "GND"
+        },
+        {
+          "part": "U3",
+          "pin": "GND"
+        }
+      ],
+      "why": "Common ground. Every signal is measured against it, so every part must share it."
+    },
+    {
+      "id": "I2C_SCL",
+      "name": "I2C_SCL",
+      "kind": "signal",
+      "endpoints": [
+        {
+          "part": "U1",
+          "pin": "GPIO22"
+        },
+        {
+          "part": "U2",
+          "pin": "SCL"
+        },
+        {
+          "part": "U3",
+          "pin": "SCL"
+        }
+      ],
+      "why": "I²C clock, driven by the ESP32. GPIO22 is the default SCL pin of the ESP32 Arduino Wire library. Most breakouts already carry pull-up resistors. Both I²C devices share these two wires; they answer to different addresses (OLED 0x3C, BME280 0x76)."
+    },
+    {
+      "id": "I2C_SDA",
+      "name": "I2C_SDA",
+      "kind": "signal",
+      "endpoints": [
+        {
+          "part": "U1",
+          "pin": "GPIO21"
+        },
+        {
+          "part": "U2",
+          "pin": "SDA"
+        },
+        {
+          "part": "U3",
+          "pin": "SDA"
+        }
+      ],
+      "why": "I²C data, in both directions. GPIO21 is the default SDA pin of the ESP32 Arduino Wire library. Both I²C devices share these two wires; they answer to different addresses (OLED 0x3C, BME280 0x76)."
+    },
+    {
+      "id": "BUZZER",
+      "name": "BUZZER",
+      "kind": "signal",
+      "endpoints": [
+        {
+          "part": "BZ1",
+          "pin": "+"
+        },
+        {
+          "part": "U1",
+          "pin": "GPIO23"
+        }
+      ],
+      "why": "GPIO23 toggles a tone (for example with ledcWriteTone) and the piezo clicks at that frequency. A passive piezo draws very little current, so the pin can drive it directly."
+    }
+  ],
+  "notes": [
+    {
+      "level": "warning",
+      "part": "U2",
+      "text": "OLED pin order differs between sellers (VCC and GND are sometimes swapped). Wire by the labels on your board."
+    },
+    {
+      "level": "warning",
+      "part": "U3",
+      "text": "Only the 3.3 V-only 4-pin BME280 breakout is modelled. Check that yours is not a BMP280, which has no humidity sensor."
+    }
+  ],
+  "behavior": [
+    {
+      "label": "Sensor",
+      "value": "BME280 over I²C"
+    },
+    {
+      "label": "Alert above",
+      "value": "28 °C, with a chime"
+    }
+  ]
+}

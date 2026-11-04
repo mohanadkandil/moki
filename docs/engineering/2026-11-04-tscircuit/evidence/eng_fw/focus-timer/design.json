@@ -1,0 +1,201 @@
+{
+  "schema": "moki.circuit-preview/1",
+  "template": "focus-timer",
+  "title": "Focus timer",
+  "parts": [
+    {
+      "id": "U1",
+      "module": "esp32-devkitc-v4",
+      "role": "Runs the firmware and supplies 3.3 V from its USB-powered regulator."
+    },
+    {
+      "id": "U2",
+      "module": "ssd1306-oled-128x64-i2c",
+      "role": "Shows the time left in the session."
+    },
+    {
+      "id": "SW1",
+      "module": "ky040-rotary-encoder",
+      "role": "Turn to set the time; press to start or pause."
+    },
+    {
+      "id": "BZ1",
+      "module": "piezo-passive-12mm",
+      "role": "Chimes when a session ends."
+    }
+  ],
+  "nets": [
+    {
+      "id": "+3V3",
+      "name": "+3V3",
+      "kind": "power",
+      "endpoints": [
+        {
+          "part": "SW1",
+          "pin": "VCC"
+        },
+        {
+          "part": "U1",
+          "pin": "3V3"
+        },
+        {
+          "part": "U2",
+          "pin": "VCC"
+        }
+      ],
+      "why": "One 3.3 V supply from the ESP32 board’s regulator. Every part here runs at 3.3 V, so its signals match the ESP32’s 3.3 V logic.",
+      "volts": 3.3
+    },
+    {
+      "id": "GND",
+      "name": "GND",
+      "kind": "ground",
+      "endpoints": [
+        {
+          "part": "BZ1",
+          "pin": "-"
+        },
+        {
+          "part": "SW1",
+          "pin": "GND"
+        },
+        {
+          "part": "U1",
+          "pin": "GND"
+        },
+        {
+          "part": "U2",
+          "pin": "GND"
+        }
+      ],
+      "why": "Common ground. Every signal is measured against it, so every part must share it."
+    },
+    {
+      "id": "I2C_SCL",
+      "name": "I2C_SCL",
+      "kind": "signal",
+      "endpoints": [
+        {
+          "part": "U1",
+          "pin": "GPIO22"
+        },
+        {
+          "part": "U2",
+          "pin": "SCL"
+        }
+      ],
+      "why": "I²C clock, driven by the ESP32. GPIO22 is the default SCL pin of the ESP32 Arduino Wire library. Most breakouts already carry pull-up resistors."
+    },
+    {
+      "id": "I2C_SDA",
+      "name": "I2C_SDA",
+      "kind": "signal",
+      "endpoints": [
+        {
+          "part": "U1",
+          "pin": "GPIO21"
+        },
+        {
+          "part": "U2",
+          "pin": "SDA"
+        }
+      ],
+      "why": "I²C data, in both directions. GPIO21 is the default SDA pin of the ESP32 Arduino Wire library."
+    },
+    {
+      "id": "ENC_A",
+      "name": "ENC_A",
+      "kind": "signal",
+      "endpoints": [
+        {
+          "part": "SW1",
+          "pin": "CLK"
+        },
+        {
+          "part": "U1",
+          "pin": "GPIO32"
+        }
+      ],
+      "why": "Encoder channel A (CLK). With channel B it tells which way the knob turned: whichever changes first gives the direction."
+    },
+    {
+      "id": "ENC_B",
+      "name": "ENC_B",
+      "kind": "signal",
+      "endpoints": [
+        {
+          "part": "SW1",
+          "pin": "DT"
+        },
+        {
+          "part": "U1",
+          "pin": "GPIO33"
+        }
+      ],
+      "why": "Encoder channel B (DT), read alongside channel A. GPIO32 and 33 are plain input/output pins with no boot role."
+    },
+    {
+      "id": "ENC_SW",
+      "name": "ENC_SW",
+      "kind": "signal",
+      "endpoints": [
+        {
+          "part": "SW1",
+          "pin": "SW"
+        },
+        {
+          "part": "U1",
+          "pin": "GPIO27"
+        }
+      ],
+      "why": "The knob’s push switch connects this pin to ground when pressed. Enable INPUT_PULLUP on GPIO27 so it reads high when released."
+    },
+    {
+      "id": "BUZZER",
+      "name": "BUZZER",
+      "kind": "signal",
+      "endpoints": [
+        {
+          "part": "BZ1",
+          "pin": "+"
+        },
+        {
+          "part": "U1",
+          "pin": "GPIO23"
+        }
+      ],
+      "why": "GPIO23 toggles a tone (for example with ledcWriteTone) and the piezo clicks at that frequency. A passive piezo draws very little current, so the pin can drive it directly."
+    }
+  ],
+  "notes": [
+    {
+      "level": "warning",
+      "part": "U2",
+      "text": "OLED pin order differs between sellers (VCC and GND are sometimes swapped). Wire by the labels on your board."
+    },
+    {
+      "level": "warning",
+      "part": "SW1",
+      "text": "Power the encoder from 3V3, not 5V: its pull-ups would otherwise put 5 V on ESP32 inputs."
+    },
+    {
+      "level": "info",
+      "part": "BZ1",
+      "text": "Use a passive piezo transducer. A magnetic or active buzzer needs a transistor driver, which is not drawn here."
+    }
+  ],
+  "behavior": [
+    {
+      "label": "Session length",
+      "value": "25 min"
+    },
+    {
+      "label": "Knob",
+      "value": "Turn to adjust, press to start or pause"
+    },
+    {
+      "label": "End of session",
+      "value": "Short chime on the piezo"
+    }
+  ]
+}

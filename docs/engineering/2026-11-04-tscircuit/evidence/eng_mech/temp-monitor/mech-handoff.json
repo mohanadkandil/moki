@@ -1,0 +1,462 @@
+{
+  "schema": "moki.mech-handoff/1",
+  "source": {
+    "circuitJsonSha256": "4585b959b18e49e0411c675b302be7d2489522bed8c3980378628c3d910e8420",
+    "label": "moki 7e96c917404abfd0"
+  },
+  "board": {
+    "widthMm": 90,
+    "heightMm": 95,
+    "thicknessMm": 1.6,
+    "center": {
+      "x": 0,
+      "y": 0
+    },
+    "outline": [
+      {
+        "x": -45,
+        "y": -47.5
+      },
+      {
+        "x": 45,
+        "y": -47.5
+      },
+      {
+        "x": 45,
+        "y": 47.5
+      },
+      {
+        "x": -45,
+        "y": 47.5
+      }
+    ],
+    "holes": [
+      {
+        "x": -41,
+        "y": -43.5,
+        "diameterMm": 3.2
+      },
+      {
+        "x": -41,
+        "y": 43.5,
+        "diameterMm": 3.2
+      },
+      {
+        "x": 41,
+        "y": -43.5,
+        "diameterMm": 3.2
+      },
+      {
+        "x": 41,
+        "y": 43.5,
+        "diameterMm": 3.2
+      }
+    ]
+  },
+  "parts": [
+    {
+      "id": "R1",
+      "module": "resistor-axial",
+      "name": "Resistor, ¼ W through-hole",
+      "category": "passive",
+      "center": {
+        "x": 20,
+        "y": -5.3
+      },
+      "rotationDeg": 0,
+      "bbox": {
+        "minX": 18.7,
+        "minY": -14.3,
+        "maxX": 21.3,
+        "maxY": 3.7
+      },
+      "stack": {
+        "mount": "soldered",
+        "socketMm": 0,
+        "spacerMm": 0,
+        "pcbMm": 0,
+        "componentsMm": 3.2,
+        "topMm": 3.2,
+        "raisedToLid": false
+      },
+      "fit": {
+        "method": "pads",
+        "pins": 2,
+        "maxResidualMm": 0
+      },
+      "blocks": [
+        {
+          "shape": "box",
+          "color": "resistor",
+          "label": "resistor",
+          "x": 20,
+          "y": -5.3,
+          "w": 2.4,
+          "h": 7,
+          "z0": 0.8000000000000003,
+          "z1": 3.2,
+          "rotationDeg": 0
+        }
+      ],
+      "confidence": "Standard 1/4 W axial body, lying flat."
+    },
+    {
+      "id": "U1",
+      "module": "esp32-devkitc-v4",
+      "name": "ESP32-DevKitC V4",
+      "category": "controller",
+      "center": {
+        "x": -22.05,
+        "y": -20.3
+      },
+      "rotationDeg": 0,
+      "bbox": {
+        "minX": -36,
+        "minY": -48.5,
+        "maxX": -8.1,
+        "maxY": 6.9
+      },
+      "stack": {
+        "mount": "socketed",
+        "socketMm": 8.5,
+        "spacerMm": 2.54,
+        "pcbMm": 1.6,
+        "componentsMm": 4,
+        "topMm": 16.64,
+        "raisedToLid": false
+      },
+      "fit": {
+        "method": "pads",
+        "pins": 38,
+        "maxResidualMm": 0
+      },
+      "blocks": [
+        {
+          "shape": "box",
+          "color": "socket",
+          "label": "socket left",
+          "x": -34.75,
+          "y": -22.86,
+          "w": 2.54,
+          "h": 48.26,
+          "z0": 0,
+          "z1": 8.5,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "socket",
+          "label": "socket right",
+          "x": -9.35,
+          "y": -22.86,
+          "w": 2.54,
+          "h": 48.26,
+          "z0": 0,
+          "z1": 8.5,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "plastic",
+          "label": "male spacer left",
+          "x": -34.75,
+          "y": -22.86,
+          "w": 2.54,
+          "h": 48.26,
+          "z0": 8.5,
+          "z1": 11.04,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "plastic",
+          "label": "male spacer right",
+          "x": -9.35,
+          "y": -22.86,
+          "w": 2.54,
+          "h": 48.26,
+          "z0": 8.5,
+          "z1": 11.04,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "pcb-black",
+          "label": "devkit pcb",
+          "x": -22.05,
+          "y": -20.3,
+          "w": 27.9,
+          "h": 54.4,
+          "z0": 11.04,
+          "z1": 12.639999999999999,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "metal",
+          "label": "wroom shield",
+          "x": -22.05,
+          "y": -9.5,
+          "w": 16.1,
+          "h": 17.6,
+          "z0": 12.639999999999999,
+          "z1": 15.84,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "pcb-dark",
+          "label": "wroom antenna",
+          "x": -22.05,
+          "y": 2.7,
+          "w": 18,
+          "h": 6.6,
+          "z0": 12.639999999999999,
+          "z1": 13.44,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "metal",
+          "label": "micro-usb",
+          "x": -22.05,
+          "y": -45.9,
+          "w": 7.6,
+          "h": 6.2,
+          "z0": 12.639999999999999,
+          "z1": 15.639999999999999,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "plastic",
+          "label": "en button",
+          "x": -29.3,
+          "y": -44.6,
+          "w": 2.6,
+          "h": 2.6,
+          "z0": 12.639999999999999,
+          "z1": 16.14,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "plastic",
+          "label": "boot button",
+          "x": -14.8,
+          "y": -44.6,
+          "w": 2.6,
+          "h": 2.6,
+          "z0": 12.639999999999999,
+          "z1": 16.14,
+          "rotationDeg": 0
+        }
+      ],
+      "confidence": "Outline 54.4 x 27.9 mm is quoted by a third-party guide, whose own caption also says 48.2 mm; another database says 54 x 27 mm. Espressif publishes a drawing we could not read numerically. 25.4 mm row spacing comes from the catalog and was not confirmed. USB position and component height are estimates, and USB-C clones differ."
+    },
+    {
+      "id": "U2",
+      "module": "ssd1306-oled-128x64-i2c",
+      "name": "0.96″ OLED, SSD1306, I²C",
+      "category": "display",
+      "center": {
+        "x": 20,
+        "y": 24.6
+      },
+      "rotationDeg": 0,
+      "bbox": {
+        "minX": 6.35,
+        "minY": 10.7,
+        "maxX": 33.65,
+        "maxY": 38.5
+      },
+      "stack": {
+        "mount": "socketed",
+        "socketMm": 8.5,
+        "spacerMm": 2.54,
+        "pcbMm": 1.2,
+        "componentsMm": 2.9,
+        "topMm": 15.14,
+        "raisedToLid": false
+      },
+      "fit": {
+        "method": "pads",
+        "pins": 4,
+        "maxResidualMm": 0
+      },
+      "blocks": [
+        {
+          "shape": "box",
+          "color": "socket",
+          "label": "socket",
+          "x": 20,
+          "y": 36.9,
+          "w": 10.16,
+          "h": 2.54,
+          "z0": 0,
+          "z1": 8.5,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "plastic",
+          "label": "male spacer",
+          "x": 20,
+          "y": 36.9,
+          "w": 10.16,
+          "h": 2.54,
+          "z0": 8.5,
+          "z1": 11.04,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "pcb-blue",
+          "label": "oled pcb",
+          "x": 20,
+          "y": 24.6,
+          "w": 27.3,
+          "h": 27.8,
+          "z0": 11.04,
+          "z1": 12.239999999999998,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "glass",
+          "label": "oled glass",
+          "x": 20,
+          "y": 23.9,
+          "w": 26,
+          "h": 18.6,
+          "z0": 12.239999999999998,
+          "z1": 15.120000000000001,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "active",
+          "label": "oled active area",
+          "x": 20,
+          "y": 25.9,
+          "w": 21.744,
+          "h": 10.864,
+          "z0": 15.120000000000001,
+          "z1": 15.14,
+          "rotationDeg": 0
+        }
+      ],
+      "confidence": "Active area 21.744 x 10.864 mm is from a panel datasheet. PCB outline varies by seller (about 27 x 27 mm). The active area position on the PCB was not found in any drawing: y = 12.6 mm is estimated, so the window carries a 1.2 mm margin per side."
+    },
+    {
+      "id": "U3",
+      "module": "ds18b20-to92",
+      "name": "DS18B20 temperature sensor (TO-92)",
+      "category": "sensor",
+      "center": {
+        "x": 20,
+        "y": -34.3
+      },
+      "rotationDeg": 0,
+      "bbox": {
+        "minX": 17.5,
+        "minY": -36.3,
+        "maxX": 22.5,
+        "maxY": -32.3
+      },
+      "stack": {
+        "mount": "soldered",
+        "socketMm": 0,
+        "spacerMm": 0,
+        "pcbMm": 0,
+        "componentsMm": 13,
+        "topMm": 13,
+        "raisedToLid": false
+      },
+      "fit": {
+        "method": "pads",
+        "pins": 3,
+        "maxResidualMm": 0
+      },
+      "blocks": [
+        {
+          "shape": "cylinder",
+          "color": "plastic",
+          "label": "to-92 body",
+          "x": 20,
+          "y": -34.3,
+          "w": 4.6,
+          "h": 4.6,
+          "z0": 8.4,
+          "z1": 13,
+          "rotationDeg": 0
+        }
+      ],
+      "confidence": "TO-92 body is a standard package. 13 mm standing height comes from the catalog size with straight leads."
+    }
+  ],
+  "apertures": [
+    {
+      "id": "U1-usb",
+      "part": "U1",
+      "module": "esp32-devkitc-v4",
+      "purpose": "usb",
+      "face": "y_neg",
+      "shape": "pill",
+      "center": {
+        "x": -22.05,
+        "y": -47.5
+      },
+      "zMm": 14.14,
+      "widthMm": 12.5,
+      "heightMm": 8.5,
+      "rotationDeg": 0,
+      "note": "Sized for a micro-USB cable overmould (estimated up to 12 x 8 mm). The plug and overmould pass through the wall."
+    },
+    {
+      "id": "U2-display-active-area",
+      "part": "U2",
+      "module": "ssd1306-oled-128x64-i2c",
+      "purpose": "display-active-area",
+      "face": "z_pos",
+      "shape": "rect",
+      "center": {
+        "x": 20,
+        "y": 25.9
+      },
+      "zMm": 15.14,
+      "widthMm": 24.144,
+      "heightMm": 13.264000000000001,
+      "rotationDeg": 0,
+      "activeAreaMm": {
+        "w": 21.744,
+        "h": 10.864
+      },
+      "note": "Window over the active area plus the margin."
+    },
+    {
+      "id": "U3-sensor-air",
+      "part": "U3",
+      "module": "ds18b20-to92",
+      "purpose": "sensor-air",
+      "face": "z_pos",
+      "shape": "grid",
+      "center": {
+        "x": 20,
+        "y": -34.3
+      },
+      "zMm": 13,
+      "widthMm": 9,
+      "heightMm": 9,
+      "rotationDeg": 0,
+      "grid": {
+        "holeMm": 2.5,
+        "columns": 3,
+        "rows": 3,
+        "pitchMm": 4
+      },
+      "note": "Lets room air reach the sensor. It will still read warm from the ESP32 inside the box."
+    }
+  ],
+  "warnings": []
+}

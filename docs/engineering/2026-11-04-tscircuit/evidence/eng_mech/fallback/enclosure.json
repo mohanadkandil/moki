@@ -1,0 +1,187 @@
+{
+  "schema": "moki.enclosure/1",
+  "engine": {
+    "name": "@tscircuit/create-fdm-enclosure",
+    "version": "0.0.7",
+    "kernel": "JSCAD mesh",
+    "fallback": true,
+    "fallbackReason": "build123d venv not found at /nonexistent"
+  },
+  "source": {
+    "circuitJsonSha256": "77e4ab6c10a378acdfa3819ef48ce99bc60bf0e8fe4bfb08a7879476f1c370c3",
+    "label": "moki 484fd6e8aeec4d7f"
+  },
+  "units": "mm",
+  "frame": "Solver frame: the box is centred on `offset` in board coordinates. Z = 0 is the outside of the floor.",
+  "offset": {
+    "x": 0,
+    "y": -0.5
+  },
+  "dimensions": {
+    "outerMm": {
+      "x": 94.6,
+      "y": 105.6,
+      "z": 30.490000000000002
+    },
+    "seamZ": 28.490000000000002,
+    "boardBottomZ": 7,
+    "boardTopZ": 8.6,
+    "wallMm": 2,
+    "floorMm": 2,
+    "lidMm": 2
+  },
+  "clearancesMm": {
+    "fit": 0.3
+  },
+  "apertures": [
+    {
+      "id": "BZ1-sound",
+      "part": "BZ1",
+      "purpose": "sound",
+      "face": "z_pos",
+      "shape": "grid",
+      "position": {
+        "x": 20,
+        "y": -7.8
+      },
+      "sizeMm": {
+        "width": 8,
+        "height": 8
+      },
+      "note": "Sound holes over the transducer."
+    },
+    {
+      "id": "SW1-encoder-shaft",
+      "part": "SW1",
+      "purpose": "encoder-shaft",
+      "face": "z_pos",
+      "shape": "circle",
+      "position": {
+        "x": 13.2,
+        "y": -25.3
+      },
+      "sizeMm": {
+        "width": 7.4,
+        "height": 7.4
+      },
+      "note": "Clears the 7 mm threaded bushing. A panel nut on the lid carries the push force, because the single socket cannot."
+    },
+    {
+      "id": "U1-usb",
+      "part": "U1",
+      "purpose": "usb",
+      "face": "y_neg",
+      "shape": "pill",
+      "position": {
+        "x": -22.05,
+        "y": -50
+      },
+      "sizeMm": {
+        "width": 12.5,
+        "height": 8.5
+      },
+      "note": "Sized for a micro-USB cable overmould (estimated up to 12 x 8 mm). The plug and overmould pass through the wall."
+    },
+    {
+      "id": "U2-display-active-area",
+      "part": "U2",
+      "purpose": "display-active-area",
+      "face": "z_pos",
+      "shape": "rect",
+      "position": {
+        "x": 20,
+        "y": 28.4
+      },
+      "sizeMm": {
+        "width": 24.144,
+        "height": 13.264000000000001
+      },
+      "note": "Window over the active area plus the margin."
+    }
+  ],
+  "printOrientation": {
+    "base": "Floor on the bed, as exported.",
+    "lid": "Outer face on the bed, as exported.",
+    "lidExportTransform": {
+      "note": "Assembled (x, y, z) = (x_stl, -y_stl, totalHeight - z_stl).",
+      "totalHeightMm": 30.490000000000002
+    }
+  },
+  "material": {
+    "name": "PLA",
+    "densityGPerCm3": 1.24
+  },
+  "estimate": {
+    "volumeCm3": 60.886,
+    "filamentG": 75.5,
+    "basis": "Mesh volume at 100% infill: an upper bound."
+  },
+  "validation": {
+    "base": {
+      "stl": {
+        "triangles": 1480,
+        "vertices": 912,
+        "edges": 2510,
+        "boundaryEdges": 580,
+        "nonManifoldEdges": 0,
+        "windingConflictEdges": 0,
+        "degenerateTriangles": 0,
+        "eulerCharacteristic": -118,
+        "signedVolumeMm3": 40381.9,
+        "watertight": false
+      }
+    },
+    "lid": {
+      "stl": {
+        "triangles": 1668,
+        "vertices": 996,
+        "edges": 2723,
+        "boundaryEdges": 442,
+        "nonManifoldEdges": 0,
+        "windingConflictEdges": 0,
+        "degenerateTriangles": 0,
+        "eulerCharacteristic": -59,
+        "signedVolumeMm3": 20504,
+        "watertight": false
+      }
+    }
+  },
+  "physicalPrint": false,
+  "assumptions": [
+    "No physical print or test fit has happened.",
+    "Module dimensions are catalog estimates.",
+    "This is the fallback box: no STEP file, no lid pillars, friction-fit lid."
+  ],
+  "warnings": [
+    "The baseline is a mesh box with no STEP export. Its lid is friction-fit only, with no lid pillars, and the board screws to the standoffs from above.",
+    "The baseline STLs are not edge-manifold (base: 580 open and 0 non-manifold edges; lid: 442 open and 0 non-manifold edges). JSCAD booleans leave T-junctions, so a slicer may need to repair them."
+  ],
+  "stages": [
+    {
+      "name": "mech-handoff",
+      "status": "done",
+      "ms": 26.4,
+      "note": "4 parts, 4 openings, 4 M3 holes"
+    },
+    {
+      "name": "enclosure-baseline",
+      "status": "done",
+      "ms": 481,
+      "note": "create-fdm-enclosure 0.0.7: 3148 triangles, watertight base=false lid=false"
+    },
+    {
+      "name": "enclosure",
+      "status": "failed",
+      "ms": 8.6,
+      "note": "build123d venv not found at /nonexistent"
+    },
+    {
+      "name": "assembly",
+      "status": "done",
+      "ms": 43.5,
+      "note": "663056 bytes"
+    }
+  ],
+  "ms": 565.3,
+  "mechCache": "miss"
+}

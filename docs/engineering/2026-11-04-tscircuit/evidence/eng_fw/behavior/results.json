@@ -1,0 +1,25 @@
+{
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "results": [
+    {
+      "template": "focus-timer",
+      "status": "pass",
+      "scope": "Generated C++ state machine executed on host with mocked GPIO/ADC/sensor/time/display/LEDC; no hardware verification"
+    },
+    {
+      "template": "light-lamp",
+      "status": "pass",
+      "scope": "Generated C++ state machine executed on host with mocked GPIO/ADC/sensor/time/display/LEDC; no hardware verification"
+    },
+    {
+      "template": "temp-monitor",
+      "status": "pass",
+      "scope": "Generated C++ state machine executed on host with mocked GPIO/ADC/sensor/time/display/LEDC; no hardware verification"
+    },
+    {
+      "template": "temp-monitor-bme280",
+      "status": "pass",
+      "scope": "Generated C++ state machine executed on host with mocked GPIO/ADC/sensor/time/display/LEDC; no hardware verification"
+    }
+  ]
+}

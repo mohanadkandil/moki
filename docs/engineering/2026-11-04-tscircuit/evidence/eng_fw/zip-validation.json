@@ -1,0 +1,30 @@
+[
+  {
+    "archive": "docs/engineering/2026-11-04-tscircuit/evidence/eng_fw/focus-timer/firmware.zip",
+    "bytes": 5719,
+    "sha256": "92ef389b312f479c68849543a1f6fc85cd0e92eb97a58692abc750879f76ad24",
+    "files": 4,
+    "crcAndContents": "pass"
+  },
+  {
+    "archive": "docs/engineering/2026-11-04-tscircuit/evidence/eng_fw/light-lamp/firmware.zip",
+    "bytes": 3248,
+    "sha256": "599b4150720ef3dd26e185579bfeef06199d854d899e34972d632883bc5f4fae",
+    "files": 4,
+    "crcAndContents": "pass"
+  },
+  {
+    "archive": "docs/engineering/2026-11-04-tscircuit/evidence/eng_fw/temp-monitor/firmware.zip",
+    "bytes": 5350,
+    "sha256": "3817fce52d8bc4423b1cbd203a422873ec84e0a93bafb054c5f56f541bf97d8d",
+    "files": 4,
+    "crcAndContents": "pass"
+  },
+  {
+    "archive": "docs/engineering/2026-11-04-tscircuit/evidence/eng_fw/temp-monitor-bme280/firmware.zip",
+    "bytes": 5076,
+    "sha256": "bb3146108e237b96d4518f89e6745d71f2326c984d8ff882d29082cc9719b4a1",
+    "files": 4,
+    "crcAndContents": "pass"
+  }
+]

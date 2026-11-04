@@ -1,0 +1,59 @@
+{
+  "checkedAt": "2026-11-04T14:32:04.989Z",
+  "scope": "Actual Apps controller registration and public unauthenticated boundary; no Moki start, no live app switch",
+  "url": "https://<private-tunnel>.trycloudflare.com/app/moki",
+  "before": {
+    "rigrove": "active",
+    "rigrovePid": "2792830",
+    "moki": "inactive"
+  },
+  "after": {
+    "rigrove": "active",
+    "rigrovePid": "2792830",
+    "moki": "inactive",
+    "mokiPid": "0",
+    "mokiEnablement": "static"
+  },
+  "registry": [
+    {
+      "id": "rigrove",
+      "title": "Rigrove",
+      "description": "Build and edit robot environments.",
+      "state": "running",
+      "healthy": true,
+      "url": "/app/rigrove",
+      "active": true
+    },
+    {
+      "id": "moki",
+      "title": "Moki",
+      "description": "Build and inspect circuit boards, cases and firmware.",
+      "state": "stopped",
+      "healthy": false,
+      "url": "/app/moki",
+      "active": false
+    }
+  ],
+  "external": [
+    {
+      "path": "/app/moki",
+      "status": 303,
+      "location": "/login?next=%2Fapp%2Fmoki"
+    },
+    {
+      "path": "/app/moki/studio",
+      "status": 303,
+      "location": "/login?next=%2Fapp%2Fmoki%2Fstudio"
+    },
+    {
+      "path": "/app/moki/api/board/jobs",
+      "status": 401,
+      "location": null
+    },
+    {
+      "path": "/app/moki/assets/missing.js",
+      "status": 401,
+      "location": null
+    }
+  ]
+}

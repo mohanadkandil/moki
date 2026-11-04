@@ -1,0 +1,45 @@
+{
+  "verifiedAt": "2026-11-04T12:16:45.392524+00:00",
+  "npmTest": {
+    "exitCode": 0,
+    "passed": 61,
+    "failed": 0,
+    "durationMs": 45565.13846,
+    "logSha256": "0485d28684beff2d3d3d4b8ac6114cd49e90f0d0be7cc7dc982426b520f8b007"
+  },
+  "typecheck": {
+    "exitCode": 0,
+    "scope": "root and web",
+    "logSha256": "d5b89f180d843f1af7ab20c39f0c9ce0d715d1c856ded17ed363d2406e44360c"
+  },
+  "benchmark": {
+    "jobs": 24,
+    "drcErrors": 0,
+    "failedStages": 0,
+    "nativeEnclosureJobs": 24,
+    "compiledFirmwareJobs": 24,
+    "artifactsChecked": 384,
+    "sha256": "5c2d2d2199ee3dafcd22a9f20a53ad57816d303fc2e71cc12e947eac4aae6aa0",
+    "scope": "5 fresh subprocess runs with EDA and mechanical artifact caches bypassed, 3 EDA cache reuse runs per template (mechanical cache independently reported); installed OS/toolchain caches remain warm. Whole job timings exclude queue waiting."
+  },
+  "sharedGeometryTests": {
+    "passed": 3,
+    "failed": 0
+  },
+  "screenshots": {
+    "schematic": "focus-schematic.png",
+    "pcb": "focus-pcb.png",
+    "inspected": true,
+    "svgByteIdenticalToFinalJob": true
+  },
+  "sourceChecksums": {
+    "server/board-api.ts": "0da275f9134f2e6bb91236e9faf75048bec4b69fa85633729d7f52e2fd627c82",
+    "src/board/codegen.ts": "015e23de3825367e7d29f7f311fa912725b41067694085629793acc47baa986e",
+    "src/board/preview-model.ts": "34aca3995b35d4a7b7991c98e3e2ec282c307a5819c8fc6734f573dfe71e45df",
+    "eda/render.ts": "07e466868189648ab02cec60a1d33897801f0b099ba15babad1da80947ac2fe7",
+    "eda/versions.ts": "398fb6eb53bb0156b961724a00cba6fcbcdee5a421d448aeb979eb24a04609f9",
+    "eda/bun.lock": "4f601d594e16106e878d15c351a45e0be4dc93ad15ec6e3935515a04dd1e24a4"
+  },
+  "independentReview": "coordinator-owned; not claimed by implementer",
+  "engCoreState": "complete; all verification commands finished; no persistent worker or server"
+}

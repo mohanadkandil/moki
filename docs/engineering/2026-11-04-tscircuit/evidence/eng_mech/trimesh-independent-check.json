@@ -1,0 +1,57 @@
+{
+  "tool": "trimesh 4.5.3",
+  "focus-timer/base": {
+    "watertight": true,
+    "windingConsistent": true,
+    "isVolume": true,
+    "bodyCount": 1,
+    "eulerNumber": -40,
+    "volumeMm3": 39779.3,
+    "faces": 11024
+  },
+  "focus-timer/lid": {
+    "watertight": true,
+    "windingConsistent": true,
+    "isVolume": true,
+    "bodyCount": 1,
+    "eulerNumber": -20,
+    "volumeMm3": 22539.3,
+    "faces": 5742
+  },
+  "light-lamp/base": {
+    "watertight": true,
+    "windingConsistent": true,
+    "isVolume": true,
+    "bodyCount": 1,
+    "eulerNumber": -40,
+    "volumeMm3": 41253.3,
+    "faces": 11024
+  },
+  "light-lamp/lid": {
+    "watertight": true,
+    "windingConsistent": true,
+    "isVolume": true,
+    "bodyCount": 1,
+    "eulerNumber": -2,
+    "volumeMm3": 24275.3,
+    "faces": 3656
+  },
+  "temp-monitor/base": {
+    "watertight": true,
+    "windingConsistent": true,
+    "isVolume": true,
+    "bodyCount": 1,
+    "eulerNumber": -40,
+    "volumeMm3": 38305.3,
+    "faces": 11024
+  },
+  "temp-monitor/lid": {
+    "watertight": true,
+    "windingConsistent": true,
+    "isVolume": true,
+    "bodyCount": 1,
+    "eulerNumber": -18,
+    "volumeMm3": 21607.9,
+    "faces": 5486
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-11-04T14:34:11.777Z",
+  "scope": "Actual Vite production preview and actual Apps gateway; isolated board job root, fixture authentication and mocked units; no live app switch",
+  "checks": [
+    {
+      "name": "preview uses production base, serves Studio and Lab HTML",
+      "pass": true
+    },
+    {
+      "name": "unknown Host is refused on HTML, API and redirect",
+      "pass": true
+    },
+    {
+      "name": "preview refuses workshop, filesystem, HMR, study and source paths",
+      "pass": true
+    },
+    {
+      "name": "prefixed board API requires its own server capability",
+      "pass": true
+    },
+    {
+      "name": "board Origin check remains active with original public Host",
+      "pass": true
+    },
+    {
+      "name": "real gateway and preview serve authenticated Studio, Lab and JS assets",
+      "pass": true
+    },
+    {
+      "name": "real gateway requires authentication on HTML, assets, API and raw path escapes",
+      "pass": true
+    },
+    {
+      "name": "real gateway token injection satisfies board API without browser secret",
+      "pass": true
+    },
+    {
+      "name": "real gateway redirects bare app and blocks workshop API",
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "firmware-compile",
+  "status": "done",
+  "ms": 3906,
+  "note": "Compile checked for esp32dev; no physical flash.",
+  "compiled": true,
+  "board": "esp32dev",
+  "platform": "platformio/espressif32@6.10.0",
+  "host": "linux-arm64",
+  "toolVersions": {
+    "platformio": "PlatformIO Core, version 6.1.19",
+    "framework-arduinoespressif32": "3.20017.241212+sha.dcc1105b",
+    "tool-esptoolpy": "1.40501.0 (4.5.1)",
+    "toolchain-xtensa-esp32": "8.4.0+2021r2-patch5",
+    "Adafruit BME280 Library": "2.2.4",
+    "Adafruit BusIO": "1.17.0",
+    "Adafruit GFX Library": "1.11.11",
+    "Adafruit SSD1306": "2.5.13",
+    "Adafruit Unified Sensor": "1.1.15",
+    "Wire": "2.0.0"
+  },
+  "flash": {
+    "percent": 23.9,
+    "usedBytes": 313437,
+    "totalBytes": 1310720
+  },
+  "ram": {
+    "percent": 6.8,
+    "usedBytes": 22168,
+    "totalBytes": 327680
+  },
+  "exitCode": 0,
+  "logTail": "Processing esp32dev (platform: platformio/espressif32@6.10.0; board: esp32dev; framework: arduino)\n--------------------------------------------------------------------------------\nVerbose mode can be enabled via `-v, --verbose` option\nCONFIGURATION: https://docs.platformio.org/page/boards/espressif32/esp32dev.html\nPLATFORM: Espressif 32 (6.10.0) > Espressif ESP32 Dev Module\nHARDWARE: ESP32 240MHz, 320KB RAM, 4MB Flash\nDEBUG: Current (cmsis-dap) External (cmsis-dap, esp-bridge, esp-prog, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa)\nPACKAGES: \n - framework-arduinoespressif32 @ 3.20017.241212+sha.dcc1105b \n - tool-esptoolpy @ 1.40501.0 (4.5.1) \n - toolchain-xtensa-esp32 @ 8.4.0+2021r2-patch5\nLDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf\nLDF Modes: Finder ~ chain, Compatibility ~ soft\nFound 39 compatible libraries\nScanning dependencies...\nDependency Graph\n|-- Adafruit BME280 Library @ 2.2.4\n|-- Adafruit BusIO @ 1.17.0\n|-- Adafruit GFX Library @ 1.11.11\n|-- Adafruit SSD1306 @ 2.5.13\n|-- Adafruit Unified Sensor @ 1.1.15\n|-- Wire @ 2.0.0\nBuilding in release mode\nRetrieving maximum program size .pio/build/esp32dev/firmware.elf\nChecking size .pio/build/esp32dev/firmware.elf\nAdvanced Memory Usage is available via \"PlatformIO Home > Project Inspect\"\nRAM:   [=         ]   6.8% (used 22168 bytes from 327680 bytes)\nFlash: [==        ]  23.9% (used 313437 bytes from 1310720 bytes)\n========================= [SUCCESS] Took 3.18 seconds =========================\n",
+  "physicalFlash": false
+}

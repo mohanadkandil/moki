@@ -1,0 +1,35 @@
+{
+  "reducedMotionSpinnerAnimation": "none",
+  "requests": [
+    [
+      1270,
+      "start",
+      "board.glb"
+    ],
+    [
+      9342,
+      "finished",
+      "board.glb"
+    ],
+    [
+      9854,
+      "start",
+      "assembly.glb"
+    ],
+    [
+      9874,
+      "finished",
+      "assembly.glb"
+    ],
+    [
+      10601,
+      "start",
+      "board.glb"
+    ],
+    [
+      10610,
+      "finished",
+      "board.glb"
+    ]
+  ]
+}

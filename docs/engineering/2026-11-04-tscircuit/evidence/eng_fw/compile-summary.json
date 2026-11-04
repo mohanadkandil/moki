@@ -1,0 +1,196 @@
+{
+  "measuredAt": "2026-11-04T11:29:50.431Z",
+  "host": "linux-arm64",
+  "method": "Sequential: first project provisions tools, following first builds reuse tool downloads. Warm = remove .pio/build, retain toolchains/library cache, rebuild all translation units; -j 2. Generation ms includes deterministic zip.",
+  "physicalFlash": false,
+  "results": [
+    {
+      "template": "focus-timer",
+      "generation": {
+        "name": "firmware",
+        "status": "done",
+        "ms": 14,
+        "note": "PlatformIO project generated; compilation is reported separately."
+      },
+      "firstCompile": {
+        "name": "firmware-compile",
+        "status": "done",
+        "ms": 55295,
+        "note": "Compile checked for esp32dev; no physical flash."
+      },
+      "warmCompile": {
+        "name": "firmware-compile",
+        "status": "done",
+        "ms": 15487,
+        "note": "Compile checked for esp32dev; no physical flash."
+      },
+      "flash": {
+        "percent": 23.3,
+        "usedBytes": 305961,
+        "totalBytes": 1310720
+      },
+      "ram": {
+        "percent": 6.7,
+        "usedBytes": 22096,
+        "totalBytes": 327680
+      },
+      "toolVersions": {
+        "platformio": "PlatformIO Core, version 6.1.19",
+        "framework-arduinoespressif32": "3.20017.241212+sha.dcc1105b",
+        "tool-esptoolpy": "1.40501.0 (4.5.1)",
+        "toolchain-xtensa-esp32": "8.4.0+2021r2-patch5",
+        "Adafruit BusIO": "1.17.0",
+        "Adafruit GFX Library": "1.11.11",
+        "Adafruit SSD1306": "2.5.13",
+        "Wire": "2.0.0"
+      },
+      "receiptVerification": {
+        "name": "firmware-compile",
+        "status": "done",
+        "ms": 3579,
+        "note": "Compile checked for esp32dev; no physical flash."
+      }
+    },
+    {
+      "template": "light-lamp",
+      "generation": {
+        "name": "firmware",
+        "status": "done",
+        "ms": 7,
+        "note": "PlatformIO project generated; compilation is reported separately."
+      },
+      "firstCompile": {
+        "name": "firmware-compile",
+        "status": "done",
+        "ms": 11336,
+        "note": "Compile checked for esp32dev; no physical flash."
+      },
+      "warmCompile": {
+        "name": "firmware-compile",
+        "status": "done",
+        "ms": 11457,
+        "note": "Compile checked for esp32dev; no physical flash."
+      },
+      "flash": {
+        "percent": 21.5,
+        "usedBytes": 281513,
+        "totalBytes": 1310720
+      },
+      "ram": {
+        "percent": 6.6,
+        "usedBytes": 21760,
+        "totalBytes": 327680
+      },
+      "toolVersions": {
+        "platformio": "PlatformIO Core, version 6.1.19",
+        "framework-arduinoespressif32": "3.20017.241212+sha.dcc1105b",
+        "tool-esptoolpy": "1.40501.0 (4.5.1)",
+        "toolchain-xtensa-esp32": "8.4.0+2021r2-patch5"
+      },
+      "receiptVerification": {
+        "name": "firmware-compile",
+        "status": "done",
+        "ms": 2565,
+        "note": "Compile checked for esp32dev; no physical flash."
+      }
+    },
+    {
+      "template": "temp-monitor",
+      "generation": {
+        "name": "firmware",
+        "status": "done",
+        "ms": 14,
+        "note": "PlatformIO project generated; compilation is reported separately."
+      },
+      "firstCompile": {
+        "name": "firmware-compile",
+        "status": "done",
+        "ms": 21634,
+        "note": "Compile checked for esp32dev; no physical flash."
+      },
+      "warmCompile": {
+        "name": "firmware-compile",
+        "status": "done",
+        "ms": 16219,
+        "note": "Compile checked for esp32dev; no physical flash."
+      },
+      "flash": {
+        "percent": 23.7,
+        "usedBytes": 311001,
+        "totalBytes": 1310720
+      },
+      "ram": {
+        "percent": 6.8,
+        "usedBytes": 22136,
+        "totalBytes": 327680
+      },
+      "toolVersions": {
+        "platformio": "PlatformIO Core, version 6.1.19",
+        "framework-arduinoespressif32": "3.20017.241212+sha.dcc1105b",
+        "tool-esptoolpy": "1.40501.0 (4.5.1)",
+        "toolchain-xtensa-esp32": "8.4.0+2021r2-patch5",
+        "Adafruit BusIO": "1.17.0",
+        "Adafruit GFX Library": "1.11.11",
+        "Adafruit SSD1306": "2.5.13",
+        "DallasTemperature": "3.11.0",
+        "OneWire": "2.3.8",
+        "Wire": "2.0.0"
+      },
+      "receiptVerification": {
+        "name": "firmware-compile",
+        "status": "done",
+        "ms": 3757,
+        "note": "Compile checked for esp32dev; no physical flash."
+      }
+    },
+    {
+      "template": "temp-monitor-bme280",
+      "generation": {
+        "name": "firmware",
+        "status": "done",
+        "ms": 6,
+        "note": "PlatformIO project generated; compilation is reported separately."
+      },
+      "firstCompile": {
+        "name": "firmware-compile",
+        "status": "done",
+        "ms": 23788,
+        "note": "Compile checked for esp32dev; no physical flash."
+      },
+      "warmCompile": {
+        "name": "firmware-compile",
+        "status": "done",
+        "ms": 17310,
+        "note": "Compile checked for esp32dev; no physical flash."
+      },
+      "flash": {
+        "percent": 23.9,
+        "usedBytes": 313437,
+        "totalBytes": 1310720
+      },
+      "ram": {
+        "percent": 6.8,
+        "usedBytes": 22168,
+        "totalBytes": 327680
+      },
+      "toolVersions": {
+        "platformio": "PlatformIO Core, version 6.1.19",
+        "framework-arduinoespressif32": "3.20017.241212+sha.dcc1105b",
+        "tool-esptoolpy": "1.40501.0 (4.5.1)",
+        "toolchain-xtensa-esp32": "8.4.0+2021r2-patch5",
+        "Adafruit BME280 Library": "2.2.4",
+        "Adafruit BusIO": "1.17.0",
+        "Adafruit GFX Library": "1.11.11",
+        "Adafruit SSD1306": "2.5.13",
+        "Adafruit Unified Sensor": "1.1.15",
+        "Wire": "2.0.0"
+      },
+      "receiptVerification": {
+        "name": "firmware-compile",
+        "status": "done",
+        "ms": 3906,
+        "note": "Compile checked for esp32dev; no physical flash."
+      }
+    }
+  ]
+}

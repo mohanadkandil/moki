@@ -1,0 +1,142 @@
+{
+  "checkedAt": "2026-11-04T14:31:13.402Z",
+  "scope": "Controlled local HTTP/auth/lifecycle/credential tests; no live service changes or external key request",
+  "checks": [
+    {
+      "name": "unauthenticated registry redirects and API refuses access",
+      "pass": true
+    },
+    {
+      "name": "invalid Host and cross-origin login are rejected",
+      "pass": true
+    },
+    {
+      "name": "owner login creates separate HttpOnly session and safe destination",
+      "pass": true
+    },
+    {
+      "name": "Vault purpose session signature cannot authorize Apps",
+      "pass": true
+    },
+    {
+      "name": "mutations reject missing CSRF and foreign Origin",
+      "pass": true
+    },
+    {
+      "name": "GET does not launch stopped app and shows full-page start action",
+      "pass": true
+    },
+    {
+      "name": "allowlisted lifecycle start and stop reflect actual state",
+      "pass": true
+    },
+    {
+      "name": "credential storage is encrypted and metadata never returns key",
+      "pass": true
+    },
+    {
+      "name": "invalid keys, model injection and oversize bodies rejected without echo",
+      "pass": true
+    },
+    {
+      "name": "connection test uses only fixed OpenAI models endpoint and filters output",
+      "pass": true
+    },
+    {
+      "name": "model must be chosen before Apply",
+      "pass": true
+    },
+    {
+      "name": "full-page app proxy has fixed target and rejects unknown/path escape",
+      "pass": true
+    },
+    {
+      "name": "gateway mutation requires both owner session origin and app capability",
+      "pass": true
+    },
+    {
+      "name": "credential tampering fails closed without leaking data",
+      "pass": true
+    },
+    {
+      "name": "remove key clears runtime file and returns no secret",
+      "pass": true
+    },
+    {
+      "name": "Moki registry is fixed and registration never starts it",
+      "pass": true
+    },
+    {
+      "name": "Moki controller switch stops Rigrove and creates private server environment",
+      "pass": true
+    },
+    {
+      "name": "Moki redirects to Studio and forwards base assets, lab and query strings",
+      "pass": true
+    },
+    {
+      "name": "Moki gateway injects capability without exposing it and preserves Host and Origin",
+      "pass": true
+    },
+    {
+      "name": "Moki rejects foreign and missing mutation origins before injecting capability",
+      "pass": true
+    },
+    {
+      "name": "Moki allows only built assets, selected HTML and board API routes",
+      "pass": true
+    },
+    {
+      "name": "Moki streams binary artifacts above the Rigrove response limit intact",
+      "pass": true
+    },
+    {
+      "name": "Moki board readiness failure restores Rigrove even when Studio HTML works",
+      "pass": true
+    },
+    {
+      "name": "Returning to Rigrove stops Moki and keeps its capability stable",
+      "pass": true
+    },
+    {
+      "name": "concurrent lifecycle requests serialize to one active app",
+      "pass": true
+    },
+    {
+      "name": "failed stop prevents a second app starting",
+      "pass": true
+    },
+    {
+      "name": "failed switch restores prior app only after failed target stops",
+      "pass": true
+    },
+    {
+      "name": "unknown service state fails closed before launch",
+      "pass": true
+    },
+    {
+      "name": "credential test cannot restore a replaced or removed key",
+      "pass": true
+    },
+    {
+      "name": "failed credential Apply restart remains pending",
+      "pass": true
+    },
+    {
+      "name": "reloading service fails closed before another app starts",
+      "pass": true
+    },
+    {
+      "name": "removed running key stays pending across reload and failed restart until successful Apply",
+      "pass": true
+    },
+    {
+      "name": "a transition after stop prevents launching another app",
+      "pass": true
+    },
+    {
+      "name": "registry never embeds application iframe or stored key",
+      "pass": true
+    }
+  ]
+}

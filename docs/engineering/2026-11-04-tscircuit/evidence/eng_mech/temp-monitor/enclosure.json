@@ -1,0 +1,393 @@
+{
+  "schema": "moki.enclosure/1",
+  "engine": {
+    "name": "build123d",
+    "version": "0.13.0",
+    "kernel": "OpenCascade (cadquery-ocp-novtk)",
+    "fallback": false
+  },
+  "source": {
+    "circuitJsonSha256": "4585b959b18e49e0411c675b302be7d2489522bed8c3980378628c3d910e8420",
+    "label": "moki 7e96c917404abfd0"
+  },
+  "units": "mm",
+  "frame": "X and Y are the board frame. Z = 0 is the outside of the floor. Dimensions describe the assembled position.",
+  "dimensions": {
+    "outerMm": {
+      "x": 94.6,
+      "y": 100.6,
+      "z": 30.49
+    },
+    "cavityMm": {
+      "x": 90.6,
+      "y": 96.6,
+      "z": 26.49
+    },
+    "wallMm": 2,
+    "floorMm": 2,
+    "lidMm": 2,
+    "cornerRadiusMm": 3,
+    "seamZ": 28.49,
+    "lipDepthMm": 2.95,
+    "lipWallMm": 1.4,
+    "boardBottomZ": 7,
+    "boardTopZ": 8.6,
+    "standoffMm": 5,
+    "boardRect": {
+      "minX": -45,
+      "minY": -47.5,
+      "maxX": 45,
+      "maxY": 47.5
+    },
+    "outerRect": {
+      "minX": -47.3,
+      "minY": -50.8,
+      "maxX": 47.3,
+      "maxY": 49.8
+    },
+    "cavityRect": {
+      "minX": -45.3,
+      "minY": -48.8,
+      "maxX": 45.3,
+      "maxY": 47.8
+    }
+  },
+  "clearancesMm": {
+    "fit": 0.3,
+    "headroomAboveTallestBody": 0.5,
+    "lidPillarToBoard": 0.15,
+    "boardToWall": {
+      "xNeg": 0.3,
+      "xPos": 0.3,
+      "yNeg": 1.3,
+      "yPos": 0.3
+    }
+  },
+  "stack": {
+    "tallestPart": "U1",
+    "parts": [
+      {
+        "id": "R1",
+        "module": "resistor-axial",
+        "mount": "soldered",
+        "socketMm": 0,
+        "spacerMm": 0,
+        "pcbMm": 0,
+        "componentsMm": 3.2,
+        "topAboveBoardMm": 3.2,
+        "raisedToLid": false,
+        "confidence": "Standard 1/4 W axial body, lying flat."
+      },
+      {
+        "id": "U1",
+        "module": "esp32-devkitc-v4",
+        "mount": "socketed",
+        "socketMm": 8.5,
+        "spacerMm": 2.54,
+        "pcbMm": 1.6,
+        "componentsMm": 4,
+        "topAboveBoardMm": 16.64,
+        "raisedToLid": false,
+        "confidence": "Outline 54.4 x 27.9 mm is quoted by a third-party guide, whose own caption also says 48.2 mm; another database says 54 x 27 mm. Espressif publishes a drawing we could not read numerically. 25.4 mm row spacing comes from the catalog and was not confirmed. USB position and component height are estimates, and USB-C clones differ."
+      },
+      {
+        "id": "U2",
+        "module": "ssd1306-oled-128x64-i2c",
+        "mount": "socketed",
+        "socketMm": 8.5,
+        "spacerMm": 2.54,
+        "pcbMm": 1.2,
+        "componentsMm": 2.9,
+        "topAboveBoardMm": 15.14,
+        "raisedToLid": false,
+        "confidence": "Active area 21.744 x 10.864 mm is from a panel datasheet. PCB outline varies by seller (about 27 x 27 mm). The active area position on the PCB was not found in any drawing: y = 12.6 mm is estimated, so the window carries a 1.2 mm margin per side."
+      },
+      {
+        "id": "U3",
+        "module": "ds18b20-to92",
+        "mount": "soldered",
+        "socketMm": 0,
+        "spacerMm": 0,
+        "pcbMm": 0,
+        "componentsMm": 13,
+        "topAboveBoardMm": 13,
+        "raisedToLid": false,
+        "confidence": "TO-92 body is a standard package. 13 mm standing height comes from the catalog size with straight leads."
+      }
+    ],
+    "throughLid": []
+  },
+  "fastening": {
+    "type": "M3 through-bolt",
+    "count": 4,
+    "screw": "M3 x 16 mm self-tapping, pan head",
+    "holes": [
+      {
+        "x": -41,
+        "y": -43.5,
+        "diameterMm": 3.2
+      },
+      {
+        "x": -41,
+        "y": 43.5,
+        "diameterMm": 3.2
+      },
+      {
+        "x": 41,
+        "y": -43.5,
+        "diameterMm": 3.2
+      },
+      {
+        "x": 41,
+        "y": 43.5,
+        "diameterMm": 3.2
+      }
+    ],
+    "standoff": {
+      "heightMm": 5,
+      "diameterBottomMm": 7,
+      "diameterTopMm": 6,
+      "clearanceHoleMm": 3.4,
+      "headSeatMm": {
+        "diameter": 6,
+        "depth": 2.5
+      }
+    },
+    "lidPillar": {
+      "diameterMm": 6,
+      "pilotHoleMm": 2.6,
+      "pilotDepthMm": 12
+    }
+  },
+  "apertures": [
+    {
+      "id": "U1-usb",
+      "part": "U1",
+      "purpose": "usb",
+      "onPart": "base",
+      "face": "y_neg",
+      "shape": "pill",
+      "position": {
+        "x": -22.05,
+        "y": -47.5,
+        "z": 22.74
+      },
+      "sizeMm": {
+        "width": 12.5,
+        "height": 8.5
+      },
+      "note": "Sized for a micro-USB cable overmould (estimated up to 12 x 8 mm). The plug and overmould pass through the wall."
+    },
+    {
+      "id": "vent-x_pos",
+      "part": "enclosure",
+      "purpose": "vent",
+      "onPart": "base",
+      "face": "x_pos",
+      "shape": "slot-row",
+      "position": {
+        "x": 47.3,
+        "y": -0.5,
+        "z": 16.82
+      },
+      "sizeMm": {
+        "width": 2,
+        "height": 12
+      },
+      "count": 8,
+      "pitchMm": 5,
+      "note": "Passive air exchange. Not thermally simulated."
+    },
+    {
+      "id": "vent-x_neg",
+      "part": "enclosure",
+      "purpose": "vent",
+      "onPart": "base",
+      "face": "x_neg",
+      "shape": "slot-row",
+      "position": {
+        "x": -47.3,
+        "y": -0.5,
+        "z": 16.82
+      },
+      "sizeMm": {
+        "width": 2,
+        "height": 12
+      },
+      "count": 8,
+      "pitchMm": 5,
+      "note": "Passive air exchange. Not thermally simulated."
+    },
+    {
+      "id": "U2-display-active-area",
+      "part": "U2",
+      "purpose": "display-active-area",
+      "onPart": "lid",
+      "face": "z_pos",
+      "shape": "rect",
+      "position": {
+        "x": 20,
+        "y": 25.9,
+        "z": 30.49
+      },
+      "sizeMm": {
+        "width": 24.144,
+        "height": 13.264000000000001
+      },
+      "rotationDeg": 0,
+      "note": "Window over the active area plus the margin.",
+      "well": {
+        "rimZ": 24.24,
+        "glassGapMm": 0.5,
+        "viewingHalfAngleDeg": 35,
+        "topOpeningMm": {
+          "width": 32.894,
+          "height": 22.014
+        }
+      }
+    },
+    {
+      "id": "U3-sensor-air",
+      "part": "U3",
+      "purpose": "sensor-air",
+      "onPart": "lid",
+      "face": "z_pos",
+      "shape": "grid",
+      "position": {
+        "x": 20,
+        "y": -34.3,
+        "z": 30.49
+      },
+      "sizeMm": {
+        "width": 9,
+        "height": 9
+      },
+      "rotationDeg": 0,
+      "note": "Lets room air reach the sensor. It will still read warm from the ESP32 inside the box.",
+      "grid": {
+        "holeMm": 2.5,
+        "columns": 3,
+        "rows": 3,
+        "pitchMm": 4
+      }
+    }
+  ],
+  "mark": {
+    "text": "moki",
+    "face": "y_pos",
+    "depthMm": 0.5,
+    "font": "IBM Plex Mono Regular"
+  },
+  "assumptions": [
+    "No physical print or test fit has happened. Every fit below is calculated, not measured.",
+    "Module dimensions come from the catalog plus public seller data. Measure real parts before printing.",
+    "Each socketed module stands on an 8.5 mm female socket plus its own 2.54 mm male header spacer.",
+    "The KY-040 lies parallel to the carrier with its shaft pointing up. That needs straight header pins; a right-angle header would not plug into a vertical socket like this. Its single socket cannot take the push force, so tighten the bushing's panel nut onto the lid.",
+    "Four M3 x 16 mm self-tapping screws go in through the floor, pass the standoffs and the board, and thread into the lid pillars. They hold the lid and the board together. The 3.4 mm clearance and 2.6 mm pilot holes need checking on your printer.",
+    "The ESP32 uses a micro-USB connector centred on its short edge. USB-C clones may differ.",
+    "The OLED active area's position on its PCB is estimated, because no seller drawing was found. The window has a 1.2 mm margin per side to allow for this.",
+    "LED and LDR leads are long enough to bring the part up to its lid hole.",
+    "Filament grams assume a solid print (100% infill), so they are an upper bound for a sliced print.",
+    "PLA softens near 60 C. Nothing here is rated for heat, mains or outdoor use. USB 5 V and 3.3 V logic only."
+  ],
+  "printOrientation": {
+    "base": "Floor on the bed, opening up, as exported.",
+    "lid": "Outer face on the bed, pillars up, as exported.",
+    "supports": "None expected: wall openings have arched tops, and the display well and pillars rise from the bed side. Not confirmed by a slicer.",
+    "lidExportTransform": {
+      "note": "Assembled (x, y, z) = (x_stl, -y_stl, totalHeight - z_stl).",
+      "totalHeightMm": 30.49
+    }
+  },
+  "material": {
+    "name": "PLA",
+    "densityGPerCm3": 1.24
+  },
+  "estimate": {
+    "baseVolumeCm3": 38.309,
+    "lidVolumeCm3": 21.61,
+    "volumeCm3": 59.919,
+    "filamentG": 74.3,
+    "basis": "Solid volume at 100% infill: an upper bound."
+  },
+  "validation": {
+    "base": {
+      "isValid": true,
+      "stl": {
+        "triangles": 11024,
+        "vertices": 5472,
+        "edges": 16536,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "windingConflictEdges": 0,
+        "degenerateTriangles": 0,
+        "eulerCharacteristic": -40,
+        "signedVolumeMm3": 38305.3,
+        "watertight": true
+      }
+    },
+    "lid": {
+      "isValid": true,
+      "stl": {
+        "triangles": 5486,
+        "vertices": 2725,
+        "edges": 8229,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "windingConflictEdges": 0,
+        "degenerateTriangles": 0,
+        "eulerCharacteristic": -18,
+        "signedVolumeMm3": 21607.9,
+        "watertight": true
+      }
+    },
+    "step": {
+      "reopened": true,
+      "solids": 2,
+      "allValid": true,
+      "volumeCm3": 59.919
+    },
+    "failures": []
+  },
+  "physicalPrint": false,
+  "warnings": [],
+  "timing": {
+    "importMs": 2845.8,
+    "modelMs": 1035.3,
+    "brepCheckMs": 118.5,
+    "stlMs": 139.8,
+    "stepMs": 204.4,
+    "validateMs": 770.7,
+    "totalMs": 5117.2,
+    "excludingImportMs": 2269.2
+  },
+  "stages": [
+    {
+      "name": "mech-handoff",
+      "status": "done",
+      "ms": 9,
+      "note": "4 parts, 3 openings, 4 M3 holes"
+    },
+    {
+      "name": "enclosure-baseline",
+      "status": "done",
+      "ms": 365.3,
+      "note": "create-fdm-enclosure 0.0.7: 2952 triangles, watertight base=false lid=false"
+    },
+    {
+      "name": "enclosure",
+      "status": "done",
+      "ms": 6013.5,
+      "note": "build123d 0.13.0: import 2846 ms, model 1035 ms, total 5117 ms"
+    },
+    {
+      "name": "assembly",
+      "status": "done",
+      "ms": 26.6,
+      "note": "1547732 bytes"
+    }
+  ],
+  "ms": 6414.6,
+  "mechCache": "miss",
+  "timingSource": "this run"
+}

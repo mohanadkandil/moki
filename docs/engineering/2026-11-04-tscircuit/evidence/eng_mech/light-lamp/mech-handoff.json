@@ -1,0 +1,450 @@
+{
+  "schema": "moki.mech-handoff/1",
+  "source": {
+    "circuitJsonSha256": "7cccb6e256ca524b42136edbee9613e39132357f8159a568a8f908684a14ad92",
+    "label": "moki 5d3d8c5ed671a891"
+  },
+  "board": {
+    "widthMm": 90,
+    "heightMm": 105,
+    "thicknessMm": 1.6,
+    "center": {
+      "x": 0,
+      "y": 0
+    },
+    "outline": [
+      {
+        "x": -45,
+        "y": -52.5
+      },
+      {
+        "x": 45,
+        "y": -52.5
+      },
+      {
+        "x": 45,
+        "y": 52.5
+      },
+      {
+        "x": -45,
+        "y": 52.5
+      }
+    ],
+    "holes": [
+      {
+        "x": -41,
+        "y": -48.5,
+        "diameterMm": 3.2
+      },
+      {
+        "x": -41,
+        "y": 48.5,
+        "diameterMm": 3.2
+      },
+      {
+        "x": 41,
+        "y": -48.5,
+        "diameterMm": 3.2
+      },
+      {
+        "x": 41,
+        "y": 48.5,
+        "diameterMm": 3.2
+      }
+    ]
+  },
+  "parts": [
+    {
+      "id": "D1",
+      "module": "led-5mm-amber",
+      "name": "LED, 5 mm amber",
+      "category": "output",
+      "center": {
+        "x": 20,
+        "y": 30
+      },
+      "rotationDeg": 0,
+      "bbox": {
+        "minX": 17.1,
+        "minY": 27.1,
+        "maxX": 22.9,
+        "maxY": 32.9
+      },
+      "stack": {
+        "mount": "on-leads",
+        "socketMm": 0,
+        "spacerMm": 0,
+        "pcbMm": 0,
+        "componentsMm": 8.7,
+        "topMm": 8.7,
+        "raisedToLid": true
+      },
+      "fit": {
+        "method": "pads",
+        "pins": 2,
+        "maxResidualMm": 0
+      },
+      "blocks": [
+        {
+          "shape": "cylinder",
+          "color": "amber",
+          "label": "led",
+          "x": 20,
+          "y": 30,
+          "w": 5,
+          "h": 5,
+          "z0": 0,
+          "z1": 8.7,
+          "rotationDeg": 0
+        }
+      ],
+      "confidence": "Standard 5 mm LED. Leads must reach from the carrier to the lid; the catalog gives no lead length."
+    },
+    {
+      "id": "LDR1",
+      "module": "ldr-5mm",
+      "name": "Light-dependent resistor, 5 mm",
+      "category": "sensor",
+      "center": {
+        "x": 20,
+        "y": 7.5
+      },
+      "rotationDeg": 0,
+      "bbox": {
+        "minX": 17.4,
+        "minY": 4.9,
+        "maxX": 22.6,
+        "maxY": 10.1
+      },
+      "stack": {
+        "mount": "on-leads",
+        "socketMm": 0,
+        "spacerMm": 0,
+        "pcbMm": 0,
+        "componentsMm": 8,
+        "topMm": 8,
+        "raisedToLid": true
+      },
+      "fit": {
+        "method": "pads",
+        "pins": 2,
+        "maxResidualMm": 0
+      },
+      "blocks": [
+        {
+          "shape": "cylinder",
+          "color": "amber",
+          "label": "ldr",
+          "x": 20,
+          "y": 7.5,
+          "w": 5,
+          "h": 5,
+          "z0": 0,
+          "z1": 2.5,
+          "rotationDeg": 0
+        }
+      ],
+      "confidence": "Standard 5 mm LDR. Leads must reach from the carrier to the lid; the catalog gives no lead length."
+    },
+    {
+      "id": "R1",
+      "module": "resistor-axial",
+      "name": "Resistor, ¼ W through-hole",
+      "category": "passive",
+      "center": {
+        "x": 20,
+        "y": -8.5
+      },
+      "rotationDeg": 0,
+      "bbox": {
+        "minX": 18.7,
+        "minY": -17.5,
+        "maxX": 21.3,
+        "maxY": 0.5
+      },
+      "stack": {
+        "mount": "soldered",
+        "socketMm": 0,
+        "spacerMm": 0,
+        "pcbMm": 0,
+        "componentsMm": 3.2,
+        "topMm": 3.2,
+        "raisedToLid": false
+      },
+      "fit": {
+        "method": "pads",
+        "pins": 2,
+        "maxResidualMm": 0
+      },
+      "blocks": [
+        {
+          "shape": "box",
+          "color": "resistor",
+          "label": "resistor",
+          "x": 20,
+          "y": -8.5,
+          "w": 2.4,
+          "h": 7,
+          "z0": 0.8000000000000003,
+          "z1": 3.2,
+          "rotationDeg": 0
+        }
+      ],
+      "confidence": "Standard 1/4 W axial body, lying flat."
+    },
+    {
+      "id": "R2",
+      "module": "resistor-axial",
+      "name": "Resistor, ¼ W through-hole",
+      "category": "passive",
+      "center": {
+        "x": 20,
+        "y": -32.5
+      },
+      "rotationDeg": 0,
+      "bbox": {
+        "minX": 18.7,
+        "minY": -41.5,
+        "maxX": 21.3,
+        "maxY": -23.5
+      },
+      "stack": {
+        "mount": "soldered",
+        "socketMm": 0,
+        "spacerMm": 0,
+        "pcbMm": 0,
+        "componentsMm": 3.2,
+        "topMm": 3.2,
+        "raisedToLid": false
+      },
+      "fit": {
+        "method": "pads",
+        "pins": 2,
+        "maxResidualMm": 0
+      },
+      "blocks": [
+        {
+          "shape": "box",
+          "color": "resistor",
+          "label": "resistor",
+          "x": 20,
+          "y": -32.5,
+          "w": 2.4,
+          "h": 7,
+          "z0": 0.8000000000000003,
+          "z1": 3.2,
+          "rotationDeg": 0
+        }
+      ],
+      "confidence": "Standard 1/4 W axial body, lying flat."
+    },
+    {
+      "id": "U1",
+      "module": "esp32-devkitc-v4",
+      "name": "ESP32-DevKitC V4",
+      "category": "controller",
+      "center": {
+        "x": -22.05,
+        "y": -25.3
+      },
+      "rotationDeg": 0,
+      "bbox": {
+        "minX": -36,
+        "minY": -53.5,
+        "maxX": -8.1,
+        "maxY": 1.9
+      },
+      "stack": {
+        "mount": "socketed",
+        "socketMm": 8.5,
+        "spacerMm": 2.54,
+        "pcbMm": 1.6,
+        "componentsMm": 4,
+        "topMm": 16.64,
+        "raisedToLid": false
+      },
+      "fit": {
+        "method": "pads",
+        "pins": 38,
+        "maxResidualMm": 0
+      },
+      "blocks": [
+        {
+          "shape": "box",
+          "color": "socket",
+          "label": "socket left",
+          "x": -34.75,
+          "y": -27.86,
+          "w": 2.54,
+          "h": 48.26,
+          "z0": 0,
+          "z1": 8.5,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "socket",
+          "label": "socket right",
+          "x": -9.35,
+          "y": -27.86,
+          "w": 2.54,
+          "h": 48.26,
+          "z0": 0,
+          "z1": 8.5,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "plastic",
+          "label": "male spacer left",
+          "x": -34.75,
+          "y": -27.86,
+          "w": 2.54,
+          "h": 48.26,
+          "z0": 8.5,
+          "z1": 11.04,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "plastic",
+          "label": "male spacer right",
+          "x": -9.35,
+          "y": -27.86,
+          "w": 2.54,
+          "h": 48.26,
+          "z0": 8.5,
+          "z1": 11.04,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "pcb-black",
+          "label": "devkit pcb",
+          "x": -22.05,
+          "y": -25.3,
+          "w": 27.9,
+          "h": 54.4,
+          "z0": 11.04,
+          "z1": 12.639999999999999,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "metal",
+          "label": "wroom shield",
+          "x": -22.05,
+          "y": -14.5,
+          "w": 16.1,
+          "h": 17.6,
+          "z0": 12.639999999999999,
+          "z1": 15.84,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "pcb-dark",
+          "label": "wroom antenna",
+          "x": -22.05,
+          "y": -2.3,
+          "w": 18,
+          "h": 6.6,
+          "z0": 12.639999999999999,
+          "z1": 13.44,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "metal",
+          "label": "micro-usb",
+          "x": -22.05,
+          "y": -50.9,
+          "w": 7.6,
+          "h": 6.2,
+          "z0": 12.639999999999999,
+          "z1": 15.639999999999999,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "plastic",
+          "label": "en button",
+          "x": -29.3,
+          "y": -49.6,
+          "w": 2.6,
+          "h": 2.6,
+          "z0": 12.639999999999999,
+          "z1": 16.14,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "plastic",
+          "label": "boot button",
+          "x": -14.8,
+          "y": -49.6,
+          "w": 2.6,
+          "h": 2.6,
+          "z0": 12.639999999999999,
+          "z1": 16.14,
+          "rotationDeg": 0
+        }
+      ],
+      "confidence": "Outline 54.4 x 27.9 mm is quoted by a third-party guide, whose own caption also says 48.2 mm; another database says 54 x 27 mm. Espressif publishes a drawing we could not read numerically. 25.4 mm row spacing comes from the catalog and was not confirmed. USB position and component height are estimates, and USB-C clones differ."
+    }
+  ],
+  "apertures": [
+    {
+      "id": "D1-indicator",
+      "part": "D1",
+      "module": "led-5mm-amber",
+      "purpose": "indicator",
+      "face": "z_pos",
+      "shape": "circle",
+      "center": {
+        "x": 20,
+        "y": 30
+      },
+      "zMm": 8.7,
+      "widthMm": 5.3,
+      "heightMm": 5.3,
+      "rotationDeg": 0,
+      "note": "The dome sits just under or in this hole, on its leads."
+    },
+    {
+      "id": "LDR1-light-sensor",
+      "part": "LDR1",
+      "module": "ldr-5mm",
+      "purpose": "light-sensor",
+      "face": "z_pos",
+      "shape": "circle",
+      "center": {
+        "x": 20,
+        "y": 7.5
+      },
+      "zMm": 8,
+      "widthMm": 6,
+      "heightMm": 6,
+      "rotationDeg": 0,
+      "note": "The LDR sits on its leads just under this hole."
+    },
+    {
+      "id": "U1-usb",
+      "part": "U1",
+      "module": "esp32-devkitc-v4",
+      "purpose": "usb",
+      "face": "y_neg",
+      "shape": "pill",
+      "center": {
+        "x": -22.05,
+        "y": -52.5
+      },
+      "zMm": 14.14,
+      "widthMm": 12.5,
+      "heightMm": 8.5,
+      "rotationDeg": 0,
+      "note": "Sized for a micro-USB cable overmould (estimated up to 12 x 8 mm). The plug and overmould pass through the wall."
+    }
+  ],
+  "warnings": []
+}

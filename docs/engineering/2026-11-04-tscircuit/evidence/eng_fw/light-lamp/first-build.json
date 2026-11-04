@@ -1,0 +1,26 @@
+{
+  "name": "firmware-compile",
+  "status": "done",
+  "ms": 11336,
+  "note": "Compile checked for esp32dev; no physical flash.",
+  "compiled": true,
+  "board": "esp32dev",
+  "platform": "platformio/espressif32@6.10.0",
+  "host": "linux-arm64",
+  "toolVersions": {
+    "platformio": "PlatformIO Core, version 6.1.19"
+  },
+  "flash": {
+    "percent": 21.5,
+    "usedBytes": 281513,
+    "totalBytes": 1310720
+  },
+  "ram": {
+    "percent": 6.6,
+    "usedBytes": 21760,
+    "totalBytes": 327680
+  },
+  "exitCode": 0,
+  "logTail": "HARDWARE: ESP32 240MHz, 320KB RAM, 4MB Flash\nDEBUG: Current (cmsis-dap) External (cmsis-dap, esp-bridge, esp-prog, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa)\nPACKAGES: \n - framework-arduinoespressif32 @ 3.20017.241212+sha.dcc1105b \n - tool-esptoolpy @ 1.40501.0 (4.5.1) \n - toolchain-xtensa-esp32 @ 8.4.0+2021r2-patch5\nLDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf\nLDF Modes: Finder ~ chain, Compatibility ~ soft\nFound 33 compatible libraries\nScanning dependencies...\nNo dependencies\nBuilding in release mode\nCompiling .pio/build/esp32dev/src/main.cpp.o\nBuilding .pio/build/esp32dev/bootloader.bin\nesptool.py v4.5.1\nCreating esp32 image...\nMerged 1 ELF section\nSuccessfully created esp32 image.\nGenerating partitions .pio/build/esp32dev/partitions.bin\nCompiling .pio/build/esp32dev/FrameworkArduino/Esp.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/FirmwareMSC.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/FunctionalInterrupt.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/HWCDC.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/HardwareSerial.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/IPAddress.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/IPv6Address.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/MD5Builder.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/Print.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/Stream.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/StreamString.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/Tone.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/USB.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/USBCDC.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/USBMSC.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/WMath.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/WString.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/base64.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/cbuf.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-adc.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-bt.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-cpu.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-dac.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-gpio.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-i2c-slave.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-i2c.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-ledc.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-matrix.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-misc.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-psram.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-rgb-led.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-rmt.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-sigmadelta.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-spi.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-time.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-timer.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-tinyusb.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-touch.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-uart.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/firmware_msc_fat.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/libb64/cdecode.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/libb64/cencode.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/main.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/stdlib_noniso.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/wiring_pulse.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/wiring_shift.c.o\nArchiving .pio/build/esp32dev/libFrameworkArduino.a\nIndexing .pio/build/esp32dev/libFrameworkArduino.a\nLinking .pio/build/esp32dev/firmware.elf\nRetrieving maximum program size .pio/build/esp32dev/firmware.elf\nChecking size .pio/build/esp32dev/firmware.elf\nAdvanced Memory Usage is available via \"PlatformIO Home > Project Inspect\"\nRAM:   [=         ]   6.6% (used 21760 bytes from 327680 bytes)\nFlash: [==        ]  21.5% (used 281513 bytes from 1310720 bytes)\nBuilding .pio/build/esp32dev/firmware.bin\nesptool.py v4.5.1\nCreating esp32 image...\nMerged 2 ELF sections\nSuccessfully created esp32 image.\n========================= [SUCCESS] Took 10.73 seconds =========================\n",
+  "physicalFlash": false
+}

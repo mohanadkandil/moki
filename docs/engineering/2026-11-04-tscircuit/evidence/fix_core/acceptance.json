@@ -1,0 +1,40 @@
+{
+  "verifiedAt": "2026-11-04T14:38:26.097997+00:00",
+  "typecheckExitCode": 0,
+  "npmTestExitCode": 0,
+  "npmTests": 93,
+  "boards": {
+    "focus-timer": {
+      "drcErrors": 0,
+      "routed": true,
+      "exactNets": "8",
+      "svgSha256": "bdc2c7162aa7362cfb913335d00671a10d6b715ef16166eb152295efd8879e83",
+      "pngSha256": "cd0596bc6d02c1422cdf47359f47102a3e5f511d2e8e44f8f28e22334e8d17ca",
+      "personallyInspected": true
+    },
+    "light-lamp": {
+      "drcErrors": 0,
+      "routed": true,
+      "exactNets": "5",
+      "svgSha256": "edb587b28b7b5362cba4297cb683f991b5b54712ef607fc3ceeb011090bb3cef",
+      "pngSha256": "d71d610fb39a917d3a238c93ab24bda39eb94bbba372f428e4ce2c7218180552",
+      "personallyInspected": true
+    },
+    "temp-monitor": {
+      "drcErrors": 0,
+      "routed": true,
+      "exactNets": "6",
+      "svgSha256": "0cbca22946e0084d31adea4fbacd68da9472aee3739089e432014f13f93b443e",
+      "pngSha256": "180d57ac6e795ce9cbd722381b4f99e12d9da7315f37abdc56a0ae62f57b7c86",
+      "personallyInspected": true
+    }
+  },
+  "independentReview": {
+    "agent": "/root/review_core",
+    "state": "finished",
+    "unresolvedFindings": 0
+  },
+  "sourceExecutionSandboxed": false,
+  "physicalValidation": false,
+  "report": "../../reports/fix_core.md"
+}

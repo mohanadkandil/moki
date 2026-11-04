@@ -1,0 +1,28 @@
+flowchart TB
+  chat["Studio chat"]
+  subgraph vite["Vite server process (holds the model key)"]
+    api["Agent API: token and origin gate, one paid turn at a time, call ledger"]
+    turn["Turn runner: routes by rules, at most 2 fixes"]
+    agents["Designer, Editor, Fixer, Explainer: bounded tools only"]
+    meter["Job budget: $2 cap per turn"]
+    check["Validators: graph, firmware, codegen, edit bounds"]
+    board["Board API: job queue, edit checks"]
+  end
+  subgraph workers["Worker processes (no model key)"]
+    pipeline["Render, route, DRC, case, firmware compile"]
+  end
+  model["Model provider: Anthropic or OpenAI, or replay in tests"]
+
+  chat -->|"POST a turn"| api
+  api -->|"SSE: tools, costs, job ids"| chat
+  chat -->|"poll job steps, as today"| board
+  api --> turn
+  turn --> agents
+  agents -->|"every call metered"| meter
+  meter --> model
+  agents -->|"proposed design or change"| check
+  check -->|"valid data only, never code"| turn
+  turn -->|"HTTP job API, same as the browser"| board
+  board -->|"job record: the only source of facts"| turn
+  board --> pipeline
+  pipeline -->|"results"| board

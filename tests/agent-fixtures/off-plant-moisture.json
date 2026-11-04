@@ -1,0 +1,33 @@
+{
+ "id": "off-plant-moisture",
+ "brief": "plant moisture alarm",
+ "provenance": "authored",
+ "calls": [
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0019",
+     "name": "list_catalog",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0020",
+     "name": "decline",
+     "input": {
+      "message": "The catalog has no soil moisture probe, so this can’t read how wet the soil is yet.",
+      "closest": "The closest is a temperature monitor with a BME280, which reads air humidity but can’t alarm on it yet.",
+      "closest_brief": "A temperature monitor with a BME280 and a screen"
+     }
+    }
+   ],
+   "stopReason": "tool_use"
+  }
+ ]
+}

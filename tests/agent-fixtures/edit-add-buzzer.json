@@ -1,0 +1,67 @@
+{
+ "id": "edit-add-buzzer",
+ "brief": "add a buzzer",
+ "provenance": "authored",
+ "calls": [
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0047",
+     "name": "get_module",
+     "input": {
+      "id": "piezo-passive-12mm"
+     }
+    }
+   ],
+   "stopReason": "tool_use"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0048",
+     "name": "propose_edit",
+     "input": {
+      "summary": "Added a piezo that chimes when a session ends.",
+      "ops": [
+       {
+        "op": "add_part",
+        "id": "BZ1",
+        "module": "piezo-passive-12mm",
+        "role": "Chimes when a session ends."
+       },
+       {
+        "op": "connect",
+        "net": "BUZZER",
+        "kind": "signal",
+        "why": "GPIO23 toggles a tone on the passive piezo.",
+        "endpoints": [
+         {
+          "part": "U1",
+          "pin": "GPIO23"
+         },
+         {
+          "part": "BZ1",
+          "pin": "+"
+         }
+        ]
+       },
+       {
+        "op": "connect",
+        "net": "GND",
+        "endpoints": [
+         {
+          "part": "BZ1",
+          "pin": "-"
+         }
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "stopReason": "tool_use"
+  }
+ ]
+}

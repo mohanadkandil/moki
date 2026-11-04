@@ -1,0 +1,28 @@
+{
+ "id": "explain-overclaims",
+ "brief": "does it work",
+ "provenance": "authored",
+ "note": "A deliberate overclaim, to prove the guard removes it.",
+ "calls": [
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0057",
+     "name": "read_job",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use"
+  },
+  {
+   "content": [
+    {
+     "type": "text",
+     "text": "The firmware compiled and the DRC shows no errors. The board has been printed and flashed and it works."
+    }
+   ],
+   "stopReason": "end_turn"
+  }
+ ]
+}

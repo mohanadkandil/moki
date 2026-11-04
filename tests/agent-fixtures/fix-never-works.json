@@ -1,0 +1,97 @@
+{
+ "id": "fix-never-works",
+ "brief": "x",
+ "provenance": "authored",
+ "calls": [
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0063",
+     "name": "read_job",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0064",
+     "name": "propose_fix",
+     "input": {
+      "reason": "Try a bigger board.",
+      "edits": {
+       "board": {
+        "widthMm": 90,
+        "heightMm": 90
+       }
+      }
+     }
+    }
+   ],
+   "stopReason": "tool_use"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0065",
+     "name": "read_job",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0066",
+     "name": "propose_fix",
+     "input": {
+      "reason": "Try bigger again.",
+      "edits": {
+       "board": {
+        "widthMm": 110,
+        "heightMm": 110
+       }
+      }
+     }
+    }
+   ],
+   "stopReason": "tool_use"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0067",
+     "name": "read_job",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0068",
+     "name": "propose_fix",
+     "input": {
+      "reason": "Would be a third retry and must never run.",
+      "edits": {
+       "board": {
+        "widthMm": 130,
+        "heightMm": 130
+       }
+      }
+     }
+    }
+   ],
+   "stopReason": "tool_use"
+  }
+ ]
+}

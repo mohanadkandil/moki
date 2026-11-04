@@ -1,0 +1,33 @@
+{
+ "id": "edit-out-of-catalog",
+ "brief": "add a servo",
+ "provenance": "authored",
+ "calls": [
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0052",
+     "name": "list_catalog",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0053",
+     "name": "decline",
+     "input": {
+      "message": "The catalog has no servo yet.",
+      "closest": "The closest moving output is the piezo chime.",
+      "closest_brief": "Add a buzzer"
+     }
+    }
+   ],
+   "stopReason": "tool_use"
+  }
+ ]
+}

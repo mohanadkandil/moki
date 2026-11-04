@@ -1,0 +1,23 @@
+{
+ "id": "edit-usb-left",
+ "brief": "move the USB to the left",
+ "provenance": "authored",
+ "calls": [
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0049",
+     "name": "propose_edit",
+     "input": {
+      "summary": "USB moves to the left edge.",
+      "edits": {
+       "usbEdge": "left"
+      }
+     }
+    }
+   ],
+   "stopReason": "tool_use"
+  }
+ ]
+}

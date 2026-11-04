@@ -1,0 +1,192 @@
+{
+ "id": "off-freezer-alarm",
+ "brief": "A freezer door alarm that beeps if it warms above -10 degrees",
+ "provenance": "authored",
+ "calls": [
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0021",
+     "name": "list_catalog",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0022",
+     "name": "get_module",
+     "input": {
+      "id": "esp32-devkitc-v4"
+     }
+    },
+    {
+     "type": "tool_use",
+     "id": "toolu_0023",
+     "name": "get_module",
+     "input": {
+      "id": "ds18b20-to92"
+     }
+    },
+    {
+     "type": "tool_use",
+     "id": "toolu_0024",
+     "name": "get_module",
+     "input": {
+      "id": "resistor-axial"
+     }
+    },
+    {
+     "type": "tool_use",
+     "id": "toolu_0025",
+     "name": "get_module",
+     "input": {
+      "id": "piezo-passive-12mm"
+     }
+    }
+   ],
+   "stopReason": "tool_use"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0026",
+     "name": "propose_design",
+     "input": {
+      "design": {
+       "schema": "moki.circuit-preview/1",
+       "template": "temp-monitor",
+       "title": "Freezer alarm",
+       "parts": [
+        {
+         "id": "U1",
+         "module": "esp32-devkitc-v4",
+         "role": "Runs the firmware and supplies 3.3 V from its USB-powered regulator."
+        },
+        {
+         "id": "U3",
+         "module": "ds18b20-to92",
+         "role": "Probe that sits in the freezer."
+        },
+        {
+         "id": "R1",
+         "module": "resistor-axial",
+         "value": "4.7 kΩ",
+         "role": "Pull-up for the One-Wire data line."
+        },
+        {
+         "id": "BZ1",
+         "module": "piezo-passive-12mm",
+         "role": "Beeps when the freezer warms up."
+        }
+       ],
+       "nets": [
+        {
+         "id": "+3V3",
+         "name": "+3V3",
+         "kind": "power",
+         "endpoints": [
+          {
+           "part": "R1",
+           "pin": "1"
+          },
+          {
+           "part": "U1",
+           "pin": "3V3"
+          },
+          {
+           "part": "U3",
+           "pin": "VDD"
+          }
+         ],
+         "why": "One 3.3 V supply from the ESP32 board’s regulator. Every part here runs at 3.3 V, so its signals match the ESP32’s 3.3 V logic.",
+         "volts": 3.3
+        },
+        {
+         "id": "GND",
+         "name": "GND",
+         "kind": "ground",
+         "endpoints": [
+          {
+           "part": "BZ1",
+           "pin": "-"
+          },
+          {
+           "part": "U1",
+           "pin": "GND"
+          },
+          {
+           "part": "U3",
+           "pin": "GND"
+          }
+         ],
+         "why": "Common ground. Every signal is measured against it, so every part must share it."
+        },
+        {
+         "id": "ONEWIRE",
+         "name": "ONEWIRE",
+         "kind": "signal",
+         "endpoints": [
+          {
+           "part": "R1",
+           "pin": "2"
+          },
+          {
+           "part": "U1",
+           "pin": "GPIO4"
+          },
+          {
+           "part": "U3",
+           "pin": "DQ"
+          }
+         ],
+         "why": "One-Wire data. The sensor and the ESP32 only ever pull this line low; the 4.7 kΩ resistor pulls it back up to 3.3 V between bits. GPIO4 has no boot role."
+        },
+        {
+         "id": "BUZZER",
+         "name": "BUZZER",
+         "kind": "signal",
+         "endpoints": [
+          {
+           "part": "BZ1",
+           "pin": "+"
+          },
+          {
+           "part": "U1",
+           "pin": "GPIO23"
+          }
+         ],
+         "why": "GPIO23 toggles a tone (for example with ledcWriteTone) and the piezo clicks at that frequency. A passive piezo draws very little current, so the pin can drive it directly."
+        }
+       ],
+       "notes": [
+        {
+         "level": "info",
+         "part": "U3",
+         "text": "A waterproof DS18B20 probe uses the same three wires (usually red VDD, black GND, yellow DQ)."
+        }
+       ],
+       "behavior": [
+        {
+         "label": "Sensor",
+         "value": "DS18B20 over One-Wire"
+        },
+        {
+         "label": "Alert above",
+         "value": "-10 °C, with a chime"
+        }
+       ]
+      },
+      "summary": "A freezer alarm: a probe, and a beep above −10 °C."
+     }
+    }
+   ],
+   "stopReason": "tool_use"
+  }
+ ]
+}

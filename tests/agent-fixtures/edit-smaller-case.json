@@ -1,0 +1,37 @@
+{
+ "id": "edit-smaller-case",
+ "brief": "make the case smaller",
+ "provenance": "authored",
+ "calls": [
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0050",
+     "name": "read_job",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0051",
+     "name": "propose_edit",
+     "input": {
+      "summary": "A smaller board, so the case around it shrinks.",
+      "edits": {
+       "board": {
+        "widthMm": 80,
+        "heightMm": 65
+       }
+      }
+     }
+    }
+   ],
+   "stopReason": "tool_use"
+  }
+ ]
+}

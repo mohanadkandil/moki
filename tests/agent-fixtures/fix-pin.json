@@ -1,0 +1,38 @@
+{
+ "id": "fix-pin",
+ "brief": "x",
+ "provenance": "authored",
+ "calls": [
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0061",
+     "name": "read_job",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0062",
+     "name": "propose_fix",
+     "input": {
+      "reason": "The record says the BUZZER route failed around GPIO23. GPIO18 sits on the same header with more room.",
+      "ops": [
+       {
+        "op": "set_pin",
+        "net": "BUZZER",
+        "gpio": 18
+       }
+      ]
+     }
+    }
+   ],
+   "stopReason": "tool_use"
+  }
+ ]
+}

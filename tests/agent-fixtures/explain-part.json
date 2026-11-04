@@ -1,0 +1,27 @@
+{
+ "id": "explain-part",
+ "brief": "what does U2 do",
+ "provenance": "authored",
+ "calls": [
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0055",
+     "name": "get_design",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use"
+  },
+  {
+   "content": [
+    {
+     "type": "text",
+     "text": "U2 is the small screen. It shows the time left in the session."
+    }
+   ],
+   "stopReason": "end_turn"
+  }
+ ]
+}

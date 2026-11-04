@@ -1,0 +1,57 @@
+{
+ "id": "fix-board-too-small",
+ "brief": "make the case smaller",
+ "provenance": "authored",
+ "note": "The editor shrinks too far; the fixer reads the DRC error and grows the board.",
+ "calls": [
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0058",
+     "name": "propose_edit",
+     "input": {
+      "summary": "A much smaller board.",
+      "edits": {
+       "board": {
+        "widthMm": 40,
+        "heightMm": 40
+       }
+      }
+     }
+    }
+   ],
+   "stopReason": "tool_use"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0059",
+     "name": "read_job",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0060",
+     "name": "propose_fix",
+     "input": {
+      "reason": "The record says pcb_component_outside_board_error: U1 is outside a 40 × 40 mm board. A 75 × 75 mm board holds it.",
+      "edits": {
+       "board": {
+        "widthMm": 75,
+        "heightMm": 75
+       }
+      }
+     }
+    }
+   ],
+   "stopReason": "tool_use"
+  }
+ ]
+}

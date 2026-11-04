@@ -1,0 +1,27 @@
+{
+ "id": "explain-failure",
+ "brief": "why did it fail",
+ "provenance": "authored",
+ "calls": [
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0056",
+     "name": "read_job",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use"
+  },
+  {
+   "content": [
+    {
+     "type": "text",
+     "text": "The record says: pcb_component_outside_board_error. U1 sits partly outside the board, so routing was skipped."
+    }
+   ],
+   "stopReason": "end_turn"
+  }
+ ]
+}

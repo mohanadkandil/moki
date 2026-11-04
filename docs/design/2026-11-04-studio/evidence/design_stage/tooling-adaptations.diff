@@ -1,0 +1,67 @@
+--- stageshow-original/scripts/film.mjs
++++ workshop/scripts/film.mjs
+@@ -36,6 +36,7 @@
+ //   --width      viewport width in CSS px. Frames are always captured at 2x and
+ //                shown 1:1 in the sheet, never scaled up, so a --width 390 sheet
+ //                reads exactly as a phone would show it.
++//   --sheet-scale raster scale of the assembled contact sheet (default 2; use 1 on constrained hosts).
+ //   --cols       sheet columns. Default: as many as fit in ~1800 CSS px (wide
+ //                stages: enough for a sheet about twice as wide as tall).
+ //   --zoom x,y,w,h  close-up of a region in STAGE coordinates: the stage's own
+@@ -159,7 +160,7 @@
+   return i === -1 ? fallback : args[i + 1]
+ }
+ const has = (name) => args.includes(`--${name}`)
+-const VALUE_OPTIONS = new Set(['out', 'every', 'count', 'delay', 'at', 'select', 'width', 'cols', 'zoom', 'scale', 'pad', 'slow', 'hover-for', 'leave-for', 'report', 'states-for'])
++const VALUE_OPTIONS = new Set(['out', 'every', 'count', 'delay', 'at', 'select', 'width', 'cols', 'sheet-scale', 'zoom', 'scale', 'pad', 'slow', 'hover-for', 'leave-for', 'report', 'states-for'])
+ for (let i = 0; i < args.length; i++) {
+   if (!args[i].startsWith('--')) continue
+   const name = args[i].slice(2)
+@@ -196,6 +197,7 @@
+ }
+ const width = Number(opt('width', 1280))
+ const colsOpt = opt('cols', null)
++if (![1,2].includes(Number(opt('sheet-scale',2)))) {console.error('film: --sheet-scale must be 1 or 2');process.exit(2)}
+ const zoomOpt = opt('zoom', null)
+ // --zoom target:<name>[,pad]: follows a data-target wherever it is drawn
+ const zoomTarget = zoomOpt?.startsWith('target:') ? { name: zoomOpt.slice(7).split(',')[0], pad: Number(zoomOpt.split(',')[1] ?? 16) } : null
+@@ -628,6 +630,10 @@
+ const snapshot = stopped?.snapshot
+ const captureMs = stopped ? stopped.at - captureStarted : 0
+ 
++// Release the filmed WebGL page before composing the sheet on software-rendered ARM Chrome.
++// Recorded frames and verification snapshot are already retained above.
++await page.close()
++
+ // Lay the frames out in the browser itself, so there is nothing else to install.
+ // The sheet renders at 2x and each frame is drawn at its natural pixel size
+ // (CSS width = pixels / 2), so nothing is ever scaled up or down.
+@@ -642,7 +648,7 @@
+ const even = Math.round(Math.sqrt((shots.length * 2 * (frameH + gap)) / (frameW + gap)))
+ const cols = colsOpt ? Number(colsOpt) : Math.max(1, Math.min(shots.length, fit >= 3 ? fit : Math.max(fit, even)))
+ const sheetHeight = Math.ceil(shots.length / cols) * (frameH + gap) + gap
+-const sheet = await browser.newPage({ viewport: { width: cols * (frameW + gap) + gap, height: Math.min(400, sheetHeight) }, deviceScaleFactor: 2 })
++const sheet = await browser.newPage({ viewport: { width: cols * (frameW + gap) + gap, height: Math.min(400, sheetHeight) }, deviceScaleFactor: Number(opt('sheet-scale', 2)) })
+ await sheet.setContent(`<body style="margin:0;background:#e9e9e9;font:11px system-ui">
+   <div style="display:grid;grid-template-columns:repeat(${cols},${frameW}px);gap:${gap}px;padding:${gap}px">
+   ${shots
+@@ -656,7 +662,7 @@
+   </div></body>`)
+ await sheet.waitForLoadState('load')
+ mkdirSync(dirname(out), { recursive: true })
+-await sheet.screenshot({ path: out, fullPage: true })
++await sheet.screenshot({ path: out, fullPage: true, timeout: 120000 })
+ await browser.close()
+ 
+ const what = hover ? `${shots.length} frames (rest, hover ${hoverFor}ms, leave ${leaveFor}ms) every ${every}ms` : `${shots.length} frames every ${every}ms`
+--- stageshow-original/scripts/film-checks.mjs
++++ workshop/scripts/film-checks.mjs
+@@ -1027,6 +1027,8 @@
+     const guarded = /\.ss-(row|tapback|bubble|facepile|avatar|stamp|receipt|toast|check|kb|keyboard|phone__(status|home|island|screen))/
+     const subject = (sel) => sel.split(',')[0].trim().replace(/^&\s*/, '').split(/\s+(?![^(]*\))|>|\+|~/).filter(Boolean).pop() || ''
+     const walk = (list) => { for (const r of list) {
++      // Bundled CSS loses the /kit/ URL. Its named layer retains ownership.
++      if (r.constructor?.name === "CSSLayerBlockRule" && r.name === "stageshow") continue
+       if (r.selectorText && r.style) {
+         const subj = subject(r.selectorText).replace(/::?[a-z-]+(\([^)]*\))?/g, '')
+         const css = r.style.cssText

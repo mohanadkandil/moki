@@ -1,0 +1,14 @@
+[
+ {
+  "t": "0.4",
+  "s": "Write board source:is-done | Render, route and export the board:is-running | Model the case:is-pending | Write firmware:is-pending | Compile firmware:is-pending"
+ },
+ {
+  "t": "0.6",
+  "s": "Write board source:is-done | Render the circuit:is-done | Route traces:is-reused | Draw schematic and PCB:is-reused | Build the 3D model:is-reused | Export fabrication files:is-reused | Model the case:is-running | Write firmware:is-pending | Compile firmware:is-pending"
+ },
+ {
+  "t": "1.6",
+  "s": "Write board source:is-done | Render the circuit:is-done | Route traces:is-reused | Draw schematic and PCB:is-reused | Build the 3D model:is-reused | Export fabrication files:is-reused | Model the case:is-done | Write and compile firmware:is-running"
+ }
+]

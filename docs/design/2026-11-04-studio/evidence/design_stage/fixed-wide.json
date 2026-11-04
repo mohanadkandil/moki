@@ -1,0 +1,288 @@
+{
+  "width": 1280,
+  "clock": "60 fps Stageshow installVirtualClock",
+  "marks": [
+    {
+      "mark": "brief",
+      "frame": 36,
+      "seconds": 0.6
+    },
+    {
+      "mark": "schematic",
+      "frame": 181,
+      "seconds": 3.0166666666666666
+    },
+    {
+      "mark": "pcb",
+      "frame": 326,
+      "seconds": 5.433333333333334
+    },
+    {
+      "mark": "board",
+      "frame": 500,
+      "seconds": 8.333333333333334
+    },
+    {
+      "mark": "enclosure",
+      "frame": 588,
+      "seconds": 9.8
+    },
+    {
+      "mark": "close",
+      "frame": 655,
+      "seconds": 10.916666666666666
+    },
+    {
+      "mark": "compiled",
+      "frame": 716,
+      "seconds": 11.933333333333334
+    },
+    {
+      "mark": "replay",
+      "frame": 894,
+      "seconds": 14.9
+    },
+    {
+      "mark": "brief",
+      "frame": 1030,
+      "seconds": 17.166666666666668
+    },
+    {
+      "mark": "schematic",
+      "frame": 1175,
+      "seconds": 19.583333333333332
+    },
+    {
+      "mark": "pcb",
+      "frame": 1319,
+      "seconds": 21.983333333333334
+    }
+  ],
+  "stages": {
+    "stage-1": {
+      "coverage": {
+        "status": "complete",
+        "frames": 1319,
+        "durationMs": 21966.666666666664,
+        "medianMs": 16.666666666666742,
+        "maxGapMs": 16.666666666671517,
+        "skippedGaps": 0,
+        "cameraFrames": 0,
+        "reasons": []
+      },
+      "jumps": [
+        "jump: ws-chat \"Let’s make a focus\" height -15.4px in one frame at 15.63s [replay]",
+        "jump: ws-jog y +40.0px in one frame at 15.63s [replay]",
+        "jump: ss-text \"Board\" y +40.0px in one frame at 15.63s [replay]",
+        "jump: ws-pad y +40.0px in one frame at 15.63s [replay]",
+        "jump: ss-row__title \"Codegen\" y +40.0px in one frame at 15.63s [replay]",
+        "jump: ws-pad y +40.0px in one frame at 15.63s [replay]",
+        "jump: ss-row__title \"Render\" y +40.0px in one frame at 15.63s [replay]",
+        "jump: ws-pad y +40.0px in one frame at 15.63s [replay]",
+        "jump: ss-row__title \"Route\" y +40.0px in one frame at 15.63s [replay]",
+        "jump: ws-pad y +40.0px in one frame at 15.63s [replay]",
+        "jump: ss-row__title \"SVG\" y +40.0px in one frame at 15.63s [replay]",
+        "jump: ws-pad y +40.0px in one frame at 15.63s [replay]",
+        "jump: ss-row__title \"GLTF\" y +40.0px in one frame at 15.63s [replay]",
+        "jump: ws-pad y +40.0px in one frame at 15.63s [replay]",
+        "jump: ss-row__title \"Fab files\" y +40.0px in one frame at 15.63s [replay]",
+        "jump: ws-jog y +40.0px in one frame at 15.63s [replay]",
+        "jump: ss-text \"Case\" y +40.0px in one frame at 15.63s [replay]",
+        "jump: ws-pad y +40.0px in one frame at 15.63s [replay]",
+        "jump: ss-row__title \"Enclosure\" y +40.0px in one frame at 15.63s [replay]",
+        "jump: ws-jog y +40.0px in one frame at 15.63s [replay]",
+        "jump: ss-text \"Firmware\" y +40.0px in one frame at 15.63s [replay]",
+        "jump: ws-pad y +40.0px in one frame at 15.63s [replay]",
+        "jump: ss-row__title \"Firmware\" y +40.0px in one frame at 15.63s [replay]",
+        "jump: ws-pad y +40.0px in one frame at 15.63s [replay]",
+        "jump: ss-row__title \"Compile\" y +40.0px in one frame at 15.63s [replay]",
+        "jump: ws-disclosure-flow \"Recorded build · B\" y -15.4px in one frame at 15.63s [replay]",
+        "jump: ws-canvas \"SchematicPCB3DCase\" height -15.4px in one frame at 15.63s [replay]",
+        "jump: ss-tabs__bar x -145.0px in one frame at 15.63s [replay]",
+        "jump: ss-tabs__bar width +48.0px in one frame at 15.63s [replay]"
+      ],
+      "manual": [
+        "same-box content change: ss-draft__typed changes text or drawing at 1.27s [brief]; inspect the transition in motion (geometry alone cannot judge it)"
+      ]
+    }
+  },
+  "checks": [
+    {
+      "label": "opening",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "near aligned: span.ss-tabs__tab \"Schematic\" and span.ss-badge__label \"Template preview · Focus\" start 13.0px apart in main.ws-canvas; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels",
+        "dark slab: main.ws-canvas is a near-black box inside the light div.ss-window; one theme per scene, so a log or code block in a light UI is a light surface (the well or a tinted panel, mono text in the normal inks); a dark panel belongs in a dark scene or a terminal window of its own"
+      ]
+    },
+    {
+      "label": "brief",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "near aligned: span.ss-tabs__tab \"Schematic\" and span.ss-badge__label \"Template preview · Focus\" start 13.0px apart in main.ws-canvas; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels",
+        "dark slab: main.ws-canvas is a near-black box inside the light div.ss-window; one theme per scene, so a log or code block in a light UI is a light surface (the well or a tinted panel, mono text in the normal inks); a dark panel belongs in a dark scene or a terminal window of its own"
+      ]
+    },
+    {
+      "label": "brief +0.7s",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "near aligned: span.ss-tabs__tab \"Schematic\" and span.ss-badge__label \"Template preview · Focus\" start 13.0px apart in main.ws-canvas; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels",
+        "dark slab: main.ws-canvas is a near-black box inside the light div.ss-window; one theme per scene, so a log or code block in a light UI is a light surface (the well or a tinted panel, mono text in the normal inks); a dark panel belongs in a dark scene or a terminal window of its own"
+      ]
+    },
+    {
+      "label": "schematic",
+      "findings": [
+        "near aligned: span.ss-tabs__tab \"Schematic\" and span.ss-badge__label \"Template preview · Focus\" start 13.0px apart in main.ws-canvas; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels",
+        "dark slab: main.ws-canvas is a near-black box inside the light div.ss-window; one theme per scene, so a log or code block in a light UI is a light surface (the well or a tinted panel, mono text in the normal inks); a dark panel belongs in a dark scene or a terminal window of its own"
+      ]
+    },
+    {
+      "label": "schematic +0.7s",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "near aligned: span.ss-tabs__tab \"Schematic\" and span.ss-badge__label \"Template preview · Focus\" start 13.0px apart in main.ws-canvas; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels",
+        "dark slab: main.ws-canvas is a near-black box inside the light div.ss-window; one theme per scene, so a log or code block in a light UI is a light surface (the well or a tinted panel, mono text in the normal inks); a dark panel belongs in a dark scene or a terminal window of its own"
+      ]
+    },
+    {
+      "label": "pcb",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "dark slab: main.ws-canvas is a near-black box inside the light div.ss-window; one theme per scene, so a log or code block in a light UI is a light surface (the well or a tinted panel, mono text in the normal inks); a dark panel belongs in a dark scene or a terminal window of its own"
+      ]
+    },
+    {
+      "label": "pcb +0.7s",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "near aligned: span.ss-tabs__tab \"Schematic\" and span.ss-badge__label \"Template preview · Focus\" start 13.0px apart in main.ws-canvas; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels",
+        "dark slab: main.ws-canvas is a near-black box inside the light div.ss-window; one theme per scene, so a log or code block in a light UI is a light surface (the well or a tinted panel, mono text in the normal inks); a dark panel belongs in a dark scene or a terminal window of its own"
+      ]
+    },
+    {
+      "label": "board",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "dark slab: main.ws-canvas is a near-black box inside the light div.ss-window; one theme per scene, so a log or code block in a light UI is a light surface (the well or a tinted panel, mono text in the normal inks); a dark panel belongs in a dark scene or a terminal window of its own"
+      ]
+    },
+    {
+      "label": "board +0.7s",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "near aligned: span.ss-tabs__tab \"Schematic\" and span.ss-badge__label \"Template preview · Focus\" start 13.0px apart in main.ws-canvas; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels",
+        "dark slab: main.ws-canvas is a near-black box inside the light div.ss-window; one theme per scene, so a log or code block in a light UI is a light surface (the well or a tinted panel, mono text in the normal inks); a dark panel belongs in a dark scene or a terminal window of its own"
+      ]
+    },
+    {
+      "label": "enclosure",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "dark slab: main.ws-canvas is a near-black box inside the light div.ss-window; one theme per scene, so a log or code block in a light UI is a light surface (the well or a tinted panel, mono text in the normal inks); a dark panel belongs in a dark scene or a terminal window of its own"
+      ]
+    },
+    {
+      "label": "enclosure +0.7s",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "dark slab: main.ws-canvas is a near-black box inside the light div.ss-window; one theme per scene, so a log or code block in a light UI is a light surface (the well or a tinted panel, mono text in the normal inks); a dark panel belongs in a dark scene or a terminal window of its own"
+      ]
+    },
+    {
+      "label": "close",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "dark slab: main.ws-canvas is a near-black box inside the light div.ss-window; one theme per scene, so a log or code block in a light UI is a light surface (the well or a tinted panel, mono text in the normal inks); a dark panel belongs in a dark scene or a terminal window of its own"
+      ]
+    },
+    {
+      "label": "close +0.7s",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "dark slab: main.ws-canvas is a near-black box inside the light div.ss-window; one theme per scene, so a log or code block in a light UI is a light surface (the well or a tinted panel, mono text in the normal inks); a dark panel belongs in a dark scene or a terminal window of its own"
+      ]
+    },
+    {
+      "label": "compiled",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "dark slab: main.ws-canvas is a near-black box inside the light div.ss-window; one theme per scene, so a log or code block in a light UI is a light surface (the well or a tinted panel, mono text in the normal inks); a dark panel belongs in a dark scene or a terminal window of its own"
+      ]
+    },
+    {
+      "label": "compiled +0.7s",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "near aligned: span.ss-tabs__tab \"Schematic\" and span.ss-badge__label \"Template preview · Focus\" start 13.0px apart in main.ws-canvas; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels",
+        "dark slab: main.ws-canvas is a near-black box inside the light div.ss-window; one theme per scene, so a log or code block in a light UI is a light surface (the well or a tinted panel, mono text in the normal inks); a dark panel belongs in a dark scene or a terminal window of its own"
+      ]
+    },
+    {
+      "label": "replay",
+      "findings": [
+        "lopsided: span.ss-button \"Replay\" has 6px on the left and 10px on the right",
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "near aligned: span.ss-tabs__tab \"Schematic\" and span.ss-badge__label \"Template preview · Focus\" start 13.0px apart in main.ws-canvas; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels",
+        "dark slab: main.ws-canvas is a near-black box inside the light div.ss-window; one theme per scene, so a log or code block in a light UI is a light surface (the well or a tinted panel, mono text in the normal inks); a dark panel belongs in a dark scene or a terminal window of its own"
+      ]
+    },
+    {
+      "label": "replay +0.7s",
+      "findings": [
+        "lopsided: span.ss-button \"Replay\" has 6px on the left and 11px on the right",
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "near aligned: span.ss-tabs__tab \"Schematic\" and span.ss-badge__label \"Template preview · Focus\" start 13.0px apart in main.ws-canvas; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels",
+        "dark slab: main.ws-canvas is a near-black box inside the light div.ss-window; one theme per scene, so a log or code block in a light UI is a light surface (the well or a tinted panel, mono text in the normal inks); a dark panel belongs in a dark scene or a terminal window of its own"
+      ]
+    },
+    {
+      "label": "brief",
+      "findings": [
+        "lopsided: span.ss-button \"Replay\" has 6px on the left and 11px on the right",
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "near aligned: span.ss-tabs__tab \"Schematic\" and span.ss-badge__label \"Template preview · Focus\" start 13.0px apart in main.ws-canvas; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels",
+        "dark slab: main.ws-canvas is a near-black box inside the light div.ss-window; one theme per scene, so a log or code block in a light UI is a light surface (the well or a tinted panel, mono text in the normal inks); a dark panel belongs in a dark scene or a terminal window of its own"
+      ]
+    },
+    {
+      "label": "brief +0.7s",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "near aligned: span.ss-tabs__tab \"Schematic\" and span.ss-badge__label \"Template preview · Focus\" start 13.0px apart in main.ws-canvas; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels",
+        "dark slab: main.ws-canvas is a near-black box inside the light div.ss-window; one theme per scene, so a log or code block in a light UI is a light surface (the well or a tinted panel, mono text in the normal inks); a dark panel belongs in a dark scene or a terminal window of its own"
+      ]
+    },
+    {
+      "label": "schematic",
+      "findings": [
+        "near aligned: span.ss-tabs__tab \"Schematic\" and span.ss-badge__label \"Template preview · Focus\" start 13.0px apart in main.ws-canvas; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels",
+        "dark slab: main.ws-canvas is a near-black box inside the light div.ss-window; one theme per scene, so a log or code block in a light UI is a light surface (the well or a tinted panel, mono text in the normal inks); a dark panel belongs in a dark scene or a terminal window of its own"
+      ]
+    },
+    {
+      "label": "schematic +0.7s",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "near aligned: span.ss-tabs__tab \"Schematic\" and span.ss-badge__label \"Template preview · Focus\" start 13.0px apart in main.ws-canvas; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels",
+        "dark slab: main.ws-canvas is a near-black box inside the light div.ss-window; one theme per scene, so a log or code block in a light UI is a light surface (the well or a tinted panel, mono text in the normal inks); a dark panel belongs in a dark scene or a terminal window of its own"
+      ]
+    },
+    {
+      "label": "pcb",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "dark slab: main.ws-canvas is a near-black box inside the light div.ss-window; one theme per scene, so a log or code block in a light UI is a light surface (the well or a tinted panel, mono text in the normal inks); a dark panel belongs in a dark scene or a terminal window of its own"
+      ]
+    },
+    {
+      "label": "next loop",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "dark slab: main.ws-canvas is a near-black box inside the light div.ss-window; one theme per scene, so a log or code block in a light UI is a light surface (the well or a tinted panel, mono text in the normal inks); a dark panel belongs in a dark scene or a terminal window of its own"
+      ]
+    }
+  ],
+  "errors": []
+}

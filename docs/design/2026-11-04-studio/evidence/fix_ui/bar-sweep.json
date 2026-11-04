@@ -1,0 +1,1280 @@
+[
+ {
+  "job": "clean",
+  "w": 1600,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 605,
+  "work": 1200,
+  "mode": "pill",
+  "labels": [
+   "Generated",
+   "DRC 0 errors",
+   "Compiled",
+   "Not printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1500,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 605,
+  "work": 1100,
+  "mode": "pill",
+  "labels": [
+   "Generated",
+   "DRC 0 errors",
+   "Compiled",
+   "Not printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1460,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 605,
+  "work": 1060,
+  "mode": "pill",
+  "labels": [
+   "Generated",
+   "DRC 0 errors",
+   "Compiled",
+   "Not printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1440,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 605,
+  "work": 1040,
+  "mode": "pill",
+  "labels": [
+   "Generated",
+   "DRC 0 errors",
+   "Compiled",
+   "Not printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1420,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 368,
+  "work": 1020,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1400,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 368,
+  "work": 1000,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1380,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 368,
+  "work": 980,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1360,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 368,
+  "work": 960,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1340,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 368,
+  "work": 940,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1320,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 368,
+  "work": 920,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1300,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 368,
+  "work": 900,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1280,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 368,
+  "work": 880,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1260,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 368,
+  "work": 860,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1241,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 368,
+  "work": 841,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1240,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 368,
+  "work": 880,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1220,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 368,
+  "work": 860,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1200,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 368,
+  "work": 840,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1180,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 368,
+  "work": 820,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1160,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 293,
+  "work": 800,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1140,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 293,
+  "work": 780,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1120,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 293,
+  "work": 760,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1100,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 293,
+  "work": 740,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1080,
+  "tabsW": 358,
+  "natural": 358,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 293,
+  "work": 720,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1060,
+  "tabsW": 358,
+  "natural": 358,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 210,
+  "work": 700,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1040,
+  "tabsW": 358,
+  "natural": 358,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 210,
+  "work": 680,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1024,
+  "tabsW": 358,
+  "natural": 358,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 210,
+  "work": 664,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1001,
+  "tabsW": 358,
+  "natural": 358,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 210,
+  "work": 641,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 1000,
+  "tabsW": 358,
+  "natural": 358,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 210,
+  "work": 680,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 980,
+  "tabsW": 358,
+  "natural": 358,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 210,
+  "work": 660,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 960,
+  "tabsW": 358,
+  "natural": 358,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 210,
+  "work": 640,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 940,
+  "tabsW": 334,
+  "natural": 334,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 210,
+  "work": 620,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 920,
+  "tabsW": 334,
+  "natural": 334,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 210,
+  "work": 600,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 901,
+  "tabsW": 334,
+  "natural": 334,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 210,
+  "work": 581,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 900,
+  "tabsW": 900,
+  "natural": 900,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 900,
+  "work": 900,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 860,
+  "tabsW": 860,
+  "natural": 860,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 860,
+  "work": 860,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 820,
+  "tabsW": 820,
+  "natural": 820,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 820,
+  "work": 820,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 768,
+  "tabsW": 768,
+  "natural": 768,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 768,
+  "work": 768,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 480,
+  "tabsW": 480,
+  "natural": 480,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 480,
+  "work": 480,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 430,
+  "tabsW": 430,
+  "natural": 430,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 430,
+  "work": 430,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 390,
+  "tabsW": 390,
+  "natural": 390,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 390,
+  "work": 390,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 360,
+  "tabsW": 360,
+  "natural": 360,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 360,
+  "work": 360,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "clean",
+  "w": 320,
+  "tabsW": 320,
+  "natural": 320,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 320,
+  "work": 320,
+  "mode": "chip",
+  "labels": [
+   "3 checksNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1600,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 665,
+  "work": 1200,
+  "mode": "pill",
+  "labels": [
+   "Not generated",
+   "DRC did not run",
+   "Not compiled",
+   "Not printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1500,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 665,
+  "work": 1100,
+  "mode": "pill",
+  "labels": [
+   "Not generated",
+   "DRC did not run",
+   "Not compiled",
+   "Not printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1460,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 383,
+  "work": 1060,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1440,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 383,
+  "work": 1040,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1420,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 383,
+  "work": 1020,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1400,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 383,
+  "work": 1000,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1380,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 383,
+  "work": 980,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1360,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 383,
+  "work": 960,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1340,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 383,
+  "work": 940,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1320,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 383,
+  "work": 920,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1300,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 383,
+  "work": 900,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1280,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 383,
+  "work": 880,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1260,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 383,
+  "work": 860,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1241,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 383,
+  "work": 841,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1240,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 383,
+  "work": 880,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1220,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 383,
+  "work": 860,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1200,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 383,
+  "work": 840,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1180,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 383,
+  "work": 820,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1160,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 308,
+  "work": 800,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1140,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 308,
+  "work": 780,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1120,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 308,
+  "work": 760,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1100,
+  "tabsW": 382,
+  "natural": 382,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 308,
+  "work": 740,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1080,
+  "tabsW": 358,
+  "natural": 358,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 308,
+  "work": 720,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1060,
+  "tabsW": 358,
+  "natural": 358,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 225,
+  "work": 700,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1040,
+  "tabsW": 358,
+  "natural": 358,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 225,
+  "work": 680,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1024,
+  "tabsW": 358,
+  "natural": 358,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 225,
+  "work": 664,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1001,
+  "tabsW": 358,
+  "natural": 358,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 225,
+  "work": 641,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 1000,
+  "tabsW": 358,
+  "natural": 358,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 225,
+  "work": 680,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 980,
+  "tabsW": 358,
+  "natural": 358,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 225,
+  "work": 660,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 960,
+  "tabsW": 358,
+  "natural": 358,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 225,
+  "work": 640,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 940,
+  "tabsW": 334,
+  "natural": 334,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 225,
+  "work": 620,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 920,
+  "tabsW": 334,
+  "natural": 334,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 225,
+  "work": 600,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 901,
+  "tabsW": 334,
+  "natural": 334,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 225,
+  "work": 581,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 900,
+  "tabsW": 900,
+  "natural": 900,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 900,
+  "work": 900,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 860,
+  "tabsW": 860,
+  "natural": 860,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 860,
+  "work": 860,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 820,
+  "tabsW": 820,
+  "natural": 820,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 820,
+  "work": 820,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 768,
+  "tabsW": 768,
+  "natural": 768,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 768,
+  "work": 768,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 480,
+  "tabsW": 480,
+  "natural": 480,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 480,
+  "work": 480,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 430,
+  "tabsW": 430,
+  "natural": 430,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 430,
+  "work": 430,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 390,
+  "tabsW": 390,
+  "natural": 390,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 390,
+  "work": 390,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 360,
+  "tabsW": 360,
+  "natural": 360,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 360,
+  "work": 360,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ },
+ {
+  "job": "failed",
+  "w": 320,
+  "tabsW": 320,
+  "natural": 320,
+  "squeezed": false,
+  "clipped": [],
+  "barOverflow": false,
+  "right": 320,
+  "work": 320,
+  "mode": "chip",
+  "labels": [
+   "3 problemsNot printed"
+  ]
+ }
+]

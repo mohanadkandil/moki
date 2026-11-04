@@ -1,0 +1,114 @@
+[
+ {
+  "k": "first brief",
+  "v": "Board, case and firmware in 19.6 s."
+ },
+ {
+  "k": "wall seconds",
+  "v": "40.3"
+ },
+ {
+  "k": "stream samples",
+  "v": 3
+ },
+ {
+  "k": "route details",
+  "v": "board\n90 × 100 mm, 2 layers\n@tscircuit/capacity-autorouter\n0.0.1037\n\nCache hit: reused artifact; original timing is in cache receipt"
+ },
+ {
+  "k": "refusal",
+  "v": "Part of this brief is outside what Workshop can draw.\n\n“motor” needs a driver and a separate supply, which Workshop does not design.\n\nEdit the brief"
+ },
+ {
+  "k": "unchanged",
+  "v": "That didn’t change the design, so nothing was rebuilt.\n\nNot used: “remove”. They don’t change the circuit.\n\nA follow-up adds to your earlier brief. To take a part out, edit the brief and send it again.\n\nEdit the brief"
+ },
+ {
+  "k": "follow-up",
+  "v": "Board, case and firmware in 20.4 s."
+ },
+ {
+  "k": "follow-up reading",
+  "v": "Changed\n\nBUZZER moved from U1.GPIO23 to U1.GPIO18"
+ },
+ {
+  "k": "job",
+  "v": "bf385c22-736a-4288-b1fa-6774a12a035a"
+ },
+ {
+  "k": "real stages",
+  "v": "codegen:done:3 render:done:16 route:skipped:0 svg:skipped:0 gltf:skipped:0 fab:skipped:0 enclosure:done:864 firmware:done:10 firmware-compile:done:19055"
+ },
+ {
+  "k": "real total",
+  "v": 20380
+ },
+ {
+  "k": "cache",
+  "v": "hit"
+ },
+ {
+  "k": "ui total",
+  "v": "20.4 s"
+ },
+ {
+  "k": "latest summary in view",
+  "v": true
+ },
+ {
+  "k": "layer before",
+  "v": "layer: top"
+ },
+ {
+  "k": "layer after Bottom",
+  "v": "layer: bottom"
+ },
+ {
+  "k": "layer after Top",
+  "v": "layer: top"
+ },
+ {
+  "k": "zoom changes canvas",
+  "v": true
+ },
+ {
+  "k": "fit remount keeps viewer",
+  "v": true
+ },
+ {
+  "k": "download name",
+  "v": "workshop-focus-timer-bf385c22.zip"
+ },
+ {
+  "k": "edit applied",
+  "v": true
+ },
+ {
+  "k": "edited render",
+  "v": "Board and case in 1.30 s. The firmware wasn’t compiled."
+ },
+ {
+  "k": "edited summary",
+  "v": "Board and case in 1.30 s. The firmware wasn’t compiled.\n\nThe board came from the cache and so did the case geometry. Built from your edited TSX.\n\nChecked in software\nDesign rule check: 0 errors, 19 warnings.\nWarnings\nRouted 11 traces and 6 vias on a 2-layer 92 × 100 mm board.\nCase modelled in build123d: 96.6 × 105.6 × 30.5 mm. Base and lid are watertight.\nNot proven\nNothing has been fabricated, printed, flashed or powered.\nModule sizes aren’t confirmed for 4 parts. Measure the real modules before ordering.\nWhat’s known about each part\nFirmware wasn’t compiled. Edited TSX has no verified design graph or firmware pin map\nNo part prices or stock were checked, and power and heat weren’t simulated.\nDownload all files"
+ },
+ {
+  "k": "broken render",
+  "v": "This build failed."
+ },
+ {
+  "k": "broken text",
+  "v": "This build failed.\n\nEDA render failed (exit 1): 6 | return <board width={92} height={100} layers={2} schAutoLayoutEnabled autorouter=\"auto\" Built from your edited TSX.\n\nFull error\n\nThe canvas still shows the last build that finished."
+ },
+ {
+  "k": "editor still says edited after a render",
+  "v": true
+ },
+ {
+  "k": "turns after reload",
+  "v": 14
+ },
+ {
+  "k": "console",
+  "v": []
+ }
+]

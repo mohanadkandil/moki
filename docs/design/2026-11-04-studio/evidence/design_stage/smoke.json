@@ -1,0 +1,32 @@
+{
+  "production": true,
+  "base": "http://127.0.0.1:5188",
+  "results": [
+    {
+      "width": 1440,
+      "overflow": false,
+      "errors": [],
+      "apiCalls": 0,
+      "replay": true,
+      "stillControl": true,
+      "reducedToggle": true,
+      "resize": true
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "errors": [],
+      "apiCalls": 0,
+      "replay": true,
+      "stillControl": true,
+      "reducedToggle": true,
+      "resize": true
+    },
+    {
+      "toolingProvenanceCheck": {
+        "bundledKitLayerAccepted": true,
+        "unlayeredGeometryOverrideStillCaught": true
+      }
+    }
+  ]
+}

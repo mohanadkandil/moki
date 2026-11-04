@@ -1,0 +1,39 @@
+{
+  "status": "inconclusive",
+  "mode": "motion",
+  "stages": [
+    {
+      "key": "stage-1",
+      "label": "ss-fit workshop-hero",
+      "coverage": {
+        "status": "inconclusive",
+        "frames": 531,
+        "durationMs": 22732.399999976158,
+        "medianMs": 32.799999952316284,
+        "maxGapMs": 910.3000000715256,
+        "skippedGaps": 31,
+        "cameraFrames": 0,
+        "reasons": [
+          "31 sampling gap(s) exceeded 52ms; motion during those gaps was not judged"
+        ],
+        "framingSamples": 6,
+        "layout": {
+          "controls": 10,
+          "paddedContainers": 11,
+          "compositionCrops": 0
+        }
+      },
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right (6 frames from open)",
+        "clipped: near aligned: span.ss-tabs__tab \"Schematic\" and span.ss-badge__label \"Template preview · Focus\" start 13.0px apart in main.ws-canvas; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels (4 frames from open)",
+        "dark slab: main.ws-canvas is a near-black box inside the light div.ss-window; one theme per scene, so a log or code block in a light UI is a light surface (the well or a tinted panel, mono text in the normal inks); a dark panel belongs in a dark scene or a terminal window of its own (6 frames from open)"
+      ],
+      "manual": [
+        "same-box content change: ss-draft__typed changes text or drawing at 1.56s [brief]; inspect the transition in motion (geometry alone cannot judge it)"
+      ]
+    }
+  ],
+  "errors": [],
+  "manualReviewRequired": true,
+  "exitCode": 2
+}

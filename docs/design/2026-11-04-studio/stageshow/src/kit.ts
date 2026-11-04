@@ -1,0 +1,13 @@
+// Only the kit parts used by these two illustrations. Golds load separately.
+export {Stage} from '../kit/stage'
+export {Window,Text} from '../kit/window'
+export {Row} from '../kit/parts/Row'
+export {Card} from '../kit/parts/Card'
+export {Icon} from '../kit/parts/Icon'
+export {Draft} from '../kit/controls/Draft'
+export {Button} from '../kit/controls/Button'
+export {Badge} from '../kit/controls/Badge'
+export {Tabs} from '../kit/controls/Tabs'
+export {States} from '../kit/motion/States'
+export {Collapse} from '../kit/motion/Collapse'
+export type {Act} from '../kit/act'

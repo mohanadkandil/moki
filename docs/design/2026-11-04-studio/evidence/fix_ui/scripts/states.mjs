@@ -1,0 +1,15 @@
+import { launch, ORIGIN, EV } from './lib.mjs';
+const b = await launch(); const out = {};
+const c = await b.newContext({ viewport: { width: 1280, height: 800 } }); const p = await c.newPage();
+await p.goto(`${ORIGIN}/studio?job=2f99d52a-46c3-4bca-90b8-0b2b6b58e9bf&tab=code`, { waitUntil: 'domcontentloaded' });
+await p.waitForSelector('.st-proof-chip', { timeout: 30000 }); await p.waitForTimeout(3000);
+out.failed = await p.textContent('.st-proof-chip'); await p.click('.st-proof-chip'); await p.waitForTimeout(300);
+await p.screenshot({ path: `${EV}/1280-chip-problem.png` }); await c.close();
+const m = await b.newContext({ viewport: { width: 1280, height: 800 } }); const q = await m.newPage();
+await q.goto(`${ORIGIN}/studio?mock=board`, { waitUntil: 'domcontentloaded' });
+await q.waitForSelector('#st-input', { timeout: 30000 }); await q.waitForTimeout(800);
+await q.fill('#st-input', 'A focus timer with a knob and a beep'); await q.keyboard.press('Enter');
+await q.waitForSelector('.st-proof-chip', { timeout: 15000 }); await q.waitForTimeout(700);
+out.running = await q.textContent('.st-proof-chip');
+await q.screenshot({ path: `${EV}/1280-chip-running-mock.png` }); await m.close();
+await b.close(); console.log(JSON.stringify(out));

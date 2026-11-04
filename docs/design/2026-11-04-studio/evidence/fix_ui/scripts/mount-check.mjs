@@ -1,0 +1,32 @@
+import { launch, EV } from './lib.mjs';
+import { writeFileSync } from 'node:fs';
+const O = 'http://127.0.0.1:8899', HIT = 'e4579517-8211-4720-82d7-368867ed55ed';
+const b = await launch(); const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, acceptDownloads: true }); const p = await ctx.newPage();
+const reqs = [], bad = [];
+p.on('request', r => { const u = new URL(r.url()); if (u.protocol.startsWith('http') && u.origin === O) { reqs.push(r.method() + ' ' + u.pathname); if (!u.pathname.startsWith('/app/moki/')) bad.push('outside: ' + u.pathname); } else if (u.protocol.startsWith('http')) bad.push('other origin: ' + r.url()); });
+p.on('response', r => { if (r.status() >= 400) bad.push(r.status() + ' ' + r.url()); });
+p.on('pageerror', e => bad.push('pageerror ' + e.message));
+await p.goto(`${O}/app/moki/studio?job=${HIT}&tab=schematic`, { waitUntil: 'domcontentloaded' });
+await p.waitForSelector('.st-summary', { timeout: 40000 }); await p.waitForTimeout(1500);
+for (const tab of ['pcb', '3d', 'case', 'firmware', 'code']) { await p.click(`#st-tab-${tab}`); await p.waitForTimeout(tab === 'pcb' ? 3000 : 1500); }
+await p.click('.st-menu button[aria-label="History"]'); await p.waitForTimeout(800); await p.keyboard.press('Escape');
+const home = await p.getAttribute('.st-wordmark', 'href');
+const links = await p.$$eval('a[download]', as => as.map(a => a.getAttribute('href')));
+await p.click('button[aria-label="Download"]'); await p.waitForTimeout(200);
+const dl = await p.$$eval('.st-downloads a', as => as.map(a => a.getAttribute('href')));
+const [d] = await Promise.all([p.waitForEvent('download', { timeout: 30000 }), p.click('.st-popover-primary')]);
+await p.screenshot({ path: `${EV}/mounted-history-1440.png` });
+// One real build through the mount: POST, polling, streaming, follow-up chips.
+await p.click('button[aria-label="New build"]'); await p.waitForTimeout(400);
+await p.fill('#st-input', 'A focus timer with a knob and a beep'); await p.keyboard.press('Enter');
+const t0 = Date.now(); await p.waitForSelector('.st-stage.is-running, .st-sending', { timeout: 15000 });
+await p.waitForTimeout(2500); await p.screenshot({ path: `${EV}/mounted-streaming-1440.png` });
+await p.waitForSelector('.st-summary', { timeout: 150000 }); await p.waitForTimeout(2000);
+await p.screenshot({ path: `${EV}/mounted-done-1440.png` });
+const summary = await p.textContent('.st-summary-head'), other = await p.textContent('.st-run-other').catch(() => null), strip = await p.textContent('.st-status');
+const followups = await p.$$eval('.st-followups button', x => x.map(e => e.textContent));
+const placeholder = await p.getAttribute('#st-input', 'placeholder');
+await b.close();
+const uniq = [...new Set(reqs)];
+const res = { home, anyDownloadLinksOutside: [...links, ...dl].filter(u => !u.startsWith('/app/moki/')), downloadFile: d.suggestedFilename(), requests: reqs.length, unique: uniq.length, apiSample: uniq.filter(r => r.includes('/api/')).slice(0, 6), bad, built: { seconds: (Date.now() - t0) / 1000, summary, other, strip, followups, placeholder } };
+writeFileSync(`${EV}/base-path-check.json`, JSON.stringify(res, null, 1)); console.log(JSON.stringify(res, null, 1));

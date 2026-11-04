@@ -1,0 +1,32 @@
+{
+  "status": "issues",
+  "mode": "still",
+  "stages": [
+    {
+      "key": "stage-1",
+      "label": "ss-fit workshop-hero",
+      "coverage": {
+        "status": "complete",
+        "frames": 1,
+        "durationMs": 0,
+        "maxGapMs": 0,
+        "reasons": [],
+        "framingSamples": 1,
+        "layout": {
+          "controls": 8,
+          "paddedContainers": 11,
+          "compositionCrops": 0
+        }
+      },
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right (still)",
+        "clipped: near aligned: span.ss-tabs__tab \"Schematic\" and span.ss-badge__label \"Template preview · Focus\" start 13.0px apart in main.ws-canvas; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels (still)",
+        "dark slab: main.ws-canvas is a near-black box inside the light div.ss-window; one theme per scene, so a log or code block in a light UI is a light surface (the well or a tinted panel, mono text in the normal inks); a dark panel belongs in a dark scene or a terminal window of its own (still)"
+      ],
+      "manual": []
+    }
+  ],
+  "errors": [],
+  "manualReviewRequired": false,
+  "exitCode": 0
+}

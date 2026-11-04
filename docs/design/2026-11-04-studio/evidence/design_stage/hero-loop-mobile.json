@@ -1,0 +1,48 @@
+{
+  "status": "inconclusive",
+  "mode": "motion",
+  "stages": [
+    {
+      "key": "stage-1",
+      "label": "ss-fit workshop-hero",
+      "coverage": {
+        "status": "inconclusive",
+        "frames": 784,
+        "durationMs": 20663.5,
+        "medianMs": 18.5,
+        "maxGapMs": 3157.9000000953674,
+        "skippedGaps": 66,
+        "cameraFrames": 0,
+        "reasons": [
+          "66 sampling gap(s) exceeded 30ms; motion during those gaps was not judged"
+        ],
+        "framingSamples": 7,
+        "layout": {
+          "controls": 8,
+          "paddedContainers": 5,
+          "compositionCrops": 0
+        }
+      },
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right (7 frames from 0.0s)",
+        "clipped: near aligned: span.ss-text \"Workshop / Focus timer\" and span.ss-text \"Your brief\" start 6.0px apart in div.ws-mobile-shell; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels (4 frames from 0.0s)",
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed (7 frames from 0.0s)",
+        "appears with no entrance: div.ss-collapse \"Generate\" shows at full size and opacity in one frame; fade it in, or grow it out of what it comes from (a chip budding off a value scales from it as it fades in: Fly with held), never pop it in whole",
+        "appears with no entrance: span.ss-states__item \"Queued\" shows at full size and opacity in one frame; fade it in, or grow it out of what it comes from (a chip budding off a value scales from it as it fades in: Fly with held), never pop it in whole",
+        "appears with no entrance: div.ws-art.ws-schematic shows at full size and opacity in one frame; fade it in, or grow it out of what it comes from (a chip budding off a value scales from it as it fades in: Fly with held), never pop it in whole",
+        "vanishes with no exit: span.ss-states__item \"Cached\" goes from full opacity to gone in one frame; fade it out (or move it out of view) before it is removed",
+        "vanishes with no exit: span.ss-states__item \"1,019 ms\" goes from full opacity to gone in one frame; fade it out (or move it out of view) before it is removed",
+        "vanishes with no exit: span.ss-states__item \"22,517 ms\" goes from full opacity to gone in one frame; fade it out (or move it out of view) before it is removed",
+        "vanishes with no exit: div.ss-collapse \"Board, enclosure and\" goes from full opacity to gone in one frame; fade it out (or move it out of view) before it is removed",
+        "vanishes with no exit: div.ws-art.ws-three goes from full opacity to gone in one frame; fade it out (or move it out of view) before it is removed",
+        "vanishes with no exit: div.ws-proof \"Compiled · 24 sBoard\" goes from full opacity to gone in one frame; fade it out (or move it out of view) before it is removed"
+      ],
+      "manual": [
+        "same-box content change: ss-draft__typed changes text or drawing at 1.41s [brief]; inspect the transition in motion (geometry alone cannot judge it)"
+      ]
+    }
+  ],
+  "errors": [],
+  "manualReviewRequired": true,
+  "exitCode": 2
+}

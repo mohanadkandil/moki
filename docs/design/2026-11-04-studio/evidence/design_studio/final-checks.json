@@ -1,0 +1,40 @@
+{
+ "drc-errors-68": "Board and case in 9.47 s, with 68 DRC errors.",
+ "drc-errors-68-proof": "Generated\nDRC 68 errors\nNot compiled\nNot printed",
+ "firmware-failed": "Board and case in 199.6 s. The firmware wasn’t compiled.",
+ "firmware-failed-proof": "Generated\nDRC 0 errors\nNot compiled\nNot printed",
+ "dead-on-arrival": "This build failed.",
+ "dead-on-arrival-proof": "Not generated\nDRC did not run\nNot compiled\nNot printed",
+ "failLog": [],
+ "lamp": "Board, case and firmware in 16.3 s.",
+ "temp": "Board, case and firmware in 21.1 s.",
+ "refused": "Part of this brief is outside what Workshop can draw.\n\n“camera” is not in the parts catalog.\n\nEdit the brief",
+ "ambiguous": "This brief mentions a focus timer and a light-sensing lamp. Workshop draws one circuit at a time.\n\nChoose which one to draw, or edit the brief.\n\nBuild the focus timer\nBuild the light-sensing lamp\nEdit the brief",
+ "templateLog": [],
+ "cold": {
+  "job": "c74ffdbc-0023-4e6e-aae8-70107979d1f8",
+  "cache": "miss",
+  "totalMs": 33450,
+  "stages": [
+   "codegen:done:2",
+   "render:done:470",
+   "route:done:2233",
+   "svg:done:44",
+   "gltf:done:315",
+   "fab:done:109",
+   "enclosure:done:10427",
+   "firmware:done:9",
+   "firmware-compile:done:17157"
+  ],
+  "ui": "Board, case and firmware in 33.5 s.",
+  "waited": []
+ },
+ "arrowTab": "st-tab-pcb",
+ "endTab": "st-tab-code",
+ "reducedSpin": "none",
+ "narrowOverflow": false,
+ "mobileOverflow": false,
+ "textareaH": 23,
+ "mobileTime": "18.6 s",
+ "mobileLog": []
+}

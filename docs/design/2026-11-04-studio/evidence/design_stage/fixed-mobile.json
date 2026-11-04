@@ -1,0 +1,273 @@
+{
+  "width": 390,
+  "clock": "60 fps Stageshow installVirtualClock",
+  "marks": [
+    {
+      "mark": "brief",
+      "frame": 36,
+      "seconds": 0.6
+    },
+    {
+      "mark": "schematic",
+      "frame": 179,
+      "seconds": 2.9833333333333334
+    },
+    {
+      "mark": "pcb",
+      "frame": 316,
+      "seconds": 5.266666666666667
+    },
+    {
+      "mark": "board",
+      "frame": 477,
+      "seconds": 7.95
+    },
+    {
+      "mark": "enclosure",
+      "frame": 559,
+      "seconds": 9.316666666666666
+    },
+    {
+      "mark": "close",
+      "frame": 626,
+      "seconds": 10.433333333333334
+    },
+    {
+      "mark": "compiled",
+      "frame": 687,
+      "seconds": 11.45
+    },
+    {
+      "mark": "replay",
+      "frame": 861,
+      "seconds": 14.35
+    },
+    {
+      "mark": "brief",
+      "frame": 997,
+      "seconds": 16.616666666666667
+    },
+    {
+      "mark": "schematic",
+      "frame": 1140,
+      "seconds": 19
+    },
+    {
+      "mark": "pcb",
+      "frame": 1277,
+      "seconds": 21.283333333333335
+    }
+  ],
+  "stages": {
+    "stage-1": {
+      "coverage": {
+        "status": "complete",
+        "frames": 1319,
+        "durationMs": 21966.666666666664,
+        "medianMs": 16.666666666666742,
+        "maxGapMs": 16.666666666671517,
+        "skippedGaps": 0,
+        "cameraFrames": 0,
+        "reasons": []
+      },
+      "jumps": [
+        "jump: ws-pad y +40.0px in one frame at 15.08s [replay]",
+        "jump: ss-row__title \"Board\" y +40.0px in one frame at 15.08s [replay]",
+        "jump: ws-jog y +40.0px in one frame at 15.08s [replay]",
+        "jump: ws-pad y +40.0px in one frame at 15.08s [replay]",
+        "jump: ss-row__title \"Case\" y +40.0px in one frame at 15.08s [replay]",
+        "jump: ws-jog y +40.0px in one frame at 15.08s [replay]",
+        "jump: ws-pad y +40.0px in one frame at 15.08s [replay]",
+        "jump: ss-row__title \"Firmware\" y +40.0px in one frame at 15.08s [replay]",
+        "jump: ss-tabs__bar x -145.0px in one frame at 15.08s [replay]",
+        "jump: ss-tabs__bar width +48.0px in one frame at 15.08s [replay]"
+      ],
+      "manual": [
+        "same-box content change: ss-draft__typed changes text or drawing at 1.23s [brief]; inspect the transition in motion (geometry alone cannot judge it)"
+      ]
+    }
+  },
+  "checks": [
+    {
+      "label": "opening",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "near aligned: span.ss-text \"Workshop / Focus timer\" and span.ss-text \"Your brief\" start 6.0px apart in div.ws-mobile-shell; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels",
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed"
+      ]
+    },
+    {
+      "label": "brief",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "near aligned: span.ss-text \"Workshop / Focus timer\" and span.ss-text \"Your brief\" start 6.0px apart in div.ws-mobile-shell; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels",
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed"
+      ]
+    },
+    {
+      "label": "brief +0.7s",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "near aligned: span.ss-text \"Workshop / Focus timer\" and span.ss-text \"Your brief\" start 6.0px apart in div.ws-mobile-shell; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels",
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed"
+      ]
+    },
+    {
+      "label": "schematic",
+      "findings": [
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed"
+      ]
+    },
+    {
+      "label": "schematic +0.7s",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "near aligned: span.ss-text \"Workshop / Focus timer\" and span.ss-text \"Your brief\" start 6.0px apart in div.ws-mobile-shell; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels",
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed"
+      ]
+    },
+    {
+      "label": "pcb",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed"
+      ]
+    },
+    {
+      "label": "pcb +0.7s",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "near aligned: span.ss-text \"Workshop / Focus timer\" and span.ss-text \"Your brief\" start 6.0px apart in div.ws-mobile-shell; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels",
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed"
+      ]
+    },
+    {
+      "label": "board",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed"
+      ]
+    },
+    {
+      "label": "board +0.7s",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "near aligned: span.ss-text \"Workshop / Focus timer\" and span.ss-text \"Your brief\" start 6.0px apart in div.ws-mobile-shell; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels",
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed"
+      ]
+    },
+    {
+      "label": "enclosure",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed"
+      ]
+    },
+    {
+      "label": "enclosure +0.7s",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed"
+      ]
+    },
+    {
+      "label": "close",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed"
+      ]
+    },
+    {
+      "label": "close +0.7s",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed"
+      ]
+    },
+    {
+      "label": "compiled",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed"
+      ]
+    },
+    {
+      "label": "compiled +0.7s",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed"
+      ]
+    },
+    {
+      "label": "replay",
+      "findings": [
+        "lopsided: span.ss-button \"Replay\" has 6px on the left and 10px on the right",
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed"
+      ]
+    },
+    {
+      "label": "replay +0.7s",
+      "findings": [
+        "lopsided: span.ss-button \"Replay\" has 6px on the left and 11px on the right",
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "near aligned: span.ss-text \"Workshop / Focus timer\" and span.ss-text \"Your brief\" start 6.0px apart in div.ws-mobile-shell; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels",
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed"
+      ]
+    },
+    {
+      "label": "brief",
+      "findings": [
+        "lopsided: span.ss-button \"Replay\" has 6px on the left and 11px on the right",
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed"
+      ]
+    },
+    {
+      "label": "brief +0.7s",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "near aligned: span.ss-text \"Workshop / Focus timer\" and span.ss-text \"Your brief\" start 6.0px apart in div.ws-mobile-shell; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels",
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed"
+      ]
+    },
+    {
+      "label": "schematic",
+      "findings": [
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed"
+      ]
+    },
+    {
+      "label": "schematic +0.7s",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "near aligned: span.ss-text \"Workshop / Focus timer\" and span.ss-text \"Your brief\" start 6.0px apart in div.ws-mobile-shell; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels",
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed"
+      ]
+    },
+    {
+      "label": "pcb",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed"
+      ]
+    },
+    {
+      "label": "pcb +0.7s",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "near aligned: span.ss-text \"Workshop / Focus timer\" and span.ss-text \"Your brief\" start 6.0px apart in div.ws-mobile-shell; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels",
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed"
+      ]
+    },
+    {
+      "label": "next loop",
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right",
+        "near aligned: span.ss-text \"Workshop / Focus timer\" and span.ss-text \"Your brief\" start 6.0px apart in div.ws-mobile-shell; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels",
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed"
+      ]
+    }
+  ],
+  "errors": []
+}

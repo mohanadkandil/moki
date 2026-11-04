@@ -1,0 +1,32 @@
+{
+  "status": "issues",
+  "mode": "still",
+  "stages": [
+    {
+      "key": "stage-1",
+      "label": "ss-fit workshop-hero",
+      "coverage": {
+        "status": "complete",
+        "frames": 1,
+        "durationMs": 0,
+        "maxGapMs": 0,
+        "reasons": [],
+        "framingSamples": 1,
+        "layout": {
+          "controls": 8,
+          "paddedContainers": 5,
+          "compositionCrops": 0
+        }
+      },
+      "findings": [
+        "lopsided: span.ss-button \"Generate\" has 9px on the left and 17px on the right (still)",
+        "clipped: near aligned: span.ss-text \"Workshop / Focus timer\" and span.ss-text \"Your brief\" start 6.0px apart in div.ws-mobile-shell; lines in a card share one left edge, or one is indented on purpose by a column (an avatar's width and gap), never by a few pixels (still)",
+        "uneven gutters: span.ss-draft__box sits 18px from the left of section.ws-chat, 18px from the right and 214px from the bottom; bleed it off an edge, or keep one gutter on every side it doesn't bleed (still)"
+      ],
+      "manual": []
+    }
+  ],
+  "errors": [],
+  "manualReviewRequired": false,
+  "exitCode": 0
+}

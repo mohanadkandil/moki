@@ -1,0 +1,27 @@
+{
+ "home": "/app/moki/",
+ "anyDownloadLinksOutside": [],
+ "downloadFile": "workshop-focus-timer-e4579517.zip",
+ "requests": 130,
+ "unique": 47,
+ "apiSample": [
+  "GET /app/moki/api/board/jobs",
+  "GET /app/moki/api/board/jobs/e4579517-8211-4720-82d7-368867ed55ed",
+  "GET /app/moki/api/board/jobs/e4579517-8211-4720-82d7-368867ed55ed/files/enclosure.json",
+  "GET /app/moki/api/board/jobs/e4579517-8211-4720-82d7-368867ed55ed/files/firmware-build.json",
+  "GET /app/moki/api/board/jobs/e4579517-8211-4720-82d7-368867ed55ed/files/schematic.svg",
+  "GET /app/moki/api/board/jobs/e4579517-8211-4720-82d7-368867ed55ed/files/circuit.json"
+ ],
+ "bad": [],
+ "built": {
+  "seconds": 52.079,
+  "summary": "Board, case and firmware in 28.3 s.",
+  "other": "OtherStarting up, hashing and saving2.74 s",
+  "strip": "mmDRC 0 errors · 19 warnings11 traces routed · 0 routing errors90 × 100 mm · 2 layers28.3 sboard cache misscase cache hit",
+  "followups": [
+   "Make it 45 minutes",
+   "Use GPIO 18 for the buzzer"
+  ],
+  "placeholder": "Ask for a change"
+ }
+}

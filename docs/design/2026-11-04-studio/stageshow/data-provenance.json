@@ -1,0 +1,341 @@
+{
+  "recordedAt": "2026-11-04",
+  "authoredPlayback": true,
+  "noLiveService": true,
+  "heroSeconds": {
+    "value": 24,
+    "measuredTotalMs": 24032.40963600017,
+    "classification": "Recorded build, rounded to seconds; board and case geometry cached, firmware compile fresh; authored playback condensed",
+    "source": "data/cached-24s-receipt.json",
+    "jobId": "afecdc51-3b01-4683-ba5f-0f1ec4510e0d"
+  },
+  "comparisonSeconds": {
+    "uncachedHeadline": 31,
+    "uncachedMedian": 31.237224813,
+    "cachedHeadline": 19,
+    "cachedMedian": 19.044439031999996,
+    "classification": "Measured focus-timer medians; rounded headline, exact one-decimal medians shown below",
+    "correctionSource": "Coordinator instruction, 2026-11-04: headline measured ~31 s with 19 s cached; remove target wording"
+  },
+  "reportedReference": {
+    "minutes": "5\u20136",
+    "classification": "Owner report in BRIEF.md; not independently timed",
+    "paywalls": "Case and firmware; owner reference screenshot"
+  },
+  "measurement": {
+    "source": "docs/engineering/2026-11-04-tscircuit/evidence/bench.json",
+    "generatedAt": "2026-11-04T12:07:05.664Z",
+    "scope": "5 fresh subprocess runs with EDA and mechanical artifact caches bypassed, 3 EDA cache reuse runs per template (mechanical cache independently reported); installed OS/toolchain caches remain warm. Whole job timings exclude queue waiting.",
+    "focusTimer": {
+      "cold": {
+        "total": {
+          "n": 5,
+          "p50Ms": 31237.224813,
+          "p95Ms": 32220.53223
+        },
+        "codegen": {
+          "n": 5,
+          "p50Ms": 4.289930999999342,
+          "p95Ms": 10.44104299999998
+        },
+        "render": {
+          "n": 5,
+          "p50Ms": 470.3648469999998,
+          "p95Ms": 500.2541259999998
+        },
+        "route": {
+          "n": 5,
+          "p50Ms": 2034.2646360000003,
+          "p95Ms": 2203.203111
+        },
+        "svg": {
+          "n": 5,
+          "p50Ms": 54.6042809999999,
+          "p95Ms": 74.35307300000022
+        },
+        "gltf": {
+          "n": 5,
+          "p50Ms": 309.0284350000002,
+          "p95Ms": 373.53486900000007
+        },
+        "fab": {
+          "n": 5,
+          "p50Ms": 89.60541400000056,
+          "p95Ms": 118.879277
+        },
+        "enclosure": {
+          "n": 5,
+          "p50Ms": 8106.6066500000015,
+          "p95Ms": 8720.934434999996
+        },
+        "firmware": {
+          "n": 5,
+          "p50Ms": 11.753658000000001,
+          "p95Ms": 17.179281000000003
+        },
+        "firmware-compile": {
+          "n": 5,
+          "p50Ms": 17961.422042,
+          "p95Ms": 18975.047618
+        }
+      },
+      "cached": {
+        "total": {
+          "n": 3,
+          "p50Ms": 19044.439031999995,
+          "p95Ms": 19127.140339000005
+        },
+        "codegen": {
+          "n": 3,
+          "p50Ms": 1.4168160000117496,
+          "p95Ms": 3.306237999990117
+        },
+        "render": {
+          "n": 3,
+          "p50Ms": 15.234217999997782,
+          "p95Ms": 15.670863999985158
+        },
+        "route": {
+          "n": 3,
+          "p50Ms": 0,
+          "p95Ms": 0
+        },
+        "svg": {
+          "n": 3,
+          "p50Ms": 0,
+          "p95Ms": 0
+        },
+        "gltf": {
+          "n": 3,
+          "p50Ms": 0,
+          "p95Ms": 0
+        },
+        "fab": {
+          "n": 3,
+          "p50Ms": 0,
+          "p95Ms": 0
+        },
+        "enclosure": {
+          "n": 3,
+          "p50Ms": 780.8340000000026,
+          "p95Ms": 944.6511579999933
+        },
+        "firmware": {
+          "n": 3,
+          "p50Ms": 12.564426999999995,
+          "p95Ms": 18.602018000000015
+        },
+        "firmware-compile": {
+          "n": 3,
+          "p50Ms": 17690.161591,
+          "p95Ms": 18089.316812999998
+        }
+      }
+    }
+  },
+  "stages": {
+    "source": "data/cached-24s-receipt.json",
+    "totalMs": 24032.40963600017,
+    "cache": "hit",
+    "stages": [
+      {
+        "name": "codegen",
+        "status": "done",
+        "ms": 3.877925000153482
+      },
+      {
+        "name": "render",
+        "status": "done",
+        "ms": 12.552066000178456,
+        "note": "Cache hit: copied EDA artifacts"
+      },
+      {
+        "name": "route",
+        "status": "skipped",
+        "ms": 0,
+        "note": "Cache hit: reused artifact; original timing is in cache receipt"
+      },
+      {
+        "name": "svg",
+        "status": "skipped",
+        "ms": 0,
+        "note": "Cache hit: reused artifact; original timing is in cache receipt"
+      },
+      {
+        "name": "gltf",
+        "status": "skipped",
+        "ms": 0,
+        "note": "Cache hit: reused artifact; original timing is in cache receipt"
+      },
+      {
+        "name": "fab",
+        "status": "skipped",
+        "ms": 0,
+        "note": "Cache hit: reused artifact; original timing is in cache receipt"
+      },
+      {
+        "name": "enclosure",
+        "status": "done",
+        "ms": 1018.7074539996684,
+        "note": "build123d mech cache hit: same handoff and same modelling code"
+      },
+      {
+        "name": "firmware",
+        "status": "done",
+        "ms": 10.481482
+      },
+      {
+        "name": "firmware-compile",
+        "status": "done",
+        "ms": 22506.544642,
+        "note": "Compile checked for esp32dev; no physical flash."
+      }
+    ],
+    "board": {
+      "widthMm": 90,
+      "heightMm": 100,
+      "layers": 2,
+      "traceCount": 11,
+      "viaCount": 7
+    },
+    "drcErrors": 0,
+    "drcWarnings": 19
+  },
+  "assembly": {
+    "source": "/api/board/jobs/c844b276-0323-41d7-b29a-c549cdd7f4c6/files/assembly.glb",
+    "changes": "Only presentation: original base and lid animation, inspection lid made opaque. Module shapes approximate, not manufacturer CAD."
+  },
+  "assets": [
+    {
+      "name": "focus-assembly.glb",
+      "sha256": "f8a0146e5aca3b4660a36c9348ba118166e51d3e422c974d5b33e1dde3cafa5a"
+    },
+    {
+      "name": "focus-pcb.png",
+      "sha256": "7dbda460983f4554bbc7ab9046129ddb31a5ed1b445c71d87bc25d28427a2399"
+    },
+    {
+      "name": "focus-pcb.svg",
+      "sha256": "82755b6531c0d0093c1a660b2ce79f6fee5f0d225ca8e0caf1bc0cfc24553bec"
+    },
+    {
+      "name": "focus-schematic.png",
+      "sha256": "0154bd0670be119800febc0dbe6ca43fb95c3f935150b20e9a8b4a3800d5b588"
+    },
+    {
+      "name": "focus-schematic.svg",
+      "sha256": "4022d56248bf236add02c55849c96c8b7918a0d87887e26dff7804e9727cd4dc"
+    },
+    {
+      "name": "focus-timer-assembly-closed.png",
+      "sha256": "d9930831fcee2a7fa99f593b479e7f2a92dff7b4e57e5394332db181f36664f9"
+    },
+    {
+      "name": "focus-timer-assembly-lid-off.png",
+      "sha256": "9cea975c29698dd825c6ebc2bba15c76c57ec0e455203caa9d2775d8753a45e9"
+    },
+    {
+      "name": "focus-timer-assembly-lid-solid.png",
+      "sha256": "6065dd7f1abad36fdbd10a366c63a39a6d7ea440479294bb67b35581d1f85c7d"
+    },
+    {
+      "name": "focus-timer-assembly-populated-board.png",
+      "sha256": "f00f5cc700b62e4510d04b0df0c024e3d91195a6da76154b8cd3402141f01231"
+    },
+    {
+      "name": "geist-mono.woff2",
+      "sha256": "684ad5b531f81d43c1e8c7038262d5db7cdc1f68006e04d6c7769efa8d33c8cc"
+    },
+    {
+      "name": "instrument-sans-latin.woff2",
+      "sha256": "8b74e9bc6e415d564a5ffd32125c92ffd50b1635043e77543cb871e0a3cfcaf2"
+    }
+  ],
+  "studioLook": {
+    "reference": "docs/design/2026-11-04-studio/evidence/design_stage/studio-direction-1440.png",
+    "tokensSource": "web/src/studio/studio.css",
+    "font": "Instrument Sans",
+    "accent": "#b84c15",
+    "canvas": "#131517",
+    "paper": "#f5f3ec",
+    "references": [
+      "docs/design/2026-11-04-studio/evidence/design_studio/02-streaming-board-1440.png",
+      "docs/design/2026-11-04-studio/evidence/design_studio/04-done-in-case-1440.png",
+      "docs/design/2026-11-04-studio/evidence/design_studio/3d-exploded-1440.png"
+    ],
+    "accentOnDark": "#f0813f",
+    "monoFont": "Geist Mono",
+    "stageAnatomy": "Pads on one routed copper trace; 45-degree chapter jogs between Board, Case and Firmware"
+  },
+  "artifactGenerationStages": {
+    "source": "docs/engineering/2026-11-04-tscircuit/evidence/eng_core/focus-receipt.json",
+    "totalMs": 32220.53223,
+    "stages": [
+      {
+        "name": "codegen",
+        "status": "done",
+        "ms": 10.44104299999998
+      },
+      {
+        "name": "render",
+        "status": "done",
+        "ms": 500.2541259999998
+      },
+      {
+        "name": "route",
+        "status": "done",
+        "ms": 2136.660456
+      },
+      {
+        "name": "svg",
+        "status": "done",
+        "ms": 44.6427249999997
+      },
+      {
+        "name": "gltf",
+        "status": "done",
+        "ms": 309.0284350000002
+      },
+      {
+        "name": "fab",
+        "status": "done",
+        "ms": 89.60541400000056
+      },
+      {
+        "name": "enclosure",
+        "status": "done",
+        "ms": 7144.120515,
+        "note": "build123d 0.13.0: import 3105 ms, model 1073 ms, total 5414 ms"
+      },
+      {
+        "name": "firmware",
+        "status": "done",
+        "ms": 9.509551999999985
+      },
+      {
+        "name": "firmware-compile",
+        "status": "done",
+        "ms": 18975.047618,
+        "note": "Compile checked for esp32dev; no physical flash."
+      }
+    ],
+    "board": {
+      "widthMm": 90,
+      "heightMm": 100,
+      "layers": 2,
+      "traceCount": 11,
+      "viaCount": 7
+    },
+    "drcErrors": 0,
+    "drcWarnings": 19
+  },
+  "studioColdRuns": {
+    "source": "docs/design/2026-11-04-studio/reports/design_studio.md#speed",
+    "seconds": [
+      32.2,
+      33.5,
+      39.6
+    ],
+    "classification": "Observed individual Studio runs, separate from the 31.2 s benchmark median"
+  }
+}

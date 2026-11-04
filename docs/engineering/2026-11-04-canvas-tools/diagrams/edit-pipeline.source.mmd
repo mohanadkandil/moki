@@ -1,0 +1,13 @@
+flowchart TD
+  C["Canvas UI or chat agent"] -->|"baseJobId plus edit delta"| A["Board job API"]
+  B["Saved design, source and layout"] -->|"recover base input"| A
+  A -->|"validate and normalize"| V["Physical pose and USB validator"]
+  V -->|"invalid: HTTP 400, no job"| C
+  V -->|"valid: immutable child job"| J["Source plus canonical layout"]
+  J -->|"apply manual placements and rotations"| R["tscircuit route and DRC"]
+  R -->|"circuit geometry"| M["Mechanical handoff and case"]
+  J -->|"generated firmware identity"| F["Compile or reuse verified firmware"]
+  M --> O["Child job artifacts and editSummary"]
+  F --> O
+  R --> O
+

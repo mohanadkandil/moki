@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "renderer": "@mermaid-js/mermaid-cli",
+  "renderer_version": "12.0.0",
+  "source_sha256": "ce434737469dc9ef78481efbcef480dbc323cb7842ba0e5bda279da27b04b239",
+  "input": "/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-04-canvas-tools/diagrams/edit-pipeline.mmd",
+  "files": {
+    "source": "/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-04-canvas-tools/diagrams/edit-pipeline.source.mmd",
+    "svg": "/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-04-canvas-tools/diagrams/edit-pipeline.svg",
+    "png": "/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-04-canvas-tools/diagrams/edit-pipeline.png",
+    "receipt": "/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-04-canvas-tools/diagrams/edit-pipeline.json"
+  },
+  "png": {
+    "width": 659,
+    "height": 1200
+  },
+  "media": "MEDIA:/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-04-canvas-tools/diagrams/edit-pipeline.png"
+}

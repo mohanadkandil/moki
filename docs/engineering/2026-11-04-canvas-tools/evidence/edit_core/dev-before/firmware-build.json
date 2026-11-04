@@ -1,0 +1,35 @@
+{
+  "name": "firmware-compile",
+  "status": "done",
+  "ms": 20909,
+  "note": "Compile checked for esp32dev; no physical flash.",
+  "compiled": true,
+  "board": "esp32dev",
+  "platform": "platformio/espressif32@6.10.0",
+  "host": "linux-arm64",
+  "toolVersions": {
+    "platformio": "PlatformIO Core, version 6.1.19",
+    "framework-arduinoespressif32": "3.20017.241212+sha.dcc1105b",
+    "tool-esptoolpy": "1.40501.0 (4.5.1)",
+    "toolchain-xtensa-esp32": "8.4.0+2021r2-patch5",
+    "Adafruit BusIO": "1.17.0",
+    "Adafruit GFX Library": "1.11.11",
+    "Adafruit SSD1306": "2.5.13",
+    "DallasTemperature": "3.11.0",
+    "OneWire": "2.3.8",
+    "Wire": "2.0.0"
+  },
+  "flash": {
+    "percent": 23.7,
+    "usedBytes": 311089,
+    "totalBytes": 1310720
+  },
+  "ram": {
+    "percent": 6.8,
+    "usedBytes": 22232,
+    "totalBytes": 327680
+  },
+  "exitCode": 0,
+  "logTail": "Compiling .pio/build/esp32dev/libe9a/Adafruit GFX Library/Adafruit_SPITFT.cpp.o\nCompiling .pio/build/esp32dev/libe9a/Adafruit GFX Library/glcdfont.c.o\nCompiling .pio/build/esp32dev/lib912/Adafruit SSD1306/Adafruit_SSD1306.cpp.o\nArchiving .pio/build/esp32dev/libe9a/libAdafruit GFX Library.a\nIndexing .pio/build/esp32dev/libe9a/libAdafruit GFX Library.a\nCompiling .pio/build/esp32dev/lib32a/OneWire/OneWire.cpp.o\nArchiving .pio/build/esp32dev/lib912/libAdafruit SSD1306.a\nIndexing .pio/build/esp32dev/lib912/libAdafruit SSD1306.a\nCompiling .pio/build/esp32dev/lib28b/DallasTemperature/DallasTemperature.cpp.o\nArchiving .pio/build/esp32dev/lib32a/libOneWire.a\nIndexing .pio/build/esp32dev/lib32a/libOneWire.a\nCompiling .pio/build/esp32dev/FrameworkArduino/Esp.cpp.o\nArchiving .pio/build/esp32dev/lib28b/libDallasTemperature.a\nIndexing .pio/build/esp32dev/lib28b/libDallasTemperature.a\nCompiling .pio/build/esp32dev/FrameworkArduino/FirmwareMSC.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/FunctionalInterrupt.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/HWCDC.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/HardwareSerial.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/IPAddress.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/IPv6Address.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/MD5Builder.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/Print.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/Stream.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/StreamString.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/Tone.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/USB.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/USBCDC.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/USBMSC.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/WMath.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/WString.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/base64.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/cbuf.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-adc.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-bt.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-cpu.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-dac.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-gpio.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-i2c-slave.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-i2c.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-ledc.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-matrix.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-misc.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-psram.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-rgb-led.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-rmt.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-sigmadelta.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-spi.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-time.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-timer.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-tinyusb.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-touch.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/esp32-hal-uart.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/firmware_msc_fat.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/libb64/cdecode.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/libb64/cencode.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/main.cpp.o\nCompiling .pio/build/esp32dev/FrameworkArduino/stdlib_noniso.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/wiring_pulse.c.o\nCompiling .pio/build/esp32dev/FrameworkArduino/wiring_shift.c.o\nArchiving .pio/build/esp32dev/libFrameworkArduino.a\nIndexing .pio/build/esp32dev/libFrameworkArduino.a\nLinking .pio/build/esp32dev/firmware.elf\nRetrieving maximum program size .pio/build/esp32dev/firmware.elf\nChecking size .pio/build/esp32dev/firmware.elf\nAdvanced Memory Usage is available via \"PlatformIO Home > Project Inspect\"\nRAM:   [=         ]   6.8% (used 22232 bytes from 327680 bytes)\nFlash: [==        ]  23.7% (used 311089 bytes from 1310720 bytes)\nBuilding .pio/build/esp32dev/firmware.bin\nesptool.py v4.5.1\nCreating esp32 image...\nMerged 2 ELF sections\nSuccessfully created esp32 image.\n========================= [SUCCESS] Took 20.17 seconds =========================\n.pio/libdeps/esp32dev/OneWire/OneWire.cpp:599:22: warning: extra tokens at end of #undef directive\n #  undef noInterrupts() {portMUX_TYPE mux = portMUX_INITIALIZER_UNLOCKED;portENTER_CRITICAL(&mux)\n                      ^\n.pio/libdeps/esp32dev/OneWire/OneWire.cpp:600:20: warning: extra tokens at end of #undef directive\n #  undef interrupts() portEXIT_CRITICAL(&mux);}\n                    ^\n",
+  "physicalFlash": false
+}

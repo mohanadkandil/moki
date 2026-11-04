@@ -1,0 +1,21 @@
+# Maker edit geometry — implemented pure layer
+
+Owned files: `src/board/edits.ts`, `tests/board-edits.test.ts`. No API, renderer, firmware or web changes made by this worker.
+
+Exports match the coordinator's contract: `MakerEdits`, `LayoutPart`, `BoardLayout`, `parseMakerEdits`, `layoutFromCircuit`, `layoutForDesign`, `applyMakerEdits`, `validateLayout`, `layoutOutline`.
+
+Positions are absolute board-centred millimetres, +X right/+Y up, and public placements identify `pcb_component.center`. Absolute CCW angles normalize into [0,360). `origin = center - rotate(localCenter, rotation)` preserves each entire catalog footprint/mechanical frame. The BZ1 fixture rotates from origin (25,-10), centre (25,-16.5) to origin (18.5,-16.5), centre (25,-16.5) at 90 degrees.
+
+Input parsing rejects unknown keys, missing fields, nonfinite numbers, invalid edges, malformed refdes and duplicate placements. Board dimensions are 20–300 mm; radius is 0–half the smaller dimension. Unknown part IDs fail during application. All errors are plain Error messages.
+
+Source bases require one centred two-layer board, exactly four circular 3.2 mm mounting holes, no grouped/nested PCB placements, supported catalog identities from metadata or MPN, actual footprint origins/centres/rotations and all identifiable catalog plated holes. Measured pad positions and local component centres must agree with catalog geometry within 0.02 mm. The actual CJ outline determines radius; metadata does not override it. Unsupported custom cuts/poor corner sampling fail closed.
+
+Validation uses transformed module/body rectangles, every mechanical block (including sockets and USB connector) and pad bounds. Leaded bodies sit at their local pad centroid instead of using the catalog wiring rectangle. Separating-axis collision checks support arbitrary peripheral rotation and require 0.2 mm between modules. Bounds follow the rounded rectangle. Only the modeled USB connector may overhang its selected carrier edge; its board projection must still fit. The controller must have its exact outward cardinal orientation and USB aperture at the edge within 0.02 mm. Mounting holes require 0.5 mm edge clearance and no module obstruction. Overlapping holes fail.
+
+Resize or edge changes rotate/snap only the controller; peripherals are unchanged and collisions fail. Explicit controller placements are authoritative and incompatible ones are rejected, never silently snapped back. Resized mounting holes retain the default 4 mm inset and increase it for larger radii to contain the existing case's 3.5 mm standoff foot. Radius zero produces four unique corners; positive radius is sampled at no more than 0.01 mm chord error.
+
+Verified: `node --import tsx --test tests/board-edits.test.ts`: 14/14 pass, latest run 806 ms. Coverage includes repairing an overlapping source base, growing a too-small source board, source layer/hole/group rejection, actual fixture/design centres, asymmetric 90-degree rotation, safe U2 move, immutable input, arbitrary peripheral rotation, all USB edges, explicit controller rejection, bounds/overlaps/holes, radius zero/rounded/large fillets, strict schema and unsafe source bases. Pure geometry also accepts generated focus-timer, light-lamp and temperature-monitor defaults.
+
+Suggested runtime acceptance delta: U2 centre (19.85,27.9), rotation 0, a 4 mm move right. This yields origin (19.85,15.6); every other part stays fixed. Runtime routing, DRC, copper, case checks, typecheck and screenshots remain coordinator-owned. The catalog/mechanical dimensions remain estimates; these checks do not establish manufactured fit.
+
+Structural validation is separate from final physical policy. `layoutFromCircuit` and `layoutForDesign` reconstruct trusted identities/poses even when bounds, overlaps, USB-edge position or hole clearance are physically invalid. `applyMakerEdits` validates base structure, applies the complete edit, then runs full `validateLayout` on the final layout. This permits Fixer jobs to correct a failed DRC/layout; an unchanged invalid base still fails final validation. Direct `validateLayout` retains every physical constraint. Controller cardinal orientation is still needed to infer a source base's selected USB edge.

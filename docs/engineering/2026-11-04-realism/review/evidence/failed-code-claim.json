@@ -1,0 +1,18 @@
+{
+  "jobId": "4d1f69f5-640b-4bdc-ae0f-57b6eb76707a",
+  "status": "failed",
+  "stages": [
+    {
+      "name": "codegen",
+      "status": "skipped",
+      "ms": 0.08720099925994873,
+      "note": "User supplied TSX"
+    }
+  ],
+  "artifactNames": [
+    "board.tsx",
+    "receipt.json"
+  ],
+  "sourceBytes": 154,
+  "codeTabBranch": "After source loads with text == base, edited is false: renders green Rendered badge without checking job status or stages."
+}

@@ -1,0 +1,1 @@
+Open moki-carrier.kicad_pro in KiCad. Converted with circuit-json-to-kicad; review design rules, net assignments and fabrication outputs before manufacturing. Module outlines and fit are catalog estimates. The detailed Moki recognition models are embedded in board.glb, not KiCad.

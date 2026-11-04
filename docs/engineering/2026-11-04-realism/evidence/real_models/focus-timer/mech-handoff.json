@@ -1,0 +1,739 @@
+{
+  "schema": "moki.mech-handoff/1",
+  "source": {
+    "circuitJsonSha256": "1086fccbd62b33dbda059c8bd01c65972befa8684a0c3cfed5c791da1581f404",
+    "label": null
+  },
+  "board": {
+    "widthMm": 90,
+    "heightMm": 100,
+    "thicknessMm": 1.6,
+    "center": {
+      "x": 0,
+      "y": 0
+    },
+    "outline": [
+      {
+        "x": 45,
+        "y": 47
+      },
+      {
+        "x": 44.974,
+        "y": 47.392
+      },
+      {
+        "x": 44.898,
+        "y": 47.776
+      },
+      {
+        "x": 44.772,
+        "y": 48.148
+      },
+      {
+        "x": 44.598,
+        "y": 48.5
+      },
+      {
+        "x": 44.38,
+        "y": 48.826
+      },
+      {
+        "x": 44.121,
+        "y": 49.121
+      },
+      {
+        "x": 43.826,
+        "y": 49.38
+      },
+      {
+        "x": 43.5,
+        "y": 49.598
+      },
+      {
+        "x": 43.148,
+        "y": 49.772
+      },
+      {
+        "x": 42.776,
+        "y": 49.898
+      },
+      {
+        "x": 42.392,
+        "y": 49.974
+      },
+      {
+        "x": 42,
+        "y": 50
+      },
+      {
+        "x": -42,
+        "y": 50
+      },
+      {
+        "x": -42.392,
+        "y": 49.974
+      },
+      {
+        "x": -42.776,
+        "y": 49.898
+      },
+      {
+        "x": -43.148,
+        "y": 49.772
+      },
+      {
+        "x": -43.5,
+        "y": 49.598
+      },
+      {
+        "x": -43.826,
+        "y": 49.38
+      },
+      {
+        "x": -44.121,
+        "y": 49.121
+      },
+      {
+        "x": -44.38,
+        "y": 48.826
+      },
+      {
+        "x": -44.598,
+        "y": 48.5
+      },
+      {
+        "x": -44.772,
+        "y": 48.148
+      },
+      {
+        "x": -44.898,
+        "y": 47.776
+      },
+      {
+        "x": -44.974,
+        "y": 47.392
+      },
+      {
+        "x": -45,
+        "y": 47
+      },
+      {
+        "x": -45,
+        "y": -47
+      },
+      {
+        "x": -44.974,
+        "y": -47.392
+      },
+      {
+        "x": -44.898,
+        "y": -47.776
+      },
+      {
+        "x": -44.772,
+        "y": -48.148
+      },
+      {
+        "x": -44.598,
+        "y": -48.5
+      },
+      {
+        "x": -44.38,
+        "y": -48.826
+      },
+      {
+        "x": -44.121,
+        "y": -49.121
+      },
+      {
+        "x": -43.826,
+        "y": -49.38
+      },
+      {
+        "x": -43.5,
+        "y": -49.598
+      },
+      {
+        "x": -43.148,
+        "y": -49.772
+      },
+      {
+        "x": -42.776,
+        "y": -49.898
+      },
+      {
+        "x": -42.392,
+        "y": -49.974
+      },
+      {
+        "x": -42,
+        "y": -50
+      },
+      {
+        "x": 42,
+        "y": -50
+      },
+      {
+        "x": 42.392,
+        "y": -49.974
+      },
+      {
+        "x": 42.776,
+        "y": -49.898
+      },
+      {
+        "x": 43.148,
+        "y": -49.772
+      },
+      {
+        "x": 43.5,
+        "y": -49.598
+      },
+      {
+        "x": 43.826,
+        "y": -49.38
+      },
+      {
+        "x": 44.121,
+        "y": -49.121
+      },
+      {
+        "x": 44.38,
+        "y": -48.826
+      },
+      {
+        "x": 44.598,
+        "y": -48.5
+      },
+      {
+        "x": 44.772,
+        "y": -48.148
+      },
+      {
+        "x": 44.898,
+        "y": -47.776
+      },
+      {
+        "x": 44.974,
+        "y": -47.392
+      },
+      {
+        "x": 45,
+        "y": -47
+      }
+    ],
+    "holes": [
+      {
+        "x": -41,
+        "y": -46,
+        "diameterMm": 3.2
+      },
+      {
+        "x": -41,
+        "y": 46,
+        "diameterMm": 3.2
+      },
+      {
+        "x": 41,
+        "y": -46,
+        "diameterMm": 3.2
+      },
+      {
+        "x": 41,
+        "y": 46,
+        "diameterMm": 3.2
+      }
+    ]
+  },
+  "parts": [
+    {
+      "id": "BZ1",
+      "module": "piezo-passive-12mm",
+      "name": "Passive piezo transducer, 12 mm",
+      "category": "output",
+      "center": {
+        "x": 20,
+        "y": -7.8
+      },
+      "rotationDeg": 0,
+      "bbox": {
+        "minX": 14,
+        "minY": -13.8,
+        "maxX": 26,
+        "maxY": -1.8
+      },
+      "stack": {
+        "mount": "soldered",
+        "socketMm": 0,
+        "spacerMm": 0,
+        "pcbMm": 0,
+        "componentsMm": 9.5,
+        "topMm": 9.5,
+        "raisedToLid": false
+      },
+      "fit": {
+        "method": "pads",
+        "pins": 2,
+        "maxResidualMm": 0
+      },
+      "blocks": [
+        {
+          "shape": "cylinder",
+          "color": "glass",
+          "label": "piezo",
+          "x": 20,
+          "y": -7.8,
+          "w": 12,
+          "h": 12,
+          "z0": 0,
+          "z1": 9.5,
+          "rotationDeg": 0
+        }
+      ],
+      "confidence": "12 mm body and 9.5 mm height are typical. The catalog pin spacing is 5 mm while many 12 mm transducers use 6.5-7.6 mm, so check the part."
+    },
+    {
+      "id": "SW1",
+      "module": "ky040-rotary-encoder",
+      "name": "KY-040 rotary encoder",
+      "category": "input",
+      "center": {
+        "x": 20,
+        "y": -25.3
+      },
+      "rotationDeg": 0,
+      "bbox": {
+        "minX": 4,
+        "minY": -34.8,
+        "maxX": 36,
+        "maxY": -15.8
+      },
+      "stack": {
+        "mount": "socketed",
+        "socketMm": 8.5,
+        "spacerMm": 2.54,
+        "pcbMm": 1.6,
+        "componentsMm": 6.6,
+        "topMm": 19.24,
+        "raisedToLid": false,
+        "throughLid": {
+          "bushingTopMm": 24.64,
+          "shaftTopMm": 32.64,
+          "bushingDiameterMm": 7,
+          "shaftDiameterMm": 6
+        }
+      },
+      "fit": {
+        "method": "pads",
+        "pins": 5,
+        "maxResidualMm": 0
+      },
+      "blocks": [
+        {
+          "shape": "box",
+          "color": "socket",
+          "label": "socket",
+          "x": 34.6,
+          "y": -25.28,
+          "w": 2.54,
+          "h": 12.7,
+          "z0": 0,
+          "z1": 8.5,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "plastic",
+          "label": "male spacer",
+          "x": 34.6,
+          "y": -25.28,
+          "w": 2.54,
+          "h": 12.7,
+          "z0": 8.5,
+          "z1": 11.04,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "pcb-dark",
+          "label": "ky040 pcb",
+          "x": 20,
+          "y": -25.3,
+          "w": 32,
+          "h": 19,
+          "z0": 11.04,
+          "z1": 12.639999999999999,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "metal",
+          "label": "encoder body",
+          "x": 13.2,
+          "y": -25.3,
+          "w": 12.4,
+          "h": 12.4,
+          "z0": 12.639999999999999,
+          "z1": 19.24,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "cylinder",
+          "color": "metal",
+          "label": "encoder bushing",
+          "x": 13.2,
+          "y": -25.3,
+          "w": 7,
+          "h": 7,
+          "z0": 19.24,
+          "z1": 24.64,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "cylinder",
+          "color": "metal",
+          "label": "encoder shaft",
+          "x": 13.2,
+          "y": -25.3,
+          "w": 6,
+          "h": 6,
+          "z0": 24.64,
+          "z1": 32.64,
+          "rotationDeg": 0
+        }
+      ],
+      "confidence": "PCB 32 x 19 mm is quoted by one tutorial; sellers give an overall 30-31 x 18-19 x 29-30 mm. Body 6.6 mm, bushing and 20 mm shaft are typical EC11 values and were not confirmed. Shaft position comes from the catalog drawing. Header orientation was not confirmed: right-angle pins would not plug into a vertical socket like this."
+    },
+    {
+      "id": "U1",
+      "module": "esp32-devkitc-v4",
+      "name": "ESP32-DevKitC V4",
+      "category": "controller",
+      "center": {
+        "x": -22.05,
+        "y": -22.8
+      },
+      "rotationDeg": 0,
+      "bbox": {
+        "minX": -36,
+        "minY": -51,
+        "maxX": -8.1,
+        "maxY": 4.4
+      },
+      "stack": {
+        "mount": "socketed",
+        "socketMm": 8.5,
+        "spacerMm": 2.54,
+        "pcbMm": 1.6,
+        "componentsMm": 4,
+        "topMm": 16.64,
+        "raisedToLid": false
+      },
+      "fit": {
+        "method": "pads",
+        "pins": 38,
+        "maxResidualMm": 0
+      },
+      "blocks": [
+        {
+          "shape": "box",
+          "color": "socket",
+          "label": "socket left",
+          "x": -34.75,
+          "y": -25.36,
+          "w": 2.54,
+          "h": 48.26,
+          "z0": 0,
+          "z1": 8.5,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "socket",
+          "label": "socket right",
+          "x": -9.35,
+          "y": -25.36,
+          "w": 2.54,
+          "h": 48.26,
+          "z0": 0,
+          "z1": 8.5,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "plastic",
+          "label": "male spacer left",
+          "x": -34.75,
+          "y": -25.36,
+          "w": 2.54,
+          "h": 48.26,
+          "z0": 8.5,
+          "z1": 11.04,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "plastic",
+          "label": "male spacer right",
+          "x": -9.35,
+          "y": -25.36,
+          "w": 2.54,
+          "h": 48.26,
+          "z0": 8.5,
+          "z1": 11.04,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "pcb-black",
+          "label": "devkit pcb",
+          "x": -22.05,
+          "y": -22.8,
+          "w": 27.9,
+          "h": 54.4,
+          "z0": 11.04,
+          "z1": 12.639999999999999,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "metal",
+          "label": "wroom shield",
+          "x": -22.05,
+          "y": -12,
+          "w": 16.1,
+          "h": 17.6,
+          "z0": 12.639999999999999,
+          "z1": 15.84,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "pcb-dark",
+          "label": "wroom antenna",
+          "x": -22.05,
+          "y": 0.2,
+          "w": 18,
+          "h": 6.6,
+          "z0": 12.639999999999999,
+          "z1": 13.44,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "metal",
+          "label": "micro-usb",
+          "x": -22.05,
+          "y": -48.4,
+          "w": 7.6,
+          "h": 6.2,
+          "z0": 12.639999999999999,
+          "z1": 15.639999999999999,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "plastic",
+          "label": "en button",
+          "x": -29.3,
+          "y": -47.1,
+          "w": 2.6,
+          "h": 2.6,
+          "z0": 12.639999999999999,
+          "z1": 16.14,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "plastic",
+          "label": "boot button",
+          "x": -14.8,
+          "y": -47.1,
+          "w": 2.6,
+          "h": 2.6,
+          "z0": 12.639999999999999,
+          "z1": 16.14,
+          "rotationDeg": 0
+        }
+      ],
+      "confidence": "Outline 54.4 x 27.9 mm is quoted by a third-party guide, whose own caption also says 48.2 mm; another database says 54 x 27 mm. Espressif publishes a drawing we could not read numerically. 25.4 mm row spacing comes from the catalog and was not confirmed. USB position and component height are estimates, and USB-C clones differ."
+    },
+    {
+      "id": "U2",
+      "module": "ssd1306-oled-128x64-i2c",
+      "name": "0.96″ OLED, SSD1306, I²C",
+      "category": "display",
+      "center": {
+        "x": 20,
+        "y": 27.1
+      },
+      "rotationDeg": 0,
+      "bbox": {
+        "minX": 6.35,
+        "minY": 13.2,
+        "maxX": 33.65,
+        "maxY": 41
+      },
+      "stack": {
+        "mount": "socketed",
+        "socketMm": 8.5,
+        "spacerMm": 2.54,
+        "pcbMm": 1.2,
+        "componentsMm": 2.9,
+        "topMm": 15.14,
+        "raisedToLid": false
+      },
+      "fit": {
+        "method": "pads",
+        "pins": 4,
+        "maxResidualMm": 0
+      },
+      "blocks": [
+        {
+          "shape": "box",
+          "color": "socket",
+          "label": "socket",
+          "x": 20,
+          "y": 39.4,
+          "w": 10.16,
+          "h": 2.54,
+          "z0": 0,
+          "z1": 8.5,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "plastic",
+          "label": "male spacer",
+          "x": 20,
+          "y": 39.4,
+          "w": 10.16,
+          "h": 2.54,
+          "z0": 8.5,
+          "z1": 11.04,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "pcb-blue",
+          "label": "oled pcb",
+          "x": 20,
+          "y": 27.1,
+          "w": 27.3,
+          "h": 27.8,
+          "z0": 11.04,
+          "z1": 12.239999999999998,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "glass",
+          "label": "oled glass",
+          "x": 20,
+          "y": 26.4,
+          "w": 26,
+          "h": 18.6,
+          "z0": 12.239999999999998,
+          "z1": 15.120000000000001,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "active",
+          "label": "oled active area",
+          "x": 20,
+          "y": 28.4,
+          "w": 21.744,
+          "h": 10.864,
+          "z0": 15.120000000000001,
+          "z1": 15.14,
+          "rotationDeg": 0
+        }
+      ],
+      "confidence": "Active area 21.744 x 10.864 mm is from a panel datasheet. PCB outline varies by seller (about 27 x 27 mm). The active area position on the PCB was not found in any drawing: y = 12.6 mm is estimated, so the window carries a 1.2 mm margin per side."
+    }
+  ],
+  "apertures": [
+    {
+      "id": "BZ1-sound",
+      "part": "BZ1",
+      "module": "piezo-passive-12mm",
+      "purpose": "sound",
+      "face": "z_pos",
+      "shape": "grid",
+      "center": {
+        "x": 20,
+        "y": -7.8
+      },
+      "zMm": 9.5,
+      "widthMm": 8,
+      "heightMm": 8,
+      "rotationDeg": 0,
+      "grid": {
+        "holeMm": 2,
+        "columns": 3,
+        "rows": 3,
+        "pitchMm": 3.2
+      },
+      "note": "Sound holes over the transducer."
+    },
+    {
+      "id": "SW1-encoder-shaft",
+      "part": "SW1",
+      "module": "ky040-rotary-encoder",
+      "purpose": "encoder-shaft",
+      "face": "z_pos",
+      "shape": "circle",
+      "center": {
+        "x": 13.2,
+        "y": -25.3
+      },
+      "zMm": 19.24,
+      "widthMm": 7.4,
+      "heightMm": 7.4,
+      "rotationDeg": 0,
+      "note": "Clears the 7 mm threaded bushing. A panel nut on the lid carries the push force, because the single socket cannot."
+    },
+    {
+      "id": "U1-usb",
+      "part": "U1",
+      "module": "esp32-devkitc-v4",
+      "purpose": "usb",
+      "face": "y_neg",
+      "shape": "pill",
+      "center": {
+        "x": -22.05,
+        "y": -50
+      },
+      "zMm": 14.14,
+      "widthMm": 12.5,
+      "heightMm": 8.5,
+      "rotationDeg": 0,
+      "note": "Sized for a micro-USB cable overmould (estimated up to 12 x 8 mm). The plug and overmould pass through the wall."
+    },
+    {
+      "id": "U2-display-active-area",
+      "part": "U2",
+      "module": "ssd1306-oled-128x64-i2c",
+      "purpose": "display-active-area",
+      "face": "z_pos",
+      "shape": "rect",
+      "center": {
+        "x": 20,
+        "y": 28.4
+      },
+      "zMm": 15.14,
+      "widthMm": 24.144,
+      "heightMm": 13.264000000000001,
+      "rotationDeg": 0,
+      "activeAreaMm": {
+        "w": 21.744,
+        "h": 10.864
+      },
+      "note": "Window over the active area plus the margin."
+    }
+  ],
+  "warnings": [
+    "The board has a custom outline. Rounded rectangles are followed by the enclosure; other outlines use the conservative bounding rectangle."
+  ]
+}

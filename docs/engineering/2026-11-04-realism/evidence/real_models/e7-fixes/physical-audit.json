@@ -1,0 +1,15 @@
+{
+  "focus-timer": {
+    "exit": 0
+  },
+  "light-lamp": {
+    "exit": 0
+  },
+  "temp-monitor": {
+    "exit": 0
+  },
+  "oversize-drill": {
+    "exit": 1,
+    "mutatedVias": 6
+  }
+}

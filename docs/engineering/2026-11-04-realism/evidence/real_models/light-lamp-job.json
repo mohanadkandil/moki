@@ -1,0 +1,324 @@
+{
+  "jobId": "9ec90ad8-0f55-459e-b32e-cc4afb2a1893",
+  "status": "done",
+  "createdAt": "2026-11-04T15:54:40.835Z",
+  "input": {
+    "kind": "design",
+    "sourceSha256": "b151ad9bf0a69f673040d95a48980b46e696e5af63a7f54f321eeb819d846592",
+    "template": "light-lamp",
+    "designContentId": "9eb98da67fd5447d"
+  },
+  "cache": "miss",
+  "stages": [
+    {
+      "name": "codegen",
+      "status": "done",
+      "ms": 7.383971000090241
+    },
+    {
+      "name": "render",
+      "status": "done",
+      "ms": 850.4575249999998
+    },
+    {
+      "name": "route",
+      "status": "done",
+      "ms": 2857.6390220000003
+    },
+    {
+      "name": "svg",
+      "status": "done",
+      "ms": 60.178500999999414
+    },
+    {
+      "name": "gltf",
+      "status": "done",
+      "ms": 2628.6477479999994
+    },
+    {
+      "name": "fab",
+      "status": "done",
+      "ms": 405.91059999999925
+    },
+    {
+      "name": "enclosure",
+      "status": "done",
+      "ms": 763.5043249987066,
+      "note": "build123d mech cache hit: same handoff and same modelling code"
+    },
+    {
+      "name": "firmware",
+      "status": "done",
+      "ms": 9.080151999999998
+    },
+    {
+      "name": "firmware-compile",
+      "status": "done",
+      "ms": 13801.449076,
+      "note": "Compile checked for esp32dev; no physical flash."
+    }
+  ],
+  "totalMs": 24156.9457780011,
+  "drc": {
+    "checked": true,
+    "errors": [],
+    "warnings": [
+      {
+        "type": "source_refdes_convention_warning",
+        "message": "The \"L\" prefix is being used with a <chip />, try using it with an <inductor />"
+      },
+      {
+        "type": "source_refdes_convention_warning",
+        "message": "The \"R\" prefix is being used with a <chip />, try using it with a <resistor />"
+      },
+      {
+        "type": "source_refdes_convention_warning",
+        "message": "The \"R\" prefix is being used with a <chip />, try using it with a <resistor />"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "D1 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "D1 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on D1 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "LDR1 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "LDR1 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on LDR1 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "R1 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "R1 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on R1 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "R2 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "R2 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on R2 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "U1 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "U1 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on U1 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "schematic_missing_sheet_warning",
+        "message": "No <schematicsheet> was found. Add a <schematicsheet> to define the schematic drawing area."
+      },
+      {
+        "type": "pcb_component_missing_courtyard_warning",
+        "message": "D1 has no courtyard"
+      },
+      {
+        "type": "pcb_component_missing_courtyard_warning",
+        "message": "LDR1 has no courtyard"
+      },
+      {
+        "type": "pcb_component_missing_courtyard_warning",
+        "message": "R1 has no courtyard"
+      },
+      {
+        "type": "pcb_component_missing_courtyard_warning",
+        "message": "R2 has no courtyard"
+      },
+      {
+        "type": "pcb_component_missing_courtyard_warning",
+        "message": "U1 has no courtyard"
+      },
+      {
+        "type": "unverified_module_dimensions",
+        "message": "Footprints preserve approximate catalog pin coordinates. Verify actual module dimensions, pin order, sockets and fit before fabrication; Module and socket 3D shapes are illustrative, not exact manufacturer CAD."
+      }
+    ]
+  },
+  "board": {
+    "widthMm": 90,
+    "heightMm": 105,
+    "layers": 2,
+    "traceCount": 7,
+    "viaCount": 0
+  },
+  "artifacts": {
+    "board.tsx": {
+      "url": "/api/board/jobs/9ec90ad8-0f55-459e-b32e-cc4afb2a1893/files/board.tsx",
+      "bytes": 152283,
+      "sha256": "b151ad9bf0a69f673040d95a48980b46e696e5af63a7f54f321eeb819d846592",
+      "kind": "source"
+    },
+    "circuit.json": {
+      "url": "/api/board/jobs/9ec90ad8-0f55-459e-b32e-cc4afb2a1893/files/circuit.json",
+      "bytes": 935320,
+      "sha256": "3243872483356c1340eec9d411f46915c80e35ad3d1b052e847cd2231fa21947",
+      "kind": "json"
+    },
+    "schematic.svg": {
+      "url": "/api/board/jobs/9ec90ad8-0f55-459e-b32e-cc4afb2a1893/files/schematic.svg",
+      "bytes": 102836,
+      "sha256": "dd12995a7c40fb4e0ff4e81a9dc45dc1afcb304d7282f7edee40fdc8d54e7cca",
+      "kind": "svg"
+    },
+    "pcb.svg": {
+      "url": "/api/board/jobs/9ec90ad8-0f55-459e-b32e-cc4afb2a1893/files/pcb.svg",
+      "bytes": 360048,
+      "sha256": "4f93c92e02ba4ffeb2ae062565b2112275004de38bd94aa225f93c8891e2a287",
+      "kind": "svg"
+    },
+    "board.glb": {
+      "url": "/api/board/jobs/9ec90ad8-0f55-459e-b32e-cc4afb2a1893/files/board.glb",
+      "bytes": 1461988,
+      "sha256": "87a040b60588c4de6451b2bf1bab66f7f5dc25c469fb1bd332c4df38c220a17b",
+      "kind": "glb"
+    },
+    "gerbers.zip": {
+      "url": "/api/board/jobs/9ec90ad8-0f55-459e-b32e-cc4afb2a1893/files/gerbers.zip",
+      "bytes": 57322,
+      "sha256": "84e4a1ec302f4fa00c04aaa819bf6f04b3c202b123f0e80c2b5a93bd3aaddeb2",
+      "kind": "zip"
+    },
+    "kicad.zip": {
+      "url": "/api/board/jobs/9ec90ad8-0f55-459e-b32e-cc4afb2a1893/files/kicad.zip",
+      "bytes": 78766,
+      "sha256": "5a1059b408057879058f87f8586e5d3c7a948fdec012ce31a313604ae1dcce35",
+      "kind": "zip"
+    },
+    "bom.csv": {
+      "url": "/api/board/jobs/9ec90ad8-0f55-459e-b32e-cc4afb2a1893/files/bom.csv",
+      "bytes": 1280,
+      "sha256": "246cd4cde061e2d11c17c8e497b8d32344c7aadf94dedcfbcbeb690f4d97a2a2",
+      "kind": "csv"
+    },
+    "pnp.csv": {
+      "url": "/api/board/jobs/9ec90ad8-0f55-459e-b32e-cc4afb2a1893/files/pnp.csv",
+      "bytes": 532,
+      "sha256": "ac96b9492478adc60abc0d54cefc84c609e3006e0e088c0f1555c958f57d20f9",
+      "kind": "csv"
+    },
+    "receipt.json": {
+      "url": "/api/board/jobs/9ec90ad8-0f55-459e-b32e-cc4afb2a1893/files/receipt.json",
+      "bytes": 7020,
+      "sha256": "83611e0f1129118a70aa4742c8a1341e27ea1cc515d412d875fc8857b90c9dca",
+      "kind": "json"
+    },
+    "enclosure-base.stl": {
+      "url": "/api/board/jobs/9ec90ad8-0f55-459e-b32e-cc4afb2a1893/files/enclosure-base.stl",
+      "bytes": 548484,
+      "sha256": "bd8fee2b57a3ccf80aec80af565b15c465bee9f718bc7e92bb6d940b277b6b63",
+      "kind": "stl"
+    },
+    "enclosure-lid.stl": {
+      "url": "/api/board/jobs/9ec90ad8-0f55-459e-b32e-cc4afb2a1893/files/enclosure-lid.stl",
+      "bytes": 180084,
+      "sha256": "ba45fe9863c8345ec165cdc73ce96dc22a190d9d98c14a31fe1da139701233a0",
+      "kind": "stl"
+    },
+    "assembly.glb": {
+      "url": "/api/board/jobs/9ec90ad8-0f55-459e-b32e-cc4afb2a1893/files/assembly.glb",
+      "bytes": 2512496,
+      "sha256": "e04bf93067dfed5f1c5d05eaa43890a2917db0d5ec1542ecd5af98e505a572be",
+      "kind": "glb"
+    },
+    "enclosure.json": {
+      "url": "/api/board/jobs/9ec90ad8-0f55-459e-b32e-cc4afb2a1893/files/enclosure.json",
+      "bytes": 10615,
+      "sha256": "b2c1307908408926a2999727ccfe0b85089c224de441b0cd260b48000eb1cc07",
+      "kind": "json"
+    },
+    "enclosure.step": {
+      "url": "/api/board/jobs/9ec90ad8-0f55-459e-b32e-cc4afb2a1893/files/enclosure.step",
+      "bytes": 1116646,
+      "sha256": "eec17f43871301e0dc1b90f2190bfac15dd1957f7e7ea21d41e45a1c4ca6686c",
+      "kind": "step"
+    },
+    "firmware.zip": {
+      "url": "/api/board/jobs/9ec90ad8-0f55-459e-b32e-cc4afb2a1893/files/firmware.zip",
+      "bytes": 3258,
+      "sha256": "10d6ea635388491cdd6019f46e4d6680fd925eb34330af1bd6ddeae25bc3f86d",
+      "kind": "zip"
+    },
+    "firmware-build.json": {
+      "url": "/api/board/jobs/9ec90ad8-0f55-459e-b32e-cc4afb2a1893/files/firmware-build.json",
+      "bytes": 5293,
+      "sha256": "0d96a5af3748bbca9f95a1bef1ebaa87cf9750ab8da97ddbcf537c7ccecc086e",
+      "kind": "json"
+    },
+    "mech-handoff.json": {
+      "url": "/api/board/jobs/9ec90ad8-0f55-459e-b32e-cc4afb2a1893/files/mech-handoff.json",
+      "bytes": 12894,
+      "sha256": "279f7d44492ea8073f9ebfda93cd12ce7f1beb8de6f03e107870bdde90ab9e50",
+      "kind": "json"
+    }
+  },
+  "toolVersions": {
+    "bun": "1.4.4",
+    "toolchainLockSha256": "54f9105716cebaa608d9c1e5b33827bc7370c1b23568ba36f878802c671e79bb",
+    "mokiRendererSha256": "281106c77854cfb5444efbcec29f74bcb30f687fdb540302a89160813f2c8623",
+    "../src/board/bom.ts": "3eb90de40496ae439a9b4fdf8bd5816dc59e8b5d29d97b72740a446928335022",
+    "../src/circuit/catalog.ts": "f9a71d535ac1c39ece54337532e1662d3cdb95356134f548c1345c555ca1b51c",
+    "models/render-board.ts": "0ae3ad9913ed812f943bcb5e97f07de2dc39a5a8c9634bb8d175cf116a1e15b1",
+    "models/catalog-models.ts": "5bf9dba5c67d0e1239c33dc4874be44867226c08fb287dc21e63fb17895015bc",
+    "models/glb.ts": "ee795aaf36c5fa0f0bd94484c574f69cd14c308ee72d4e3fd0b6855dd4c14c80",
+    "models/compact-glb.ts": "76504398c0e871e0de9ab55d4e553a4401d7466b6c1750eca4cb856e212bbda4",
+    "enclosure/module-preview.ts": "646bb819b10f708851a820b5159b977c67300cf34b0a3d3f4d84b9a5d7c65f19",
+    "enclosure/module-mech.ts": "8054af43a5ba30428ac832464b43cb90dab5392a6933368b7fe56cc38e1a8103",
+    "@jscad/modeling": "2.13.0",
+    "@tscircuit/capacity-autorouter": "0.0.1037",
+    "@tscircuit/checks": "0.0.269",
+    "@tscircuit/circuit-json-util": "0.0.131",
+    "@tscircuit/core": "0.0.2266",
+    "@tscircuit/create-fdm-enclosure": "0.0.7",
+    "@tscircuit/footprinter": "0.0.450",
+    "@tscircuit/math-utils": "0.0.38",
+    "@tscircuit/props": "0.0.718",
+    "circuit-json": "0.0.543",
+    "circuit-json-to-bom-csv": "0.0.28",
+    "circuit-json-to-gerber": "0.0.122",
+    "circuit-json-to-gltf": "0.0.164",
+    "circuit-json-to-kicad": "0.0.267",
+    "circuit-json-to-pnp-csv": "0.0.21",
+    "circuit-to-svg": "0.0.455",
+    "fflate": "0.8.3",
+    "jscad-planner": "0.0.14",
+    "react": "19.3.1",
+    "schematic-symbols": "0.0.251",
+    "tscircuit": "0.0.3075",
+    "enclosure:build123d": "0.13.0",
+    "firmware:platformio": "PlatformIO Core, version 6.1.19",
+    "firmware:framework-arduinoespressif32": "3.20017.241212+sha.dcc1105b",
+    "firmware:tool-esptoolpy": "1.40501.0 (4.5.1)",
+    "firmware:toolchain-xtensa-esp32": "8.4.0+2021r2-patch5"
+  }
+}

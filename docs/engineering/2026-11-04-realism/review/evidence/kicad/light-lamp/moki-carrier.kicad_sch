@@ -1,0 +1,2661 @@
+(kicad_sch
+  (version 20250114)
+  (generator circuit-json-to-kicad)
+  (generator_version 0.0.1)
+  (uuid 4f6ebf4e-f0d7-402f-ba6e-ad61072f448d)
+  (paper
+    A4
+  )
+  (lib_symbols
+    (symbol "Device:U_LED_5_mm_amber_amber_through-hole"
+      (pin_numbers
+        (hide no)
+      )
+      (pin_names
+        (offset 1.27)
+      )
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "U"
+        (id 0)
+        (at 2.032 0 90)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Value" "U"
+        (id 1)
+        (at 0 0 90)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Footprint" "tscircuit:LED_5_mm_amber_amber_through-hole"
+        (id 2)
+        (at -1.778 0 90)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "Datasheet" "~"
+        (id 3)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "Description" "Integrated Circuit"
+        (id 4)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "ki_keywords" "U IC chip"
+        (id 5)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "ki_fp_filters" "*"
+        (id 6)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (symbol "U_LED_5_mm_amber_amber_through-hole_0_1"
+        (polyline
+          (pts
+            (xy -9 -3)
+            (xy 9 -3)
+            (xy 9 3)
+            (xy -9 3)
+            (xy -9 -3)
+          )
+          (stroke
+            (width 0.254)
+            (type default)
+          )
+          (fill
+            (type background)
+          )
+        )
+      )
+      (symbol "U_LED_5_mm_amber_amber_through-hole_1_1"
+        (pin passive line
+          (at -15 0 0)
+          (length 6)
+          (name "A"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 15 0 180)
+          (length 6)
+          (name "K"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+      )
+      (embedded_fonts no)
+    )
+    (symbol "Device:U_Light-dependent_resistor_5_mm_through-hole"
+      (pin_numbers
+        (hide no)
+      )
+      (pin_names
+        (offset 1.27)
+      )
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "U"
+        (id 0)
+        (at 2.032 0 90)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Value" "U"
+        (id 1)
+        (at 0 0 90)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Footprint" "tscircuit:Light-dependent_resistor_5_mm_through-hole"
+        (id 2)
+        (at -1.778 0 90)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "Datasheet" "~"
+        (id 3)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "Description" "Integrated Circuit"
+        (id 4)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "ki_keywords" "U IC chip"
+        (id 5)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "ki_fp_filters" "*"
+        (id 6)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (symbol "U_Light-dependent_resistor_5_mm_through-hole_0_1"
+        (polyline
+          (pts
+            (xy -9 -3)
+            (xy 9 -3)
+            (xy 9 3)
+            (xy -9 3)
+            (xy -9 -3)
+          )
+          (stroke
+            (width 0.254)
+            (type default)
+          )
+          (fill
+            (type background)
+          )
+        )
+      )
+      (symbol "U_Light-dependent_resistor_5_mm_through-hole_1_1"
+        (pin passive line
+          (at -15 0 0)
+          (length 6)
+          (name "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 15 0 180)
+          (length 6)
+          (name "2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+      )
+      (embedded_fonts no)
+    )
+    (symbol "Device:U_Resistor_W_through-hole_10_k_through-hole"
+      (pin_numbers
+        (hide no)
+      )
+      (pin_names
+        (offset 1.27)
+      )
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "U"
+        (id 0)
+        (at 2.032 0 90)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Value" "U"
+        (id 1)
+        (at 0 0 90)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Footprint" "tscircuit:Resistor_W_through-hole_10_k_through-hole"
+        (id 2)
+        (at -1.778 0 90)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "Datasheet" "~"
+        (id 3)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "Description" "Integrated Circuit"
+        (id 4)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "ki_keywords" "U IC chip"
+        (id 5)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "ki_fp_filters" "*"
+        (id 6)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (symbol "U_Resistor_W_through-hole_10_k_through-hole_0_1"
+        (polyline
+          (pts
+            (xy -9 -3)
+            (xy 9 -3)
+            (xy 9 3)
+            (xy -9 3)
+            (xy -9 -3)
+          )
+          (stroke
+            (width 0.254)
+            (type default)
+          )
+          (fill
+            (type background)
+          )
+        )
+      )
+      (symbol "U_Resistor_W_through-hole_10_k_through-hole_1_1"
+        (pin passive line
+          (at -15 0 0)
+          (length 6)
+          (name "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 15 0 180)
+          (length 6)
+          (name "2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+      )
+      (embedded_fonts no)
+    )
+    (symbol "Device:U_Resistor_W_through-hole_150_through-hole"
+      (pin_numbers
+        (hide no)
+      )
+      (pin_names
+        (offset 1.27)
+      )
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "U"
+        (id 0)
+        (at 2.032 0 90)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Value" "U"
+        (id 1)
+        (at 0 0 90)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Footprint" "tscircuit:Resistor_W_through-hole_150_through-hole"
+        (id 2)
+        (at -1.778 0 90)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "Datasheet" "~"
+        (id 3)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "Description" "Integrated Circuit"
+        (id 4)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "ki_keywords" "U IC chip"
+        (id 5)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "ki_fp_filters" "*"
+        (id 6)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (symbol "U_Resistor_W_through-hole_150_through-hole_0_1"
+        (polyline
+          (pts
+            (xy -9 -3)
+            (xy 9 -3)
+            (xy 9 3)
+            (xy -9 3)
+            (xy -9 -3)
+          )
+          (stroke
+            (width 0.254)
+            (type default)
+          )
+          (fill
+            (type background)
+          )
+        )
+      )
+      (symbol "U_Resistor_W_through-hole_150_through-hole_1_1"
+        (pin passive line
+          (at -15 0 0)
+          (length 6)
+          (name "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 15 0 180)
+          (length 6)
+          (name "2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+      )
+      (embedded_fonts no)
+    )
+    (symbol "Device:U_ESP32-DevKitC_V4_female-header"
+      (pin_numbers
+        (hide no)
+      )
+      (pin_names
+        (offset 1.27)
+      )
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "U"
+        (id 0)
+        (at 2.032 0 90)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Value" "U"
+        (id 1)
+        (at 0 0 90)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Footprint" "tscircuit:ESP32-DevKitC_V4_female-header"
+        (id 2)
+        (at -1.778 0 90)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "Datasheet" "~"
+        (id 3)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "Description" "Integrated Circuit"
+        (id 4)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "ki_keywords" "U IC chip"
+        (id 5)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "ki_fp_filters" "*"
+        (id 6)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (symbol "U_ESP32-DevKitC_V4_female-header_0_1"
+        (polyline
+          (pts
+            (xy -12.75 -30)
+            (xy 12.75 -30)
+            (xy 12.75 30)
+            (xy -12.75 30)
+            (xy -12.75 -30)
+          )
+          (stroke
+            (width 0.254)
+            (type default)
+          )
+          (fill
+            (type background)
+          )
+        )
+      )
+      (symbol "U_ESP32-DevKitC_V4_female-header_1_1"
+        (pin passive line
+          (at -18.75 27 0)
+          (length 6)
+          (name "3V3"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at -18.75 24 0)
+          (length 6)
+          (name "EN"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at -18.75 21 0)
+          (length 6)
+          (name "GPIO36"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "3"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at -18.75 18 0)
+          (length 6)
+          (name "GPIO39"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "4"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at -18.75 15 0)
+          (length 6)
+          (name "GPIO34"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "5"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at -18.75 12 0)
+          (length 6)
+          (name "GPIO35"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "6"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at -18.75 9 0)
+          (length 6)
+          (name "GPIO32"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "7"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at -18.75 6 0)
+          (length 6)
+          (name "GPIO33"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "8"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at -18.75 3 0)
+          (length 6)
+          (name "GPIO25"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "9"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at -18.75 0 0)
+          (length 6)
+          (name "GPIO26"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "10"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at -18.75 -3 0)
+          (length 6)
+          (name "GPIO27"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "11"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at -18.75 -6 0)
+          (length 6)
+          (name "GPIO14"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "12"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at -18.75 -9 0)
+          (length 6)
+          (name "GPIO12"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "13"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at -18.75 -12 0)
+          (length 6)
+          (name "GND"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "14"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at -18.75 -15 0)
+          (length 6)
+          (name "GPIO13"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "15"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at -18.75 -18 0)
+          (length 6)
+          (name "GPIO9"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "16"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at -18.75 -21 0)
+          (length 6)
+          (name "GPIO10"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "17"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at -18.75 -24 0)
+          (length 6)
+          (name "GPIO11"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "18"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at -18.75 -27 0)
+          (length 6)
+          (name "5V"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "19"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 18.75 -27 180)
+          (length 6)
+          (name "GND2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "20"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 18.75 -24 180)
+          (length 6)
+          (name "GPIO23"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "21"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 18.75 -21 180)
+          (length 6)
+          (name "GPIO22"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "22"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 18.75 -18 180)
+          (length 6)
+          (name "GPIO1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "23"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 18.75 -15 180)
+          (length 6)
+          (name "GPIO3"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "24"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 18.75 -12 180)
+          (length 6)
+          (name "GPIO21"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "25"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 18.75 -9 180)
+          (length 6)
+          (name "GND3"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "26"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 18.75 -6 180)
+          (length 6)
+          (name "GPIO19"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "27"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 18.75 -3 180)
+          (length 6)
+          (name "GPIO18"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "28"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 18.75 0 180)
+          (length 6)
+          (name "GPIO5"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "29"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 18.75 3 180)
+          (length 6)
+          (name "GPIO17"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "30"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 18.75 6 180)
+          (length 6)
+          (name "GPIO16"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "31"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 18.75 9 180)
+          (length 6)
+          (name "GPIO4"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "32"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 18.75 12 180)
+          (length 6)
+          (name "GPIO0"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "33"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 18.75 15 180)
+          (length 6)
+          (name "GPIO2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "34"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 18.75 18 180)
+          (length 6)
+          (name "GPIO15"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "35"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 18.75 21 180)
+          (length 6)
+          (name "GPIO8"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "36"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 18.75 24 180)
+          (length 6)
+          (name "GPIO7"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "37"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 18.75 27 180)
+          (length 6)
+          (name "GPIO6"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "38"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+      )
+      (embedded_fonts no)
+    )
+    (symbol "Custom:rail_down"
+      (pin_numbers
+        (hide yes)
+      )
+      (pin_names
+        (offset 0)
+      )
+      (exclude_from_sim no)
+      (in_bom no)
+      (on_board no)
+      (property "Reference" "#PWR"
+        (id 0)
+        (at 2.032 0 90)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Value" "#PWR"
+        (id 1)
+        (at 0 0 90)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Footprint" ""
+        (id 2)
+        (at -1.778 0 90)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "Datasheet" "~"
+        (id 3)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "Description" "Ground net label"
+        (id 4)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "ki_keywords" "ground net"
+        (id 5)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "ki_fp_filters" ""
+        (id 6)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (symbol "rail_down_0_1"
+        (polyline
+          (pts
+            (xy -1.8 -1.35)
+            (xy 1.8 -1.35)
+          )
+          (stroke
+            (width 0.254)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+        (polyline
+          (pts
+            (xy 0 -1.35)
+            (xy 0 1.35)
+          )
+          (stroke
+            (width 0.254)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+      )
+      (symbol "rail_down_1_1"
+        (pin power_in line
+          (at 0 1.35 270)
+          (length 0.01)
+          (name "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+      )
+      (power)
+      (embedded_fonts no)
+    )
+    (symbol "Custom:rail_up"
+      (pin_numbers
+        (hide yes)
+      )
+      (pin_names
+        (offset 0)
+      )
+      (exclude_from_sim no)
+      (in_bom no)
+      (on_board no)
+      (property "Reference" "#PWR"
+        (id 0)
+        (at 2.032 0 90)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Value" "#PWR"
+        (id 1)
+        (at 0 0 90)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Footprint" ""
+        (id 2)
+        (at -1.778 0 90)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "Datasheet" "~"
+        (id 3)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "Description" "Power net label"
+        (id 4)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "ki_keywords" "power net"
+        (id 5)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "ki_fp_filters" ""
+        (id 6)
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (symbol "rail_up_0_1"
+        (polyline
+          (pts
+            (xy 1.8 1.35)
+            (xy -1.8 1.35)
+          )
+          (stroke
+            (width 0.254)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+        (polyline
+          (pts
+            (xy 0 1.35)
+            (xy 0 -1.35)
+          )
+          (stroke
+            (width 0.254)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+      )
+      (symbol "rail_up_1_1"
+        (pin power_in line
+          (at 0 -1.35 90)
+          (length 0.01)
+          (name "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+      )
+      (power)
+      (embedded_fonts no)
+    )
+  )
+  (sheet_instances
+    (path "/"
+      (page "1")
+    )
+  )
+  (embedded_fonts no)
+  (symbol
+    (lib_id "Device:U_LED_5_mm_amber_amber_through-hole")
+    (at 184.12500000000003 37.5 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid 1eb5b4bd-2240-457a-91ee-e6a35db43136)
+    (fields_autoplaced no)
+    (property "Reference" "D1"
+      (id 0)
+      (at 175.12500000000003 32.55 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Value" "LED, 5 mm amber amber (through-hole)"
+      (id 1)
+      (at 175.12500000000003 42.45 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Footprint" ""
+      (id 2)
+      (at 182.34700000000004 37.5 90)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Datasheet" "~"
+      (id 3)
+      (at 184.12500000000003 37.5 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Description" "Integrated Circuit"
+      (id 4)
+      (at 184.12500000000003 37.5 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (pin "1"
+      (uuid 9962bde6-a720-496d-9a12-3f29f15999a4)
+    )
+    (pin "2"
+      (uuid 9ff69271-be09-40d0-a0a4-4ecadefbd66c)
+    )
+    (instances
+      (project ""
+        (path "/4f6ebf4e-f0d7-402f-ba6e-ad61072f448d"
+          (reference "D1")
+          (unit 1)
+        )
+      )
+    )
+  )
+  (symbol
+    (lib_id "Device:U_Light-dependent_resistor_5_mm_through-hole")
+    (at 184.12500000000003 82.5 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid 3badbfe3-4773-48a1-a9da-ee44a7734e48)
+    (fields_autoplaced no)
+    (property "Reference" "LDR1"
+      (id 0)
+      (at 175.12500000000003 77.55 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Value" "Light-dependent resistor, 5 mm (through-hole)"
+      (id 1)
+      (at 175.12500000000003 87.45 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Footprint" ""
+      (id 2)
+      (at 182.34700000000004 82.5 90)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Datasheet" "~"
+      (id 3)
+      (at 184.12500000000003 82.5 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Description" "Integrated Circuit"
+      (id 4)
+      (at 184.12500000000003 82.5 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (pin "1"
+      (uuid 510ae684-9b2d-46a2-8617-aed406cf5153)
+    )
+    (pin "2"
+      (uuid 5d6bfedd-0389-4805-b2e7-1c7952a06e75)
+    )
+    (instances
+      (project ""
+        (path "/4f6ebf4e-f0d7-402f-ba6e-ad61072f448d"
+          (reference "LDR1")
+          (unit 1)
+        )
+      )
+    )
+  )
+  (symbol
+    (lib_id "Device:U_Resistor_W_through-hole_10_k_through-hole")
+    (at 184.12500000000003 127.5 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid da2bc801-166d-4787-8db8-dc9fe7515ea8)
+    (fields_autoplaced no)
+    (property "Reference" "R1"
+      (id 0)
+      (at 175.12500000000003 122.55 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Value" "Resistor, ¼ W through-hole 10 kΩ (through-hole)"
+      (id 1)
+      (at 175.12500000000003 132.45 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Footprint" ""
+      (id 2)
+      (at 182.34700000000004 127.5 90)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Datasheet" "~"
+      (id 3)
+      (at 184.12500000000003 127.5 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Description" "Integrated Circuit"
+      (id 4)
+      (at 184.12500000000003 127.5 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (pin "1"
+      (uuid 70ab516b-4b20-47bb-9d76-4552e3df6840)
+    )
+    (pin "2"
+      (uuid 7515e9b1-9ab0-475b-a390-a1525875b811)
+    )
+    (instances
+      (project ""
+        (path "/4f6ebf4e-f0d7-402f-ba6e-ad61072f448d"
+          (reference "R1")
+          (unit 1)
+        )
+      )
+    )
+  )
+  (symbol
+    (lib_id "Device:U_Resistor_W_through-hole_150_through-hole")
+    (at 184.12500000000003 172.5 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid dc109766-38bb-48ea-a223-b86b445ff649)
+    (fields_autoplaced no)
+    (property "Reference" "R2"
+      (id 0)
+      (at 175.12500000000003 167.55 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Value" "Resistor, ¼ W through-hole 150 Ω (through-hole)"
+      (id 1)
+      (at 175.12500000000003 177.45 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Footprint" ""
+      (id 2)
+      (at 182.34700000000004 172.5 90)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Datasheet" "~"
+      (id 3)
+      (at 184.12500000000003 172.5 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Description" "Integrated Circuit"
+      (id 4)
+      (at 184.12500000000003 172.5 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (pin "1"
+      (uuid 4b5223c1-3254-46f1-ab57-fbedf64c0f0d)
+    )
+    (pin "2"
+      (uuid d5562282-a08e-4e43-92d0-ef2c19c1d182)
+    )
+    (instances
+      (project ""
+        (path "/4f6ebf4e-f0d7-402f-ba6e-ad61072f448d"
+          (reference "R2")
+          (unit 1)
+        )
+      )
+    )
+  )
+  (symbol
+    (lib_id "Device:U_ESP32-DevKitC_V4_female-header")
+    (at 79.12500000000003 105 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid 693fbe70-07e2-4687-8075-ee8e76ee01dc)
+    (fields_autoplaced no)
+    (property "Reference" "U1"
+      (id 0)
+      (at 66.37500000000003 73.05 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Value" "ESP32-DevKitC V4 (female-header)"
+      (id 1)
+      (at 66.37500000000003 136.95000000000002 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left)
+      )
+    )
+    (property "Footprint" ""
+      (id 2)
+      (at 77.34700000000002 105 90)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Datasheet" "~"
+      (id 3)
+      (at 79.12500000000003 105 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Description" "Integrated Circuit"
+      (id 4)
+      (at 79.12500000000003 105 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (pin "1"
+      (uuid accb051b-4157-4f89-877a-4623934c5ff4)
+    )
+    (pin "2"
+      (uuid c581fca5-e3c9-43eb-b95d-1d116315506e)
+    )
+    (pin "3"
+      (uuid 97d2bc06-be5e-4e52-8d1a-3e7a2bb3adb1)
+    )
+    (pin "4"
+      (uuid 755d7969-f67b-482f-9668-fec3b8a008b9)
+    )
+    (pin "5"
+      (uuid d334c584-5277-4f8b-bc18-fe66088c1a4e)
+    )
+    (pin "6"
+      (uuid 181180ff-f8cc-44c3-a327-bc396eb33e53)
+    )
+    (pin "7"
+      (uuid 1884eac3-0e8d-4575-b87e-413ed64159c9)
+    )
+    (pin "8"
+      (uuid 429bcda1-a3d2-4117-b905-8b96fa9b24d7)
+    )
+    (pin "9"
+      (uuid adf2e831-2c43-425c-b71d-2aa345f3b558)
+    )
+    (pin "10"
+      (uuid 395595c4-efa7-46a6-abb4-ba8d1eee63a9)
+    )
+    (pin "11"
+      (uuid 1094a76c-bff6-4f90-9f2d-f8afede32d4f)
+    )
+    (pin "12"
+      (uuid 64574704-f856-4d14-97b4-ab79638e12c5)
+    )
+    (pin "13"
+      (uuid 213daa61-a0c4-414c-baaf-3624da778981)
+    )
+    (pin "14"
+      (uuid 9ec541a3-aa21-4c2b-919c-1c78a2e6dc37)
+    )
+    (pin "15"
+      (uuid b2f8566e-6ced-4cb2-9d34-27c257ad08de)
+    )
+    (pin "16"
+      (uuid b4f917c7-09c4-4b7c-b0aa-291b2434ff6c)
+    )
+    (pin "17"
+      (uuid 44efab3b-3a8d-4aa7-af20-323a48a55963)
+    )
+    (pin "18"
+      (uuid e33e0bae-49cd-445b-a42f-b9283e94fa0c)
+    )
+    (pin "19"
+      (uuid cb6500d4-79d2-4486-a8ce-e95e7ea6d363)
+    )
+    (pin "20"
+      (uuid 95496f63-2f3c-4509-966a-1da4044c503b)
+    )
+    (pin "21"
+      (uuid 7e2fae55-087a-45ab-9396-437786441cdb)
+    )
+    (pin "22"
+      (uuid 909b4b7f-47b4-47ab-bb7d-2917856e1ad9)
+    )
+    (pin "23"
+      (uuid 854475a6-13bd-47d7-a24f-eabb94cff0db)
+    )
+    (pin "24"
+      (uuid 251c01d4-050c-47ef-93ea-6cabb601bd46)
+    )
+    (pin "25"
+      (uuid a7624a9b-de88-4bb7-9c9c-44766e448d6a)
+    )
+    (pin "26"
+      (uuid ba7202fe-ef15-4516-91a1-0456efcdbbcf)
+    )
+    (pin "27"
+      (uuid 2580bece-bb23-47d4-9a29-b6a665e5f155)
+    )
+    (pin "28"
+      (uuid db6832bb-dd4b-4a59-a5f3-6b53a3832aca)
+    )
+    (pin "29"
+      (uuid 6be32848-a64a-4892-ab76-12be3d06d4e6)
+    )
+    (pin "30"
+      (uuid 44a63681-6e4c-4347-b5fe-4aff5925eaf8)
+    )
+    (pin "31"
+      (uuid 69948c1c-606f-4323-addc-a46634bc92fd)
+    )
+    (pin "32"
+      (uuid 8d1118d4-11e9-4f52-8589-8501df184f75)
+    )
+    (pin "33"
+      (uuid be6ebe28-7840-4e23-8037-7393479a03a6)
+    )
+    (pin "34"
+      (uuid b3ec2b11-17ce-47db-875a-cbaf959c729c)
+    )
+    (pin "35"
+      (uuid 408ca5c5-94c1-49af-8e41-bf1e26386897)
+    )
+    (pin "36"
+      (uuid e091cad4-60ff-4ccb-a1ba-69e5b9bf3fd5)
+    )
+    (pin "37"
+      (uuid c4182f46-2ff6-4c3e-8abe-ab7bf554f532)
+    )
+    (pin "38"
+      (uuid e9863c32-be88-4df2-9792-f986c78c056c)
+    )
+    (instances
+      (project ""
+        (path "/4f6ebf4e-f0d7-402f-ba6e-ad61072f448d"
+          (reference "U1")
+          (unit 1)
+        )
+      )
+    )
+  )
+  (symbol
+    (lib_id "Custom:rail_down")
+    (at 226.26600000000002 60.75 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom no)
+    (on_board no)
+    (dnp no)
+    (uuid 038354e7-3467-4f7e-93f9-3e100a5df7c6)
+    (fields_autoplaced no)
+    (property "Reference" "#PWRschematic_net_label_0"
+      (id 0)
+      (at 226.26600000000002 64.75 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Value" "GND"
+      (id 1)
+      (at 226.26600000000002 64.75 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Footprint" ""
+      (id 2)
+      (at 224.48800000000003 60.75 90)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Datasheet" "~"
+      (id 3)
+      (at 226.26600000000002 60.75 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Description" "Power/Net symbol: GND"
+      (id 4)
+      (at 226.26600000000002 60.75 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (pin "1"
+      (uuid 1e8ce430-d0b2-47e8-8e94-3f1013614b20)
+    )
+    (instances
+      (project ""
+        (path "/4f6ebf4e-f0d7-402f-ba6e-ad61072f448d"
+          (reference "#PWRschematic_net_label_0")
+          (unit 1)
+        )
+      )
+    )
+  )
+  (symbol
+    (lib_id "Custom:rail_down")
+    (at 259.73999999999995 135.61499999999998 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom no)
+    (on_board no)
+    (dnp no)
+    (uuid 24153450-fd8a-41d3-a488-97f6740e60d5)
+    (fields_autoplaced no)
+    (property "Reference" "#PWRschematic_net_label_1"
+      (id 0)
+      (at 259.73999999999995 139.61499999999998 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Value" "GND"
+      (id 1)
+      (at 259.73999999999995 139.61499999999998 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Footprint" ""
+      (id 2)
+      (at 257.96199999999993 135.61499999999998 90)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Datasheet" "~"
+      (id 3)
+      (at 259.73999999999995 135.61499999999998 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Description" "Power/Net symbol: GND"
+      (id 4)
+      (at 259.73999999999995 135.61499999999998 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (pin "1"
+      (uuid babfba34-e1db-41e1-a17a-255dec0ea9c9)
+    )
+    (instances
+      (project ""
+        (path "/4f6ebf4e-f0d7-402f-ba6e-ad61072f448d"
+          (reference "#PWRschematic_net_label_1")
+          (unit 1)
+        )
+      )
+    )
+  )
+  (symbol
+    (lib_id "Custom:rail_up")
+    (at 161.01000000000002 78.135 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom no)
+    (on_board no)
+    (dnp no)
+    (uuid 35ed2217-9911-47b5-b8b3-c846987c80c9)
+    (fields_autoplaced no)
+    (property "Reference" "#PWRschematic_net_label_2"
+      (id 0)
+      (at 161.01000000000002 74.135 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Value" "PLUS_3V3"
+      (id 1)
+      (at 161.01000000000002 74.135 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Footprint" ""
+      (id 2)
+      (at 159.23200000000003 78.135 90)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Datasheet" "~"
+      (id 3)
+      (at 161.01000000000002 78.135 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Description" "Power/Net symbol: PLUS_3V3"
+      (id 4)
+      (at 161.01000000000002 78.135 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (pin "1"
+      (uuid 54846bd9-fe32-40de-a46b-6794c28d2801)
+    )
+    (instances
+      (project ""
+        (path "/4f6ebf4e-f0d7-402f-ba6e-ad61072f448d"
+          (reference "#PWRschematic_net_label_2")
+          (unit 1)
+        )
+      )
+    )
+  )
+  (symbol
+    (lib_id "Custom:rail_up")
+    (at 49.26000000000002 75.88499999999999 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom no)
+    (on_board no)
+    (dnp no)
+    (uuid b1149e18-349c-402b-a46e-ef1275d7a6a5)
+    (fields_autoplaced no)
+    (property "Reference" "#PWRschematic_net_label_3"
+      (id 0)
+      (at 49.26000000000002 71.88499999999999 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Value" "PLUS_3V3"
+      (id 1)
+      (at 49.26000000000002 71.88499999999999 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+      )
+    )
+    (property "Footprint" ""
+      (id 2)
+      (at 47.48200000000002 75.88499999999999 90)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Datasheet" "~"
+      (id 3)
+      (at 49.26000000000002 75.88499999999999 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (property "Description" "Power/Net symbol: PLUS_3V3"
+      (id 4)
+      (at 49.26000000000002 75.88499999999999 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (hide yes)
+      )
+    )
+    (pin "1"
+      (uuid 8706ed03-4c76-4512-b04b-2095d8a21e2b)
+    )
+    (instances
+      (project ""
+        (path "/4f6ebf4e-f0d7-402f-ba6e-ad61072f448d"
+          (reference "#PWRschematic_net_label_3")
+          (unit 1)
+        )
+      )
+    )
+  )
+  (label "LED_A"
+    (at 167.62500000000003 37.5 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right bottom)
+    )
+    (uuid e34df284-66cc-44dc-8b7d-a5d387632004)
+  )
+  (label "LED_A"
+    (at 200.62500000000003 172.5 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left bottom)
+    )
+    (uuid 41c7e31e-b0fe-4503-85b4-47e4ecbe2180)
+  )
+  (label "LIGHT_SENSE"
+    (at 199.75950000000003 105 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify bottom)
+    )
+    (uuid 62420576-125b-402d-914c-9caa5879a743)
+  )
+  (label "LIGHT_SENSE"
+    (at 58.87500000000003 90 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right bottom)
+    )
+    (uuid a5eb064f-9fc8-4404-bc36-d54cdea617b3)
+  )
+  (label "LED_DRIVE"
+    (at 167.62500000000003 172.5 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right bottom)
+    )
+    (uuid c49b6824-096f-443c-94ac-db7f6f6fc78c)
+  )
+  (label "LED_DRIVE"
+    (at 58.87500000000003 101.99999999999999 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify right bottom)
+    )
+    (uuid 4391f169-6ccd-47ee-bb9d-e6ff01ca4101)
+  )
+  (wire
+    (pts
+      (xy 199.12500000000003 82.5)
+      (xy 233.39400000000003 82.5)
+    )
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (uuid 904e5e7c-d2d2-40f1-9f39-cc89e1831157)
+  )
+  (wire
+    (pts
+      (xy 233.39400000000003 82.5)
+      (xy 233.39400000000003 105)
+    )
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (uuid 5a62faa6-1dba-4f86-ba3c-fd4e31f145e3)
+  )
+  (wire
+    (pts
+      (xy 233.39400000000003 105)
+      (xy 166.12500000000003 105)
+    )
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (uuid 500b7d6a-9ea8-4731-b703-69fa909635ba)
+  )
+  (wire
+    (pts
+      (xy 166.12500000000003 105)
+      (xy 166.12500000000003 127.5)
+    )
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (uuid 987d3679-7ca5-4ec0-beb1-3f268a8e8859)
+  )
+  (wire
+    (pts
+      (xy 166.12500000000003 127.5)
+      (xy 169.12500000000003 127.5)
+    )
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (uuid a493ab4e-5418-491b-bf91-115cdac01eb7)
+  )
+  (wire
+    (pts
+      (xy 199.12500000000003 37.5)
+      (xy 226.26600000000002 37.5)
+    )
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (uuid c73d8fb9-a956-49f0-b3e2-cfe1b8296aa1)
+  )
+  (wire
+    (pts
+      (xy 226.26600000000002 37.5)
+      (xy 226.26600000000002 59.4)
+    )
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (uuid a4eac82e-45ee-49c8-a5b1-66863edad4f6)
+  )
+  (wire
+    (pts
+      (xy 226.26600000000002 59.4)
+      (xy 37.26000000000003 59.4)
+    )
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (uuid 69d41e8f-db93-4169-822b-d132fb03d2e8)
+  )
+  (wire
+    (pts
+      (xy 37.26000000000003 59.4)
+      (xy 37.26000000000003 117)
+    )
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (uuid fe30db90-fdc9-45d7-9a58-a9850135d30a)
+  )
+  (wire
+    (pts
+      (xy 37.26000000000003 117)
+      (xy 60.37500000000003 117)
+    )
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (uuid 0c467059-8bf9-458b-89ca-b5db83cf6438)
+  )
+  (wire
+    (pts
+      (xy 199.12500000000003 127.5)
+      (xy 259.73999999999995 127.5)
+    )
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (uuid dcf70925-18d4-48f2-a2fb-39d3c85581c3)
+  )
+  (wire
+    (pts
+      (xy 259.73999999999995 127.5)
+      (xy 259.73999999999995 134.265)
+    )
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (uuid 25e1f4e2-39bd-4619-9b73-ade55edc800a)
+  )
+  (wire
+    (pts
+      (xy 169.12500000000003 82.5)
+      (xy 161.01000000000002 82.5)
+    )
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (uuid 7ba873fd-e80b-4856-a3c4-6781cbdd3455)
+  )
+  (wire
+    (pts
+      (xy 161.01000000000002 82.5)
+      (xy 161.01000000000002 79.485)
+    )
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (uuid 0d0eb53e-af55-4c28-ad51-e41b5e5510b5)
+  )
+  (wire
+    (pts
+      (xy 60.37500000000003 78)
+      (xy 49.26000000000002 78)
+    )
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (uuid e085b2b9-7c9d-4fe5-9541-3f90b8f2c3bd)
+  )
+  (wire
+    (pts
+      (xy 49.26000000000002 78)
+      (xy 49.26000000000002 77.23499999999999)
+    )
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (uuid 2f625879-35b9-46b9-ab21-c15dd72261a3)
+  )
+  (wire
+    (pts
+      (xy 169.12500000000003 37.5)
+      (xy 158.92500000000004 37.5)
+    )
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (uuid 434d4176-2d09-49c7-a687-b0b07fcf35ef)
+  )
+  (wire
+    (pts
+      (xy 199.12500000000003 172.5)
+      (xy 209.32500000000002 172.5)
+    )
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (uuid da4dc2fe-95f6-4c23-8c21-b2cc312317d3)
+  )
+  (wire
+    (pts
+      (xy 60.37500000000003 90)
+      (xy 42.97500000000002 90)
+    )
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (uuid 8510eeb7-ca28-404a-ac34-4e44b3e86645)
+  )
+  (wire
+    (pts
+      (xy 169.12500000000003 172.5)
+      (xy 154.12500000000003 172.5)
+    )
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (uuid dadffaca-e4cd-4afd-9711-e917f248cbc7)
+  )
+  (wire
+    (pts
+      (xy 60.37500000000003 101.99999999999999)
+      (xy 42.97500000000002 101.99999999999999)
+    )
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (uuid b610ecbc-5059-4e5b-a233-db7cfb0c102c)
+  )
+)

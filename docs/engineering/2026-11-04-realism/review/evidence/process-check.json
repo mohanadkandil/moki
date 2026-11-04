@@ -1,0 +1,7 @@
+{
+  "elapsedMs": 258.28514099999995,
+  "error": "Error: Worker timed out after 250 ms; process group killed; escaped sessions require a sandbox",
+  "escapedChildActuallyStarted": true,
+  "nextCode": 0,
+  "nextStdout": "NEXT_WORKER_OK\n"
+}

@@ -1,0 +1,2 @@
+390x844 SwiftShader orbit frames=60 median=117ms p95=1700ms max=2617ms
+1440x900 SwiftShader orbit frames=53 median=317ms p95=633ms max=3367ms

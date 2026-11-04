@@ -1,0 +1,24 @@
+{
+  "/app/moki/studio": {
+    "status": 200,
+    "contentType": "text/html"
+  },
+  "/app/moki/api/board/jobs": {
+    "status": 401
+  },
+  "/app/moki/@fs/etc/passwd": {
+    "status": 404
+  },
+  "/app/moki/api/runs": {
+    "status": 404
+  },
+  "/app/moki/src/App.tsx": {
+    "status": 404
+  },
+  "/app/moki/studies/": {
+    "status": 404
+  },
+  "/api/board/jobs": {
+    "status": 404
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "focus-timer": {
+    "pcb": {
+      "exit": 0,
+      "stdout": "Plotted to '/tmp/moki-kicad-check/final/focus-timer/pcb-svg/moki-carrier-F_Cu.svg'.\nPlotted to '/tmp/moki-kicad-check/final/focus-timer/pcb-svg/moki-carrier-B_Cu.svg'.\nPlotted to '/tmp/moki-kicad-check/final/focus-timer/pcb-svg/moki-carrier-Edge_Cuts.svg'.\nDone.\n",
+      "stderr": "15:55:52: Error: schema file '/usr/share/kicad/schemas/api.v1.schema.json' not found\n",
+      "svgFiles": [
+        "/tmp/moki-kicad-check/final/focus-timer/pcb-svg/moki-carrier-Edge_Cuts.svg",
+        "/tmp/moki-kicad-check/final/focus-timer/pcb-svg/moki-carrier-B_Cu.svg",
+        "/tmp/moki-kicad-check/final/focus-timer/pcb-svg/moki-carrier-F_Cu.svg"
+      ],
+      "svgBytes": 846335
+    },
+    "sch": {
+      "exit": 0,
+      "stdout": "Plotted to '/tmp/moki-kicad-check/final/focus-timer/sch-svg/moki-carrier.svg'.\nDone.\n",
+      "stderr": "15:55:53: Error: schema file '/usr/share/kicad/schemas/api.v1.schema.json' not found\n",
+      "svgFiles": [
+        "/tmp/moki-kicad-check/final/focus-timer/sch-svg/moki-carrier.svg"
+      ],
+      "svgBytes": 397361
+    }
+  },
+  "light-lamp": {
+    "pcb": {
+      "exit": 0,
+      "stdout": "Plotted to '/tmp/moki-kicad-check/final/light-lamp/pcb-svg/moki-carrier-F_Cu.svg'.\nPlotted to '/tmp/moki-kicad-check/final/light-lamp/pcb-svg/moki-carrier-B_Cu.svg'.\nPlotted to '/tmp/moki-kicad-check/final/light-lamp/pcb-svg/moki-carrier-Edge_Cuts.svg'.\nDone.\n",
+      "stderr": "15:55:53: Error: schema file '/usr/share/kicad/schemas/api.v1.schema.json' not found\n",
+      "svgFiles": [
+        "/tmp/moki-kicad-check/final/light-lamp/pcb-svg/moki-carrier-Edge_Cuts.svg",
+        "/tmp/moki-kicad-check/final/light-lamp/pcb-svg/moki-carrier-B_Cu.svg",
+        "/tmp/moki-kicad-check/final/light-lamp/pcb-svg/moki-carrier-F_Cu.svg"
+      ],
+      "svgBytes": 761894
+    },
+    "sch": {
+      "exit": 0,
+      "stdout": "Plotted to '/tmp/moki-kicad-check/final/light-lamp/sch-svg/moki-carrier.svg'.\nDone.\n",
+      "stderr": "15:55:54: Error: schema file '/usr/share/kicad/schemas/api.v1.schema.json' not found\n",
+      "svgFiles": [
+        "/tmp/moki-kicad-check/final/light-lamp/sch-svg/moki-carrier.svg"
+      ],
+      "svgBytes": 376539
+    }
+  },
+  "temp-monitor": {
+    "pcb": {
+      "exit": 0,
+      "stdout": "Plotted to '/tmp/moki-kicad-check/final/temp-monitor/pcb-svg/moki-carrier-F_Cu.svg'.\nPlotted to '/tmp/moki-kicad-check/final/temp-monitor/pcb-svg/moki-carrier-B_Cu.svg'.\nPlotted to '/tmp/moki-kicad-check/final/temp-monitor/pcb-svg/moki-carrier-Edge_Cuts.svg'.\nDone.\n",
+      "stderr": "15:55:54: Error: schema file '/usr/share/kicad/schemas/api.v1.schema.json' not found\n",
+      "svgFiles": [
+        "/tmp/moki-kicad-check/final/temp-monitor/pcb-svg/moki-carrier-Edge_Cuts.svg",
+        "/tmp/moki-kicad-check/final/temp-monitor/pcb-svg/moki-carrier-B_Cu.svg",
+        "/tmp/moki-kicad-check/final/temp-monitor/pcb-svg/moki-carrier-F_Cu.svg"
+      ],
+      "svgBytes": 835287
+    },
+    "sch": {
+      "exit": 0,
+      "stdout": "Plotted to '/tmp/moki-kicad-check/final/temp-monitor/sch-svg/moki-carrier.svg'.\nDone.\n",
+      "stderr": "15:55:55: Error: schema file '/usr/share/kicad/schemas/api.v1.schema.json' not found\n",
+      "svgFiles": [
+        "/tmp/moki-kicad-check/final/temp-monitor/sch-svg/moki-carrier.svg"
+      ],
+      "svgBytes": 424393
+    }
+  }
+}

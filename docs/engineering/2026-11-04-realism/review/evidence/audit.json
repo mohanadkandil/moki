@@ -1,0 +1,245 @@
+{
+  "focus-timer": {
+    "normal": 0,
+    "bytes": {
+      "board": 1726656,
+      "assembly": 2927340
+    },
+    "seats": [
+      {
+        "name": "BZ1:piezo-passive-12mm",
+        "min": 0.8,
+        "seat": 0.8
+      },
+      {
+        "name": "SW1:ky040-rotary-encoder",
+        "min": 7.9,
+        "seat": 7.8999999999999995
+      },
+      {
+        "name": "SW1:socket",
+        "min": 0.8,
+        "seat": 0.8
+      },
+      {
+        "name": "U1:esp32-devkitc-v4",
+        "min": 7.9,
+        "seat": 7.8999999999999995
+      },
+      {
+        "name": "U1:socket",
+        "min": 0.8,
+        "seat": 0.8
+      },
+      {
+        "name": "U2:ssd1306-oled-128x64-i2c",
+        "min": 7.8999999999999995,
+        "seat": 7.8999999999999995
+      },
+      {
+        "name": "U2:socket",
+        "min": 0.8,
+        "seat": 0.8
+      }
+    ]
+  },
+  "light-lamp": {
+    "normal": 0,
+    "bytes": {
+      "board": 1461988,
+      "assembly": 2512496
+    },
+    "seats": [
+      {
+        "name": "D1:led-5mm-amber",
+        "min": 0.8,
+        "seat": 0.8
+      },
+      {
+        "name": "LDR1:ldr-5mm",
+        "min": 0.8,
+        "seat": 0.8
+      },
+      {
+        "name": "R1:resistor-axial",
+        "min": 0.8,
+        "seat": 0.8
+      },
+      {
+        "name": "R2:resistor-axial",
+        "min": 0.8,
+        "seat": 0.8
+      },
+      {
+        "name": "U1:esp32-devkitc-v4",
+        "min": 7.9,
+        "seat": 7.8999999999999995
+      },
+      {
+        "name": "U1:socket",
+        "min": 0.8,
+        "seat": 0.8
+      }
+    ]
+  },
+  "temp-monitor": {
+    "normal": 0,
+    "oversizeDrill": {
+      "count": 6,
+      "oracleExit": 0
+    },
+    "removedTraces": 1,
+    "bytes": {
+      "board": 1535416,
+      "assembly": 2883988
+    },
+    "seats": [
+      {
+        "name": "BZ1:piezo-passive-12mm",
+        "min": 0.8,
+        "seat": 0.8
+      },
+      {
+        "name": "R1:resistor-axial",
+        "min": 0.8,
+        "seat": 0.8
+      },
+      {
+        "name": "U1:esp32-devkitc-v4",
+        "min": 7.9,
+        "seat": 7.8999999999999995
+      },
+      {
+        "name": "U1:socket",
+        "min": 0.8,
+        "seat": 0.8
+      },
+      {
+        "name": "U2:ssd1306-oled-128x64-i2c",
+        "min": 7.8999999999999995,
+        "seat": 7.8999999999999995
+      },
+      {
+        "name": "U2:socket",
+        "min": 0.8,
+        "seat": 0.8
+      },
+      {
+        "name": "U3:ds18b20-to92",
+        "min": 0.8,
+        "seat": 0.8
+      }
+    ]
+  },
+  "security": {
+    "/api/board/jobs:undefined": {
+      "status": 401,
+      "headers": {
+        "Content-Type": "application/json",
+        "Cache-Control": "no-store"
+      },
+      "body": "{\"error\":\"Board API capability required\"}"
+    },
+    "/api/board/jobs:wrong": {
+      "status": 401,
+      "headers": {
+        "Content-Type": "application/json",
+        "Cache-Control": "no-store"
+      },
+      "body": "{\"error\":\"Board API capability required\"}"
+    },
+    "/api/board/jobs:review-fixture-token": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json",
+        "Cache-Control": "no-store"
+      },
+      "body": "[{\"jobId\":\"11111111-1111-4111-8111-111111111111\",\"status\":\"done\",\"artifacts\":{\"kicad.zip\":{},\"pcb.svg\":{}},\"input\":{},\"createdAt\":\"2026-11-04\"}]"
+    },
+    "/api/board/jobs/11111111-1111-4111-8111-111111111111/files/kicad.zip:undefined": {
+      "status": 401,
+      "headers": {
+        "Content-Type": "application/json",
+        "Cache-Control": "no-store"
+      },
+      "body": "{\"error\":\"Board API capability required\"}"
+    },
+    "/api/board/jobs/11111111-1111-4111-8111-111111111111/files/kicad.zip:wrong": {
+      "status": 401,
+      "headers": {
+        "Content-Type": "application/json",
+        "Cache-Control": "no-store"
+      },
+      "body": "{\"error\":\"Board API capability required\"}"
+    },
+    "/api/board/jobs/11111111-1111-4111-8111-111111111111/files/kicad.zip:review-fixture-token": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/zip",
+        "Content-Length": 17,
+        "Cache-Control": "no-store",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox"
+      },
+      "body": "fixture zip bytes"
+    },
+    "/api/board/unknown:undefined": {
+      "status": 401,
+      "headers": {
+        "Content-Type": "application/json",
+        "Cache-Control": "no-store"
+      },
+      "body": "{\"error\":\"Board API capability required\"}"
+    },
+    "/api/board/unknown:wrong": {
+      "status": 401,
+      "headers": {
+        "Content-Type": "application/json",
+        "Cache-Control": "no-store"
+      },
+      "body": "{\"error\":\"Board API capability required\"}"
+    },
+    "/api/board/unknown:review-fixture-token": {
+      "status": 404,
+      "headers": {
+        "Content-Type": "application/json",
+        "Cache-Control": "no-store"
+      },
+      "body": "{\"error\":\"Board endpoint not found\"}"
+    },
+    "symlink": {
+      "status": 404,
+      "headers": {
+        "Content-Type": "application/json",
+        "Cache-Control": "no-store"
+      },
+      "body": "{\"error\":\"Artifact not found\"}"
+    },
+    "traversal": {
+      "status": 400,
+      "headers": {
+        "Content-Type": "application/json",
+        "Cache-Control": "no-store"
+      },
+      "body": "{\"error\":\"Invalid artifact path\"}"
+    },
+    "foreignOrigin": {
+      "status": 403,
+      "headers": {
+        "Content-Type": "application/json",
+        "Cache-Control": "no-store"
+      },
+      "body": "{\"error\":\"Same-origin requests only\"}"
+    }
+  },
+  "productionMechCacheSurvivesEviction": true,
+  "gatewayRoutes": {
+    "/studio": true,
+    "/@fs/etc/passwd": false,
+    "/api/runs": false,
+    "/api/board/jobs": true,
+    "/api/board/jobs/11111111-1111-4111-8111-111111111111/files/kicad.zip": true,
+    "/assets/../src/App.tsx": false
+  },
+  "envSentinel": "absent"
+}

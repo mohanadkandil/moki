@@ -1,0 +1,67 @@
+{
+  "focus-timer": {
+    "jobId": "24fd29e6-28d4-4ff7-abc8-bad1abfa2365",
+    "drcErrors": 0,
+    "boardMm": [
+      90,
+      100
+    ],
+    "boardGlbBytes": 1726656,
+    "assemblyGlbBytes": 2927340,
+    "kicadZipBytes": 96426,
+    "enclosureFailures": [],
+    "modelNames": [
+      "BZ1:piezo-passive-12mm",
+      "SW1:ky040-rotary-encoder",
+      "SW1:socket",
+      "U1:esp32-devkitc-v4",
+      "U1:socket",
+      "U2:ssd1306-oled-128x64-i2c",
+      "U2:socket"
+    ],
+    "cornerRadiusMm": 5.3
+  },
+  "light-lamp": {
+    "jobId": "9ec90ad8-0f55-459e-b32e-cc4afb2a1893",
+    "drcErrors": 0,
+    "boardMm": [
+      90,
+      105
+    ],
+    "boardGlbBytes": 1461988,
+    "assemblyGlbBytes": 2512496,
+    "kicadZipBytes": 78766,
+    "enclosureFailures": [],
+    "modelNames": [
+      "D1:led-5mm-amber",
+      "LDR1:ldr-5mm",
+      "R1:resistor-axial",
+      "R2:resistor-axial",
+      "U1:esp32-devkitc-v4",
+      "U1:socket"
+    ],
+    "cornerRadiusMm": 5.3
+  },
+  "temp-monitor": {
+    "jobId": "b59461c0-8c5b-4fcc-a34b-a4e0e9c9c4b2",
+    "drcErrors": 0,
+    "boardMm": [
+      75,
+      75
+    ],
+    "boardGlbBytes": 1535416,
+    "assemblyGlbBytes": 2883988,
+    "kicadZipBytes": 95668,
+    "enclosureFailures": [],
+    "modelNames": [
+      "BZ1:piezo-passive-12mm",
+      "R1:resistor-axial",
+      "U1:esp32-devkitc-v4",
+      "U1:socket",
+      "U2:ssd1306-oled-128x64-i2c",
+      "U2:socket",
+      "U3:ds18b20-to92"
+    ],
+    "cornerRadiusMm": 5.3
+  }
+}

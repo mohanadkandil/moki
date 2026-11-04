@@ -1,0 +1,6 @@
+{
+  "exit": 3,
+  "stdout": "",
+  "stderr": "15:38:43: Error: schema file '/usr/share/kicad/schemas/api.v1.schema.json' not found\n",
+  "files": []
+}

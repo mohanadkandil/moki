@@ -1,0 +1,212 @@
+{
+  "focus-timer": {
+    "seatsFromBinary": [
+      {
+        "node": "BZ1:piezo-passive-12mm",
+        "actualMinZmm": 0.8,
+        "expectedSeatZmm": 0.8,
+        "valid": true
+      },
+      {
+        "node": "SW1:ky040-rotary-encoder",
+        "actualMinZmm": 7.899999904632568,
+        "expectedSeatZmm": 7.8999999999999995,
+        "valid": true
+      },
+      {
+        "node": "SW1:socket",
+        "actualMinZmm": 0.8,
+        "expectedSeatZmm": 0.8,
+        "valid": true
+      },
+      {
+        "node": "U1:esp32-devkitc-v4",
+        "actualMinZmm": 7.899999904632568,
+        "expectedSeatZmm": 7.8999999999999995,
+        "valid": true
+      },
+      {
+        "node": "U1:socket",
+        "actualMinZmm": 0.8,
+        "expectedSeatZmm": 0.8,
+        "valid": true
+      },
+      {
+        "node": "U2:ssd1306-oled-128x64-i2c",
+        "actualMinZmm": 7.899999904632568,
+        "expectedSeatZmm": 7.8999999999999995,
+        "valid": true
+      },
+      {
+        "node": "U2:socket",
+        "actualMinZmm": 0.8,
+        "expectedSeatZmm": 0.8,
+        "valid": true
+      }
+    ],
+    "outline": {
+      "points": 52,
+      "handoffMatches": true,
+      "enclosureCornerRadius": 5.3
+    },
+    "zipMatchesLiveJob": true,
+    "zipSha256": "0669e8fe70d2eb2823516deb3e6493965a85f1efa0d1585cbb01eb134b090504",
+    "zipEntries": [
+      "moki-carrier.kicad_pcb",
+      "moki-carrier.kicad_sch",
+      "moki-carrier.kicad_pro",
+      "README.txt"
+    ],
+    "legacyPowerMarkerAbsent": true,
+    "pcb": {
+      "exit": 0,
+      "stdout": "Plotted to '/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-04-realism/review/evidence/kicad/focus-timer/pcb-svg/moki-carrier-F_Cu.svg'.\nPlotted to '/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-04-realism/review/evidence/kicad/focus-timer/pcb-svg/moki-carrier-B_Cu.svg'.\nPlotted to '/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-04-realism/review/evidence/kicad/focus-timer/pcb-svg/moki-carrier-Edge_Cuts.svg'.\nDone.\n",
+      "stderr": "20:45:46: Error: schema file '/usr/share/kicad/schemas/api.v1.schema.json' not found\n",
+      "svgBytes": 846335
+    },
+    "sch": {
+      "exit": 0,
+      "stdout": "Plotted to '/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-04-realism/review/evidence/kicad/focus-timer/sch-svg/moki-carrier.svg'.\nDone.\n",
+      "stderr": "20:45:47: Error: schema file '/usr/share/kicad/schemas/api.v1.schema.json' not found\n",
+      "svgBytes": 397361
+    }
+  },
+  "light-lamp": {
+    "seatsFromBinary": [
+      {
+        "node": "D1:led-5mm-amber",
+        "actualMinZmm": 0.8,
+        "expectedSeatZmm": 0.8,
+        "valid": true
+      },
+      {
+        "node": "LDR1:ldr-5mm",
+        "actualMinZmm": 0.8,
+        "expectedSeatZmm": 0.8,
+        "valid": true
+      },
+      {
+        "node": "R1:resistor-axial",
+        "actualMinZmm": 0.8,
+        "expectedSeatZmm": 0.8,
+        "valid": true
+      },
+      {
+        "node": "R2:resistor-axial",
+        "actualMinZmm": 0.8,
+        "expectedSeatZmm": 0.8,
+        "valid": true
+      },
+      {
+        "node": "U1:esp32-devkitc-v4",
+        "actualMinZmm": 7.899999904632568,
+        "expectedSeatZmm": 7.8999999999999995,
+        "valid": true
+      },
+      {
+        "node": "U1:socket",
+        "actualMinZmm": 0.8,
+        "expectedSeatZmm": 0.8,
+        "valid": true
+      }
+    ],
+    "outline": {
+      "points": 52,
+      "handoffMatches": true,
+      "enclosureCornerRadius": 5.3
+    },
+    "zipMatchesLiveJob": true,
+    "zipSha256": "5a1059b408057879058f87f8586e5d3c7a948fdec012ce31a313604ae1dcce35",
+    "zipEntries": [
+      "moki-carrier.kicad_pcb",
+      "moki-carrier.kicad_sch",
+      "moki-carrier.kicad_pro",
+      "README.txt"
+    ],
+    "legacyPowerMarkerAbsent": true,
+    "pcb": {
+      "exit": 0,
+      "stdout": "Plotted to '/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-04-realism/review/evidence/kicad/light-lamp/pcb-svg/moki-carrier-F_Cu.svg'.\nPlotted to '/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-04-realism/review/evidence/kicad/light-lamp/pcb-svg/moki-carrier-B_Cu.svg'.\nPlotted to '/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-04-realism/review/evidence/kicad/light-lamp/pcb-svg/moki-carrier-Edge_Cuts.svg'.\nDone.\n",
+      "stderr": "20:45:48: Error: schema file '/usr/share/kicad/schemas/api.v1.schema.json' not found\n",
+      "svgBytes": 761894
+    },
+    "sch": {
+      "exit": 0,
+      "stdout": "Plotted to '/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-04-realism/review/evidence/kicad/light-lamp/sch-svg/moki-carrier.svg'.\nDone.\n",
+      "stderr": "20:45:49: Error: schema file '/usr/share/kicad/schemas/api.v1.schema.json' not found\n",
+      "svgBytes": 376539
+    }
+  },
+  "temp-monitor": {
+    "seatsFromBinary": [
+      {
+        "node": "BZ1:piezo-passive-12mm",
+        "actualMinZmm": 0.8,
+        "expectedSeatZmm": 0.8,
+        "valid": true
+      },
+      {
+        "node": "R1:resistor-axial",
+        "actualMinZmm": 0.8,
+        "expectedSeatZmm": 0.8,
+        "valid": true
+      },
+      {
+        "node": "U1:esp32-devkitc-v4",
+        "actualMinZmm": 7.899999904632568,
+        "expectedSeatZmm": 7.8999999999999995,
+        "valid": true
+      },
+      {
+        "node": "U1:socket",
+        "actualMinZmm": 0.8,
+        "expectedSeatZmm": 0.8,
+        "valid": true
+      },
+      {
+        "node": "U2:ssd1306-oled-128x64-i2c",
+        "actualMinZmm": 7.899999904632568,
+        "expectedSeatZmm": 7.8999999999999995,
+        "valid": true
+      },
+      {
+        "node": "U2:socket",
+        "actualMinZmm": 0.8,
+        "expectedSeatZmm": 0.8,
+        "valid": true
+      },
+      {
+        "node": "U3:ds18b20-to92",
+        "actualMinZmm": 0.8,
+        "expectedSeatZmm": 0.8,
+        "valid": true
+      }
+    ],
+    "outline": {
+      "points": 52,
+      "handoffMatches": true,
+      "enclosureCornerRadius": 5.3
+    },
+    "zipMatchesLiveJob": true,
+    "zipSha256": "fbd1e044341d34bafb23858c80b0b57c156bc421f756e320973cee80e3e23e3b",
+    "zipEntries": [
+      "moki-carrier.kicad_pcb",
+      "moki-carrier.kicad_sch",
+      "moki-carrier.kicad_pro",
+      "README.txt"
+    ],
+    "legacyPowerMarkerAbsent": true,
+    "pcb": {
+      "exit": 0,
+      "stdout": "Plotted to '/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-04-realism/review/evidence/kicad/temp-monitor/pcb-svg/moki-carrier-F_Cu.svg'.\nPlotted to '/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-04-realism/review/evidence/kicad/temp-monitor/pcb-svg/moki-carrier-B_Cu.svg'.\nPlotted to '/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-04-realism/review/evidence/kicad/temp-monitor/pcb-svg/moki-carrier-Edge_Cuts.svg'.\nDone.\n",
+      "stderr": "20:45:49: Error: schema file '/usr/share/kicad/schemas/api.v1.schema.json' not found\n",
+      "svgBytes": 835287
+    },
+    "sch": {
+      "exit": 0,
+      "stdout": "Plotted to '/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-04-realism/review/evidence/kicad/temp-monitor/sch-svg/moki-carrier.svg'.\nDone.\n",
+      "stderr": "20:45:50: Error: schema file '/usr/share/kicad/schemas/api.v1.schema.json' not found\n",
+      "svgBytes": 424393
+    }
+  }
+}

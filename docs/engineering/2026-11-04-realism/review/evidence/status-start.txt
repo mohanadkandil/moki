@@ -1,0 +1,35 @@
+ M package-lock.json
+ M package.json
+ M vite.config.ts
+ M web/src/App.tsx
+?? .sogo/
+?? PRODUCT.md
+?? PROJECT.md
+?? docs/design/
+?? docs/engineering/
+?? docs/sprint-2026-11-01/
+?? docs/strategy/
+?? eda/
+?? mech/
+?? scripts/board-bench.ts
+?? scripts/firmware-behavior.ts
+?? scripts/firmware-check.ts
+?? server/board-api.ts
+?? src/board/
+?? src/circuit/
+?? src/firmware/
+?? src/rewire/
+?? tests/board-connectivity.py
+?? tests/board-models.test.ts
+?? tests/board-routing.test.ts
+?? tests/board-security.test.ts
+?? tests/board.test.ts
+?? tests/circuit.test.ts
+?? tests/enclosure.test.ts
+?? tests/firmware-display.test.ts
+?? tests/firmware.test.ts
+?? tests/rewire.test.ts
+?? web/src/board/
+?? web/src/circuit/
+?? web/src/rewire/
+?? web/src/studio/

@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "head": {
+    "generator": "circuit-json-to-kicad",
+    "generator_version": "0.0.1",
+    "project_name": "moki-carrier",
+    "created": "2026-11-04T15:54:49.380Z",
+    "modified": "2026-11-04T15:54:49.380Z"
+  },
+  "meta": {
+    "version": 1
+  },
+  "text_variables": {},
+  "libraries": {
+    "pinned_symbol_libs": [],
+    "pinned_footprint_libs": []
+  },
+  "boards": [],
+  "cvpcb": {
+    "meta": {
+      "version": 0
+    }
+  },
+  "erc": {
+    "meta": {
+      "version": 0
+    },
+    "erc_exclusions": []
+  },
+  "net_settings": {
+    "meta": {
+      "version": 3
+    },
+    "last_net_id": 0,
+    "classes": [
+      {
+        "name": "Default",
+        "track_width": 0.25,
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "clearance": 0.2
+      }
+    ],
+    "netclass_patterns": []
+  },
+  "pcbnew": {
+    "page_layout_descr_file": "",
+    "last_paths": {}
+  },
+  "schematic": {
+    "meta": {
+      "version": 1
+    },
+    "page_layout_descr_file": "",
+    "last_opened_files": [
+      "moki-carrier.kicad_sch"
+    ]
+  },
+  "board": {
+    "meta": {
+      "version": 1
+    },
+    "design_settings": {
+      "rules": {
+        "min_via_annular_width": 0.15,
+        "min_hole_clearance": 0.2,
+        "min_via_diameter": 0.6,
+        "min_track_width": 0.25,
+        "min_through_hole_diameter": 0.3,
+        "min_copper_edge_clearance": 0.2
+      }
+    },
+    "last_opened_board": "moki-carrier.kicad_pcb"
+  },
+  "sheets": [
+    [
+      "0ae715d8-5c36-4452-b34e-800303fefa95",
+      "Root"
+    ]
+  ]
+}

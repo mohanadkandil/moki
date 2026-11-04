@@ -1,0 +1,42 @@
+{
+  "shown": {
+    "template": "focus-timer",
+    "id": "484fd6e8aeec4d7f",
+    "behavior": [
+      {
+        "label": "Session length",
+        "value": "25 min"
+      },
+      {
+        "label": "Knob",
+        "value": "Turn to adjust, press to start or pause"
+      },
+      {
+        "label": "End of session",
+        "value": "Short chime on the piezo"
+      }
+    ]
+  },
+  "current": {
+    "template": "focus-timer",
+    "id": "409650de1636dae5",
+    "behavior": [
+      {
+        "label": "Session length",
+        "value": "45 min"
+      },
+      {
+        "label": "Knob",
+        "value": "Turn to adjust, press to start or pause"
+      },
+      {
+        "label": "End of session",
+        "value": "Short chime on the piezo"
+      }
+    ]
+  },
+  "studioRerunBranchMatches": true,
+  "actualSelectedDesign": "current revision.design",
+  "expectedSelectedDesign": "shown job design",
+  "idsDiffer": true
+}

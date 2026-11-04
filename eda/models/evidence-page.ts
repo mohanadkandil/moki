@@ -1,0 +1,20 @@
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
+const data=(window as any).__MODEL;
+const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true}); renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(1);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=.95;
+document.body.style.margin='0';document.body.appendChild(renderer.domElement);
+const scene=new THREE.Scene();scene.background=new THREE.Color('#242625');
+const pmrem=new THREE.PMREMGenerator(renderer);const room=new RoomEnvironment();scene.environment=pmrem.fromScene(room,.04).texture;room.dispose();pmrem.dispose();
+scene.environmentIntensity=.35;
+scene.add(new THREE.HemisphereLight('#ffffff','#727365',.5));const key=new THREE.DirectionalLight('#fff1db',1.2);key.position.set(70,160,-100);scene.add(key);
+const model=await new GLTFLoader().parseAsync(Uint8Array.from(atob(data),c=>c.charCodeAt(0)).buffer,'');
+if ((window as any).__OPAQUE_LID) model.scene.traverse(node => {
+  if (node.name !== 'enclosure-lid' || !(node instanceof THREE.Mesh)) return;
+  const opaque = (material: THREE.Material) => { const m = material.clone(); m.opacity = 1; m.transparent = false; m.depthWrite = true; return m; };
+  node.material = Array.isArray(node.material) ? node.material.map(opaque) : opaque(node.material);
+});
+scene.add(model.scene);
+const box=new THREE.Box3().setFromObject(model.scene),center=box.getCenter(new THREE.Vector3()),size=box.getSize(new THREE.Vector3());const r=size.length()/2,fit=r*.89,aspect=innerWidth/innerHeight;
+const camera=new THREE.OrthographicCamera(-fit*aspect,fit*aspect,fit,-fit,.1,r*15);camera.position.copy(center).addScaledVector(new THREE.Vector3(.55,.85,.85).normalize(),r*5);camera.lookAt(center);
+renderer.render(scene,camera);(window as any).__DONE=true;

@@ -1,0 +1,84 @@
+{
+  "schema": "moki.agent-bench/1",
+  "generatedAt": "2026-11-05T22:48:18.845Z",
+  "mode": "live",
+  "provider": "openai",
+  "model": "gpt-6.1-sol",
+  "headCommit": "8f08c3b",
+  "boardApi": "http://127.0.0.1:8847/app/moki",
+  "pricePerMillionTokensUsd": {
+    "input": 2,
+    "output": 10,
+    "cacheRead": 0.2,
+    "cacheWrite": 2.5,
+    "known": true
+  },
+  "meaning": "Tokens and cost are the provider's usage. Agent and pipeline times are measured. Success means 0 DRC errors and compiled.",
+  "totals": {
+    "costUsd": 0.01754,
+    "label": "tokens measured, priced at pricePerMillionTokensUsd",
+    "includesEveryLiveCall": true,
+    "capUsd": 0.5
+  },
+  "results": [
+    {
+      "id": "template-focus-timer",
+      "kind": "template",
+      "brief": "A 25 minute focus timer with a small screen and a knob, and a buzzer that beeps when time is up",
+      "expected": "build",
+      "outcome": "built",
+      "rulesWouldAccept": true,
+      "matchedExpectation": true,
+      "freeMemoryMbAtStart": 6053,
+      "modelCalls": 3,
+      "firmware": {
+        "custom": false,
+        "compileCalls": 0,
+        "compileResults": [],
+        "compileMs": 0,
+        "lines": 0,
+        "brief": null
+      },
+      "effort": "fast",
+      "inputTokens": 7931,
+      "outputTokens": 825,
+      "costUsd": 0.01754,
+      "agentMs": 10253,
+      "pipelineMs": 31462,
+      "wallMs": 42447,
+      "jobs": [
+        {
+          "jobId": "6ad531d7-70b0-487c-a5b1-8e1d201adbcc",
+          "attempt": 1,
+          "ok": true,
+          "drcErrors": 0,
+          "compile": "compiled",
+          "caseOk": true,
+          "pipelineMs": 31462,
+          "cache": "miss",
+          "baseJobId": null,
+          "problems": []
+        }
+      ],
+      "messages": [
+        "A USB-powered 25 minute focus timer with a small countdown screen, a knob to set and start it, and a beep when time is up.",
+        "Built: 0 DRC errors, firmware compiled, case generated. Nothing has been printed, flashed or run on hardware; these are software checks only."
+      ],
+      "tools": [
+        "list_catalog",
+        "get_module",
+        "get_module",
+        "get_module",
+        "get_module",
+        "propose_design"
+      ],
+      "success": true,
+      "labels": {
+        "tokensAndCost": "measured",
+        "agentMs": "measured",
+        "pipeline": "measured",
+        "modelJudgement": "measured"
+      }
+    }
+  ]
+}

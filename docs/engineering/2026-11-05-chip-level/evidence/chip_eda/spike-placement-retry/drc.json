@@ -1,0 +1,225 @@
+{
+  "checked": true,
+  "errors": [
+    {
+      "type": "pcb_placement_error",
+      "message": "Courtyard of U1 overlaps PCB keepout \"unnamed keepout\""
+    },
+    {
+      "type": "pcb_footprint_overlap_error",
+      "message": "R3 overlaps J1: 2 footprint overlaps, 1 pad clearance violation, 1 courtyard conflict. Move the components apart."
+    },
+    {
+      "type": "pcb_footprint_overlap_error",
+      "message": "R4 overlaps J1: 2 footprint overlaps, 1 pad clearance violation, 1 courtyard conflict. Move the components apart."
+    },
+    {
+      "type": "pcb_autorouting_error",
+      "message": "Autorouting was skipped because 3 PCB placement errors were found. Fix the placement errors or set placementDrcChecksDisabled to true to route anyway."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [J1.VBUS1] is not connected to net [VBUS] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [J1.VBUS2] is not connected to net [VBUS] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [U2.VIN] is not connected to net [VBUS] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [U2.EN] is not connected to net [VBUS] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [U3.pin5] is not connected to net [VBUS] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [C1.pin1] is not connected to net [VBUS] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [U2.VOUT] is not connected to net [V3V3] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [U1.pin2] is not connected to net [V3V3] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [J2.pin2] is not connected to net [V3V3] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [C2.pin1] is not connected to net [V3V3] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [C3.pin1] is not connected to net [V3V3] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [C4.pin1] is not connected to net [V3V3] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [R1.pin1] is not connected to net [V3V3] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [R2.pin1] is not connected to net [V3V3] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [R7.pin1] is not connected to net [V3V3] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [R8.pin1] is not connected to net [V3V3] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [U1.pin3] is not connected to net [EN] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [R1.pin2] is not connected to net [EN] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [C5.pin1] is not connected to net [EN] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [SW1.pin1] is not connected to net [EN] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [U1.pin27] is not connected to net [BOOT] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [R2.pin2] is not connected to net [BOOT] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [SW2.pin1] is not connected to net [BOOT] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [J1.CC1] is not connected to net [CC1] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [R3.pin1] is not connected to net [CC1] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [J1.CC2] is not connected to net [CC2] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [R4.pin1] is not connected to net [CC2] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [J1.DP1] is not connected to net [USB_DP] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [J1.DP2] is not connected to net [USB_DP] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [U3.pin1] is not connected to net [USB_DP] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [U3.pin6] is not connected to net [USB_DP] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [R5.pin1] is not connected to net [USB_DP] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [J1.DN2] is not connected to net [USB_DM] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [J1.DN1] is not connected to net [USB_DM] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [U3.pin3] is not connected to net [USB_DM] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [U3.pin4] is not connected to net [USB_DM] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [R6.pin1] is not connected to net [USB_DM] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [R5.pin2] is not connected to net [USB_DP_MCU] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [U1.pin14] is not connected to net [USB_DP_MCU] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [R6.pin2] is not connected to net [USB_DM_MCU] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [U1.pin13] is not connected to net [USB_DM_MCU] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [U1.pin12] is not connected to net [SDA] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [J2.pin3] is not connected to net [SDA] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [R7.pin2] is not connected to net [SDA] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [U1.pin17] is not connected to net [SCL] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [J2.pin4] is not connected to net [SCL] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [R8.pin2] is not connected to net [SCL] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [U1.pin26] is not connected to net [STRAP45] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [R9.pin1] is not connected to net [STRAP45] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [U1.pin16] is not connected to net [STRAP46] by a PCB trace."
+    },
+    {
+      "type": "pcb_port_not_connected_error",
+      "message": "Port [R10.pin1] is not connected to net [STRAP46] by a PCB trace."
+    }
+  ]
+}

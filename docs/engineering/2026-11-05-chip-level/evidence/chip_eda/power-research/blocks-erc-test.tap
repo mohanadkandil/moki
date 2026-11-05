@@ -1,0 +1,184 @@
+TAP version 13
+# Subtest: synthetic complete draft and plan pass without promoting review or claiming hardware proof
+ok 1 - synthetic complete draft and plan pass without promoting review or claiming hardware proof
+  ---
+  duration_ms: 20.282034
+  type: 'test'
+  ...
+# Subtest: malformed/unknown/nonfinite schema and author-supplied promotion fail closed
+ok 2 - malformed/unknown/nonfinite schema and author-supplied promotion fail closed
+  ---
+  duration_ms: 2.898274
+  type: 'test'
+  ...
+# Subtest: catalog identity, physical pad coverage and verified pinouts are hard gates
+ok 3 - catalog identity, physical pad coverage and verified pinouts are hard gates
+  ---
+  duration_ms: 5.294222
+  type: 'test'
+  ...
+# Subtest: duplicate references/nets, unknown pins, NC wiring and incomplete supplies fail
+ok 4 - duplicate references/nets, unknown pins, NC wiring and incomplete supplies fail
+  ---
+  duration_ms: 3.801204
+  type: 'test'
+  ...
+# Subtest: decoupling checks actual capacitor value, both nets and placement, not labels alone
+ok 5 - decoupling checks actual capacitor value, both nets and placement, not labels alone
+  ---
+  duration_ms: 3.134556
+  type: 'test'
+  ...
+# Subtest: actual pull-up values and their supply-net membership are required
+ok 6 - actual pull-up values and their supply-net membership are required
+  ---
+  duration_ms: 2.031424
+  type: 'test'
+  ...
+# Subtest: peak and continuous rail budgets are separate and regulator input draws propagate upstream
+ok 7 - peak and continuous rail budgets are separate and regulator input draws propagate upstream
+  ---
+  duration_ms: 8.394537
+  type: 'test'
+  ...
+# Subtest: linear dropout/thermal and switching conversion losses are enforced
+ok 8 - linear dropout/thermal and switching conversion losses are enforced
+  ---
+  duration_ms: 5.704746
+  type: 'test'
+  ...
+# Subtest: missing source, ground return or voltage compatibility fail on actual plan links
+ok 9 - missing source, ground return or voltage compatibility fail on actual plan links
+  ---
+  duration_ms: 5.847468
+  type: 'test'
+  ...
+# Subtest: bus protocol/signal mismatch, missing I2C pull-ups and address collisions fail
+ok 10 - bus protocol/signal mismatch, missing I2C pull-ups and address collisions fail
+  ---
+  duration_ms: 5.371662
+  type: 'test'
+  ...
+# Subtest: open-drain bus is safe, while multiple push-pull outputs or mixed drivers are rejected
+ok 11 - open-drain bus is safe, while multiple push-pull outputs or mixed drivers are rejected
+  ---
+  duration_ms: 2.873433
+  type: 'test'
+  ...
+# Subtest: STM32 string GPIO pin maps use actual linked pins and aggregate includes/libraries
+ok 12 - STM32 string GPIO pin maps use actual linked pins and aggregate includes/libraries
+  ---
+  duration_ms: 3.077755
+  type: 'test'
+  ...
+# Subtest: numeric RP2040-style GPIOs remain numbers and reserved MCU pads cannot enter firmware maps
+ok 13 - numeric RP2040-style GPIOs remain numbers and reserved MCU pads cannot enter firmware maps
+  ---
+  duration_ms: 3.650402
+  type: 'test'
+  ...
+# Subtest: reviewed status needs an independent current-hash receipt, never self-promotion
+ok 14 - reviewed status needs an independent current-hash receipt, never self-promotion
+  ---
+  duration_ms: 4.768295
+  type: 'test'
+  ...
+# Subtest: USB-C CC pull-downs require two distinct 5.1k resistors to actual ground
+ok 15 - USB-C CC pull-downs require two distinct 5.1k resistors to actual ground
+  ---
+  duration_ms: 2.842393
+  type: 'test'
+  ...
+# Subtest: strap safe states use actual resistor paths and reject plan-level overriding outputs
+ok 16 - strap safe states use actual resistor paths and reject plan-level overriding outputs
+  ---
+  duration_ms: 2.991074
+  type: 'test'
+  ...
+# Subtest: isolated charger accepts charge-only use, counts charging input demand and rejects running system on BAT
+ok 17 - isolated charger accepts charge-only use, counts charging input demand and rejects running system on BAT
+  ---
+  duration_ms: 3.214197
+  type: 'test'
+  ...
+# Subtest: claiming load sharing or integrated system output without the required separate paths fails
+ok 18 - claiming load sharing or integrated system output without the required separate paths fails
+  ---
+  duration_ms: 1.776861
+  type: 'test'
+  ...
+# Subtest: 5V push-pull status outputs cannot directly drive a 3.3V input
+ok 19 - 5V push-pull status outputs cannot directly drive a 3.3V input
+  ---
+  duration_ms: 2.510868
+  type: 'test'
+  ...
+# Subtest: cyclic regulator dependencies and changed unmaterialized parameter values fail closed
+ok 20 - cyclic regulator dependencies and changed unmaterialized parameter values fail closed
+  ---
+  duration_ms: 3.913245
+  type: 'test'
+  ...
+# Subtest: pin-map macro collisions after sanitization are rejected
+ok 21 - pin-map macro collisions after sanitization are rejected
+  ---
+  duration_ms: 3.657162
+  type: 'test'
+  ...
+# Subtest: malformed catalog evidence and unknown plan references return error gates without throwing
+ok 22 - malformed catalog evidence and unknown plan references return error gates without throwing
+  ---
+  duration_ms: 6.605036
+  type: 'test'
+  ...
+# Subtest: direct ground boot straps are supported without requiring a fictitious resistor
+ok 23 - direct ground boot straps are supported without requiring a fictitious resistor
+  ---
+  duration_ms: 0.87625
+  type: 'test'
+  ...
+# Subtest: parallel supply pads on the same IC share a source and decoupling rail
+ok 24 - parallel supply pads on the same IC share a source and decoupling rail
+  ---
+  duration_ms: 1.977183
+  type: 'test'
+  ...
+# Subtest: explicit schematic sections partition all instances and cite positive datasheet pages
+ok 25 - explicit schematic sections partition all instances and cite positive datasheet pages
+  ---
+  duration_ms: 7.188643
+  type: 'test'
+  ...
+# Subtest: inline drafts require materialization and cannot carry a forged reviewed status
+ok 26 - inline drafts require materialization and cannot carry a forged reviewed status
+  ---
+  duration_ms: 2.199665
+  type: 'test'
+  ...
+# Subtest: cited standard-footprint fallback preserves real supplier identity and leaves geometry verification pending
+ok 27 - cited standard-footprint fallback preserves real supplier identity and leaves geometry verification pending
+  ---
+  duration_ms: 1.243614
+  type: 'test'
+  ...
+# Subtest: shared-IC SYS and charger outputs cannot hide combined thermal loss behind separate per-rail models
+ok 28 - shared-IC SYS and charger outputs cannot hide combined thermal loss behind separate per-rail models
+  ---
+  duration_ms: 1.337895
+  type: 'test'
+  ...
+# Subtest: unused regulator outputs still require a declared voltage/current budget
+ok 29 - unused regulator outputs still require a declared voltage/current budget
+  ---
+  duration_ms: 0.557406
+  type: 'test'
+  ...
+1..29
+# tests 29
+# suites 0
+# pass 29
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 501.455985

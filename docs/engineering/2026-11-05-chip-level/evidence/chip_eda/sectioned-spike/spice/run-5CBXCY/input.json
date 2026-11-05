@@ -1,0 +1,1 @@
+{"schema":"moki.spice-input/1","tasks":[{"kind":"rc-reset","values":[10000,0.000001,3.3],"threshold":0.75,"openSwitches":1}]}

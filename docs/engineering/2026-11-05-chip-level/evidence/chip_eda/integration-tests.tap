@@ -1,0 +1,196 @@
+TAP version 13
+# Subtest: actual production-preview plugin rejects source and source-only history before making a job
+ok 1 - actual production-preview plugin rejects source and source-only history before making a job
+  ---
+  duration_ms: 93.494404
+  type: 'test'
+  ...
+# Subtest: invalid and mixed plan submissions create no job
+ok 2 - invalid and mixed plan submissions create no job
+  ---
+  duration_ms: 93.997089
+  type: 'test'
+  ...
+# Subtest: validated data-only plan is accepted under production source refusal, but no review means no render or done
+ok 3 - validated data-only plan is accepted under production source refusal, but no review means no render or done
+  ---
+  duration_ms: 1221.476477
+  type: 'test'
+  ...
+# Subtest: primary search normalizes real catalog rows and reuses immutable captured evidence
+ok 4 - primary search normalizes real catalog rows and reuses immutable captured evidence
+  ---
+  duration_ms: 62.544992
+  type: 'test'
+  ...
+# Subtest: D1 overload falls back to the real primary JLC POST response and preserves both HTTP receipts
+ok 5 - D1 overload falls back to the real primary JLC POST response and preserves both HTTP receipts
+  ---
+  duration_ms: 20.484114
+  type: 'test'
+  ...
+# Subtest: importer resolves exact identity, actual pin labels, raw hashes and supplied model identifiers without fetching models
+ok 6 - importer resolves exact identity, actual pin labels, raw hashes and supplied model identifiers without fetching models
+  ---
+  duration_ms: 20.634796
+  type: 'test'
+  ...
+# Subtest: importer rejects mismatched supplier, manufacturer-part, footprint and pin identities
+ok 7 - importer rejects mismatched supplier, manufacturer-part, footprint and pin identities
+  ---
+  duration_ms: 18.745457
+  type: 'test'
+  ...
+# Subtest: actual Worldsemi LED physical DIN pad 4 overrides stale SPICE pin 3
+ok 8 - actual Worldsemi LED physical DIN pad 4 overrides stale SPICE pin 3
+  ---
+  duration_ms: 13.435007
+  type: 'test'
+  ...
+# Subtest: datasheet metadata comes only from the exact supplier identity and safe HTTPS response fields
+ok 9 - datasheet metadata comes only from the exact supplier identity and safe HTTPS response fields
+  ---
+  duration_ms: 68.863652
+  type: 'test'
+  ...
+# Subtest: actual C160404 display-title whitespace preserves the exact supplier MPN
+ok 10 - actual C160404 display-title whitespace preserves the exact supplier MPN
+  ---
+  duration_ms: 9.184967
+  type: 'test'
+  ...
+# Subtest: footprint pinning is stable across JSON key order and changes when actual imported geometry changes
+ok 11 - footprint pinning is stable across JSON key order and changes when actual imported geometry changes
+  ---
+  duration_ms: 14.292975
+  type: 'test'
+  ...
+# Subtest: malformed successful search and HTTP/application failures do not become fabricated empty results
+ok 12 - malformed successful search and HTTP/application failures do not become fabricated empty results
+  ---
+  duration_ms: 10.983344
+  type: 'test'
+  ...
+# Subtest: an empty indexed search still tries the broader actual supplier catalog
+ok 13 - an empty indexed search still tries the broader actual supplier catalog
+  ---
+  duration_ms: 6.30078
+  type: 'test'
+  ...
+# Subtest: input, response-size and timeout bounds fail closed; receipt IDs cannot traverse paths
+ok 14 - input, response-size and timeout bounds fail closed; receipt IDs cannot traverse paths
+  ---
+  duration_ms: 19.132341
+  type: 'test'
+  ...
+# Subtest: tampered immutable receipts fail integrity checks and disabled cache re-fetches stock snapshots
+ok 15 - tampered immutable receipts fail integrity checks and disabled cache re-fetches stock snapshots
+  ---
+  duration_ms: 7.844634
+  type: 'test'
+  ...
+# Subtest: confirmed importer absence returns exact supplier metadata and keeps both immutable receipts
+ok 16 - confirmed importer absence returns exact supplier metadata and keeps both immutable receipts
+  ---
+  duration_ms: 9.747092
+  type: 'test'
+  ...
+# Subtest: metadata fallback rejects unavailable supplier identities and does not conceal malformed importer responses
+ok 17 - metadata fallback rejects unavailable supplier identities and does not conceal malformed importer responses
+  ---
+  duration_ms: 15.750029
+  type: 'test'
+  ...
+# Subtest: explicit missing geometry falls back only after importer identities and supplier MPN agree
+ok 18 - explicit missing geometry falls back only after importer identities and supplier MPN agree
+  ---
+  duration_ms: 14.158894
+  type: 'test'
+  ...
+# Subtest: cited standard package resolves actual native numeric pads with no imported-model claim
+ok 19 - cited standard package resolves actual native numeric pads with no imported-model claim
+  ---
+  duration_ms: 47.412609
+  type: 'test'
+  ...
+# Subtest: metadata-only identity requires separate availability proof and an explicit verified footprint
+ok 20 - metadata-only identity requires separate availability proof and an explicit verified footprint
+  ---
+  duration_ms: 65.056136
+  type: 'test'
+  ...
+# Subtest: fallback rejects invalid identities, unverified/nonnumeric/incomplete pad maps and unsafe selectors
+ok 21 - fallback rejects invalid identities, unverified/nonnumeric/incomplete pad maps and unsafe selectors
+  ---
+  duration_ms: 31.422217
+  type: 'test'
+  ...
+# Subtest: pinned official KiCad data converts to actual numeric pads without model URLs or executable source
+ok 22 - pinned official KiCad data converts to actual numeric pads without model URLs or executable source
+  ---
+  duration_ms: 38.779407
+  type: 'test'
+  ...
+# Subtest: same-process imported component cache keeps distinct pinned geometry revisions immutable
+ok 23 - same-process imported component cache keeps distinct pinned geometry revisions immutable
+  ---
+  duration_ms: 389.708811
+  type: 'test'
+  ...
+# Subtest: actual imported aliases and USB A/B pads preserve the validated plan netlist
+ok 24 - actual imported aliases and USB A/B pads preserve the validated plan netlist
+  ---
+  duration_ms: 83.050666
+  type: 'test'
+  ...
+# Subtest: native port swap, missing net trace and added power-ground short cannot pass
+ok 25 - native port swap, missing net trace and added power-ground short cannot pass
+  ---
+  duration_ms: 136.750215
+  type: 'test'
+  ...
+# Subtest: real catalog-backed SHT context requires current review before any SPICE/native execution
+ok 26 - real catalog-backed SHT context requires current review before any SPICE/native execution
+  ---
+  duration_ms: 195.549773
+  type: 'test'
+  ...
+# Subtest: missing, stale or electrically incomplete context cannot run a native block test
+ok 27 - missing, stale or electrically incomplete context cannot run a native block test
+  ---
+  duration_ms: 124.211217
+  type: 'test'
+  ...
+# Subtest: authored review flags and invalid catalog identities fail, and MCU compile cannot disappear
+ok 28 - authored review flags and invalid catalog identities fail, and MCU compile cannot disappear
+  ---
+  duration_ms: 70.72467
+  type: 'test'
+  ...
+# Subtest: output paths reject traversal/symlink/foreign roots and unsupported worker injection
+ok 29 - output paths reject traversal/symlink/foreign roots and unsupported worker injection
+  ---
+  duration_ms: 11.943273
+  type: 'test'
+  ...
+# Subtest: pad gate requires actual PCB shapes and correct source/PCB/import correspondence, including omitted EP absence
+ok 30 - pad gate requires actual PCB shapes and correct source/PCB/import correspondence, including omitted EP absence
+  ---
+  duration_ms: 258.322448
+  type: 'test'
+  ...
+# Subtest: actual imported source aliases such as SDA retain their canonical physical pin correspondence
+ok 31 - actual imported source aliases such as SDA retain their canonical physical pin correspondence
+  ---
+  duration_ms: 35.292615
+  type: 'test'
+  ...
+1..31
+# tests 31
+# suites 0
+# pass 31
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5180.872728

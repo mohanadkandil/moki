@@ -1,0 +1,171 @@
+{
+  "fixture": "engineering-only-fallback-native-smoke",
+  "board": {
+    "widthMm": 30,
+    "heightMm": 25,
+    "layers": 2
+  },
+  "parts": [
+    {
+      "ref": "R1",
+      "lcsc": "C25804",
+      "mpn": "0603WAF1002T5E",
+      "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+      "pinout": "verified",
+      "value": "10kOhm",
+      "datasheet": {
+        "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010045_UNI-ROYAL-Uniroyal-Elec-0603WAF1002T5E_C25804.pdf",
+        "pages": "1",
+        "note": "Actual supplier identity:0603WAF1002T5E/C25804, two numeric resistor terminals. This fixture verifies native pin correspondence; alternate land-pattern fit is separately unqualified."
+      },
+      "pins": {
+        "A": {
+          "pad": "1",
+          "role": "passive"
+        },
+        "B": {
+          "pad": "2",
+          "role": "passive"
+        }
+      },
+      "at": {
+        "x": -4,
+        "y": -3,
+        "rotation": 0
+      },
+      "footprint": {
+        "source": "footprinter",
+        "id": "0603",
+        "citation": {
+          "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010045_UNI-ROYAL-Uniroyal-Elec-0603WAF1002T5E_C25804.pdf",
+          "pages": "1",
+          "note": "Explicit standard0603 fallback for the real supplier identity; package/land-pattern manufacturing qualification remains open."
+        }
+      }
+    },
+    {
+      "ref": "R2",
+      "lcsc": "C25804",
+      "mpn": "0603WAF1002T5E",
+      "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+      "pinout": "verified",
+      "value": "10kOhm",
+      "datasheet": {
+        "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010045_UNI-ROYAL-Uniroyal-Elec-0603WAF1002T5E_C25804.pdf",
+        "pages": "1",
+        "note": "Actual supplier identity:0603WAF1002T5E/C25804, two numeric resistor terminals. This fixture verifies native pin correspondence; alternate land-pattern fit is separately unqualified."
+      },
+      "pins": {
+        "A": {
+          "pad": "1",
+          "role": "passive"
+        },
+        "B": {
+          "pad": "2",
+          "role": "passive"
+        }
+      },
+      "at": {
+        "x": 4,
+        "y": -3,
+        "rotation": 0
+      },
+      "footprint": {
+        "source": "kicad",
+        "id": "kicad:Resistor_SMD/R_0603_1608Metric",
+        "citation": {
+          "url": "https://raw.githubusercontent.com/KiCad/kicad-footprints/master/Resistor_SMD.pretty/R_0603_1608Metric.kicad_mod",
+          "sha256": "effcae403a15810b3a1947b8664576270d6781e7cd525e97c47d48be0fdae8ce",
+          "pages": "unpaginated official footprint source",
+          "note": "Exact captured first-party KiCad bytes, offline cache. Native render/route/pad evidence is this fixture; standard package fit remains unqualified."
+        }
+      }
+    },
+    {
+      "ref": "J1",
+      "lcsc": "C160404",
+      "mpn": "SM04B-SRSS-TB(LF)(SN)",
+      "catalogReceipt": "sha256:1f6986d8e1e0029252480dcbb4fe6a48c8bc91b0331da16840616acfb26ffd35",
+      "pinout": "verified",
+      "datasheet": {
+        "url": "https://www.jst-mfg.com/product/pdf/eng/eSH.pdf",
+        "pages": "1–3",
+        "note": "Actual4-contact SH connector plus2 mounting tabs; fixture assignment1=GND/2=3.3V is not a universal cable pinout."
+      },
+      "pins": {
+        "P1": {
+          "pad": "1",
+          "role": "passive"
+        },
+        "P2": {
+          "pad": "2",
+          "role": "passive"
+        },
+        "P3": {
+          "pad": "3",
+          "role": "passive"
+        },
+        "P4": {
+          "pad": "4",
+          "role": "passive"
+        },
+        "P5": {
+          "pad": "5",
+          "role": "nc"
+        },
+        "P6": {
+          "pad": "6",
+          "role": "nc"
+        }
+      },
+      "at": {
+        "x": 0,
+        "y": 5,
+        "rotation": 180
+      }
+    }
+  ],
+  "nets": [
+    {
+      "name": "V3V3",
+      "pins": [
+        {
+          "ref": "J1",
+          "logical": "P2",
+          "pad": "2"
+        },
+        {
+          "ref": "R1",
+          "logical": "A",
+          "pad": "1"
+        },
+        {
+          "ref": "R2",
+          "logical": "A",
+          "pad": "1"
+        }
+      ]
+    },
+    {
+      "name": "GND",
+      "pins": [
+        {
+          "ref": "J1",
+          "logical": "P1",
+          "pad": "1"
+        },
+        {
+          "ref": "R1",
+          "logical": "B",
+          "pad": "2"
+        },
+        {
+          "ref": "R2",
+          "logical": "B",
+          "pad": "2"
+        }
+      ]
+    }
+  ],
+  "externalSupplyAssumption": "3.3V/GND at J1 contacts2/1; unpowered engineering fixture, no actual battery/regulator or owner-device function implied"
+}

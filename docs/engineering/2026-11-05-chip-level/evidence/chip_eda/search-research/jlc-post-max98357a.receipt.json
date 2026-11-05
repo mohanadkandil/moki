@@ -1,0 +1,22 @@
+{
+  "name": "jlc-post-max98357a",
+  "method": "POST",
+  "url": "https://jlcpcb.com/api/overseas-pcb-order/v1/shoppingCart/smtGood/selectSmtComponentList",
+  "requestBody": {
+    "keyword": "MAX98357A",
+    "currentPage": 1,
+    "pageSize": 8
+  },
+  "capturedAt": "2026-11-05T21:49:53.755529+00:00",
+  "status": 200,
+  "contentType": "application/json",
+  "finalUrl": "https://jlcpcb.com/api/overseas-pcb-order/v1/shoppingCart/smtGood/selectSmtComponentList",
+  "bytes": 28697,
+  "sha256": "540fcd772cd927f99fc6bb3cb98f611b074df6c116a56c9354922c8c885465fc",
+  "file": "jlc-post-max98357a.response",
+  "requestHeaders": {
+    "User-Agent": "Mozilla/5.0",
+    "Accept": "application/json",
+    "Content-Type": "application/json"
+  }
+}

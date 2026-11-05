@@ -1,0 +1,162 @@
+{
+  "by": "chip_review",
+  "ok": true,
+  "scope": "pre-layout schematic and firmware-source review only",
+  "schematicHash": "3ba357092793c5587b4e384927edff3937126d82b0889024c75cd09a03600c87",
+  "sensorContentHash": "490f1b461bc42e6f5d4f11c4c6063bbaea4ff614daba0711e2f12b8acba016ec",
+  "findings": [
+    {
+      "section": "esp32-s3-core",
+      "status": "match",
+      "claim": "Real module pad13 is GPIO19/USB D-,14 is GPIO20/USB D+; EN3 uses10k/1uF and supply bypass22uF+100nF. Graph matches retained manufacturer pin map and reference circuit.",
+      "sources": [
+        {
+          "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+          "pages": "11,13-16,27-28,41"
+        }
+      ]
+    },
+    {
+      "section": "esp32-s3-core",
+      "status": "conditional",
+      "claim": "GPIO0 pull-up/button-to-ground and GPIO45/46 pull-downs preserve normal SPI boot and selected download mode under factory-default eFuses. No arbitrary eFuse reconfiguration or reset-transient hardware proof is approved."
+    },
+    {
+      "section": "usb-c-sink",
+      "status": "match",
+      "claim": "J1 physical A5/B5 each have independent5.1k ground termination; A6/B6 join D+,A7/B7 join D-. USBLC6 pad1/6 and3/4 are the two data channels,pad2ground,pad5VBUS.22Ohm series links are supported by Espressif USB guidance.",
+      "sources": [
+        {
+          "url": "https://www.st.com/resource/en/datasheet/usblc6-2.pdf",
+          "pages": "1"
+        },
+        {
+          "url": "https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s3/schematic-checklist.html#usb"
+        },
+        {
+          "url": "https://community.infineon.com/t5/Knowledge-Base-Articles/USB-Type-C-connector-Rp-Rd-and-Ra-termination-resistors/ta-p/253544"
+        }
+      ]
+    },
+    {
+      "section": "usb-c-sink",
+      "status": "conditional",
+      "claim": "Power budget requires the declared known5V/1.5A external source. No current-advertisement detection,PD,universal USB-port current allowance or system-level ESD certification is claimed."
+    },
+    {
+      "section": "ldo-ap2112-3v3",
+      "status": "match",
+      "claim": "AP2112K VIN1/GND2/EN3/NC4/VOUT5 and1uF input/output bypass agree with actual datasheet p2; EN tied to VBUS and NC remains unconnected.",
+      "sources": [
+        {
+          "url": "https://www.diodes.com/datasheet/download/AP2112.pdf",
+          "pages": "1-3"
+        }
+      ]
+    },
+    {
+      "section": "ldo-ap2112-3v3",
+      "status": "conditional",
+      "claim": "250mA continuous rating is a declared25C/184C-per-W thermal model; worst5.25V input and3.234V output predicts about117.7C junction below chosen125C.550mA plan peak remains transient-unverified; no continuous500-600mA board or measured thermal claim."
+    },
+    {
+      "section": "boot-reset-buttons",
+      "status": "match",
+      "claim": "Normally-open SW1 pulls EN low; SW2 pulls GPIO0 low against its10k pull-up. References and actual global graph match the module reference topology; pressed/bounce dynamics remain outside the open-contact RC model."
+    },
+    {
+      "section": "i2c-header",
+      "status": "match",
+      "claim": "Physical J2 pins1=GND,2=3.3V,3=SDA,4=SCL match the declared harness assignment and actual importer pads. Shared10k pull-ups reach3.3V; mechanical tabs5/6 remain electrically unused. Bus waveform/capacitance validation is pending."
+    },
+    {
+      "section": "sensor",
+      "status": "match",
+      "claim": "Actual C2909890 pins1SDA,2SCL,3VDD,4VSS and3.3V/100nF topology match manufacturer references; shared carrier pull-ups avoid duplicate population.",
+      "sources": [
+        {
+          "url": "https://sensirion.com/media/documents/93E06008/640B25FB/SENSEVAL_SHT4XV1_technical_description.pdf",
+          "pages": "2,8"
+        }
+      ]
+    },
+    {
+      "section": "sensor",
+      "status": "match",
+      "claim": "Pad5 omission and1.6mm under-body keepout cover the stated1.5±0.1mm outline; only sensor U1 is exempt. No central electrical pad is intended.",
+      "sources": [
+        {
+          "url": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
+          "pages": "16-17"
+        }
+      ]
+    },
+    {
+      "section": "sensor",
+      "status": "conditional",
+      "claim": "Heater-off2mA peak budget exceeds0.5mA measurement plus0.727mA worst-case pull-ups.100kHz still requires validated total capacitance/rise time; heater commands remain forbidden.",
+      "sources": [
+        {
+          "url": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
+          "pages": "9-14"
+        }
+      ]
+    },
+    {
+      "section": "sensor",
+      "status": "match",
+      "claim": "App uses0x44/0xFD,10ms delays,six-byte reads,independent word CRC0x31/initFF,correct conversions and humidity clamp; no heater command. Source reviewed,not hardware-tested.",
+      "sources": [
+        {
+          "url": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
+          "pages": "3,10-12,22"
+        }
+      ]
+    },
+    {
+      "section": "whole-plan",
+      "status": "match",
+      "claim": "Five base blocks retain inspected mappings; added SHT40 supply,ground,SDA,SCL join actual carrier nets. The24-part six-section sheet was inspected. Physical realization remains pending."
+    },
+    {
+      "section": "placement-revision",
+      "status": "conditional",
+      "claim": "LDOv2 changes only bounded placement, C2 distance4.9244mm remains below6mm; SHTv3 rotates bypass90degrees at2mm while1.6mm keepout/U1-onlyexception remains unchanged; logical nets,values and electrical declarations are unchanged. Physical overlap clearance and route/DRC remain unverified."
+    }
+  ],
+  "artifacts": {
+    "plan.json": "01f20c44ef62f6580ad6ecbe4c95e03a858214d3eae17b98ffdcba0230802e94",
+    "schematic.svg": "cd08816f43ddc8d83e4c781e720e754174a48ae46f07bb9fa1948df69cb91786",
+    "schematic.png": "5a8e8ef43d61c2f5c6a73ed900e2b9d318d8b97a0e8f886f4008bd441bf586dd"
+  },
+  "limits": [
+    "No block promotion",
+    "Fresh matching-hash SPICE,DRC and compile gates remain separately mandatory",
+    "No final footprint/paste/antenna/pour/physical fit,manufacturability,thermal-transient or hardware approval",
+    "Sensor remains unreviewed: actual native DRC plus physical pad orientation/dimensions,central copper/paste removal and every pour/layer keepout need separate inspection before promotion",
+    "No claimed bus waveform,timing,humidity accuracy or real thermal/hardware verification"
+  ],
+  "previousSchematicHash": "77252228cd39ba786ac1babf233fa28e1c5b60387389d7c48695a355d705d792",
+  "revisionReview": {
+    "kind": "bounded placement correction only",
+    "ldoRevision": 2,
+    "sensorRevision": 3,
+    "electricalComparison": "Complete declarations excluding version/contentHash/status/review receipts/part poses compare equal against prior cached revisions; nets,values,pins,power and constraints unchanged.",
+    "distanceMm": {
+      "ldoC1": 5.024937810560445,
+      "ldoC2": 4.924428900898052,
+      "sensorC1": 2
+    },
+    "nativeVerification": "Not performed by reviewer; failed native jobs remain failures. Fresh route/DRC/copper/paste/geometry/compile checks remain mandatory."
+  },
+  "preflight": [
+    {
+      "gate": "erc",
+      "ok": true
+    },
+    {
+      "gate": "power",
+      "ok": true
+    }
+  ]
+}

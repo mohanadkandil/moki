@@ -1,0 +1,144 @@
+[
+  {
+    "file": "me6211-manufacturer-v20-lcsc-mirror.pdf",
+    "url": "https://datasheet.lcsc.com/datasheet/pdf/2079c21a565bb18f68c1d4daad5e823a.pdf?productCode=C236670",
+    "retrievedUtc": "2026-11-05T21:45:21.472132+00:00",
+    "status": 200,
+    "contentType": "application/pdf",
+    "bytes": 865046,
+    "sha256": "23084e9d0d0fd762c7419509ee656856be36f08ffc39f184e22a2acf7cfae5e6",
+    "finalUrl": "https://datasheet.lcsc.com/datasheet/pdf/2079c21a565bb18f68c1d4daad5e823a.pdf?productCode=C236670"
+  },
+  {
+    "file": "ap2112-easyeda.json",
+    "url": "https://easyeda.com/api/products/C51118/components?version=6.5.44",
+    "retrievedUtc": "2026-11-05T21:45:21.473420+00:00",
+    "status": 200,
+    "contentType": "application/json",
+    "bytes": 16583,
+    "sha256": "dc29e4b4c6fc4350bd7abe5a72352f0ee8f23678c5b90202c425a98480dbe966",
+    "finalUrl": "https://easyeda.com/api/products/C51118/components?version=6.5.44"
+  },
+  {
+    "file": "ap2112-catalog.html",
+    "url": "https://www.lcsc.com/product-detail/C51118.html",
+    "retrievedUtc": "2026-11-05T21:45:21.474680+00:00",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "bytes": 433654,
+    "sha256": "e8f41db71df0f5fd4c8c27b709527fa72a06661d46ff7f51fbcb761190885e6d",
+    "finalUrl": "https://www.lcsc.com/product-detail/C51118.html"
+  },
+  {
+    "file": "me6211-easyeda.json",
+    "url": "https://easyeda.com/api/products/C82942/components?version=6.5.44",
+    "retrievedUtc": "2026-11-05T21:45:21.475742+00:00",
+    "status": 200,
+    "contentType": "application/json",
+    "bytes": 24132,
+    "sha256": "ef7834ed4ca60914c9e62997d2eaa5308bcaf070b4932e7d59ccdd30cab65e58",
+    "finalUrl": "https://easyeda.com/api/products/C82942/components?version=6.5.44"
+  },
+  {
+    "file": "me6211-catalog.html",
+    "url": "https://www.lcsc.com/product-detail/C82942.html",
+    "retrievedUtc": "2026-11-05T21:45:21.612784+00:00",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "bytes": 440229,
+    "sha256": "ed68818967f8987161ef9fdabafe88f2bf297bacab7f0c17fc8af8d01715a724",
+    "finalUrl": "https://www.lcsc.com/product-detail/C82942.html"
+  },
+  {
+    "file": "me6211-catalog-list.json",
+    "url": "https://jlcsearch.tscircuit.com/components/list.json?search=C82942&full=true",
+    "retrievedUtc": "2026-11-05T21:45:21.624873+00:00",
+    "error": "HTTP Error 500: Internal Server Error",
+    "errorBodyFile": "me6211-catalog-list.json.error.txt",
+    "status": 500
+  },
+  {
+    "file": "mcp73831-easyeda.json",
+    "url": "https://easyeda.com/api/products/C424093/components?version=6.5.44",
+    "retrievedUtc": "2026-11-05T21:45:21.666389+00:00",
+    "status": 200,
+    "contentType": "application/json",
+    "bytes": 24131,
+    "sha256": "c45e303c498dcd6f640862712b7bf123941bdccc2c5f62d9af19e618530949cc",
+    "finalUrl": "https://easyeda.com/api/products/C424093/components?version=6.5.44"
+  },
+  {
+    "file": "mcp73831-catalog.html",
+    "url": "https://www.lcsc.com/product-detail/C424093.html",
+    "retrievedUtc": "2026-11-05T21:45:21.717046+00:00",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "bytes": 461245,
+    "sha256": "212812e47745535d5ad449e8413ed6486c18d38d8c58b2bfa7223e5900410754",
+    "finalUrl": "https://www.lcsc.com/product-detail/C424093.html"
+  },
+  {
+    "file": "mcp73831-catalog-list.json",
+    "url": "https://jlcsearch.tscircuit.com/components/list.json?search=C424093&full=true",
+    "retrievedUtc": "2026-11-05T21:45:21.728211+00:00",
+    "error": "HTTP Error 500: Internal Server Error",
+    "errorBodyFile": "mcp73831-catalog-list.json.error.txt",
+    "status": 500
+  },
+  {
+    "file": "tps63001-easyeda.json",
+    "url": "https://easyeda.com/api/products/C28060/components?version=6.5.44",
+    "retrievedUtc": "2026-11-05T21:45:21.806551+00:00",
+    "status": 200,
+    "contentType": "application/json",
+    "bytes": 19473,
+    "sha256": "9c5dd738a938a94100eae8f67851c23e7095e665ad9d4034e47a04992f6f2f1a",
+    "finalUrl": "https://easyeda.com/api/products/C28060/components?version=6.5.44"
+  },
+  {
+    "file": "tps63001-catalog.html",
+    "url": "https://www.lcsc.com/product-detail/C28060.html",
+    "retrievedUtc": "2026-11-05T21:45:21.853585+00:00",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "bytes": 420914,
+    "sha256": "365683c7a02e2833ff660f678ce6354a2c431c90b814b02857d9473d4daa86f0",
+    "finalUrl": "https://www.lcsc.com/product-detail/C28060.html"
+  },
+  {
+    "file": "tps63001-catalog-list.json",
+    "url": "https://jlcsearch.tscircuit.com/components/list.json?search=C28060&full=true",
+    "retrievedUtc": "2026-11-05T21:45:21.996279+00:00",
+    "error": "HTTP Error 500: Internal Server Error",
+    "errorBodyFile": "tps63001-catalog-list.json.error.txt",
+    "status": 500
+  },
+  {
+    "file": "jst-ph-easyeda.json",
+    "url": "https://easyeda.com/api/products/C131337/components?version=6.5.44",
+    "retrievedUtc": "2026-11-05T21:45:22.061678+00:00",
+    "status": 200,
+    "contentType": "application/json",
+    "bytes": 16860,
+    "sha256": "5d82994278578c6d37220f78c720a4adb306bcddbc1d61945e466b6554a4bb1e",
+    "finalUrl": "https://easyeda.com/api/products/C131337/components?version=6.5.44"
+  },
+  {
+    "file": "jst-ph-catalog.html",
+    "url": "https://www.lcsc.com/product-detail/C131337.html",
+    "retrievedUtc": "2026-11-05T21:45:22.106300+00:00",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "bytes": 464732,
+    "sha256": "aeb9462977e30336e2a084b5be3d0837fa62d82d3527fd5496e5215884add97b",
+    "finalUrl": "https://www.lcsc.com/product-detail/C131337.html"
+  },
+  {
+    "file": "jst-ph-catalog-list.json",
+    "url": "https://jlcsearch.tscircuit.com/components/list.json?search=C131337&full=true",
+    "retrievedUtc": "2026-11-05T21:45:22.309965+00:00",
+    "error": "HTTP Error 500: Internal Server Error",
+    "errorBodyFile": "jst-ph-catalog-list.json.error.txt",
+    "status": 500
+  }
+]

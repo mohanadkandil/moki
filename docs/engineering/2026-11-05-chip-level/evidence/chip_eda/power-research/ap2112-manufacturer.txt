@@ -1,0 +1,1299 @@
+--- PDF PAGE 1 ---
+                                                                                                                                                                  AP2112
+                                                                                                      600mA CMOS LDO REGULATOR WITH ENABLE
+
+Description                                                                                  Pin Assignments
+
+The  AP2112  is  CMOS  process  low  dropout  linear  regulator  with
+enable  function,  the  regulator  delivers  a  guaranteed  600mA  (min.)                                   (Top View)                                      (Top View)
+continuous load current.
+
+The  AP2112      is  available  with  a  fixed   output  voltage  of    1.2V,  1.8V,
+2.5V, 2.6V, or 3.3V. The LDO has an output accuracy of ±1.5% and a
+very  fast  loop  response  providing       excellent   performance      for  dealing
+with line and load transients. The AP2112 includes an auto discharge
+function which  connects  the  output  to  ground  via  60 of  resistance
+when the device is disabled.
+                                                                                                                      SOT25                                              SO-8
+The regulator features low power consumption, and provides SOT2                     5,
+SOT89-5, and SO-8 packages. Previously SOT-23-5, SOT-89-5 and                                               (Top View)                                       (Top View)
+SOIC-8 packages were respectively identified as SOT23-5, SOT89-5
+and  SO-8      but  have    been   renamed   to  match   the  latest   Diodes
+Incorporated‘s nomenclature.
+
+Features
+
+    Output Voltage Accuracy: ±1.5%
+    Output Current: 600mA (Min.)
+    Foldback Short Current Protection: 50mA
+    Enable Function to Turn ON/OFF VOUT
+    Low Dropout Voltage (3.3V): 250mV (Typ.) @IOUT = 600mA                                            (R5 Package)                                  (R5A Package)
+    Excellent Load Regulation: 0.2%/A (Typ.)                                                                                SOT89-5 (Option 1)
+    Excellent Line Regulation: 0.02%/V (Typ.)
+    Low Quiescent Current: 55µA (Typ.)                                                                     (Top View)                                      (Top View)
+    Low Standby Current: 0.01µA (Typ.)
+    Low Output Noise: 50µVRMS
+    PSRR: 100Hz -65dB, 1kHz -65dB
+    OTSD Protection
+    Stable   with   1.0µF   Flexible   Cap:   Ceramic,   Tantalum   and
+      Aluminum Electrolytic
+    Operation Temperature Range: -40°C to +85°C
+    ESD: MM 400V, HBM 4000V
+    Totally Lead-Free & Fully RoHS Compliant (Notes 1 & 2)
+    Halogen and Antimony Free. “Green” Device (Note 3)                                                (R5 Package)                                     (R5A Package)
+                                                                                                                              SOT89-5 (Option 2)
+
+Applications
+
+    Laptop Computer
+    LCD Monitor
+    Portable DVD
+
+
+
+Notes:       1. No purposely added lead. Fully EU Directive 2002/95/EC (RoHS) & 2011/65/EU (RoHS 2) compliant.
+             2. See http://www.diodes.com/quality/lead_free.html for more information about Diodes Incorporated‘s definitions of Halogen- and Antimony-free, "Green"
+                 and Lead-free.
+             3. Halogen- and Antimony-free "Green‖ products are defined as those which contain <900ppm bromine, <900ppm chlorine (<1500ppm total Br + Cl) and
+                 <1000ppm antimony compounds.
+
+
+
+
+AP2112                                                                                 1 of 18                                                                           June 2017
+Document number: DS39724  Rev. 2 - 2                                            www.diodes.com                                                                   © Diodes Incorporated
+
+
+--- PDF PAGE 2 ---
+                                                                                                                                                       AP2112
+
+
+ Typical Applications Circuit (Note 4)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Note 4:      It is recommended to use X7R or X5R dielectric capacitor if 1.0µF ceramic capacitor is selected as input/output capacitors.
+
+ Pin Descriptions
+
+                           Pin Number
+                                                                           Pin Name                                            Function
+       SOT25                SOT89-5                  SO-8
+
+          1                     4                      8                       VIN               Input Voltage
+
+          2                     2                     6, 7                    GND                GND
+
+                             3 (R5)
+          3                                            5                       EN                Chip Enable, H – normal work, L – shutdown output
+                             1 (R5A)
+
+                             1 (R5)
+          —                  3 (R5A)                2, 3, 4                    NC                No Connection
+
+
+          5                     5                      1                      VOUT               Output Voltage
+
+
+
+
+ Functional Block Diagram
+
+
+
+
+
+                                                                                                                                      A (B){C}[D]
+                                                                                                                                      A: SOT89-5 (R5)
+                                                                                                                                      B: SOT89-5 (R5A)
+                                                                                                                                      C: SO-8
+                                                                                                                                      D: SOT25
+
+
+
+
+
+
+
+
+ AP2112                                                                          2 of 18                                                                     June 2017
+ Document number: DS39724  Rev. 2 - 2                                     www.diodes.com                                                             © Diodes Incorporated
+
+
+--- PDF PAGE 3 ---
+                                                                                                                                                              AP2112
+
+
+ Absolute Maximum Ratings (Note 5)
+
+
+              Symbol                                                 Parameter                                                   Rating                            Unit
+
+                 VCC                   Power Supply Voltage                                                                         6.5                              V
+
+                  TJ                   Operating Junction Temperature Range                                                       +150                              °C
+
+                TSTG                   Storage Temperature Range                                                               -65 to +150                          °C
+
+                TLEAD                  Lead Temperature (Soldering, 10 Seconds)                                                   +260                              °C
+
+                                                                                                                       SOT25                 184
+
+                 θJA                   Thermal Resistance (Junction to Ambient)(No Heatsink)                            SO-8                 114                  °C/W
+
+                                                                                                                      SOT89-5                120
+
+                  —                    ESD (Machine Model)                                                                         400                               V
+                  —                    ESD (Human Body Model)                                                                     4000                               V
+
+ Note 5:    Stresses greater than those listed under ―Absolute Maximum Ratings‖ may cause permanent damage to the device. These are stress ratings only, and
+             functional  operation  of  the  device  at  these  or  any  other  conditions  beyond  those  indicated  under  ―Recommended  Operating  Conditions‖  is  not  implied.
+             Exposure to ―Absolute Maximum Ratings‖ for extended periods may affect device reliability.
+
+
+
+
+ Recommended Operating Conditions
+
+
+         Symbol                                  Parameter                                      Min                            Max                             Unit
+
+            VIN              Supply Voltage                                                      2.5                            6.0                              V
+
+             TA              Ambient Operation Temperature Range                                 -40                            +85                             °C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ AP2112                                                                              3 of 18                                                                         June 2017
+ Document number: DS39724  Rev. 2 - 2                                         www.diodes.com                                                                 © Diodes Incorporated
+
+
+--- PDF PAGE 4 ---
+                                                                                                                                                        AP2112
+
+
+ Electrical Characteristics
+ AP2112-1.2            Electrical  Characteristics (@VIN = 2.5V, CIN = 1.0µF (Ceramic), COUT = 1.0µF (Ceramic), Typical TA = +25°C,
+ unless otherwise specified (Note 6))
+
+
+          Symbol                           Parameter                                  Conditions                        Min          Typ          Max           Unit
+            V                 Output Voltage                            V   = 2.5V, 1mA ≤ I        ≤ 30mA               VOUT          1.2         VOUT            V
+              OUT                                                         IN                  OUT                     *98.5%                    *101.5%
+
+          IOUT(MAX)           Maximum Output Current                    VIN = 2.5V, VOUT = 1.182V to 1.218V              600          —            —             mA
+
+   (∆VOUT/VOUT)/∆IOUT         Load Regulation                           VIN = 2.5V, 1mA ≤ IOUT ≤ 600mA                    -1          0.2           1           %/A
+
+    (∆VOUT/VOUT)/∆VIN         Line Regulation                           2.5V ≤ VIN  ≤ 6V, IOUT = 30mA                   -0.1         0.02          0.1          %/V
+
+                                                                        IOUT = 10mA                                      —          1000          1300
+
+           VDROP              Dropout Voltage                           IOUT = 300mA                                     —          1000          1300           mV
+
+                                                                        IOUT = 600mA                                     —          1000          1300
+
+              IQ              Quiescent Current                         VIN = 2.5V, IOUT = 0mA                           —            55           80            µA
+
+            ISTD              Standby Current                           VIN = 2.5V, VEN in OFF mode                      —           0.01          1.0           µA
+                                                                        Ripple 0.5Vp-p             f = 100Hz             —            65           —
+           PSRR               Power Supply Rejection Ratio              VIN = 2.5V,                                                                              dB
+                                                                        IOUT = 100mA               f = 1kHz              —            65           —
+     (∆V     /V     )/∆T      Output Voltage Temperature                IOUT = 30mA                                      —          ±100           —          ppm/°C
+         OUT    OUT           Coefficient                               T   = -40°C to +85°C
+                                                                          A
+           ISHORT             Short Current Limit                       VOUT = 0V                                        —            50           —             mA
+
+           VNOISE             RMS Output Noise                          No Load, 10Hz ≤ f ≤ 100kHz                       —            50           —           µVRMS
+
+             VIH              VEN High Voltage                          Enable logic high, regulator on                  1.5          —            6.0
+                                                                                                                                                                  V
+             VIL              VEN Low Voltage                           Enable logic low, regulator off                   0           —            0.4
+
+              tS              Start-up Time                             No Load                                          —            20           —             µs
+
+            RPD               EN Pull Down Resistor                     —                                                —            3.0          —            MΩ
+
+           RDCHG              VOUT Discharge Resistor                   Set EN pin at Low                                —            60           —              Ω
+
+           TOTSD              Thermal Shutdown Temperature              —                                                —          +160           —
+                                                                                                                                                                 °C
+          THYOTSD             Thermal Shutdown Hysteresis               —                                                —           +25           —
+
+                                                                        SOT25                                            —            96           —
+             θ                Thermal Resistance                        SO-8                                             —            75           —           °C/W
+              JC              (Junction to Case)
+
+                                                                        SOT89-5                                          —            47           —
+
+ Note 6:        Production testing at TA = +25°C. Over temperature specifications guaranteed by design only.
+
+
+
+
+
+
+
+
+
+
+
+ AP2112                                                                          4 of 18                                                                      June 2017
+ Document number: DS39724  Rev. 2 - 2                                      www.diodes.com                                                             © Diodes Incorporated
+
+
+--- PDF PAGE 5 ---
+                                                                                                                                                        AP2112
+
+
+ Electrical Characteristics (Cont.)
+ AP2112-1.8            Electrical  Characteristics (@VIN = 2.8V, CIN = 1.0µF (Ceramic), COUT = 1.0µF (Ceramic), Typical TA = +25°C,
+ unless otherwise specified (Note 6))
+
+
+          Symbol                           Parameter                                   Conditions                        Min         Typ          Max           Unit
+            V                 Output Voltage                            V   = 2.8V, 1mA ≤ I        ≤ 30mA               VOUT          1.8         VOUT            V
+              OUT                                                         IN                  OUT                      *98.5%                   *101.5%
+
+          IOUT(MAX)           Maximum Output Current                    VIN = 2.8V, VOUT = 1.773V to 1.827V              600          —             —            mA
+   (∆V      /V    )/∆I        Load Regulation                           VOUT = 1.8V, VIN = VOUT+1V,                       -1          0.2           1           %/A
+        OUT   OUT     OUT                                               1mA ≤ I       ≤ 600mA
+                                                                                 OUT
+    (∆VOUT/VOUT)/∆VIN         Line Regulation                           2.8V ≤ VIN ≤ 6V, IOUT = 30mA                     -0.1        0.02          0.1          %/V
+
+                                                                        IOUT = 10mA                                      —           500           700
+
+           VDROP              Dropout Voltage                           IOUT = 300mA                                     —           500           700           mV
+
+                                                                        IOUT = 600mA                                     —           500           700
+
+              IQ              Quiescent Current                         VIN = 2.8V, IOUT = 0mA                           —            55           80            µA
+
+            ISTD              Standby Current                           VIN = 2.8V, VEN in OFF mode                      —           0.01          1.0           µA
+
+                                                                        Ripple 0.5Vp-p             f = 100Hz             —            65            —
+           PSRR               Power Supply Rejection Ratio              VIN = 2.8V,                                                                              dB
+                                                                        IOUT = 100mA               f = 1kHz              —            65            —
+     (∆V     /V     )/∆T      Output Voltage Temperature                IOUT = 30mA
+         OUT    OUT                                                     T   = -40°C to +85°C                             —           ±100           —         ppm/°C
+                              Coefficient                                 A
+           ISHORT             Short Current Limit                       VOUT = 0V                                        —            50            —            mA
+
+           VNOISE             RMS Output Noise                          No Load, 10Hz ≤ f ≤ 100kHz                       —            50            —          µVRMS
+
+             VIH              VEN High Voltage                          Enable logic high, regulator on                  1.5          —            6.0
+                                                                                                                                                                  V
+             VIL              VEN Low Voltage                           Enable logic low, regulator off                   0           —            0.4
+
+              tS              Start-up Time                             No Load                                          —            20            —            µs
+
+            RPD               EN Pull Down Resistor                     —                                                —            3.0           —            MΩ
+
+           RDCHG              VOUT Discharge Resistor                   Set EN pin at Low                                —            60            —             Ω
+
+           TOTSD              Thermal Shutdown Temperature              —                                                —           +160           —
+                                                                                                                                                                 °C
+          THYOTSD             Thermal Shutdown Hysteresis               —                                                —           +25            —
+
+                                                                        SOT25                                            —            96            —
+             θ                Thermal Resistance
+              JC                                                        SO-8                                             —            75            —           °C/W
+                              (Junction to Case)
+                                                                        SOT89-5                                          —            47            —
+
+ Note 6:        Production testing at TA = +25°C. Over temperature specifications guaranteed by design only.
+
+
+
+
+
+
+
+
+
+
+
+ AP2112                                                                           5 of 18                                                                     June 2017
+ Document number: DS39724  Rev. 2 - 2                                      www.diodes.com                                                             © Diodes Incorporated
+
+
+--- PDF PAGE 6 ---
+                                                                                                                                                        AP2112
+
+
+ Electrical Characteristics (Cont.)
+ AP2112-2.5             Electrical  Characteristics (@VIN = 3.5V, CIN = 1.0µF (Ceramic), COUT = 1.0µF (Ceramic), Typical TA = +25°C,
+ unless otherwise specified (Note 6))
+
+
+          Symbol                           Parameter                                   Conditions                        Min          Typ          Max           Unit
+            V                 Output Voltage                            V    = 3.5V, 1mA ≤ I        ≤ 30mA              VOUT          2.5         VOUT            V
+              OUT                                                         IN                   OUT                     *98.5%                   *101.5%
+
+          I                   Maximum Output Current                    VIN = 3.5V,                                      600           —            —            mA
+          OUT(MAX)                                                      V      = 2.463V to 2.537V
+                                                                          OUT
+   (∆V      /V    )/∆I        Load Regulation                           VOUT = 2.5V, VIN = VOUT+1V,                       -1          0.2           1            %/A
+        OUT   OUT     OUT                                               1mA ≤ I       ≤ 600mA
+                                                                                 OUT
+    (∆VOUT/VOUT)/∆VIN         Line Regulation                           3.5V ≤ VIN ≤ 6V, IOUT = 30mA                     -0.1        0.02          0.1           %/V
+
+                                                                        IOUT  = 10mA                                      —            5            8
+
+           VDROP              Dropout Voltage                           IOUT = 300mA                                      —           125          200           mV
+
+                                                                        IOUT = 600mA                                      —           250          400
+
+              IQ              Quiescent Current                         VIN = 3.5V, IOUT = 0mA                            —           55            80           µA
+
+            ISTD              Standby Current                           VIN = 3.5V, VEN in OFF mode                       —          0.01          1.0           µA
+                                                                        Ripple 0.5Vp-p             f = 100Hz              —           65            —
+           PSRR               Power Supply Rejection Ratio              VIN = 3.5V,                                                                               dB
+                                                                        IOUT = 100mA               f = 1KHz               —           65            —
+     (∆V     /V     )/∆T      Output Voltage Temperature                IOUT = 30mA                                       —          ±100           —          ppm/°C
+         OUT    OUT           Coefficient                               T   = -40°C to +85°C
+                                                                          A
+           ISHORT             Short Current Limit                       VOUT = 0V                                         —           50            —            mA
+
+           VNOISE             RMS Output Noise                          No Load, 10Hz ≤ f ≤ 100kHz                        —           50            —          µVRMS
+
+             VIH              VEN High Voltage                          Enable logic high, regulator on                  1.5           —           6.0
+                                                                                                                                                                  V
+             VIL              VEN Low Voltage                           Enable logic low, regulator off                   0            —           0.4
+
+              tS              Start-up Time                             No Load                                           —           20            —             µs
+
+            RPD               EN Pull Down Resistor                     —                                                 —           3.0           —            MΩ
+
+           RDCHG              VOUT Discharge Resistor                   Set EN pin at Low                                 —           60            —             Ω
+
+           TOTSD              Thermal Shutdown Temperature              —                                                 —          +160           —
+                                                                                                                                                                  °C
+          THYOTSD             Thermal Shutdown Hysteresis               —                                                 —           +25           —
+
+                                                                        SOT25                                             —           96            —
+             θ                Thermal Resistance                        SO-8                                              —           75            —           °C/W
+              JC              (Junction to Case)
+
+                                                                        SOT89-5                                           —           47            —
+
+ Note 6:       Production testing at TA = +25°C. Over temperature specifications guaranteed by design only.
+
+
+
+
+
+
+
+
+
+ AP2112                                                                           6 of 18                                                                     June 2017
+ Document number: DS39724  Rev. 2 - 2                                      www.diodes.com                                                              © Diodes Incorporated
+
+
+--- PDF PAGE 7 ---
+                                                                                                                                                        AP2112
+
+
+ Electrical Characteristics (Cont.)
+ AP2112-2.6             Electrical  Characteristics (@VIN = 3.6V, CIN = 1.0µF (Ceramic), COUT = 1.0µF (Ceramic), Typical TA = +25°C,
+ unless otherwise specified (Note 6))
+
+
+          Symbol                           Parameter                                   Conditions                        Min          Typ          Max           Unit
+            V                 Output Voltage                            V   = 3.6V, 1mA ≤ I        ≤ 30mA               VOUT          2.6         VOUT            V
+              OUT                                                         IN                   OUT                     *98.5%                   *101.5%
+
+          I                   Maximum Output Current                    VIN = 3.6V,                                      600           —            —            mA
+          OUT(MAX)                                                      V      = 2.561V to 2.639V
+                                                                          OUT
+   (∆V      /V    )/∆I        Load Regulation                           VOUT = 2.6V, VIN = VOUT+1V,                       -1          0.2           1            %/A
+        OUT   OUT     OUT                                               1mA ≤ I       ≤ 600mA
+                                                                                 OUT
+    (∆VOUT/VOUT)/∆VIN         Line Regulation                           3.6V ≤ VIN ≤ 6V, IOUT = 30mA                     -0.1        0.02          0.1           %/V
+
+                                                                        IOUT = 10mA                                       —            5            8
+
+           VDROP              Dropout Voltage                           IOUT = 300mA                                      —           125          200           mV
+
+                                                                        IOUT = 600mA                                      —           250          400
+
+              IQ              Quiescent Current                         VIN = 3.6V, IOUT = 0mA                            —           55            80           µA
+
+            ISTD              Standby Current                           VIN = 3.6V, VEN in OFF mode                       —          0.01          1.0           µA
+                                                                        Ripple 0.5Vp-p            f = 100Hz               —           65            —
+           PSRR               Power Supply Rejection Ratio              VIN = 3.6V,                                                                               dB
+                                                                        IOUT = 100mA              f = 1kHz                —           65            —
+     (∆V     /V     )/∆T      Output Voltage                            IOUT = 30mA                                       —          ±100           —          ppm/°C
+         OUT    OUT           Temperature Coefficient                   T   = -40°C to +85°C
+                                                                          A
+           ISHORT             Short Current Limit                       VOUT = 0V                                         —           50            —            mA
+
+           VNOISE             RMS Output Noise                          No Load, 10Hz ≤ f ≤ 100kHz                        —           50            —          µVRMS
+
+             VIH              VEN High Voltage                          Enable logic high, regulator on                  1.5           —           6.0
+                                                                                                                                                                  V
+             VIL              VEN Low Voltage                           Enable logic low, regulator off                   0            —           0.4
+
+              tS              Start-up Time                             No Load                                           —           20            —             µs
+
+            RPD               EN Pull Down Resistor                     —                                                 —           3.0           —            MΩ
+
+           RDCHG              VOUT Discharge Resistor                   Set EN pin at Low                                 —           60            —             Ω
+
+           TOTSD              Thermal Shutdown Temperature              —                                                 —          +160           —
+                                                                                                                                                                  °C
+          THYOTSD             Thermal Shutdown Hysteresis               —                                                 —           +25           —
+
+                                                                        SOT25                                             —           96            —
+             θ                Thermal Resistance                        SO-8                                              —           75            —           °C/W
+              JC              (Junction to Case)
+
+                                                                        SOT89-5                                           —           47            —
+
+ Note 6:       Production testing at TA = +25°C. Over temperature specifications guaranteed by design only.
+
+
+
+
+
+
+
+
+
+
+
+ AP2112                                                                           7 of 18                                                                     June 2017
+ Document number: DS39724  Rev. 2 - 2                                      www.diodes.com                                                              © Diodes Incorporated
+
+
+--- PDF PAGE 8 ---
+                                                                                                                                                        AP2112
+
+
+ Electrical Characteristics (Cont.)
+ AP2112-3.3            Electrical  Characteristics (@VIN = 4.3V, CIN = 1.0µF (Ceramic), COUT = 1.0µF (Ceramic), Typical TA = +25°C,
+ unless otherwise specified (Note 6))
+
+
+          Symbol                           Parameter                                   Conditions                        Min          Typ          Max           Unit
+            V                 Output Voltage                            V   = 4.3V, 1mA ≤ I        ≤ 30mA               VOUT          3.3         VOUT            V
+              OUT                                                         IN                   OUT                     *98.5%                   *101.5%
+
+          IOUT(MAX)           Maximum Output Current                    VIN = 4.3V, VOUT = 3.251V to 3.350V              600           —            —            mA
+
+   (∆VOUT/VOUT)/∆IOUT         Load Regulation                           VIN = 4.3V, 1mA ≤ IOUT ≤ 600mA                    -1          0.2           1            %/A
+
+    (∆VOUT/VOUT)/∆VIN         Line Regulation                           4.3V≤ VIN  ≤ 6V, IOUT = 30mA                     -0.1        0.02          0.1           %/V
+
+                                                                        IOUT = 10mA                                       —            5            8
+
+           VDROP              Dropout Voltage                           IOUT = 300mA                                      —           125          200           mV
+
+                                                                        IOUT = 600mA                                      —           250          400
+
+              IQ              Quiescent Current                         VIN = 4.3V, IOUT = 0mA                            —           55            80           µA
+
+            ISTD              Standby Current                           VIN = 4.3V, VEN in OFF mode                       —          0.01          1.0           µA
+                                                                        Ripple 0.5Vp-p             f = 100Hz              —           65            —
+           PSRR               Power Supply Rejection Ratio              VIN = 4.3V,                                                                              dB
+                                                                        IOUT = 100mA               f = 1kHz               —           65            —
+     (∆V     /V     )/∆T      Output Voltage Temperature                IOUT = 30mA                                       —          ±100           —          ppm/°C
+         OUT    OUT           Coefficient                               T   = -40°C to +85°C
+                                                                          A
+           ISHORT             Short Current Limit                       VOUT = 0V                                         —           50            —            mA
+
+           VNOISE             RMS Output Noise                          No Load, 10Hz ≤ f ≤ 100kHz                        —           50            —          µVRMS
+
+             VIH              VEN High Voltage                          Enable logic high, regulator on                  1.5           —           6.0
+                                                                                                                                                                  V
+             VIL              VEN Low Voltage                           Enable logic low, regulator off                   0            —           0.4
+
+              tS              Start-up Time                             No Load                                           —           20            —             µs
+
+            RPD               EN Pull Down Resistor                     —                                                 —           3.0           —            MΩ
+
+           RDCHG              VOUT Discharge Resistor                   Set EN pin at Low                                 —           60            —             Ω
+
+           TOTSD              Thermal Shutdown Temperature              —                                                 —          +160           —
+                                                                                                                                                                  °C
+          THYOTSD             Thermal Shutdown Hysteresis               —                                                 —           +25           —
+
+                                                                        SOT25                                             —           96            —
+             θ                Thermal Resistance                        SO-8                                              —           75            —           °C/W
+              JC              (Junction to Case)
+
+                                                                        SOT89-5                                           —           47            —
+
+ Note 6:       Production testing at TA = +25°C. Over temperature specifications guaranteed by design only.
+
+
+
+
+
+
+
+
+
+
+
+ AP2112                                                                           8 of 18                                                                     June 2017
+ Document number: DS39724  Rev. 2 - 2                                      www.diodes.com                                                              © Diodes Incorporated
+
+
+--- PDF PAGE 9 ---
+                                                                                                                                                             AP2112
+
+
+ Performance Characteristics
+
+                        Output Voltage vs. Input Voltage                                              Output Voltage vs. Input Voltage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      Quiescent Current vs. Temperature                                         Quiescent Current vs. Input Voltage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                         Output Voltage vs. Temperature                                               Output Voltage vs. Temperature
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ AP2112                                                                              9 of 18                                                                        June 2017
+ Document number: DS39724  Rev. 2 - 2                                         www.diodes.com                                                                © Diodes Incorporated
+
+
+--- PDF PAGE 10 ---
+                                                                                                                                                             AP2112
+
+
+ Performance Characteristics (Cont.)
+
+                        Output Voltage vs. Output Current                                          Output Voltage vs. Output Current
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        Output Voltage vs. Output Current                                           Output Voltage vs. Output Current
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      Dropout Voltage vs. Output Current                                          Ground Current vs. Output Current
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ AP2112                                                                             10 of 18                                                                       June 2017
+ Document number: DS39724  Rev. 2 - 2                                        www.diodes.com                                                                 © Diodes Incorporated
+
+
+--- PDF PAGE 11 ---
+                                                                                                                                                                                                                                                    AP2112
+
+
+                                                                                Performance Characteristics (Cont.)
+
+                                                                                                                   PSRR vs. Frequency                                                                  Load Transient
+
+
+                                                                                                                                                                                                     V   =2.5V, C    =1mF, C      =1mF
+                                                                                                                                                                                                       IN          IN         OUT
+
+                                                                                                                                                                           CH1: VOUT
+                                                                                                                                                                           10mV/div
+                                                                                                                                                                                                                   600mA
+
+
+                                                                                                                                                                                                                    0mA
+                                                                                                                                                                            CH2: IOUT
+                                                                                                                                                                           200mA/div
+
+
+
+
+
+                                                                                                                          Enable On                                                                                Enable Off
+
+V
+ IN
+(2V/div)
+                                      20ms/div
+
+
+
+
+
+
+
+
+
+
+                                                                                Application Note
+                                                                                In some unusual applications where a current load could be present at the output before the part is enabled the fold back current limiting may
+                                                                                prevent the part from starting. Applications with multiple supplies or negative supplies need to be evaluated for this possibility. Product testing
+                                                                                where a current source is applied before the part is enabled could be another area of concern.  With a normal load as shown below there is no
+                                                                                interference of the fold back current limiting circuit.
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                     Load Line
+
+
+
+
+                                                                                AP2112                                                                                 11 of 18                                                                           June 2017
+                                                                                Document number: DS39724  Rev. 2 - 2                                            www.diodes.com                                                                    © Diodes Incorporated
+
+
+--- PDF PAGE 12 ---
+                                                                                                                                              AP2112
+
+
+ Ordering Information
+
+
+
+
+
+
+
+
+
+
+
+
+    Package          Temperature           Condition                  Part Number                          Marking ID                        Packing
+                        Range
+
+                                              1.2V          AP2112K-1.2TRG1                      G3L                                  3000/7‖/Tape & Reel
+
+                                              1.8V          AP2112K-1.8TRG1                      G3M                                  3000/7‖/Tape & Reel
+
+     SOT25           -40 to +85°C             2.5V          AP2112K-2.5TRG1                      G3N                                  3000/7‖/Tape & Reel
+
+                                              2.6V          AP2112K-2.6TRG1                      G5N                                  3000/7‖/Tape & Reel
+
+                                              3.3V          AP2112K-3.3TRG1                      G3P                                  3000/7‖/Tape & Reel
+
+                                              1.2V          AP2112M-1.2TRG1                      2112M-1.2G1                         4000/13‖/Tape & Reel
+
+                                              1.8V          AP2112M-1.8TRG1                      2112M-1.8G1                         4000/13‖/Tape & Reel
+
+      SO-8           -40 to +85°C             2.5V          AP2112M-2.5TRG1                      2112M-2.5G1                         4000/13‖/Tape & Reel
+
+                                              2.6V          AP2112M-2.6TRG1                      2112M-2.6G1                         4000/13‖/Tape & Reel
+
+                                              3.3V          AP2112M-3.3TRG1                      2112M-3.3G1                         4000/13‖/Tape & Reel
+
+                                            1.2V(R5)        AP2112R5-1.2TRG1                     G37D                                 1000/7‖/Tape & Reel
+
+                                            1.8V(R5)        AP2112R5-1.8TRG1                     G37E                                 1000/7‖/Tape & Reel
+
+    SOT89-5          -40 to +85°C           2.5V(R5)        AP2112R5-2.5TRG1                     G37F                                 1000/7‖/Tape & Reel
+
+                                            2.6V(R5)        AP2112R5-2.6TRG1                     G13F                                 1000/7‖/Tape & Reel
+
+                                            3.3V(R5)        AP2112R5-3.3TRG1                     G37G                                 1000/7‖/Tape & Reel
+
+                                           1.2V(R5A)        AP2112R5A-1.2TRG1                    G33C                                 1000/7‖/Tape & Reel
+
+                                           1.8V(R5A)        AP2112R5A-1.8TRG1                    G33E                                 1000/7‖/Tape & Reel
+
+    SOT89-5          -40 to +85°C          2.5V(R5A)        AP2112R5A-2.5TRG1                    G28G                                 1000/7‖/Tape & Reel
+
+                                           2.6V(R5A)        AP2112R5A-2.6TRG1                    G13E                                 1000/7‖/Tape & Reel
+
+                                           3.3V(R5A)        AP2112R5A-3.3TRG1                    G28H                                 1000/7‖/Tape & Reel
+
+
+
+
+ AP2112                                                                     12 of 18                                                                June 2017
+ Document number: DS39724  Rev. 2 - 2                                 www.diodes.com                                                         © Diodes Incorporated
+
+
+--- PDF PAGE 13 ---
+                                                                                                                                                             AP2112
+
+ Marking Information
+
+  (1)    SOT25
+
+
+                                                                                         : Logo
+                                         XXX                                      XXX : Marking ID (See Ordering Information)
+
+
+
+
+  (2)    SO-8
+
+
+
+                                                                                  First line: Logo and Marking ID
+                                        2112M-X.XG1                               Second line: Date Code
+                                        YWWAXX                                    Y: Year
+                                                                                  WW: Work Week of Molding
+                                                                                  A: Assembly th thHouse Code
+                                                                                  XX: 7    and 8    Digits of Batch Number
+
+
+  (3)    SOT89-5
+
+
+                                                                                 First Line: Logo and Marking ID
+                                                                                 Second line: Date Code
+                                         XXXX                                    Y: Year
+                                         YWWAXX                                  WW: Work Week of Molding
+                                                                                 A: Assembly th  thHouse Code
+                                                                                 XX: 7    and 8    Digits of Batch Number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ AP2112                                                                            13 of 18                                                                        June 2017
+ Document number: DS39724  Rev. 2 - 2                                        www.diodes.com                                                                © Diodes Incorporated
+
+
+--- PDF PAGE 14 ---
+                                                                                                                                                                        AP2112
+
+
+Package Outline Dimensions (Previously identified as SOT-23-5 for this product)
+ Please see http://www.diodes.com/package-outlines.html for the latest version.
+
+                                                                                          SOT25
+
+
+
+                                                                                                                                             SOT25
+                                                                                                                                  Dim       Min     Max     Typ
+                                                                                                                                    A      0.35     0.50    0.38
+                                                                                                                                    B      1.50     1.70    1.60
+                                                                                                                                    C      2.70     3.00    2.80
+                                                                                                                                    D         -       -     0.95
+                                                                                                                                    H      2.90     3.10    3.00
+                                                                                                                                    J     0.013     0.10    0.05
+                                                                                                                                    K      1.00     1.30    1.10
+                                                                                                                                    L      0.35     0.55    0.40
+                                                                                                                                    M      0.10     0.20    0.15
+                                                                                                                                    N      0.70     0.80    0.75
+                                                                                                                                           0°       8°       -
+                                                                                                                                   All Dimensions in mm
+
+
+
+
+
+
+
+Suggested Pad Layout
+ Please see http://www.diodes.com/package-outlines.html for the latest version.
+
+                                                                                          SOT25
+
+                                                                                                                                Dimensions             Value
+                                                                                                                                       Z                3.20
+                                                                                                                                       G                1.60
+                                                                                                                                       X                0.55
+                                                                                                                                       Y               0.80
+                                                                                                                                      C1                2.40
+                                                                                                                                      C2                0.95
+
+
+
+
+
+           Note:           The suggested land pattern dimensions have been provided for reference only, as actual pad layouts may vary depending on application. These
+                           dimensions may be modified based on user equipment capability or fabrication criteria. A more robust pattern may be desired for wave soldering
+                           and is calculated by adding 0.2 mm to the ‗Z‘ dimension. For further information, please reference document IPC-7351A, Naming Convention for
+                           Standard SMT Land Patterns, and for International grid details, please see document IEC, Publication 97.
+
+           Note:           For high voltage applications, the appropriate industry sector guidelines should be considered with regards to creepage and clearance distances
+                           between device Terminals and PCB tracking.
+
+
+
+
+
+
+
+
+
+
+
+ AP2112                                                                                  14 of 18                                                                              June 2017
+ Document number: DS39724  Rev. 2 - 2                                              www.diodes.com                                                                     © Diodes Incorporated
+
+
+--- PDF PAGE 15 ---
+                                                                                                                                                        AP2112
+
+Package Outline Dimensions (All dimensions in mm.) (Previously identified as SOT-89-5 for this product)
+
+                                                                                SOT89-5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ AP2112                                                                          15 of 18                                                                     June 2017
+ Document number: DS39724  Rev. 2 - 2                                      www.diodes.com                                                             © Diodes Incorporated
+
+
+--- PDF PAGE 16 ---
+                                                                                                                                                             AP2112
+
+Suggested Pad Layout (Previously identified as SOT-89-5 for this product)
+
+                                                                                   SOT89-5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              Dimensions               Z                  X                  X1                 X2                   Y                 Y1                  E
+                                 (mm)/(inch)        (mm)/(inch)         (mm)/(inch)        (mm)/(inch)         (mm)/(inch)        (mm)/(inch)        (mm)/(inch)
+                 Value           4.600/0.181        0.550/0.022         1.850/0.073        0.800/0.031        1.300/0.051         1.475/0.058        1.500/0.059
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ AP2112                                                                             16 of 18                                                                        June 2017
+ Document number: DS39724  Rev. 2 - 2                                         www.diodes.com                                                                © Diodes Incorporated
+
+
+--- PDF PAGE 17 ---
+                                                                                                                                                                         AP2112
+
+Package Outline Dimensions (Previously identified as SOIC-8 for this product)
+ Please see http://www.diodes.com/package-outlines.html for the latest version.
+
+                                                                                               SO-8
+
+
+
+
+
+                                                                                                                                                                     SO-8
+                                                                                                                                                      Dim       Min       Max        Typ
+                                                                                                                                                        A       1.40      1.50       1.45
+                                                                                                                                                       A1       0.10      0.20       0.15
+                                                                                                                                                        b       0.30      0.50       0.40
+                                                                                                                                                        c       0.15      0.25       0.20
+                                                                                                                                                        D       4.85      4.95       4.90
+                                                                                                                                                        E       5.90      6.10       6.00
+                                                                                                                                                       E1       3.80      3.90       3.85
+                                                                                                                                                       E0       3.85      3.95       3.90
+                                                                                                                                                        e        --         --       1.27
+                                                                                                                                                        h         -         --       0.35
+                                                                                                                                                        L       0.62      0.82       0.72
+                                                                                                                                                        Q      0.60      0.70       0.65
+                                                                                                                                                         All Dimensions in mm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Suggested Pad Layout
+ Please see http://www.diodes.com/package-outlines.html for the latest version.
+
+                                                                                            SO-8
+
+
+
+                                                                                                                                     Dimensions         Value (in mm)
+                                                                                                                                             C                1.27
+                                                                                                                                             X                0.802
+                                                                                                                                            X1                4.612
+                                                                                                                                             Y                1.505
+                                                                                                                                            Y1                6.50
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           Note:           The suggested land pattern dimensions have been provided for reference only, as actual pad layouts may vary depending on application. These
+                           dimensions may be modified based on user equipment capability or fabrication criteria. A more robust pattern may be desired for wave soldering
+                           and is calculated by adding 0.2 mm to the ‗Z‘ dimension. For further information, please reference document IPC-7351A, Naming Convention for
+                           Standard SMT Land Patterns, and for International grid details, please see document IEC, Publication 97.
+
+           Note:           For high voltage applications, the appropriate industry sector guidelines should be considered with regards to creepage and clearance distances
+                           between device Terminals and PCB tracking.
+
+
+
+
+
+ AP2112                                                                                   17 of 18                                                                              June 2017
+ Document number: DS39724  Rev. 2 - 2                                              www.diodes.com                                                                       © Diodes Incorporated
+
+
+--- PDF PAGE 18 ---
+                                                                                                                                                                   AP2112
+
+
+                                                                              IMPORTANT NOTICE
+
+ DIODES  INCORPORATED  MAKES  NO  WARRANTY  OF  ANY  KIND,  EXPRESS  OR  IMPLIED,  WITH  REGARDS  TO  THIS  DOCUMENT,
+ INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTIC                                                              ULAR PURPOSE
+ (AND THEIR EQUIVALENTS UNDER THE LAWS OF ANY JURISDICTION).
+
+ Diodes  Incorporated  and  its  subsidiaries  reserve  the  right  to  make  modifications,  enhancements,  improvements,  corrections  or                         other  changes
+ without further notice to this document a           nd any product described herein. Diodes Incorporated does not assume any liability arising out of the
+ application or use of this document or any product described herein; neither does Diodes Incorporated convey any license unde                                       r its patent or
+ trademark rights, nor the rights of others.  Any Customer or user of this document or products described herein in such applications shall                                  assume
+ all risks of such use and will agree to hold Diodes Incorporated and all the companies whose products are represented on Di                                    odes Incorporated
+ website, harmless against all damages.
+
+ Diodes Incorporated does not warrant or accept any liability whatsoever in respect of any products purchased through unauthor                                ized sales channel.
+ Should Customers purchase or use Diodes Incorporate                  d products for any unintended or unauthorized application, Customers shall indemnify and
+ hold Diodes Incorporated and its representatives harmless against all claims, damages, expenses, and attorney fees arising ou                                      t of, directly or
+ indirectly, any claim of personal injury or death associated with such unintended or unauthorized application.
+
+ Products described herein may be covered by one or more United States, international or foreign patents pending.  Product nam                                    es and markings
+ noted herein may also be covered by one or more United States, international or foreign trademarks.
+
+ This document is written in English but may be translated into multiple languages for reference.  Only the English version of                               this document is the
+ final and determinative format released by Diodes Incorporated.
+
+                                                                                 LIFE SUPPORT
+
+ Diodes Incorporated products are specifically not authorized for use as critical components in life support devices or system                              s without the express
+ written approval of the Chief Executive Officer of Diodes Incorpo              rated. As used herein:
+
+ A.   Life support devices or systems are devices or systems which:
+
+              1. are intended to implant into the body, or
+
+              2.  support  or  sustain  life  and  whose  failure  to  perform  when  properly  used  in  accordance  with  instructions  for  use  pr               ovided  in  the
+                   labeling can be reasonably expected to result in significant injury to the user.
+
+ B.   A critical component is any component in a life support device or system whose failure to perform can be reasonably expe                               cted to cause the
+       failure of the life support device or to affect its safety or effectiveness.
+
+ Customers represent that they have all necessary expertise in the safety and regulatory ramifications of their life support d                            evices or systems, and
+ acknowledge and agree that they are solely responsible for all legal, regulatory and safety                     -related requirements concerning their products and any
+ use  of  Diodes  Incorporated  products  in  such  safety         -critical,  life  support  devices  or  systems,  notwithstanding  any  devices           - or  systems-related
+ information  or  support  that  may  be  provided  by  Diodes  Incorporated.    Further,  Customers  must  fully  indemnify  Diodes  Incorpora                         ted  and  its
+ representatives against any damages arising out of the use of Diodes Incorporated products in such safety                           -critical, life support devices or systems.
+
+ Copyright © 2017, Diodes Incorporated
+
+ www.diodes.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ AP2112                                                                                18 of 18                                                                          June 2017
+ Document number: DS39724  Rev. 2 - 2                                           www.diodes.com                                                                   © Diodes Incorporated

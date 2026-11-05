@@ -1,0 +1,22 @@
+[
+  {
+    "from": "C7519-catalog.pdf",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "from": "C160404-catalog.pdf",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "from": "C720477-catalog.pdf",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "from": "C165948-catalog.pdf",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "from": "C51118-catalog.pdf",
+    "error": "HTTP Error 403: Forbidden"
+  }
+]

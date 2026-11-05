@@ -1,0 +1,18 @@
+{
+  "name": "list-sht40",
+  "method": "GET",
+  "url": "https://jlcsearch.tscircuit.com/components/list.json?search=SHT40&limit=8",
+  "requestBody": null,
+  "capturedAt": "2026-11-05T21:49:06.044997+00:00",
+  "status": 500,
+  "error": "HTTP Error 500: Internal Server Error",
+  "contentType": "application/json",
+  "bytes": 124,
+  "sha256": "26c977b7169622bc5b1d9505d5b4235844b64909e35836612ef22a982ceeba0b",
+  "file": "list-sht40.response",
+  "requestHeaders": {
+    "User-Agent": "Mozilla/5.0",
+    "Accept": "application/json",
+    "Content-Type": "application/json"
+  }
+}

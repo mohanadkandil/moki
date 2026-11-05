@@ -1,0 +1,8 @@
+[
+  {
+    "lcsc": "C2913198",
+    "action": "Omit 12 unassigned footprint thermal vias; retain every electrical pad and model",
+    "reason": "Importer vias have 0.2499868 mm drill / 0.3999992 mm outer and no GND net; EP solder/thermal vias are optional in manufacturer reference. No source footprint file changed.",
+    "citation": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf#page=41"
+  }
+]

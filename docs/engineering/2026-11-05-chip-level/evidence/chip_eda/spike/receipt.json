@@ -1,0 +1,80 @@
+{
+  "ok": true,
+  "stages": [
+    {
+      "name": "imported-components",
+      "status": "done",
+      "ms": 40.36817599999995
+    },
+    {
+      "name": "render-route",
+      "status": "done",
+      "ms": 8994.601525000002
+    },
+    {
+      "name": "svg",
+      "status": "done",
+      "ms": 431.1885939999993
+    },
+    {
+      "name": "gerbers-bom-cpl",
+      "status": "done",
+      "ms": 314.10339100000056
+    },
+    {
+      "name": "gltf",
+      "status": "done",
+      "ms": 2140.734759000001
+    }
+  ],
+  "totalMs": 14049.732215,
+  "drc": {
+    "checked": true,
+    "errors": []
+  },
+  "parts": 22,
+  "traceCount": 58,
+  "viaCount": 31,
+  "pours": 2,
+  "keepouts": 1,
+  "cadModels": 22,
+  "versions": {
+    "bun": "1.4.4",
+    "toolchainLockSha256": "1afde36890d81eddf9b4f0ac59f0fb7f171c44217da079b72f045684432b051b",
+    "mokiRendererSha256": "0241360186359759ab4eb49087dc2026f5d13d1b9279bc2a7a9c78b97e59ff2d",
+    "../src/board/bom.ts": "3eb90de40496ae439a9b4fdf8bd5816dc59e8b5d29d97b72740a446928335022",
+    "../src/circuit/catalog.ts": "f9a71d535ac1c39ece54337532e1662d3cdb95356134f548c1345c555ca1b51c",
+    "models/render-board.ts": "0ae3ad9913ed812f943bcb5e97f07de2dc39a5a8c9634bb8d175cf116a1e15b1",
+    "models/catalog-models.ts": "5bf9dba5c67d0e1239c33dc4874be44867226c08fb287dc21e63fb17895015bc",
+    "models/glb.ts": "ee795aaf36c5fa0f0bd94484c574f69cd14c308ee72d4e3fd0b6855dd4c14c80",
+    "models/compact-glb.ts": "76504398c0e871e0de9ab55d4e553a4401d7466b6c1750eca4cb856e212bbda4",
+    "apply-layout.ts": "5429544caab8d4ba86a0b4b269ce01c84aa47c0f0cc568fa6602dea23d40c6ff",
+    "edit-router.ts": "69f011b2225ab9621258fa149423af8d3591e1b43ba96d94b70477fd3fe260dc",
+    "../src/board/edits.ts": "ff1061d2213db22acacf7ac26c2d097c97a4be81ffe92d8eaedb262c7c6f2bf0",
+    "enclosure/module-preview.ts": "646bb819b10f708851a820b5159b977c67300cf34b0a3d3f4d84b9a5d7c65f19",
+    "enclosure/module-mech.ts": "8054af43a5ba30428ac832464b43cb90dab5392a6933368b7fe56cc38e1a8103",
+    "@jscad/modeling": "2.13.0",
+    "@tscircuit/capacity-autorouter": "0.0.1037",
+    "@tscircuit/checks": "0.0.269",
+    "@tscircuit/circuit-json-util": "0.0.131",
+    "@tscircuit/core": "0.0.2266",
+    "@tscircuit/create-fdm-enclosure": "0.0.7",
+    "@tscircuit/footprinter": "0.0.450",
+    "@tscircuit/math-utils": "0.0.38",
+    "@tscircuit/props": "0.0.718",
+    "circuit-json": "0.0.543",
+    "circuit-json-to-bom-csv": "0.0.28",
+    "circuit-json-to-gerber": "0.0.122",
+    "circuit-json-to-gltf": "0.0.164",
+    "circuit-json-to-kicad": "0.0.267",
+    "circuit-json-to-pnp-csv": "0.0.21",
+    "circuit-to-svg": "0.0.455",
+    "easyeda": "0.0.391",
+    "fflate": "0.8.3",
+    "jscad-planner": "0.0.14",
+    "react": "19.3.1",
+    "schematic-symbols": "0.0.251",
+    "tscircuit": "0.0.3075"
+  },
+  "physicalBuild": false
+}

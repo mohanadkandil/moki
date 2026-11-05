@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "renderer": "@mermaid-js/mermaid-cli",
+  "renderer_version": "12.0.0",
+  "source_sha256": "58432094cb7ddbde54d6886ac487f6d5ccb55449af3b903478edf385e9fbb469",
+  "input": "/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-05-chip-level/architecture.mmd",
+  "files": {
+    "source": "/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-05-chip-level/architecture.source.mmd",
+    "svg": "/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-05-chip-level/architecture.svg",
+    "png": "/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-05-chip-level/architecture.png",
+    "receipt": "/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-05-chip-level/architecture.json"
+  },
+  "png": {
+    "width": 320,
+    "height": 1200
+  },
+  "media": "MEDIA:/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-05-chip-level/architecture.png"
+}

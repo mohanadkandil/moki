@@ -1,0 +1,110 @@
+{
+  "family": "esp32s3",
+  "pio": {
+    "platform": "platformio/espressif32@6.10.0",
+    "board": "esp32-s3-devkitc-1",
+    "framework": "arduino",
+    "environment": "esp32s3"
+  },
+  "pins": {
+    "PIN_HEADER_I2C_SDA": {
+      "gpio": 8,
+      "port": "header.I2C.SDA"
+    },
+    "PIN_HEADER_I2C_SCL": {
+      "gpio": 9,
+      "port": "header.I2C.SCL"
+    },
+    "PIN_MIC_I2S_MIC_BCLK": {
+      "gpio": 4,
+      "port": "mic.I2S_MIC.BCLK"
+    },
+    "PIN_MIC_I2S_MIC_WS": {
+      "gpio": 5,
+      "port": "mic.I2S_MIC.WS"
+    },
+    "PIN_MIC_I2S_MIC_SD": {
+      "gpio": 6,
+      "port": "mic.I2S_MIC.SD"
+    },
+    "PIN_AMP_I2S_AMP_BCLK": {
+      "gpio": 7,
+      "port": "amp.I2S_AMP.BCLK"
+    },
+    "PIN_AMP_I2S_AMP_WS": {
+      "gpio": 15,
+      "port": "amp.I2S_AMP.WS"
+    },
+    "PIN_AMP_I2S_AMP_SD": {
+      "gpio": 16,
+      "port": "amp.I2S_AMP.SD"
+    },
+    "PIN_DISPLAY_I2C_DISPLAY_SCL": {
+      "gpio": 9,
+      "port": "display.I2C_DISPLAY.SCL"
+    },
+    "PIN_DISPLAY_I2C_DISPLAY_SDA": {
+      "gpio": 8,
+      "port": "display.I2C_DISPLAY.SDA"
+    },
+    "PIN_LED_LED_DATA": {
+      "gpio": 17,
+      "port": "led.LED_DATA"
+    }
+  },
+  "libs": [
+    "adafruit/Adafruit BusIO@1.17.0",
+    "adafruit/Adafruit GFX Library@1.11.11",
+    "adafruit/Adafruit SSD1306@2.5.13"
+  ],
+  "includes": [
+    "Adafruit_GFX.h",
+    "Adafruit_SSD1306.h",
+    "Arduino.h",
+    "Wire.h",
+    "driver/i2s.h",
+    "pins.h"
+  ],
+  "usage": [
+    {
+      "block": "mcu",
+      "note": "Fixed native USB and BOOT/RESET are not application GPIOs. I2S0 RX: GPIO4 BCLK,5 WS,6 data-in. I2S1 TX: GPIO7 BCLK,15 WS,16 data-out. GPIO17 goes only to AHCT LED input. Native USB and boot pins remain fixed."
+    },
+    {
+      "block": "usb",
+      "note": "Fixed native USB and BOOT/RESET are not application GPIOs."
+    },
+    {
+      "block": "buttons",
+      "note": "Fixed native USB and BOOT/RESET are not application GPIOs."
+    },
+    {
+      "block": "header",
+      "note": "3.3V header: contacts1GND,2VCC,3SDA,4SCL. Budget50mA max for external device."
+    },
+    {
+      "block": "charger",
+      "note": "USB-present state only; actual4.7kOhmISET reserves210mA charging, SYS1Apeak/800mAcontinuous plus10mAoverhead yields1220mA below guaranteed-lowILIM1237.62mA. No static double counting/waiver for DPPM: reserve full210mA while charging. Pack connectorPHJ1:1=ground/2=BAT+. Separate SHJ2:1=ground/2=TS; connect actual externalSEMITEC103AT-2 C5346323,10kOhmR25+/-1%,B25/85=3435K+/-1%, thermally coupled to that same protected1-cell4.2V pack. NTC is external procurement evidence, not a fake on-board sensor or supplied harness. TIpp13,29–30 nominal0–50C TS window is not a guaranteed exact pack-temperature limit; qualify threshold/NTC tolerances, coupling, wiring fault response and temperature transient. Protected pack must permit210mAcharge and the selected discharge state, with correct polarity and cutoff. Current schema has no typed external-device binding/qualification or pass-through battery-state model: variant remains blocked/unreviewed. Do not claim battery-runtime or all-functions-on-battery proof."
+    },
+    {
+      "block": "buck",
+      "note": "Always on, PS/SYNC low for power-save; no MCU-controlled power sequencing. Fixed FB tied toVOUT; VIN/VINA directly shareSYS per complete TIreference. L1/L2 are bidirectional switching nodes joined only through2.2uH inductor, not GPIO. EP11/PGND3/GND9 must retain local quiet/power-ground layout fromTI. Output800mA peak/650mAcontinuous is a USB-state author allocation below1.2A buck headline, not derived from1.8A switchlimit. Efficiency85%, thetaJA48.7C/W, ambient25C and +/-5% output voltage are screening assumptions; no guaranteed all-temperature output envelope. Coilcraft2.3A10%-dropIsat and1.2A20C-riseIrms are25C reference values; native/core-loss/transient/EMI/thermal/effectiveC remain unverified. Re-author/review input range and inductor peak calculation before claiming battery fallback. Audio/LED current5V variants must remain on qualifiedUSB5V, not this3.3V rail."
+    },
+    {
+      "block": "mic",
+      "note": "ESP32 Arduino core I2S driver,48kHz stereo with64BCLK/frame (3.072MHz),24-bit left-slot SD in32-bit slots; LR is fixedGND. MCU provides BCLK/WS and reads SD; no MCLK. Other MCU families need their own core driver. SD100k-to-GND discharges tri-state bus; bottom acoustic opening and EOL sourcing remain unreviewed."
+    },
+    {
+      "block": "amp",
+      "note": "ESP32 Arduino core I2S driver,48kHz64BCLK/frame. MCU drives BCLK/WS/SD; MAX98357A consumes standardI2S (not B variant left-justified). SD_MODE is physically VDD:LEFT and always enabled; no shutdown GPIO. GAIN is GND:12dB. Output silence with zero samples; no software shutdown claim. External8ohm speaker connects only J1P/J1N, neverGND; keep rail/load within conditional audio budget and independently verify thermal/EMI/rail sequencing."
+    },
+    {
+      "block": "display",
+      "note": "Conditional external128x64 SSD1306 I2C module at0x3C: Wire.begin(SDA,SCL), Adafruit_SSD1306(128,64,&Wire,-1), begin(SSD1306_SWITCHCAPVCC,0x3C); handle false result. This is a cable/module contract, not a bare controller circuit. Select/verify3.3V-compatible module,cablepolarity,pullups,address,50mA maximumdraw and matingSH1mmconnector. FiftymA typical/peak is a conservative reserved budget, not an observed or manufacturer module consumption."
+    },
+    {
+      "block": "led",
+      "note": "Requires an independently qualified800kbps WS2812 timing implementation with resetLOW>280us. No firmware library/version is approved here and digitalWrite loops are not guaranteed. Do not claim firmware/physical done until target-specific timing is compiled and reviewed. MCU data enters only AHCT A; /OE is GND, Y drives physical LED DINpad4. Raw header SPICEpin3 is stale and must never override physicalpad4. Ensure MCU-off/buffer-on input is not floating and verify rail sequencing."
+    }
+  ]
+}

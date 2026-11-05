@@ -1,0 +1,36 @@
+{
+  "note": "Actual R doubled while target unchanged; native simulation must fail",
+  "result": {
+    "gate": "spice",
+    "ok": false,
+    "issues": [
+      {
+        "rule": "spice-target",
+        "severity": "error",
+        "where": "test.reset",
+        "message": "Measured 27.725884256595055 ms; target 13.86294 ± 0.05 ms"
+      },
+      {
+        "rule": "spice-coverage",
+        "severity": "warning",
+        "message": "Only declared isolated profiles are simulated; this is not whole-board analog verification"
+      },
+      {
+        "rule": "spice-evidence",
+        "severity": "warning",
+        "message": "Fixed netlists and raw engine results: /tmp/moki-spice-EmzLou/run-bcfBO1/output.json"
+      }
+    ],
+    "measurements": [
+      {
+        "where": "test.reset",
+        "name": "rc-reset",
+        "measured": 27.725884256595055,
+        "target": 13.86294,
+        "tolerance": 0.05,
+        "unit": "ms",
+        "ok": false
+      }
+    ]
+  }
+}

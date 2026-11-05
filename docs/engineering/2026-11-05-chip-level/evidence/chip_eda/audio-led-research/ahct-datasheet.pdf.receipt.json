@@ -1,0 +1,11 @@
+{
+  "file": "ahct-datasheet.pdf",
+  "url": "https://www.ti.com/lit/ds/symlink/sn74ahct1g125.pdf",
+  "method": "GET",
+  "requestBody": null,
+  "capturedAt": "2026-11-05T22:04:49.883571+00:00",
+  "status": 200,
+  "contentType": "application/pdf",
+  "bytes": 1253856,
+  "sha256": "564b239f73ff629f960832fa7e1c64f6a651eea28f64115ecefcdb7af22ca416"
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "lcsc": "C2861252",
+    "mpn": "BQ24074RGTT",
+    "manufacturer": "Texas Instruments",
+    "package": "VQFN-16-EP(3x3)",
+    "description": "-40℃~+125℃ 1 1.5A 4.2V 4.35V~10.5V 6.5uA Charging IC Lithium Battery Support Support VQFN-16-EP(3x3) Battery Management ROHS",
+    "stock": 191,
+    "catalogReceipt": "sha256:014bee6256abe91fa8335392bcbc59b1fd23cd0b6cf52eff6c272d9bce1b2fce"
+  },
+  {
+    "lcsc": "C54313",
+    "mpn": "BQ24074RGTR",
+    "manufacturer": "Texas Instruments",
+    "package": "QFN-16-EP(3x3)",
+    "description": "-40℃~+125℃ 1 1.5A 4.2V 4.35V~10.2V 6.5uA Charging IC Lithium Battery Not supported Support QFN-16-EP(3x3) Battery Management ROHS",
+    "stock": 0,
+    "catalogReceipt": "sha256:014bee6256abe91fa8335392bcbc59b1fd23cd0b6cf52eff6c272d9bce1b2fce"
+  },
+  {
+    "lcsc": "C3682481",
+    "mpn": "BQ24074RGTRG4",
+    "manufacturer": "Texas Instruments",
+    "package": "VQFN-16(3x3)",
+    "description": "-40℃~+125℃ 1 1.5A 4.2V 4.35V~10.5V 6.5uA Charging IC Lithium Battery Support Support VQFN-16(3x3) Battery Management ROHS",
+    "stock": 0,
+    "catalogReceipt": "sha256:014bee6256abe91fa8335392bcbc59b1fd23cd0b6cf52eff6c272d9bce1b2fce"
+  },
+  {
+    "lcsc": "C9900265255",
+    "mpn": "595-BQ24074RGTT",
+    "manufacturer": "JLCPCB Assembly",
+    "package": "VQFN-16-EP(3x3)",
+    "description": "VQFN-16-EP(3x3) SMT ROHS",
+    "stock": 0,
+    "catalogReceipt": "sha256:014bee6256abe91fa8335392bcbc59b1fd23cd0b6cf52eff6c272d9bce1b2fce"
+  }
+]

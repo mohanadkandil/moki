@@ -1,0 +1,10 @@
+{
+  "mode": "offline-captured-official-source",
+  "sourceUrl": "https://raw.githubusercontent.com/KiCad/kicad-footprints/master/Resistor_SMD.pretty/R_0603_1608Metric.kicad_mod",
+  "sourceSha256": "effcae403a15810b3a1947b8664576270d6781e7cd525e97c47d48be0fdae8ce",
+  "capturedAt": "2026-11-05",
+  "fixture": "tests/blocks-footprint.test.ts#KICAD_SOURCE",
+  "fixtureFileSha256": "397bce1ab616900144e609af27709e4f141f698b7e4bb2244a39384d16018e29",
+  "fetchedThisRun": false,
+  "note": "Exact first-party bytes retained by the existing test fixture; injected fetch supplies only these bytes to ensurePart. No fresh upstream request or stock claim."
+}

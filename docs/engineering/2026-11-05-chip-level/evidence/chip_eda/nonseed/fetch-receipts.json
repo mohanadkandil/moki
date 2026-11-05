@@ -1,0 +1,37 @@
+{
+  "capturedAt": "2026-11-05T21:44:39.634272+00:00",
+  "requests": [
+    {
+      "file": "jlc-catalog.html",
+      "url": "https://jlcpcb.com/partdetail/Sensirion-SHT40_AD1BR2/C2909890",
+      "finalUrl": "https://jlcpcb.com/partdetail/Sensirion-SHT40_AD1BR2/C2909890",
+      "status": 200,
+      "mime": "text/html; charset=utf-8",
+      "bytes": 379036,
+      "sha256": "520cffe4bffdbf768cfbc773378da8875f3d78ce584f7708f8ce9a2a2c80d110"
+    },
+    {
+      "file": "easyeda-components.json",
+      "url": "https://easyeda.com/api/products/C2909890/components?version=6.4.19.5",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "file": "sensirion-sht4x-v7.3.pdf",
+      "url": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
+      "finalUrl": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
+      "status": 200,
+      "mime": "application/pdf",
+      "bytes": 1049911,
+      "sha256": "8db4a43f17149b76811cfb504caaeca4ef844ddc710cb9b45905c51c7ddfe3c2"
+    },
+    {
+      "file": "sensirion-eval-v1.1.pdf",
+      "url": "https://sensirion.com/media/documents/93E06008/640B25FB/SENSEVAL_SHT4XV1_technical_description.pdf",
+      "finalUrl": "https://sensirion.com/media/documents/93E06008/640B25FB/SENSEVAL_SHT4XV1_technical_description.pdf",
+      "status": 200,
+      "mime": "application/pdf",
+      "bytes": 1243348,
+      "sha256": "9b4ca39c5ffe2e36aaa1a04f011ddbd9de3de86896f6e430c3bd8691376cc7d3"
+    }
+  ]
+}

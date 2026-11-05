@@ -1,0 +1,113 @@
+{
+  "by": "chip_review",
+  "ok": true,
+  "scope": "pre-layout schematic electrical review only",
+  "schematicHash": "e16b88d21b07e0b49678e790795a4d4b3c5951a33469a03fea19400597a0b425",
+  "findings": [
+    {
+      "section": "esp32-s3-core",
+      "status": "match",
+      "claim": "Real module pad13 is GPIO19/USB D-,14 is GPIO20/USB D+; EN3 uses10k/1uF and supply bypass22uF+100nF. Graph matches retained manufacturer pin map and reference circuit.",
+      "sources": [
+        {
+          "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+          "pages": "11,13-16,27-28,41"
+        }
+      ]
+    },
+    {
+      "section": "esp32-s3-core",
+      "status": "conditional",
+      "claim": "GPIO0 pull-up/button-to-ground and GPIO45/46 pull-downs preserve normal SPI boot and selected download mode under factory-default eFuses. No arbitrary eFuse reconfiguration or reset-transient hardware proof is approved."
+    },
+    {
+      "section": "usb-c-sink",
+      "status": "match",
+      "claim": "J1 physical A5/B5 each have independent5.1k ground termination; A6/B6 join D+,A7/B7 join D-. USBLC6 pad1/6 and3/4 are the two data channels,pad2ground,pad5VBUS.22Ohm series links are supported by Espressif USB guidance.",
+      "sources": [
+        {
+          "url": "https://www.st.com/resource/en/datasheet/usblc6-2.pdf",
+          "pages": "1"
+        },
+        {
+          "url": "https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s3/schematic-checklist.html#usb"
+        },
+        {
+          "url": "https://community.infineon.com/t5/Knowledge-Base-Articles/USB-Type-C-connector-Rp-Rd-and-Ra-termination-resistors/ta-p/253544"
+        }
+      ]
+    },
+    {
+      "section": "usb-c-sink",
+      "status": "conditional",
+      "claim": "Power budget requires the declared known5V/1.5A external source. No current-advertisement detection,PD,universal USB-port current allowance or system-level ESD certification is claimed."
+    },
+    {
+      "section": "ldo-ap2112-3v3",
+      "status": "match",
+      "claim": "AP2112K VIN1/GND2/EN3/NC4/VOUT5 and1uF input/output bypass agree with actual datasheet p2; EN tied to VBUS and NC remains unconnected.",
+      "sources": [
+        {
+          "url": "https://www.diodes.com/datasheet/download/AP2112.pdf",
+          "pages": "1-3"
+        }
+      ]
+    },
+    {
+      "section": "ldo-ap2112-3v3",
+      "status": "conditional",
+      "claim": "250mA continuous rating is a declared25C/184C-per-W thermal model; worst5.25V input and3.234V output predicts about117.7C junction below chosen125C.550mA plan peak remains transient-unverified; no continuous500-600mA board or measured thermal claim."
+    },
+    {
+      "section": "boot-reset-buttons",
+      "status": "match",
+      "claim": "Normally-open SW1 pulls EN low; SW2 pulls GPIO0 low against its10k pull-up. References and actual global graph match the module reference topology; pressed/bounce dynamics remain outside the open-contact RC model."
+    },
+    {
+      "section": "i2c-header",
+      "status": "match",
+      "claim": "Physical J2 pins1=GND,2=3.3V,3=SDA,4=SCL match the declared harness assignment and actual importer pads. Shared10k pull-ups reach3.3V; mechanical tabs5/6 remain electrically unused. Bus waveform/capacitance validation is pending."
+    },
+    {
+      "section": "whole-plan",
+      "status": "match",
+      "claim": "All named-net terminal sets equal the retained successful22-part spike input. Final source snippets/page references and all five boxed schematic sections were inspected. This is independent pre-layout electrical review only."
+    },
+    {
+      "section": "placement-revision",
+      "status": "conditional",
+      "claim": "LDOv2 changes only bounded placement, C2 distance4.9244mm remains below6mm; logical nets,values and electrical declarations are unchanged. Physical overlap clearance and route/DRC remain unverified."
+    }
+  ],
+  "artifacts": {
+    "plan.json": "cd69c005e15f4eb9acc36dc0ec76aca469922f72177a6dc28d63df80ebdf3328",
+    "schematic.svg": "b90a005fb530839ab79ef4d998f44ac69b09ce197403641b39eb47e83bfed70d",
+    "schematic.png": "8e3a36f5d4050b200f1d5e7762f54beb74bd66c417b6d1f89542cf5aa32d03bb"
+  },
+  "limits": [
+    "No block promotion",
+    "Fresh matching-hash SPICE,DRC and compile gates remain separately mandatory",
+    "No final footprint/paste/antenna/pour/physical fit,manufacturability,thermal-transient or hardware approval"
+  ],
+  "previousSchematicHash": "6030bfeb456ff4f4410ba2dbc527e911548e29a38906ad2c2d27b4d235642704",
+  "revisionReview": {
+    "kind": "bounded placement correction only",
+    "ldoRevision": 2,
+    "electricalComparison": "Complete declarations excluding version/contentHash/status/review receipts/part poses compare equal against prior cached revisions; nets,values,pins,power and constraints unchanged.",
+    "distanceMm": {
+      "ldoC1": 5.024937810560445,
+      "ldoC2": 4.924428900898052
+    },
+    "nativeVerification": "Not performed by reviewer; failed native jobs remain failures. Fresh route/DRC/copper/paste/geometry/compile checks remain mandatory."
+  },
+  "preflight": [
+    {
+      "gate": "erc",
+      "ok": true
+    },
+    {
+      "gate": "power",
+      "ok": true
+    }
+  ]
+}

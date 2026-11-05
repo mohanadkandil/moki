@@ -1,0 +1,282 @@
+{
+  "source": "JLCEDA/EasyEDA Official Library",
+  "sourceHomepages": [
+    "https://lceda.cn/",
+    "https://easyeda.com/"
+  ],
+  "retrievedUtc": "2026-11-05T21:49:22.077921+00:00",
+  "parts": [
+    {
+      "candidate": "ap2112",
+      "supplierCode": "C51118",
+      "manufacturer": "DIODES(\u7f8e\u53f0)",
+      "mpn": "AP2112K-3.3TRG1",
+      "symbolUuid": "ed114c3e62d8498cbfcaae87b4acc871",
+      "footprintUuid": "7ec9305c6bfd40199d1dde43ba8e9df2",
+      "footprintTitle": "SOT-25-5_L2.9-W1.6-P0.95-LS2.8-BL",
+      "symbolPinMap": {
+        "1": "VIN",
+        "2": "GND",
+        "3": "EN",
+        "4": "NC",
+        "5": "VOUT"
+      },
+      "footprintPadNumbers": [
+        "4",
+        "5",
+        "1",
+        "2",
+        "3"
+      ],
+      "modelRecordCount": 1,
+      "jlcOnSale": 1,
+      "updatedAt": "2026-10-31 04:57:34",
+      "sourceFile": "ap2112-easyeda.json",
+      "verification": "Symbol pins compared with manufacturer datasheet. Footprint pad identities counted; no converted tscircuit/render/measured-fit claim.",
+      "modelPointers": [
+        {
+          "uuid": "6d166d1d6c064b99aa79465714e989c1",
+          "title": "SOT-25-5_L2.9-W1.6-P0.95-LS2.8-BL",
+          "c_origin": "3999.5011,2998",
+          "c_rotation": "0,0,0",
+          "z": "0"
+        }
+      ]
+    },
+    {
+      "candidate": "me6211",
+      "supplierCode": "C82942",
+      "manufacturer": "MICRONE(\u5357\u4eac\u5fae\u76df)",
+      "mpn": "ME6211C33M5G-N",
+      "symbolUuid": "9bb3ef84a78d1de2fb3f7c22892c0e2e",
+      "footprintUuid": "a801549ddf8f431796761cd071417387",
+      "footprintTitle": "SOT-23-5_L3.0-W1.7-P0.95-LS2.8-BL",
+      "symbolPinMap": {
+        "1": "VIN",
+        "2": "VSS",
+        "3": "CE",
+        "4": "NC",
+        "5": "VOUT"
+      },
+      "footprintPadNumbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "modelRecordCount": 1,
+      "jlcOnSale": 1,
+      "updatedAt": "2026-10-31 04:57:31",
+      "sourceFile": "me6211-easyeda.json",
+      "verification": "Symbol pins compared with manufacturer datasheet. Footprint pad identities counted; no converted tscircuit/render/measured-fit claim.",
+      "modelPointers": [
+        {
+          "uuid": "460193f9bf2d42e58cf3c2f675b07dc6",
+          "title": "SOT-23-5_L2.9-W1.6-H1.1-LS2.8-P0.95",
+          "c_origin": "3978.7,2994.2",
+          "c_rotation": "0,0,90",
+          "z": "0"
+        }
+      ]
+    },
+    {
+      "candidate": "mcp73831",
+      "supplierCode": "C424093",
+      "manufacturer": "MICROCHIP(\u7f8e\u56fd\u5fae\u82af)",
+      "mpn": "MCP73831T-2ACI/OT",
+      "symbolUuid": "5676554bd4914d0989291bb3d92a3b97",
+      "footprintUuid": "a801549ddf8f431796761cd071417387",
+      "footprintTitle": "SOT-23-5_L3.0-W1.7-P0.95-LS2.8-BL",
+      "symbolPinMap": {
+        "1": "STAT",
+        "2": "VSS",
+        "3": "VBAT",
+        "4": "VDD",
+        "5": "PROG"
+      },
+      "footprintPadNumbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "modelRecordCount": 1,
+      "jlcOnSale": 1,
+      "updatedAt": "2026-10-31 04:59:26",
+      "sourceFile": "mcp73831-easyeda.json",
+      "verification": "Symbol pins compared with manufacturer datasheet. Footprint pad identities counted; no converted tscircuit/render/measured-fit claim.",
+      "modelPointers": [
+        {
+          "uuid": "460193f9bf2d42e58cf3c2f675b07dc6",
+          "title": "SOT-23-5_L2.9-W1.6-H1.1-LS2.8-P0.95",
+          "c_origin": "3978.7,2994.2",
+          "c_rotation": "0,0,90",
+          "z": "0"
+        }
+      ]
+    },
+    {
+      "candidate": "tps63001",
+      "supplierCode": "C28060",
+      "manufacturer": "TI(\u5fb7\u5dde\u4eea\u5668)",
+      "mpn": "TPS63001DRCR",
+      "symbolUuid": "31774a8aeb744798878c44129d79b91d",
+      "footprintUuid": "62513b7256304f92999c26b8d3d96a55",
+      "footprintTitle": "VSON-10_L3.0-W3.0-P0.50-TL-EP_TPS62410DRCR",
+      "symbolPinMap": {
+        "1": "VOUT",
+        "2": "L2",
+        "3": "PGND",
+        "4": "L1",
+        "5": "VIN",
+        "6": "EN",
+        "7": "PS/SYNC",
+        "8": "VINA",
+        "9": "GND",
+        "10": "FB",
+        "11": "PAD"
+      },
+      "footprintPadNumbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "11",
+        "10",
+        "9"
+      ],
+      "modelRecordCount": 1,
+      "jlcOnSale": 1,
+      "updatedAt": "2026-10-31 05:08:51",
+      "sourceFile": "tps63001-easyeda.json",
+      "verification": "Symbol pins compared with manufacturer datasheet. Footprint pad identities counted; no converted tscircuit/render/measured-fit claim.",
+      "modelPointers": [
+        {
+          "uuid": "8dabb9c4812942d9a9738a1b03d26cd4",
+          "title": "VSON-10_L3.0-W3.0-H0.6-P0.50_TPS",
+          "c_origin": "4001.0669,3000.7869",
+          "c_rotation": "0,0,270",
+          "z": "0"
+        }
+      ]
+    },
+    {
+      "candidate": "jst-ph",
+      "supplierCode": "C131337",
+      "manufacturer": "JST",
+      "mpn": "B2B-PH-K-S(LF)(SN)",
+      "symbolUuid": "4363dc679f85409d8170eaa85095a946",
+      "footprintUuid": "685bd04c33df492ab1ad332fe461c196",
+      "footprintTitle": "CONN-TH_B2B-PH-K-S",
+      "symbolPinMap": {
+        "1": "1",
+        "2": "2"
+      },
+      "footprintPadNumbers": [
+        "2",
+        "1"
+      ],
+      "modelRecordCount": 1,
+      "jlcOnSale": 1,
+      "updatedAt": "2026-10-31 05:13:34",
+      "sourceFile": "jst-ph-easyeda.json",
+      "verification": "Symbol pins compared with manufacturer datasheet. Footprint pad identities counted; no converted tscircuit/render/measured-fit claim.",
+      "modelPointers": [
+        {
+          "uuid": "ee6b32b5c03144688a5663b32f9648c4",
+          "title": "CONN-TH_PH2.00-LI-2P",
+          "c_origin": "4001.437,2994.6378",
+          "c_rotation": "0,0,180",
+          "z": "-13.7795"
+        }
+      ]
+    },
+    {
+      "candidate": "jst-ph-smt",
+      "supplierCode": "C160352",
+      "manufacturer": "JST",
+      "mpn": "B2B-PH-SM4-TB(LF)(SN)",
+      "symbolUuid": "3cd1d38855084e1c80c20710c159faa5",
+      "footprintUuid": "e19ac9622efb4df096c5a7c914bb579e",
+      "footprintTitle": "CONN-SMD_B2B-PH-SM4-TB-LF-SN",
+      "symbolPinMap": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4"
+      },
+      "footprintPadNumbers": [
+        "2",
+        "1",
+        "3",
+        "4"
+      ],
+      "sourceFile": "jst-ph-smt-easyeda.json",
+      "verification": "JST PH2pos SMT alternative. Mechanical anchor pad treatment still needs importer verification.",
+      "modelPointers": [
+        {
+          "uuid": "da579f7d56c247789310da6faac6a909",
+          "title": "CONN-SMD_B2B-PH-SM4-TB-LF-SN",
+          "c_origin": "4000,3020.8738",
+          "c_rotation": "0,0,0",
+          "z": "0"
+        }
+      ]
+    },
+    {
+      "candidate": "bq24074",
+      "supplierCode": "C2861252",
+      "manufacturer": "TI(\u5fb7\u5dde\u4eea\u5668)",
+      "mpn": "BQ24074RGTT",
+      "symbolUuid": "cfffb331b55d4696baeeb729781fd63e",
+      "footprintUuid": "84fe734ae1984d39a6845f3953911bd5",
+      "footprintTitle": "VQFN-16_L3.0-W3.0-P0.50-TL-EP1.7",
+      "symbolPinMap": {
+        "1": "TS",
+        "2": "BAT",
+        "3": "BAT",
+        "4": "CE#",
+        "5": "EN2",
+        "6": "EN1",
+        "7": "PGOOD#",
+        "8": "VSS",
+        "9": "CHG#",
+        "10": "OUT",
+        "11": "OUT",
+        "12": "ILIM",
+        "13": "IN",
+        "14": "TMR",
+        "15": "ITERM",
+        "16": "ISET",
+        "17": "EP"
+      },
+      "footprintPadNumbers": [
+        "17",
+        "16",
+        "15",
+        "14",
+        "13",
+        "12",
+        "11",
+        "10",
+        "9",
+        "8",
+        "7",
+        "6",
+        "5",
+        "4",
+        "3",
+        "2",
+        "1"
+      ],
+      "sourceFile": "bq24074-easyeda.json",
+      "verification": "All electrical pin identities compared with TI SLUS810N pp7-9; exposed pad17 must connectVSS. ParallelBAT2/3 andOUT10/11 preservephysicalpads. No nativeconversion/geometrytest by this worker."
+    }
+  ]
+}

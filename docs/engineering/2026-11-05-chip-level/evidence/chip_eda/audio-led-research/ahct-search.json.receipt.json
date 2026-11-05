@@ -1,0 +1,15 @@
+{
+  "file": "ahct-search.json",
+  "url": "https://jlcpcb.com/api/overseas-pcb-order/v1/shoppingCart/smtGood/selectSmtComponentList",
+  "method": "POST",
+  "requestBody": {
+    "keyword": "SN74AHCT1G125",
+    "currentPage": 1,
+    "pageSize": 8
+  },
+  "capturedAt": "2026-11-05T22:04:49.639035+00:00",
+  "status": 200,
+  "contentType": "application/json",
+  "bytes": 49216,
+  "sha256": "4efb22255cf7caa673e3a9624a45e362a9b8d99cf7d52a78e95fe652a75fcbbb"
+}

@@ -1,0 +1,1239 @@
+--- PDF PAGE 1 ---
+                                                                                  ME6211
+
+
+        High Speed LDO Regulators, High PSRR, Low noise, ME6211 Series
+
+   General Description                                                      Features
+
+       The    ME6211      series  are  highly  accurate,  low
+                                                                                Maximum Output Current:           500mA
+  noise, CMOS LDO Voltage Regulators. Offering low                              （V    ＝4.3V,V        ＝3.3V）
+                                                                                     IN          OUT
+  output noise, high ripple rejection ratio, low dropout
+                                                                                Dropout Voltage:      100mV@ IOUT =100mA
+  and  very  fast  turn-on  times,  the     ME6211      series  is              Operating Voltage Range:          2V～6.0V
+  ideal   for   today’s   cutting   edge   mobile   phone.
+                                                                                Highly Accuracy: ±2％
+  Internally  the ME6211 includes  a  reference  voltage                        Low Power Consumption: 40uA（TYP.）
+  source,  error  amplifiers,  driver  transistors,  current
+                                                                                Standby Current: 0.1uA（TPY.）
+  limiters  and  phase  compensators.  The             ME6211’s                 High Ripple Rejection: 70dB@1KHz
+  current  limiters'  foldback  circuit  also  operates  as  a
+                                                                                 （ME6211C33）
+  short  protect  for  the  output  current  limiter    and.  the               Low output noise: 50uVrms
+  output   pin.   The      ME6211       series   is   also   fully
+                                                                                Line Regulation: 0.05％（TYP.）
+  compatible    with   low   ESR    ceramic    capacitors,
+  reducing  cost  and  improving  output  stability.  This
+
+  high  level  of  output  stability  is  maintained  even
+  during frequent load fluctuations, due to the excellent                   Typical Application
+                                                                                Mobile phones
+  transient   response   performance   and   high   PSRR
+  achieved  across  a  broad  range  of  frequencies.The                        Cordless phones, radio communication equipment
+                                                                                Portable games
+  CE  function  allows  the  output  of  regulator  to  be
+  turned   off,   resulting   in   greatly   reduced   power                    Cameras, Video cameras
+                                                                                Reference voltage sources
+  consumption.
+                                                                                Battery powered equipment
+
+  Package
+  ● 3-pin     SOT89-3，SOT23-3
+
+  ● 5-pin     SOT23-5，SOT353
+  ● 6-pin     DFN2*2-6L
+
+
+
+
+
+        V14                                                            www.microne.com.cn                                                 Page 1 of 20
+
+
+--- PDF PAGE 2 ---
+                                                                                                                                                 ME6211
+
+  Typical Application Circuit
+
+
+
+
+
+
+
+
+
+
+
+                                                                Fig1. ME6211A    series
+
+
+
+
+
+
+
+
+
+
+
+                                                              Fig2. ME6211C    series
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                              Fig3. ME6211H    series
+
+
+
+
+
+
+
+
+
+
+
+
+          V14                                                               www.microne.com.cn                                                 Page 2 of 20
+
+--- PDF PAGE 3 ---
+                                                                                                                  ME6211
+
+   Selection Guide
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          product series                      product function                    Output voltage                    Package
+
+         ME6211A12PG                 Enable the                                          1.2V                        SOT89-3
+                                     internal connection of high
+
+        ME6211C33M5G                 Enable can be set                                   3.3V                        SOT23-5
+
+        ME6211H33M5G                 Enable connected to a low                           3.3V                        SOT23-5
+
+     Specific voltage    and package form pictured above
+
+
+
+
+
+
+
+
+
+
+
+
+
+        V14                                                               www.microne.com.cn                                                 Page 3 of 20
+
+--- PDF PAGE 4 ---
+                                                                                                               ME6211
+
+Pin Configuration
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pin Assignment
+
+ME6211AXXG
+                            Pin Number
+           M3                          P                     P1               Pin Name                         Functions
+       SOT23-3                    SOT89-3                SOT89-3
+            1                          1                      2                   VSS                            Ground
+            2                          3                      1                  VOUT                            Output
+            3                          2                      3                   VIN                         Power Input
+The difference of printing on the chip between P and P1 is :            P:                      ,   P1:
+
+ME6211AXXG-DS
+                    Pin Number                                     Pin Name                                 Functions
+                      SOT23-3
+                           1                                           VIN                                 Power Input
+                           2                                          VOUT                                    Output
+                           3                                           VSS                                   Ground
+
+ME6211CXXG/ ME6211HXXG
+                         Pin Number                                      Pin Name                            Functions
+        SOT23-5/SOT353                         DFN2*2-6L
+                  1                                  3                       VIN                            Power Input
+                  2                                  2                       VSS                               Ground
+                  3                                  1                       CE                          ON / OFF Control
+                  4                                 5,6                      NC                             No Connect
+                  5                                  4                      VOUT                               Output
+
+
+
+
+
+
+
+
+
+        V14                                                               www.microne.com.cn                                                 Page 4 of 20
+
+--- PDF PAGE 5 ---
+                                                                                                              ME6211
+
+Block Diagram
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Absolute Maximum Ratings
+
+                   Parameter                             Symbol                       Ratings                             Units
+                  Input Voltage                             VIN                          6.5                                V
+                 Output Current                            IOUT                          600                               mA
+                 Output Voltage                            VOUT                 Vss-0.3～VIN +0.3                            V
+                 CE Pin Voltage                            VCE                  Vss-0.3～VIN +0.3                            V
+                                    SOT23                                                300
+      Power Dissipation             SOT353                  P                            250                               mW
+                                    DFN2*2-6L                 D                          300
+
+                                    SOT89                                                500
+       Operating Temperature Range                         TOPR                    －40～＋150                                 ℃
+         Storage Temperature Range                         TSTG                    －40～＋150                                 ℃
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        V14                                                               www.microne.com.cn                                                 Page 5 of 20
+
+--- PDF PAGE 6 ---
+                                                                                                              ME6211
+
+Electrical Characteristics
+ME6211C12        (V  = V     +1V，V        = V   ，C     C  =1uF，Ta=25OC ,unless otherwise noted)
+                    IN   OUT           CE     IN    IN=  L
+          Parameter                  Symbol                    Conditions                     Min.         Typ.         Max.      Units
+ Output Voltage                      VOUT(E)                   IOUT=30mA,                   X 0.98       VOUT (T)      X 1.02        V
+                                     (Note 2)                 VIN= VOUT+1V                               (Note 1)
+ Maximum Output Current               IOUTMAX                 VIN= VOUT+1V                                  300                    mA
+ Load Regulation                      ∆V                     VIN= VOUT+1V ,                                  8                     mV
+                                          OUT              1mA≤I       ≤100mA
+                                                                   OUT
+ Dropout Voltage                       VDIF1                  IOUT =100mA                                   280                    mV
+ (Note 1)                              VDIF2                  IOUT =200mA                                   500                    mV
+ Supply Current                         ISS                   VIN= VOUT+1V                                  40                      μA
+ Stand-by Current                       ICEL                     VCE＝0V                                     0.1                     μA
+                                      ∆VOUT                    IOUT =40mA
+ Line Regulation                   ∆VIN • VOUT             V    +1V ≤V     ≤6.5V                           0.03                    %/V
+                                                            OUT          IN
+ CE    “High” Voltage                 VCEH                       Start up                     1.0                                    V
+ CE    “Low” Voltage                   VCEL                     Shut down                                                0.5         V
+ Output noise                           EN           IOUT =40mA，300Hz~50kHz                                 50                    uVrms
+                                                                         IOUT=10mA,                         70
+ Ripple Rejection Rate                PSRR          VIN = [VOUT          1kHZ                                                       dB
+                                                    +1]V +1Vp-pAC        IOUT=100mA,                        62
+                                                                         10kHZ
+  ME6211C18 (V        = V     +1V，V        = V  ，C      C  =1uF，Ta=25OC, unless otherwise noted)
+                    IN    OUT          CE      IN    IN=  L
+          Parameter                  Symbol                    Conditions                     Min.         Typ.         Max.      Units
+ Output Voltage                      VOUT(E)                   IOUT=30mA,                   X 0.98       VOUT (T)      X 1.02        V
+                                     (Note 2)                 VIN= VOUT+1V                               (Note 1)
+ Maximum Output Current               IOUTMAX                 VIN= VOUT+1V                                  300                    mA
+ Load Regulation                      ∆V                     VIN= VOUT+1V ,                                  9                     mV
+                                          OUT              1mA≤I       ≤100mA
+                                                                   OUT
+ Dropout Voltage                       VDIF1                  IOUT =100mA                                   200                    mV
+ (Note 1)                              VDIF2                  IOUT =200mA                                   400                    mV
+ Supply Current                         ISS                   VIN= VOUT+1V                                  40                      μA
+ Stand-by Current                       ICEL                     VCE＝0V                                     0.1                     μA
+ Line Regulation                      ∆VOUT                    IOUT =40mA                                  0.05                    %/V
+                                   ∆VIN • VOUT             VOUT+1V ≤VIN≤6.5V
+ CE    “High” Voltage                 VCEH                       Start up                     1.0                                    V
+ CE    “Low” Voltage                   VCEL                     Shut down                                                0.5         V
+ Output noise                           EN           IOUT =40mA，300Hz~50kHz                                 50                    uVrms
+                                                                         IOUT=10mA,                         70
+ Ripple Rejection Rate                PSRR             VIN = [VOUT       1kHZ                                                       dB
+                                                    +1]V+1Vp-pAC         IOUT=100mA,                        62
+                                                                         10kHZ
+
+
+
+        V14                                                               www.microne.com.cn                                                 Page 6 of 20
+
+--- PDF PAGE 7 ---
+                                                                                                              ME6211
+  ME6211C25         (VIN= VOUT+1V，VCE = VIN，CIN=CL=1uF，Ta=25OC, unless otherwise noted)
+
+          Parameter                  Symbol                    Conditions                     Min.         Typ.         Max.      Units
+ Output Voltage                      VOUT(E)                   IOUT=30mA,                   X 0.98       VOUT (T)      X 1.02       V
+                                     (Note 2)                 VIN= VOUT+1V                               (Note 1)
+ Maximum Output Current               IOUTMAX                 VIN= VOUT+1V                                  400                    mA
+ Load Regulation                      ∆V                     VIN= VOUT+1V ,                                  9                     mV
+                                          OUT              1mA≤I       ≤100mA
+                                                                   OUT
+ Dropout Voltage                       VDIF1                  IOUT =100mA                                   110                    mV
+ (Note 1)                              VDIF2                  IOUT =200mA                                   220                    mV
+ Supply Current                         ISS                   VIN= VOUT+1V                                  40                      μA
+ Stand-by Current                       ICEL                     VCE＝0V                                      0                      μA
+ Line Regulation                      ∆VOUT                    IOUT =40mA                                  0.04                    %/V
+                                   ∆VIN • VOUT            VOUT+1V ≤VIN≤6.5V
+ CE“High”Voltage                      VCEH                       Start up                     1.0                                   V
+ CE “Low” Voltage                      VCEL                     Shut down                                                0.5        V
+ Output noise                           EN           IOUT =40mA，300Hz~50kHz                                 50                    uVrms
+                                                                       IOUT=10mA,                           70
+                                                                       1kHZ
+ Ripple Rejection Rate                PSRR          VIN=[VOUT+1]V      IOUT=100mA,                          62                      dB
+                                                    +1Vp-pAC           10kHZ
+                                                                       IOUT=200mA,                          62
+                                                                       10kHZ
+ Short-circuit Current                 I            VIN=  VOUT+1V,  VCE＝VIN,  VOUT                          120                    mA
+                                       SHORT        ＝0V
+ME6211C28        (V  = V     +1V，V        = V   ，C     C  =1uF，Ta=25OC, unless otherwise noted)
+                    IN    OUT          CE     IN    IN=  L
+          Parameter                  Symbol                    Conditions                     Min.         Typ.         Max.      Units
+ Output Voltage                      VOUT(E)                   IOUT=30mA,                   X 0.98       VOUT (T)      X 1.02       V
+                                     (Note 2)                 VIN= VOUT+1V                               (Note 1)
+ Maximum Output Current               IOUTMAX                 VIN= VOUT+1V                                  450                    mA
+ Load Regulation                      ∆V                     VIN= VOUT+1V ,                                  7                     mV
+                                          OUT              1mA≤I       ≤100mA
+                                                                   OUT
+ Dropout Voltage                       VDIF1                  IOUT =100mA                                   110                    mV
+ (Note 1)                              VDIF2                  IOUT =200mA                                   220                    mV
+ Supply Current                         ISS                   VIN= VOUT+1V                                  50                      μA
+ Stand-by Current                       ICEL                     VCE＝0V                                      0                      μA
+                                      ∆VOUT                    IOUT =40mA
+ Line Regulation                   ∆VIN • VOUT            V     +1V ≤V     ≤6.5V                           0.04                    %/V
+                                                            OUT          IN
+ CE“High”Voltage                      VCEH                       Start up                     1.0                                   V
+ CE “Low” Voltage                      VCEL                     Shut down                                                0.5        V
+ Output noise                           EN           IOUT =40mA，300Hz~50kHz                                 50                    uVrms
+                                                                       IOUT=10mA,                           70
+ Ripple Rejection Rate                PSRR          VIN=[VOUT+1]V      1kHZ                                                         dB
+                                                    +1Vp-pAC           IOUT=100mA,                          62
+                                                                       10kHZ
+
+        V14                                                               www.microne.com.cn                                                 Page 7 of 20
+
+--- PDF PAGE 8 ---
+                                                                                                               ME6211
+
+                                                                        IOUT=200mA,                          62
+                                                                        10kHZ
+ Short-circuit Current                 I            VIN=  VOUT+1V,  VCE＝VIN,  VOUT                           120                     mA
+                                        SHORT
+                                                    ＝0V
+
+  ME6211C30         (V  = V     +1V，V        = V   ，C     C  =1uF，Ta=25OC, unless otherwise noted)
+                       IN    OUT          CE     IN     IN= L
+          Parameter                   Symbol                    Conditions                     Min.         Typ.         Max.      Units
+ Output Voltage                       VOUT(E)                   IOUT=30mA,                   X 0.98       VOUT (T)      X 1.02        V
+                                      (Note 2)                 VIN= VOUT+1V                               (Note 1)
+ Maximum Output Current               IOUTMAX                  VIN= VOUT+1V                                  500                     mA
+ Load Regulation                       ∆V                     VIN= VOUT+1V ,                                  8                      mV
+                                          OUT
+                                                            1mA≤IOUT≤100mA
+ Dropout Voltage                        VDIF1                  IOUT =100mA                                   100                     mV
+ (Note 1)                               VDIF2                  IOUT =200mA                                   210                     mV
+ Supply Current                          ISS                   VIN= VOUT+1V                                  60                      μA
+ Stand-by Current                       ICEL                      VCE＝0V                                      0                      μA
+ Line Regulation                       ∆VOUT                    IOUT =40mA                                  0.05                    %/V
+                                    ∆VIN • VOUT            VOUT+1V ≤VIN≤6.5V
+ CE    “High” Voltage                  VCEH                       Start up                     1.0                                    V
+ CE    “Low” Voltage                   VCEL                     Shut down                                                 0.5         V
+ Output noise                            EN           IOUT =40mA，300Hz~50kHz                                 50                    uVrms
+                                                                        IOUT=10mA,                           70
+                                                      V    = [V         1kHZ
+                                                        IN     OUT      I    =100mA,
+                                                                         OUT
+ Ripple Rejection Rate                 PSRR               +1]V          10kHZ                                62                      dB
+                                                      +1Vp-pAC          I    =200mA,
+                                                                         OUT                                 62
+                                                                        10kHZ
+ Short-circuit Current                 I             VIN= VOUT+1V, VCE＝VIN, VOUT                             120                     mA
+                                        SHORT                       ＝0V
+
+
+  ME6211C33  (VIN= VOUT+1V，VCE = VIN，CIN=CL=1uF，Ta=25OC, unless otherwise noted)
+
+          Parameter                   Symbol                    Conditions                     Min.         Typ.         Max.      Units
+ Output Voltage                       VOUT(E)                   IOUT=30mA,                   X 0.98       VOUT (T)      X 1.02        V
+                                      (Note 2)                 VIN= VOUT+1V                               (Note 1)
+ Maximum Output Current               IOUTMAX                  VIN= VOUT+1V                                  500                     mA
+ Load Regulation                       ∆V                     VIN= VOUT+1V ,                                  9                      mV
+                                          OUT
+                                                            1mA≤IOUT≤100mA
+ Dropout Voltage                        VDIF1                  IOUT =100mA                                   120                     mV
+ (Note 1)                               VDIF2                  IOUT =200mA                                   260                     mV
+ Supply Current                          ISS                   VIN= VOUT+1V                                  60                      μA
+ Stand-byCurrent                        ICEL                      VCE＝0V                                     0.1                     μA
+ Line Regulation                       ∆VOUT                    IOUT =40mA                                  0.05                    %/V
+                                    ∆VIN • VOUT            VOUT+1V ≤VIN≤6.5V
+ CE    “High” Voltage                  VCEH                       Start up                     1.0                                    V
+
+
+        V14                                                               www.microne.com.cn                                                 Page 8 of 20
+
+--- PDF PAGE 9 ---
+                                                                                                                                          ME6211
+
+ CE    “Low” Voltage                            VCEL                            Shut down                                                              0.5            V
+ Output noise                                     EN               IOUT =40mA，300Hz~50kHz                                               50                         uVrms
+                                                                                              IOUT=10mA                                 70
+                                                                                              ,1kHZ
+ Ripple Rejection Rate                          PSRR              VIN = [VOUT +1]V            IOUT=100m                                 62                           dB
+                                                                      +1Vp-pAC                A,10kHZ
+                                                                                              IOUT=200m                                 62
+                                                                                              A,10kHZ
+ Short-circuit Current                          I                 VIN= VOUT+1V, VCE＝VIN, VOUT                                          150                           mA
+                                                 SHORT                              ＝0V
+
+
+   ME6211C50 (VIN= VOUT+1V，VCE = VIN，CIN=CL=1uF，Ta=25OC, unless otherwise noted)
+
+             Parameter                         Symbol                          Conditions                            Min.              Typ.           Max.         Units
+ Output Voltage                                VOUT(E)                         IOUT=30mA,                           X 0.98          VOUT (T)         X 1.02           V
+                                               (Note 2)                       VIN= VOUT+1V                                          (Note 1)
+ Maximum Output Current                         IOUTMAX                       VIN= VOUT+1V                                             500                           mA
+ Load Regulation                                ∆V                           VIN= VOUT+1V ,                                              8                                                                                        mV
+                                                     OUT                  1mA≤I          ≤100mA
+                                                                                    OUT
+ Dropout Voltage                                 VDIF1                        IOUT =100mA                                              100                           mV
+ (Note 1)                                        VDIF2                        IOUT =200mA                                              200                           mV
+ Supply Current                                    ISS                        VIN= VOUT+1V                                              40                           μA
+ Stand-by Current                                 ICEL                            VCE＝0V                                                 0                           μA
+ Line Regulation                                ∆VOUT                          IOUT =40mA                                              0.05                         %/V
+                                             ∆VIN • VOUT                 VOUT+1V ≤VIN≤6.5V
+ CE    “High” Voltage                           VCEH                              Start up                            1.0                                             V
+ CE    “Low” Voltage                            VCEL                            Shut down                                                              0.7            V
+ Output noise                                     EN               IOUT =40mA，300Hz~50kHz                                               50                         uVrms
+                                                                                            IOUT=10mA,                                  70
+                                                                                            1kHZ
+ Ripple Rejection Rate                          PSRR                 VIN = [VOUT            IOUT=100mA,                                 62                           dB
+                                                                 +1]V +1Vp       -pAC       10kHZ
+                                                                                            IOUT=200mA,                                 62
+                                                                                            10kHZ
+ Short-circuit Current                          I                 VIN= VOUT+1V, VCE＝VIN, VOUT                                          110                           mA
+                                                 SHORT
+                                                                                    ＝0V
+
+ME6211A30            (V    = V       +1V，C          C   =1uF，Ta=25OC, unless otherwise noted)
+                         IN     OUT              IN=   L
+             Parameter                         Symbol                          Conditions                            Min.              Typ.           Max.         Units
+ Output Voltage                                VOUT(E)                         IOUT=30mA,                           X 0.98          VOUT (T)         X 1.02           V
+                                               (Note 2)                       VIN= VOUT+1V                                          (Note 1)
+ Maximum Output Current                         IOUTMAX                       VIN= VOUT+1V                                             500                           mA
+ Load Regulation                                ∆V                           VIN= VOUT+1V ,                                              8                           mV
+                                                     OUT                  1mA≤I          ≤100mA
+                                                                                    OUT
+ Dropout Voltage                                 VDIF1                        IOUT =100mA                                              100                           mV
+
+          V14                                                               www.microne.com.cn                                                 Page 9 of 20
+
+--- PDF PAGE 10 ---
+                                                                                                              ME6211
+
+ (Note 1)                              VDIF2                   IOUT =200mA                                  210                     mV
+ Supply Current                          ISS                  VIN= VOUT+1V                                   60                     μA
+ Line Regulation                      ∆VOUT                    IOUT =40mA                                  0.05                    %/V
+                                   ∆VIN • VOUT             VOUT+1V ≤VIN≤6.5V
+ Output noise                           EN           IOUT =40mA，300Hz~50kHz                                  50                   uVrms
+                                                                         IOUT=10mA,                          70
+                                                                         1kHZ
+ Ripple Rejection Rate                PSRR             VIN = [VOUT       IOUT=100mA,                         62                     dB
+                                                    +1]V +1Vp   -pAC     10kHZ
+                                                                         IOUT=200mA,                         62
+                                                                         10kHZ
+ Short-circuit Current                 I             VIN= VOUT+1V, VCE＝VIN, VOUT                            120                     mA
+                                       SHORT                       ＝0V
+
+
+  ME6211A33         (V  = V     +1V，C       C  =1uF，Ta=25OC,unless otherwise noted)
+                      IN    OUT           IN= L
+          Parameter                  Symbol                    Conditions                     Min.         Typ.         Max.      Units
+        Output Voltage                VOUT(E)                  IOUT=30mA,                    X 0.98      VOUT (T)      X 1.02        V
+                                     (Note 2)                 VIN= VOUT+1V                               (Note 1)
+  Maximum Output Current              IOUTMAX                 VIN= VOUT+1V                                  500                     mA
+       Load Regulation                ∆V                     VIN= VOUT+1V ,                                  9                      mV
+                                          OUT              1mA≤I       ≤100mA
+                                                                   OUT
+       Dropout Voltage                 VDIF1                   IOUT =100mA                                  120                     mV
+            (Note 1)                   VDIF2                   IOUT =200mA                                  260                     mV
+        Supply Current                   ISS                  VIN= VOUT+1V                                   60                     μA
+       Line Regulation                ∆VOUT                    IOUT =40mA                                  0.05                    %/V
+                                   ∆VIN • VOUT             VOUT+1V ≤VIN≤6.5V
+         Output noise                   EN           IOUT =40mA，300Hz~50kHz                                  50                   uVrms
+                                                                         IOUT=10mA,                          70
+                                                                         1kHZ
+    Ripple Rejection Rate             PSRR             VIN = [VOUT       IOUT=100mA,                         62                     dB
+                                                    +1]V +1Vp   -pAC     10kHZ
+                                                                         IOUT=200mA,                         62
+                                                                         10kHZ
+     Short-circuit Current             ISHORT       VIN= VOUT+1V,, VOUT＝0V                                  150                     mA
+
+  ME6211A25         (V  = V     +1V，C       C  =1uF，Ta=25OC,unless otherwise noted)
+                      IN    OUT           IN= L
+          Parameter                  Symbol                    Conditions                     Min.         Typ.         Max.      Units
+        Output Voltage                VOUT(E)                  IOUT=30mA,                    X 0.98      VOUT (T)      X 1.02        V
+                                     (Note 2)                 VIN= VOUT+1V                               (Note 1)
+  Maximum Output Current              IOUTMAX                 VIN= VOUT+1V                                  400                     mA
+       Load Regulation                ∆V                     VIN= VOUT+1V ,                                  9                      mV
+                                          OUT              1mA≤I       ≤100mA
+                                                                   OUT
+       Dropout Voltage                 VDIF1                   IOUT =100mA                                   80                     mV
+            (Note 1)                   VDIF2                   IOUT =200mA                                  180                     mV
+
+
+        V14                                                               www.microne.com.cn                                                 Page 10 of 20
+
+--- PDF PAGE 11 ---
+                                                                                                              ME6211
+
+        Supply Current                  ISS                   VIN= VOUT+1V                                  40                      μA
+       Line Regulation                ∆VOUT                    IOUT =40mA                                  0.05                    %/V
+                                   ∆VIN • VOUT            VOUT+1V ≤VIN≤6.5V
+         Output noise                   EN           IOUT =40mA，300Hz~50kHz                                 50                    uVrms
+                                                                           IOUT=10mA                        70
+                                                                           ,1kHZ
+    Ripple Rejection Rate             PSRR          VIN = [VOUT +1]V       IOUT=100m                        62                      dB
+                                                        +1Vp-pAC           A,10kHZ
+                                                                           IOUT=200m                        62
+                                                                           A,10kHZ
+     Short-circuit Current             ISHORT       VIN= VOUT+1V,, VOUT＝0V                                  150                    mA
+
+  ME6211H15
+  (V   = V     +1V，V       = GND，C         C  =1uF，Ta=25OC, unless otherwise noted)
+     IN    OUT          CE              IN=  L
+          Parameter                  Symbol                    Conditions                     Min.         Typ.         Max.      Units
+        Output Voltage               VOUT(E)                   IOUT=30mA,                   X 0.98       VOUT (T)      X 1.02        V
+                                     (Note 2)                 VIN= VOUT+1V                               (Note 1)
+  Maximum Output Current              IOUTMAX                 VIN= VOUT+1V                                  300                    mA
+       Load Regulation                ∆V                     VIN= VOUT+1V ,                                  9                     mV
+                                          OUT              1mA≤I       ≤100mA
+                                                                   OUT
+       Dropout Voltage                 VDIF1                  IOUT =100mA                                   200                    mV
+            (Note 1)                   VDIF2                  IOUT =200mA                                   400                    mV
+        Supply Current                  ISS                   VIN= VOUT+1V                                  40                      μA
+ Stand-by Current                       ICEL                     VCE＝VIN                                    0.1                     μA
+       Line Regulation                ∆VOUT                    IOUT =40mA                                  0.05                    %/V
+                                   ∆VIN • VOUT            VOUT+1V ≤VIN≤6.5V
+     CE  “High” Voltage               VCEH                      Shut down                     1.0                                    V
+     CE  “Low” Voltage                 VCEL                      Start up                                                0.4         V
+         Output noise                   EN           IOUT =40mA，300Hz~50kHz                                 50                    uVrms
+                                                      VIN = [VOUT      I    =10mA,1k
+    Ripple Rejection Rate             PSRR          +1]V+1Vp-pA         OUT                                 70                      dB
+                                                           C           HZ
+
+Note   ：
+
+1. VOUT (T)  ：Specified Output Voltage
+2.VOUT (E)   ：Effective Output Voltage ( le. The output voltage when “VOUT (T)+1.0V”is provided at the Vin pin while
+                maintaining a certain Iout value.)
+3.VDIF：VIN1 –VOUT (E)’
+          VIN1  ：The input voltage when VOUT(E)’ appears as input voltage is gradually decreased.
+          VOUT (E)’=A voltage equal to 98% of the output voltage whenever an amply stabilized Iout    {VOUT (T)+1.0V}
+          is input.
+
+
+
+
+
+
+        V14                                                               www.microne.com.cn                                                 Page 11 of 20
+
+--- PDF PAGE 12 ---
+                                                                                                                                       ME6211
+
+Type Characteristics
+
+（1）Output CurrentVS.Output Voltage（VIN=Vout+1, Ta = 25 °C）
+        ME6211C33M5G                                                                              ME6211C30M5G
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ME6211C28M5G                                                                                  ME6211C18M5G
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+（2）Input VoltageVS.Output Voltage（Ta = 25 °C）
+      ME6211C33M5G                                                                      ME6211C30M5G
+
+
+
+
+
+
+
+                                            1mA                                                                                 1mA
+
+                                    50mA                                                                             50mA
+
+                                 100mA                                                                            100mA
+
+
+
+
+
+
+
+
+         V14                                                               www.microne.com.cn                                                 Page 12 of 20
+
+--- PDF PAGE 13 ---
+                                                                                                                                   ME6211
+
+      ME6211C28M5G                                                                         ME6211C18M5G
+
+
+
+
+
+
+
+                                             1mA                                                                  1mA
+
+                                     50mA                                                                         50mA
+
+                                100mA                                                                             100mA
+
+
+
+
+
+（3）Output Current VS.Droput Voltage（VIN=Vout+1V,Ta = 25 °C）
+       ME6211C33M5G                                                                          ME6211C30M5G
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       ME6211C28M5G                                                                   ME6211C18M5G
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         V14                                                               www.microne.com.cn                                                 Page 13 of 20
+
+--- PDF PAGE 14 ---
+                                                                                                                                      ME6211
+
+
+（4）Input Voltage VS. Supply Current（Ta = 25 °C）
+
+        ME6211C33M5G                                                                 ME6211C30M5G
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        ME6211C28M5G                                                                      ME6211C18M5G
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         V14                                                               www.microne.com.cn                                                 Page 14 of 20
+
+--- PDF PAGE 15 ---
+                                                                                                                     ME6211
+
+
+Packaging Information
+● SOT23-3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    Millimeters                                                  Inches
+                DIM
+                                           Min                         Max                             Min                           Max
+
+                  A                         2.7                         3.1                          0.1063                         0.122
+
+                  B                         1.7                         2.1                          0.0669                        0.0827
+
+                  b                        0.35                         0.5                          0.0138                        0.0197
+
+                  C                         1.0                         1.2                          0.0394                        0.0472
+
+                  c                         0.1                        0.25                          0.0039                        0.0098
+
+                  d                         0.2                           -                          0.0079                            -
+
+                  E                         2.6                         3.0                          0.1023                        0.1181
+
+                  e                         1.5                         1.8                           0.059                        0.0708
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        V14                                                               www.microne.com.cn                                                 Page 15 of 20
+
+--- PDF PAGE 16 ---
+                                                                                                                      ME6211
+
+
+● SOT89-3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                            Millimeters                                               Inches
+               DIM
+                                      Min                    Max                       Min                            Max
+
+                A                     1.4                    1.6                     0.0551                         0.0630
+
+               A1                     1.4                    1.6                     0.0551                         0.0630
+
+                a                    0.36                    0.48                    0.0142                         0.0189
+
+                b                    0.41                    0.53                    0.0161                         0.0209
+
+                c                    0.36                    0.48                    0.0142                         0.0189
+
+                d                     1.4                    1.75                    0.0551                         0.0689
+
+                B                    0.38                    0.43                     0.015                         0.0169
+
+                C                     1.4                    1.6                     0.0551                         0.0630
+
+                D                     4.4                    4.6                     0.1732                          0.181
+
+                E                       -                    4.25                        -                          0.1673
+
+                e                     2.4                    2.6                     0.0945                         0.1023
+
+                L1                    0.4                      -                     0.0157                             -
+
+                L2                    0.8                      -                     0.0315                             -
+
+
+
+
+
+
+
+        V14                                                               www.microne.com.cn                                                 Page 16 of 20
+
+--- PDF PAGE 17 ---
+                                                                                                                    ME6211
+
+
+● SOT23-5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                  Millimeters                                                Inches
+            DIM
+                                        Min                          Max                           Min                        Max
+
+              A                         0.9                          1.45                        0.0354                     0.0570
+
+             A1                           0                          0.15                            0                      0.0059
+
+             A2                         0.9                           1.3                        0.0354                     0.0511
+
+              B                         0.2                           0.5                        0.0078                     0.0196
+
+             C                          0.09                         0.26                        0.0035                     0.0102
+
+             D                          2.7                          3.10                        0.1062                     0.1220
+
+              E                         2.2                           3.2                        0.0866                     0.1181
+
+             E1                         1.30                         1.80                        0.0511                     0.0708
+
+              e                                     0.95REF                                               0.0374REF
+
+             e1                                     1.90REF                                               0.0748REF
+
+              L                         0.10                         0.60                        0.0039                     0.0236
+             a0                          00                           300                           00                        300
+
+
+
+
+
+
+
+        V14                                                               www.microne.com.cn                                                 Page 17 of 20
+
+--- PDF PAGE 18 ---
+                                                                                                                      ME6211
+
+
+● SOT353
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                   Millimeters                                                 Inches
+            DIM
+                                         Min                          Max                            Min                        Max
+
+              A                          0.9                           1.1                          0.035                      0.043
+
+             A1                          0.0                          0.10                          0.00                       0.004
+
+             A2                          0.9                           1.0                          0.035                      0.039
+
+              B                         0.15                          0.35                          0.006                      0.014
+
+              C                         0.08                          0.15                          0.003                      0.006
+
+              D                          2.0                           2.2                          0.079                      0.087
+
+              E                         2.15                          2.45                          0.085                      0.096
+
+             E1                         1.15                          1.35                          0.045                      0.096
+
+              e                                     0.65 REF                                                 0.026 REF
+
+             e1                         1.20                           1.4                        0.047                       0.055
+
+              L                         0.26                          0.46                          0.01                       0.018
+             a0                           00                            80                            00                         80
+
+
+
+
+
+
+        V14                                                               www.microne.com.cn                                                 Page 18 of 20
+
+--- PDF PAGE 19 ---
+                                                                                                                      ME6211
+
+
+●   DFN2*2-6L
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                 Dimension (mm)
+               DIM
+                                                      Min                                  Typ                                 Max
+                 A                                   0.70                                  0.75                                0.80
+
+                A1                                   0.00                                  0.02                                0.05
+
+                A2                                                                  0.203 REF
+
+                 b                                   0.20                                  0.25                                0.30
+                D                                    1.95                                  2.00                                2.05
+
+                D1                                   1.20                                  1.30                                1.40
+
+                 E                                   1.95                                  2.00                                2.05
+
+                E1                                   0.70                                  0.80                                0.90
+                 e                                                                    0.65 REF
+
+                 L                                   0.30                                  0.35                                0.40
+
+                 K                                                                     0.20 min
+
+                N                                                                           6
+               aaa                                                                        0.08
+
+               bbb                                                                        0.10
+
+
+
+        V14                                                               www.microne.com.cn                                                 Page 19 of 20
+
+--- PDF PAGE 20 ---
+                                                                                                                      ME6211
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           The information described herein is subject to change without notice.
+           Nanjing Micro One Electronics Inc is not responsible for any problems caused by circuits or diagrams
+            described herein whose related industrial properties, patents, or other rights belong to third parties.
+            The application circuit examples explain typical applications of the products, and do not guarantee the
+            success of any specific mass-production design.
+           Use of the information described herein for other purposes and/or reproduction or copying without the
+            express permission of Nanjing Micro One Electronics Inc is strictly prohibited.
+           The products described herein cannot be used as part of any device or equipment affecting the human
+            body,  such  as  exercise  equipment,  medical  equipment,  security  systems,  gas  equipment,  or  any
+            apparatus installed in airplanes and other vehicles, without prior written permission of Nanjing Micro
+            One Electronics Inc.
+           Although Nanjing Micro One Electronics Inc exerts the greatest possible effort to ensure high quality
+            and  reliability,  the  failure  or  malfunction  of  semiconductor  products  may  occur.    The  user  of  these
+            products  should  therefore  give  thorough  consideration  to  safety  design,  including  redundancy,
+            fire-prevention measures, and malfunction prevention, to prevent any accidents, fires, or community
+            damage that may ensue.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        V14                                                               www.microne.com.cn                                                 Page 20 of 20

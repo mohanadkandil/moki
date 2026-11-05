@@ -1,0 +1,22 @@
+{
+  "name": "jlc-post-ics-43434",
+  "method": "POST",
+  "url": "https://jlcpcb.com/api/overseas-pcb-order/v1/shoppingCart/smtGood/selectSmtComponentList",
+  "requestBody": {
+    "keyword": "ICS-43434",
+    "currentPage": 1,
+    "pageSize": 8
+  },
+  "capturedAt": "2026-11-05T21:49:53.483928+00:00",
+  "status": 200,
+  "contentType": "application/json",
+  "finalUrl": "https://jlcpcb.com/api/overseas-pcb-order/v1/shoppingCart/smtGood/selectSmtComponentList",
+  "bytes": 14369,
+  "sha256": "35903ade4542c99d7c6f7015045e41a4a05bf166abad2067cb54069f4638241f",
+  "file": "jlc-post-ics-43434.response",
+  "requestHeaders": {
+    "User-Agent": "Mozilla/5.0",
+    "Accept": "application/json",
+    "Content-Type": "application/json"
+  }
+}

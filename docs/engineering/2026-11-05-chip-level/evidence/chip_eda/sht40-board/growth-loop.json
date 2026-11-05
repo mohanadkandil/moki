@@ -1,0 +1,19 @@
+{
+  "before": "unreviewed",
+  "after": "reviewed",
+  "cached": {
+    "id": "sht40-ad1b-3v3",
+    "version": 3,
+    "contentHash": "490f1b461bc42e6f5d4f11c4c6063bbaea4ff614daba0711e2f12b8acba016ec",
+    "status": "reviewed",
+    "lookupMs": 8.633062999999993,
+    "networkRequests": 0
+  },
+  "edited": {
+    "version": 4,
+    "status": "unreviewed",
+    "contentHash": "032a077b516eddf2e2c58fb40c5c4b23a148e0a70708213961f5e56798ba8158"
+  },
+  "testMs": 19943.556409999997,
+  "physicalBuild": false
+}

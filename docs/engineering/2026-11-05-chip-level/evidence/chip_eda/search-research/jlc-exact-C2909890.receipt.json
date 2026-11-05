@@ -1,0 +1,9 @@
+{
+  "url": "https://jlcpcb.com/api/overseas-pcb-order/v1/shoppingCart/smtGood/selectSmtComponentList",
+  "method": "POST",
+  "body": "{\"keyword\": \"C2909890\", \"currentPage\": 1, \"pageSize\": 8}",
+  "status": 200,
+  "capturedAt": "2026-11-05T22:13:54.755846+00:00",
+  "sha256": "89dd1ea07a3c84f0396303f4251530c31dbe15138f6f6bb2f5baef8b841fbe39",
+  "bytes": 8192
+}

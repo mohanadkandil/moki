@@ -1,0 +1,29 @@
+[
+  {
+    "file": "jst-ph-smt-catalog.html",
+    "url": "https://www.lcsc.com/product-detail/C160352.html",
+    "retrievedUtc": "2026-11-05T21:50:01.789520+00:00",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "bytes": 457199,
+    "sha256": "b5cf92c4b02781c2bff500f7f6037732703e94ccb25195899d46d6d179fa3818"
+  },
+  {
+    "file": "jst-ph-smt-easyeda.json",
+    "url": "https://easyeda.com/api/products/C160352/components?version=6.5.44",
+    "retrievedUtc": "2026-11-05T21:50:01.793343+00:00",
+    "status": 200,
+    "contentType": "application/json",
+    "bytes": 18229,
+    "sha256": "96b840542e4c3c4c7af641e13eaad10d2006219cc78cfa763210c80a6b7c1268"
+  },
+  {
+    "file": "ti-tps63001-reference-slva358a.pdf",
+    "url": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+    "retrievedUtc": "2026-11-05T21:50:01.794834+00:00",
+    "status": 200,
+    "contentType": "application/pdf",
+    "bytes": 975348,
+    "sha256": "aaffb9d127ce4ed341773d5b64e6500d6870bb4066713f6cc04983ec3a0df681"
+  }
+]

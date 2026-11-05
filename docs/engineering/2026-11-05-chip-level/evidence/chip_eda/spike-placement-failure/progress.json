@@ -1,0 +1,27 @@
+[
+  {
+    "name": "imported-components",
+    "status": "done",
+    "ms": 27.98136599999998
+  },
+  {
+    "name": "render-route",
+    "status": "done",
+    "ms": 2790.1144679999998
+  },
+  {
+    "name": "svg",
+    "status": "done",
+    "ms": 81.31766900000002
+  },
+  {
+    "name": "gerbers-bom-cpl",
+    "status": "done",
+    "ms": 147.95604600000024
+  },
+  {
+    "name": "gltf",
+    "status": "done",
+    "ms": 8160.421592
+  }
+]

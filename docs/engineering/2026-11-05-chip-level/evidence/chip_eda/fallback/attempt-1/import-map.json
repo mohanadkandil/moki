@@ -1,0 +1,54 @@
+{
+  "parts": [
+    {
+      "ref": "R1",
+      "lcsc": "C25804",
+      "mpn": "0603WAF1002T5E",
+      "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+      "footprintSource": "footprinter",
+      "footprintId": "0603",
+      "resolvedFootprintSha256": "d78690d9160da514668e4100caa9874309c2ec2bcec7563d3ec3947749f78190",
+      "sourceSha256": null,
+      "sourceUrl": null,
+      "modelsProvided": false,
+      "footprintAuditPath": "footprints/78ed9b6476bbfb973e31018a8c3855c1a0620003c00a9125a0d252c5e92c8c89.json",
+      "requestedMapping": {
+        "1": "pin1",
+        "2": "pin2"
+      }
+    },
+    {
+      "ref": "R2",
+      "lcsc": "C25804",
+      "mpn": "0603WAF1002T5E",
+      "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+      "footprintSource": "kicad",
+      "footprintId": "kicad:Resistor_SMD/R_0603_1608Metric",
+      "resolvedFootprintSha256": "5c9d96ad526dd3bfea3c83859d426bff58915ee65c2a06dacfbdd07a64c7e7f4",
+      "sourceSha256": "effcae403a15810b3a1947b8664576270d6781e7cd525e97c47d48be0fdae8ce",
+      "sourceUrl": "https://raw.githubusercontent.com/KiCad/kicad-footprints/master/Resistor_SMD.pretty/R_0603_1608Metric.kicad_mod",
+      "modelsProvided": false,
+      "footprintAuditPath": "footprints/43fce0fb2f31528b0049e5bb8f406a00202fd79a56ea3fa76adde2ff4d8a68e1.json",
+      "requestedMapping": {
+        "1": "pin1",
+        "2": "pin2"
+      }
+    },
+    {
+      "ref": "J1",
+      "lcsc": "C160404",
+      "mpn": "SM04B-SRSS-TB(LF)(SN)",
+      "catalogReceipt": "sha256:1f6986d8e1e0029252480dcbb4fe6a48c8bc91b0331da16840616acfb26ffd35",
+      "footprintSource": "jlcpcb",
+      "footprintSha256": "665d4d032bcfa270559702e46b40292437e7584313bd86aeea6f2bec0a7c171e",
+      "requestedMapping": {
+        "1": "pin1",
+        "2": "pin2",
+        "3": "pin3",
+        "4": "pin4",
+        "5": "pin5",
+        "6": "pin6"
+      }
+    }
+  ]
+}

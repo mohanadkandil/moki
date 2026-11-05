@@ -1,0 +1,411 @@
+{
+  "schema": "moki.import-map/1",
+  "inputHash": "3ba357092793c5587b4e384927edff3937126d82b0889024c75cd09a03600c87",
+  "parts": [
+    {
+      "ref": "U1",
+      "inst": "esp32-s3-core",
+      "localRef": "U1",
+      "blockContentHash": "6915002337d3a0a5e2f389aeec1b111d8ac16af68b696c6b7f4d86335d7c147d",
+      "lcsc": "C2913198",
+      "catalogReceipt": "sha256:be3d110031a2dca135e88aaa34364b114483a53f7b7afc6b289adfc8c2863064",
+      "footprintSha256": "9fee371f710f4d3ece1ec657dab465aafa8e1b23336ed3bd30288f61e0bf8720",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2",
+        "3": "pin3",
+        "4": "pin4",
+        "5": "pin5",
+        "6": "pin6",
+        "7": "pin7",
+        "8": "pin8",
+        "9": "pin9",
+        "10": "pin10",
+        "11": "pin11",
+        "12": "pin12",
+        "13": "pin13",
+        "14": "pin14",
+        "15": "pin15",
+        "16": "pin16",
+        "17": "pin17",
+        "18": "pin18",
+        "19": "pin19",
+        "20": "pin20",
+        "21": "pin21",
+        "22": "pin22",
+        "23": "pin23",
+        "24": "pin24",
+        "25": "pin25",
+        "26": "pin26",
+        "27": "pin27",
+        "28": "pin28",
+        "29": "pin29",
+        "30": "pin30",
+        "31": "pin31",
+        "32": "pin32",
+        "33": "pin33",
+        "34": "pin34",
+        "35": "pin35",
+        "36": "pin36",
+        "37": "pin37",
+        "38": "pin38",
+        "39": "pin39",
+        "40": "pin40",
+        "41": "pin41"
+      },
+      "omitPads": []
+    },
+    {
+      "ref": "C3",
+      "inst": "esp32-s3-core",
+      "localRef": "C3",
+      "blockContentHash": "6915002337d3a0a5e2f389aeec1b111d8ac16af68b696c6b7f4d86335d7c147d",
+      "lcsc": "C45783",
+      "catalogReceipt": "sha256:e7706c583e149436ae74afe897ff10c1072db3ad395f553f169cd5a8751d288e",
+      "footprintSha256": "2fb5b0d11c86569d2aa6b896edea815da6011d028e9e79f5d7db5693a9ffaf43",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": []
+    },
+    {
+      "ref": "C4",
+      "inst": "esp32-s3-core",
+      "localRef": "C4",
+      "blockContentHash": "6915002337d3a0a5e2f389aeec1b111d8ac16af68b696c6b7f4d86335d7c147d",
+      "lcsc": "C14663",
+      "catalogReceipt": "sha256:fde5081a0b45324f436df1a456a1a4dd1608306b862e8a6f4c8187b9d69ac426",
+      "footprintSha256": "c6961a0f3ecb855bedad17ad6397d458e8feacb3ac83cd2b5e6b49c83a9c4338",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": []
+    },
+    {
+      "ref": "C5",
+      "inst": "esp32-s3-core",
+      "localRef": "C5",
+      "blockContentHash": "6915002337d3a0a5e2f389aeec1b111d8ac16af68b696c6b7f4d86335d7c147d",
+      "lcsc": "C15849",
+      "catalogReceipt": "sha256:105c7d94f522ce1cbbbc5b1f309aaeb707bbeaa42bdecc861a0cb93b6624b303",
+      "footprintSha256": "c6961a0f3ecb855bedad17ad6397d458e8feacb3ac83cd2b5e6b49c83a9c4338",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": []
+    },
+    {
+      "ref": "R1",
+      "inst": "esp32-s3-core",
+      "localRef": "R1",
+      "blockContentHash": "6915002337d3a0a5e2f389aeec1b111d8ac16af68b696c6b7f4d86335d7c147d",
+      "lcsc": "C25804",
+      "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": []
+    },
+    {
+      "ref": "R2",
+      "inst": "esp32-s3-core",
+      "localRef": "R2",
+      "blockContentHash": "6915002337d3a0a5e2f389aeec1b111d8ac16af68b696c6b7f4d86335d7c147d",
+      "lcsc": "C25804",
+      "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": []
+    },
+    {
+      "ref": "R9",
+      "inst": "esp32-s3-core",
+      "localRef": "R9",
+      "blockContentHash": "6915002337d3a0a5e2f389aeec1b111d8ac16af68b696c6b7f4d86335d7c147d",
+      "lcsc": "C25804",
+      "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": []
+    },
+    {
+      "ref": "R10",
+      "inst": "esp32-s3-core",
+      "localRef": "R10",
+      "blockContentHash": "6915002337d3a0a5e2f389aeec1b111d8ac16af68b696c6b7f4d86335d7c147d",
+      "lcsc": "C25804",
+      "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": []
+    },
+    {
+      "ref": "U3",
+      "inst": "usb-c-sink",
+      "localRef": "U3",
+      "blockContentHash": "cbc130903011c22d3bb2dd8f73e7a1dd56c73c4625e504e4570c2679cfa5e4eb",
+      "lcsc": "C7519",
+      "catalogReceipt": "sha256:69070d9186f3c69a08754cb65597878f3e7ff53eecfc148220b40aa5bd717527",
+      "footprintSha256": "bb87c706156520efefa787b1a2524ba3f142cd8eb0a6c03350046cae22d44c89",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2",
+        "3": "pin3",
+        "4": "pin4",
+        "5": "pin5",
+        "6": "pin6"
+      },
+      "omitPads": []
+    },
+    {
+      "ref": "J1",
+      "inst": "usb-c-sink",
+      "localRef": "J1",
+      "blockContentHash": "cbc130903011c22d3bb2dd8f73e7a1dd56c73c4625e504e4570c2679cfa5e4eb",
+      "lcsc": "C165948",
+      "catalogReceipt": "sha256:7bd08b687d8d0b901fb91b86a3c834972bd938733d5aa21c71da3e88ff3990ee",
+      "footprintSha256": "a776b0d3da5224266b3423589502a9656e8cf0432b7525f8e5a65d7959bd078a",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2",
+        "3": "pin3",
+        "4": "pin4",
+        "B8": "pin5",
+        "A5": "pin6",
+        "B7": "pin7",
+        "A6": "pin8",
+        "A7": "pin9",
+        "B6": "pin10",
+        "A8": "pin11",
+        "B5": "pin12",
+        "A1B12": "pin13",
+        "B1A12": "pin14",
+        "B4A9": "pin15",
+        "A4B9": "pin16"
+      },
+      "omitPads": []
+    },
+    {
+      "ref": "R3",
+      "inst": "usb-c-sink",
+      "localRef": "R3",
+      "blockContentHash": "cbc130903011c22d3bb2dd8f73e7a1dd56c73c4625e504e4570c2679cfa5e4eb",
+      "lcsc": "C23186",
+      "catalogReceipt": "sha256:4d6005af8e9f76cf0d52bc983a547a10aba5f3917460ac5483c3b3c2b333aa14",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": []
+    },
+    {
+      "ref": "R4",
+      "inst": "usb-c-sink",
+      "localRef": "R4",
+      "blockContentHash": "cbc130903011c22d3bb2dd8f73e7a1dd56c73c4625e504e4570c2679cfa5e4eb",
+      "lcsc": "C23186",
+      "catalogReceipt": "sha256:4d6005af8e9f76cf0d52bc983a547a10aba5f3917460ac5483c3b3c2b333aa14",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": []
+    },
+    {
+      "ref": "R5",
+      "inst": "usb-c-sink",
+      "localRef": "R5",
+      "blockContentHash": "cbc130903011c22d3bb2dd8f73e7a1dd56c73c4625e504e4570c2679cfa5e4eb",
+      "lcsc": "C23345",
+      "catalogReceipt": "sha256:442113217ccc4cd213f01b29707684061f0faf0c0d6c23685258899d08ab260f",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": []
+    },
+    {
+      "ref": "R6",
+      "inst": "usb-c-sink",
+      "localRef": "R6",
+      "blockContentHash": "cbc130903011c22d3bb2dd8f73e7a1dd56c73c4625e504e4570c2679cfa5e4eb",
+      "lcsc": "C23345",
+      "catalogReceipt": "sha256:442113217ccc4cd213f01b29707684061f0faf0c0d6c23685258899d08ab260f",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": []
+    },
+    {
+      "ref": "U2",
+      "inst": "ldo-ap2112-3v3",
+      "localRef": "U2",
+      "blockContentHash": "3267698857085dcd7c5d5813f4bed87024e510a8ea475d92b9d927d329bc725c",
+      "lcsc": "C51118",
+      "catalogReceipt": "sha256:ea7db097e12ca24d8df2e7871f72883ba309dbda70e3b915f884b6c404a6eee8",
+      "footprintSha256": "fc43f5e7deeef4cac763e7cbaf55fef2e1cadd6f59bf3869710c332dcf290cf5",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2",
+        "3": "pin3",
+        "4": "pin4",
+        "5": "pin5"
+      },
+      "omitPads": []
+    },
+    {
+      "ref": "C1",
+      "inst": "ldo-ap2112-3v3",
+      "localRef": "C1",
+      "blockContentHash": "3267698857085dcd7c5d5813f4bed87024e510a8ea475d92b9d927d329bc725c",
+      "lcsc": "C15849",
+      "catalogReceipt": "sha256:105c7d94f522ce1cbbbc5b1f309aaeb707bbeaa42bdecc861a0cb93b6624b303",
+      "footprintSha256": "c6961a0f3ecb855bedad17ad6397d458e8feacb3ac83cd2b5e6b49c83a9c4338",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": []
+    },
+    {
+      "ref": "C2",
+      "inst": "ldo-ap2112-3v3",
+      "localRef": "C2",
+      "blockContentHash": "3267698857085dcd7c5d5813f4bed87024e510a8ea475d92b9d927d329bc725c",
+      "lcsc": "C15849",
+      "catalogReceipt": "sha256:105c7d94f522ce1cbbbc5b1f309aaeb707bbeaa42bdecc861a0cb93b6624b303",
+      "footprintSha256": "c6961a0f3ecb855bedad17ad6397d458e8feacb3ac83cd2b5e6b49c83a9c4338",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": []
+    },
+    {
+      "ref": "SW1",
+      "inst": "boot-reset-buttons",
+      "localRef": "SW1",
+      "blockContentHash": "c701a9b3a791baf70b0767b7377e41728c976685e7d2176f5a23595f576b6320",
+      "lcsc": "C720477",
+      "catalogReceipt": "sha256:7652107e641606a4db7aec40192ee21fafd98db6a7b939da5245cdfd87287726",
+      "footprintSha256": "fb895bf94b06a01c3ebc51f062be157e5f1e991415b12d5d790b479377613be6",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": []
+    },
+    {
+      "ref": "SW2",
+      "inst": "boot-reset-buttons",
+      "localRef": "SW2",
+      "blockContentHash": "c701a9b3a791baf70b0767b7377e41728c976685e7d2176f5a23595f576b6320",
+      "lcsc": "C720477",
+      "catalogReceipt": "sha256:7652107e641606a4db7aec40192ee21fafd98db6a7b939da5245cdfd87287726",
+      "footprintSha256": "fb895bf94b06a01c3ebc51f062be157e5f1e991415b12d5d790b479377613be6",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": []
+    },
+    {
+      "ref": "J2",
+      "inst": "i2c-header",
+      "localRef": "J2",
+      "blockContentHash": "1a20d4a963be6b2b977ee5dac95bda8c8b20b2ec108ec6e83377cab0d7b08764",
+      "lcsc": "C160404",
+      "catalogReceipt": "sha256:1f6986d8e1e0029252480dcbb4fe6a48c8bc91b0331da16840616acfb26ffd35",
+      "footprintSha256": "665d4d032bcfa270559702e46b40292437e7584313bd86aeea6f2bec0a7c171e",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2",
+        "3": "pin3",
+        "4": "pin4",
+        "5": "pin5",
+        "6": "pin6"
+      },
+      "omitPads": []
+    },
+    {
+      "ref": "R7",
+      "inst": "i2c-header",
+      "localRef": "R7",
+      "blockContentHash": "1a20d4a963be6b2b977ee5dac95bda8c8b20b2ec108ec6e83377cab0d7b08764",
+      "lcsc": "C25804",
+      "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": []
+    },
+    {
+      "ref": "R8",
+      "inst": "i2c-header",
+      "localRef": "R8",
+      "blockContentHash": "1a20d4a963be6b2b977ee5dac95bda8c8b20b2ec108ec6e83377cab0d7b08764",
+      "lcsc": "C25804",
+      "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": []
+    },
+    {
+      "ref": "U4",
+      "inst": "sht40",
+      "localRef": "U1",
+      "blockContentHash": "490f1b461bc42e6f5d4f11c4c6063bbaea4ff614daba0711e2f12b8acba016ec",
+      "lcsc": "C2909890",
+      "catalogReceipt": "sha256:aba07424974690c4010ed155f58bcd30cf5bf49657ea4ef20d11953344ca6c0b",
+      "footprintSha256": "563eda23e47239e4804772db9e2d2593db62eb9bce42323d3aaa7680c7acbe94",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2",
+        "3": "pin3",
+        "4": "pin4",
+        "5": "pin5"
+      },
+      "omitPads": [
+        "5"
+      ]
+    },
+    {
+      "ref": "C6",
+      "inst": "sht40",
+      "localRef": "C1",
+      "blockContentHash": "490f1b461bc42e6f5d4f11c4c6063bbaea4ff614daba0711e2f12b8acba016ec",
+      "lcsc": "C14663",
+      "catalogReceipt": "sha256:fde5081a0b45324f436df1a456a1a4dd1608306b862e8a6f4c8187b9d69ac426",
+      "footprintSha256": "c6961a0f3ecb855bedad17ad6397d458e8feacb3ac83cd2b5e6b49c83a9c4338",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": []
+    }
+  ]
+}

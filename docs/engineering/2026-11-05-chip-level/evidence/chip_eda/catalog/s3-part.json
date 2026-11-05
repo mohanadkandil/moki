@@ -1,0 +1,268 @@
+{
+  "lcsc": "C2913198",
+  "mpn": "ESP32-S3-WROOM-1-N8",
+  "manufacturer": "ESPRESSIF(乐鑫)",
+  "package": "WIFIM-SMD_ESP32-S3-WROOM-1-N8",
+  "catalogReceipt": "sha256:be3d110031a2dca135e88aaa34364b114483a53f7b7afc6b289adfc8c2863064",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "1498998db9eb267747700855afd055717fdc3f9b65f7037bc895a16720e73615",
+  "footprintSha256": "9fee371f710f4d3ece1ec657dab465aafa8e1b23336ed3bd30288f61e0bf8720",
+  "pins": [
+    {
+      "pad": "1",
+      "labels": [
+        "GND"
+      ]
+    },
+    {
+      "pad": "2",
+      "labels": [
+        "3V3"
+      ]
+    },
+    {
+      "pad": "3",
+      "labels": [
+        "EN"
+      ]
+    },
+    {
+      "pad": "4",
+      "labels": [
+        "IO4"
+      ]
+    },
+    {
+      "pad": "5",
+      "labels": [
+        "IO5"
+      ]
+    },
+    {
+      "pad": "6",
+      "labels": [
+        "IO6"
+      ]
+    },
+    {
+      "pad": "7",
+      "labels": [
+        "IO7"
+      ]
+    },
+    {
+      "pad": "8",
+      "labels": [
+        "IO15"
+      ]
+    },
+    {
+      "pad": "9",
+      "labels": [
+        "IO16"
+      ]
+    },
+    {
+      "pad": "10",
+      "labels": [
+        "IO17"
+      ]
+    },
+    {
+      "pad": "11",
+      "labels": [
+        "IO18"
+      ]
+    },
+    {
+      "pad": "12",
+      "labels": [
+        "IO8"
+      ]
+    },
+    {
+      "pad": "13",
+      "labels": [
+        "IO19"
+      ]
+    },
+    {
+      "pad": "14",
+      "labels": [
+        "IO20"
+      ]
+    },
+    {
+      "pad": "15",
+      "labels": [
+        "IO3"
+      ]
+    },
+    {
+      "pad": "16",
+      "labels": [
+        "IO46"
+      ]
+    },
+    {
+      "pad": "17",
+      "labels": [
+        "IO9"
+      ]
+    },
+    {
+      "pad": "18",
+      "labels": [
+        "IO10"
+      ]
+    },
+    {
+      "pad": "19",
+      "labels": [
+        "IO11"
+      ]
+    },
+    {
+      "pad": "20",
+      "labels": [
+        "IO12"
+      ]
+    },
+    {
+      "pad": "21",
+      "labels": [
+        "IO13"
+      ]
+    },
+    {
+      "pad": "22",
+      "labels": [
+        "IO14"
+      ]
+    },
+    {
+      "pad": "23",
+      "labels": [
+        "IO21"
+      ]
+    },
+    {
+      "pad": "24",
+      "labels": [
+        "IO47"
+      ]
+    },
+    {
+      "pad": "25",
+      "labels": [
+        "IO48"
+      ]
+    },
+    {
+      "pad": "26",
+      "labels": [
+        "IO45"
+      ]
+    },
+    {
+      "pad": "27",
+      "labels": [
+        "IO0"
+      ]
+    },
+    {
+      "pad": "28",
+      "labels": [
+        "IO35"
+      ]
+    },
+    {
+      "pad": "29",
+      "labels": [
+        "IO36"
+      ]
+    },
+    {
+      "pad": "30",
+      "labels": [
+        "IO37"
+      ]
+    },
+    {
+      "pad": "31",
+      "labels": [
+        "IO38"
+      ]
+    },
+    {
+      "pad": "32",
+      "labels": [
+        "IO39"
+      ]
+    },
+    {
+      "pad": "33",
+      "labels": [
+        "IO40"
+      ]
+    },
+    {
+      "pad": "34",
+      "labels": [
+        "IO41"
+      ]
+    },
+    {
+      "pad": "35",
+      "labels": [
+        "IO42"
+      ]
+    },
+    {
+      "pad": "36",
+      "labels": [
+        "RXD0"
+      ]
+    },
+    {
+      "pad": "37",
+      "labels": [
+        "TXD0"
+      ]
+    },
+    {
+      "pad": "38",
+      "labels": [
+        "IO2"
+      ]
+    },
+    {
+      "pad": "39",
+      "labels": [
+        "IO1"
+      ]
+    },
+    {
+      "pad": "40",
+      "labels": [
+        "GND"
+      ]
+    },
+    {
+      "pad": "41",
+      "labels": [
+        "EP"
+      ]
+    }
+  ],
+  "models": [
+    {
+      "format": "obj",
+      "url": "https://modules.easyeda.com/3dmodel/2f6254bb69ea4b93884ba4042d7a5b5e"
+    },
+    {
+      "format": "step",
+      "url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/2f6254bb69ea4b93884ba4042d7a5b5e"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+flowchart TB
+  brief["Maker's brief"]
+  verifier["Agent: Verifier turns the brief into checks, and the maker confirms them"]
+  designer["Agent: Designer writes titled sections, each citing its reference circuit"]
+  sources["Any real JLCPCB part, its datasheet, and library blocks as a shortcut"]
+  erc["Gate: ERC, power budget, citations checked by code"]
+  verify["Gate: requirements, from the confirmed list"]
+  spice["Gate: SPICE, measured against targets"]
+  reviewer["Agent: Reviewer checks the schematic against the datasheets"]
+  fw["Agent: Firmware writes code against the pin map"]
+  compile["Gate: compile in a sandbox, max 3 tries"]
+  drc["Gate: automatic place, route, DRC"]
+  done["Done: readable sheet, fab files with LCSC numbers, firmware, gate receipts"]
+  fixer["Agent: Fixer makes a bounded change, max 2 retries"]
+  stop["Not done: chat names the failed gate and why"]
+
+  brief --> verifier
+  verifier -->|"confirmed requirements"| designer
+  sources --> designer
+  designer -->|"board plan"| erc
+  erc --> verify
+  verify --> spice
+  spice --> reviewer
+  reviewer -->|"pin map"| fw
+  fw -->|"app source"| compile
+  compile --> drc
+  drc --> done
+  verify -->|"fail"| fixer
+  spice -->|"fail"| fixer
+  reviewer -->|"mismatch"| fixer
+  drc -->|"fail"| fixer
+  fixer -->|"new plan"| erc
+  fixer -->|"out of retries"| stop
+  compile -->|"fails 3 times"| stop

@@ -1,0 +1,722 @@
+--- PDF PAGE 1 ---
+                                                                                                    AN1149
+
+    Designing A Li-Ion Battery Charger and Load Sharing System With
+Microchip’s Stand-Alone Li-Ion Battery Charge Management Controller
+
+
+
+ Author:      Brian Chu                                                    However, most of the time, batteries are designed to be
+              Microchip Technology Inc.                                    recharged while the devices are still in the operational
+                                                                           mode. An end user can extend the run time while refill-
+                                                                           ing the energy back to the battery for the next mobile
+INTRODUCTION                                                               action. The power source now has to supply the device
+Batteries often serve as the main energy source for                        while charging the battery. The battery can deliver
+portable electronic devices. Although they depend on                       energy to the system load when the power source is
+                                                                           absent as depicted in Figure 1.
+batteries, portable consumer electronic products,                          Portable electronic devices have dramatically changed
+such as GPS devices and multi-media players, often                         the way people live and work. They play an important
+consume energy directly from an ac-dc wall adapter or                      role in a person's daily life from every day tasks to
+accessory power adapter (or “Auto Adapter”) when the                       entertainment. With the emerging technologies that are
+battery is low or the device is in a stationary mode.                      available today, portable electronic designers are trying
+Due to their cost effectiveness over their useful life,                    to integrate more features into smaller and lighter form
+rechargeable batteries are often used for the power                        factors while extending the system run times.
+source of the portable electronic device. Attributes                       This application note shows how to take advantage of
+such as “relatively high energy density” and “mainte-                      Microchip’s fully integrated simple Li-Ion battery charge
+nance free” make Lithium-Ion (Li-Ion) batteries popular                    management controllers with common directional
+in the portable consumer electronic products. Refer to                     control to build a system and battery load sharing
+the application note, AN1088, "Selecting the Right Bat-                    circuitry. The solutions are ideal for use in cost-sensi-
+tery System For cost Sensitive Portable Applications                       tive applications that can also accelerate the product
+While maintaining Excellent Quality" (DS01088) for                         time-to-market rate.
+characteristics of Li-Ion batteries. Some examples of
+how to properly design with Li-Ion batteries will be
+discussed in this application note.
+Depending on the product design or local government
+regulations, rechargeable batteries are often charged
+from inside the handheld devices or from battery charg-
+ing cradles. Due to the safety concerns or design
+concepts in certain regions, some batteries are
+required to be removed from the portable device prior
+charging activities are initiated.
+
+
+
+                                                                                     System
+                                                                                      Load
+
+                                          *Battery Charger
+                Power                     *Protection Circuits                                Battery supplies system load
+                Supply                    *Voltage Regulator
+                                          *Interface                                                      when power source is absent.
+
+
+
+
+
+
+
+FIGURE 1:               Typical Portable Power Source.
+
+
+
+
+
+© 2008 Microchip Technology Inc.                                                                                                 DS01149C-page 1
+
+--- PDF PAGE 2 ---
+AN1149
+
+
+
+
+
+
+                                                                                                               RPULL    Q1    D1
+
+
+
+                                                                   1  VAC            VBAT   10
+                                                                                            Thermistor                  +
+                                USB                                2  VUSB         THERM    9          COUT                      System
+                  CIN1          Port                                                                                    Li-Ion   Load
+  Regulated                                               RLED1                                                         Cell
+  Wall Cube                        CIN2                            3                  VSS   5                           -
+                                                                      STAT1
+                                                          RLED2    4                        7                    Hi
+                                                                      STAT2        PROG2            Low
+                                                          RLED3    8                        6
+                                                                      PG           PROG1
+
+                                                                                                     RPROG
+                                                                         MCP73837
+
+
+FIGURE 2:               Typical System and Battery Load Sharing Application.
+
+DESCRIPTION                                                                Design Specifications
+
+This application note shows how to design a simple                         •  System Load Input Voltage Range:
+load sharing system using Microchip’s popular                                -  4.5V - 6.5V from ac-dc adapter (1A)
+MCP73837 device for cost-sensitive applications.                             -  5V from USB port (100 mA/500 mA)
+Refer to the MCP73837/8 Data Sheet, “Advanced                                -   3V - 4.2V from 1-cell Li-Ion battery (950 mAh)
+Stand-Alone Li-Ion / Li-Polymer Battery Charge Man-                        •  Constant Charge Current:
+agement Controller with Autonomous AC-Adapter or
+USB-Port Source Selection”, (DS22071).                                       -  0.5C (The battery manufacturer
+References to documents that treat these subjects in                            recommended value)
+more depth and breadth have been included in the                             -  100 mA / 500 mA (Charge from USB port)
+“Reference” section.                                                       •  Precondition Current:
+                                                                             -  0.1C or recommended value
+BATTERY CHARGER AND SYSTEM                                                 •  Termination Current:
+LOAD DESIGN SPECIFICATIONS AND                                               -  0.07C
+APPLICATION DESCRIPTION                                                    •  Charge Status and Power Good Indicators
+                                                                           •  Safety Timer: Turn charger off after 6 hours of
+The example system load consumes a maximum cur-                              continuous charging
+rent of 500 mA when all applications are running at the
+same time. A 950 mAh rated Li-Ion battery is available
+to operate the example portable system for nearly two
+hours during intensive load operations. The actual
+battery run time may vary based on the system load,
+battery age, and environmental conditions.
+The input power should supply the system load and
+charge the battery when a battery is present in the
+system. When the input power source is removed, the
+system is supported by the battery. When the system
+load and the battery draw more energy than the supply
+can offer, the system load takes priority over the battery
+charger.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DS01149C-page 2                                                                                                                                            © 2008 Microchip Technology Inc.
+
+--- PDF PAGE 3 ---
+                                                                                                                      AN1149
+
+
+Theoretical Capacity - “C” Rate                                             LITHIUM-ION (LI-ION) / LITHIUM-
+Definition: The theoretical capacity of a battery is                        POLYMER (LI-POLYMER) BATTERIES
+determined by the amount of active materials in the                         Here are some important attributes when selecting a
+battery. It is expressed as the total quantity of electricity               battery for an application:
+involved in the electrochemical reaction and is defined
+in terms of coulombs or ampere-hours. The “ampere-                          1.    Internal Resistance,
+hour capacity” of a battery is directly associated with                     2.    Operational Load Current,
+the quantity of electricity obtained from the active                        3.    Energy Density (Size & Weight),
+materials.                                                                  4.    Charge/Discharge Cycles (Life Cycle),
+EXAMPLE 1:       “C” RATE                                                   5.  Capacity (dominates the operational duration
+                                                                                  without external power source present).
+ •  Theoretical Capacity (Coulombic)                                        Like most engineering work, these key attributes do not
+    -  Amount of Active Material                                            exist in the same technology. There is always a trade-
+      ampere-hour (Ah)                                                      off between them when selecting the battery chemistry
+                        IMC=    ×   n                                       for a portable application. Refer to Microchip’s AN1088
+ Where:                                                                     “Selecting the Right Battery System for Cost-Sensitive
+                                                                            Portable Applications While Maintaining Excellent
+          I       =       discharge current, A                              Quality”  for the details of battery chemistry
+         C       =       numerical value of rated                           comparisons.
+                        capacity, Ah                                        Li-Ion batteries have played an important role in today’s
+          n       =       time, in hours, at which C is                     portable world because of the advantages in high
+                        declared                                            energy density, low maintenance requirement,
+         M       =       multiple or fraction of C                          relatively low self discharge rate and higher cell
+                                                                            voltages. 1-cell Li-Ion batteries especially enjoy the
+ Example:                                                                   largest share of the Li-Ion battery market while 1-cell
+ •  1.7Ah Li-Ion Battery                                                    and 2-cell applications are available in more than 70%
+ •  1C Rate = 1.7A                                                          of the total available market.
+ •  0.1C or C/10 Rate = 170 mA                                              Li-Polymer batteries which are also recognized as Li-
+                                                                            Ion Polymer batteries are similar in terms of chemistry
+                                                                            with Li-Ion batteries. Li-Polymer can be charged using
+                                                                            the same algorithm as Li-Ion batteries because of their
+                                                                            similar characteristics. The flexible form factors and
+                                                                            very low profile to fit inside the compact applications
+                                                                            make Li-Polymer an ideal candidate for MP3 Players
+                                                                            and Mobile Phones.
+
+                                                                               Note:    The major drawbacks of Li-Ion batteries
+                                                                                          are higher initial cost and the aging effect.
+                                                                                          Li-Ion batteries age over time regardless
+                                                                                          of the number of cycles that have been
+                                                                                          reached. A protection circuit is required for
+                                                                                          Li-Ion batteries to prevent overvoltage dur-
+                                                                                          ing charge cycle and undervoltage during
+                                                                                          the discharge cycle; overcurrent as well in
+                                                                                          both directions.
+                                                                            Batteries usually occupy a considerable amount of
+                                                                            space and weight in today’s portable devices. The
+                                                                            energy density for each chemistry dominates the size
+                                                                            and weight for the battery pack. Li-Ion has advantages
+                                                                            in both energy density weight and energy density
+                                                                            volume among other available battery technologies.
+
+
+
+
+
+
+
+
+
+
+
+© 2008 Microchip Technology Inc.                                                                                                 DS01149C-page 3
+
+--- PDF PAGE 4 ---
+AN1149
+
+
+SELECTING THE BATTERY CHARGE                                              •  Numerous Selectable Options Available for a
+MANAGEMENT CONTROL CIRCUIT                                                   Variety of applications:
+                                                                             -  Refer to the MCP73837/8 Data Sheet,
+The emerging semiconductor technologies shorten the                            Section 1.0 “Electrical Characteristics for
+design cycles and simplify design methods for the                              Selectable Options”
+consumer product designers by integrating circuits into                      -  Refer to the MCP73837/8 Data Sheet,
+a single chip. The first step is to decide to design a                         “Product Identification System” for Standard
+custom charge control management circuit or adapt a                            Options
+stand-alone charge IC.                                                    •  Temperature Range: -40°C to +85°C
+Stand-Alone Charge Management                                             •  Packaging:
+Controller                                                                   -  10-Lead 3 mm x 3 mm DFN
+                                                                             -  10-Lead MSOP
+Microchip’s MCP73837 device is selected to complete
+the design because it dramatically reduces the soft-                         Note:   Refer to the MCP73837/8 Data Sheet
+ware/hardware design time and simplifies the PCB                                        (DS22071) for detailed descriptions.
+layout. The MCP73837 device that is used in this
+example has 4.2V battery voltage regulation, 10% pre-                     Common Cathode Diode
+conditioning ratio and 7.5% EOC (end of charge) ratio.                    Figure 3 shows a common cathode diode to drive LEDs
+The general features of the MCP73837 device are                           and supply power to the system load when either
+listed below:                                                             source from an ac-dc adapter or a USB port is used.
+•  High Accuracy Preset Voltage Regulation: + 0.5%                        This prevents reverse current from feeding into the
+•  Available Voltage Regulation Options:                                  other source.
+  -  4.20V, 4.35V, 4.4V or 4.5V                                           The common cathode diode can be left out of the
+•  Complete Linear Charge Management Controller:                          design if automatic switching between the ac-dc
+  -  Autonomous Power Source Selection                                    adapter and the USB port feature is not required or a
+  -  Integrated Pass Transistors                                          different charge IC, which does not have autonomous
+  -  Integrated Current Sense                                             dual power source selection, is used in the design.
+
+  -  Integrated Reverse Discharge Protection                                                           To System
+•  Constant Current / Constant Voltage Operation                                                                       1
+  with Thermal Regulation                                                                                                 VAC            V
+•  Selectable USB-Port Charge Current:                                              USB                                2  VUSB        THE
+  -  100 mA maximum (Logic Low) / 500 mA                                            Port
+     maximum (Logic High)                                                              CIN2                                 RLED13        V
+                                                                                                                          STAT1
+•  Programmable AC-Adapter Charge Current:                                    Ac-adapter                      RLED2
+                                                                                                                       4  STAT2       PRO
+  - 15mA - 1000mA                                                                                             RLED3
+•  Two Charge Status Outputs                                                                                           8  PG          PRO
+•  Power-Good Monitor:
+  -  MCP73837 Device                                                                                                      MCP73837
+•  Timer Enable:                                                          FIGURE 3:               Common Cathode Diode
+  -  MCP73838 Device                                                      Connection Diagram.
+•  Automatic Recharge
+•  Automatic End-of-Charge Control:
+  -  Selectable Charge Termination Current Ratio
+  -  Selectable Safety Timer Period
+•  Preconditioning of Deeply Depleted Cells
+•  Battery Cell Temperature Monitor
+•  UVLO (Undervoltage Lockout)
+•  Automatic Power-Down when Input Power is
+  Removed
+•  Low-Dropout (LDO) Linear Regulator Mode
+•  Minimum External Components Required
+
+
+
+
+
+
+DS01149C-page 4                                                                                                                                            © 2008 Microchip Technology Inc.
+
+--- PDF PAGE 5 ---
+                                                                                                                    AN1149
+
+
+CONNECTING THE SYSTEM LOAD TO                                              Selecting The Pull-Down Resistor
+THE BATTERY                                                                Figure 5 represents the pull-down resistor (RPULL) to
+Some designers may simply connect the system load                          make sure that the P-Ch MOSFET (Q1) turns on when
+to the battery cell. This allows the system to be                          the input sources are removed. When the input sources
+powered by Li-Ion batteries without proper regulation.                     are absent, the RPULL pulls the gate to zero allowing
+It is not encouraged to attach the system load directly                    current to flow out of the battery.
+to Li-Ion batteries when using a stand-alone Li-Ion                        RPULL value can be any reasonable value resistor.
+battery charge management controller with automatic                        However, the RPULL value should not be too small.
+termination feature.                                                       Asmall RPULL value wastes unnecessary current when
+Here are several reasons that the system load is not                       the input sources are present. A 100 kΩ RPULL resistor
+recommended to be connected directly to the battery                        is recommended in this design which consumes about
+terminals:                                                                 50 µA when VIN = 5V.
+
+1.    The charge may never end. Most Li-Ion battery
+     chargers are based on Constant Current and                                                                 RPULL    Q1     D1
+     Constant Voltage (CC-CV) modes. The termina-
+     tion is based on the ratio of charge current and
+     preset constant current (Fast Charge). If the                                    VBAT  10
+     system draws current from the battery, the                                             Thermistor                   +
+     charge current will never meet the termination                                THERM    9           COUT                      System
+     value. This causes the non-termination of the                        B                                              Li-Ion   Load
+                                                                                                                         Cell
+     charge management circuit.                                           T1                  VSS5                       -
+
+  Note:   The MCP73811/2 Li-Ion battery charge
+              management controllers with no auto-ter-
+              mination may be a viable solution for the                    FIGURE 5:              Current Directional Control
+              type of applications that are designed to                    Circuit.
+              simply connect the system load to the Li-
+              Ion battery.                                                 Selecting The MOSFET
+2.     The total system current is limited by the charge                   The nature of the MOSFET makes it the best candidate
+     current because the charger will deliver total                        for current direction control. A P-Channel MOSFET is
+     system and battery charging current through the                       selected to complete this circuit as Figure 6 depicts,
+     output pin. This solution may be feasible for                         when VIN is available, the gate of Q1 is high. With Q1
+     some applications that run on constant current,                       off, current does not flow from the Li-Ion battery to the
+     but it is not recommended.                                            system load. The system load requirements are
+                                                                           provided by the input source when the Li-Ion battery is
+                                                                           charged at the same time. When the gate of Q1 is low,
+                                                                           Q1 turns on and allows the Li-Ion battery to supply the
+                                                                           system as shown in Figure 7. The MCP73837 device
+                                                                           VBAT pin is also disabled when VIN is absent.
+
+                                                                              Note:   It is important to select a proper gate
+                                                                                         threshold voltage range so the MOSFET
+                                                                                         will be turned on.
+
+
+                                                                                                                RPULL    Q1     D1
+
+FIGURE 4:               Do Not Connect the System
+Load Directly to the Battery When Charging with                                       VBAT  10
+the Li-Ion Battery Charge Management Controller                                             Thermsitor                   +
+                                                                                   THERM    9           COUT                      System
+with Automatic Termination Feature.                                       B                                              Li-Ion   Load
+                                                                                                                         Cell
+3.     A switch can be introduced to the system to turn                   T1                  VSS5                       -
+     it off before charging the batteries. This method
+     limits the way that portable electronics operates
+     and is only suitable for finite applications.                         FIGURE 6:                 Q1 is Off When Gate is High
+                                                                           and No Current Flows from the Battery Cell to the
+                                                                           System Load.
+
+
+
+© 2008 Microchip Technology Inc.                                                                                                 DS01149C-page 5
+
+--- PDF PAGE 6 ---
+AN1149
+
+
+                                                                            CHARGE PROFILE WITH SYSTEM
+                                  RPULL     Q1    D1                        LOAD
+
+                                                                            Figure 2 shows a complete system load and battery
+        VBAT   10                                                           power path management circuit, which was designed
+               Thermistor                  +                                for demonstration purposes in this application note.
+      THERM    9           COUT                      System                 The system load was set up at a constant 500 mA rate.
+                                           Li-Ion    Load
+                                           Cell                             A deeply depleted 950 mAh Li-Ion battery was used
+         VSS   5                            -                               and charged by Microchip’s MCP73837 device. A fast
+                                                                            charge current of USBHigh was selected to charge
+                                                                            450 mA in the Constant Current Mode. The MCP73837
+                                                                            was designed to charge at a typical 450 mA constant
+FIGURE 7:               Q1 is On When the Gate is                           current when USBHigh is selected and assured not to
+Low and Current Flows from the Battery Cell to                              exceed the 500 mA limit when a high-power USB port
+the System Load.                                                            is available.
+
+Selecting The Diode                                                            Note:      The USB Specification clearly defines that
+                                                                                          a device may either be low-power at
+A diode, D1 in Figure 7 is required to prevent reverse                                    100 mA loads or high-power, consuming
+current from flowing to the power source. Selecting the                                   up to 500 mA loads. All devices default to
+right diode can minimize the leakage current and the                                      low-power. The transition to high-power is
+forward voltage drop from the power source to the sys-                                    under software control. It is the responsi-
+tem load. A schottky diode, which has lower forward                                       bility of the software to ensure that
+voltage drop, is recommended.                                                             adequate power is available before allow-
+                                                                                          ing devices to consume high-power. The
+  Note:    The Average Forward Current has to be                                          number of “unit loads” a device can draw
+              rated greater than the maximum system                                       is an absolute maximum, not an average
+              load current for the application.                                           over time. (Designers should obtain the
+                                                                                          latest design specification and detailed
+Co-packaged MOSFET + Schottky Diode                                                       information from the USB-IF, if USB
+Semiconductor manufacturers provide a MOSFET and                                          peripherals are going to be implemented
+Schottky diode in one small package to save board                                         in a project.)
+space and cost. A typical SO-8 packaged low forward
+voltage drop Schottky diode and power P-Ch MOSFET                                  5.0                                             1200
+                                                                                                              Constant Voltage
+is used for demonstration in this application note.                                      Constant Current
+                                                                                   4.0                                             1000
+
+
+
+
+                                                                                        Thermal Regulation               Termination800
+                                                                                   3.0
+                                                                                                                                   600
+                                                                                   2.0                                             400
+
+                                                                                   1.0       Constant 500 mA System Load           200
+
+
+                                                                                   0.0                                             0
+                                                                                       0       20      40      60      80     100    120    140
+                                                                                                     Time (Minutes)
+
+                                                                            FIGURE 8:               450 mA Constant Charge
+                                                                            Current Li-Ion Battery Charge Profile with a
+                                                                            Constant 500 mA System Load.
+                                                                            Stage 1: Preconditioning - Preconditioning is
+                                                                            employed to restore a charge to deeply depleted cells.
+                                                                            When the cell voltage is below the designed threshold
+                                                                            voltage, the cell is charged with a constant current of
+                                                                            0.1C maximum. This period is hard to see from
+                                                                            Figure 8 because the VBAT rises above 3V in a very
+                                                                            short period of time and enters the Constant Current
+                                                                            (Fast Charge) mode.
+
+
+
+
+
+
+DS01149C-page 6                                                                                                                                            © 2008 Microchip Technology Inc.
+
+--- PDF PAGE 7 ---
+                                                                                                                   AN1149
+
+
+
+Stage 2: Constant Current - Once the cell voltage has                     DISCHARGE THE LI-ION BATTERY
+risen above the preconditioning threshold, the charge
+current is increased to perform fast charging. The fast                   When a full charge cycle was completed, the input
+charge current should not be more than 1C. A fast                         power source was removed. The P-Ch MOSFET was
+charge current of 450 mA (~ 0.5C) is used in this                         turned on to supply the system load with 0.53C and
+example. The thermal foldback period demonstrates                         discharged the 950mA Li-Ion battery as shown in
+temperature regulation by limiting the current during                     Figure 9. The termination duration is load dependent
+the Fast Charge Period which also improve the reliabil-                   and Figure 9 also shows the Li-Ion battery was not able
+ity and prolongs the life of the charger IC.                              to deliver 500 mA after 105 minutes. With approxi-
+Stage 3: Constant Voltage - Fast Charge ends and                          mately 0.5C discharge rate, the time should last about
+the Constant Voltage mode is initiated when the cell                      2 hours. The main reason that the remaining
+voltage reaches 4.2V (4.35V, 4.40V and 4.5V options                       15 minutes are not available from this experiment is
+are also available for the MCP73837/8 for various                         because the remaining capacity level is not enough to
+applications). In order to maximize the capacity, the                     support 500 mA.
+voltage regulation tolerance should be better than ±1%.                      Note:     When fully depleted, a Li-Ion battery may
+The MCP73837 device provides a ±0.5% superior                                           degrade its life cycle and should be
+voltage regulation tolerance to deliver maximum                                         avoided.
+battery run time after each completed charging cycle.
+Stage 4: Termination - Charging is typically
+terminated by one of two methods: charge current ter-                            5.0
+mination threshold or a timer (or a combination of the                                                                           500
+two). The MCP73837 device employs the end of                                     4.0                                             400
+charge (EOC) methods of charge current termination                               3.0                                             300
+threshold, safety timer and shutdown. Figure 8 shows
+that the minimum current is reached before time-out                              2.0                                             200
+occurs. The MCP73837 device monitors the charge                                  1.0   0.53C mAh Discharge Profile
+current during the constant voltage stage and termi-                                   Typical 950 mAh Li-Ion Battery            100
+nates the charge when the charge current diminishes                                    Example System
+below approximately 0.07C (5%, 7.5%, 10%, and 20%                                0.0                                             0
+
+options are available for the MCP73837/8 for various                                               Time (Minutes)
+applications).
+                                                                          FIGURE 9:               500 mA Discharge Profile
+  Note:  It is not recommended to continue to                             When VIN is Removed.
+             trickle charge Lithium-Ion batteries.
+Charging in this manner replenishes a deeply depleted
+battery in about 140 minutes at 0.5C. Advanced battery
+chargers employ additional safety features. For
+example, charging is suspended if the cell temperature
+is outside a specified window, typically 0°C to 45°C.
+After 140 minutes, Figure 8 demonstrates that the
+power supply still supports a solid 500 mA system load
+when charge termination occurs and the battery char-
+ger went into a standby mode. During this standby
+mode, the MCP73837 device continues to monitor the
+VBAT and will recharge the Li-Ion battery, once the
+regulated VBAT voltage drops below 150 mV.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2008 Microchip Technology Inc.                                                                                                 DS01149C-page 7
+
+--- PDF PAGE 8 ---
+AN1149
+
+
+CONCLUSION                                                                  REFERENCES
+
+System and battery load sharing power path manage-                          [1] “Lithium Batteries”, Gholam-Abbas Nazri and
+ment circuits are very common in portable applications.                          Gianfranco Pistoia Eds.; Kluwer Academic
+Adapting this simple design wisely can dramatically                              Publishers, 2004.
+reduce the total system cost and product developing                         [2] “Portable Electronics Product Design and
+time in order to take advantages of using a fully                                Development”, Bert Haskell; McGraw Hill, 2004.
+integrated battery charge management controller.                            [3]   “AN1088, “Selecting the Right Battery System for
+                                                                                 Cost-Sensitive Portable Applications. While Main-
+                                                                                 taining Excellent Quality”, Brian Chu;
+                                                                                 Microchip Technology Inc., DS01088, 2007.
+                                                                            [4]    MCP73837/8 Data Sheet, “Advanced Stand-Alone
+                                                                                 Li-Ion / Li-Polymer Battery Charge Management
+                                                                                 Controller with Autonomous AC-Adapter or USB-
+                                                                                 Port Source Selection”, Microchip Technology Inc.,
+                                                                                 DS22071, 2007.
+                                                                            [5] MCP73811/2 Data Sheet "Simple, Miniature
+                                                                                 Single-Cell, Fully Integrated Li-Ion / Li-Polymer
+                                                                                 Charge Management Controllers", Microchip
+                                                                                 Technology Inc., DS22036, 2007.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DS01149C-page 8                                                                                                                                            © 2008 Microchip Technology Inc.
+
+--- PDF PAGE 9 ---
+Note the following details of the code protection feature on Microchip devices:
+•       Microchip products meet the specification contained in their particular Microchip Data Sheet.
+
+•       Microchip believes that its family of products is one of the most secure families of its kind on the market today, when used in the
+      intended manner and under normal conditions.
+
+•       There are dishonest and possibly illegal methods used to breach the code protection feature. All of these methods, to our
+      knowledge, require using the Microchip products in a manner outside the operating specifications contained in Microchip’s Data
+      Sheets. Most likely, the person doing so is engaged in theft of intellectual property.
+
+•       Microchip is willing to work with the customer who is concerned about the integrity of their code.
+
+•        Neither Microchip nor any other semiconductor manufacturer can guarantee the security of their code. Code protection does not
+      mean that we are guaranteeing the product as “unbreakable.”
+
+Code protection is constantly evolving. We at Microchip are committed to continuously improving the code protection features of our
+products. Attempts to break Microchip’s code protection feature may be a violation of the Digital Millennium Copyright Act. If such acts
+allow unauthorized access to your software or other copyrighted work, you may have a right to sue for relief under that Act.
+
+
+
+
+
+
+
+
+Information contained in this publication regarding device                            Trademarks
+applications and the like is provided only for your convenience                       The Microchip name and logo, the Microchip logo, Accuron,
+and may be superseded by updates. It is your responsibility to                        dsPIC, KEELOQ, KEELOQ logo, MPLAB, PIC, PICmicro,
+ensure that your application meets with your specifications.                          PICSTART, PRO MATE, rfPIC and SmartShunt are registered
+MICROCHIP MAKES NO REPRESENTATIONS OR                                                 trademarks of Microchip Technology Incorporated in the
+WARRANTIES OF ANY KIND WHETHER EXPRESS OR                                             U.S.A. and other countries.
+IMPLIED, WRITTEN OR ORAL, STATUTORY OR
+OTHERWISE, RELATED TO THE INFORMATION,                                                FilterLab, Linear Active Thermistor, MXDEV, MXLAB,
+INCLUDING BUT NOT LIMITED TO ITS CONDITION,                                           SEEVAL, SmartSensor and The Embedded Control Solutions
+QUALITY, PERFORMANCE, MERCHANTABILITY OR                                              Company are registered trademarks of Microchip Technology
+FITNESS FOR PURPOSE.  Microchip disclaims all liability                               Incorporated in the U.S.A.
+arising from this information and its use. Use of Microchip                           Analog-for-the-Digital Age, Application Maestro, CodeGuard,
+devices in life support and/or safety applications is entirely at                     dsPICDEM, dsPICDEM.net, dsPICworks, dsSPEAK, ECAN,
+the buyer’s risk, and the buyer agrees to defend, indemnify and                       ECONOMONITOR, FanSense, In-Circuit Serial
+hold harmless Microchip from any and all damages, claims,                             Programming, ICSP, ICEPIC, Mindi, MiWi, MPASM, MPLAB
+suits, or expenses resulting from such use. No licenses are                           Certified logo, MPLIB, MPLINK, mTouch, PICkit, PICDEM,
+conveyed, implicitly or otherwise, under any Microchip                                PICDEM.net, PICtail, PIC32 logo, PowerCal, PowerInfo,
+intellectual property rights.                                                         PowerMate, PowerTool, REAL ICE, rfLAB, Select Mode, Total
+                                                                                      Endurance, UNI/O, WiperLock and ZENA are trademarks of
+                                                                                      Microchip Technology Incorporated in the U.S.A. and other
+                                                                                      countries.
+                                                                                      SQTP is a service mark of Microchip Technology Incorporated
+                                                                                      in the U.S.A.
+                                                                                      All other trademarks mentioned herein are property of their
+                                                                                      respective companies.
+                                                                                      © 2008, Microchip Technology Incorporated, Printed in the
+                                                                                      U.S.A., All Rights Reserved.
+                                                                                           Printed on recycled paper.
+
+
+
+
+
+                                                                                      Microchip received ISO/TS-16949:2002 certification for its worldwide
+                                                                                      headquarters, design and wafer fabrication facilities in Chandler and
+                                                                                      Tempe, Arizona; Gresham, Oregon and design centers in California
+                                                                                      and India. The Company’s quality system processes and procedures
+                                                                                      are for its PIC® MCUs and dsPIC® DSCs, KEELOQ® code hopping
+                                                                                      devices, Serial EEPROMs, microperipherals, nonvolatile memory and
+                                                                                      analog products. In addition, Microchip’s quality system for the design
+                                                                                      and manufacture of development systems is ISO 9001:2000 certified.
+
+
+
+
+
+© 2008 Microchip Technology Inc.                                                                                                 DS01149C-page 9
+
+--- PDF PAGE 10 ---
+                                  WORLDWIDE SALES AND SERVICE
+
+
+AMERICAS                               ASIA/PACIFIC                           ASIA/PACIFIC                           EUROPE
+Corporate Office                       Asia Pacific Office                    India - Bangalore                      Austria - Wels
+2355 West Chandler Blvd.               Suites 3707-14, 37th Floor             Tel: 91-80-4182-8400                   Tel: 43-7242-2244-39
+Chandler, AZ  85224-6199               Tower 6, The Gateway                   Fax: 91-80-4182-8422                   Fax: 43-7242-2244-393
+Tel:  480-792-7200                     Harbour City, Kowloon                  India - New Delhi                      Denmark - Copenhagen
+Fax:  480-792-7277                     Hong Kong                              Tel: 91-11-4160-8631                   Tel: 45-4450-2828
+Technical Support:                     Tel: 852-2401-1200                     Fax: 91-11-4160-8632                   Fax: 45-4485-2829
+http://support.microchip.com           Fax: 852-2401-3431                                                            France - Paris
+Web Address:                                                                  India - Pune                           Tel: 33-1-69-53-63-20
+www.microchip.com                      Australia - Sydney                     Tel: 91-20-2566-1512
+                                       Tel: 61-2-9868-6733                    Fax: 91-20-2566-1513                   Fax: 33-1-69-30-90-79
+Atlanta                                Fax: 61-2-9868-6755                                                           Germany - Munich
+Duluth, GA                             China - Beijing                        Japan - Yokohama                       Tel: 49-89-627-144-0
+Tel: 678-957-9614                      Tel: 86-10-8528-2100                   Tel: 81-45-471- 6166                   Fax: 49-89-627-144-44
+Fax: 678-957-1455                      Fax: 86-10-8528-2104                   Fax: 81-45-471-6122
+Boston                                                                        Korea - Daegu                          Italy - Milan
+Westborough, MA                        China - Chengdu                        Tel: 82-53-744-4301                    Tel: 39-0331-742611
+Tel: 774-760-0087                      Tel: 86-28-8665-5511                   Fax: 82-53-744-4302                    Fax: 39-0331-466781
+Fax: 774-760-0088                      Fax: 86-28-8665-7889                   Korea - Seoul                          Netherlands - Drunen
+Chicago                                China - Hong Kong SAR                  Tel: 82-2-554-7200                     Tel: 31-416-690399
+Itasca, IL                             Tel: 852-2401-1200                     Fax: 82-2-558-5932 or                  Fax: 31-416-690340
+Tel: 630-285-0071                      Fax: 852-2401-3431                     82-2-558-5934                          Spain - Madrid
+Fax: 630-285-0075                      China - Nanjing                        Malaysia - Kuala Lumpur                Tel: 34-91-708-08-90
+Dallas                                 Tel: 86-25-8473-2460                   Tel: 60-3-6201-9857                    Fax: 34-91-708-08-91
+Addison, TX                            Fax: 86-25-8473-2470                   Fax: 60-3-6201-9859                    UK - Wokingham
+Tel: 972-818-7423                      China - Qingdao                        Malaysia - Penang                      Tel: 44-118-921-5869
+Fax: 972-818-2924                      Tel: 86-532-8502-7355                  Tel: 60-4-227-8870                     Fax: 44-118-921-5820
+Detroit                                Fax: 86-532-8502-7205                  Fax: 60-4-227-4068
+Farmington Hills, MI                   China - Shanghai                       Philippines - Manila
+Tel: 248-538-2250                      Tel: 86-21-5407-5533                   Tel: 63-2-634-9065
+Fax: 248-538-2260                      Fax: 86-21-5407-5066                   Fax: 63-2-634-9069
+Kokomo                                 China - Shenyang                       Singapore
+Kokomo, IN                             Tel: 86-24-2334-2829                   Tel:  65-6334-8870
+Tel: 765-864-8360                      Fax: 86-24-2334-2393                   Fax: 65-6334-8850
+Fax: 765-864-8387                      China - Shenzhen                       Taiwan - Hsin Chu
+Los Angeles                            Tel: 86-755-8203-2660                  Tel: 886-3-572-9526
+Mission Viejo, CA                      Fax: 86-755-8203-1760                  Fax: 886-3-572-6459
+Tel: 949-462-9523                      China - Wuhan                          Taiwan - Kaohsiung
+Fax: 949-462-9608                      Tel: 86-27-5980-5300                   Tel: 886-7-536-4818
+Santa Clara                            Fax: 86-27-5980-5118                   Fax: 886-7-536-4803
+Santa Clara, CA                        China - Xiamen                         Taiwan - Taipei
+Tel: 408-961-6444                      Tel: 86-592-2388138                    Tel: 886-2-2500-6610
+Fax: 408-961-6445                      Fax: 86-592-2388130                    Fax: 886-2-2508-0102
+Toronto                                China - Xian                           Thailand - Bangkok
+Mississauga, Ontario,                  Tel: 86-29-8833-7252                   Tel: 66-2-694-1351
+Canada                                 Fax: 86-29-8833-7256                   Fax: 66-2-694-1350
+Tel: 905-673-0699
+Fax:  905-673-6509                     China - Zhuhai
+                                       Tel: 86-756-3210040
+                                       Fax: 86-756-3210049
+
+
+
+
+
+
+
+                                                                                                                                          01/02/08
+
+
+
+DS01149C-page 10                                                                                                                                          © 2008 Microchip Technology Inc.

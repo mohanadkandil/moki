@@ -1,0 +1,635 @@
+{
+  "plan": {
+    "schema": "moki.plan/1",
+    "title": "ESP32-S3 SHT40 temperature and humidity board",
+    "layers": 2,
+    "board": {
+      "widthMm": 60,
+      "heightMm": 70,
+      "cornerRadiusMm": 0
+    },
+    "blocks": [
+      {
+        "inst": "esp32-s3-core",
+        "block": "esp32-s3-core",
+        "version": 1,
+        "params": {},
+        "at": {
+          "x": -2,
+          "y": 15.75
+        }
+      },
+      {
+        "inst": "usb-c-sink",
+        "block": "usb-c-sink",
+        "version": 1,
+        "params": {},
+        "at": {
+          "x": -12,
+          "y": -23.15
+        }
+      },
+      {
+        "inst": "ldo-ap2112-3v3",
+        "block": "ldo-ap2112-3v3",
+        "version": 2,
+        "params": {},
+        "at": {
+          "x": -20.5,
+          "y": 22.5
+        }
+      },
+      {
+        "inst": "boot-reset-buttons",
+        "block": "boot-reset-buttons",
+        "version": 1,
+        "params": {},
+        "at": {
+          "x": -0.5,
+          "y": 8.5
+        }
+      },
+      {
+        "inst": "i2c-header",
+        "block": "i2c-header",
+        "version": 1,
+        "params": {},
+        "at": {
+          "x": 17,
+          "y": 19
+        }
+      },
+      {
+        "inst": "sht40",
+        "block": "sht40-ad1b-3v3",
+        "version": 3,
+        "params": {},
+        "at": {
+          "x": 20,
+          "y": -2
+        }
+      }
+    ],
+    "links": [
+      {
+        "from": "esp32-s3-core.GND",
+        "to": "usb-c-sink.GND"
+      },
+      {
+        "from": "esp32-s3-core.GND",
+        "to": "ldo-ap2112-3v3.GND"
+      },
+      {
+        "from": "esp32-s3-core.GND",
+        "to": "boot-reset-buttons.GND"
+      },
+      {
+        "from": "esp32-s3-core.GND",
+        "to": "i2c-header.GND"
+      },
+      {
+        "from": "usb-c-sink.VBUS",
+        "to": "ldo-ap2112-3v3.VBUS"
+      },
+      {
+        "from": "esp32-s3-core.V3V3",
+        "to": "ldo-ap2112-3v3.V3V3"
+      },
+      {
+        "from": "esp32-s3-core.V3V3",
+        "to": "i2c-header.V3V3"
+      },
+      {
+        "from": "esp32-s3-core.EN",
+        "to": "boot-reset-buttons.EN"
+      },
+      {
+        "from": "esp32-s3-core.BOOT",
+        "to": "boot-reset-buttons.BOOT"
+      },
+      {
+        "from": "esp32-s3-core.I2C",
+        "to": "i2c-header.I2C"
+      },
+      {
+        "from": "esp32-s3-core.USB",
+        "to": "usb-c-sink.USB"
+      },
+      {
+        "from": "ldo-ap2112-3v3.V3V3",
+        "to": "sht40.V3V3"
+      },
+      {
+        "from": "esp32-s3-core.GND",
+        "to": "sht40.GND"
+      },
+      {
+        "from": "esp32-s3-core.I2C",
+        "to": "sht40.I2C"
+      }
+    ],
+    "sections": [
+      {
+        "id": "esp32-s3-core",
+        "title": "ESP32-S3 + reset and boot bias",
+        "purpose": "ESP32-S3 + reset and boot bias",
+        "insts": [
+          "esp32-s3-core"
+        ],
+        "notes": [
+          "EN:10k/1uF reset delay; GPIO0 pull-up with BOOT switch.",
+          "GPIO45/46 pull-downs; antenna no-copper keepout."
+        ],
+        "reference": {
+          "lcsc": "C2913198",
+          "datasheetUrl": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+          "page": 41,
+          "quote": "This is the typical application circuit of the module"
+        }
+      },
+      {
+        "id": "usb-c-sink",
+        "title": "USB-C sink + ESD",
+        "purpose": "USB-C Rd sink with native data ESD. Requires a known 5V supply advertising at least1.5A; no PD negotiation/current-detection claim.",
+        "insts": [
+          "usb-c-sink"
+        ],
+        "notes": [
+          "CC1/CC2: independent5.1k pull-downs; sink only.",
+          "Supply contract: known5V/1.5A Type-C source; no PD negotiation."
+        ],
+        "reference": {
+          "lcsc": "C7519",
+          "datasheetUrl": "https://www.st.com/resource/en/datasheet/usblc6-2.pdf",
+          "page": 1,
+          "quote": "Very low capacitance ESD protection"
+        }
+      },
+      {
+        "id": "ldo-ap2112-3v3",
+        "title": "3.3 V regulator",
+        "purpose": "3.3 V regulator",
+        "insts": [
+          "ldo-ap2112-3v3"
+        ],
+        "notes": [
+          "AP2112:600mA IC rating,250mA continuous board budget at25°C.",
+          "1uF input/output bypass; no thermal-transient proof."
+        ],
+        "reference": {
+          "lcsc": "C51118",
+          "datasheetUrl": "https://www.diodes.com/datasheet/download/AP2112.pdf",
+          "page": 2,
+          "quote": "Typical Applications Circuit"
+        }
+      },
+      {
+        "id": "boot-reset-buttons",
+        "title": "BOOT / RESET buttons",
+        "purpose": "BOOT / RESET buttons",
+        "insts": [
+          "boot-reset-buttons"
+        ],
+        "notes": [
+          "Real imported parts and named nets; see block reference."
+        ]
+      },
+      {
+        "id": "i2c-header",
+        "title": "I2C expansion header",
+        "purpose": "I2C expansion header",
+        "insts": [
+          "i2c-header"
+        ],
+        "notes": [
+          "Real imported parts and named nets; see block reference."
+        ]
+      },
+      {
+        "id": "sensor",
+        "title": "SHT40 · temperature and humidity",
+        "purpose": "3.3 V SHT40 at fixed I2C address 0x44, 100 nF bypass; uses existing carrier 10kOhm bus pull-ups at 100 kHz. Imported central copper pad explicitly omitted; physical realization pending.",
+        "insts": [
+          "sht40"
+        ],
+        "notes": [
+          "0x44, 100kHz; heater disabled; CRC-8 checked by firmware.",
+          "100nF local bypass; shared10k pull-ups; no central copper/paste."
+        ],
+        "reference": {
+          "lcsc": "C2909890",
+          "datasheetUrl": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
+          "page": 16,
+          "quote": "There shall be no copper under the sensor other than at the pin pads."
+        }
+      }
+    ],
+    "drafts": [
+      {
+        "schema": "moki.block/1",
+        "id": "sht40-ad1b-3v3",
+        "version": 3,
+        "title": "SHT40 temperature and humidity, heater disabled",
+        "class": "sensor",
+        "summary": "3.3 V SHT40 at fixed I2C address 0x44, 100 nF bypass; uses existing carrier 10kOhm bus pull-ups at 100 kHz. Imported central copper pad explicitly omitted; physical realization pending.",
+        "provenance": {
+          "author": "agent",
+          "authorId": "chip_eda"
+        },
+        "parts": [
+          {
+            "ref": "U1",
+            "lcsc": "C2909890",
+            "mpn": "SHT40-AD1B-R2",
+            "catalogReceipt": "sha256:aba07424974690c4010ed155f58bcd30cf5bf49657ea4ef20d11953344ca6c0b",
+            "datasheet": {
+              "url": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
+              "sha256": "8db4a43f17149b76811cfb504caaeca4ef844ddc710cb9b45905c51c7ddfe3c2",
+              "pages": "9–17",
+              "note": "SHT40-AD1B: address 0x44; VDD <=3.6 V; measurement <=500 uA; no clock stretching; heater excluded from this block."
+            },
+            "pinout": "verified",
+            "at": {
+              "x": 0,
+              "y": 0,
+              "rotation": 0
+            },
+            "pins": {
+              "SDA": {
+                "pad": "1",
+                "role": "open-drain",
+                "required": true,
+                "volts": {
+                  "min": 0,
+                  "max": 3.6
+                }
+              },
+              "SCL": {
+                "pad": "2",
+                "role": "input",
+                "required": true,
+                "volts": {
+                  "min": 0,
+                  "max": 3.6
+                }
+              },
+              "VDD": {
+                "pad": "3",
+                "role": "power-in",
+                "required": true,
+                "volts": {
+                  "min": 3,
+                  "max": 3.6
+                }
+              },
+              "VSS": {
+                "pad": "4",
+                "role": "ground",
+                "required": true
+              }
+            },
+            "omitPads": [
+              "5"
+            ],
+            "correction": {
+              "url": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
+              "sha256": "8db4a43f17149b76811cfb504caaeca4ef844ddc710cb9b45905c51c7ddfe3c2",
+              "pages": "16–17",
+              "note": "Remove imported PAD5 central copper and paste; do not ground it. Manufacturer forbids exposed central copper/solder; die pad is not connected to any pin. Retain functional pads 1–4; final pad geometry/orientation and all exported copper/paste require native review."
+            }
+          },
+          {
+            "ref": "C1",
+            "lcsc": "C14663",
+            "mpn": "CC0603KRX7R9BB104",
+            "catalogReceipt": "sha256:fde5081a0b45324f436df1a456a1a4dd1608306b862e8a6f4c8187b9d69ac426",
+            "datasheet": {
+              "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2211101700_YAGEO-CC0603KRX7R9BB104_C14663.pdf",
+              "note": "Actual YAGEO 100nF +/-10% 50V X7R C0603 catalog component; retained importer receipt identifies pads 1/2."
+            },
+            "pinout": "verified",
+            "pins": {
+              "1": {
+                "pad": "1",
+                "role": "passive"
+              },
+              "2": {
+                "pad": "2",
+                "role": "passive"
+              }
+            },
+            "at": {
+              "x": 2,
+              "y": 0,
+              "rotation": 90
+            },
+            "value": "100nF",
+            "valueWhy": {
+              "url": "https://sensirion.com/media/documents/93E06008/640B25FB/SENSEVAL_SHT4XV1_technical_description.pdf",
+              "sha256": "9b4ca39c5ffe2e36aaa1a04f011ddbd9de3de86896f6e430c3bd8691376cc7d3",
+              "pages": "2, 8",
+              "note": "Manufacturer reference uses 100 nF X7R and two 10 kOhm pull-ups to sensor VDD. Pull-ups are supplied by the existing carrier I2C header, not duplicated here."
+            }
+          }
+        ],
+        "nets": [
+          {
+            "name": "V3V3",
+            "pins": [
+              "U1.VDD",
+              "C1.1"
+            ]
+          },
+          {
+            "name": "GND",
+            "pins": [
+              "U1.VSS",
+              "C1.2"
+            ]
+          },
+          {
+            "name": "SDA",
+            "pins": [
+              "U1.SDA"
+            ]
+          },
+          {
+            "name": "SCL",
+            "pins": [
+              "U1.SCL"
+            ]
+          }
+        ],
+        "params": [
+          {
+            "id": "heater",
+            "type": "enum",
+            "options": [
+              "disabled"
+            ],
+            "default": "disabled",
+            "why": "Heater commands are forbidden in this 2mA variant. A heater variant needs a different power budget, duty-cycle/ambient constraints and independent review (datasheet pp9,13–14)."
+          },
+          {
+            "id": "i2cFrequencyHz",
+            "type": "number",
+            "min": 100000,
+            "max": 100000,
+            "default": 100000,
+            "unit": "Hz",
+            "why": "Author default 100kHz; existing carrier has one 10kOhm +/-1% pull-up pair. Cb < tr/(0.8473 Rp), Sensirion p9; Standard-mode tr<=1000ns, NXP UM10204 Rev7 p44, https://www.nxp.com/docs/en/user-guide/UM10204.pdf . No faster-mode timing claim."
+          }
+        ],
+        "ports": [
+          {
+            "id": "V3V3",
+            "label": "Sensor supply",
+            "kind": "power-in",
+            "terminal": "net:V3V3",
+            "volts": {
+              "min": 3,
+              "max": 3.6
+            }
+          },
+          {
+            "id": "GND",
+            "label": "Ground",
+            "kind": "ground",
+            "terminal": "net:GND"
+          },
+          {
+            "id": "I2C",
+            "label": "SHT40 I2C",
+            "kind": "bus",
+            "bus": {
+              "protocol": "i2c",
+              "role": "peripheral",
+              "signals": {
+                "SDA": "net:SDA",
+                "SCL": "net:SCL"
+              },
+              "i2cAddresses": [
+                68
+              ]
+            }
+          }
+        ],
+        "power": {
+          "sources": [],
+          "sinks": [
+            {
+              "port": "V3V3",
+              "typicalMa": 0.5,
+              "peakMa": 2
+            }
+          ]
+        },
+        "constraints": [
+          {
+            "kind": "decoupling",
+            "ic": "U1",
+            "powerPin": "VDD",
+            "groundPin": "VSS",
+            "caps": [
+              "C1"
+            ],
+            "minUf": 0.1,
+            "maxDistanceMm": 2,
+            "citation": {
+              "url": "https://sensirion.com/media/documents/93E06008/640B25FB/SENSEVAL_SHT4XV1_technical_description.pdf",
+              "sha256": "9b4ca39c5ffe2e36aaa1a04f011ddbd9de3de86896f6e430c3bd8691376cc7d3",
+              "pages": "2, 8",
+              "note": "Manufacturer reference uses 100 nF X7R and two 10 kOhm pull-ups to sensor VDD. Pull-ups are supplied by the existing carrier I2C header, not duplicated here. The <=2mm centre-distance limit is an author placement policy, not a manufacturer dimension."
+            }
+          },
+          {
+            "kind": "ground",
+            "pin": "U1.VSS",
+            "citation": {
+              "url": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
+              "sha256": "8db4a43f17149b76811cfb504caaeca4ef844ddc710cb9b45905c51c7ddfe3c2",
+              "pages": "17",
+              "note": "SHT40-AD1B: address 0x44; VDD <=3.6 V; measurement <=500 uA; no clock stretching; heater excluded from this block."
+            }
+          },
+          {
+            "kind": "keepout",
+            "x": 0,
+            "y": 0,
+            "width": 1.6,
+            "height": 1.6,
+            "layers": [
+              "all"
+            ],
+            "excludeParts": [
+              "U1"
+            ],
+            "purpose": "No copper beneath sensor except functional contact pads 1–4; no central copper/paste PAD5. Exclude only sensor U1, not bypass C1. Native pad-aware exception, footprint dimensions/orientation and pours/paste remain unverified. Keep sensing opening exposed and away from heat sources.",
+            "citation": {
+              "url": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
+              "sha256": "8db4a43f17149b76811cfb504caaeca4ef844ddc710cb9b45905c51c7ddfe3c2",
+              "pages": "16–17",
+              "note": "Remove imported PAD5 central copper and paste; do not ground it. Manufacturer forbids exposed central copper/solder; die pad is not connected to any pin. Retain functional pads 1–4; final pad geometry/orientation and all exported copper/paste require native review."
+            }
+          }
+        ],
+        "firmware": {
+          "libs": [],
+          "includes": [
+            "Wire.h"
+          ],
+          "usage": "Fixed address 0x44. Use Wire at 100000 Hz with shared 3.3V supply/pull-ups; do not duplicate carrier 10kOhm pull-ups. Never issue heater commands. Wait >=1ms after power-up and >=8.3ms for high-repeatability measurement (10ms policy); busy reads NACK, no clock stretching. Validate 6-byte measurement CRC-8 (polynomial 0x31, initial 0xFF). Measurement <=0.5mA plus both 10kOhm +/-1% pull-ups at 3.6V is <1.23mA; 2mA peak is author margin, not heater capacity. Actual total bus capacitance/waveforms remain unverified unless supplied and measured; 100kHz alone does not prove timing. No powered bus driving an unpowered sensor, no 5V interface. Preserve airflow, avoid warm MCU/regulator placement; no final thermal/accuracy/manufacturing claim."
+        }
+      }
+    ],
+    "requirements": [
+      {
+        "id": "usb",
+        "plain": "Has a USB-C sink interface",
+        "metric": "interface_present",
+        "args": {
+          "kind": "usb_c_sink"
+        },
+        "op": "present",
+        "source": "maker"
+      },
+      {
+        "id": "size",
+        "plain": "Fits a60by70mm board",
+        "metric": "board_size_mm",
+        "op": "<=",
+        "value": [
+          60,
+          70
+        ],
+        "source": "maker"
+      },
+      {
+        "id": "count",
+        "plain": "No more than24 placed parts",
+        "metric": "part_count",
+        "op": "<=",
+        "value": 24,
+        "source": "maker"
+      }
+    ],
+    "app": {
+      "source": "#include <Arduino.h>\n#include <Wire.h>\n#include \"pins.h\"\nstatic uint8_t crc8(const uint8_t *p) {uint8_t c=0xff;for(int i=0;i<2;i++){c^=p[i];for(int j=0;j<8;j++)c=(c&0x80)?uint8_t((c<<1)^0x31):uint8_t(c<<1);}return c;}\nvoid setup(){Serial.begin(115200);Wire.begin(PIN_SHT40_I2C_SDA,PIN_SHT40_I2C_SCL);Wire.setClock(100000);delay(10);}\nvoid loop(){Wire.beginTransmission(0x44);Wire.write(0xFD);if(Wire.endTransmission()!=0){Serial.println(\"Sensor unavailable\");delay(1000);return;}delay(10);if(Wire.requestFrom(uint8_t(0x44),uint8_t(6))!=6){Serial.println(\"Sensor read failed\");delay(1000);return;}uint8_t b[6];for(int i=0;i<6;i++)b[i]=Wire.read();if(crc8(b)!=b[2]||crc8(b+3)!=b[5]){Serial.println(\"Sensor CRC failed\");delay(1000);return;}float t=-45.0f+175.0f*((uint16_t(b[0])<<8)|b[1])/65535.0f;float h=-6.0f+125.0f*((uint16_t(b[3])<<8)|b[4])/65535.0f;h=constrain(h,0.0f,100.0f);Serial.print(t,2);Serial.print(\" C, \");Serial.print(h,2);Serial.println(\" %RH\");delay(1000);}\n"
+    }
+  },
+  "blockHashes": [
+    {
+      "id": "boot-reset-buttons",
+      "version": 1,
+      "contentHash": "c701a9b3a791baf70b0767b7377e41728c976685e7d2176f5a23595f576b6320"
+    },
+    {
+      "id": "esp32-s3-core",
+      "version": 1,
+      "contentHash": "6915002337d3a0a5e2f389aeec1b111d8ac16af68b696c6b7f4d86335d7c147d"
+    },
+    {
+      "id": "i2c-header",
+      "version": 1,
+      "contentHash": "1a20d4a963be6b2b977ee5dac95bda8c8b20b2ec108ec6e83377cab0d7b08764"
+    },
+    {
+      "id": "ldo-ap2112-3v3",
+      "version": 1,
+      "contentHash": "c9817554949f538b169d164af0b7c4269797533bcdc083682d2e4948d5a4f380"
+    },
+    {
+      "id": "ldo-ap2112-3v3",
+      "version": 2,
+      "contentHash": "3267698857085dcd7c5d5813f4bed87024e510a8ea475d92b9d927d329bc725c"
+    },
+    {
+      "id": "sht40-ad1b-3v3",
+      "version": 1,
+      "contentHash": "951e56d5cda4ffefe321fc0d781e0aef04ca733025312b73dce2708c166ed7bd"
+    },
+    {
+      "id": "sht40-ad1b-3v3",
+      "version": 2,
+      "contentHash": "3d7b6e0e0ee68bb9432a69544887362f1b154c4dbeda92cb319e5637ef410574"
+    },
+    {
+      "id": "sht40-ad1b-3v3",
+      "version": 3,
+      "contentHash": "490f1b461bc42e6f5d4f11c4c6063bbaea4ff614daba0711e2f12b8acba016ec"
+    },
+    {
+      "id": "usb-c-sink",
+      "version": 1,
+      "contentHash": "cbc130903011c22d3bb2dd8f73e7a1dd56c73c4625e504e4570c2679cfa5e4eb"
+    }
+  ],
+  "checks": [
+    {
+      "where": "esp32-s3-core.EN reaches75% VDD",
+      "recipe": {
+        "kind": "rc-reset",
+        "name": "EN reaches75% VDD",
+        "resistor": "R1",
+        "capacitor": "C5",
+        "supplyV": 3.3,
+        "thresholdRatio": 0.75,
+        "target": 13.8629436,
+        "tolerance": 0.25,
+        "citation": {
+          "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+          "pages": "11–16, 41, 45–46",
+          "note": "Reference pin map, 10k/1uF EN reset, 22uF+100nF supply bypass; see retained manufacturer PDF."
+        }
+      },
+      "task": {
+        "kind": "rc-reset",
+        "values": [
+          10000,
+          0.000001,
+          3.3
+        ],
+        "threshold": 0.75,
+        "openSwitches": 1
+      },
+      "unit": "ms",
+      "openSwitches": [
+        "boot-reset-buttons.SW1"
+      ]
+    }
+  ],
+  "gate": {
+    "gate": "spice",
+    "ok": true,
+    "issues": [
+      {
+        "rule": "spice-open-switch",
+        "severity": "warning",
+        "where": "esp32-s3-core.EN reaches75% VDD",
+        "message": "Explicit normally-open contacts held open: boot-reset-buttons.SW1; pressed/bounce behavior is not simulated"
+      },
+      {
+        "rule": "spice-coverage",
+        "severity": "warning",
+        "message": "Only declared isolated profiles are simulated; this is not whole-board analog verification"
+      },
+      {
+        "rule": "spice-evidence",
+        "severity": "warning",
+        "message": "Fixed netlists and raw engine results: /home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-05-chip-level/evidence/chip_eda/sht40-board/block-tests/run-S1LGIB/spice/run-obG6ih/output.json"
+      }
+    ],
+    "measurements": [
+      {
+        "where": "esp32-s3-core.EN reaches75% VDD",
+        "name": "rc-reset",
+        "measured": 13.862942128297528,
+        "target": 13.8629436,
+        "tolerance": 0.25,
+        "unit": "ms",
+        "ok": true
+      }
+    ],
+    "inputHash": "3ba357092793c5587b4e384927edff3937126d82b0889024c75cd09a03600c87"
+  }
+}

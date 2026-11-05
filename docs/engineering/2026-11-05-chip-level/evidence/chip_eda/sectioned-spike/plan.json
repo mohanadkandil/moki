@@ -1,0 +1,186 @@
+{
+  "schema": "moki.plan/1",
+  "title": "ESP32-S3 USB-C control board",
+  "layers": 2,
+  "board": {
+    "widthMm": 60,
+    "heightMm": 70,
+    "cornerRadiusMm": 0
+  },
+  "blocks": [
+    {
+      "inst": "esp32-s3-core",
+      "block": "esp32-s3-core",
+      "version": 1,
+      "params": {},
+      "at": {
+        "x": -2,
+        "y": 15.75
+      }
+    },
+    {
+      "inst": "usb-c-sink",
+      "block": "usb-c-sink",
+      "version": 1,
+      "params": {},
+      "at": {
+        "x": -12,
+        "y": -23.15
+      }
+    },
+    {
+      "inst": "ldo-ap2112-3v3",
+      "block": "ldo-ap2112-3v3",
+      "version": 2,
+      "params": {},
+      "at": {
+        "x": -20.5,
+        "y": 22.5
+      }
+    },
+    {
+      "inst": "boot-reset-buttons",
+      "block": "boot-reset-buttons",
+      "version": 1,
+      "params": {},
+      "at": {
+        "x": -0.5,
+        "y": 8.5
+      }
+    },
+    {
+      "inst": "i2c-header",
+      "block": "i2c-header",
+      "version": 1,
+      "params": {},
+      "at": {
+        "x": 17,
+        "y": 19
+      }
+    }
+  ],
+  "links": [
+    {
+      "from": "esp32-s3-core.GND",
+      "to": "usb-c-sink.GND"
+    },
+    {
+      "from": "esp32-s3-core.GND",
+      "to": "ldo-ap2112-3v3.GND"
+    },
+    {
+      "from": "esp32-s3-core.GND",
+      "to": "boot-reset-buttons.GND"
+    },
+    {
+      "from": "esp32-s3-core.GND",
+      "to": "i2c-header.GND"
+    },
+    {
+      "from": "usb-c-sink.VBUS",
+      "to": "ldo-ap2112-3v3.VBUS"
+    },
+    {
+      "from": "esp32-s3-core.V3V3",
+      "to": "ldo-ap2112-3v3.V3V3"
+    },
+    {
+      "from": "esp32-s3-core.V3V3",
+      "to": "i2c-header.V3V3"
+    },
+    {
+      "from": "esp32-s3-core.EN",
+      "to": "boot-reset-buttons.EN"
+    },
+    {
+      "from": "esp32-s3-core.BOOT",
+      "to": "boot-reset-buttons.BOOT"
+    },
+    {
+      "from": "esp32-s3-core.I2C",
+      "to": "i2c-header.I2C"
+    },
+    {
+      "from": "esp32-s3-core.USB",
+      "to": "usb-c-sink.USB"
+    }
+  ],
+  "sections": [
+    {
+      "id": "esp32-s3-core",
+      "title": "ESP32-S3 + reset and boot bias",
+      "purpose": "ESP32-S3 + reset and boot bias",
+      "insts": [
+        "esp32-s3-core"
+      ],
+      "notes": [
+        "EN:10k/1uF reset delay; GPIO0 pull-up with BOOT switch.",
+        "GPIO45/46 pull-downs; antenna no-copper keepout."
+      ],
+      "reference": {
+        "lcsc": "C2913198",
+        "datasheetUrl": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+        "page": 41,
+        "quote": "This is the typical application circuit of the module"
+      }
+    },
+    {
+      "id": "usb-c-sink",
+      "title": "USB-C sink + ESD",
+      "purpose": "USB-C Rd sink with native data ESD. Requires a known 5V supply advertising at least1.5A; no PD negotiation/current-detection claim.",
+      "insts": [
+        "usb-c-sink"
+      ],
+      "notes": [
+        "CC1/CC2: independent5.1k pull-downs; sink only.",
+        "Supply contract: known5V/1.5A Type-C source; no PD negotiation."
+      ],
+      "reference": {
+        "lcsc": "C7519",
+        "datasheetUrl": "https://www.st.com/resource/en/datasheet/usblc6-2.pdf",
+        "page": 1,
+        "quote": "Very low capacitance ESD protection"
+      }
+    },
+    {
+      "id": "ldo-ap2112-3v3",
+      "title": "3.3 V regulator",
+      "purpose": "3.3 V regulator",
+      "insts": [
+        "ldo-ap2112-3v3"
+      ],
+      "notes": [
+        "AP2112:600mA IC rating,250mA continuous board budget at25°C.",
+        "1uF input/output bypass; no thermal-transient proof."
+      ],
+      "reference": {
+        "lcsc": "C51118",
+        "datasheetUrl": "https://www.diodes.com/datasheet/download/AP2112.pdf",
+        "page": 2,
+        "quote": "Typical Applications Circuit"
+      }
+    },
+    {
+      "id": "boot-reset-buttons",
+      "title": "BOOT / RESET buttons",
+      "purpose": "BOOT / RESET buttons",
+      "insts": [
+        "boot-reset-buttons"
+      ],
+      "notes": [
+        "Real imported parts and named nets; see block reference."
+      ]
+    },
+    {
+      "id": "i2c-header",
+      "title": "I2C expansion header",
+      "purpose": "I2C expansion header",
+      "insts": [
+        "i2c-header"
+      ],
+      "notes": [
+        "Real imported parts and named nets; see block reference."
+      ]
+    }
+  ]
+}

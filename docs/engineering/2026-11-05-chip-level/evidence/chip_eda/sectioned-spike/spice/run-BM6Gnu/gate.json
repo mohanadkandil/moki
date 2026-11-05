@@ -1,0 +1,293 @@
+{
+  "plan": {
+    "schema": "moki.plan/1",
+    "title": "ESP32-S3 USB-C control board",
+    "layers": 2,
+    "board": {
+      "widthMm": 60,
+      "heightMm": 70,
+      "cornerRadiusMm": 0
+    },
+    "blocks": [
+      {
+        "inst": "esp32-s3-core",
+        "block": "esp32-s3-core",
+        "version": 1,
+        "params": {},
+        "at": {
+          "x": -2,
+          "y": 15.75
+        }
+      },
+      {
+        "inst": "usb-c-sink",
+        "block": "usb-c-sink",
+        "version": 1,
+        "params": {},
+        "at": {
+          "x": -12,
+          "y": -23.15
+        }
+      },
+      {
+        "inst": "ldo-ap2112-3v3",
+        "block": "ldo-ap2112-3v3",
+        "version": 1,
+        "params": {},
+        "at": {
+          "x": -20.5,
+          "y": 21.75
+        }
+      },
+      {
+        "inst": "boot-reset-buttons",
+        "block": "boot-reset-buttons",
+        "version": 1,
+        "params": {},
+        "at": {
+          "x": -0.5,
+          "y": 8.5
+        }
+      },
+      {
+        "inst": "i2c-header",
+        "block": "i2c-header",
+        "version": 1,
+        "params": {},
+        "at": {
+          "x": 17,
+          "y": 19
+        }
+      }
+    ],
+    "links": [
+      {
+        "from": "esp32-s3-core.GND",
+        "to": "usb-c-sink.GND"
+      },
+      {
+        "from": "esp32-s3-core.GND",
+        "to": "ldo-ap2112-3v3.GND"
+      },
+      {
+        "from": "esp32-s3-core.GND",
+        "to": "boot-reset-buttons.GND"
+      },
+      {
+        "from": "esp32-s3-core.GND",
+        "to": "i2c-header.GND"
+      },
+      {
+        "from": "usb-c-sink.VBUS",
+        "to": "ldo-ap2112-3v3.VBUS"
+      },
+      {
+        "from": "esp32-s3-core.V3V3",
+        "to": "ldo-ap2112-3v3.V3V3"
+      },
+      {
+        "from": "esp32-s3-core.V3V3",
+        "to": "i2c-header.V3V3"
+      },
+      {
+        "from": "esp32-s3-core.EN",
+        "to": "boot-reset-buttons.EN"
+      },
+      {
+        "from": "esp32-s3-core.BOOT",
+        "to": "boot-reset-buttons.BOOT"
+      },
+      {
+        "from": "esp32-s3-core.I2C",
+        "to": "i2c-header.I2C"
+      },
+      {
+        "from": "esp32-s3-core.USB",
+        "to": "usb-c-sink.USB"
+      }
+    ],
+    "sections": [
+      {
+        "id": "esp32-s3-core",
+        "title": "ESP32-S3 + reset and boot bias",
+        "purpose": "ESP32-S3 + reset and boot bias",
+        "insts": [
+          "esp32-s3-core"
+        ],
+        "notes": [
+          "EN:10k/1uF reset delay; GPIO0 pull-up with BOOT switch.",
+          "GPIO45/46 pull-downs; antenna no-copper keepout."
+        ],
+        "reference": {
+          "lcsc": "C2913198",
+          "datasheetUrl": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+          "page": 41,
+          "quote": "This is the typical application circuit of the module"
+        }
+      },
+      {
+        "id": "usb-c-sink",
+        "title": "USB-C sink + ESD",
+        "purpose": "USB-C Rd sink with native data ESD. Requires a known 5V supply advertising at least1.5A; no PD negotiation/current-detection claim.",
+        "insts": [
+          "usb-c-sink"
+        ],
+        "notes": [
+          "CC1/CC2: independent5.1k pull-downs; sink only.",
+          "Supply contract: known5V/1.5A Type-C source; no PD negotiation."
+        ],
+        "reference": {
+          "lcsc": "C7519",
+          "datasheetUrl": "https://www.st.com/resource/en/datasheet/usblc6-2.pdf",
+          "page": 1,
+          "quote": "Very low capacitance ESD protection"
+        }
+      },
+      {
+        "id": "ldo-ap2112-3v3",
+        "title": "3.3 V regulator",
+        "purpose": "3.3 V regulator",
+        "insts": [
+          "ldo-ap2112-3v3"
+        ],
+        "notes": [
+          "AP2112:600mA IC rating,250mA continuous board budget at25°C.",
+          "1uF input/output bypass; no thermal-transient proof."
+        ],
+        "reference": {
+          "lcsc": "C51118",
+          "datasheetUrl": "https://www.diodes.com/datasheet/download/AP2112.pdf",
+          "page": 2,
+          "quote": "Typical Applications Circuit"
+        }
+      },
+      {
+        "id": "boot-reset-buttons",
+        "title": "BOOT / RESET buttons",
+        "purpose": "BOOT / RESET buttons",
+        "insts": [
+          "boot-reset-buttons"
+        ],
+        "notes": [
+          "Real imported parts and named nets; see block reference."
+        ]
+      },
+      {
+        "id": "i2c-header",
+        "title": "I2C expansion header",
+        "purpose": "I2C expansion header",
+        "insts": [
+          "i2c-header"
+        ],
+        "notes": [
+          "Real imported parts and named nets; see block reference."
+        ]
+      }
+    ]
+  },
+  "blockHashes": [
+    {
+      "id": "boot-reset-buttons",
+      "version": 1,
+      "contentHash": "c701a9b3a791baf70b0767b7377e41728c976685e7d2176f5a23595f576b6320"
+    },
+    {
+      "id": "esp32-s3-core",
+      "version": 1,
+      "contentHash": "6915002337d3a0a5e2f389aeec1b111d8ac16af68b696c6b7f4d86335d7c147d"
+    },
+    {
+      "id": "i2c-header",
+      "version": 1,
+      "contentHash": "1a20d4a963be6b2b977ee5dac95bda8c8b20b2ec108ec6e83377cab0d7b08764"
+    },
+    {
+      "id": "ldo-ap2112-3v3",
+      "version": 1,
+      "contentHash": "c9817554949f538b169d164af0b7c4269797533bcdc083682d2e4948d5a4f380"
+    },
+    {
+      "id": "sht40-ad1b-3v3",
+      "version": 1,
+      "contentHash": "951e56d5cda4ffefe321fc0d781e0aef04ca733025312b73dce2708c166ed7bd"
+    },
+    {
+      "id": "sht40-ad1b-3v3",
+      "version": 2,
+      "contentHash": "3d7b6e0e0ee68bb9432a69544887362f1b154c4dbeda92cb319e5637ef410574"
+    },
+    {
+      "id": "usb-c-sink",
+      "version": 1,
+      "contentHash": "cbc130903011c22d3bb2dd8f73e7a1dd56c73c4625e504e4570c2679cfa5e4eb"
+    }
+  ],
+  "checks": [
+    {
+      "where": "esp32-s3-core.EN reaches75% VDD",
+      "recipe": {
+        "kind": "rc-reset",
+        "name": "EN reaches75% VDD",
+        "resistor": "R1",
+        "capacitor": "C5",
+        "supplyV": 3.3,
+        "thresholdRatio": 0.75,
+        "target": 13.8629436,
+        "tolerance": 0.25,
+        "citation": {
+          "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+          "pages": "11–16, 41, 45–46",
+          "note": "Reference pin map, 10k/1uF EN reset, 22uF+100nF supply bypass; see retained manufacturer PDF."
+        }
+      },
+      "task": {
+        "kind": "rc-reset",
+        "values": [
+          10000,
+          0.000001,
+          3.3
+        ],
+        "threshold": 0.75,
+        "openSwitches": 1
+      },
+      "unit": "ms",
+      "openSwitches": [
+        "boot-reset-buttons.SW1"
+      ]
+    }
+  ],
+  "gate": {
+    "gate": "spice",
+    "ok": true,
+    "issues": [
+      {
+        "rule": "spice-open-switch",
+        "severity": "warning",
+        "where": "esp32-s3-core.EN reaches75% VDD",
+        "message": "Explicit normally-open contacts held open: boot-reset-buttons.SW1; pressed/bounce behavior is not simulated"
+      },
+      {
+        "rule": "spice-coverage",
+        "severity": "warning",
+        "message": "Only declared isolated profiles are simulated; this is not whole-board analog verification"
+      },
+      {
+        "rule": "spice-evidence",
+        "severity": "warning",
+        "message": "Fixed netlists and raw engine results: /home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-05-chip-level/evidence/chip_eda/sectioned-spike/spice/run-BM6Gnu/output.json"
+      }
+    ],
+    "measurements": [
+      {
+        "where": "esp32-s3-core.EN reaches75% VDD",
+        "name": "rc-reset",
+        "measured": 13.862942128297528,
+        "target": 13.8629436,
+        "tolerance": 0.25,
+        "unit": "ms",
+        "ok": true
+      }
+    ],
+    "inputHash": "6030bfeb456ff4f4410ba2dbc527e911548e29a38906ad2c2d27b4d235642704"
+  }
+}

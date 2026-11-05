@@ -1,0 +1,104 @@
+[
+  {
+    "file": "ap2112-manufacturer.pdf",
+    "url": "https://www.diodes.com/datasheet/download/AP2112.pdf",
+    "retrievedUtc": "2026-11-05T21:44:38.676757+00:00",
+    "status": 200,
+    "contentType": "application/pdf",
+    "bytes": 755270,
+    "sha256": "ef8d376f2ec356e29172eb9e053819a0ebdcc576dba7fc9ab0505c568427920f",
+    "finalUrl": "https://www.diodes.com/datasheet/download/AP2112.pdf"
+  },
+  {
+    "file": "mcp73831-manufacturer.pdf",
+    "url": "https://www.microchip.com/content/dam/mchp/documents/APID/ProductDocuments/DataSheets/MCP73831-Family-Data-Sheet-DS20001984H.pdf",
+    "retrievedUtc": "2026-11-05T21:44:38.677716+00:00",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "file": "tps63001-manufacturer.pdf",
+    "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+    "retrievedUtc": "2026-11-05T21:44:38.678749+00:00",
+    "status": 200,
+    "contentType": "application/pdf",
+    "bytes": 1220074,
+    "sha256": "9cac9b7c360f493fcd5a765c25718ce6df4fc26134e7d7ca39ced0dcfc760b95",
+    "finalUrl": "https://www.ti.com/lit/ds/symlink/tps63001.pdf"
+  },
+  {
+    "file": "me6211-datasheet-redirect.html",
+    "url": "https://datasheet.lcsc.com/lcsc/1809141122_MICRONE-Nanjing-Micro-One-Elec-ME6211C50M5G-N_C236670.pdf",
+    "retrievedUtc": "2026-11-05T21:44:38.680517+00:00",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "bytes": 9464,
+    "sha256": "d44958dd77b7dede21ec8d719547281125063d11b63f8f7f61ffcaf400eedef0",
+    "finalUrl": "https://www.lcsc.com/datasheet/C236670.pdf",
+    "requestedFile": "me6211-manufacturer-v20-lcsc-mirror.pdf",
+    "note": "HTML redirect wrapper, not a PDF. Actual manufacturer PDF retrieved separately in download-manifest-2.json."
+  },
+  {
+    "file": "microchip-an1149-powerpath.pdf",
+    "url": "https://ww1.microchip.com/downloads/en/AppNotes/01149c.pdf",
+    "retrievedUtc": "2026-11-05T21:44:38.846776+00:00",
+    "status": 200,
+    "contentType": "application/pdf",
+    "bytes": 239625,
+    "sha256": "b12d5acdac9416e9314117782f1a87fdfd5ecaafc14ba90b8599eb7e43e26c14",
+    "finalUrl": "https://ww1.microchip.com/downloads/en/AppNotes/01149c.pdf"
+  },
+  {
+    "file": "microchip-powerpath-reference.pdf",
+    "url": "https://ww1.microchip.com/downloads/en/DeviceDoc/51746a.pdf",
+    "retrievedUtc": "2026-11-05T21:44:38.968174+00:00",
+    "status": 200,
+    "contentType": "application/pdf",
+    "bytes": 616514,
+    "sha256": "10a53d795b828d52603e97180dea549e5dc8e1334b20d163355b533e98593844",
+    "finalUrl": "https://ww1.microchip.com/downloads/en/DeviceDoc/51746a.pdf"
+  },
+  {
+    "file": "jst-ph-manufacturer.pdf",
+    "url": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+    "retrievedUtc": "2026-11-05T21:44:39.022391+00:00",
+    "status": 200,
+    "contentType": "application/pdf",
+    "bytes": 103369,
+    "sha256": "447624f4f2f7d37c58c1eaa7ee314ad757fe7aff48f6186491ef6f69fbc00b96",
+    "finalUrl": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
+  },
+  {
+    "file": "ap2112-catalog-search.json",
+    "url": "https://jlcsearch.tscircuit.com/api/search?q=AP2112K-3.3TRG1&limit=10&full=true",
+    "retrievedUtc": "2026-11-05T21:44:39.058176+00:00",
+    "status": 200,
+    "contentType": "application/json",
+    "bytes": 1076,
+    "sha256": "3869adb345777cd4e1ef73388c9b2063245bbe2baf11eaff9b0c01e1c42a2f15",
+    "finalUrl": "https://jlcsearch.tscircuit.com/api/search?q=AP2112K-3.3TRG1&limit=10&full=true"
+  },
+  {
+    "file": "me6211-catalog-search.json",
+    "url": "https://jlcsearch.tscircuit.com/api/search?q=ME6211C33M5G-N&limit=10&full=true",
+    "retrievedUtc": "2026-11-05T21:44:39.201111+00:00",
+    "error": "HTTP Error 500: Internal Server Error"
+  },
+  {
+    "file": "mcp73831-catalog-search.json",
+    "url": "https://jlcsearch.tscircuit.com/api/search?q=MCP73831T-2ACI%2FOT&limit=10&full=true",
+    "retrievedUtc": "2026-11-05T21:44:40.413495+00:00",
+    "error": "HTTP Error 500: Internal Server Error"
+  },
+  {
+    "file": "tps63001-catalog-search.json",
+    "url": "https://jlcsearch.tscircuit.com/api/search?q=TPS63001DRCR&limit=10&full=true",
+    "retrievedUtc": "2026-11-05T21:44:41.111371+00:00",
+    "error": "HTTP Error 500: Internal Server Error"
+  },
+  {
+    "file": "jst-ph-catalog-search.json",
+    "url": "https://jlcsearch.tscircuit.com/api/search?q=B2B-PH-K-S&limit=10&full=true",
+    "retrievedUtc": "2026-11-05T21:44:41.112734+00:00",
+    "error": "HTTP Error 500: Internal Server Error"
+  }
+]

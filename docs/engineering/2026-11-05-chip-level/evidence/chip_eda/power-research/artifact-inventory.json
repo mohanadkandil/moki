@@ -1,0 +1,275 @@
+{
+  "capturedUtc": "2026-11-05T22:18:10.887895+00:00",
+  "artifacts": [
+    {
+      "file": "BQ24074.md",
+      "bytes": 9962,
+      "sha256": "9b19ee07e4431a6920f94eaebd5eb20d3ff8edcfefed3ec3663495d9231aa76e"
+    },
+    {
+      "file": "ERC-IMPLEMENTATION.md",
+      "bytes": 4686,
+      "sha256": "1d0fcea5aed0a6fae85a7a20280d9ceb148b6a8729c5f441f738e4841e297233"
+    },
+    {
+      "file": "RESEARCH.md",
+      "bytes": 16953,
+      "sha256": "ae929928dddc6cbd4dff6f2a073e122bf5cfa81e536a1545da058b7d0db42e6b"
+    },
+    {
+      "file": "ap2112-catalog-search.json",
+      "bytes": 1076,
+      "sha256": "3869adb345777cd4e1ef73388c9b2063245bbe2baf11eaff9b0c01e1c42a2f15"
+    },
+    {
+      "file": "ap2112-catalog.html",
+      "bytes": 433654,
+      "sha256": "e8f41db71df0f5fd4c8c27b709527fa72a06661d46ff7f51fbcb761190885e6d"
+    },
+    {
+      "file": "ap2112-easyeda.json",
+      "bytes": 16583,
+      "sha256": "dc29e4b4c6fc4350bd7abe5a72352f0ee8f23678c5b90202c425a98480dbe966"
+    },
+    {
+      "file": "ap2112-manufacturer.pdf",
+      "bytes": 755270,
+      "sha256": "ef8d376f2ec356e29172eb9e053819a0ebdcc576dba7fc9ab0505c568427920f"
+    },
+    {
+      "file": "ap2112-manufacturer.txt",
+      "bytes": 70182,
+      "sha256": "15fd12265111a005cf8509330c1be9aed5244c109a300496d25a21cf9a7b8a32"
+    },
+    {
+      "file": "blocks-erc-test.tap",
+      "bytes": 6913,
+      "sha256": "a54905363b96706932cc7f9bd0fdc96ae97ba3bf7d0366296fd3b1ded1202019"
+    },
+    {
+      "file": "bq24074-catalog.html",
+      "bytes": 446255,
+      "sha256": "bc4dfc7afac0b6906dcff8e669b184f3f1337269670dde21ed76631c2950db66"
+    },
+    {
+      "file": "bq24074-download-manifest.json",
+      "bytes": 1003,
+      "sha256": "8c3fe2ac13618585a1224ae90b18e545c8c8177ae7d4d165dd69334ccb3cc319"
+    },
+    {
+      "file": "bq24074-easyeda.json",
+      "bytes": 23087,
+      "sha256": "80e489d6765f4019adcceeaf3333dd793677b7dfef55ec403bd9d842ed1df5d5"
+    },
+    {
+      "file": "bq24074-manufacturer.pdf",
+      "bytes": 3739103,
+      "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1"
+    },
+    {
+      "file": "bq24074-manufacturer.txt",
+      "bytes": 164027,
+      "sha256": "904daf813f59070870186f931110bc1a175a0e2eec8347964bfc0670fd43071f"
+    },
+    {
+      "file": "catalog-import-summary.json",
+      "bytes": 8084,
+      "sha256": "f4ef2e0e958e432779a633f51bb30e7cbd7aa7ee6e380e17b163e3a718c57004"
+    },
+    {
+      "file": "download-manifest-2.json",
+      "bytes": 5950,
+      "sha256": "1fd343954072941d631779cc754727c6cd69f9b75de6fa9d264fd3d4c1d9c38f"
+    },
+    {
+      "file": "download-manifest-3.json",
+      "bytes": 1018,
+      "sha256": "7cc31dc20b152ed8eaa4af14d6568f5d674af3fecc563df57e52be4b5610029e"
+    },
+    {
+      "file": "download-manifest.json",
+      "bytes": 4441,
+      "sha256": "0a91d3f79fe849b76e654446031f703bdf8f65f55353276b3e9e274d42fdaffb"
+    },
+    {
+      "file": "jst-ph-catalog-list.json.error.txt",
+      "bytes": 17,
+      "sha256": "1da1ff40a56a7bc741f58efaad4198d34f364499fe44f51a3cdacdb0274f7e7e"
+    },
+    {
+      "file": "jst-ph-catalog.html",
+      "bytes": 464732,
+      "sha256": "aeb9462977e30336e2a084b5be3d0837fa62d82d3527fd5496e5215884add97b"
+    },
+    {
+      "file": "jst-ph-easyeda.json",
+      "bytes": 16860,
+      "sha256": "5d82994278578c6d37220f78c720a4adb306bcddbc1d61945e466b6554a4bb1e"
+    },
+    {
+      "file": "jst-ph-manufacturer.pdf",
+      "bytes": 103369,
+      "sha256": "447624f4f2f7d37c58c1eaa7ee314ad757fe7aff48f6186491ef6f69fbc00b96"
+    },
+    {
+      "file": "jst-ph-manufacturer.txt",
+      "bytes": 28758,
+      "sha256": "ad827b6cfb16b2a1c48d45fdbc65d7403af63fcc51070cf909ec4065841333de"
+    },
+    {
+      "file": "jst-ph-smt-catalog.html",
+      "bytes": 457199,
+      "sha256": "b5cf92c4b02781c2bff500f7f6037732703e94ccb25195899d46d6d179fa3818"
+    },
+    {
+      "file": "jst-ph-smt-easyeda.json",
+      "bytes": 18229,
+      "sha256": "96b840542e4c3c4c7af641e13eaad10d2006219cc78cfa763210c80a6b7c1268"
+    },
+    {
+      "file": "mcp73831-catalog-list.json.error.txt",
+      "bytes": 17,
+      "sha256": "1da1ff40a56a7bc741f58efaad4198d34f364499fe44f51a3cdacdb0274f7e7e"
+    },
+    {
+      "file": "mcp73831-catalog.html",
+      "bytes": 461245,
+      "sha256": "212812e47745535d5ad449e8413ed6486c18d38d8c58b2bfa7223e5900410754"
+    },
+    {
+      "file": "mcp73831-download.json",
+      "bytes": 303,
+      "sha256": "34bff6a1bf50fd67a49426841083b7d8b273c7e9912ca87afe53bec97c984e31"
+    },
+    {
+      "file": "mcp73831-easyeda.json",
+      "bytes": 24131,
+      "sha256": "c45e303c498dcd6f640862712b7bf123941bdccc2c5f62d9af19e618530949cc"
+    },
+    {
+      "file": "mcp73831-manufacturer.pdf",
+      "bytes": 889186,
+      "sha256": "75297f2a5235599368381adfb63df2652cc22d757f171f388147b2ab3d32776f"
+    },
+    {
+      "file": "mcp73831-manufacturer.txt",
+      "bytes": 115049,
+      "sha256": "d79309cd857384f2a236b55416f478e02e39e358f78a6851402399a2307b1aaa"
+    },
+    {
+      "file": "me6211-c82942-manufacturer-v14-lcsc-mirror.pdf",
+      "bytes": 1202499,
+      "sha256": "7e33d6651f019782b16169a5b26b7cad43e9d462b5e25dc54815b458f88fd59b"
+    },
+    {
+      "file": "me6211-c82942-manufacturer-v14-lcsc-mirror.txt",
+      "bytes": 58043,
+      "sha256": "e36a2c4580252a89b78289d28a365e300e242e7fb6bd1888aca86f63c3763db8"
+    },
+    {
+      "file": "me6211-catalog-list.json.error.txt",
+      "bytes": 124,
+      "sha256": "26c977b7169622bc5b1d9505d5b4235844b64909e35836612ef22a982ceeba0b"
+    },
+    {
+      "file": "me6211-catalog.html",
+      "bytes": 440229,
+      "sha256": "ed68818967f8987161ef9fdabafe88f2bf297bacab7f0c17fc8af8d01715a724"
+    },
+    {
+      "file": "me6211-datasheet-redirect.html",
+      "bytes": 9464,
+      "sha256": "d44958dd77b7dede21ec8d719547281125063d11b63f8f7f61ffcaf400eedef0"
+    },
+    {
+      "file": "me6211-easyeda.json",
+      "bytes": 24132,
+      "sha256": "ef7834ed4ca60914c9e62997d2eaa5308bcaf070b4932e7d59ccdd30cab65e58"
+    },
+    {
+      "file": "me6211-manufacturer-v20-lcsc-mirror.pdf",
+      "bytes": 865046,
+      "sha256": "23084e9d0d0fd762c7419509ee656856be36f08ffc39f184e22a2acf7cfae5e6"
+    },
+    {
+      "file": "me6211-manufacturer-v20-lcsc-mirror.txt",
+      "bytes": 69802,
+      "sha256": "0e9840e6b48a683a7cdad73d1db4ea45c55cb17d19e59be008d959dc52483a75"
+    },
+    {
+      "file": "me6211-v14-download.json",
+      "bytes": 266,
+      "sha256": "0f5de83777b98946c15d23b513ee20981a30ab629846e6404ed00f312df3aa6b"
+    },
+    {
+      "file": "me6211-v14-page2-Image31.png",
+      "bytes": 5791,
+      "sha256": "6c3dd62fe7e37e2f0a1ad69f388596428f02e94aea7655250dabb70bb3ae684b"
+    },
+    {
+      "file": "me6211-v14-page2-Image32.png",
+      "bytes": 2792,
+      "sha256": "bba02792d26c8a3a93d05c3f0d8b371cc96fb388d391513aaa1d2ed8d803af25"
+    },
+    {
+      "file": "me6211-v14-page2-Image34.png",
+      "bytes": 3517,
+      "sha256": "31cbc01d60df457bd250d9042bd4161e37d10205f0596000f845ad068f96b574"
+    },
+    {
+      "file": "microchip-an1149-powerpath.pdf",
+      "bytes": 239625,
+      "sha256": "b12d5acdac9416e9314117782f1a87fdfd5ecaafc14ba90b8599eb7e43e26c14"
+    },
+    {
+      "file": "microchip-an1149-powerpath.txt",
+      "bytes": 53419,
+      "sha256": "0a0d8fcc254cd3dc871e779085829b3bfca1821f8db91a1f675b4815c94d42b0"
+    },
+    {
+      "file": "microchip-powerpath-reference.pdf",
+      "bytes": 616514,
+      "sha256": "10a53d795b828d52603e97180dea549e5dc8e1334b20d163355b533e98593844"
+    },
+    {
+      "file": "microchip-powerpath-reference.txt",
+      "bytes": 48637,
+      "sha256": "0e2edce1aecfde4e7a2cf7777e3f2d69a3dc8e51c3466980a1241c3d3203743c"
+    },
+    {
+      "file": "ti-tps63001-reference-slva358a.pdf",
+      "bytes": 975348,
+      "sha256": "aaffb9d127ce4ed341773d5b64e6500d6870bb4066713f6cc04983ec3a0df681"
+    },
+    {
+      "file": "ti-tps63001-reference-slva358a.txt",
+      "bytes": 40224,
+      "sha256": "31aceae08d40ec0ad4c26b19d6f6b31187d881762a37d10b083caf68167e852c"
+    },
+    {
+      "file": "tps63001-catalog-list.json.error.txt",
+      "bytes": 17,
+      "sha256": "1da1ff40a56a7bc741f58efaad4198d34f364499fe44f51a3cdacdb0274f7e7e"
+    },
+    {
+      "file": "tps63001-catalog.html",
+      "bytes": 420914,
+      "sha256": "365683c7a02e2833ff660f678ce6354a2c431c90b814b02857d9473d4daa86f0"
+    },
+    {
+      "file": "tps63001-easyeda.json",
+      "bytes": 19473,
+      "sha256": "9c5dd738a938a94100eae8f67851c23e7095e665ad9d4034e47a04992f6f2f1a"
+    },
+    {
+      "file": "tps63001-manufacturer.pdf",
+      "bytes": 1220074,
+      "sha256": "9cac9b7c360f493fcd5a765c25718ce6df4fc26134e7d7ca39ced0dcfc760b95"
+    },
+    {
+      "file": "tps63001-manufacturer.txt",
+      "bytes": 78992,
+      "sha256": "6285da324ad79cfb4c17c5c0f0f43a481d880cd60406689bbffb48a34df325c3"
+    }
+  ]
+}

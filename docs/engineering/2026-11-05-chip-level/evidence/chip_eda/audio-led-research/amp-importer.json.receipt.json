@@ -1,0 +1,11 @@
+{
+  "file": "amp-importer.json",
+  "url": "https://jlcsearch.tscircuit.com/api/easyeda_components/C910544",
+  "method": "GET",
+  "requestBody": null,
+  "capturedAt": "2026-11-05T22:04:49.073249+00:00",
+  "status": 200,
+  "contentType": "application/json",
+  "bytes": 21751,
+  "sha256": "55a38457cc3419225207af03dd0d4c3a650597cd05d48fcc3a03d6741ecf1e81"
+}

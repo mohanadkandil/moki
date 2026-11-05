@@ -1,0 +1,29 @@
+[
+  {
+    "file": "bq24074-manufacturer.pdf",
+    "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+    "retrievedUtc": "2026-11-05T22:08:44.264673+00:00",
+    "status": 200,
+    "contentType": "application/pdf",
+    "bytes": 3739103,
+    "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1"
+  },
+  {
+    "file": "bq24074-easyeda.json",
+    "url": "https://easyeda.com/api/products/C2861252/components?version=6.5.44",
+    "retrievedUtc": "2026-11-05T22:08:44.266142+00:00",
+    "status": 200,
+    "contentType": "application/json",
+    "bytes": 23087,
+    "sha256": "80e489d6765f4019adcceeaf3333dd793677b7dfef55ec403bd9d842ed1df5d5"
+  },
+  {
+    "file": "bq24074-catalog.html",
+    "url": "https://www.lcsc.com/product-detail/C2861252.html",
+    "retrievedUtc": "2026-11-05T22:08:44.267480+00:00",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "bytes": 446255,
+    "sha256": "bc4dfc7afac0b6906dcff8e669b184f3f1337269670dde21ed76631c2950db66"
+  }
+]

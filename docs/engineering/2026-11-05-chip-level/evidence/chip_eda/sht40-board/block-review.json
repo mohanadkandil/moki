@@ -1,0 +1,98 @@
+{
+  "by": "chip_review",
+  "at": "2026-11-05T23:37:05.068Z",
+  "contentHash": "490f1b461bc42e6f5d4f11c4c6063bbaea4ff614daba0711e2f12b8acba016ec",
+  "block": {
+    "id": "sht40-ad1b-3v3",
+    "version": 3
+  },
+  "verdict": "pass",
+  "scope": "Exact SHT40 revision3 postlayout source/native electrical geometry and hard-gate evidence review only",
+  "notes": "Independent reviewer did not run a native build or modify author source. Fresh pure geometry checks used temporary copies of immutable successful native artifacts. This scoped pass supports promotion of this exact revision only, subject to trusted receipt recording; no physical hardware claim.",
+  "findings": [
+    {
+      "section": "schematic",
+      "status": "match",
+      "claim": "Exact SHT40 revision3 topology, physical pins1SDA/2SCL/3VDD/4VSS,100nF bypass and shared carrier pullups retain the independent prelayout review. Firmware-source protocol/CRC and heater-off power limits retain their scoped conditional conclusions."
+    },
+    {
+      "section": "physical orientation",
+      "status": "match",
+      "claim": "Actual top-side native U4 rotation0 places pins1/2 on left,4/3 on right in transparent top view, matching manufacturer page17. Four actual rectangular pads0.5050028×0.419989mm have vertical pitch0.8001mm and horizontal pitch1.354836mm. Importer central pad5 is absent. Actual PCB whole view and enlarged sensor region were inspected against retained primary pages16/17."
+    },
+    {
+      "section": "land pattern",
+      "status": "conditional",
+      "claim": "Importer lands differ from Sensirion reference0.5×0.3mm /1.4mm horizontal pitch, but overlap the correct physical terminals; datasheet explicitly allows process-dependent land dimensions. This review accepts this exact native electrical geometry and omission/copper constraints, without solder-process/yield/fabrication qualification."
+    },
+    {
+      "section": "underbody copper",
+      "status": "match",
+      "claim": "Independent fresh pure audit of both retained successful API board and actual public testBlock output finds zero forbidden copper on top and bottom within actual-centered1.6×1.6mm body after functional-pad exceptions only on mounted layer. Actual pour cutout and outward trace exits inspected; only U4 exempt from declared keepout. No central EP/pad/pour/trace/via remains."
+    },
+    {
+      "section": "paste",
+      "status": "match",
+      "claim": "Actual exported F_Paste contains exactly four sensor flashes at matching contact centers, each rectangular0.353502×0.293992mm aperture (70% actual native pad dimensions), with no central or other intruding aperture. No central die-pad paste; no EP copper."
+    },
+    {
+      "section": "bypass and routes",
+      "status": "match",
+      "claim": "Actual C6 bypass center22,−2mm is2mm from sensor20,−2mm and rotated90degrees. Native DRC reports checked:true/errors:[]; outward pad stubs plus router endpoint relocation reach actual contacts. Native netlist gate preserves intended source connectivity."
+    },
+    {
+      "section": "acceptance evidence",
+      "status": "match",
+      "claim": "Retained actual public testBlock has matching exact draft hash, complete ERC/power/SPICE/review/DRC/block-test gates all passing, actual four sensor and two bypass pads. Current isolated RC SPICE measures13.862942ms; it is not an SHT analog model. Full device API compilation is separately retained; non-MCU SHT block needs no own compile gate."
+    },
+    {
+      "section": "checker regression",
+      "status": "match",
+      "claim": "Reviewer-authored14/14 pure tests pass2740.817287ms, including actual positive and retained actual historical DRC-clean underbody-trace failure, shifted keepout, all board layers, foreign circle/PTH/rotated copper, route-only via, pad5/paste, aperture dimensions/macros, outside-center paste intrusion, extra sensor mapping, numeric annulus area, and shifted own-pad plus matching paste. Final source binds functional contact exceptions to independently inspected importer coordinates/dimensions; future geometry requires explicit review."
+    },
+    {
+      "section": "limits",
+      "status": "conditional",
+      "claim": "Heater must remain disabled; carrier100kHz pullups and2mA allocation require actual bus capacitance/rise-time and operation checks. No humidity accuracy, enclosure/environment/contamination, heater operation, assembly process, measured thermal behavior or physical hardware qualification. Other context blocks are not promoted by this review."
+    }
+  ],
+  "evidence": {
+    "publicBlockTest": "block-test.json",
+    "publicNativeDirectory": "/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-05-chip-level/evidence/chip_eda/sht40-board/block-tests/run-okhhnn",
+    "successfulApiJob": "d036a402-f346-47cf-ae03-44e26e77b086",
+    "primaryDatasheet": "../nonseed/sensirion-sht4x-v7.3.pdf",
+    "primaryPages": [
+      9,
+      16,
+      17
+    ],
+    "nativeArtifactSha256": {
+      "circuit.json": "62752ab784e71b776e7456b76ad20c7a25f39103f303c9f241504df442a8a8df",
+      "import-map.json": "72bf6d69618a1099282599ff93c1a06a8d0042cb6833f65a9ffdc5dc7e5d0d18",
+      "gerbers.zip": "9919b09bd2f09aa939b8f4f126631a4ba998ed411b7dac45c13f0ea4191ec762",
+      "receipt.json": "b6b1b0589b8c2b3b96da51bafa81a69da222f6d2b657de66aac712ec428807ef",
+      "sensor-copper-check.json": "cf45642c44ebd35824ca150f3e65d8c4438b1d1a4702d73d7fef180c14cc9c7a",
+      "block-test.json": "8572afdaaf18344317a96ca7027af2b76aefa4667991d51ceaca631e0e23cf5e",
+      "draft.json": "923bc6f51e9889bf44a0ef8fc7b903334acf29c1f6a80c5c40da5cc825441491"
+    },
+    "checkerSourceSha256": "abf31f48afeefa8f04920a039619b8cb7a233f66b6cd7a30e6f579544a8db37b",
+    "regressionCommand": "node --import tsx --test --test-concurrency=1 tests/blocks-sensor-copper.test.ts",
+    "regressionResult": {
+      "passed": 14,
+      "failed": 0,
+      "durationMs": 2740.817287
+    },
+    "finalSourceValidation": {
+      "command": "node --import tsx --test --test-concurrency=1 tests/blocks-catalog.test.ts tests/blocks-footprint.test.ts tests/blocks-sensor-copper.test.ts",
+      "passed": 35,
+      "failed": 0,
+      "durationMs": 4809.580618,
+      "sensorTestsIncluded": 14
+    }
+  },
+  "limits": [
+    "No physical hardware, fabrication/assembly process or sensor accuracy approval",
+    "No promotion of power/core/USB/carrier blocks by this SHT-specific review",
+    "No heater usage or unmeasured bus waveform/current/thermal guarantee"
+  ]
+}

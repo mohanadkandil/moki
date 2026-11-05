@@ -1,0 +1,18 @@
+{
+  "name": "categories",
+  "method": "GET",
+  "url": "https://jlcsearch.tscircuit.com/categories/list.json",
+  "requestBody": null,
+  "capturedAt": "2026-11-05T21:49:06.045715+00:00",
+  "status": 200,
+  "contentType": "application/json",
+  "finalUrl": "https://jlcsearch.tscircuit.com/categories/list.json",
+  "bytes": 6778,
+  "sha256": "25fd2394f02190a4e6a4dea1cfc29ce067e5254271ec1db504f6d895e319b3ad",
+  "file": "categories.response",
+  "requestHeaders": {
+    "User-Agent": "Mozilla/5.0",
+    "Accept": "application/json",
+    "Content-Type": "application/json"
+  }
+}

@@ -1,0 +1,1042 @@
+--- PDF PAGE 1 ---
+                                                                                                                                        Reference Design
+                                                                                                             SLVA358A–October 2009–Revised April 2010
+                1.8V - 5.5V Input, 3.3V Output, High Efficiency DC/DC
+                                                                                                                                                 Converter
+
+
+
+
+
+          This  document  helps  the  user  create  a  design-in  a  Stellaris®  ARM®  Cortex™-M3  MCU  into  a  system
+          requiring a wide-input voltage range and is concerned about maintaining high efficiency and long battery
+          life. This particular design allows for an input voltage between 1.8 V to 5.5 V.
+
+                                                                                     Contents
+          1          Introduction  ..................................................................................................................  2
+                    1.1       Features .............................................................................................................  2
+          2          Requirements ................................................................................................................  2
+          3          Description of Power Solution .............................................................................................  3
+                    3.1       Power Supply Option 1: TPS63031  .............................................................................  4
+                    3.2       Power Supply Option 2: TPS63001  .............................................................................  6
+          4          Inductor Selection  .........................................................................................................  11
+          5          Capacitor Selection ........................................................................................................  12
+                    5.1       Input Capacitor ....................................................................................................  12
+                    5.2       Bypass Capacitor (TPS6303x only) ............................................................................  12
+                    5.3       Output Capacitor ..................................................................................................  12
+          6          General Layout Considerations ..........................................................................................  12
+          7          References .................................................................................................................  13
+
+                                                                                 List of Figures
+          1          TPS63030EVM-417 Schematic ...........................................................................................   4
+          2          Turn ON into Load, VIN = 2.2 V............................................................................................   5
+          3          Output Ripple, VIN = 2.2 V .................................................................................................   5
+          4          PMP4778 Reference Design Schematic.................................................................................   6
+          5          Startup........................................................................................................................    7
+          6          Startup .......................................................................................................................   7
+          7          Startup........................................................................................................................    7
+          8          Startup .......................................................................................................................   7
+          9          Startup........................................................................................................................    7
+          10        Startup........................................................................................................................    7
+          11        Output Ripple Voltage......................................................................................................   8
+          12        Output Ripple Voltage......................................................................................................   8
+          13        Output Ripple Voltage......................................................................................................   8
+          14        Load Transient ..............................................................................................................   8
+          15        Load Transient ..............................................................................................................   9
+          16        Load Transient ..............................................................................................................   9
+          17        Switching Node Waveform.................................................................................................   9
+          18        Switching Node Waveform.................................................................................................   9
+          19        Switching Node Waveform ...............................................................................................   10
+          20        Efficiency vs Output Current .............................................................................................   10
+Cortex is a trademark of Texas Instruments.
+Stellaris, ARM are registered trademarks of Texas Instruments.
+
+SLVA358A–October 2009–Revised April 2010                                            1.8V - 5.5V Input, 3.3V Output, High Efficiency DC/DC Converter                          1
+Submit Documentation Feedback
+                                                        Copyright © 2009–2010, Texas Instruments Incorporated
+
+--- PDF PAGE 2 ---
+Introduction                                                                                                                                                                        www.ti.com
+
+                                                                         List of Tables
+         1          Stellaris® ARM® Cortex™-M3 MCU Family Power Requirements ...................................................    2
+         2          List of Materials TPS63030EVM-417 ....................................................................................   5
+         3          List of Materials PMP4778.................................................................................................   6
+         4          TPS6303x List of Inductors ..............................................................................................   11
+         5          TPS6300x List of Inductors ..............................................................................................   11
+         6          Related Documents .......................................................................................................    13
+
+
+1        Introduction
+         This reference design is for the Stellaris® ARM® Cortex™-M3 MCU family and accounts for voltage and
+         current requirements, given below. The microcontrollers require only a single voltage supply, so no
+         sequencing is needed. The operating input voltage for this reference design is between 1.8 V and 5.5 V,
+         thus allowing users operating from a battery supply to benefit from the complete battery capacity. This
+         design is optimized for wide-input voltage range, a small solution size and low component count.
+         For more information and other reference designs, see the Reference section at the end of this document
+         or visit www.ti.com/processorpower.
+
+1.1     Features
+         •    1.8-V to 5.5-V input voltage range
+         •    Fixed 3.3-V output eliminates need for external voltage-setting resistors
+         •    The TPS63001 is capable of driving up to 800 mA when operating in boost mode
+         •    The TPS63031 is capable of driving up to 500 mA when operating in boost mode
+         •    High efficiency (up to 94%)
+         •    Low quiescent current (less than 50 µA)
+         •    Small QFN packages: 2.5 mm × 2.5 mm (TPS63031) or 3 mm x 3 mm (TPS63001)
+
+2        Requirements
+         The power requirements for each Stellaris® ARM® Cortex™-M3 MCU family are listed below.
+         For more information and other reference designs, visit www.ti.com/processorpower.
+
+                            Table 1.  Stellaris® ARM® Cortex™-M3 MCU Family Power Requirements(1)
+
+           DEVICE FAMILY             PIN         VOLTAGE             IMAX        TOLERANCE           SEQUENCING            TIMING         COMMENTS
+                                  NAME(S)             (V)           (mA)                                 ORDER             DELAY
+          LM3S100 series
+          LM3S300 series
+          LM3S600 series                                                                                                                Internal
+          LM3S800 series             VDD              3.3            170              ±10%                  –                 –         regulator
+          LM3S1000 series                                                                                                               supplies power
+          LM3S2000 series                                                                                                               to device core
+          LM3S3000 series
+          LM3S5000 series
+                                                                                                                                        Internal
+          LM3S6000 series            VDD              3.3            225              ±10%                  –                 –         regulator
+          LM3S8000 series                                                                                                               supplies power
+                                                                                                                                        to device core
+                                                                                                                                        Internal
+          LM3S9000 series            VDD              3.3            150              ±10%                  –                 –         regulator
+                                                                                                                                        supplies power
+                                                                                                                                        to device core
+          LM3S2B93                                                                                                                      Internal
+          LM3S2B2793                 VDD              3.3            100              ±10%                  –                 –         regulator
+          LM3S5B91                                                                                                                      supplies power
+          LM3S5791                                                                                                                      to device core
+
+         (1)    The IMAX currents listed are "worst case" expected values.
+
+
+2    1.8V - 5.5V Input, 3.3V Output, High Efficiency DC/DC Converter                                   SLVA358A–October 2009–Revised April 2010
+                                                                                                                      Submit Documentation Feedback
+                                                  Copyright © 2009–2010, Texas Instruments Incorporated
+
+--- PDF PAGE 3 ---
+www.ti.com                                                                                                                                        Description of Power Solution
+
+
+3        Description of Power Solution
+        Using a buck-boost topology for battery driven applications enables users to fully benefit from the
+        available charge given from the chemistry.
+        The described TPS630xx devices belong to a fully integrated family of converters, which regulate
+        automatically the preset output voltage over the entire input voltage range of 1.8 V - 5.5 V.
+        For a fixed 3.3-V output, the converter operates in step-down mode for the time, where the input voltage is
+        greater than 3.3 V. Once the input voltage undercuts the required 3.3-V, the converter automatically
+        transitions into boost mode without the need of any external control signals or circuitry.
+        The buck-boost converter is based on a fixed frequency pulse-width-modulation (PWM) controller using
+        synchronous rectification to obtain maximum efficiency. At low load currents the converter enters a Power
+        Save mode to maintain high efficiency over a wide load current range. The Power Save mode can be
+        disabled using the PS/SYNC pin, forcing the converter to operate at a fixed switching frequency.
+        During shutdown, the load is disconnected from the battery.
+        If the power budget of the TPS63001 is needed, but solution size is critical, see the TPS63011 with the
+        available WCSP package.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SLVA358A–October 2009–Revised April 2010                               1.8V - 5.5V Input, 3.3V Output, High Efficiency DC/DC Converter             3
+Submit Documentation Feedback
+                                                Copyright © 2009–2010, Texas Instruments Incorporated
+
+--- PDF PAGE 4 ---
+Description of Power Solution                                                                                                                                           www.ti.com
+3.1     Power Supply Option 1: TPS63031
+        TPS63031 supports 500 mA when operating in boost mode (Vin > 2.4V) and greater 800 mA when
+        working in step-down mode (Vin = 3.6 V to 5.5 V). The overall solution size, the entire efficiency as well as
+        the provided power budget make the converter an ideal fit for portable, battery driven applications. For a
+        more detailed description of the device characteristics as well as functionality, see to the device data
+        sheet.
+        The device can be evaluated by itself using the evaluation module TPS63030EVM-417. The EVM contains
+        by default the adjustable device TPS63030. In order to evaluate the 3.3 V version, replace the device U1
+        on the PCB with TPS63031. Furthermore, R1 must be replaced with a 0-Ω resistor; the R2 position
+        remains open.
+        The following description as well as the results are taken from the TPS63030EVM-417 Users Guide.
+
+3.1.1       Schematic
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                              Figure 1. TPS63030EVM-417 Schematic
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4       1.8V - 5.5V Input, 3.3V Output, High Efficiency DC/DC Converter                            SLVA358A–October 2009–Revised April 2010
+                                                                                                                 Submit Documentation Feedback
+                                                Copyright © 2009–2010, Texas Instruments Incorporated
+
+--- PDF PAGE 5 ---
+www.ti.com                                                                                                                                        Description of Power Solution
+
+3.1.2       List of Materials TPS63030EVM-417
+
+                                             Table 2. List of Materials TPS63030EVM-417
+
+  QTY        REF DES          VALUE                      DESCRIPTION                             SIZE               PART NUMBER                  MFR
+    3      C1, C2, C3      10 mF           Capacitor, ceramic, 6.3-V, X7R, 10%             0603               GRM188R60J106ME84D              Murata
+    1      C4              0.1 mF          Capacitor, ceramic, 6.3-V, X7R, 10%             0603               GRM188R70J104KA01B              Murata
+    0      C5              Open            Capacitor, ceramic, 6.3-V, X7R, 10%             0603               GRM188R60J106ME84D              Murata
+    1      L1              1.5 mH          Inductor, SMT, 1.3-A, 110-mΩ                    0.118 × 0.118      LPS3015-152MLB                  Coilcraft
+    3      R1, R3, R4      1 MΩ            Resistor, chip, 1/16-W, 1%                      0603               Std                             Std
+    1      R2              180 kΩ          Resistor, chip, 1/16-W, 1%                      0603               Std                             Std
+    1      U1                              IC, dc/dc converter                             DSK                TPS63030DSK                     TI
+
+3.1.3       Test Results TPS63031
+         Following results are all based on the TPS63030EVM-417 settings and just represent an example of the
+         functionality and performance.
+         Figure 2 represents the device behavior during the start-up phase. Figure 3 demonstrates the small output
+         ripple at a typical load of 150 mA.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   Figure 2. Turn ON into Load, VIN = 2.2 V                                    Figure 3. Output Ripple, VIN = 2.2 V
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SLVA358A–October 2009–Revised April 2010                                  1.8V - 5.5V Input, 3.3V Output, High Efficiency DC/DC Converter                5
+Submit Documentation Feedback
+                                                  Copyright © 2009–2010, Texas Instruments Incorporated
+
+--- PDF PAGE 6 ---
+Description of Power Solution                                                                                                                                           www.ti.com
+3.2     Power Supply Option 2: TPS63001
+        TPS63001 supports 800 mA when operating in boost mode (Vin > 2.4 V) and greater 1200 mA when
+        working in step-down mode (Vin = 3.6 V to 5.5 V). The overall solution size, the entire efficiency as well as
+        the provided power budget make the converter an ideal fit for portable, battery driven applications. For a
+        more detailed description of the device characteristics as well as functionality, see the device data sheet.
+        The device can be evaluated by itself using the evaluation module TPS63000EVM-148. The EVM contains
+        by default the adjustable device TPS63000. In order to evaluate the 3.3 V version, replace the device U1
+        on the PCB with TPS63001. Furthermore, R1 must be replaced with a 0-Ω resistor; the R2 position
+        remains open.
+        The following description as well as the results are taken from the TPS63000EVM-148 Users Guide.
+
+3.2.1       Schematic
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        Figure 4. PMP4778 Reference Design Schematic
+
+
+3.2.2       List of Materials PMP4778
+
+                                                     Table 3.  List of Materials PMP4778
+
+               REF            QTY        VALUE                  DESCRIPTION                         SIZE          PART NUMBER              MFR
+               DES
+         C1, C2, C3             3       10 µF       Capacitor, ceramic, 6.3V, X5R, 20%        0603              C1608X5R0J106M          TDK
+         L1                     1       2.2 µH      Inductor, SMT, 1.5A, 110 mΩ               0.116" x 0.116"   LPS3015-222ML           Coilcraft
+         R1                     1       0 Ω         Resistor, chip, 1/16W, 1%                 0603              Std                     Std
+         U1                     1                   IC, buck-boost converter                  QFN-10            TPS63001DRC             TI
+
+
+
+
+
+
+
+
+
+
+
+6       1.8V - 5.5V Input, 3.3V Output, High Efficiency DC/DC Converter                           SLVA358A–October 2009–Revised April 2010
+                                                                                                                 Submit Documentation Feedback
+                                               Copyright © 2009–2010, Texas Instruments Incorporated
+
+--- PDF PAGE 7 ---
+www.ti.com                                                                                                                                        Description of Power Solution
+
+3.2.3       Test Results TPS63001
+         The input and output startup waveforms are shown in Figure 5 through Figure 10. The output ripple
+         voltages are shown in Figure 11 through Figure 13. Figure 14 through Figure 16 shows the transient
+         responses. The switching node waveforms are shown in Figure 17 through Figure 19. The efficiency
+         versus the output current is shown in Figure 20.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   Figure 5. Startup                                                         Figure 6. Startup
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   Figure 7. Startup                                                         Figure 8. Startup
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SLVA358A–October 2009–Revised April 2010                                    1.8V - 5.5V Input, 3.3V Output, High Efficiency DC/DC Converter                 7
+Submit Documentation Feedback
+                                                   Copyright © 2009–2010, Texas Instruments Incorporated
+
+--- PDF PAGE 8 ---
+Description of Power Solution                                                                                                                                           www.ti.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Figure 9. Startup                                                                   Figure 10. Startup
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           Figure 11. Output Ripple Voltage                                                    Figure 12. Output Ripple Voltage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8         1.8V - 5.5V Input, 3.3V Output, High Efficiency DC/DC Converter                                              SLVA358A–October 2009–Revised April 2010
+                                                                                                                                        Submit Documentation Feedback
+                                                         Copyright © 2009–2010, Texas Instruments Incorporated
+
+--- PDF PAGE 9 ---
+www.ti.com                                                                                                                                        Description of Power Solution
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           Figure 13. Output Ripple Voltage                                                        Figure 14. Load Transient
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                Figure 15. Load Transient                                                          Figure 16. Load Transient
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SLVA358A–October 2009–Revised April 2010                                            1.8V - 5.5V Input, 3.3V Output, High Efficiency DC/DC Converter                           9
+Submit Documentation Feedback
+                                                         Copyright © 2009–2010, Texas Instruments Incorporated
+
+--- PDF PAGE 10 ---
+Description of Power Solution                                                                                                                                           www.ti.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       Figure 17. Switching Node Waveform                                               Figure 18. Switching Node Waveform
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       Figure 19. Switching Node Waveform                                              Figure 20. Efficiency vs Output Current
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10        1.8V - 5.5V Input, 3.3V Output, High Efficiency DC/DC Converter                                         SLVA358A–October 2009–Revised April 2010
+                                                                                                                                   Submit Documentation Feedback
+                                                       Copyright © 2009–2010, Texas Instruments Incorporated
+
+--- PDF PAGE 11 ---
+www.ti.com                                                                                                                                                           Inductor Selection
+4        Inductor Selection
+         Table 4 lists inductor series from different suppliers that have been used with TPS6303x converters.
+         Table 5 lists inductor series from different suppliers that have been used with TPS6300x converters.
+
+                                                   Table 4. TPS6303x List of Inductors
+
+                                                    VENDOR                            INDUCTOR SERIES
+                                                    Coilcraft                                LP3015
+                                                                                             EPL3010
+                                                     Murata                                  LQH3NP
+                                                  Taiyo Yuden                                NR3015
+
+                                                   Table 5. TPS6300x List of Inductors
+
+                                                    VENDOR                            INDUCTOR SERIES
+                                                    Coilcraft                                LP3015
+                                                                                             LP4012
+                                                     Murata                                  LQH3NP
+                                                  Taiyo Yuden                                NR3015
+                                                      TDK                                    VLF3215
+                                                                                             VLF4012
+
+         For a more detailed description of how to configure the inductor based on the individual needs, see the
+         related device data sheets.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SLVA358A–October 2009–Revised April 2010                                   1.8V - 5.5V Input, 3.3V Output, High Efficiency DC/DC Converter              11
+Submit Documentation Feedback
+                                                  Copyright © 2009–2010, Texas Instruments Incorporated
+
+--- PDF PAGE 12 ---
+Capacitor Selection                                                                                                                                                            www.ti.com
+5        Capacitor Selection
+
+5.1     Input Capacitor
+        A minimum effective value of 4.7 mF for input capacitor is recommended to improve transient behavior of
+        the regulator and EMI behavior of the total power supply circuit. A ceramic capacitor placed as close as
+        possible to the VIN and PGND pins of the device is recommended.
+
+5.2     Bypass Capacitor (TPS6303x only)
+        To make sure that the internal control circuits are supplied with a stable low noise supply voltage, a
+        capacitor can be connected between VINA and GND. Using a ceramic capacitor with a value of 0.1 mF is
+        recommended. The value of this capacitor should not be higher than 0.22 mF.
+
+5.3     Output Capacitor
+        For the output capacitor, it is recommended to use small ceramic capacitors placed as close as possible
+        to the VOUT and PGND pins of the device. If, for any reason, the application requires the use of large
+        capacitors which can not be placed close to the device, using a smaller ceramic capacitor in parallel to the
+        large one is recommended. This small capacitor should be placed as close as possible to the VOUT and
+        PGND pins of the device.
+        To get an estimate of the recommended minimum output capacitance, Equation 1 can be used.
+
+
+
+                                                                                                                                             (1)
+        A capacitor with a value in the range of the calculated minimum should be used. This is required to
+        maintain control loop stability. There are no additional requirements regarding minimum ESR. There is
+        also no upper limit for the output capacitance value. Larger capacitors will cause lower output voltage
+        ripple as well as lower output voltage drop during load transients.
+
+6        General Layout Considerations
+        The following guidelines shall be understood as applicable to power designs as such and are not specific
+        to the power solution outlined in this document.
+        As for all switching power supplies, the layout is an important step in the design. A proper function of the
+        device demands careful attention to PCB layout. It is essential to take good care of the board layout to get
+        the specified performance. In case the layout is not well done, the regulator could show poor line and/or
+        load regulation and stability issues, as well as EMI problems. It is critical to provide a low-inductance,
+        low-impedance ground path. Therefore, use wide and short traces for the main current paths. The input
+        capacitor, inductor, and output capacitor should be placed physically as close as possible to the device
+        terminals. The most important reason aside keeping the noise at a low level is the fail safe operation of
+        the solution. Any distance added between the components will increase the value of the parasitics, which
+        could result into greater voltage levels inside the device than the chip actually would be able to withstand.
+        In other words, keeping the external components connected closely will prevent the device from failures
+        through parasitics.
+        Connect the GND terminal of the device to the thermal-pad land of the PCB and use this pad as a star
+        point. Use a common power-GND node and a different node for the signal GND to minimize the effects of
+        ground noise. Connect these ground nodes together to the thermal-pad land (star point) underneath the
+        device. Keep the common path to the GND terminal, which returns the small signal components and the
+        high current of the output capacitors, as short as possible to avoid ground noise.
+
+
+
+
+
+
+
+
+
+
+
+
+12      1.8V - 5.5V Input, 3.3V Output, High Efficiency DC/DC Converter                         SLVA358A–October 2009–Revised April 2010
+                                                                                                              Submit Documentation Feedback
+                                              Copyright © 2009–2010, Texas Instruments Incorporated
+
+--- PDF PAGE 13 ---
+www.ti.com                                                                                                                                                                     References
+7        References
+
+                                                                 Table 6. Related Documents
+
+                    DEVICE                    TI LITERATURE                                                  DESCRIPTION
+                   NUMBER                         NUMBER
+          DATA SHEETS
+                   TPS63001                        SLVS520               High Efficient Single Inductor Buck-Boost Converter with 1.8-A Switch
+                   TPS63031                        SLVS696               High Efficient Single Inductor Buck-Boost Converter with 1-A Switch
+          EVM USER'S GUIDES
+             TPS63000EVM-148                      SLVU156                Using the TPS63000EVM
+             TPS63030EVM-417                      SLVU275                Using the TPS63030EVM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SLVA358A–October 2009–Revised April 2010                                       1.8V - 5.5V Input, 3.3V Output, High Efficiency DC/DC Converter                    13
+Submit Documentation Feedback
+                                                     Copyright © 2009–2010, Texas Instruments Incorporated
+
+--- PDF PAGE 14 ---
+                                                                              IMPORTANT NOTICE
+Texas Instruments Incorporated and its subsidiaries (TI) reserve the right to make corrections, modifications, enhancements, improvements,
+and other changes to its products and services at any time and to discontinue any product or service without notice. Customers should
+obtain the latest relevant information before placing orders and should verify that such information is current and complete. All products are
+sold subject to TI’s terms and conditions of sale supplied at the time of order acknowledgment.
+TI warrants performance of its hardware products to the specifications applicable at the time of sale in accordance with TI’s standard
+warranty. Testing and other quality control techniques are used to the extent TI deems necessary to support this warranty. Except where
+mandated by government requirements, testing of all parameters of each product is not necessarily performed.
+TI assumes no liability for applications assistance or customer product design. Customers are responsible for their products and
+applications using TI components. To minimize the risks associated with customer products and applications, customers should provide
+adequate design and operating safeguards.
+TI does not warrant or represent that any license, either express or implied, is granted under any TI patent right, copyright, mask work right,
+or other TI intellectual property right relating to any combination, machine, or process in which TI products or services are used. Information
+published by TI regarding third-party products or services does not constitute a license from TI to use such products or services or a
+warranty or endorsement thereof. Use of such information may require a license from a third party under the patents or other intellectual
+property of the third party, or a license from TI under the patents or other intellectual property of TI.
+Reproduction of TI information in TI data books or data sheets is permissible only if reproduction is without alteration and is accompanied
+by all associated warranties, conditions, limitations, and notices. Reproduction of this information with alteration is an unfair and deceptive
+business practice. TI is not responsible or liable for such altered documentation. Information of third parties may be subject to additional
+restrictions.
+Resale of TI products or services with statements different from or beyond the parameters stated by TI for that product or service voids all
+express and any implied warranties for the associated TI product or service and is an unfair and deceptive business practice. TI is not
+responsible or liable for any such statements.
+TI products are not authorized for use in safety-critical applications (such as life support) where a failure of the TI product would reasonably
+be expected to cause severe personal injury or death, unless officers of the parties have executed an agreement specifically governing
+such use. Buyers represent that they have all necessary expertise in the safety and regulatory ramifications of their applications, and
+acknowledge and agree that they are solely responsible for all legal, regulatory and safety-related requirements concerning their products
+and any use of TI products in such safety-critical applications, notwithstanding any applications-related information or support that may be
+provided by TI. Further, Buyers must fully indemnify TI and its representatives against any damages arising out of the use of TI products in
+such safety-critical applications.
+TI products are neither designed nor intended for use in military/aerospace applications or environments unless the TI products are
+specifically designated by TI as military-grade or "enhanced plastic." Only products designated by TI as military-grade meet military
+specifications. Buyers acknowledge and agree that any such use of TI products which TI has not designated as military-grade is solely at
+the Buyer's risk, and that they are solely responsible for compliance with all legal and regulatory requirements in connection with such use.
+TI products are neither designed nor intended for use in automotive applications or environments unless the specific TI products are
+designated by TI as compliant with ISO/TS 16949 requirements. Buyers acknowledge and agree that, if they use any non-designated
+products in automotive applications, TI will not be responsible for any failure to meet such requirements.
+Following are URLs where you can obtain information on other Texas Instruments products and application solutions:
+
+Products                                                                                              Applications
+Amplifiers                                   amplifier.ti.com                            Audio                                     www.ti.com/audio
+Data Converters                        dataconverter.ti.com                              Automotive                            www.ti.com/automotive
+DLP® Products                         www.dlp.com                                        Communications and            www.ti.com/communications
+                                                                                         Telecom
+DSP                                           dsp.ti.com                                 Computers and                     www.ti.com/computers
+                                                                                         Peripherals
+Clocks and Timers                    www.ti.com/clocks                                   Consumer Electronics           www.ti.com/consumer-apps
+Interface                                    interface.ti.com                            Energy                                  www.ti.com/energy
+Logic                                          logic.ti.com                              Industrial                               www.ti.com/industrial
+Power Mgmt                              power.ti.com                                     Medical                                 www.ti.com/medical
+Microcontrollers                         microcontroller.ti.com                          Security                                 www.ti.com/security
+RFID                                          www.ti-rfid.com                            Space, Avionics &                 www.ti.com/space-avionics-defense
+                                                                                         Defense
+RF/IF and ZigBee® Solutions   www.ti.com/lprf                                            Video and Imaging                www.ti.com/video
+                                                                                         Wireless                                www.ti.com/wireless-apps
+
+
+                                          Mailing Address: Texas Instruments, Post Office Box 655303, Dallas, Texas 75265
+                                                               Copyright © 2010, Texas Instruments Incorporated

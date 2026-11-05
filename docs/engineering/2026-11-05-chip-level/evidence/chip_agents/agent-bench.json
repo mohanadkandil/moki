@@ -1,0 +1,810 @@
+{
+  "schema": "moki.agent-bench/1",
+  "generatedAt": "2026-11-05T22:51:41.260Z",
+  "mode": "live",
+  "provider": "openai",
+  "model": "gpt-6.1-sol",
+  "headCommit": "8f08c3b",
+  "boardApi": "http://127.0.0.1:8847/app/moki",
+  "pricePerMillionTokensUsd": {
+    "input": 2,
+    "output": 10,
+    "cacheRead": 0.2,
+    "cacheWrite": 2.5,
+    "known": true
+  },
+  "meaning": "Tokens and cost are the provider's usage. Agent and pipeline times are measured. Success means 0 DRC errors and compiled.",
+  "totals": {
+    "costUsd": 0.39265,
+    "label": "tokens measured, priced at pricePerMillionTokensUsd",
+    "includesEveryLiveCall": true,
+    "capUsd": 5
+  },
+  "results": [
+    {
+      "id": "fw-compile-fix",
+      "kind": "firmware",
+      "brief": "A reaction-time game",
+      "expected": "build",
+      "outcome": "built",
+      "rulesWouldAccept": false,
+      "matchedExpectation": true,
+      "freeMemoryMbAtStart": 1311,
+      "modelCalls": 2,
+      "scriptedCalls": 2,
+      "scriptedNote": "The first calls came from the bench at no cost, to set up a known failure. Every later call is the real model.",
+      "firmware": {
+        "custom": true,
+        "compileCalls": 2,
+        "compileResults": [
+          "Try 1 of 3 didn’t compile",
+          "Compiled on try 2, 90 lines"
+        ],
+        "compileMs": 10598,
+        "lines": 90,
+        "brief": "Wait a random 2 to 6 seconds, beep if there is a buzzer, show GO on the screen, then time how long the knob button takes to be pressed and show it in milliseconds."
+      },
+      "inputTokens": 1991,
+      "outputTokens": 1124,
+      "costUsd": 0.01522,
+      "agentMs": 17993,
+      "pipelineMs": 19641,
+      "wallMs": 48841,
+      "jobs": [
+        {
+          "jobId": "26a9e97a-8a2c-4d85-b0b1-ae668c09c365",
+          "attempt": 1,
+          "ok": true,
+          "drcErrors": 0,
+          "compile": "compiled",
+          "caseOk": true,
+          "pipelineMs": 19641,
+          "cache": "miss",
+          "baseJobId": null,
+          "problems": []
+        }
+      ],
+      "messages": [
+        "A reaction-time game.",
+        "The firmware waits a random 2–6 seconds, displays GO, measures the knob-button reaction time in milliseconds, and lets another press start a new round. A model wrote this firmware and it has only been compiled, so read it before you flash it.",
+        "Built: 0 DRC errors, firmware compiled, case generated. Nothing has been printed, flashed or run on hardware; these are software checks only."
+      ],
+      "tools": [
+        "propose_design",
+        "compile_app",
+        "get_pin_map",
+        "compile_app"
+      ],
+      "success": true,
+      "labels": {
+        "tokensAndCost": "measured",
+        "agentMs": "measured",
+        "pipeline": "measured",
+        "modelJudgement": "measured"
+      }
+    },
+    {
+      "id": "edit-firmware-bar",
+      "kind": "firmware",
+      "brief": "show a progress bar on the screen while it counts down",
+      "expected": "build",
+      "outcome": "built",
+      "rulesWouldAccept": false,
+      "matchedExpectation": true,
+      "freeMemoryMbAtStart": 1204,
+      "modelCalls": 4,
+      "firmware": {
+        "custom": true,
+        "compileCalls": 1,
+        "compileResults": [
+          "Compiled on try 1, 107 lines"
+        ],
+        "compileMs": 8680,
+        "lines": 107,
+        "brief": "A 25 minute focus timer with a small screen and a knob\nChange now: Keep the existing focus timer behavior and hardware. Add a progress bar to the SSD1306 OLED while counting down, keeping the remaining time visible. Show elapsed session progress: empty at the start and full at zero remaining, calculated against the duration selected when the session starts. Freeze the bar while paused and reset it for a new session. Preserve the rotary encoder's duration adjustment and press-to-start/pause controls."
+      },
+      "inputTokens": 6781,
+      "outputTokens": 1578,
+      "costUsd": 0.02638,
+      "agentMs": 20961,
+      "pipelineMs": 36200,
+      "wallMs": 65906,
+      "jobs": [
+        {
+          "jobId": "61332676-ceed-43b6-b662-a42f67687e9b",
+          "attempt": 1,
+          "ok": true,
+          "drcErrors": 0,
+          "compile": "compiled",
+          "caseOk": true,
+          "pipelineMs": 36200,
+          "cache": "miss",
+          "baseJobId": "1171253d-04e7-4d19-a801-e643e75f36cb",
+          "problems": []
+        }
+      ],
+      "messages": [
+        "Add an on-screen progress bar during the focus countdown.",
+        "Preserves the adjustable focus timer and press-to-start/pause controls while adding an elapsed-session progress bar that freezes when paused and resets for each new session. A model wrote this firmware and it has only been compiled, so read it before you flash it.",
+        "Built: 0 DRC errors, firmware compiled, case generated. Nothing has been printed, flashed or run on hardware; these are software checks only."
+      ],
+      "tools": [
+        "get_design",
+        "change_firmware",
+        "get_pin_map",
+        "compile_app"
+      ],
+      "success": true,
+      "labels": {
+        "tokensAndCost": "measured",
+        "agentMs": "measured",
+        "pipeline": "measured",
+        "modelJudgement": "measured"
+      }
+    },
+    {
+      "id": "off-plant-moisture",
+      "kind": "off-template",
+      "brief": "plant moisture alarm",
+      "expected": "decline",
+      "outcome": "declined",
+      "rulesWouldAccept": false,
+      "matchedExpectation": true,
+      "freeMemoryMbAtStart": 1305,
+      "modelCalls": 2,
+      "firmware": {
+        "custom": false,
+        "compileCalls": 0,
+        "compileResults": [],
+        "compileMs": 0,
+        "lines": 0,
+        "brief": null
+      },
+      "inputTokens": 3615,
+      "outputTokens": 107,
+      "costUsd": 0.00371,
+      "agentMs": 5386,
+      "pipelineMs": 0,
+      "wallMs": 5388,
+      "jobs": [],
+      "messages": [
+        "declined: A plant moisture alarm needs a soil-moisture probe, which is not in the catalog. The available air-humidity sensor cannot measure soil moisture. Closest: A USB-powered temperature monitor with a screen and an audible high-temperature alert."
+      ],
+      "tools": [
+        "list_catalog",
+        "decline"
+      ],
+      "success": true,
+      "labels": {
+        "tokensAndCost": "measured",
+        "agentMs": "measured",
+        "pipeline": "measured",
+        "modelJudgement": "measured"
+      }
+    },
+    {
+      "id": "off-door-chime",
+      "kind": "off-template",
+      "brief": "A door chime that plays a tone when the door opens",
+      "expected": "decline",
+      "outcome": "declined",
+      "rulesWouldAccept": false,
+      "matchedExpectation": true,
+      "freeMemoryMbAtStart": 1335,
+      "modelCalls": 2,
+      "firmware": {
+        "custom": false,
+        "compileCalls": 0,
+        "compileResults": [],
+        "compileMs": 0,
+        "lines": 0,
+        "brief": null
+      },
+      "inputTokens": 3631,
+      "outputTokens": 117,
+      "costUsd": 0.00383,
+      "agentMs": 4531,
+      "pipelineMs": 0,
+      "wallMs": 4534,
+      "jobs": [],
+      "messages": [
+        "declined: A door-opening sensor, such as a magnetic reed switch, is missing from the catalog, so I can’t build a chime triggered by the door opening. Closest: The closest buildable option is a USB-powered chime triggered by pressing the rotary encoder’s button, using custom firmware."
+      ],
+      "tools": [
+        "list_catalog",
+        "decline"
+      ],
+      "success": true,
+      "labels": {
+        "tokensAndCost": "measured",
+        "agentMs": "measured",
+        "pipeline": "measured",
+        "modelJudgement": "measured"
+      }
+    },
+    {
+      "id": "off-pomodoro-ring",
+      "kind": "off-template",
+      "brief": "A pomodoro timer with an LED ring that shows the time left",
+      "expected": "decline",
+      "outcome": "declined",
+      "rulesWouldAccept": false,
+      "matchedExpectation": true,
+      "freeMemoryMbAtStart": 1354,
+      "modelCalls": 2,
+      "firmware": {
+        "custom": false,
+        "compileCalls": 0,
+        "compileResults": [],
+        "compileMs": 0,
+        "lines": 0,
+        "brief": null
+      },
+      "inputTokens": 3633,
+      "outputTokens": 119,
+      "costUsd": 0.00385,
+      "agentMs": 4894,
+      "pipelineMs": 0,
+      "wallMs": 4897,
+      "jobs": [],
+      "messages": [
+        "declined: The catalog has no LED ring, so I can’t build the time-left display you asked for. Closest: A USB-powered Pomodoro timer with an OLED countdown, a knob to set and start it, and an optional end chime."
+      ],
+      "tools": [
+        "list_catalog",
+        "decline"
+      ],
+      "success": true,
+      "labels": {
+        "tokensAndCost": "measured",
+        "agentMs": "measured",
+        "pipeline": "measured",
+        "modelJudgement": "measured"
+      }
+    },
+    {
+      "id": "template-focus-timer",
+      "kind": "template",
+      "brief": "A 25 minute focus timer with a small screen and a knob, and a buzzer that beeps when time is up",
+      "expected": "build",
+      "outcome": "built",
+      "rulesWouldAccept": true,
+      "matchedExpectation": true,
+      "freeMemoryMbAtStart": 1361,
+      "modelCalls": 3,
+      "firmware": {
+        "custom": false,
+        "compileCalls": 0,
+        "compileResults": [],
+        "compileMs": 0,
+        "lines": 0,
+        "brief": null
+      },
+      "inputTokens": 7931,
+      "outputTokens": 880,
+      "costUsd": 0.01581,
+      "agentMs": 12406,
+      "pipelineMs": 37996,
+      "wallMs": 50625,
+      "jobs": [
+        {
+          "jobId": "2b2a3cef-a19c-47eb-9d31-cbf7bea09ac8",
+          "attempt": 1,
+          "ok": true,
+          "drcErrors": 0,
+          "compile": "compiled",
+          "caseOk": true,
+          "pipelineMs": 37996,
+          "cache": "miss",
+          "baseJobId": null,
+          "problems": []
+        }
+      ],
+      "messages": [
+        "A USB-powered 25-minute focus timer with a small countdown screen, a knob to set and start it, and a beep when time is up.",
+        "Built: 0 DRC errors, firmware compiled, case generated. Nothing has been printed, flashed or run on hardware; these are software checks only."
+      ],
+      "tools": [
+        "list_catalog",
+        "get_module",
+        "get_module",
+        "get_module",
+        "get_module",
+        "propose_design"
+      ],
+      "success": true,
+      "labels": {
+        "tokensAndCost": "measured",
+        "agentMs": "measured",
+        "pipeline": "measured",
+        "modelJudgement": "measured"
+      }
+    },
+    {
+      "id": "off-reaction-game",
+      "kind": "off-template",
+      "brief": "A reaction-time game",
+      "expected": "build",
+      "outcome": "built",
+      "rulesWouldAccept": false,
+      "matchedExpectation": true,
+      "freeMemoryMbAtStart": 6123,
+      "modelCalls": 5,
+      "firmware": {
+        "custom": true,
+        "compileCalls": 1,
+        "compileResults": [
+          "Compiled on try 1, 206 lines"
+        ],
+        "compileMs": 8643,
+        "lines": 206,
+        "brief": "Implement a visual reaction-time game, not the fixed focus timer. Use SSD1306 128x64 I2C on SDA GPIO21 and SCL GPIO22, auto-detect 0x3C then 0x3D. KY-040 push switch on GPIO25 is active-low with INPUT_PULLUP; configure GPIO26/27 as encoder inputs but ignore rotation. Show 'Press to start' at boot. A new button press starts a round; require button release stable for 20 ms before arming the waiting phase, so holding the start button cannot trigger a response. Display 'Wait...' and choose a fresh random delay uniformly from 2000 to 5000 ms using the ESP32 random source. Any falling edge during this waiting phase is a false start; display 'Too soon!' and offer another round after release. At expiry, display a large 'GO!' and begin reaction timing at completion of the cue's I2C transfer, using a monotonic microsecond clock. Capture the first button falling edge with a GPIO interrupt and timestamp it promptly, including while screen transfers run; do not delay timestamping for debounce. Handle captured edges at the cue boundary consistently, treating edges before cue transfer completion as false starts. Ignore subsequent switch bounce until released continuously for 20 ms. On a valid response display elapsed time rounded to integer milliseconds and session best valid result. If there is no response within 10 s, display 'No response' without updating best. Results remain visible until a fresh press starts the next round after stable release. Do not block button capture with display updates. Rotation has no effect. Keep all game state in RAM; no networking or persistent storage. Results are approximate because of OLED refresh latency and switch timing."
+      },
+      "inputTokens": 10054,
+      "outputTokens": 4500,
+      "costUsd": 0.05119,
+      "agentMs": 81429,
+      "pipelineMs": 26228,
+      "wallMs": 117257,
+      "jobs": [
+        {
+          "jobId": "4a5e202f-c870-40f7-9999-10e58dc0040b",
+          "attempt": 1,
+          "ok": true,
+          "drcErrors": 0,
+          "compile": "compiled",
+          "caseOk": true,
+          "pipelineMs": 26228,
+          "cache": "miss",
+          "baseJobId": null,
+          "problems": []
+        }
+      ],
+      "messages": [
+        "A USB-powered reaction-time game with a screen and a push button that shows your response time and catches false starts.",
+        "The firmware runs a visual reaction-time game with interrupt-timestamped button presses, randomized waits, false-start detection, a ten-second timeout, and a RAM-only session best. A model wrote this firmware and it has only been compiled, so read it before you flash it.",
+        "Built: 0 DRC errors, firmware compiled, case generated. Nothing has been printed, flashed or run on hardware; these are software checks only."
+      ],
+      "tools": [
+        "list_catalog",
+        "get_module",
+        "get_module",
+        "get_module",
+        "propose_design",
+        "get_pin_map",
+        "compile_app"
+      ],
+      "success": true,
+      "labels": {
+        "tokensAndCost": "measured",
+        "agentMs": "measured",
+        "pipeline": "measured",
+        "modelJudgement": "measured"
+      }
+    },
+    {
+      "id": "off-desk-humidity",
+      "kind": "off-template",
+      "brief": "A desk humidity display",
+      "expected": "build",
+      "outcome": "built",
+      "rulesWouldAccept": true,
+      "matchedExpectation": true,
+      "freeMemoryMbAtStart": 5820,
+      "modelCalls": 5,
+      "firmware": {
+        "custom": true,
+        "compileCalls": 1,
+        "compileResults": [
+          "Compiled on try 1, 112 lines"
+        ],
+        "compileMs": 12128,
+        "lines": 112,
+        "brief": "Use the temp-monitor board layout with custom humidity-only firmware. Initialize I2C on SDA GPIO21 and SCL GPIO22 at 100 kHz. Detect the BME280 at 0x76 or 0x77 and SSD1306 128x64 OLED at 0x3C or 0x3D. Measure relative humidity every 2 seconds and display a large rounded integer with '% RH' and a smaller 'Humidity' label. Do not display temperature or pressure and do not implement alarms or controls. Until the first valid measurement show 'Reading...'. On sensor initialization failure or invalid/failed readings, replace the number with '-- % RH' and 'Sensor error', retrying sensor initialization every 2 seconds until recovered; never retain a stale number as a current reading."
+      },
+      "inputTokens": 9666,
+      "outputTokens": 2299,
+      "costUsd": 0.02843,
+      "agentMs": 38397,
+      "pipelineMs": 24071,
+      "wallMs": 74654,
+      "jobs": [
+        {
+          "jobId": "1a82132b-79d5-4217-b6bb-fa64a8a9c2bc",
+          "attempt": 1,
+          "ok": true,
+          "drcErrors": 0,
+          "compile": "compiled",
+          "caseOk": true,
+          "pipelineMs": 24071,
+          "cache": "miss",
+          "baseJobId": null,
+          "problems": []
+        }
+      ],
+      "messages": [
+        "A USB-powered desk display that shows room humidity on a small OLED screen.",
+        "The firmware detects the OLED and BME280 on 100 kHz I2C, displays rounded humidity every two seconds, and replaces failed readings with a sensor error while retrying initialization. A model wrote this firmware and it has only been compiled, so read it before you flash it.",
+        "Built: 0 DRC errors, firmware compiled, case generated. Nothing has been printed, flashed or run on hardware; these are software checks only."
+      ],
+      "tools": [
+        "list_catalog",
+        "get_module",
+        "get_module",
+        "get_module",
+        "propose_design",
+        "get_pin_map",
+        "compile_app"
+      ],
+      "success": true,
+      "labels": {
+        "tokensAndCost": "measured",
+        "agentMs": "measured",
+        "pipeline": "measured",
+        "modelJudgement": "measured"
+      }
+    },
+    {
+      "id": "verify-small",
+      "kind": "off-template",
+      "brief": "A temperature monitor with a small screen that fits on a 60 by 40 mm board",
+      "expected": "build",
+      "outcome": "build-failed",
+      "rulesWouldAccept": false,
+      "matchedExpectation": false,
+      "freeMemoryMbAtStart": 5984,
+      "modelCalls": 10,
+      "firmware": {
+        "custom": false,
+        "compileCalls": 0,
+        "compileResults": [],
+        "compileMs": 0,
+        "lines": 0,
+        "brief": null
+      },
+      "effort": "balanced",
+      "requirements": [
+        {
+          "id": "board_size",
+          "plain": "The board is no more than 60 mm wide and 40 mm high.",
+          "metric": "board_size_mm",
+          "op": "within",
+          "value": [
+            60,
+            40
+          ],
+          "unit": "mm",
+          "source": "brief"
+        },
+        {
+          "id": "screen",
+          "plain": "A display is present.",
+          "metric": "interface_present",
+          "args": {
+            "kind": "display"
+          },
+          "op": "present",
+          "source": "brief"
+        }
+      ],
+      "notCheckable": [
+        "Temperature monitoring cannot be checked with the available metrics.",
+        "The screen should be small and fit on the board; the available metrics cannot check screen size or physical fit."
+      ],
+      "verify": {
+        "type": "verify",
+        "ok": false,
+        "results": [
+          {
+            "id": "board_size",
+            "target": [
+              60,
+              40
+            ],
+            "unit": "mm",
+            "status": "fail",
+            "measured": [
+              75,
+              75
+            ],
+            "evidence": "Board [width,height] 75 × 75 mm compared coordinatewise to 60 × 40 mm; no implicit rotation",
+            "plain": "The board is no more than 60 mm wide and 40 mm high."
+          },
+          {
+            "id": "screen",
+            "status": "pass",
+            "measured": "display",
+            "target": "display",
+            "evidence": "Declared interface display is present",
+            "plain": "A display is present."
+          }
+        ]
+      },
+      "inputTokens": 17782,
+      "outputTokens": 1723,
+      "costUsd": 0.0378,
+      "agentMs": 43196,
+      "pipelineMs": 36770,
+      "wallMs": 80402,
+      "jobs": [
+        {
+          "jobId": "06906477-df5c-471b-8645-0f99a4ec679e",
+          "attempt": 1,
+          "ok": false,
+          "drcErrors": 0,
+          "compile": "compiled",
+          "caseOk": true,
+          "pipelineMs": 36770,
+          "cache": "miss",
+          "baseJobId": null,
+          "problems": [
+            "Requirement failed: The board is no more than 60 mm wide and 40 mm high.. Measured [75,75] mm, needs [60,40] mm. Board [width,height] 75 × 75 mm compared coordinatewise to 60 × 40 mm; no implicit rotation"
+          ]
+        }
+      ],
+      "messages": [
+        "A USB-powered temperature monitor with a small OLED, targeting a board no larger than 60 by 40 mm.",
+        "The record says: \"Requirement failed: The board is no more than 60 mm wide and 40 mm high.. Measured [75,75] mm, needs [60,40] mm. Board [width,height] 75 × 75 mm compared coordinatewise to 60 × 40 mm; no implicit rotation\". No allowed change can meet this limit while keeping all parts on the board without overlap. The catalog footprints total 2419.7 mm²: controller 27.9 × 54.4 mm, OLED 27.3 × 27.",
+        "Requirement failed: The board is no more than 60 mm wide and 40 mm high.. Measured [75,75] mm, needs [60,40] mm. Board [width,height] 75 × 75 mm compared coordinatewise to 60 × 40 mm; no implicit rotation"
+      ],
+      "tools": [
+        "list_metrics",
+        "submit_requirements",
+        "submit_requirements",
+        "list_catalog",
+        "get_module",
+        "get_module",
+        "get_module",
+        "propose_design",
+        "read_job",
+        "get_design",
+        "get_module",
+        "get_module",
+        "get_module",
+        "give_up"
+      ],
+      "success": false,
+      "labels": {
+        "tokensAndCost": "measured",
+        "agentMs": "measured",
+        "pipeline": "measured",
+        "modelJudgement": "measured"
+      }
+    },
+    {
+      "id": "verify-battery",
+      "kind": "off-template",
+      "brief": "A focus timer that runs 4 h on a 1000 mAh battery",
+      "expected": "build",
+      "outcome": "built-unverified",
+      "rulesWouldAccept": false,
+      "matchedExpectation": false,
+      "freeMemoryMbAtStart": 6045,
+      "modelCalls": 5,
+      "firmware": {
+        "custom": false,
+        "compileCalls": 0,
+        "compileResults": [],
+        "compileMs": 0,
+        "lines": 0,
+        "brief": null
+      },
+      "effort": "balanced",
+      "requirements": [
+        {
+          "id": "battery_runtime",
+          "plain": "Runs at least 4 hours on a 1000 mAh battery.",
+          "metric": "battery_life_h",
+          "args": {
+            "capacity_mah": 1000
+          },
+          "op": ">=",
+          "value": 4,
+          "unit": "h",
+          "source": "brief"
+        }
+      ],
+      "notCheckable": [
+        "That it functions as a focus timer."
+      ],
+      "verify": {
+        "type": "verify",
+        "ok": true,
+        "results": [
+          {
+            "id": "battery_runtime",
+            "target": 4,
+            "unit": "h",
+            "status": "unsupported",
+            "evidence": "No known battery/power path. Hypothetical Ideal same-rail estimate: 1000 mAh / 76 mA = 13.157894736842104 h; excludes battery derating, duty-cycle variation, cutoff and unmodeled losses",
+            "measured": 13.157894736842104,
+            "estimated": true,
+            "plain": "Runs at least 4 hours on a 1000 mAh battery."
+          }
+        ]
+      },
+      "inputTokens": 9250,
+      "outputTokens": 955,
+      "costUsd": 0.02118,
+      "agentMs": 15899,
+      "pipelineMs": 32687,
+      "wallMs": 49123,
+      "jobs": [
+        {
+          "jobId": "1a13b2e1-ea0b-4bd4-bec5-57fe323e2ce2",
+          "attempt": 1,
+          "ok": true,
+          "drcErrors": 0,
+          "compile": "compiled",
+          "caseOk": true,
+          "pipelineMs": 32687,
+          "cache": "miss",
+          "baseJobId": null,
+          "problems": []
+        }
+      ],
+      "messages": [
+        "A USB-powered focus timer with a countdown screen and control knob, with the required 4-hour runtime on a 1000 mAh battery left unmet.",
+        "Built: 0 DRC errors, firmware compiled, case generated. Nothing has been printed, flashed or run on hardware; these are software checks only.",
+        "Built, but not done: 1 requirement couldn’t be checked. Runs at least 4 hours on a 1000 mAh battery.: No known battery/power path. Hypothetical Ideal same-rail estimate: 1000 mAh / 76 mA = 13.157894736842104 h; excludes battery derating, duty-cycle variation, cutoff and unmodeled losses"
+      ],
+      "tools": [
+        "list_metrics",
+        "submit_requirements",
+        "list_catalog",
+        "get_module",
+        "get_module",
+        "get_module",
+        "propose_design"
+      ],
+      "success": false,
+      "labels": {
+        "tokensAndCost": "measured",
+        "agentMs": "measured",
+        "pipeline": "measured",
+        "modelJudgement": "measured"
+      }
+    },
+    {
+      "id": "verify-usb-timer",
+      "kind": "off-template",
+      "brief": "A focus timer with a screen and a knob, powered over USB, using fewer than 6 parts",
+      "expected": "build",
+      "outcome": "built",
+      "rulesWouldAccept": false,
+      "matchedExpectation": true,
+      "freeMemoryMbAtStart": 5795,
+      "modelCalls": 5,
+      "firmware": {
+        "custom": false,
+        "compileCalls": 0,
+        "compileResults": [],
+        "compileMs": 0,
+        "lines": 0,
+        "brief": null
+      },
+      "effort": "balanced",
+      "requirements": [
+        {
+          "id": "screen",
+          "plain": "Has a screen.",
+          "metric": "interface_present",
+          "args": {
+            "kind": "display"
+          },
+          "op": "present",
+          "source": "brief"
+        },
+        {
+          "id": "knob",
+          "plain": "Has a knob.",
+          "metric": "interface_present",
+          "args": {
+            "kind": "knob"
+          },
+          "op": "present",
+          "source": "brief"
+        },
+        {
+          "id": "usb_power",
+          "plain": "Has USB power input.",
+          "metric": "interface_present",
+          "args": {
+            "kind": "usb_power"
+          },
+          "op": "present",
+          "source": "brief"
+        },
+        {
+          "id": "part_limit",
+          "plain": "Uses at most 5 declared board parts.",
+          "metric": "part_count",
+          "op": "<=",
+          "value": 5,
+          "source": "brief"
+        }
+      ],
+      "notCheckable": [
+        "That it functions as a focus timer."
+      ],
+      "verify": {
+        "type": "verify",
+        "ok": true,
+        "results": [
+          {
+            "id": "screen",
+            "status": "pass",
+            "measured": "display",
+            "target": "display",
+            "evidence": "Declared interface display is present",
+            "plain": "Has a screen."
+          },
+          {
+            "id": "knob",
+            "status": "pass",
+            "measured": "knob",
+            "target": "knob",
+            "evidence": "Declared interface knob is present",
+            "plain": "Has a knob."
+          },
+          {
+            "id": "usb_power",
+            "status": "pass",
+            "measured": "usb_power",
+            "target": "usb_power",
+            "evidence": "Declared interface usb_power is present",
+            "plain": "Has USB power input."
+          },
+          {
+            "id": "part_limit",
+            "target": 5,
+            "status": "pass",
+            "measured": 3,
+            "evidence": "Count of declared parts across plan instances",
+            "plain": "Uses at most 5 declared board parts."
+          }
+        ]
+      },
+      "inputTokens": 9291,
+      "outputTokens": 985,
+      "costUsd": 0.01917,
+      "agentMs": 16251,
+      "pipelineMs": 1035,
+      "wallMs": 18300,
+      "jobs": [
+        {
+          "jobId": "fef15c94-01a8-45a2-8fd0-65bab32ea581",
+          "attempt": 1,
+          "ok": true,
+          "drcErrors": 0,
+          "compile": "compiled",
+          "caseOk": true,
+          "pipelineMs": 1035,
+          "cache": "hit",
+          "baseJobId": null,
+          "problems": []
+        }
+      ],
+      "messages": [
+        "A USB-powered focus timer with a screen and a push knob to set and start the countdown, using three declared board parts.",
+        "Built: 0 DRC errors, firmware compiled, case generated. Nothing has been printed, flashed or run on hardware; these are software checks only."
+      ],
+      "tools": [
+        "list_metrics",
+        "submit_requirements",
+        "list_catalog",
+        "get_module",
+        "get_module",
+        "get_module",
+        "propose_design"
+      ],
+      "success": true,
+      "labels": {
+        "tokensAndCost": "measured",
+        "agentMs": "measured",
+        "pipeline": "measured",
+        "modelJudgement": "measured"
+      }
+    }
+  ]
+}

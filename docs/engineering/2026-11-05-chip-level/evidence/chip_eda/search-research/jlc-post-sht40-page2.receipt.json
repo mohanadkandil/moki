@@ -1,0 +1,22 @@
+{
+  "name": "jlc-post-sht40-page2",
+  "method": "POST",
+  "url": "https://jlcpcb.com/api/overseas-pcb-order/v1/shoppingCart/smtGood/selectSmtComponentList",
+  "requestBody": {
+    "keyword": "SHT40",
+    "currentPage": 2,
+    "pageSize": 8
+  },
+  "capturedAt": "2026-11-05T21:49:53.777875+00:00",
+  "status": 200,
+  "contentType": "application/json",
+  "finalUrl": "https://jlcpcb.com/api/overseas-pcb-order/v1/shoppingCart/smtGood/selectSmtComponentList",
+  "bytes": 46984,
+  "sha256": "2a5ed1cc1ffe077377b090a0bf5ac84972cf2396fdfba275d554d016dc9bbec0",
+  "file": "jlc-post-sht40-page2.response",
+  "requestHeaders": {
+    "User-Agent": "Mozilla/5.0",
+    "Accept": "application/json",
+    "Content-Type": "application/json"
+  }
+}

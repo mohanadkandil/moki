@@ -1,0 +1,58 @@
+{
+  "capturedAt": "2026-11-05T22:03:27.362486+00:00",
+  "nativeDrcErrorCount": 0,
+  "artifacts": {
+    "bom.csv": {
+      "bytes": 1394,
+      "sha256": "1c99c6520d760c6f0b4bc3470c378867a5a57174664b7aceeaa1cc23a9c12acf"
+    },
+    "schematic.svg": {
+      "bytes": 229045,
+      "sha256": "71f9b14942102405e57d4eb313ee94c3a53a8721b6efa64039e9b3815c46f82f"
+    },
+    "drc.json": {
+      "bytes": 37,
+      "sha256": "db8cdda756acb0195511c050c1a7ddefef38a997fa320dea532e539aa756fbb8"
+    },
+    "circuit.json": {
+      "bytes": 972628,
+      "sha256": "0ae53f4ee3f4afc6b5e67a9100cfe15a37c0d1808b9b3ebe369d3af69796fea0"
+    },
+    "import-corrections.json": {
+      "bytes": 451,
+      "sha256": "1fa7c8b860a27813d180b84113b35a4f1a5ddbcbfc91ef77bc07a0d99a596dbc"
+    },
+    "progress.json": {
+      "bytes": 431,
+      "sha256": "7e4de24fa33d7417b10681f5d8457036f6eb14a1495a628ed307147c09e87a93"
+    },
+    "input.json": {
+      "bytes": 3852,
+      "sha256": "16991183105bf1bcaef2b6fcaa60d663ac1c091c40fe66fd1ac4bcd8563a24dc"
+    },
+    "pcb.svg": {
+      "bytes": 433456,
+      "sha256": "2f83410bb35ef08bca47a624628d910a451c1a1b1f3c8832e94e38b17ad317cf"
+    },
+    "board.glb": {
+      "bytes": 5930320,
+      "sha256": "922cf9ba2d0f6d8671b98033ca85e51c2cc7c80009617ce752f1bcff8a4a573b"
+    },
+    "gerbers.zip": {
+      "bytes": 56224,
+      "sha256": "d8934727d8a53db22647e6aae809bac1acac5619b92c58e2c8b9f8dc549b4b70"
+    },
+    "cpl.csv": {
+      "bytes": 1138,
+      "sha256": "cb00da78a3d351ef05d2c2b9bac77faff73ddd0cdb0b24cd2b3cf5ab2e9d1126"
+    },
+    "receipt.json": {
+      "bytes": 2811,
+      "sha256": "c9546f106d7a60b18e280dfded798d12a9302c111c4d8459bd16817a0b6b85a7"
+    },
+    "board.png": {
+      "bytes": 135790,
+      "sha256": "3f1cb2264cb56daed8e0ec89da0a89f7dced94b23a9699927e93b06de7c84823"
+    }
+  }
+}

@@ -1,0 +1,626 @@
+{
+ "brief": "An ESP32-S3 board powered over USB-C with a 3.3 V regulator, boot and reset buttons, and an I2C header for a sensor",
+ "label": "measured, live model, real blocks and datasheets; no job ran; SPICE was skipped on purpose, because of the R1 value failure in the first run",
+ "outcomes": [
+  "awaiting-confirmation",
+  "error"
+ ],
+ "wallMs": 145320,
+ "calls": 19,
+ "inputTokens": 189496,
+ "outputTokens": 9863,
+ "costUsd": 0.22817,
+ "agentMs": 132382,
+ "perRole": {
+  "verifier": {
+   "calls": 3,
+   "costUsd": 0.01242,
+   "ms": 12599
+  },
+  "designer": {
+   "calls": 7,
+   "costUsd": 0.08692,
+   "ms": 45268
+  },
+  "reviewer": {
+   "calls": 7,
+   "costUsd": 0.11189,
+   "ms": 54463
+  },
+  "fixer": {
+   "calls": 0,
+   "costUsd": 0,
+   "ms": 0
+  },
+  "firmware": {
+   "calls": 2,
+   "costUsd": 0.01695,
+   "ms": 20052
+  }
+ },
+ "requirements": [
+  {
+   "id": "esp32_s3",
+   "plain": "The board includes an ESP32-S3 core.",
+   "metric": "interface_present",
+   "args": {
+    "kind": "esp32-s3-core"
+   },
+   "op": "present",
+   "source": "brief"
+  },
+  {
+   "id": "usb_c_power",
+   "plain": "The board has a USB-C power input.",
+   "metric": "interface_present",
+   "args": {
+    "kind": "usb_c_sink"
+   },
+   "op": "present",
+   "source": "brief"
+  },
+  {
+   "id": "boot_reset",
+   "plain": "The board has boot and reset buttons.",
+   "metric": "interface_present",
+   "args": {
+    "kind": "boot-reset-buttons"
+   },
+   "op": "present",
+   "source": "brief"
+  },
+  {
+   "id": "i2c_header",
+   "plain": "The board has an I2C header for a sensor.",
+   "metric": "interface_present",
+   "args": {
+    "kind": "i2c-header"
+   },
+   "op": "present",
+   "source": "brief"
+  }
+ ],
+ "notCheckable": [
+  "That the board includes a 3.3 V regulator; checking its output voltage requires an acceptable voltage range."
+ ],
+ "verify": {
+  "type": "verify",
+  "ok": true,
+  "results": [
+   {
+    "id": "esp32_s3",
+    "status": "pass",
+    "measured": "esp32_s3_core",
+    "target": "esp32_s3_core",
+    "evidence": "Declared interface esp32_s3_core is present",
+    "plain": "The board includes an ESP32-S3 core"
+   },
+   {
+    "id": "usb_c_power",
+    "status": "pass",
+    "measured": "usb_c_sink",
+    "target": "usb_c_sink",
+    "evidence": "Declared interface usb_c_sink is present",
+    "plain": "The board has a USB-C power input"
+   },
+   {
+    "id": "boot_reset",
+    "status": "pass",
+    "measured": "boot_reset_buttons",
+    "target": "boot_reset_buttons",
+    "evidence": "Declared interface boot_reset_buttons is present",
+    "plain": "The board has boot and reset buttons"
+   },
+   {
+    "id": "i2c_header",
+    "status": "pass",
+    "measured": "i2c_header",
+    "target": "i2c_header",
+    "evidence": "Declared interface i2c_header is present",
+    "plain": "The board has an I2C header for a sensor"
+   }
+  ]
+ },
+ "tools": [
+  {
+   "role": "verifier",
+   "name": "list_metrics",
+   "ok": true,
+   "ms": 0,
+   "summary": "8 metrics"
+  },
+  {
+   "role": "verifier",
+   "name": "submit_requirements",
+   "ok": false,
+   "ms": 2,
+   "summary": "Rejected: regulator_voltage: within takes [low, high], with room between them, like [3.2, 3.4]."
+  },
+  {
+   "role": "verifier",
+   "name": "submit_requirements",
+   "ok": true,
+   "ms": 1,
+   "summary": "4 checks"
+  },
+  {
+   "role": "designer",
+   "name": "list_blocks",
+   "ok": true,
+   "ms": 0,
+   "summary": "5 blocks"
+  },
+  {
+   "role": "designer",
+   "name": "get_block",
+   "ok": true,
+   "ms": 1,
+   "summary": "ESP32-S3 + reset and boot bias"
+  },
+  {
+   "role": "designer",
+   "name": "get_block",
+   "ok": true,
+   "ms": 0,
+   "summary": "USB-C sink + ESD"
+  },
+  {
+   "role": "designer",
+   "name": "get_block",
+   "ok": true,
+   "ms": 0,
+   "summary": "3.3 V regulator"
+  },
+  {
+   "role": "designer",
+   "name": "get_block",
+   "ok": true,
+   "ms": 0,
+   "summary": "BOOT / RESET buttons"
+  },
+  {
+   "role": "designer",
+   "name": "get_block",
+   "ok": true,
+   "ms": 0,
+   "summary": "I2C expansion header"
+  },
+  {
+   "role": "designer",
+   "name": "read_datasheet",
+   "ok": true,
+   "ms": 7,
+   "summary": "C51118: 1 matches"
+  },
+  {
+   "role": "designer",
+   "name": "read_datasheet",
+   "ok": true,
+   "ms": 7,
+   "summary": "C2913198: 4 matches"
+  },
+  {
+   "role": "designer",
+   "name": "read_datasheet",
+   "ok": true,
+   "ms": 2,
+   "summary": "C7519: 6 matches"
+  },
+  {
+   "role": "designer",
+   "name": "read_datasheet",
+   "ok": true,
+   "ms": 0,
+   "summary": "C51118: page 2"
+  },
+  {
+   "role": "designer",
+   "name": "read_datasheet",
+   "ok": true,
+   "ms": 0,
+   "summary": "C2913198: page 41"
+  },
+  {
+   "role": "designer",
+   "name": "read_datasheet",
+   "ok": true,
+   "ms": 0,
+   "summary": "C7519: page 9"
+  },
+  {
+   "role": "designer",
+   "name": "check_plan",
+   "ok": true,
+   "ms": 5,
+   "summary": "4 issues"
+  },
+  {
+   "role": "designer",
+   "name": "check_plan",
+   "ok": true,
+   "ms": 24,
+   "summary": "Checks pass"
+  },
+  {
+   "role": "designer",
+   "name": "propose_plan",
+   "ok": true,
+   "ms": 13,
+   "summary": "USB-C ESP32-S3 sensor board: 5 sections"
+  },
+  {
+   "role": "reviewer",
+   "name": "get_plan",
+   "ok": true,
+   "ms": 0,
+   "summary": "USB-C ESP32-S3 sensor board"
+  },
+  {
+   "role": "reviewer",
+   "name": "get_block",
+   "ok": true,
+   "ms": 0,
+   "summary": "USB-C sink + ESD"
+  },
+  {
+   "role": "reviewer",
+   "name": "get_block",
+   "ok": true,
+   "ms": 0,
+   "summary": "3.3 V regulator"
+  },
+  {
+   "role": "reviewer",
+   "name": "get_block",
+   "ok": true,
+   "ms": 0,
+   "summary": "ESP32-S3 + reset and boot bias"
+  },
+  {
+   "role": "reviewer",
+   "name": "get_block",
+   "ok": true,
+   "ms": 0,
+   "summary": "BOOT / RESET buttons"
+  },
+  {
+   "role": "reviewer",
+   "name": "get_block",
+   "ok": true,
+   "ms": 0,
+   "summary": "I2C expansion header"
+  },
+  {
+   "role": "reviewer",
+   "name": "read_datasheet",
+   "ok": true,
+   "ms": 0,
+   "summary": "C7519: page 1, 2, 9"
+  },
+  {
+   "role": "reviewer",
+   "name": "read_datasheet",
+   "ok": true,
+   "ms": 0,
+   "summary": "C51118: page 1, 2, 3, 4"
+  },
+  {
+   "role": "reviewer",
+   "name": "read_datasheet",
+   "ok": true,
+   "ms": 0,
+   "summary": "C2913198: page 11, 12, 15, 41"
+  },
+  {
+   "role": "reviewer",
+   "name": "read_datasheet",
+   "ok": true,
+   "ms": 0,
+   "summary": "C2913198: page 13, 14, 16, 17"
+  },
+  {
+   "role": "reviewer",
+   "name": "read_datasheet",
+   "ok": true,
+   "ms": 5,
+   "summary": "C2913198: 3 matches"
+  },
+  {
+   "role": "reviewer",
+   "name": "read_datasheet",
+   "ok": true,
+   "ms": 0,
+   "summary": "C51118: page 8, 12"
+  },
+  {
+   "role": "reviewer",
+   "name": "read_datasheet",
+   "ok": true,
+   "ms": 0,
+   "summary": "C2913198: page 2, 3, 45, 46"
+  },
+  {
+   "role": "reviewer",
+   "name": "read_datasheet",
+   "ok": true,
+   "ms": 0,
+   "summary": "C2913198: page 18, 26, 27, 28"
+  },
+  {
+   "role": "reviewer",
+   "name": "read_datasheet",
+   "ok": true,
+   "ms": 0,
+   "summary": "C7519: page 5, 6, 7, 8"
+  },
+  {
+   "role": "reviewer",
+   "name": "submit_review",
+   "ok": false,
+   "ms": 3,
+   "summary": "1 citation or coverage problem"
+  },
+  {
+   "role": "reviewer",
+   "name": "submit_review",
+   "ok": true,
+   "ms": 1,
+   "summary": "15 findings match the datasheets"
+  },
+  {
+   "role": "firmware",
+   "name": "get_pin_map",
+   "ok": true,
+   "ms": 0,
+   "summary": "2 pins"
+  },
+  {
+   "role": "firmware",
+   "name": "compile_app",
+   "ok": true,
+   "ms": 12779,
+   "summary": "Compiled on try 1, 100 lines"
+  }
+ ],
+ "messages": [
+  {
+   "role": "designer",
+   "text": "USB-C powered ESP32-S3-WROOM-1-N8 with native USB programming, ESD protection, AP2112K 3.3 V regulator, BOOT/RESET buttons and a 3.3 V JST-SH I2C sensor connector. Sensor allowance 50 mA; total continuous 3.3 V load limited to 250 mA at 25 C. Requires known 5 V USB-C source advertising at least 1.5 "
+  },
+  {
+   "role": "reviewer",
+   "text": "SPICE checks aren’t available on this server yet, so none ran."
+  },
+  {
+   "role": "reviewer",
+   "text": "A second agent checked 5 sections against the datasheets, with 15 findings and citations checked by code. No person has reviewed this schematic. No schematic review can settle these: Separate 5.1 kOhm resistors ground CC1 and CC2; no PD negotiation or CC current detection is present. A known 5 V source advertising at least 1.5 A and a data-capable cable are external operating conditions, not guarantees this schematic can establish.; ESD effectiveness, USB impedance and placement of series resistors near the MCU require layout review. Place the protector near the connector with short VBUS and g"
+  },
+  {
+   "role": "designer",
+   "text": "New blocks in this board: USB-C sink + ESD, 3.3 V regulator, ESP32-S3 + reset and boot bias, BOOT / RESET buttons, I2C expansion header. They stay labelled unreviewed until they are promoted."
+  },
+  {
+   "role": "firmware",
+   "text": "Provides native USB CDC help and commands, initializes 100 kHz I2C with a finite timeout, and scans sensor addresses at startup and on request without starting Wi-Fi or Bluetooth. A model wrote this firmware and it has only been compiled, so read it before you flash it."
+  },
+  {
+   "role": "error",
+   "text": "Something went wrong: Stopped here on purpose: the { plan } job input is not ready."
+  }
+ ],
+ "plan": {
+  "schema": "moki.plan/1",
+  "title": "USB-C ESP32-S3 sensor board",
+  "layers": 2,
+  "sections": [
+   {
+    "id": "usb",
+    "title": "USB-C power and native USB",
+    "purpose": "Accept 5 V power and provide programming and serial data.",
+    "insts": [
+     "usb"
+    ],
+    "notes": [
+     "Separate 5.1 kOhm pull-downs on CC1 and CC2 identify a USB-C sink. Use a known 5 V source advertising at least 1.5 A; no USB PD negotiation or CC current detection is provided.",
+     "USBLC6-2SC6 protects D+ and D-; its VBUS reference connects to 5 V. Series resistors are 22 Ohm, placed near the MCU.",
+     "Native USB uses GPIO19 D- and GPIO20 D+. Use a data-capable cable; full-load power is not guaranteed from an arbitrary legacy host."
+    ],
+    "reference": {
+     "lcsc": "C7519",
+     "page": 9,
+     "figure": "Figure 13",
+     "quote": "USB 2.0 port application diagram using USBLC6-2",
+     "datasheetUrl": "https://www.st.com/resource/en/datasheet/usblc6-2.pdf"
+    }
+   },
+   {
+    "id": "reg",
+    "title": "3.3 V regulator",
+    "purpose": "Convert USB 5 V to the MCU and sensor supply.",
+    "insts": [
+     "reg"
+    ],
+    "notes": [
+     "AP2112K-3.3 uses 1 uF ceramic input and output capacitors, with EN tied to input.",
+     "600 mA electrical peak rating covers the 500 mA MCU plus 50 mA sensor allowance. Continuous total load must stay at or below 250 mA at 25 C ambient; 600 mA is not a continuous thermal guarantee.",
+     "At 5.25 V input and 250 mA continuous load, dissipation is approximately 0.49 W; with 184 C/W junction rise is approximately 90 C. Lower continuous load is required at higher ambient temperature."
+    ],
+    "reference": {
+     "lcsc": "C51118",
+     "page": 2,
+     "quote": "Typical Applications Circuit (Note 4)",
+     "datasheetUrl": "https://www.diodes.com/datasheet/download/AP2112.pdf"
+    }
+   },
+   {
+    "id": "mcu",
+    "title": "ESP32-S3 module",
+    "purpose": "Run application firmware and control the I2C sensor bus.",
+    "insts": [
+     "mcu"
+    ],
+    "notes": [
+     "Use one ESP32-S3-WROOM-1-N8 module with 8 MB flash and integrated antenna.",
+     "Supply bypass is 22 uF plus 100 nF. EN has a 10 kOhm / 1 uF startup delay. GPIO0 is pulled high; GPIO45 and GPIO46 are pulled low for safe boot straps.",
+     "I2C SDA is GPIO8 and SCL is GPIO9. Reserve GPIO19 and GPIO20 for native USB.",
+     "Keep the module antenna region clear of other components and copper on both layers."
+    ],
+    "reference": {
+     "lcsc": "C2913198",
+     "page": 41,
+     "figure": "Figure 9-1",
+     "quote": "This is the typical application circuit of the module connected with peripheral components",
+     "datasheetUrl": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf"
+    }
+   },
+   {
+    "id": "buttons",
+    "title": "BOOT and RESET buttons",
+    "purpose": "Allow manual reset and entry to the ROM download loader.",
+    "insts": [
+     "buttons"
+    ],
+    "notes": [
+     "RESET shorts EN to ground. BOOT shorts GPIO0 to ground.",
+     "Hold BOOT, press and release RESET, then release BOOT to enter download mode. Bias resistors and EN delay are in the MCU section."
+    ]
+   },
+   {
+    "id": "sensor",
+    "title": "3.3 V I2C sensor connector",
+    "purpose": "Connect one external low-power I2C sensor.",
+    "insts": [
+     "sensor"
+    ],
+    "notes": [
+     "Four-pin JST-SH connector: pin 1 GND, pin 2 3.3 V, pin 3 SDA, pin 4 SCL.",
+     "SDA and SCL each have a 10 kOhm pull-up to 3.3 V. Use a short cable and 100 kHz I2C; verify rise time for the attached sensor and cable.",
+     "External sensor allowance is 50 mA maximum, subject to the total continuous regulator limit of 250 mA. No 5 V logic or external power injection is supported."
+    ]
+   }
+  ],
+  "blocks": [
+   {
+    "inst": "usb",
+    "block": "usb-c-sink",
+    "version": 1,
+    "params": {}
+   },
+   {
+    "inst": "reg",
+    "block": "ldo-ap2112-3v3",
+    "version": 1,
+    "params": {}
+   },
+   {
+    "inst": "mcu",
+    "block": "esp32-s3-core",
+    "version": 1,
+    "params": {}
+   },
+   {
+    "inst": "buttons",
+    "block": "boot-reset-buttons",
+    "version": 1,
+    "params": {}
+   },
+   {
+    "inst": "sensor",
+    "block": "i2c-header",
+    "version": 1,
+    "params": {}
+   }
+  ],
+  "links": [
+   {
+    "from": "usb.VBUS",
+    "to": "reg.VBUS"
+   },
+   {
+    "from": "reg.V3V3",
+    "to": "mcu.V3V3"
+   },
+   {
+    "from": "reg.V3V3",
+    "to": "sensor.V3V3"
+   },
+   {
+    "from": "usb.GND",
+    "to": "reg.GND"
+   },
+   {
+    "from": "reg.GND",
+    "to": "mcu.GND"
+   },
+   {
+    "from": "mcu.GND",
+    "to": "buttons.GND"
+   },
+   {
+    "from": "mcu.GND",
+    "to": "sensor.GND"
+   },
+   {
+    "from": "usb.USB",
+    "to": "mcu.USB"
+   },
+   {
+    "from": "mcu.I2C",
+    "to": "sensor.I2C"
+   },
+   {
+    "from": "mcu.EN",
+    "to": "buttons.EN"
+   },
+   {
+    "from": "mcu.BOOT",
+    "to": "buttons.BOOT"
+   }
+  ],
+  "requirements": [
+   {
+    "id": "esp32_s3",
+    "plain": "The board includes an ESP32-S3 core.",
+    "metric": "interface_present",
+    "args": {
+     "kind": "esp32-s3-core"
+    },
+    "op": "present",
+    "source": "brief"
+   },
+   {
+    "id": "usb_c_power",
+    "plain": "The board has a USB-C power input.",
+    "metric": "interface_present",
+    "args": {
+     "kind": "usb_c_sink"
+    },
+    "op": "present",
+    "source": "brief"
+   },
+   {
+    "id": "boot_reset",
+    "plain": "The board has boot and reset buttons.",
+    "metric": "interface_present",
+    "args": {
+     "kind": "boot-reset-buttons"
+    },
+    "op": "present",
+    "source": "brief"
+   },
+   {
+    "id": "i2c_header",
+    "plain": "The board has an I2C header for a sensor.",
+    "metric": "interface_present",
+    "args": {
+     "kind": "i2c-header"
+    },
+    "op": "present",
+    "source": "brief"
+   }
+  ],
+  "app": {
+   "lines": 100
+  }
+ }
+}

@@ -1,0 +1,11 @@
+{
+  "file": "mic-datasheet.pdf",
+  "url": "https://invensense.tdk.com/wp-content/uploads/2016/02/DS-000069-ICS-43434-v1.2.pdf",
+  "method": "GET",
+  "requestBody": null,
+  "capturedAt": "2026-11-05T22:04:49.653425+00:00",
+  "status": 200,
+  "contentType": "text/html; charset=utf-8",
+  "bytes": 168930,
+  "sha256": "879f61aaee426ba08600d70e7103ced7af7fa6bf4b67a6b300ea719fa6641a4d"
+}

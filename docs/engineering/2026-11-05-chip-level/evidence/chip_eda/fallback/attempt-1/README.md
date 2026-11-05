@@ -1,0 +1,1 @@
+Initial unmodified conversion/native attempt retained before courtyard normalization. Native route failed because four two-point KiCad courtyard fragments had zero area. Receipt and source/geometry hashes are retained unchanged.

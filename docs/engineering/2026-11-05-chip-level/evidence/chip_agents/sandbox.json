@@ -1,0 +1,42 @@
+{
+ "schema": "moki.firmware-sandbox/1",
+ "checkedAt": "2026-11-05",
+ "label": "measured",
+ "method": "The same project was compiled each way. Its source holds #if __has_include checks for a canary file outside the project and for the moki.env path, raising #error if a file is visible. Only existence was tested: no file contents were read.",
+ "results": {
+  "withoutSandbox": {
+   "exitCode": 1,
+   "errors": [
+    "#error CANARY_VISIBLE",
+    "#error KEYFILE_VISIBLE"
+   ]
+  },
+  "inSandbox": {
+   "exitCode": 0,
+   "errors": []
+  },
+  "inSandboxUnderNoNewPrivileges": {
+   "exitCode": 0,
+   "errors": [],
+   "note": "Run in a unit with NoNewPrivileges and PrivateTmp, like moki.service, so the wrapper hands the compile to its own user unit."
+  },
+  "hardenedInSandbox": {
+   "exitCode": 0,
+   "errors": [],
+   "note": "After review: read-only toolchain and a per-library-set folder. The source still holds the visibility checks."
+  },
+  "hardenedUnderNoNewPrivileges": {
+   "exitCode": 0,
+   "errors": []
+  }
+ },
+ "compileTimesSeconds": {
+  "esp32First": 15,
+  "esp32AfterEdit": 3,
+  "esp32s3FirstIncludingToolchainDownload": 45,
+  "esp32s3AfterEdit": 4,
+  "esp32HardenedNewLibrarySet": 10,
+  "esp32s3HardenedNewLibrarySet": 11
+ },
+ "finding": "bwrap fails under NoNewPrivileges with \"No permissions to create new namespace\". The first live build under moki.service failed this way, and the wrapper now starts a separate user unit."
+}

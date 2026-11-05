@@ -1,0 +1,18 @@
+{
+  "name": "repo-tree",
+  "method": "GET",
+  "url": "https://api.github.com/repos/tscircuit/jlcsearch/git/trees/main?recursive=1",
+  "requestBody": null,
+  "capturedAt": "2026-11-05T21:49:22.300807+00:00",
+  "status": 200,
+  "contentType": "application/json; charset=utf-8",
+  "finalUrl": "https://api.github.com/repos/tscircuit/jlcsearch/git/trees/main?recursive=1",
+  "bytes": 95964,
+  "sha256": "f099ccb87cfc24923e746165b70a3bc5d2b2c97bf7dd1556558b1b423176ab35",
+  "file": "repo-tree.response",
+  "requestHeaders": {
+    "User-Agent": "Mozilla/5.0",
+    "Accept": "application/json",
+    "Content-Type": "application/json"
+  }
+}

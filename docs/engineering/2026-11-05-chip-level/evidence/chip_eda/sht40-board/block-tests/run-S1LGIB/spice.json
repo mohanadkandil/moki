@@ -1,0 +1,34 @@
+{
+  "gate": "spice",
+  "ok": true,
+  "issues": [
+    {
+      "rule": "spice-open-switch",
+      "severity": "warning",
+      "where": "esp32-s3-core.EN reaches75% VDD",
+      "message": "Explicit normally-open contacts held open: boot-reset-buttons.SW1; pressed/bounce behavior is not simulated"
+    },
+    {
+      "rule": "spice-coverage",
+      "severity": "warning",
+      "message": "Only declared isolated profiles are simulated; this is not whole-board analog verification"
+    },
+    {
+      "rule": "spice-evidence",
+      "severity": "warning",
+      "message": "Fixed netlists and raw engine results: /home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-05-chip-level/evidence/chip_eda/sht40-board/block-tests/run-S1LGIB/spice/run-obG6ih/output.json"
+    }
+  ],
+  "measurements": [
+    {
+      "where": "esp32-s3-core.EN reaches75% VDD",
+      "name": "rc-reset",
+      "measured": 13.862942128297528,
+      "target": 13.8629436,
+      "tolerance": 0.25,
+      "unit": "ms",
+      "ok": true
+    }
+  ],
+  "inputHash": "3ba357092793c5587b4e384927edff3937126d82b0889024c75cd09a03600c87"
+}

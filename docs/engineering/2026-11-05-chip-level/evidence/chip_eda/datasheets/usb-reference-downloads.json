@@ -1,0 +1,19 @@
+[
+  {
+    "file": "st-usblc6-2.pdf",
+    "url": "https://www.st.com/resource/en/datasheet/usblc6-2.pdf",
+    "error": "The read operation timed out"
+  },
+  {
+    "file": "ti-typec-slva842.pdf",
+    "url": "https://www.ti.com/lit/an/slva842/slva842.pdf",
+    "status": 200,
+    "sha256": "d4fc7f64b8765ffc6739a2437f3c83393b3577178d150bbd0784f490c0204702"
+  },
+  {
+    "file": "esp32-s3-hardware-latest.pdf",
+    "url": "https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s3/esp-hardware-design-guidelines-en-master-esp32s3.pdf",
+    "status": 200,
+    "sha256": "98ad8bb7d13569c8fb0deb49454319ed7825f3579e7c366207a542f6cea490b4"
+  }
+]

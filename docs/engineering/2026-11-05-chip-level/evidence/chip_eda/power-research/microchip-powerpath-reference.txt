@@ -1,0 +1,1386 @@
+--- PDF PAGE 1 ---
+                                                                     MCP7383X
+                                                              Li-Ion System
+                              Power Path Management
+                                                     Reference Design
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2008 Microchip Technology Inc.                                                                                                                                           DS51746A
+
+--- PDF PAGE 2 ---
+Note the following details of the code protection feature on Microchip devices:
+•       Microchip products meet the specification contained in their particular Microchip Data Sheet.
+
+•       Microchip believes that its family of products is one of the most secure families of its kind on the market today, when used in the
+      intended manner and under normal conditions.
+
+•       There are dishonest and possibly illegal methods used to breach the code protection feature. All of these methods, to our
+      knowledge, require using the Microchip products in a manner outside the operating specifications contained in Microchip’s Data
+      Sheets. Most likely, the person doing so is engaged in theft of intellectual property.
+
+•       Microchip is willing to work with the customer who is concerned about the integrity of their code.
+
+•       Neither Microchip nor any other semiconductor manufacturer can guarantee the security of their code. Code protection does not
+      mean that we are guaranteeing the product as “unbreakable.”
+
+Code protection is constantly evolving. We at Microchip are committed to continuously improving the code protection features of our
+products. Attempts to break Microchip’s code protection feature may be a violation of the Digital Millennium Copyright Act. If such acts
+allow unauthorized access to your software or other copyrighted work, you may have a right to sue for relief under that Act.
+
+
+
+
+
+
+
+
+
+
+Information contained in this publication regarding device                           Trademarks
+applications and the like is provided only for your convenience                      The Microchip name and logo, the Microchip logo, Accuron,
+and may be superseded by updates. It is your responsibility to                       dsPIC, KEELOQ, KEELOQ logo, MPLAB, PIC, PICmicro,
+ensure that your application meets with your specifications.                         PICSTART, PRO MATE, rfPIC and SmartShunt are registered
+MICROCHIP MAKES NO REPRESENTATIONS OR                                                trademarks of Microchip Technology Incorporated in the
+WARRANTIES OF ANY KIND WHETHER EXPRESS OR                                            U.S.A. and other countries.
+IMPLIED, WRITTEN OR ORAL, STATUTORY OR
+OTHERWISE, RELATED TO THE INFORMATION,                                               FilterLab, Linear Active Thermistor, MXDEV, MXLAB,
+INCLUDING BUT NOT LIMITED TO ITS CONDITION,                                          SEEVAL, SmartSensor and The Embedded Control Solutions
+QUALITY, PERFORMANCE, MERCHANTABILITY OR                                             Company are registered trademarks of Microchip Technology
+FITNESS FOR PURPOSE.  Microchip disclaims all liability                              Incorporated in the U.S.A.
+arising from this information and its use. Use of Microchip                          Analog-for-the-Digital Age, Application Maestro, CodeGuard,
+devices in life support and/or safety applications is entirely at                    dsPICDEM, dsPICDEM.net, dsPICworks, dsSPEAK, ECAN,
+the buyer’s risk, and the buyer agrees to defend, indemnify and                      ECONOMONITOR, FanSense, In-Circuit Serial
+hold harmless Microchip from any and all damages, claims,                            Programming, ICSP, ICEPIC, Mindi, MiWi, MPASM, MPLAB
+suits, or expenses resulting from such use. No licenses are                          Certified logo, MPLIB, MPLINK, mTouch, PICkit, PICDEM,
+conveyed, implicitly or otherwise, under any Microchip                               PICDEM.net, PICtail, PIC32 logo, PowerCal, PowerInfo,
+intellectual property rights.                                                        PowerMate, PowerTool, REAL ICE, rfLAB, Select Mode, Total
+                                                                                     Endurance, UNI/O, WiperLock and ZENA are trademarks of
+                                                                                     Microchip Technology Incorporated in the U.S.A. and other
+                                                                                     countries.
+                                                                                     SQTP is a service mark of Microchip Technology Incorporated
+                                                                                     in the U.S.A.
+                                                                                     All other trademarks mentioned herein are property of their
+                                                                                     respective companies.
+                                                                                     © 2008, Microchip Technology Incorporated, Printed in the
+                                                                                     U.S.A., All Rights Reserved.
+                                                                                           Printed on recycled paper.
+
+
+
+
+                                                                                     Microchip received ISO/TS-16949:2002 certification for its worldwide
+                                                                                     headquarters, design and wafer fabrication facilities in Chandler and
+                                                                                     Tempe, Arizona; Gresham, Oregon and design centers in California
+                                                                                     and India. The Company’s quality system processes and procedures
+                                                                                     are for its PIC® MCUs and dsPIC® DSCs, KEELOQ® code hopping
+                                                                                     devices, Serial EEPROMs, microperipherals, nonvolatile memory and
+                                                                                     analog products. In addition, Microchip’s quality system for the design
+                                                                                     and manufacture of development systems is ISO 9001:2000 certified.
+
+
+
+
+
+DS51746A-page ii                                                                      © 2008 Microchip Technology Inc.
+
+--- PDF PAGE 3 ---
+                                                                                               LI-ION SYSTEM PPM
+                                                                                             REFERENCE DESIGN
+
+                                                      Table of Contents
+
+Preface ........................................................................................................................... 1
+                       Introduction............................................................................................................ 1
+                       Document Layout .................................................................................................. 1
+                       Conventions Used in this Guide ............................................................................ 2
+                       Recommended Reading........................................................................................ 3
+                       The Microchip Web Site ........................................................................................ 3
+                       Customer Support ................................................................................................. 3
+                       Document Revision History ................................................................................... 3
+Chapter 1. Product Overview
+                       1.1 Introduction ..................................................................................................... 5
+                       1.2 What is the Li-Ion Battery Charger System Power Path Management
+                                   Reference Design? ................................................................................... 6
+                       1.3 What the Li-Ion Battery Charger System Power Path Management Reference
+                                   Design kit Includes  ................................................................................... 6
+Chapter 2. Installation and Operation
+                       2.1 Introduction ..................................................................................................... 7
+                       2.2 Features  ......................................................................................................... 7
+                       2.3 Getting Started  ............................................................................................... 8
+Appendix A. Schematic and Layouts
+                       A.1 Introduction  .................................................................................................. 11
+                       A.2 Board – Schematic ....................................................................................... 12
+                       A.3 Board – Top Layer  ....................................................................................... 13
+                       A.4 Board – Top Metal Layer  ............................................................................. 13
+                       A.5 Board – Bottom Layer   ................................................................................. 14
+Appendix B. Bill Of Materials (BOM)
+Worldwide Sales and Service  .................................................................................... 16
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2008 Microchip Technology Inc.                                                                                                 DS51746A-page iii
+
+--- PDF PAGE 4 ---
+Li-Ion System PPM Reference Design
+
+
+NOTES:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DS51746A-page iv                                                                      © 2008 Microchip Technology Inc.
+
+--- PDF PAGE 5 ---
+                                                                           LI-ION SYSTEM PPM
+                                                                         REFERENCE DESIGN
+
+                                                     Preface
+
+
+                                      NOTICE TO CUSTOMERS
+
+   All documentation becomes dated, and this manual is no exception. Microchip tools and
+   documentation are constantly evolving to meet customer needs, so some actual dialogs
+   and/or tool descriptions may differ from those in this document. Please refer to our web site
+   (www.microchip.com) to obtain the latest documentation available.
+   Documents are identified with a “DS” number. This number is located on the bottom of each
+   page, in front of the page number. The numbering convention for the DS number is
+   “DSXXXXXA”, where “XXXXX” is the document number and “A” is the revision level of the
+   document.
+   For the most up-to-date information on development tools, see the MPLAB® IDE on-line help.
+   Select the Help menu, and then Topics to open a list of available on-line help files.
+
+INTRODUCTION
+                       This chapter contains general information that will be useful to know before using the
+                       Li-Ion System PPM Reference Design. Items discussed in this chapter include:
+                       •  Document Layout
+                       •  Conventions Used in this Guide
+                       •  Recommended Reading
+                       •  The Microchip Web Site
+                       •  Customer Support
+                       •  Document Revision History
+
+DOCUMENT LAYOUT
+                       This document describes how to use the Li-Ion System PPM Reference Design as a
+                       development tool to emulate and debug firmware on a target board. The manual layout
+                       is as follows:
+                       •  Chapter 1. “Product Overview” – Important information about the Li-Ion System
+                         PPM Reference Design.
+                       •  Chapter 2. “Installation and Operation” – Includes instructions on how to get
+                         started with this user’s guide and a description of the user’s guide.
+                       •  Appendix A. “Schematic and Layouts” – Shows the schematic and layout
+                         diagrams for the Li-Ion System PPM Reference Design.
+                       •  Appendix B. “Bill Of Materials (BOM)” – Lists the parts used to build the Li-Ion
+                         System PPM Reference Design.
+
+
+
+
+
+
+
+
+
+
+
+
+© 2008 Microchip Technology Inc.                                                                                                 DS51746A-page 1
+
+--- PDF PAGE 6 ---
+Li-Ion System PPM Reference Design
+
+
+CONVENTIONS USED IN THIS GUIDE
+                            This manual uses the following documentation conventions:
+
+                            DOCUMENTATION CONVENTIONS
+                                        Description                               Represents                                Examples
+                             Arial font:
+                             Italic characters                          Referenced books                     MPLAB® IDE User’s Guide
+                                                                    Emphasized text                        ...is the only compiler...
+                             Initial caps                                 A window                                   the Output window
+                                                                    A dialog                                     the Settings dialog
+                                                                    A menu selection                       select Enable Programmer
+                             Quotes                                       A field name in a window or      “Save project before build”
+                                                                    dialog
+                             Underlined, italic text with           A menu path                              File>Save
+                             right angle bracket
+                             Bold characters                          A dialog button                           Click OK
+                                                                    A tab                                           Click the Power tab
+                             N‘Rnnnn                                    A number in verilog format,        4‘b0010, 2‘hF1
+                                                                    where N is the total number of
+                                                                    digits, R is the radix and n is a
+                                                                    digit.
+                             Text in angle brackets < >          A key on the keyboard               Press <Enter>, <F1>
+                             Courier New font:
+                             Plain Courier New                      Sample source code        #define START
+                                                                    Filenames                autoexec.bat
+                                                                    File paths                c:\mcc18\h
+                                                                    Keywords                _asm, _endasm, static
+                                                                    Command-line options       -Opa+, -Opa-
+                                                                    Bit values                0, 1
+                                                                    Constants                0xFF, ‘A’
+                             Italic Courier New                      A variable argument                 file.o, where file can be
+                                                                                                           any valid filename
+                             Square brackets [ ]                     Optional arguments         mcc18 [options] file
+                                                                                                           [options]
+                             Curly brackets and pipe                Choice of mutually exclusive           errorlevel {0|1}
+                             character: { | }                       arguments; an OR selection
+                             Ellipses...                                   Replaces repeated text      var_name [,
+                                                                                                           var_name...]
+                                                                    Represents code supplied by            void main (void)
+                                                                    user                                   { ...
+                                                                                                           }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DS51746A-page 2                                                                      © 2008 Microchip Technology Inc.
+
+--- PDF PAGE 7 ---
+                                                                                                               Preface
+
+
+RECOMMENDED READING
+                        This user's guide describes how to use Li-Ion System PPM Reference Design. The fol-
+                        lowing Microchip document is recommended as supplemental reference resources.
+                        MCP73832 Data Sheet, “Miniature Single-Cell, Fully Integrated Li-Ion, Li-Polymer
+                        Charge Management Controllers”, DS21984
+                        This data sheet provides detailed information regarding the MCP73832 product family.
+                        MCP73833 Data Sheet, “Stand-Alone Linear Li-Ion / Li-Polymer Charge Manage-
+                        ment Controller”, DS22005
+                        This data sheet provides detailed information regarding the MCP73833 product family
+                        AN1149, “Design A Load Sharing System Power Path Management
+                        with Microchip’s Stand-Alone Li-Ion Battery Charger”, DS01149
+                        This application note provides general information regarding designing with Microchip’s
+                        stand-alone Li-Ion / Li-Polymer charge management controller product family.
+
+THE MICROCHIP WEB SITE
+                        Microchip provides online support via our web site at www.microchip.com. This web
+                        site is used as a means to make files and information easily available to customers.
+                        Accessible by using your favorite Internet browser, the web site contains the following
+                        information:
+                        •  Product Support – Data sheets and errata, application notes and sample
+                           programs, design resources, user’s guides and hardware support documents,
+                           latest software releases and archived software
+                        •  General Technical Support – Frequently Asked Questions (FAQs), technical
+                           support requests, online discussion groups, Microchip consultant program
+                           member listing
+                        •  Business of Microchip – Product selector and ordering guides, latest Microchip
+                           press releases, listing of seminars and events, listings of Microchip sales offices,
+                           distributors and factory representatives
+
+CUSTOMER SUPPORT
+                        Users of Microchip products can receive assistance through several channels:
+                        •  Distributor or Representative
+                        •  Local Sales Office
+                        •  Field Application Engineer (FAE)
+                        •  Technical Support
+                        Customers should contact their distributor, representative or field application engineer
+                        (FAE) for support. Local sales offices are also available to help customers. A listing of
+                        sales offices and locations is included in the back of this document.
+                        Technical support is available through the web site at: http://support.microchip.com
+
+DOCUMENT REVISION HISTORY
+
+                        Revision A (July 2008)
+                        •  Initial Release of this Document.
+
+
+
+
+
+
+
+
+
+© 2008 Microchip Technology Inc.                                                                                                                               DS51746A-page 3
+
+--- PDF PAGE 8 ---
+Li-Ion System PPM Reference Design
+
+
+NOTES:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DS51746A-page 4                                                                      © 2008 Microchip Technology Inc.
+
+--- PDF PAGE 9 ---
+                                                                               LI-ION SYSTEM PPM
+                                                                             REFERENCE DESIGN
+
+                                Chapter 1.  Product Overview
+
+1.1      INTRODUCTION
+                        Portable electronics has played an important role in modern era. Due to the natural
+                        characteristics of Li-Ion / Li-Polymer batteries, they are the most popular power
+                        sources for mobile devices. However, extra care in design is always important to
+                        implement Li-Ion / Li-Polymer batteries. System Power Path Management allows
+                        end-users to charge their batteries without interruption. This reference design is
+                        developed to assist product designers in reducing product design cycle and time by
+                        utilizing Microchip’s favorite stand-alone Li-Ion battery charge management controllers
+                        with system power path management.
+                        This chapter provides an overview of the Li-Ion Battery Charger System Power Path
+                        Management Reference Designand covers the following topics:
+                        •  “What is the Li-Ion Battery Charger System Power Path Management Reference
+                          Design?”
+                        •  “What the Li-Ion Battery Charger System Power Path Management Reference
+                          Design Kit includes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+”
+
+                                                                                                   RPULL     Q1     D1
+
+
+ VIN
+                                                    1  VDD             V      10
+                                                                        BAT
+                                                    2                         9            COUT             +
+ CIN                                                   VDD                                                  Li-Ion     System
+                                                                                                            Cell       Load
+                                          RLED1     3                         5                              -
+                                                       STAT1             VSS
+
+                                          RLED2                                          Thermistor
+                                                    4  STAT2                THERM8
+
+                                          RLED3     7                         6
+                                                       /PG             PROG
+
+                                                                                         RPROG
+                                                             MCP73833
+
+FIGURE 1-1:            MCP73833 With System Power Path Management Application.
+
+
+
+
+
+© 2008 Microchip Technology Inc.                                                                                                 DS51746A-page 5
+
+--- PDF PAGE 10 ---
+Li-Ion System PPM Reference Design
+
+
+1.2      WHAT IS THE LI-ION BATTERY CHARGER SYSTEM POWER PATH
+         MANAGEMENT REFERENCE DESIGN?
+                       The Li-Ion Battery Charger System Power Path Management Reference Design
+                       demonstrates the features of Microchip’s MCP73832 “Miniature Single-Cell, Fully Inte-
+                       grated Li-Ion, Li-Polymer Charge Management Controllers” and MCP73833 “Miniature
+                       Single-Cell, Fully Integrated Li-Ion, Li-Polymer Charge Management Controllers” with
+                       the load sharing system power path management capability.
+                       There are two independent circuits on the reference design. First circuit is designed
+                       with MCP73832, which allows maximum programmable fast charge current up to
+                       500 mA. The second circuit is designed with MCP73833, which allows maximum
+                       programmable fast charge current up to 1A and has a power good indicator and an
+                       additional status output. Two preset values of fast charge current are available for each
+                       circuit by a SPDT dip on the board for users to experience different speed.
+
+                          Note:    Please refer to Table 2-1 for Charge Status Outputs and Table 2-2 for
+                                   charge current setups.
+                       Both circuits come with load sharing system power path management feature. This
+                       feature allows a DC Power Source to support system load while charging a Li-Ion
+                       battery. When the DC Power Source is absent, the Li-Ion battery will support system
+                       load and stop charging.
+                       The Li-Ion Battery Charger System Power Path Management Reference Design is
+                       designed to observe the performance and features on the circuits via multiple test
+                       points. Circuits can also be implemented into suitable applications without additional
+                       work.
+
+1.3      WHAT THE LI-ION BATTERY CHARGER SYSTEM POWER PATH
+         MANAGEMENT REFERENCE DESIGN KIT INCLUDES
+                       This Li-Ion Battery Charger System Power Path Management Reference Design kit
+                       includes:
+                       •  Li-Ion Battery Charger System Power Path Management Reference Design,
+                         102-00120
+                       •  Analog and Interface Products Demonstration Boards CD-ROM (DS21912)
+                         -  Li-Ion System PPM Reference Design, DS51746
+                         -  MCP73833 Data Sheet, “Miniature Single-Cell, Fully Integrated Li-Ion,
+                           Li-Polymer Charge Management Controllers”, DS21984
+                         -  MCP73832 Data Sheet, “Stand-Alone Linear Li-Ion / Li-Polymer Charge Man-
+                           agement Controller”, DS22005
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DS51746A-page 6                                                                      © 2008 Microchip Technology Inc.
+
+--- PDF PAGE 11 ---
+                                                                             LI-ION SYSTEM PPM
+                                                                           REFERENCE DESIGN
+
+                      Chapter 2.  Installation and Operation
+
+2.1      INTRODUCTION
+                        The Li-Ion Battery Charger System Power Path Management Reference Design
+                        demonstrates Microchip's stand-alone Linear Li-Ion Battery Chargers - MCP73832 and
+                        MCP73833 while allowing input power source to operate the system load. The system
+                        load can also be supported by the Li-Ion battery when input power is disconnected. A
+                        number of device options allow the MCP73832 and the MCP73833 to be utilized in a
+                        variety of applications. Please refer to the MCP73832 data sheet (DS21984) and
+                        MCP73833 data sheet (DS22005) for device options.
+                        Typical applications for the reference design are Smart Phones, PDA, Portable Media
+                        Players, MP3 Players, Digital Cameras, Handheld Medical devices, Bluetooth head-
+                        sets, Ultra-Mobile PC and Portable Communicators.
+
+2.2      FEATURES
+                        The Li-Ion Battery Charger System Power Path Management Reference Design has
+                        the following features:
+                        •  Load sharing system power path management that support charging single cell
+                          Li-Ion battery and system load at the same time without affecting charging
+                          algorithm of Microchip’s stand-alone charge management controllers.
+                        •  The system load is supported by Li-Ion battery when input power source is
+                          removed
+                        •  Blue LED indicates charge status
+                        •  Additional Red LED to indicate Power-Good (PG) and Green LED to indicate
+                          charge complete (Available from MCP73833)
+                        •  Dip Switch to select programmable fast charge current between1000 mA (H) and
+                          50 mA (L) for MCP73833 and 400 mA (H) and 25 mA (L) for MCP73832
+                        •  Available THERM pin on the MCP73833 for temperature monitoring with a
+                          thermister. It is disabled by default and can be enabled to use with NTC
+                          thermister.
+                        •  Preconditioning of deeply depleted cells.
+                        •  Internal Safety Timer (available from MCP73833)
+                        •  Automatic Charge Termination
+                        •  Automatic Recharge
+                        •  Thermal Regulation
+                        •  Small DFN packages with Exposed Pad as additional heat sink.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2008 Microchip Technology Inc.                                                                                                 DS51746A-page 7
+
+--- PDF PAGE 12 ---
+Li-Ion System PPM Reference Design
+
+
+2.3      GETTING STARTED
+                       The Li-Ion Battery Charger System Power Path Management Reference Design is fully
+                       assembled and tested for charging a single-cell Li-Ion or Li-Polymer battery with or
+                       without system load.
+
+                       2.3.1       Power Input and Output Connection
+
+                       2.3.1.1      POWERING THE LI-ION BATTERY CHARGER SYSTEM POWER PATH
+                                   MANAGEMENT REFERENCE DESIGN
+                       1.    Connect the positive battery terminal to VBAT+ and negative battery terminal to
+                           VBAT-.
+                       2.    Connect the 5V DC power supply Negative Terminal to VSS.
+                       3.    Connect the 5V DC power supply Positive Terminal to VDD.
+                       4.   It should initiate the battery charging cycle when the power source is present.
+                       5.    Position the DIP Switch to “H” for 400 mA fast charge current rate of MCP73832
+                           and 1000 mA fast charge current rate of MCP73833.
+                       6.   Position the DIP Switch to “L” for 25 mA fast charge current rate of MCP73832
+                           and 50 mA fast charge current rate of MCP73833.
+
+                          Note:    Fast Charge Current can be programmed with various resistors that based
+                                   on the Figure 2-1 and Figure 2-2.
+                          Note:    The Li-Ion battery pack can be replaced with test circuit or electronic load
+                                   that can sink current with DC power supply. Please refer to Figure 2-3.
+                       7.    Connected positive of load to System Load on the board and negative of load to
+                           either VSS or VBAT-. The load can be a power resistor or E-Load.
+                       8.    Remove DC power supply, the load should be supported by the Li-Ion battery
+                           now.
+
+                          Note:    MCP73832 circuit is labeled “A” on the reference design while MCP73833
+                                   circuit is labeled “B” on the reference design.
+
+
+                                    1000
+                                      900
+                                      800
+                                      700
+                                      600
+                                      500
+                                      400
+                                      300
+                                      200
+                                      100                                    1
+                                         0
+                                            135791113151719
+
+                                                          Programming Resistor (k:)
+
+                       FIGURE 2-1:           MCP73833 Charge Current (IOUT) vs. Programming Resistor
+                       (RPROG).
+
+
+
+DS51746A-page 8                                                                      © 2008 Microchip Technology Inc.
+
+--- PDF PAGE 13 ---
+                                                                               Installation and Operation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                1
+
+
+
+
+
+
+
+
+                            FIGURE 2-2:            MCP73832 Charge Current (IOUT) vs. Programming Resistor
+                            (RPROG).
+
+
+
+
+
+
+
+
+
+
+
+
+                            FIGURE 2-3:            Simulated Battery Load.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2008 Microchip Technology Inc.                                                                                                                               DS51746A-page 9
+
+--- PDF PAGE 14 ---
+Li-Ion System PPM Reference Design
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                              1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                               FIGURE 2-4:           Board Top Assembly.
+
+
+                               TABLE 2-1:       MCP73833 CHARGE STATUS OUTPUTS
+
+                                         CHARGE CYCLE STATE              STAT1 (BLUE)            STAT2 (GREEN)             PG (RED)
+
+                                Shutdown                                                          OFF                      OFF                      OFF
+                                Standby                                                             OFF                      OFF                       ON
+                                Charge in Progress                                           ON                      OFF                      ON
+                                Charge Complete (EOC)                                  OFF                      ON                       ON
+                                Temperature Fault                                             OFF                      OFF                       ON
+                                Timer Fault                                                       OFF                      OFF                      ON
+                                System Test Mode                                            ON                       ON                       ON
+
+
+                               TABLE 2-2:       MCP73832 CHARGE STATUS OUTPUTS
+                                         CHARGE CYCLE STATE               STAT (BLUE)
+                                Shutdown                                                          OFF
+                                No Battery Present                                           OFF
+                                Preconditioning                                                  ON
+                                Constant-Current Fast Charge                          ON
+                                Constant Voltage                                               ON
+                                Charge Complete - Standby                             OFF
+
+
+
+
+
+
+
+
+
+
+DS51746A-page 10                                                                     © 2008 Microchip Technology Inc.
+
+--- PDF PAGE 15 ---
+                                                                        LI-ION SYSTEM PPM
+                                                                      REFERENCE DESIGN
+
+                       Appendix A. Schematic and Layouts
+
+A.1     INTRODUCTION
+                      This appendix contains the following schematics and layouts for the Li-Ion Battery
+                      Charger System Power Path Management Reference Design:
+                      •  Board – Schematic
+                      •  Board – Top Layer
+                      •  Board – Top Metal Layer
+                      •  Board – Bottom Layer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2008 Microchip Technology Inc.                                                                                                DS51746A-page 11
+
+--- PDF PAGE 16 ---
+Li-Ion System PPM Reference Design
+
+
+A.2     BOARD – SCHEMATIC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DS51746A-page 12                                                                     © 2008 Microchip Technology Inc.
+
+--- PDF PAGE 17 ---
+                                                                             Schematic and Layouts
+
+
+A.3     BOARD – TOP LAYER
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A.4     BOARD – TOP METAL LAYER
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2008 Microchip Technology Inc.                                                                                                                             DS51746A-page 13
+
+--- PDF PAGE 18 ---
+Li-Ion System PPM Reference Design
+
+
+A.5     BOARD – BOTTOM LAYER
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DS51746A-page 14                                                                     © 2008 Microchip Technology Inc.
+
+--- PDF PAGE 19 ---
+                                                                                        LI-ION SYSTEM PPM
+                                                                                      REFERENCE DESIGN
+
+                           Appendix B. Bill Of Materials (BOM)
+
+
+TABLE B-1:      BILL OF MATERIALS (BOM)
+ Qty Reference   Description    Manufacture  Part Number
+4         Bump                    BUMPON HEMISPHERE .44X.20                    3M                                       SJ5003-9-ND
+                               WHITE
+4         C1, C2, C3, C4     CAP CERAMIC 4.7 uF 10 X5R 0603     Taiyo Yuden                        LMK107BJ475KA-T
+2         LED1, LED2         Blue Water Clear 0603 SMD LED          Para Light USA                   L-C191LBCT-U1
+1         LED3                    True Green Water Clear 0603 SMD              Para Light USA                   L-C191LGCT-U1
+                               LED
+1         LED4                    Super Red Water Clear 0603 SMD               Para Light USA                   L-C191KRCT-U1
+                               LED
+1         PCB                      Printed Circuit Board                               —                                         104-00184-R1
+4         R1, R4, R5, R6     RES 221 OHM 1/10W 1% 0603 SMD    Panasonic® - ECG              ERJ-3EKF2210V
+1         R2                         RES 41.2K OHM 1/10W 1% 0603               Panasonic - ECG                ERJ-3EKF4122V
+                               SMD
+1         R3                         RES 2.49K OHM 1/10W 1% 0603               Panasonic - ECG                ERJ-3EKF2491V
+                               SMD
+3         R7, R10, R11        RES 10K OHM 1/10W 1% 0603 SMD    Panasonic - ECG                ERJ-3EKF1002V
+1         R8                         RES 1K OHM 1/10W 1% 0603 SMD      Panasonic - ECG                ERJ-3EKF1001V
+1         R9                         RES 20K OHM 1/10W 1% 0603 SMD    Panasonic - ECG                ERJ-3EKF2002V
+2         SW1, SW2            SWITCH SLIDE SPDT SMD J-LEAD     Copal Electronics Inc          CJS-1200TA
+10       TP1, TP2, TP3,        PC Test Point Compact SMT                  Keystone Electronics®        5016
+         TP4, TP5, TP6,
+         TP7, TP8, TP9,
+         TP10
+1         U1                         Miniature Single Cell, Fully Integrated   Microchip Technology Inc   MCP73832-2ATI/MC
+                               Li-Ion, Li-Polymer Charge Manage-
+                               ment
+1          U2                            Stand-Alone Linear Li-Ion / Li-Polymer Microchip Technology Inc   MCP73833-AMI/MF
+                               Charge Management Controller
+2         U3, U4                  MOSFET/SCHOTTKY P-CH                         Fairchild Semiconductor®   FDFMA2P857
+                               MICROFET2X2
+Note 1:     The components listed in this Bill of Materials are representative of the PCB assembly. The released BOM
+              used in manufacturing uses all RoHS-compliant components.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2008 Microchip Technology Inc.                                                                                                DS51746A-page 15
+
+--- PDF PAGE 20 ---
+                                 WORLDWIDE SALES AND SERVICE
+
+
+AMERICAS                              ASIA/PACIFIC                          ASIA/PACIFIC                           EUROPE
+Corporate Office                      Asia Pacific Office                   India - Bangalore                      Austria - Wels
+2355 West Chandler Blvd.              Suites 3707-14, 37th Floor            Tel: 91-80-4182-8400                   Tel: 43-7242-2244-39
+Chandler, AZ  85224-6199              Tower 6, The Gateway                  Fax: 91-80-4182-8422                   Fax: 43-7242-2244-393
+Tel:  480-792-7200                    Harbour City, Kowloon                 India - New Delhi                      Denmark - Copenhagen
+Fax:  480-792-7277                    Hong Kong                             Tel: 91-11-4160-8631                   Tel: 45-4450-2828
+Technical Support:                    Tel: 852-2401-1200                    Fax: 91-11-4160-8632                   Fax: 45-4485-2829
+http://support.microchip.com          Fax: 852-2401-3431                                                           France - Paris
+Web Address:                                                                India - Pune                           Tel: 33-1-69-53-63-20
+www.microchip.com                     Australia - Sydney                    Tel: 91-20-2566-1512
+                                      Tel: 61-2-9868-6733                   Fax: 91-20-2566-1513                   Fax: 33-1-69-30-90-79
+Atlanta                               Fax: 61-2-9868-6755                                                          Germany - Munich
+Duluth, GA                            China - Beijing                       Japan - Yokohama                       Tel: 49-89-627-144-0
+Tel: 678-957-9614                     Tel: 86-10-8528-2100                  Tel: 81-45-471- 6166                   Fax: 49-89-627-144-44
+Fax: 678-957-1455                     Fax: 86-10-8528-2104                  Fax: 81-45-471-6122
+Boston                                                                      Korea - Daegu                          Italy - Milan
+Westborough, MA                       China - Chengdu                       Tel: 82-53-744-4301                    Tel: 39-0331-742611
+Tel: 774-760-0087                     Tel: 86-28-8665-5511                  Fax: 82-53-744-4302                    Fax: 39-0331-466781
+Fax: 774-760-0088                     Fax: 86-28-8665-7889                  Korea - Seoul                          Netherlands - Drunen
+Chicago                               China - Hong Kong SAR                 Tel: 82-2-554-7200                     Tel: 31-416-690399
+Itasca, IL                            Tel: 852-2401-1200                    Fax: 82-2-558-5932 or                  Fax: 31-416-690340
+Tel: 630-285-0071                     Fax: 852-2401-3431                    82-2-558-5934                          Spain - Madrid
+Fax: 630-285-0075                     China - Nanjing                       Malaysia - Kuala Lumpur                Tel: 34-91-708-08-90
+Dallas                                Tel: 86-25-8473-2460                  Tel: 60-3-6201-9857                    Fax: 34-91-708-08-91
+Addison, TX                           Fax: 86-25-8473-2470                  Fax: 60-3-6201-9859                    UK - Wokingham
+Tel: 972-818-7423                     China - Qingdao                       Malaysia - Penang                      Tel: 44-118-921-5869
+Fax: 972-818-2924                     Tel: 86-532-8502-7355                 Tel: 60-4-227-8870                     Fax: 44-118-921-5820
+Detroit                               Fax: 86-532-8502-7205                 Fax: 60-4-227-4068
+Farmington Hills, MI                  China - Shanghai                      Philippines - Manila
+Tel: 248-538-2250                     Tel: 86-21-5407-5533                  Tel: 63-2-634-9065
+Fax: 248-538-2260                     Fax: 86-21-5407-5066                  Fax: 63-2-634-9069
+Kokomo                                China - Shenyang                      Singapore
+Kokomo, IN                            Tel: 86-24-2334-2829                  Tel:  65-6334-8870
+Tel: 765-864-8360                     Fax: 86-24-2334-2393                  Fax: 65-6334-8850
+Fax: 765-864-8387                     China - Shenzhen                      Taiwan - Hsin Chu
+Los Angeles                           Tel: 86-755-8203-2660                 Tel: 886-3-572-9526
+Mission Viejo, CA                     Fax: 86-755-8203-1760                 Fax: 886-3-572-6459
+Tel: 949-462-9523                     China - Wuhan                         Taiwan - Kaohsiung
+Fax: 949-462-9608                     Tel: 86-27-5980-5300                  Tel: 886-7-536-4818
+Santa Clara                           Fax: 86-27-5980-5118                  Fax: 886-7-536-4803
+Santa Clara, CA                       China - Xiamen                        Taiwan - Taipei
+Tel: 408-961-6444                     Tel: 86-592-2388138                   Tel: 886-2-2500-6610
+Fax: 408-961-6445                     Fax: 86-592-2388130                   Fax: 886-2-2508-0102
+Toronto                               China - Xian                          Thailand - Bangkok
+Mississauga, Ontario,                 Tel: 86-29-8833-7252                  Tel: 66-2-694-1351
+Canada                                Fax: 86-29-8833-7256                  Fax: 66-2-694-1350
+Tel: 905-673-0699
+Fax:  905-673-6509                    China - Zhuhai
+                                      Tel: 86-756-3210040
+                                      Fax: 86-756-3210049
+
+
+
+
+
+
+
+                                                                                                                                       01/02/08
+
+
+
+DS51746A-page 16                                                                     © 2008 Microchip Technology Inc.

@@ -1,0 +1,24 @@
+{
+  "capturedAt": "2026-11-05T21:45:36.715180+00:00",
+  "requests": [
+    {
+      "file": "tscircuit-easyeda-cache.json",
+      "url": "https://jlcsearch.tscircuit.com/api/easyeda_components/C2909890",
+      "status": 200,
+      "sha256": "f4482bcc234588aaa7f7a332db4710b168f268f0f0e4026b40ec4c664d9ce07d",
+      "bytes": 9684,
+      "cache": "R2-HIT",
+      "contentType": "application/json"
+    },
+    {
+      "file": "tscircuit-footprinter.json",
+      "url": "https://jlcsearch.tscircuit.com/api/footprinter_strings/C2909890",
+      "error": "HTTP Error 500: Internal Server Error"
+    },
+    {
+      "file": "easyeda-resource.html",
+      "url": "https://easyeda.com/component/704b4bce23e04ce88c7b56255b0d6a76",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ]
+}

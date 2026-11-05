@@ -1,0 +1,538 @@
+TAP version 13
+# Subtest: actual production-preview plugin rejects source and source-only history before making a job
+ok 1 - actual production-preview plugin rejects source and source-only history before making a job
+  ---
+  duration_ms: 95.232864
+  type: 'test'
+  ...
+# Subtest: invalid and mixed plan submissions create no job
+ok 2 - invalid and mixed plan submissions create no job
+  ---
+  duration_ms: 52.820475
+  type: 'test'
+  ...
+# Subtest: validated data-only plan is accepted under production source refusal, but no review means no render or done
+ok 3 - validated data-only plan is accepted under production source refusal, but no review means no render or done
+  ---
+  duration_ms: 1445.2708
+  type: 'test'
+  ...
+# Subtest: synthetic complete draft and plan pass without promoting review or claiming hardware proof
+ok 4 - synthetic complete draft and plan pass without promoting review or claiming hardware proof
+  ---
+  duration_ms: 25.999632
+  type: 'test'
+  ...
+# Subtest: malformed/unknown/nonfinite schema and author-supplied promotion fail closed
+ok 5 - malformed/unknown/nonfinite schema and author-supplied promotion fail closed
+  ---
+  duration_ms: 3.179318
+  type: 'test'
+  ...
+# Subtest: catalog identity, physical pad coverage and verified pinouts are hard gates
+ok 6 - catalog identity, physical pad coverage and verified pinouts are hard gates
+  ---
+  duration_ms: 4.732057
+  type: 'test'
+  ...
+# Subtest: duplicate references/nets, unknown pins, NC wiring and incomplete supplies fail
+ok 7 - duplicate references/nets, unknown pins, NC wiring and incomplete supplies fail
+  ---
+  duration_ms: 5.946711
+  type: 'test'
+  ...
+# Subtest: decoupling checks actual capacitor value, both nets and placement, not labels alone
+ok 8 - decoupling checks actual capacitor value, both nets and placement, not labels alone
+  ---
+  duration_ms: 2.773513
+  type: 'test'
+  ...
+# Subtest: actual pull-up values and their supply-net membership are required
+ok 9 - actual pull-up values and their supply-net membership are required
+  ---
+  duration_ms: 2.197787
+  type: 'test'
+  ...
+# Subtest: peak and continuous rail budgets are separate and regulator input draws propagate upstream
+ok 10 - peak and continuous rail budgets are separate and regulator input draws propagate upstream
+  ---
+  duration_ms: 7.897775
+  type: 'test'
+  ...
+# Subtest: linear dropout/thermal and switching conversion losses are enforced
+ok 11 - linear dropout/thermal and switching conversion losses are enforced
+  ---
+  duration_ms: 7.965015
+  type: 'test'
+  ...
+# Subtest: missing source, ground return or voltage compatibility fail on actual plan links
+ok 12 - missing source, ground return or voltage compatibility fail on actual plan links
+  ---
+  duration_ms: 6.158354
+  type: 'test'
+  ...
+# Subtest: bus protocol/signal mismatch, missing I2C pull-ups and address collisions fail
+ok 13 - bus protocol/signal mismatch, missing I2C pull-ups and address collisions fail
+  ---
+  duration_ms: 6.928283
+  type: 'test'
+  ...
+# Subtest: open-drain bus is safe, while multiple push-pull outputs or mixed drivers are rejected
+ok 14 - open-drain bus is safe, while multiple push-pull outputs or mixed drivers are rejected
+  ---
+  duration_ms: 4.099769
+  type: 'test'
+  ...
+# Subtest: STM32 string GPIO pin maps use actual linked pins and aggregate includes/libraries
+ok 15 - STM32 string GPIO pin maps use actual linked pins and aggregate includes/libraries
+  ---
+  duration_ms: 4.035168
+  type: 'test'
+  ...
+# Subtest: numeric RP2040-style GPIOs remain numbers and reserved MCU pads cannot enter firmware maps
+ok 16 - numeric RP2040-style GPIOs remain numbers and reserved MCU pads cannot enter firmware maps
+  ---
+  duration_ms: 3.808046
+  type: 'test'
+  ...
+# Subtest: reviewed status needs an independent current-hash receipt, never self-promotion
+ok 17 - reviewed status needs an independent current-hash receipt, never self-promotion
+  ---
+  duration_ms: 4.945539
+  type: 'test'
+  ...
+# Subtest: USB-C CC pull-downs require two distinct 5.1k resistors to actual ground
+ok 18 - USB-C CC pull-downs require two distinct 5.1k resistors to actual ground
+  ---
+  duration_ms: 4.122329
+  type: 'test'
+  ...
+# Subtest: strap safe states use actual resistor paths and reject plan-level overriding outputs
+ok 19 - strap safe states use actual resistor paths and reject plan-level overriding outputs
+  ---
+  duration_ms: 3.298479
+  type: 'test'
+  ...
+# Subtest: isolated charger accepts charge-only use, counts charging input demand and rejects running system on BAT
+ok 20 - isolated charger accepts charge-only use, counts charging input demand and rejects running system on BAT
+  ---
+  duration_ms: 3.548283
+  type: 'test'
+  ...
+# Subtest: claiming load sharing or integrated system output without the required separate paths fails
+ok 21 - claiming load sharing or integrated system output without the required separate paths fails
+  ---
+  duration_ms: 1.621339
+  type: 'test'
+  ...
+# Subtest: 5V push-pull status outputs cannot directly drive a 3.3V input
+ok 22 - 5V push-pull status outputs cannot directly drive a 3.3V input
+  ---
+  duration_ms: 1.923343
+  type: 'test'
+  ...
+# Subtest: cyclic regulator dependencies and changed unmaterialized parameter values fail closed
+ok 23 - cyclic regulator dependencies and changed unmaterialized parameter values fail closed
+  ---
+  duration_ms: 5.137942
+  type: 'test'
+  ...
+# Subtest: pin-map macro collisions after sanitization are rejected
+ok 24 - pin-map macro collisions after sanitization are rejected
+  ---
+  duration_ms: 4.450813
+  type: 'test'
+  ...
+# Subtest: malformed catalog evidence and unknown plan references return error gates without throwing
+ok 25 - malformed catalog evidence and unknown plan references return error gates without throwing
+  ---
+  duration_ms: 7.704293
+  type: 'test'
+  ...
+# Subtest: direct ground boot straps are supported without requiring a fictitious resistor
+ok 26 - direct ground boot straps are supported without requiring a fictitious resistor
+  ---
+  duration_ms: 0.987732
+  type: 'test'
+  ...
+# Subtest: parallel supply pads on the same IC share a source and decoupling rail
+ok 27 - parallel supply pads on the same IC share a source and decoupling rail
+  ---
+  duration_ms: 2.225546
+  type: 'test'
+  ...
+# Subtest: explicit schematic sections partition all instances and cite positive datasheet pages
+ok 28 - explicit schematic sections partition all instances and cite positive datasheet pages
+  ---
+  duration_ms: 8.009497
+  type: 'test'
+  ...
+# Subtest: inline drafts require materialization and cannot carry a forged reviewed status
+ok 29 - inline drafts require materialization and cannot carry a forged reviewed status
+  ---
+  duration_ms: 2.742593
+  type: 'test'
+  ...
+# Subtest: cited standard-footprint fallback preserves real supplier identity and leaves geometry verification pending
+ok 30 - cited standard-footprint fallback preserves real supplier identity and leaves geometry verification pending
+  ---
+  duration_ms: 1.442137
+  type: 'test'
+  ...
+# Subtest: shared-IC SYS and charger outputs cannot hide combined thermal loss behind separate per-rail models
+ok 31 - shared-IC SYS and charger outputs cannot hide combined thermal loss behind separate per-rail models
+  ---
+  duration_ms: 1.931343
+  type: 'test'
+  ...
+# Subtest: unused regulator outputs still require a declared voltage/current budget
+ok 32 - unused regulator outputs still require a declared voltage/current budget
+  ---
+  duration_ms: 0.616887
+  type: 'test'
+  ...
+# Subtest: I2C rejects input-only pads, missing protocol capabilities and unsupported signal muxes
+ok 33 - I2C rejects input-only pads, missing protocol capabilities and unsupported signal muxes
+  ---
+  duration_ms: 12.50691
+  type: 'test'
+  ...
+# Subtest: SPI, I2S and UART clock/transmit pads require output capability while receive pads may be input-only
+ok 34 - SPI, I2S and UART clock/transmit pads require output capability while receive pads may be input-only
+  ---
+  duration_ms: 7.130166
+  type: 'test'
+  ...
+# Subtest: ADC input ports require analog capability in addition to a digital input capability
+ok 35 - ADC input ports require analog capability in addition to a digital input capability
+  ---
+  duration_ms: 2.215586
+  type: 'test'
+  ...
+# Subtest: required pads accept exposed draft boundaries but need an actual connection in a complete plan
+ok 36 - required pads accept exposed draft boundaries but need an actual connection in a complete plan
+  ---
+  duration_ms: 5.0151
+  type: 'test'
+  ...
+# Subtest: all five safe SPICE profiles accept cited positive part values without pretending execution occurred
+ok 37 - all five safe SPICE profiles accept cited positive part values without pretending execution occurred
+  ---
+  duration_ms: 8.503142
+  type: 'test'
+  ...
+# Subtest: I2S data direction follows actual connected pads, so two receive-only ends cannot pass
+ok 38 - I2S data direction follows actual connected pads, so two receive-only ends cannot pass
+  ---
+  duration_ms: 4.125369
+  type: 'test'
+  ...
+# Subtest: reserved dedicated USB pads require matching native capability and never become application GPIO macros
+ok 39 - reserved dedicated USB pads require matching native capability and never become application GPIO macros
+  ---
+  duration_ms: 8.874027
+  type: 'test'
+  ...
+# Subtest: normally-open switches are explicit cited two-contact devices rather than zero-ohm resistors
+ok 40 - normally-open switches are explicit cited two-contact devices rather than zero-ohm resistors
+  ---
+  duration_ms: 4.15697
+  type: 'test'
+  ...
+# Subtest: fixed BOOT/RESET controls remain connectable with declared input capabilities and stay outside application pin maps
+ok 41 - fixed BOOT/RESET controls remain connectable with declared input capabilities and stay outside application pin maps
+  ---
+  duration_ms: 25.252984
+  type: 'test'
+  ...
+# Subtest: requirements preserve closed metric/operator/source values without declaring that a target was verified
+ok 42 - requirements preserve closed metric/operator/source values without declaring that a target was verified
+  ---
+  duration_ms: 18.055097
+  type: 'test'
+  ...
+# Subtest: analog requirements propagate to MCU GPIO endpoints and across intermediary aliases
+ok 43 - analog requirements propagate to MCU GPIO endpoints and across intermediary aliases
+  ---
+  duration_ms: 6.952963
+  type: 'test'
+  ...
+# Subtest: board size requirements keep coordinatewise dimensions including width greater than height
+ok 44 - board size requirements keep coordinatewise dimensions including width greater than height
+  ---
+  duration_ms: 4.681456
+  type: 'test'
+  ...
+# Subtest: DRC-only receipt cannot promote an importer-backed block
+ok 45 - DRC-only receipt cannot promote an importer-backed block
+  ---
+  duration_ms: 45.014781
+  type: 'test'
+  ...
+# Subtest: contradictory ok/error receipt cannot promote and required gates cannot be duplicated
+ok 46 - contradictory ok/error receipt cannot promote and required gates cannot be duplicated
+  ---
+  duration_ms: 15.77275
+  type: 'test'
+  ...
+# Subtest: complete exact-hash gates promote, but an author cannot review their own block
+ok 47 - complete exact-hash gates promote, but an author cannot review their own block
+  ---
+  duration_ms: 17.858654
+  type: 'test'
+  ...
+# Subtest: every promotion evidence receipt must match the immutable content hash
+ok 48 - every promotion evidence receipt must match the immutable content hash
+  ---
+  duration_ms: 18.791305
+  type: 'test'
+  ...
+# Subtest: edited revisions start unreviewed and cannot inherit a prior approval
+ok 49 - edited revisions start unreviewed and cannot inherit a prior approval
+  ---
+  duration_ms: 22.45791
+  type: 'test'
+  ...
+# Subtest: later failure with a timezone offset downgrades the persisted block
+ok 50 - later failure with a timezone offset downgrades the persisted block
+  ---
+  duration_ms: 14.217171
+  type: 'test'
+  ...
+# Subtest: MCU block promotion also requires its compile gate
+ok 51 - MCU block promotion also requires its compile gate
+  ---
+  duration_ms: 24.964779
+  type: 'test'
+  ...
+# Subtest: author draft cannot forge reviewed status, and modified saved content fails integrity
+ok 52 - author draft cannot forge reviewed status, and modified saved content fails integrity
+  ---
+  duration_ms: 19.790398
+  type: 'test'
+  ...
+# Subtest: pinned part remains resolvable after a newer stock capture without refreshing importer evidence
+ok 53 - pinned part remains resolvable after a newer stock capture without refreshing importer evidence
+  ---
+  duration_ms: 12.051024
+  type: 'test'
+  ...
+# Subtest: four separate data-only drafts reproduce deterministically and pass catalog-required standalone ERC
+ok 54 - four separate data-only drafts reproduce deterministically and pass catalog-required standalone ERC
+  ---
+  duration_ms: 23.668844
+  type: 'test'
+  ...
+# Subtest: embedded actual HTTP receipts verify immutable hashes and replay each exact importer without network
+ok 55 - embedded actual HTTP receipts verify immutable hashes and replay each exact importer without network
+  ---
+  duration_ms: 183.603725
+  type: 'test'
+  ...
+# Subtest: every actual imported pad is mapped exactly once, including amplifier NC/EP and connector mount tabs
+ok 56 - every actual imported pad is mapped exactly once, including amplifier NC/EP and connector mount tabs
+  ---
+  duration_ms: 1.465658
+  type: 'test'
+  ...
+# Subtest: microphone follows actual manufacturer pin map, left strap, discharge resistor and bypass
+ok 57 - microphone follows actual manufacturer pin map, left strap, discharge resistor and bypass
+  ---
+  duration_ms: 0.704969
+  type: 'test'
+  ...
+# Subtest: amplifier straps and both bypassed supply pins implement left12dB mode with differential speaker only
+ok 58 - amplifier straps and both bypassed supply pins implement left12dB mode with differential speaker only
+  ---
+  duration_ms: 0.686408
+  type: 'test'
+  ...
+# Subtest: LED DIN is physicalpad4 and only AHCT5V output drives it; 3.3V input and firmware limits stay explicit
+ok 59 - LED DIN is physicalpad4 and only AHCT5V output drives it; 3.3V input and firmware limits stay explicit
+  ---
+  duration_ms: 0.608648
+  type: 'test'
+  ...
+# Subtest: display remains an explicit SH1mm module contract with actual pads and pinned approved library versions
+ok 60 - display remains an explicit SH1mm module contract with actual pads and pinned approved library versions
+  ---
+  duration_ms: 0.722729
+  type: 'test'
+  ...
+# Subtest: catalog-required ERC rejects missing pads, connected NC and undersized actual bypass values
+ok 61 - catalog-required ERC rejects missing pads, connected NC and undersized actual bypass values
+  ---
+  duration_ms: 8.234859
+  type: 'test'
+  ...
+# Subtest: review receipt is required and follows the exact electrical hash
+ok 62 - review receipt is required and follows the exact electrical hash
+  ---
+  duration_ms: 36.558159
+  type: 'test'
+  ...
+# Subtest: firmware and block placement changes retain an electrical review
+ok 63 - firmware and block placement changes retain an electrical review
+  ---
+  duration_ms: 12.690632
+  type: 'test'
+  ...
+# Subtest: changing a component revision content hash invalidates review
+ok 64 - changing a component revision content hash invalidates review
+  ---
+  duration_ms: 12.158746
+  type: 'test'
+  ...
+# Subtest: links, confirmed requirements and source citations remain bound to the review
+ok 65 - links, confirmed requirements and source citations remain bound to the review
+  ---
+  duration_ms: 10.366285
+  type: 'test'
+  ...
+# Subtest: internal writer requires a reviewer identity and nonempty findings
+ok 66 - internal writer requires a reviewer identity and nonempty findings
+  ---
+  duration_ms: 8.489222
+  type: 'test'
+  ...
+# Subtest: generated draft matches actual catalog receipts, pin map and explicit central-pad correction
+ok 67 - generated draft matches actual catalog receipts, pin map and explicit central-pad correction
+  ---
+  duration_ms: 12.448029
+  type: 'test'
+  ...
+# Subtest: wrong actual catalog identity, stale receipt and changed native pad map fail closed
+ok 68 - wrong actual catalog identity, stale receipt and changed native pad map fail closed
+  ---
+  duration_ms: 6.167314
+  type: 'test'
+  ...
+# Subtest: firmware, address, current and timing assumptions stay explicitly heater-disabled
+ok 69 - firmware, address, current and timing assumptions stay explicitly heater-disabled
+  ---
+  duration_ms: 2.000824
+  type: 'test'
+  ...
+# Subtest: bypass removed, disconnected, too small or too far cannot pass the draft gate
+ok 70 - bypass removed, disconnected, too small or too far cannot pass the draft gate
+  ---
+  duration_ms: 5.584388
+  type: 'test'
+  ...
+# Subtest: actual seed carrier supplies shared pull-ups, 3.3V power and family-neutral bus pin map
+ok 71 - actual seed carrier supplies shared pull-ups, 3.3V power and family-neutral bus pin map
+  ---
+  duration_ms: 27.917415
+  type: 'test'
+  ...
+# Subtest: missing carrier pull-ups and wrong 5V supply reject integrated sensor
+ok 72 - missing carrier pull-ups and wrong 5V supply reject integrated sensor
+  ---
+  duration_ms: 17.852255
+  type: 'test'
+  ...
+# Subtest: second address-0x44 sensor and heater override reject integrated plan
+ok 73 - second address-0x44 sensor and heater override reject integrated plan
+  ---
+  duration_ms: 15.279063
+  type: 'test'
+  ...
+# Subtest: fixed numeric templates reject arbitrary directives, invalid quantities and unknown models
+ok 74 - fixed numeric templates reject arbitrary directives, invalid quantities and unknown models
+  ---
+  duration_ms: 1.71306
+  type: 'test'
+  ...
+# Subtest: missing recipes state limited coverage; malformed profiles and network mismatches cannot pass
+ok 75 - missing recipes state limited coverage; malformed profiles and network mismatches cannot pass
+  ---
+  duration_ms: 48.409462
+  type: 'test'
+  ...
+# Subtest: real pinned Bun/ngspice engine measures fixed profiles and rejects actual wrong R against target
+ok 76 - real pinned Bun/ngspice engine measures fixed profiles and rejects actual wrong R against target
+  ---
+  duration_ms: 2737.429199
+  type: 'test'
+  ...
+# Subtest: explicit normally-open switch rejects invalid cross-instance topology, values and undeclared loads
+ok 77 - explicit normally-open switch rejects invalid cross-instance topology, values and undeclared loads
+  ---
+  duration_ms: 29.811638
+  type: 'test'
+  ...
+# Subtest: native RC correspondence includes only explicit normally-open cross-instance reset switch
+ok 78 - native RC correspondence includes only explicit normally-open cross-instance reset switch
+  ---
+  duration_ms: 1086.002403
+  type: 'test'
+  ...
+# Subtest: recipe errors are fixable model failures; missing engine stays infrastructure failure
+ok 79 - recipe errors are fixable model failures; missing engine stays infrastructure failure
+  ---
+  duration_ms: 13.412081
+  type: 'test'
+  ...
+# Subtest: closed registry and battery estimates honor override, zero fallback and inverse comparison
+ok 80 - closed registry and battery estimates honor override, zero fallback and inverse comparison
+  ---
+  duration_ms: 3.391561
+  type: 'test'
+  ...
+# Subtest: zero/NaN load, absent capacity and unknown costs never pass
+ok 81 - zero/NaN load, absent capacity and unknown costs never pass
+  ---
+  duration_ms: 0.87517
+  type: 'test'
+  ...
+# Subtest: board dimensions are coordinatewise bounds, with no sorting or implicit rotation
+ok 82 - board dimensions are coordinatewise bounds, with no sorting or implicit rotation
+  ---
+  duration_ms: 1.536938
+  type: 'test'
+  ...
+# Subtest: nominal voltage is unsupported until actual SPICE evidence is supplied
+ok 83 - nominal voltage is unsupported until actual SPICE evidence is supplied
+  ---
+  duration_ms: 0.579087
+  type: 'test'
+  ...
+# Subtest: interface, validated signal and part facts report absence and limits without guessing
+ok 84 - interface, validated signal and part facts report absence and limits without guessing
+  ---
+  duration_ms: 0.953011
+  type: 'test'
+  ...
+# Subtest: invalid schema, operators, units, argument types and targets always fail
+ok 85 - invalid schema, operators, units, argument types and targets always fail
+  ---
+  duration_ms: 0.603647
+  type: 'test'
+  ...
+# Subtest: facts use generic MCU aliases and aggregate each upstream load once through conversions
+ok 86 - facts use generic MCU aliases and aggregate each upstream load once through conversions
+  ---
+  duration_ms: 27.427009
+  type: 'test'
+  ...
+# Subtest: facts omit unsupported multi-source current and malformed or invalid MCU mapping
+ok 87 - facts omit unsupported multi-source current and malformed or invalid MCU mapping
+  ---
+  duration_ms: 4.531854
+  type: 'test'
+  ...
+# Subtest: facts bind a complete SPICE fixture to the current shared net and reject stale plans
+ok 88 - facts bind a complete SPICE fixture to the current shared net and reject stale plans
+  ---
+  duration_ms: 44.830259
+  type: 'test'
+  ...
+1..88
+# tests 88
+# suites 0
+# pass 88
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 8143.887336

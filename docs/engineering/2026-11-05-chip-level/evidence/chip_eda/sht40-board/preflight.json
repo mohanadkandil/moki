@@ -1,0 +1,80 @@
+[
+  {
+    "gate": "erc",
+    "ok": true,
+    "issues": [
+      {
+        "rule": "unreviewed",
+        "severity": "warning",
+        "where": "esp32-s3-core",
+        "message": "Block has not passed independent promotion review"
+      },
+      {
+        "rule": "unreviewed",
+        "severity": "warning",
+        "where": "usb-c-sink",
+        "message": "Block has not passed independent promotion review"
+      },
+      {
+        "rule": "unreviewed",
+        "severity": "warning",
+        "where": "ldo-ap2112-3v3",
+        "message": "Block has not passed independent promotion review"
+      },
+      {
+        "rule": "unreviewed",
+        "severity": "warning",
+        "where": "boot-reset-buttons",
+        "message": "Block has not passed independent promotion review"
+      },
+      {
+        "rule": "unreviewed",
+        "severity": "warning",
+        "where": "i2c-header",
+        "message": "Block has not passed independent promotion review"
+      },
+      {
+        "rule": "unreviewed",
+        "severity": "warning",
+        "where": "sht40-ad1b-3v3",
+        "message": "Block has not passed independent promotion review"
+      },
+      {
+        "rule": "usb-external-host",
+        "severity": "warning",
+        "where": "esp32-s3-core.USB, usb-c-sink.USB",
+        "message": "USB peripheral relies on an external host through the declared passive connector"
+      },
+      {
+        "rule": "layout-constraint-pending",
+        "severity": "warning",
+        "where": "esp32-s3-core",
+        "message": "Keepout realization must be checked against final imported PCB geometry"
+      },
+      {
+        "rule": "layout-constraint-pending",
+        "severity": "warning",
+        "where": "sht40-ad1b-3v3",
+        "message": "Keepout realization must be checked against final imported PCB geometry"
+      }
+    ]
+  },
+  {
+    "gate": "power",
+    "ok": true,
+    "issues": [
+      {
+        "rule": "transient-unverified",
+        "severity": "warning",
+        "where": "ldo-ap2112-3v3.V3V3",
+        "message": "Peak current exceeds the continuous thermal budget; burst duration/decoupling require transient verification"
+      },
+      {
+        "rule": "thermal-assumption",
+        "severity": "warning",
+        "where": "ldo-ap2112-3v3.V3V3",
+        "message": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+      }
+    ]
+  }
+]

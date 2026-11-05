@@ -1,0 +1,3696 @@
+{
+  "drafts": [
+    {
+      "schema": "moki.block/1",
+      "id": "bq24074-usb-300ma-ts-bypass",
+      "version": 1,
+      "title": "BQ24074 power path, 300mA charging, TS monitoring disabled",
+      "class": "power",
+      "summary": "USB-present state only: qualified4.75–5.25V/1.5A source; SYS4.2–4.5V and separate protected1-cell BAT. Fixed10k TS bypass disables pack-temperature monitoring. Not a battery-protection circuit or proof of battery fallback.",
+      "provenance": {
+        "author": "agent",
+        "authorId": "chip_eda"
+      },
+      "parts": [
+        {
+          "ref": "U1",
+          "lcsc": "C2861252",
+          "mpn": "BQ24074RGTT",
+          "catalogReceipt": "sha256:ed5bf73fd1d3f8fb66c47857bdcffe278b63d972b2f81d769d1c0a5a2a043b64",
+          "pinout": "verified",
+          "pins": {
+            "TS": {
+              "pad": "1",
+              "role": "input",
+              "required": true
+            },
+            "BAT2": {
+              "pad": "2",
+              "role": "power-out",
+              "required": true,
+              "volts": {
+                "min": 3,
+                "max": 4.242
+              }
+            },
+            "BAT3": {
+              "pad": "3",
+              "role": "power-out",
+              "required": true,
+              "volts": {
+                "min": 3,
+                "max": 4.242
+              }
+            },
+            "CE": {
+              "pad": "4",
+              "role": "input",
+              "required": true
+            },
+            "EN2": {
+              "pad": "5",
+              "role": "input",
+              "required": true,
+              "volts": {
+                "min": 0,
+                "max": 7
+              }
+            },
+            "EN1": {
+              "pad": "6",
+              "role": "input",
+              "required": true
+            },
+            "PGOOD": {
+              "pad": "7",
+              "role": "open-drain"
+            },
+            "VSS": {
+              "pad": "8",
+              "role": "ground",
+              "required": true
+            },
+            "CHG": {
+              "pad": "9",
+              "role": "open-drain"
+            },
+            "OUT10": {
+              "pad": "10",
+              "role": "power-out",
+              "required": true
+            },
+            "OUT11": {
+              "pad": "11",
+              "role": "power-out",
+              "required": true
+            },
+            "ILIM": {
+              "pad": "12",
+              "role": "input",
+              "required": true
+            },
+            "IN": {
+              "pad": "13",
+              "role": "power-in",
+              "required": true,
+              "volts": {
+                "min": 4.75,
+                "max": 5.25
+              }
+            },
+            "TMR": {
+              "pad": "14",
+              "role": "input"
+            },
+            "ITERM": {
+              "pad": "15",
+              "role": "input"
+            },
+            "ISET": {
+              "pad": "16",
+              "role": "input",
+              "required": true
+            },
+            "EP": {
+              "pad": "17",
+              "role": "ground",
+              "required": true
+            }
+          },
+          "at": {
+            "x": 0,
+            "y": 0
+          },
+          "datasheet": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "ref": "J1",
+          "lcsc": "C160352",
+          "mpn": "B2B-PH-SM4-TB(LF)(SN)",
+          "catalogReceipt": "sha256:8f6f0a40d950668003a77a3a54e9834d07dc6048f7e982e9e7212305bd815b91",
+          "pinout": "verified",
+          "pins": {
+            "NEG": {
+              "pad": "1",
+              "role": "ground",
+              "required": true
+            },
+            "POS": {
+              "pad": "2",
+              "role": "passive",
+              "required": true
+            },
+            "TAB3": {
+              "pad": "3",
+              "role": "nc"
+            },
+            "TAB4": {
+              "pad": "4",
+              "role": "nc"
+            }
+          },
+          "at": {
+            "x": 0,
+            "y": -10
+          },
+          "datasheet": {
+            "url": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+            "pages": "1–4",
+            "note": "Exact SMT PH connector: two electrical contacts and two mounting tabs. This design assigns1=GND and2=BAT+; confirm actual protected-cell harness polarity. This is not a universal PH battery polarity convention."
+          }
+        },
+        {
+          "ref": "R1",
+          "lcsc": "C22765",
+          "mpn": "0603WAF1201T5E",
+          "catalogReceipt": "sha256:a7829c34d6f9a961ee9e63bec6d7c01bb62dece66ecf3aae35aaf79e2fcf5b1d",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -6,
+            "y": 0
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010130_UNI-ROYAL-Uniroyal-Elec-0603WAF1201T5E_C22765.pdf",
+            "note": "Actual 0603WAF1201T5E / C22765 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "1.2kOhm",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "12, 34",
+            "note": "ILIM1.2k +/-1%: guaranteed-low1500/(1200*1.01)=1237.62mA, typical1610/1200=1341.67mA, high1720/(1200*.99)=1447.81mA. The worked example uses a different typical constant; electrical-table bounds govern screening."
+          }
+        },
+        {
+          "ref": "R2",
+          "lcsc": "C4211",
+          "mpn": "0603WAF3001T5E",
+          "catalogReceipt": "sha256:633b8898a32688c242d4c394d1cd86239b4562c76763ab405ad7c276d623cdef",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 6,
+            "y": 0
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010230_UNI-ROYAL-Uniroyal-Elec-0603WAF3001T5E_C4211.pdf",
+            "note": "Actual 0603WAF3001T5E / C4211 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "3kOhm",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "12, 34",
+            "note": "ISET3k +/-1%: nominal890/3000=296.67mA; maximum975/(3000*.99)=328.28mA. Budget330mA continuously while USB is present, even if DPPM later reduces charging."
+          }
+        },
+        {
+          "ref": "R3",
+          "lcsc": "C25804",
+          "mpn": "0603WAF1002T5E",
+          "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 6,
+            "y": -3
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010045_UNI-ROYAL-Uniroyal-Elec-0603WAF1002T5E_C25804.pdf",
+            "note": "Actual 0603WAF1002T5E / C25804 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10kOhm",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "24–25, 35",
+            "note": "Explicit fixed10k TS-to-VSS bypass; charging has no battery-temperature monitoring. It is not an NTC and not protected-cell certification."
+          }
+        },
+        {
+          "ref": "C1",
+          "lcsc": "C15849",
+          "mpn": "CL10A105KB8NNNC",
+          "catalogReceipt": "sha256:105c7d94f522ce1cbbbc5b1f309aaeb707bbeaa42bdecc861a0cb93b6624b303",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -3,
+            "y": 1
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL10A105KB8NNNC_C15849.pdf",
+            "note": "Actual CL10A105KB8NNNC / C15849 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "1uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "ref": "C2",
+          "lcsc": "C15849",
+          "mpn": "CL10A105KB8NNNC",
+          "catalogReceipt": "sha256:105c7d94f522ce1cbbbc5b1f309aaeb707bbeaa42bdecc861a0cb93b6624b303",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -3,
+            "y": 4
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL10A105KB8NNNC_C15849.pdf",
+            "note": "Actual CL10A105KB8NNNC / C15849 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "1uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "ref": "C3",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 3,
+            "y": 1
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "ref": "C4",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 3,
+            "y": 4
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "ref": "C5",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -3,
+            "y": -2
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "ref": "C6",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -3,
+            "y": -5
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        }
+      ],
+      "nets": [
+        {
+          "name": "VBUS",
+          "pins": [
+            "U1.IN",
+            "U1.EN2",
+            "C1.1",
+            "C2.1"
+          ]
+        },
+        {
+          "name": "SYS",
+          "pins": [
+            "U1.OUT10",
+            "U1.OUT11",
+            "C3.1",
+            "C4.1"
+          ]
+        },
+        {
+          "name": "BAT",
+          "pins": [
+            "U1.BAT2",
+            "U1.BAT3",
+            "J1.POS",
+            "C5.1",
+            "C6.1"
+          ]
+        },
+        {
+          "name": "GND",
+          "pins": [
+            "U1.VSS",
+            "U1.EP",
+            "U1.CE",
+            "U1.EN1",
+            "J1.NEG",
+            "R1.2",
+            "R2.2",
+            "R3.2",
+            "C1.2",
+            "C2.2",
+            "C3.2",
+            "C4.2",
+            "C5.2",
+            "C6.2"
+          ]
+        },
+        {
+          "name": "ILIM",
+          "pins": [
+            "U1.ILIM",
+            "R1.1"
+          ]
+        },
+        {
+          "name": "ISET",
+          "pins": [
+            "U1.ISET",
+            "R2.1"
+          ]
+        },
+        {
+          "name": "TS_BYPASS",
+          "pins": [
+            "U1.TS",
+            "R3.1"
+          ]
+        }
+      ],
+      "params": [
+        {
+          "id": "operatingState",
+          "type": "enum",
+          "options": [
+            "usb-present"
+          ],
+          "default": "usb-present",
+          "why": "This graph models qualifiedUSB present and charging only. Source must guarantee4.75–5.25V at board under the total board1.5A budget. Battery absent/fallback/DPPM/supplement need separate validated states."
+        },
+        {
+          "id": "temperatureMonitoring",
+          "type": "enum",
+          "options": [
+            "disabled-fixed-resistor"
+          ],
+          "default": "disabled-fixed-resistor",
+          "why": "Two-wire PH harness has no NTC. Fixed10k bypass is explicit and not pack-temperature protection; external protected1-cell pack must permit330mA charge. Independent safety review required."
+        }
+      ],
+      "ports": [
+        {
+          "id": "VBUS",
+          "label": "Qualified USB5V input",
+          "kind": "power-in",
+          "terminal": "net:VBUS",
+          "volts": {
+            "min": 4.75,
+            "max": 5.25
+          }
+        },
+        {
+          "id": "SYS",
+          "label": "USB-present system power",
+          "kind": "power-out",
+          "terminal": "net:SYS",
+          "volts": {
+            "min": 4.2,
+            "max": 4.5
+          }
+        },
+        {
+          "id": "BAT",
+          "label": "Protected1-cell charge terminal",
+          "kind": "power-out",
+          "terminal": "net:BAT",
+          "volts": {
+            "min": 3,
+            "max": 4.242
+          }
+        },
+        {
+          "id": "GND",
+          "label": "Ground",
+          "kind": "ground",
+          "terminal": "net:GND"
+        }
+      ],
+      "power": {
+        "sources": [
+          {
+            "port": "SYS",
+            "volts": 4.4,
+            "maxMa": 890,
+            "continuousMa": 700,
+            "inputPort": "VBUS",
+            "mode": "regulated",
+            "conversion": "linear",
+            "dropoutV": 0.475,
+            "thermal": {
+              "thetaJa": 44.5,
+              "maxJunctionC": 110,
+              "ambientC": 25
+            }
+          },
+          {
+            "port": "BAT",
+            "volts": 4.2,
+            "maxMa": 330,
+            "continuousMa": 330,
+            "inputPort": "VBUS",
+            "mode": "charger",
+            "conversion": "linear",
+            "dropoutV": 0.3,
+            "thermal": {
+              "thetaJa": 44.5,
+              "maxJunctionC": 110,
+              "ambientC": 25
+            }
+          }
+        ],
+        "sinks": [
+          {
+            "port": "VBUS",
+            "typicalMa": 5,
+            "peakMa": 10
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "IN",
+          "groundPin": "VSS",
+          "caps": [
+            "C1",
+            "C2"
+          ],
+          "minUf": 1,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC. Six mm centre distance is an author screening policy; short local power loops and effective capacitance require native/hardware verification."
+          }
+        },
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "OUT10",
+          "groundPin": "VSS",
+          "caps": [
+            "C3",
+            "C4"
+          ],
+          "minUf": 4.7,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC. Six mm centre distance is an author screening policy; short local power loops and effective capacitance require native/hardware verification."
+          }
+        },
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "OUT11",
+          "groundPin": "VSS",
+          "caps": [
+            "C3",
+            "C4"
+          ],
+          "minUf": 4.7,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC. Six mm centre distance is an author screening policy; short local power loops and effective capacitance require native/hardware verification."
+          }
+        },
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "BAT2",
+          "groundPin": "VSS",
+          "caps": [
+            "C5",
+            "C6"
+          ],
+          "minUf": 4.7,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC. Six mm centre distance is an author screening policy; short local power loops and effective capacitance require native/hardware verification."
+          }
+        },
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "BAT3",
+          "groundPin": "VSS",
+          "caps": [
+            "C5",
+            "C6"
+          ],
+          "minUf": 4.7,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC. Six mm centre distance is an author screening policy; short local power loops and effective capacitance require native/hardware verification."
+          }
+        },
+        {
+          "kind": "battery-path",
+          "charger": "U1",
+          "batteryPort": "BAT",
+          "systemPort": "SYS",
+          "powerPath": "integrated",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "kind": "ground",
+          "pin": "U1.VSS",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "kind": "ground",
+          "pin": "U1.EP",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.CE",
+          "safe": "low",
+          "to": "net:GND",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.EN1",
+          "safe": "low",
+          "to": "net:GND",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.EN2",
+          "safe": "high",
+          "to": "net:VBUS",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.TMR",
+          "safe": "floating",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "12–13, 35",
+            "note": "OpenTMR retains nominal30min precharge/5h fast-charge timers; do not ground/disablesafety timers."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.ITERM",
+          "safe": "floating",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "8, 12–13",
+            "note": "BQ24074-specific ITERM open selects nominal10% termination; notTD/SYSOFF fromanother variant."
+          }
+        }
+      ],
+      "spiceChecks": [
+        {
+          "name": "BQ24074 nominal charge programming",
+          "kind": "charge-current",
+          "resistor": "R2",
+          "coefficient": 890,
+          "target": 296.6666667,
+          "tolerance": 0.1,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "12, 34",
+            "note": "Ideal nominal890 AOhm/R law only, excluding tolerance/battery/thermal/termination dynamics."
+          }
+        }
+      ],
+      "firmware": {
+        "libs": [],
+        "includes": [],
+        "usage": "No firmware dependency. USB-present state, known1.5A source; CE low, EN2 high, EN1 low. TS fixed10k disables pack-temperature monitoring. PGOOD/CHG deliberately unused open-drain outputs; TMR/ITERM deliberately open. PH1=GND/PH2=BAT+ is this design assignment, confirm harness. Requires externally protected4.2V one-cell pack rated>=330mA charge; pack, temperature supervision and polarity remain unverified. SYSmin4.2V includes max475mV input dropout at1A plus75mV author trace reserve from4.75V input; it is not battery-fallback voltage. SYS890mA +charge330mA +overhead10mA <=1237.6mA guaranteed-low programmed ILIM. Direct5V audio/LED loads bypass this ILIM and must fit the whole1.5A source budget separately. Summed SYS+BAT thermal screening uses5.25V input,3.0V cell,25C ambient,44.5C/W reference thetaJA and110C designjunction; thermal copper/enclosure/transient behavior unverified."
+      }
+    },
+    {
+      "schema": "moki.block/1",
+      "id": "tps63001-usb-sys-3v3",
+      "version": 1,
+      "title": "TPS63001 3.3V from USB-present SYS",
+      "class": "power",
+      "summary": "USB-present4.2–4.5V SYS input; fixed3.3V,800mA peak/650mA continuous author budget at25C/85% assumed efficiency. Battery-input operating envelope remains unverified. 1.8A switch rating is not output capacity.",
+      "provenance": {
+        "author": "agent",
+        "authorId": "chip_eda"
+      },
+      "parts": [
+        {
+          "ref": "U1",
+          "lcsc": "C28060",
+          "mpn": "TPS63001DRCR",
+          "catalogReceipt": "sha256:c42a3e97120b05844f323a057f8afc81747b2065fec947a36290f7e7f12d7ed9",
+          "pinout": "verified",
+          "pins": {
+            "VOUT": {
+              "pad": "1",
+              "role": "power-out",
+              "required": true
+            },
+            "L2": {
+              "pad": "2",
+              "role": "bidirectional",
+              "required": true
+            },
+            "PGND": {
+              "pad": "3",
+              "role": "ground",
+              "required": true
+            },
+            "L1": {
+              "pad": "4",
+              "role": "bidirectional",
+              "required": true
+            },
+            "VIN": {
+              "pad": "5",
+              "role": "power-in",
+              "required": true,
+              "volts": {
+                "min": 4.2,
+                "max": 4.5
+              }
+            },
+            "EN": {
+              "pad": "6",
+              "role": "input",
+              "required": true
+            },
+            "PS": {
+              "pad": "7",
+              "role": "input",
+              "required": true
+            },
+            "VINA": {
+              "pad": "8",
+              "role": "power-in",
+              "required": true,
+              "volts": {
+                "min": 4.2,
+                "max": 4.5
+              }
+            },
+            "GND": {
+              "pad": "9",
+              "role": "ground",
+              "required": true
+            },
+            "FB": {
+              "pad": "10",
+              "role": "input",
+              "required": true
+            },
+            "EP": {
+              "pad": "11",
+              "role": "ground",
+              "required": true
+            }
+          },
+          "at": {
+            "x": 0,
+            "y": 0
+          },
+          "datasheet": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3–6, 10–13, 16",
+            "note": "TPS63001 fixed3.3V; FB tied directly to VOUT. LPS4012 is a recommended inductor series. 1.8A is switch current, not output. USB-state author output budget800mA peak/650mA continuous atSYS4.2–4.5V, ambient25C and assumed85% efficiency; native layout/transients and actual efficiency remain unverified."
+          }
+        },
+        {
+          "ref": "L1",
+          "lcsc": "C20416998",
+          "mpn": "LPS4012-222MRC",
+          "catalogReceipt": "sha256:a723bd279a3338434b63e2a96371df67ebbfb98c3c426c052597508cad91fe2b",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 0,
+            "y": -4
+          },
+          "datasheet": {
+            "url": "https://www.coilcraft.com/getmedia/a31b0140-5adf-4f7e-b7bf-5e9d605a87b9/LPS4012.pdf",
+            "note": "Actual LPS4012-222MRC / C20416998 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "2.2uH",
+          "valueWhy": {
+            "url": "https://www.coilcraft.com/getmedia/a31b0140-5adf-4f7e-b7bf-5e9d605a87b9/LPS4012.pdf",
+            "pages": "1–2",
+            "note": "LPS4012-222MRC2.2uH +/-20%, DCRmax0.100Ohm; at25C Isat2.3A at10% inductance drop, Irms1.2A for20C rise/1.75A for40C rise. Temperature-rise currents are reference, not absolute maximum guarantees. USB-state bounded steady-state inductor current is below these reference values; switching/core loss and temperature remain unmeasured."
+          }
+        },
+        {
+          "ref": "C1",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -4,
+            "y": 0
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+            "pages": "6–7",
+            "note": "Complete TPS63001 reference ties VIN/VINA supply directly; no mixed partial100Ohm filter topology. Fixed FB returns to VOUT. Author uses additional nominal capacitance; effective DC-biased capacitance still requires verification."
+          }
+        },
+        {
+          "ref": "C2",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -4,
+            "y": 3
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+            "pages": "6–7",
+            "note": "Complete TPS63001 reference ties VIN/VINA supply directly; no mixed partial100Ohm filter topology. Fixed FB returns to VOUT. Author uses additional nominal capacitance; effective DC-biased capacitance still requires verification."
+          }
+        },
+        {
+          "ref": "C3",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 4,
+            "y": -3
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+            "pages": "6–7",
+            "note": "Complete TPS63001 reference ties VIN/VINA supply directly; no mixed partial100Ohm filter topology. Fixed FB returns to VOUT. Author uses additional nominal capacitance; effective DC-biased capacitance still requires verification."
+          }
+        },
+        {
+          "ref": "C4",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 4,
+            "y": 0
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+            "pages": "6–7",
+            "note": "Complete TPS63001 reference ties VIN/VINA supply directly; no mixed partial100Ohm filter topology. Fixed FB returns to VOUT. Author uses additional nominal capacitance; effective DC-biased capacitance still requires verification."
+          }
+        },
+        {
+          "ref": "C5",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 4,
+            "y": 3
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+            "pages": "6–7",
+            "note": "Complete TPS63001 reference ties VIN/VINA supply directly; no mixed partial100Ohm filter topology. Fixed FB returns to VOUT. Author uses additional nominal capacitance; effective DC-biased capacitance still requires verification."
+          }
+        },
+        {
+          "ref": "C6",
+          "lcsc": "C14663",
+          "mpn": "CC0603KRX7R9BB104",
+          "catalogReceipt": "sha256:fde5081a0b45324f436df1a456a1a4dd1608306b862e8a6f4c8187b9d69ac426",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -2,
+            "y": 3
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2211101700_YAGEO-CC0603KRX7R9BB104_C14663.pdf",
+            "note": "Actual CC0603KRX7R9BB104 / C14663 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "100nF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+            "pages": "6–7",
+            "note": "Complete TPS63001 reference ties VIN/VINA supply directly; no mixed partial100Ohm filter topology. Fixed FB returns to VOUT. Author uses additional nominal capacitance; effective DC-biased capacitance still requires verification."
+          }
+        }
+      ],
+      "nets": [
+        {
+          "name": "SYS",
+          "pins": [
+            "U1.VIN",
+            "U1.VINA",
+            "U1.EN",
+            "C1.1",
+            "C2.1",
+            "C6.1"
+          ]
+        },
+        {
+          "name": "V3V3",
+          "pins": [
+            "U1.VOUT",
+            "U1.FB",
+            "C3.1",
+            "C4.1",
+            "C5.1"
+          ]
+        },
+        {
+          "name": "GND",
+          "pins": [
+            "U1.PGND",
+            "U1.GND",
+            "U1.EP",
+            "U1.PS",
+            "C1.2",
+            "C2.2",
+            "C3.2",
+            "C4.2",
+            "C5.2",
+            "C6.2"
+          ]
+        },
+        {
+          "name": "SW_L1",
+          "pins": [
+            "U1.L1",
+            "L1.1"
+          ]
+        },
+        {
+          "name": "SW_L2",
+          "pins": [
+            "U1.L2",
+            "L1.2"
+          ]
+        }
+      ],
+      "params": [
+        {
+          "id": "operatingState",
+          "type": "enum",
+          "options": [
+            "usb-present-sys"
+          ],
+          "default": "usb-present-sys",
+          "why": "Input range4.2–4.5V USB-present only. Datasheet p1buck headline1.2A at3.6–5.5V and p6Fig1typical maximum-current envelope support a derated800mA author peak budget; not a guaranteed800mA boost/battery rating. P12inductor calculation must use actual minimum input for any future boost variant."
+        },
+        {
+          "id": "outputVoltageBudget",
+          "type": "number",
+          "min": 3.3,
+          "max": 3.3,
+          "default": 3.3,
+          "unit": "V",
+          "why": "Fixed3.3V silicon with FB directly atVOUT. Port3.135–3.465V is an author +/-5% design envelope, not a claimed datasheet fixed-output tolerance; verify loaded ripple/tolerance/transients before promotion."
+        }
+      ],
+      "ports": [
+        {
+          "id": "SYS",
+          "label": "USB-present SYS",
+          "kind": "power-in",
+          "terminal": "net:SYS",
+          "volts": {
+            "min": 4.2,
+            "max": 4.5
+          }
+        },
+        {
+          "id": "V3V3",
+          "label": "3.3V output",
+          "kind": "power-out",
+          "terminal": "net:V3V3",
+          "volts": {
+            "min": 3.135,
+            "max": 3.465
+          }
+        },
+        {
+          "id": "GND",
+          "label": "Ground",
+          "kind": "ground",
+          "terminal": "net:GND"
+        }
+      ],
+      "power": {
+        "sources": [
+          {
+            "port": "V3V3",
+            "volts": 3.3,
+            "maxMa": 800,
+            "continuousMa": 650,
+            "inputPort": "SYS",
+            "mode": "regulated",
+            "conversion": "switching",
+            "efficiency": 0.85,
+            "thermal": {
+              "thetaJa": 48.7,
+              "maxJunctionC": 110,
+              "ambientC": 25
+            }
+          }
+        ],
+        "sinks": [
+          {
+            "port": "SYS",
+            "typicalMa": 0.1,
+            "peakMa": 0.1
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "VIN",
+          "groundPin": "PGND",
+          "caps": [
+            "C1",
+            "C2"
+          ],
+          "minUf": 4.7,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3–6, 10–13, 16",
+            "note": "TPS63001 fixed3.3V; FB tied directly to VOUT. LPS4012 is a recommended inductor series. 1.8A is switch current, not output. USB-state author output budget800mA peak/650mA continuous atSYS4.2–4.5V, ambient25C and assumed85% efficiency; native layout/transients and actual efficiency remain unverified. Six mm centre distance is an author screening policy; short local power loops and effective capacitance require native/hardware verification."
+          }
+        },
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "VINA",
+          "groundPin": "GND",
+          "caps": [
+            "C6"
+          ],
+          "minUf": 0.1,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+            "pages": "6–7",
+            "note": "Complete TPS63001 reference ties VIN/VINA supply directly; no mixed partial100Ohm filter topology. Fixed FB returns to VOUT. Author uses additional nominal capacitance; effective DC-biased capacitance still requires verification. Six mm centre distance is an author screening policy; short local power loops and effective capacitance require native/hardware verification."
+          }
+        },
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "VOUT",
+          "groundPin": "PGND",
+          "caps": [
+            "C3",
+            "C4",
+            "C5"
+          ],
+          "minUf": 15,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3–6, 10–13, 16",
+            "note": "TPS63001 fixed3.3V; FB tied directly to VOUT. LPS4012 is a recommended inductor series. 1.8A is switch current, not output. USB-state author output budget800mA peak/650mA continuous atSYS4.2–4.5V, ambient25C and assumed85% efficiency; native layout/transients and actual efficiency remain unverified. Six mm centre distance is an author screening policy; short local power loops and effective capacitance require native/hardware verification."
+          }
+        },
+        {
+          "kind": "ground",
+          "pin": "U1.PGND",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3–6, 10–13, 16",
+            "note": "TPS63001 fixed3.3V; FB tied directly to VOUT. LPS4012 is a recommended inductor series. 1.8A is switch current, not output. USB-state author output budget800mA peak/650mA continuous atSYS4.2–4.5V, ambient25C and assumed85% efficiency; native layout/transients and actual efficiency remain unverified."
+          }
+        },
+        {
+          "kind": "ground",
+          "pin": "U1.GND",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3–6, 10–13, 16",
+            "note": "TPS63001 fixed3.3V; FB tied directly to VOUT. LPS4012 is a recommended inductor series. 1.8A is switch current, not output. USB-state author output budget800mA peak/650mA continuous atSYS4.2–4.5V, ambient25C and assumed85% efficiency; native layout/transients and actual efficiency remain unverified."
+          }
+        },
+        {
+          "kind": "ground",
+          "pin": "U1.EP",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3–6, 10–13, 16",
+            "note": "TPS63001 fixed3.3V; FB tied directly to VOUT. LPS4012 is a recommended inductor series. 1.8A is switch current, not output. USB-state author output budget800mA peak/650mA continuous atSYS4.2–4.5V, ambient25C and assumed85% efficiency; native layout/transients and actual efficiency remain unverified."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.EN",
+          "safe": "high",
+          "to": "net:SYS",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3–6, 10–13, 16",
+            "note": "TPS63001 fixed3.3V; FB tied directly to VOUT. LPS4012 is a recommended inductor series. 1.8A is switch current, not output. USB-state author output budget800mA peak/650mA continuous atSYS4.2–4.5V, ambient25C and assumed85% efficiency; native layout/transients and actual efficiency remain unverified."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.PS",
+          "safe": "low",
+          "to": "net:GND",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3–6, 10–13, 16",
+            "note": "TPS63001 fixed3.3V; FB tied directly to VOUT. LPS4012 is a recommended inductor series. 1.8A is switch current, not output. USB-state author output budget800mA peak/650mA continuous atSYS4.2–4.5V, ambient25C and assumed85% efficiency; native layout/transients and actual efficiency remain unverified."
+          }
+        }
+      ],
+      "firmware": {
+        "libs": [],
+        "includes": [],
+        "usage": "Always on, PS/SYNC low for power-save; no MCU-controlled power sequencing. Fixed FB tied toVOUT; VIN/VINA directly shareSYS per complete TIreference. L1/L2 are bidirectional switching nodes joined only through2.2uH inductor, not GPIO. EP11/PGND3/GND9 must retain local quiet/power-ground layout fromTI. Output800mA peak/650mAcontinuous is a USB-state author allocation below1.2A buck headline, not derived from1.8A switchlimit. Efficiency85%, thetaJA48.7C/W, ambient25C and +/-5% output voltage are screening assumptions; no guaranteed all-temperature output envelope. Coilcraft2.3A10%-dropIsat and1.2A20C-riseIrms are25C reference values; native/core-loss/transient/EMI/thermal/effectiveC remain unverified. Re-author/review input range and inductor peak calculation before claiming battery fallback. Audio/LED current5V variants must remain on qualifiedUSB5V, not this3.3V rail."
+      }
+    },
+    {
+      "schema": "moki.block/1",
+      "id": "bq24074-usb-190ma-ntc-required",
+      "version": 1,
+      "title": "BQ24074 power path, 190mA charging, external pack NTC required",
+      "class": "power",
+      "summary": "USB-present state: qualified4.75–5.25V/1.5A input. Separate PH battery and SH external10kNTC connectors; no fixedTS bypass. Actual pack/NTC/harness thermal qualification remains blocked, not a claim of installed temperature supervision.",
+      "provenance": {
+        "author": "agent",
+        "authorId": "chip_eda"
+      },
+      "parts": [
+        {
+          "ref": "U1",
+          "lcsc": "C2861252",
+          "mpn": "BQ24074RGTT",
+          "catalogReceipt": "sha256:ed5bf73fd1d3f8fb66c47857bdcffe278b63d972b2f81d769d1c0a5a2a043b64",
+          "pinout": "verified",
+          "pins": {
+            "TS": {
+              "pad": "1",
+              "role": "input",
+              "required": true
+            },
+            "BAT2": {
+              "pad": "2",
+              "role": "power-out",
+              "required": true,
+              "volts": {
+                "min": 3,
+                "max": 4.242
+              }
+            },
+            "BAT3": {
+              "pad": "3",
+              "role": "power-out",
+              "required": true,
+              "volts": {
+                "min": 3,
+                "max": 4.242
+              }
+            },
+            "CE": {
+              "pad": "4",
+              "role": "input",
+              "required": true
+            },
+            "EN2": {
+              "pad": "5",
+              "role": "input",
+              "required": true,
+              "volts": {
+                "min": 0,
+                "max": 7
+              }
+            },
+            "EN1": {
+              "pad": "6",
+              "role": "input",
+              "required": true
+            },
+            "PGOOD": {
+              "pad": "7",
+              "role": "open-drain"
+            },
+            "VSS": {
+              "pad": "8",
+              "role": "ground",
+              "required": true
+            },
+            "CHG": {
+              "pad": "9",
+              "role": "open-drain"
+            },
+            "OUT10": {
+              "pad": "10",
+              "role": "power-out",
+              "required": true
+            },
+            "OUT11": {
+              "pad": "11",
+              "role": "power-out",
+              "required": true
+            },
+            "ILIM": {
+              "pad": "12",
+              "role": "input",
+              "required": true
+            },
+            "IN": {
+              "pad": "13",
+              "role": "power-in",
+              "required": true,
+              "volts": {
+                "min": 4.75,
+                "max": 5.25
+              }
+            },
+            "TMR": {
+              "pad": "14",
+              "role": "input"
+            },
+            "ITERM": {
+              "pad": "15",
+              "role": "input"
+            },
+            "ISET": {
+              "pad": "16",
+              "role": "input",
+              "required": true
+            },
+            "EP": {
+              "pad": "17",
+              "role": "ground",
+              "required": true
+            }
+          },
+          "at": {
+            "x": 0,
+            "y": 0
+          },
+          "datasheet": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "ref": "J1",
+          "lcsc": "C160352",
+          "mpn": "B2B-PH-SM4-TB(LF)(SN)",
+          "catalogReceipt": "sha256:8f6f0a40d950668003a77a3a54e9834d07dc6048f7e982e9e7212305bd815b91",
+          "pinout": "verified",
+          "pins": {
+            "NEG": {
+              "pad": "1",
+              "role": "ground",
+              "required": true
+            },
+            "POS": {
+              "pad": "2",
+              "role": "passive",
+              "required": true
+            },
+            "TAB3": {
+              "pad": "3",
+              "role": "nc"
+            },
+            "TAB4": {
+              "pad": "4",
+              "role": "nc"
+            }
+          },
+          "at": {
+            "x": 0,
+            "y": -10
+          },
+          "datasheet": {
+            "url": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+            "pages": "1–4",
+            "note": "Exact SMT PH connector: two electrical contacts and two mounting tabs. This design assigns1=GND and2=BAT+; confirm actual protected-cell harness polarity. This is not a universal PH battery polarity convention."
+          }
+        },
+        {
+          "ref": "R1",
+          "lcsc": "C22765",
+          "mpn": "0603WAF1201T5E",
+          "catalogReceipt": "sha256:a7829c34d6f9a961ee9e63bec6d7c01bb62dece66ecf3aae35aaf79e2fcf5b1d",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -6,
+            "y": 0
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010130_UNI-ROYAL-Uniroyal-Elec-0603WAF1201T5E_C22765.pdf",
+            "note": "Actual 0603WAF1201T5E / C22765 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "1.2kOhm",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "12, 34",
+            "note": "ILIM1.2k +/-1%: guaranteed-low1500/(1200*1.01)=1237.62mA, typical1610/1200=1341.67mA, high1720/(1200*.99)=1447.81mA. The worked example uses a different typical constant; electrical-table bounds govern screening."
+          }
+        },
+        {
+          "ref": "R2",
+          "lcsc": "C23162",
+          "mpn": "0603WAF4701T5E",
+          "catalogReceipt": "sha256:38d622617e531e2f84b7e66a6815a7cf2eec91f7a3cd8df13e4fcb35c0c858be",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 6,
+            "y": 0
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010116_UNI-ROYAL-Uniroyal-Elec-0603WAF4701T5E_C23162.pdf",
+            "note": "Actual 0603WAF4701T5E / C23162 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "4.7kOhm",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "12, 34",
+            "note": "Actual4.7kOhm +/-1% ISET:890/4700=189.36mA typical, maximum975/(4700*.99)=209.54mA. Reserve210mA continuously, not a claim that DPPM always reduces charging."
+          }
+        },
+        {
+          "ref": "C1",
+          "lcsc": "C15849",
+          "mpn": "CL10A105KB8NNNC",
+          "catalogReceipt": "sha256:105c7d94f522ce1cbbbc5b1f309aaeb707bbeaa42bdecc861a0cb93b6624b303",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -3,
+            "y": 1
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL10A105KB8NNNC_C15849.pdf",
+            "note": "Actual CL10A105KB8NNNC / C15849 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "1uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "ref": "C2",
+          "lcsc": "C15849",
+          "mpn": "CL10A105KB8NNNC",
+          "catalogReceipt": "sha256:105c7d94f522ce1cbbbc5b1f309aaeb707bbeaa42bdecc861a0cb93b6624b303",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -3,
+            "y": 4
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL10A105KB8NNNC_C15849.pdf",
+            "note": "Actual CL10A105KB8NNNC / C15849 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "1uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "ref": "C3",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 3,
+            "y": 1
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "ref": "C4",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 3,
+            "y": 4
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "ref": "C5",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -3,
+            "y": -2
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "ref": "C6",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -3,
+            "y": -5
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "ref": "J2",
+          "lcsc": "C160402",
+          "mpn": "SM02B-SRSS-TB(LF)(SN)",
+          "catalogReceipt": "sha256:d639ffd6304c5ee658a163d6292b9b637df2c6b632fc582c3fe306e9e5e0a4d3",
+          "pinout": "verified",
+          "pins": {
+            "RET": {
+              "pad": "1",
+              "role": "ground",
+              "required": true
+            },
+            "SENSE": {
+              "pad": "2",
+              "role": "passive",
+              "required": true
+            },
+            "TAB3": {
+              "pad": "3",
+              "role": "nc"
+            },
+            "TAB4": {
+              "pad": "4",
+              "role": "nc"
+            }
+          },
+          "at": {
+            "x": 8,
+            "y": -8
+          },
+          "datasheet": {
+            "url": "https://www.jst-mfg.com/product/pdf/eng/eSH.pdf",
+            "pages": "1, 3",
+            "note": "Actual2-contact SH side-entry header; pads3/4 are mechanical tabs. This design assigns1=VSS and2=TS. Required external thermally coupled NTC plugs here, not an on-board ambient thermistor."
+          }
+        }
+      ],
+      "nets": [
+        {
+          "name": "VBUS",
+          "pins": [
+            "U1.IN",
+            "U1.EN2",
+            "C1.1",
+            "C2.1"
+          ]
+        },
+        {
+          "name": "SYS",
+          "pins": [
+            "U1.OUT10",
+            "U1.OUT11",
+            "C3.1",
+            "C4.1"
+          ]
+        },
+        {
+          "name": "BAT",
+          "pins": [
+            "U1.BAT2",
+            "U1.BAT3",
+            "J1.POS",
+            "C5.1",
+            "C6.1"
+          ]
+        },
+        {
+          "name": "GND",
+          "pins": [
+            "U1.VSS",
+            "U1.EP",
+            "U1.CE",
+            "U1.EN1",
+            "J1.NEG",
+            "R1.2",
+            "R2.2",
+            "C1.2",
+            "C2.2",
+            "C3.2",
+            "C4.2",
+            "C5.2",
+            "C6.2",
+            "J2.RET"
+          ]
+        },
+        {
+          "name": "ILIM",
+          "pins": [
+            "U1.ILIM",
+            "R1.1"
+          ]
+        },
+        {
+          "name": "ISET",
+          "pins": [
+            "U1.ISET",
+            "R2.1"
+          ]
+        },
+        {
+          "name": "TS_PACK",
+          "pins": [
+            "U1.TS",
+            "J2.SENSE"
+          ]
+        }
+      ],
+      "params": [
+        {
+          "id": "operatingState",
+          "type": "enum",
+          "options": [
+            "usb-present"
+          ],
+          "default": "usb-present",
+          "why": "This graph models qualifiedUSB present and charging only. Source must guarantee4.75–5.25V at board under the total board1.5A budget. Battery absent/fallback/DPPM/supplement need separate validated states."
+        },
+        {
+          "id": "temperatureMonitoring",
+          "type": "enum",
+          "options": [
+            "external-pack-ntc-required-unqualified"
+          ],
+          "default": "external-pack-ntc-required-unqualified",
+          "why": "Required external SEMITEC103AT-2 C5346323 atSHJ2:10kOhmR25+/-1%,B25/85=3435K+/-1%, physically bonded to the protected pack with qualified insulated harness. SEMITECprimarycatalogpp12–13: https://www.semitec-global.com/uploads/2022/01/NTC_thermistors_Circuit_129M.pdf . Manufacturer TIpp13,29–30 describes nominal0–50C charge window and fault suspension; threshold/NTC tolerances, thermal coupling and response must be qualified. Unqualifiedbeta corners estimate hot46.13–55.89C/cold-1.81–2.90C, so this does not guarantee a common0–45C pack charging window. NTC catalog evidence exists; no thermistor is falsely placed on this PCB and no stock/installed-part claim is made."
+        }
+      ],
+      "ports": [
+        {
+          "id": "VBUS",
+          "label": "Qualified USB5V input",
+          "kind": "power-in",
+          "terminal": "net:VBUS",
+          "volts": {
+            "min": 4.75,
+            "max": 5.25
+          }
+        },
+        {
+          "id": "SYS",
+          "label": "USB-present system power",
+          "kind": "power-out",
+          "terminal": "net:SYS",
+          "volts": {
+            "min": 4.2,
+            "max": 4.5
+          }
+        },
+        {
+          "id": "BAT",
+          "label": "Protected1-cell charge terminal",
+          "kind": "power-out",
+          "terminal": "net:BAT",
+          "volts": {
+            "min": 3,
+            "max": 4.242
+          }
+        },
+        {
+          "id": "GND",
+          "label": "Ground",
+          "kind": "ground",
+          "terminal": "net:GND"
+        },
+        {
+          "id": "PACK_NTC",
+          "label": "Required external pack NTC",
+          "kind": "analog",
+          "terminal": "net:TS_PACK"
+        }
+      ],
+      "power": {
+        "sources": [
+          {
+            "port": "SYS",
+            "volts": 4.4,
+            "maxMa": 1000,
+            "continuousMa": 800,
+            "inputPort": "VBUS",
+            "mode": "regulated",
+            "conversion": "linear",
+            "dropoutV": 0.475,
+            "thermal": {
+              "thetaJa": 44.5,
+              "maxJunctionC": 110,
+              "ambientC": 25
+            }
+          },
+          {
+            "port": "BAT",
+            "volts": 4.2,
+            "maxMa": 210,
+            "continuousMa": 210,
+            "inputPort": "VBUS",
+            "mode": "charger",
+            "conversion": "linear",
+            "dropoutV": 0.3,
+            "thermal": {
+              "thetaJa": 44.5,
+              "maxJunctionC": 110,
+              "ambientC": 25
+            }
+          }
+        ],
+        "sinks": [
+          {
+            "port": "VBUS",
+            "typicalMa": 5,
+            "peakMa": 10
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "IN",
+          "groundPin": "VSS",
+          "caps": [
+            "C1",
+            "C2"
+          ],
+          "minUf": 1,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC. Six mm centre distance is an author screening policy; short local power loops and effective capacitance require native/hardware verification."
+          }
+        },
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "OUT10",
+          "groundPin": "VSS",
+          "caps": [
+            "C3",
+            "C4"
+          ],
+          "minUf": 4.7,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC. Six mm centre distance is an author screening policy; short local power loops and effective capacitance require native/hardware verification."
+          }
+        },
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "OUT11",
+          "groundPin": "VSS",
+          "caps": [
+            "C3",
+            "C4"
+          ],
+          "minUf": 4.7,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC. Six mm centre distance is an author screening policy; short local power loops and effective capacitance require native/hardware verification."
+          }
+        },
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "BAT2",
+          "groundPin": "VSS",
+          "caps": [
+            "C5",
+            "C6"
+          ],
+          "minUf": 4.7,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC. Six mm centre distance is an author screening policy; short local power loops and effective capacitance require native/hardware verification."
+          }
+        },
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "BAT3",
+          "groundPin": "VSS",
+          "caps": [
+            "C5",
+            "C6"
+          ],
+          "minUf": 4.7,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC. Six mm centre distance is an author screening policy; short local power loops and effective capacitance require native/hardware verification."
+          }
+        },
+        {
+          "kind": "battery-path",
+          "charger": "U1",
+          "batteryPort": "BAT",
+          "systemPort": "SYS",
+          "powerPath": "integrated",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "kind": "ground",
+          "pin": "U1.VSS",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "kind": "ground",
+          "pin": "U1.EP",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.CE",
+          "safe": "low",
+          "to": "net:GND",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.EN1",
+          "safe": "low",
+          "to": "net:GND",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.EN2",
+          "safe": "high",
+          "to": "net:VBUS",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7–13, 21–23, 28–29, 34–35, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.TMR",
+          "safe": "floating",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "12–13, 35",
+            "note": "OpenTMR retains nominal30min precharge/5h fast-charge timers; do not ground/disablesafety timers."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.ITERM",
+          "safe": "floating",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "8, 12–13",
+            "note": "BQ24074-specific ITERM open selects nominal10% termination; notTD/SYSOFF fromanother variant."
+          }
+        }
+      ],
+      "spiceChecks": [
+        {
+          "name": "BQ24074 nominal190mA charge programming",
+          "kind": "charge-current",
+          "resistor": "R2",
+          "coefficient": 890,
+          "target": 189.3617021,
+          "tolerance": 0.1,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "12, 34",
+            "note": "Ideal nominal890 AOhm/R law only, excluding tolerance/battery/thermal/termination dynamics."
+          }
+        }
+      ],
+      "firmware": {
+        "libs": [],
+        "includes": [],
+        "usage": "USB-present state only; actual4.7kOhmISET reserves210mA charging, SYS1Apeak/800mAcontinuous plus10mAoverhead yields1220mA below guaranteed-lowILIM1237.62mA. No static double counting/waiver for DPPM: reserve full210mA while charging. Pack connectorPHJ1:1=ground/2=BAT+. Separate SHJ2:1=ground/2=TS; connect actual externalSEMITEC103AT-2 C5346323,10kOhmR25+/-1%,B25/85=3435K+/-1%, thermally coupled to that same protected1-cell4.2V pack. NTC is external procurement evidence, not a fake on-board sensor or supplied harness. TIpp13,29–30 nominal0–50C TS window is not a guaranteed exact pack-temperature limit; qualify threshold/NTC tolerances, coupling, wiring fault response and temperature transient. Protected pack must permit210mAcharge and the selected discharge state, with correct polarity and cutoff. Current schema has no typed external-device binding/qualification or pass-through battery-state model: variant remains blocked/unreviewed. Do not claim battery-runtime or all-functions-on-battery proof."
+      }
+    },
+    {
+      "schema": "moki.block/1",
+      "id": "tps63001-qualified-sys-3v3",
+      "version": 1,
+      "title": "TPS63001 3.3V, qualified3.0–4.5V SYS state",
+      "class": "power",
+      "summary": "Conditional SYS3.0–4.5V input;700mA peak/400mAcontinuous author allocation at25C and85% assumed efficiency. Battery state requires loadedpack>=3.2V and reviewed power-path/wiring drops; no pack/runtime/all-functions guarantee.",
+      "provenance": {
+        "author": "agent",
+        "authorId": "chip_eda"
+      },
+      "parts": [
+        {
+          "ref": "U1",
+          "lcsc": "C28060",
+          "mpn": "TPS63001DRCR",
+          "catalogReceipt": "sha256:c42a3e97120b05844f323a057f8afc81747b2065fec947a36290f7e7f12d7ed9",
+          "pinout": "verified",
+          "pins": {
+            "VOUT": {
+              "pad": "1",
+              "role": "power-out",
+              "required": true
+            },
+            "L2": {
+              "pad": "2",
+              "role": "bidirectional",
+              "required": true
+            },
+            "PGND": {
+              "pad": "3",
+              "role": "ground",
+              "required": true
+            },
+            "L1": {
+              "pad": "4",
+              "role": "bidirectional",
+              "required": true
+            },
+            "VIN": {
+              "pad": "5",
+              "role": "power-in",
+              "required": true,
+              "volts": {
+                "min": 3,
+                "max": 4.5
+              }
+            },
+            "EN": {
+              "pad": "6",
+              "role": "input",
+              "required": true
+            },
+            "PS": {
+              "pad": "7",
+              "role": "input",
+              "required": true
+            },
+            "VINA": {
+              "pad": "8",
+              "role": "power-in",
+              "required": true,
+              "volts": {
+                "min": 3,
+                "max": 4.5
+              }
+            },
+            "GND": {
+              "pad": "9",
+              "role": "ground",
+              "required": true
+            },
+            "FB": {
+              "pad": "10",
+              "role": "input",
+              "required": true
+            },
+            "EP": {
+              "pad": "11",
+              "role": "ground",
+              "required": true
+            }
+          },
+          "at": {
+            "x": 0,
+            "y": 0
+          },
+          "datasheet": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3–6, 10–13, 16",
+            "note": "Conditional3.0–4.5V SYS variant. TIpp1,6,12–13 gives >2.4V boost headline up to800mA and typical curves; derated700mA peak/400mAcontinuous is an author budget, not an all-temperature guarantee or1.8A switch-limit substitution. Inductor boostcurrent calculation and hardware evidence remain required."
+          }
+        },
+        {
+          "ref": "L1",
+          "lcsc": "C20416998",
+          "mpn": "LPS4012-222MRC",
+          "catalogReceipt": "sha256:a723bd279a3338434b63e2a96371df67ebbfb98c3c426c052597508cad91fe2b",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 0,
+            "y": -4
+          },
+          "datasheet": {
+            "url": "https://www.coilcraft.com/getmedia/a31b0140-5adf-4f7e-b7bf-5e9d605a87b9/LPS4012.pdf",
+            "note": "Actual LPS4012-222MRC / C20416998 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "2.2uH",
+          "valueWhy": {
+            "url": "https://www.coilcraft.com/getmedia/a31b0140-5adf-4f7e-b7bf-5e9d605a87b9/LPS4012.pdf",
+            "pages": "1–2",
+            "note": "LPS4012-222MRC2.2uH +/-20%, DCRmax0.100Ohm; at25C Isat2.3A at10% inductance drop, Irms1.2A for20C rise/1.75A for40C rise. Temperature-rise currents are reference, not absolute maximum guarantees. USB-state bounded steady-state inductor current is below these reference values; switching/core loss and temperature remain unmeasured. This variant additionally screens minimum3.0V boost input, minimum1.25MHz frequency and minimum1.76uH inductance; the exact measured switching waveform/core loss is not proved."
+          }
+        },
+        {
+          "ref": "C1",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -4,
+            "y": 0
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+            "pages": "6–7",
+            "note": "Complete TPS63001 reference ties VIN/VINA supply directly; no mixed partial100Ohm filter topology. Fixed FB returns to VOUT. Author uses additional nominal capacitance; effective DC-biased capacitance still requires verification."
+          }
+        },
+        {
+          "ref": "C2",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -4,
+            "y": 3
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+            "pages": "6–7",
+            "note": "Complete TPS63001 reference ties VIN/VINA supply directly; no mixed partial100Ohm filter topology. Fixed FB returns to VOUT. Author uses additional nominal capacitance; effective DC-biased capacitance still requires verification."
+          }
+        },
+        {
+          "ref": "C3",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 4,
+            "y": -3
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+            "pages": "6–7",
+            "note": "Complete TPS63001 reference ties VIN/VINA supply directly; no mixed partial100Ohm filter topology. Fixed FB returns to VOUT. Author uses additional nominal capacitance; effective DC-biased capacitance still requires verification."
+          }
+        },
+        {
+          "ref": "C4",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 4,
+            "y": 0
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+            "pages": "6–7",
+            "note": "Complete TPS63001 reference ties VIN/VINA supply directly; no mixed partial100Ohm filter topology. Fixed FB returns to VOUT. Author uses additional nominal capacitance; effective DC-biased capacitance still requires verification."
+          }
+        },
+        {
+          "ref": "C5",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 4,
+            "y": 3
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+            "pages": "6–7",
+            "note": "Complete TPS63001 reference ties VIN/VINA supply directly; no mixed partial100Ohm filter topology. Fixed FB returns to VOUT. Author uses additional nominal capacitance; effective DC-biased capacitance still requires verification."
+          }
+        },
+        {
+          "ref": "C6",
+          "lcsc": "C14663",
+          "mpn": "CC0603KRX7R9BB104",
+          "catalogReceipt": "sha256:fde5081a0b45324f436df1a456a1a4dd1608306b862e8a6f4c8187b9d69ac426",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -2,
+            "y": 3
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2211101700_YAGEO-CC0603KRX7R9BB104_C14663.pdf",
+            "note": "Actual CC0603KRX7R9BB104 / C14663 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "100nF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+            "pages": "6–7",
+            "note": "Complete TPS63001 reference ties VIN/VINA supply directly; no mixed partial100Ohm filter topology. Fixed FB returns to VOUT. Author uses additional nominal capacitance; effective DC-biased capacitance still requires verification."
+          }
+        }
+      ],
+      "nets": [
+        {
+          "name": "SYS",
+          "pins": [
+            "U1.VIN",
+            "U1.VINA",
+            "U1.EN",
+            "C1.1",
+            "C2.1",
+            "C6.1"
+          ]
+        },
+        {
+          "name": "V3V3",
+          "pins": [
+            "U1.VOUT",
+            "U1.FB",
+            "C3.1",
+            "C4.1",
+            "C5.1"
+          ]
+        },
+        {
+          "name": "GND",
+          "pins": [
+            "U1.PGND",
+            "U1.GND",
+            "U1.EP",
+            "U1.PS",
+            "C1.2",
+            "C2.2",
+            "C3.2",
+            "C4.2",
+            "C5.2",
+            "C6.2"
+          ]
+        },
+        {
+          "name": "SW_L1",
+          "pins": [
+            "U1.L1",
+            "L1.1"
+          ]
+        },
+        {
+          "name": "SW_L2",
+          "pins": [
+            "U1.L2",
+            "L1.2"
+          ]
+        }
+      ],
+      "params": [
+        {
+          "id": "operatingState",
+          "type": "enum",
+          "options": [
+            "qualified-sys-3.0-to-4.5"
+          ],
+          "default": "qualified-sys-3.0-to-4.5",
+          "why": "ConditionalSYSmin3.0V requires protected-cell terminalmin3.2V UNDERLOAD, minus100mV BQdrop at<=1A/VBAT>3V, minus100mV author harness/PCB reserve. It does not assert a typical pack protection cutoff meets3.2V; actual cutoff/dynamic behavior must be qualified. USBpresentSYS<=4.5V. No unsupported state is silently treated as powered."
+        },
+        {
+          "id": "outputVoltageBudget",
+          "type": "number",
+          "min": 3.3,
+          "max": 3.3,
+          "default": 3.3,
+          "unit": "V",
+          "why": "Fixed3.3V silicon with FB directly atVOUT. Port3.135–3.465V is an author +/-5% design envelope, not a claimed datasheet fixed-output tolerance; verify loaded ripple/tolerance/transients before promotion."
+        }
+      ],
+      "ports": [
+        {
+          "id": "SYS",
+          "label": "USB-present SYS",
+          "kind": "power-in",
+          "terminal": "net:SYS",
+          "volts": {
+            "min": 3,
+            "max": 4.5
+          }
+        },
+        {
+          "id": "V3V3",
+          "label": "3.3V output",
+          "kind": "power-out",
+          "terminal": "net:V3V3",
+          "volts": {
+            "min": 3.135,
+            "max": 3.465
+          }
+        },
+        {
+          "id": "GND",
+          "label": "Ground",
+          "kind": "ground",
+          "terminal": "net:GND"
+        }
+      ],
+      "power": {
+        "sources": [
+          {
+            "port": "V3V3",
+            "volts": 3.3,
+            "maxMa": 700,
+            "continuousMa": 400,
+            "inputPort": "SYS",
+            "mode": "regulated",
+            "conversion": "switching",
+            "efficiency": 0.85,
+            "thermal": {
+              "thetaJa": 48.7,
+              "maxJunctionC": 110,
+              "ambientC": 25
+            }
+          }
+        ],
+        "sinks": [
+          {
+            "port": "SYS",
+            "typicalMa": 0.1,
+            "peakMa": 0.1
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "VIN",
+          "groundPin": "PGND",
+          "caps": [
+            "C1",
+            "C2"
+          ],
+          "minUf": 4.7,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3–6, 10–13, 16",
+            "note": "Conditional3.0–4.5V SYS variant; fixedFB/VIN/VINA/ground and local capacitance follow the cited complete reference. Output700mApeak/400mAcontinuous and85% efficiency are author screening assumptions, not a battery/current/transient guarantee. Effective capacitance, local switching layout and thermal behavior remain unverified."
+          }
+        },
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "VINA",
+          "groundPin": "GND",
+          "caps": [
+            "C6"
+          ],
+          "minUf": 0.1,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+            "pages": "6–7",
+            "note": "Conditional3.0–4.5V SYS variant; fixedFB/VIN/VINA/ground and local capacitance follow the cited complete reference. Output700mApeak/400mAcontinuous and85% efficiency are author screening assumptions, not a battery/current/transient guarantee. Effective capacitance, local switching layout and thermal behavior remain unverified."
+          }
+        },
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "VOUT",
+          "groundPin": "PGND",
+          "caps": [
+            "C3",
+            "C4",
+            "C5"
+          ],
+          "minUf": 15,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3–6, 10–13, 16",
+            "note": "Conditional3.0–4.5V SYS variant; fixedFB/VIN/VINA/ground and local capacitance follow the cited complete reference. Output700mApeak/400mAcontinuous and85% efficiency are author screening assumptions, not a battery/current/transient guarantee. Effective capacitance, local switching layout and thermal behavior remain unverified."
+          }
+        },
+        {
+          "kind": "ground",
+          "pin": "U1.PGND",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3–6, 10–13, 16",
+            "note": "Conditional3.0–4.5V SYS variant; fixedFB/VIN/VINA/ground and local capacitance follow the cited complete reference. Output700mApeak/400mAcontinuous and85% efficiency are author screening assumptions, not a battery/current/transient guarantee. Effective capacitance, local switching layout and thermal behavior remain unverified."
+          }
+        },
+        {
+          "kind": "ground",
+          "pin": "U1.GND",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3–6, 10–13, 16",
+            "note": "Conditional3.0–4.5V SYS variant; fixedFB/VIN/VINA/ground and local capacitance follow the cited complete reference. Output700mApeak/400mAcontinuous and85% efficiency are author screening assumptions, not a battery/current/transient guarantee. Effective capacitance, local switching layout and thermal behavior remain unverified."
+          }
+        },
+        {
+          "kind": "ground",
+          "pin": "U1.EP",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3–6, 10–13, 16",
+            "note": "Conditional3.0–4.5V SYS variant; fixedFB/VIN/VINA/ground and local capacitance follow the cited complete reference. Output700mApeak/400mAcontinuous and85% efficiency are author screening assumptions, not a battery/current/transient guarantee. Effective capacitance, local switching layout and thermal behavior remain unverified."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.EN",
+          "safe": "high",
+          "to": "net:SYS",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3–6, 10–13, 16",
+            "note": "Conditional3.0–4.5V SYS variant; fixedFB/VIN/VINA/ground and local capacitance follow the cited complete reference. Output700mApeak/400mAcontinuous and85% efficiency are author screening assumptions, not a battery/current/transient guarantee. Effective capacitance, local switching layout and thermal behavior remain unverified."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.PS",
+          "safe": "low",
+          "to": "net:GND",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3–6, 10–13, 16",
+            "note": "Conditional3.0–4.5V SYS variant; fixedFB/VIN/VINA/ground and local capacitance follow the cited complete reference. Output700mApeak/400mAcontinuous and85% efficiency are author screening assumptions, not a battery/current/transient guarantee. Effective capacitance, local switching layout and thermal behavior remain unverified."
+          }
+        }
+      ],
+      "firmware": {
+        "libs": [],
+        "includes": [],
+        "usage": "Conditional3.0–4.5V SYS only. TPS3.3V author budget700mApeak/400mAcontinuous and85% assumed efficiency; actual peripherals602.6mApeak need~818.9mA SYS at3.0V with3.465V upper output envelope. Battery terminal must remain>=3.2V underload through protected cutoff, with BQpath<=100mV at<=1A and harness/PCB<=100mV. No actual pack or undervoltage cutoff has been qualified. Battery-only current must include allSYSbranches, and charging must not be counted when USBabsent. Current5V MAXaudio/WS2812 variants are off withoutUSB; no full-function battery claim. Candidate low-outputSYSaudio and5VLED boost need separate reviewed variants and budgets. Same fixedFB, completeVIN/VINA supply,inductor/thermal/effectiveC/native/transient requirements as original TPSblock."
+      }
+    }
+  ],
+  "catalog": [
+    {
+      "lcsc": "C2861252",
+      "mpn": "BQ24074RGTT",
+      "manufacturer": "TI(德州仪器)",
+      "package": "VQFN-16_L3.0-W3.0-P0.50-TL-EP1.7",
+      "catalogReceipt": "sha256:ed5bf73fd1d3f8fb66c47857bdcffe278b63d972b2f81d769d1c0a5a2a043b64",
+      "importer": "tscircuit-jlcsearch-easyeda-cache",
+      "rawSha256": "809a51eb5046d95d02b2fa2a3cf672a27e93fb1e9670853efe6000ef7d5dd5a0",
+      "footprintSha256": "da6fe8744da8b8dbe5ba287da702e776e79ae0e1953cfa250f5cd75d59ffe12e",
+      "pins": [
+        {
+          "pad": "1",
+          "labels": [
+            "TS"
+          ]
+        },
+        {
+          "pad": "2",
+          "labels": [
+            "BAT"
+          ]
+        },
+        {
+          "pad": "3",
+          "labels": [
+            "BAT"
+          ]
+        },
+        {
+          "pad": "4",
+          "labels": [
+            "CE#"
+          ]
+        },
+        {
+          "pad": "5",
+          "labels": [
+            "EN2"
+          ]
+        },
+        {
+          "pad": "6",
+          "labels": [
+            "EN1"
+          ]
+        },
+        {
+          "pad": "7",
+          "labels": [
+            "PGOOD#"
+          ]
+        },
+        {
+          "pad": "8",
+          "labels": [
+            "VSS"
+          ]
+        },
+        {
+          "pad": "9",
+          "labels": [
+            "CHG#"
+          ]
+        },
+        {
+          "pad": "10",
+          "labels": [
+            "OUT"
+          ]
+        },
+        {
+          "pad": "11",
+          "labels": [
+            "OUT"
+          ]
+        },
+        {
+          "pad": "12",
+          "labels": [
+            "ILIM"
+          ]
+        },
+        {
+          "pad": "13",
+          "labels": [
+            "IN"
+          ]
+        },
+        {
+          "pad": "14",
+          "labels": [
+            "TMR"
+          ]
+        },
+        {
+          "pad": "15",
+          "labels": [
+            "ITERM"
+          ]
+        },
+        {
+          "pad": "16",
+          "labels": [
+            "ISET"
+          ]
+        },
+        {
+          "pad": "17",
+          "labels": [
+            "EP"
+          ]
+        }
+      ],
+      "models": [],
+      "datasheetUrl": "https://www.ti.com/cn/lit/ds/symlink/bq24075.pdf",
+      "datasheetReceipt": "sha256:8ed9427b8a7671fa61b4f2c945e253007bd7356a433371250276508c65d16b15"
+    },
+    {
+      "lcsc": "C160352",
+      "mpn": "B2B-PH-SM4-TB(LF)(SN)",
+      "manufacturer": "JST",
+      "package": "CONN-SMD_B2B-PH-SM4-TB-LF-SN",
+      "stock": 476,
+      "catalogReceipt": "sha256:8f6f0a40d950668003a77a3a54e9834d07dc6048f7e982e9e7212305bd815b91",
+      "importer": "tscircuit-jlcsearch-easyeda-cache",
+      "rawSha256": "5cc1a5cc6ef30026dc91baf1be767bc6609276aab75180b6fed8e38cbb9eaf1f",
+      "footprintSha256": "5cb69d2acf92446cb5f54f2e90b5b389b22f8cd609ed6005251aa4054e430564",
+      "pins": [
+        {
+          "pad": "1",
+          "labels": [
+            "1"
+          ]
+        },
+        {
+          "pad": "2",
+          "labels": [
+            "2"
+          ]
+        },
+        {
+          "pad": "3",
+          "labels": [
+            "3"
+          ]
+        },
+        {
+          "pad": "4",
+          "labels": [
+            "4"
+          ]
+        }
+      ],
+      "models": [
+        {
+          "format": "obj",
+          "url": "https://modules.easyeda.com/3dmodel/8d1513db651747eb8999d5542d1d8507"
+        },
+        {
+          "format": "step",
+          "url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/8d1513db651747eb8999d5542d1d8507"
+        }
+      ],
+      "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_JST-B2B-PH-SM4-TB-LF-SN_C160352.pdf",
+      "datasheetReceipt": "sha256:a5c403b7362f0ac6ff44c553b93b480b7dc5fccd3b3a51a83f86f16d05459472"
+    },
+    {
+      "lcsc": "C28060",
+      "mpn": "TPS63001DRCR",
+      "manufacturer": "TI(德州仪器)",
+      "package": "VSON-10_L3.0-W3.0-P0.50-TL-EP_TPS62410DRCR",
+      "stock": 2,
+      "catalogReceipt": "sha256:c42a3e97120b05844f323a057f8afc81747b2065fec947a36290f7e7f12d7ed9",
+      "importer": "tscircuit-jlcsearch-easyeda-cache",
+      "rawSha256": "a385d3dc43416394d5260c2086538d4377452d51c9e0bbcef1b7efd0d7cbe274",
+      "footprintSha256": "588d84b242a82cf26969673c48cffe334d483930c384bc7512a969afb1f7a3f0",
+      "pins": [
+        {
+          "pad": "1",
+          "labels": [
+            "VOUT"
+          ]
+        },
+        {
+          "pad": "2",
+          "labels": [
+            "L2"
+          ]
+        },
+        {
+          "pad": "3",
+          "labels": [
+            "PGND"
+          ]
+        },
+        {
+          "pad": "4",
+          "labels": [
+            "L1"
+          ]
+        },
+        {
+          "pad": "5",
+          "labels": [
+            "VIN"
+          ]
+        },
+        {
+          "pad": "6",
+          "labels": [
+            "EN"
+          ]
+        },
+        {
+          "pad": "7",
+          "labels": [
+            "PS/SYNC"
+          ]
+        },
+        {
+          "pad": "8",
+          "labels": [
+            "VINA"
+          ]
+        },
+        {
+          "pad": "9",
+          "labels": [
+            "GND"
+          ]
+        },
+        {
+          "pad": "10",
+          "labels": [
+            "FB"
+          ]
+        },
+        {
+          "pad": "11",
+          "labels": [
+            "PAD"
+          ]
+        }
+      ],
+      "models": [],
+      "datasheetUrl": "https://www.ti.com/cn/lit/gpn/tps63001",
+      "datasheetReceipt": "sha256:8078e4e46516d0d91fce5bf3383164930f47614f251b9892c628085188a6c37b"
+    },
+    {
+      "lcsc": "C22765",
+      "mpn": "0603WAF1201T5E",
+      "manufacturer": "UNI-ROYAL(厚声)",
+      "package": "R0603",
+      "description": "1.2KΩ (1201) ±1%",
+      "stock": 350600,
+      "catalogReceipt": "sha256:a7829c34d6f9a961ee9e63bec6d7c01bb62dece66ecf3aae35aaf79e2fcf5b1d",
+      "importer": "tscircuit-jlcsearch-easyeda-cache",
+      "rawSha256": "20a07c6e57747f7fcf544693fdf4af2fdbe6e320a9fd981f4e8910b45f09e081",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": [
+        {
+          "pad": "2",
+          "labels": [
+            "2"
+          ]
+        },
+        {
+          "pad": "1",
+          "labels": [
+            "1"
+          ]
+        }
+      ],
+      "models": [
+        {
+          "format": "obj",
+          "url": "https://modules.easyeda.com/3dmodel/e06b23482b894f1ebafac2e1696a59f5"
+        },
+        {
+          "format": "step",
+          "url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/e06b23482b894f1ebafac2e1696a59f5"
+        }
+      ],
+      "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010130_UNI-ROYAL-Uniroyal-Elec-0603WAF1201T5E_C22765.pdf",
+      "datasheetReceipt": "sha256:bdacfe017c3407a416aedf4f3848ee90bd3bde8150bd1d396069002c450d6539"
+    },
+    {
+      "lcsc": "C4211",
+      "mpn": "0603WAF3001T5E",
+      "manufacturer": "UNI-ROYAL(厚声)",
+      "package": "R0603",
+      "description": "3KΩ (3001) ±1%",
+      "stock": 777876,
+      "catalogReceipt": "sha256:633b8898a32688c242d4c394d1cd86239b4562c76763ab405ad7c276d623cdef",
+      "importer": "tscircuit-jlcsearch-easyeda-cache",
+      "rawSha256": "21c0464553632295f683a5918001aab76386893900441f13902570fcf935fc9f",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": [
+        {
+          "pad": "2",
+          "labels": [
+            "2"
+          ]
+        },
+        {
+          "pad": "1",
+          "labels": [
+            "1"
+          ]
+        }
+      ],
+      "models": [
+        {
+          "format": "obj",
+          "url": "https://modules.easyeda.com/3dmodel/e06b23482b894f1ebafac2e1696a59f5"
+        },
+        {
+          "format": "step",
+          "url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/e06b23482b894f1ebafac2e1696a59f5"
+        }
+      ],
+      "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010230_UNI-ROYAL-Uniroyal-Elec-0603WAF3001T5E_C4211.pdf",
+      "datasheetReceipt": "sha256:6afdba4faf171a2a658e32c3a97c0c88514fb5eb50189488da6b8a2784b01a5d"
+    },
+    {
+      "lcsc": "C25804",
+      "mpn": "0603WAF1002T5E",
+      "manufacturer": "UNI-ROYAL(厚声)",
+      "package": "R0603",
+      "description": "10KΩ (1002) ±1%",
+      "stock": 8999650,
+      "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+      "importer": "tscircuit-jlcsearch-easyeda-cache",
+      "rawSha256": "8b15f24a2e21602b38bf11802c42f2702fbd4034045270c0315f2b5cec9d334d",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": [
+        {
+          "pad": "2",
+          "labels": [
+            "2"
+          ]
+        },
+        {
+          "pad": "1",
+          "labels": [
+            "1"
+          ]
+        }
+      ],
+      "models": [
+        {
+          "format": "obj",
+          "url": "https://modules.easyeda.com/3dmodel/e06b23482b894f1ebafac2e1696a59f5"
+        },
+        {
+          "format": "step",
+          "url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/e06b23482b894f1ebafac2e1696a59f5"
+        }
+      ],
+      "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010045_UNI-ROYAL-Uniroyal-Elec-0603WAF1002T5E_C25804.pdf",
+      "datasheetReceipt": "sha256:1e1daa725daabb6c32b25d469ee2c7373bd2b86b732f84982d5266e1f7ae4ee8"
+    },
+    {
+      "lcsc": "C14663",
+      "mpn": "CC0603KRX7R9BB104",
+      "manufacturer": "YAGEO(国巨)",
+      "package": "C0603",
+      "description": "100nF (104) ±10% 50V",
+      "stock": 0,
+      "catalogReceipt": "sha256:fde5081a0b45324f436df1a456a1a4dd1608306b862e8a6f4c8187b9d69ac426",
+      "importer": "tscircuit-jlcsearch-easyeda-cache",
+      "rawSha256": "1ad4275ad69d3ef0a8e75bc120719319207d450579421ba624b88713554cff59",
+      "footprintSha256": "c6961a0f3ecb855bedad17ad6397d458e8feacb3ac83cd2b5e6b49c83a9c4338",
+      "pins": [
+        {
+          "pad": "1",
+          "labels": [
+            "1"
+          ]
+        },
+        {
+          "pad": "2",
+          "labels": [
+            "2"
+          ]
+        }
+      ],
+      "models": [],
+      "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2211101700_YAGEO-CC0603KRX7R9BB104_C14663.pdf",
+      "datasheetReceipt": "sha256:748d25b0ada0f3b6656975e224b1d93a7d97da0114beb48e25c276f7e0411b16"
+    },
+    {
+      "lcsc": "C15849",
+      "mpn": "CL10A105KB8NNNC",
+      "manufacturer": "SAMSUNG(三星)",
+      "package": "C0603",
+      "description": "1uF (105) ±10% 50V",
+      "stock": 50,
+      "catalogReceipt": "sha256:105c7d94f522ce1cbbbc5b1f309aaeb707bbeaa42bdecc861a0cb93b6624b303",
+      "importer": "tscircuit-jlcsearch-easyeda-cache",
+      "rawSha256": "97ed96d8ce4e6a804bc42c817290a5530477439dbe893128b709a79960ac1be3",
+      "footprintSha256": "c6961a0f3ecb855bedad17ad6397d458e8feacb3ac83cd2b5e6b49c83a9c4338",
+      "pins": [
+        {
+          "pad": "2",
+          "labels": [
+            "2"
+          ]
+        },
+        {
+          "pad": "1",
+          "labels": [
+            "1"
+          ]
+        }
+      ],
+      "models": [],
+      "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL10A105KB8NNNC_C15849.pdf",
+      "datasheetReceipt": "sha256:c0c08e9ac7b4cdb19bf681cc8620c0f833cae73a4ebcc67738205e7370989567"
+    },
+    {
+      "lcsc": "C15850",
+      "mpn": "CL21A106KAYNNNE",
+      "manufacturer": "SAMSUNG(三星)",
+      "package": "C0805",
+      "description": "10uF (106) ±10% 25V",
+      "stock": 66260,
+      "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+      "importer": "tscircuit-jlcsearch-easyeda-cache",
+      "rawSha256": "641fa0749e47b3ab2151841638949595eae2f99c4754cf6b2c5f21ec37868147",
+      "footprintSha256": "2fb5b0d11c86569d2aa6b896edea815da6011d028e9e79f5d7db5693a9ffaf43",
+      "pins": [
+        {
+          "pad": "2",
+          "labels": [
+            "2"
+          ]
+        },
+        {
+          "pad": "1",
+          "labels": [
+            "1"
+          ]
+        }
+      ],
+      "models": [],
+      "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+      "datasheetReceipt": "sha256:f5ada9aa1edb5338dfb620daa013302ffceb7f574aa5a14f43a2db119ded9500"
+    },
+    {
+      "lcsc": "C20416998",
+      "mpn": "LPS4012-222MRC",
+      "manufacturer": "Coilcraft(线艺)",
+      "package": "IND-SMD_L3.9-W3.9",
+      "catalogReceipt": "sha256:a723bd279a3338434b63e2a96371df67ebbfb98c3c426c052597508cad91fe2b",
+      "importer": "tscircuit-jlcsearch-easyeda-cache",
+      "rawSha256": "23cc1be19e7e9e56033d2a2139d62ccc11b5a132d312dd283a4b33e6b2ed0fad",
+      "footprintSha256": "6c24f6d9bca7f376a76f06b8238ab17b8e44692621d914c64bf21cfdb79432b6",
+      "pins": [
+        {
+          "pad": "2",
+          "labels": [
+            "2"
+          ]
+        },
+        {
+          "pad": "1",
+          "labels": [
+            "1"
+          ]
+        }
+      ],
+      "models": [],
+      "datasheetUrl": "https://www.coilcraft.com/getmedia/a31b0140-5adf-4f7e-b7bf-5e9d605a87b9/LPS4012.pdf",
+      "datasheetReceipt": "sha256:f6d506ee72f15456f944cde8f6890ac9f9482d94f1c28d9a425ddca67fc5dfb2"
+    },
+    {
+      "lcsc": "C160402",
+      "mpn": "SM02B-SRSS-TB(LF)(SN)",
+      "manufacturer": "JST",
+      "package": "CONN-SMD_2P-P1.00_SM02B-SRSS-TB-LF-SN",
+      "stock": 2998,
+      "catalogReceipt": "sha256:d639ffd6304c5ee658a163d6292b9b637df2c6b632fc582c3fe306e9e5e0a4d3",
+      "importer": "tscircuit-jlcsearch-easyeda-cache",
+      "rawSha256": "9556a7997184baae061a6e46e097f806c27c2a57276e5f86ef75faf207dffda0",
+      "footprintSha256": "6a33ea6bd7e443860e8634b3fadb95559f5c774c83cc0f0f886a0667cb719974",
+      "pins": [
+        {
+          "pad": "1",
+          "labels": [
+            "1"
+          ]
+        },
+        {
+          "pad": "2",
+          "labels": [
+            "2"
+          ]
+        },
+        {
+          "pad": "3",
+          "labels": [
+            "3"
+          ]
+        },
+        {
+          "pad": "4",
+          "labels": [
+            "4"
+          ]
+        }
+      ],
+      "models": [],
+      "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_JST-SM02B-SRSS-TB-LF-SN_C160402.pdf",
+      "datasheetReceipt": "sha256:6ea7f28bfa1ddbf50b9b812c91e10b5326ccc5238b694032b0f57a47608dc481"
+    },
+    {
+      "lcsc": "C5346323",
+      "mpn": "103AT-2",
+      "manufacturer": "semitec(石冢)",
+      "package": "TH-2_103AT-2",
+      "catalogReceipt": "sha256:3b6fcda6ea7c71b5b661b074f73891d91288d90aac0252bf24c7df8c51382d6a",
+      "importer": "tscircuit-jlcsearch-easyeda-cache",
+      "rawSha256": "929d6c171c1147b77b7b3021ea080c495465e230abfda82fde356eb97316b48c",
+      "footprintSha256": "1bf01ce741f1c85e807ccfed58ce9b92c322bd20b0dffa958876a01c51be7a63",
+      "pins": [
+        {
+          "pad": "1",
+          "labels": [
+            "1"
+          ]
+        },
+        {
+          "pad": "2",
+          "labels": [
+            "2"
+          ]
+        }
+      ],
+      "models": []
+    },
+    {
+      "lcsc": "C23162",
+      "mpn": "0603WAF4701T5E",
+      "manufacturer": "UNI-ROYAL(厚声)",
+      "package": "R0603",
+      "description": "4.7KΩ (4701) ±1%",
+      "stock": 3107600,
+      "catalogReceipt": "sha256:38d622617e531e2f84b7e66a6815a7cf2eec91f7a3cd8df13e4fcb35c0c858be",
+      "importer": "tscircuit-jlcsearch-easyeda-cache",
+      "rawSha256": "77bf34b75082f8147447464d9539a44f2ab53a2ebde3fa4286b2feedf60492af",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": [
+        {
+          "pad": "2",
+          "labels": [
+            "2"
+          ]
+        },
+        {
+          "pad": "1",
+          "labels": [
+            "1"
+          ]
+        }
+      ],
+      "models": [
+        {
+          "format": "obj",
+          "url": "https://modules.easyeda.com/3dmodel/e06b23482b894f1ebafac2e1696a59f5"
+        },
+        {
+          "format": "step",
+          "url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/e06b23482b894f1ebafac2e1696a59f5"
+        }
+      ],
+      "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010116_UNI-ROYAL-Uniroyal-Elec-0603WAF4701T5E_C23162.pdf",
+      "datasheetReceipt": "sha256:0fe292a2a851b9e9e27327a61027219526a699a4edaae4ebf493cc3734643f27"
+    }
+  ],
+  "gates": [
+    {
+      "gate": "erc",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "bq24074-usb-300ma-ts-bypass",
+          "message": "Agent/human draft cannot promote itself; independent review is separate"
+        }
+      ]
+    },
+    {
+      "gate": "power",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "thermal-assumption",
+          "severity": "warning",
+          "where": "bq24074-usb-300ma-ts-bypass.SYS",
+          "message": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+        },
+        {
+          "rule": "thermal-assumption",
+          "severity": "warning",
+          "where": "bq24074-usb-300ma-ts-bypass.BAT",
+          "message": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+        }
+      ]
+    },
+    {
+      "gate": "erc",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "tps63001-usb-sys-3v3",
+          "message": "Agent/human draft cannot promote itself; independent review is separate"
+        }
+      ]
+    },
+    {
+      "gate": "power",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "thermal-assumption",
+          "severity": "warning",
+          "where": "tps63001-usb-sys-3v3.V3V3",
+          "message": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+        }
+      ]
+    },
+    {
+      "gate": "erc",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "bq24074-usb-190ma-ntc-required",
+          "message": "Agent/human draft cannot promote itself; independent review is separate"
+        }
+      ]
+    },
+    {
+      "gate": "power",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "thermal-assumption",
+          "severity": "warning",
+          "where": "bq24074-usb-190ma-ntc-required.SYS",
+          "message": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+        },
+        {
+          "rule": "thermal-assumption",
+          "severity": "warning",
+          "where": "bq24074-usb-190ma-ntc-required.BAT",
+          "message": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+        }
+      ]
+    },
+    {
+      "gate": "erc",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "tps63001-qualified-sys-3v3",
+          "message": "Agent/human draft cannot promote itself; independent review is separate"
+        }
+      ]
+    },
+    {
+      "gate": "power",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "thermal-assumption",
+          "severity": "warning",
+          "where": "tps63001-qualified-sys-3v3.V3V3",
+          "message": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+        }
+      ]
+    },
+    {
+      "gate": "erc",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "gate": "erc",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "gate": "power",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "allocation-assumptions",
+          "severity": "warning",
+          "message": "Arithmetic uses author peripheral budgets,85% assumed efficiency, output+/-5% envelope and25C reference thermal model. Not measured source/thermal/transient/charge behavior; only USB-present state. 1.5A source must maintain4.75V atboard. BQILIM does not include directUSB amp/LED."
+        }
+      ],
+      "measurements": [
+        {
+          "where": "USB-present",
+          "name": "qualifiedUSB peak allocation",
+          "measured": 1487.9764705882353,
+          "target": 1500,
+          "tolerance": 0,
+          "unit": "mA",
+          "ok": true
+        },
+        {
+          "where": "USB-present",
+          "name": "qualifiedUSB typical allocation",
+          "measured": 997.7467647058824,
+          "target": 1500,
+          "tolerance": 0,
+          "unit": "mA",
+          "ok": true
+        },
+        {
+          "where": "BQ24074",
+          "name": "promisedSYS peak plus charging and overhead",
+          "measured": 1230,
+          "target": 1237.6237623762377,
+          "tolerance": 0,
+          "unit": "mA",
+          "ok": true
+        },
+        {
+          "where": "BQ24074",
+          "name": "summedSYS+BAT continuous thermal screen",
+          "measured": 90.74875,
+          "target": 110,
+          "tolerance": 0,
+          "unit": "C",
+          "ok": true
+        },
+        {
+          "where": "TPS63001",
+          "name": "requested3.3V peak allocation",
+          "measured": 602.6,
+          "target": 800,
+          "tolerance": 0,
+          "unit": "mA",
+          "ok": true
+        },
+        {
+          "where": "BQ24074",
+          "name": "SYS minimum plus specified dropout",
+          "measured": 4.675,
+          "target": 4.75,
+          "tolerance": 0,
+          "unit": "V",
+          "ok": true
+        },
+        {
+          "where": "LPS4012-222MRC",
+          "name": "USB buckCCM peak plus20% margin",
+          "measured": 1.2193500000000002,
+          "target": 2.3,
+          "tolerance": 0,
+          "unit": "A",
+          "ok": true
+        },
+        {
+          "where": "LPS4012-222MRC",
+          "name": "USB buckCCM RMS screen",
+          "measured": 0.80967277662543,
+          "target": 1.2,
+          "tolerance": 0,
+          "unit": "A",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "gate": "verify",
+      "ok": false,
+      "issues": [
+        {
+          "rule": "battery-state-unverified",
+          "severity": "error",
+          "message": "Battery-fallback/absent/supplement/DPPM states are not represented by this single USB-present graph. Do not claim battery runtime or guaranteed battery output."
+        },
+        {
+          "rule": "battery-pack-unselected",
+          "severity": "error",
+          "message": "Protected4.2V one-cell pack, >=330mA charge/discharge capability, polarity and external temperature supervision have not been selected/verified. Charger is not pack protection."
+        },
+        {
+          "rule": "pack-temperature-disabled",
+          "severity": "error",
+          "message": "Fixed10k TS bypass intentionally disables battery-temperature monitoring; safety review or external supervision required before promotion."
+        },
+        {
+          "rule": "effective-capacitance-unverified",
+          "severity": "error",
+          "message": "Actual nominal catalog values are sourced, but tolerance/DC-bias/temperature-dependent effective capacitance and ESR are not independently verified."
+        },
+        {
+          "rule": "hardware-power-unverified",
+          "severity": "error",
+          "message": "Native routing, ground/power loops/EP thermal copper, loaded output voltage/efficiency, switch/inductor transient/current/temperature, USB startup and charger termination remain unverified. Typical curves support assumptions, not hardware guarantees."
+        }
+      ]
+    },
+    {
+      "gate": "power",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "state-arithmetic-only",
+          "severity": "warning",
+          "message": "Battery arithmetic assumes loaded3.2V minimum through protection cutoff, <=100mV BQdrop at<=1A/VBAT>3V, <=100mV wiring,85% TPS efficiency,25C and separately enforced quiet-audio budget. These are not qualified pack/hardware facts. NTC temperature corners use a beta approximation with TIbias/trip and SEMITECR25/Beta tolerances; not a certified0–50C window or response-time proof."
+        },
+        {
+          "rule": "ntc-trip-tolerance-estimate",
+          "severity": "warning",
+          "where": "103AT-2/BQ24074",
+          "message": "Unqualified beta-model corner estimates: hottrip46.13..55.89C; coldtrip-1.81..2.90C. Inputs: TI72..78uAbias,270..330mVhot/2.0..2.2Vcold; SEMITEC10kOhmR25+/-1%,3435KB25/85+/-1%. Actual R/Tcurve,thermal coupling,response and pack-safe window still require qualification."
+        }
+      ],
+      "measurements": [
+        {
+          "where": "qualified-battery-state",
+          "name": "conditionalSYS minimum",
+          "measured": 3,
+          "target": 3,
+          "tolerance": 0,
+          "unit": "V",
+          "ok": true
+        },
+        {
+          "where": "qualified-battery-state",
+          "name": "3.3V rail peak input",
+          "measured": 818.9270588235295,
+          "target": 1000,
+          "tolerance": 0,
+          "unit": "mA",
+          "ok": true
+        },
+        {
+          "where": "qualified-battery-state",
+          "name": "rail plus quiet-audio peak, LEDoff",
+          "measured": 953.9270588235295,
+          "target": 1000,
+          "tolerance": 0,
+          "unit": "mA",
+          "ok": true
+        },
+        {
+          "where": "qualified-battery-state",
+          "name": "rail plus quiet-audio typical, LEDoff",
+          "measured": 411.20547058823536,
+          "target": 1000,
+          "tolerance": 0,
+          "unit": "mA",
+          "ok": true
+        },
+        {
+          "where": "TPS63001",
+          "name": "conditional boost peak plus20% margin",
+          "measured": 1.2512110563233556,
+          "target": 2.3,
+          "tolerance": 0,
+          "unit": "A",
+          "ok": true
+        },
+        {
+          "where": "TPS63001",
+          "name": "conditional boostRMS screen",
+          "measured": 0.9526423212262632,
+          "target": 1.2,
+          "tolerance": 0,
+          "unit": "A",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "gate": "power",
+      "ok": false,
+      "issues": [
+        {
+          "rule": "all-functions-battery-budget",
+          "severity": "error",
+          "message": "Adding a hypothetical5V LED boost at80% efficiency to rail+quietaudio draws1091.74mA, beyond the1A condition used for the guaranteed100mV BQbattery drop. Existing5V audio+LED variants are unpowered withoutUSB. A full-function battery claim needs separately reviewed loads,source/path and/or enforceable transient/current limits."
+        }
+      ],
+      "measurements": [
+        {
+          "where": "all-functions-battery",
+          "name": "rail plus quiet-audio plus hypotheticalLEDboost peak",
+          "measured": 1091.7395588235295,
+          "target": 1000,
+          "tolerance": 0,
+          "unit": "mA",
+          "ok": false
+        }
+      ]
+    },
+    {
+      "gate": "verify",
+      "ok": false,
+      "issues": [
+        {
+          "rule": "external-ntc-qualification-missing",
+          "severity": "error",
+          "message": "RealSH connector and actual103AT-2 catalog evidence exist, but external pack-boundNTC/harness is not installed or qualified. Need typed external-component terminal binding,NTC R25/Beta tolerances,thermal coupling,temperature-window/fault-response and immutable qualification receipt. No external thermistor is falsely placed on the PCB."
+        },
+        {
+          "rule": "battery-pass-through-state-unsupported",
+          "severity": "error",
+          "message": "Current schema cannot express mutually exclusive USBcharge/battery-discharge states of bidirectionalBAT pads and a non-regulating BAT-to-SYS FET path with load-dependent drop. No fake external battery source is paralleled with charger output to bypass this gap."
+        },
+        {
+          "rule": "qualified-pack-minimum-unproved",
+          "severity": "error",
+          "message": "No actual protectedpack guarantees>=3.2V atconnector under the declared load through cutoff,>=1A discharge,>=210mA charge and correct thermal/polarity/harness conditions. GenericLiPo protection often cuts off lower; hardwareUVLO or qualifiedpack proof is required."
+        },
+        {
+          "rule": "quiet-audio-current-not-enforced",
+          "severity": "error",
+          "message": "CandidateMAX98357A3.0–4.5V/8Ohm audio<=0.1Wtyp/0.25Wpeak uses70% assumed efficiency plus4mAICoverhead, reserved60/125mA. It requires a separate reviewed audio variant and enforceable signal/gain/duty limit; hardware can draw more at fullscale. Current5Vaudio draft is not this variant."
+        }
+      ]
+    }
+  ]
+}

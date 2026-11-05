@@ -1,0 +1,7 @@
+{
+  "lcsc": "C28060",
+  "catalogReceipt": "sha256:c42a3e97120b05844f323a057f8afc81747b2065fec947a36290f7e7f12d7ed9",
+  "footprintSha256": "588d84b242a82cf26969673c48cffe334d483930c384bc7512a969afb1f7a3f0",
+  "tsxSha256": "03e6daa2561a2c0e8af07625c682da578ce893b6c1f967791756a2c8a01fb5fd",
+  "importer": "easyeda@0.0.391"
+}

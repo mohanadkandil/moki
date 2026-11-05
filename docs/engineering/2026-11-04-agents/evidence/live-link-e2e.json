@@ -1,0 +1,62 @@
+{
+ "schema": "moki.live-link-e2e/1",
+ "checkedAt": "2026-11-05T21:22:29.904159+00:00",
+ "meaning": "Local check with no paid call and no network. Controller prepare() wrote a fixture env file; a transient systemd unit read it with EnvironmentFile and ran the real production vite preview on a fixture port; the real gateway code and fetchMoki carried requests; a local stub stood in for api.anthropic.com and held each answer 1.5 s. It does NOT cover the Cloudflare tunnel, a real key or a real model. moki.service, moki.env and the live gateway were not touched.",
+ "results": {
+  "keySurvivesStart": true,
+  "previewStartMs": 2158,
+  "directWithoutCapability": 401,
+  "statusThroughGateway": {
+   "http": 200,
+   "enabled": true,
+   "provider": "anthropic",
+   "model": "claude-sonnet-5-5",
+   "bodyHasKey": false
+  },
+  "signedOutTurn": 401,
+  "foreignOriginTurn": 403,
+  "turn": {
+   "http": 200,
+   "type": "text/event-stream; charset=utf-8",
+   "cacheControl": "private, no-store, no-transform",
+   "accelBuffering": "no",
+   "arrivals": [
+    {
+     "event": "start",
+     "ms": 342
+    },
+    {
+     "event": "role",
+     "ms": 342
+    },
+    {
+     "event": "call",
+     "ms": 1862
+    },
+    {
+     "event": "message",
+     "ms": 1862
+    },
+    {
+     "event": "done",
+     "ms": 1862
+    }
+   ],
+   "streamHasKey": false,
+   "streamHasCapability": false
+  },
+  "stubAfterTurn": {
+   "requests": 1,
+   "keyHeaderMatches": 1,
+   "cancelled": 0
+  },
+  "browserLeaves": {
+   "modelCallInFlight": true,
+   "before": 2,
+   "cancelledUpstream": 1,
+   "msToCancel": 50
+  },
+  "statusAfterLeave": 200,
+  "ledgerLinesFromStub": 1
+ }
+}

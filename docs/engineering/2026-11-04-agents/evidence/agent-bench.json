@@ -1,0 +1,522 @@
+{
+  "schema": "moki.agent-bench/1",
+  "generatedAt": "2026-11-05T21:38:41.321Z",
+  "mode": "live",
+  "provider": "openai",
+  "model": "gpt-6.1-sol",
+  "headCommit": "8f08c3b",
+  "boardApi": "http://127.0.0.1:8847/app/moki",
+  "pricePerMillionTokensUsd": {
+    "input": 2,
+    "output": 10,
+    "cacheRead": 0.2,
+    "cacheWrite": 2.5,
+    "known": true
+  },
+  "meaning": "Tokens and cost are the provider's usage. Agent and pipeline times are measured. Success means 0 DRC errors and compiled.",
+  "totals": {
+    "costUsd": 0.10331,
+    "label": "tokens measured, priced at pricePerMillionTokensUsd",
+    "includesEveryLiveCall": true,
+    "capUsd": 3
+  },
+  "results": [
+    {
+      "id": "off-plant-moisture",
+      "kind": "off-template",
+      "brief": "plant moisture alarm",
+      "expected": "decline",
+      "outcome": "declined",
+      "rulesWouldAccept": false,
+      "matchedExpectation": true,
+      "freeMemoryMbAtStart": 1692,
+      "modelCalls": 2,
+      "inputTokens": 3335,
+      "outputTokens": 124,
+      "costUsd": 0.00585,
+      "agentMs": 10198,
+      "pipelineMs": 0,
+      "wallMs": 10208,
+      "jobs": [],
+      "messages": [
+        "declined: A plant moisture alarm needs a soil-moisture probe and firmware that reads it. Neither is in the catalog. The BME280 measures air humidity, not soil moisture. Closest: The closest buildable device is a USB-powered temperature monitor with a low-temperature chime; it cannot tell when a plant needs water."
+      ],
+      "tools": [
+        "list_catalog",
+        "decline"
+      ],
+      "success": true,
+      "labels": {
+        "tokensAndCost": "measured",
+        "agentMs": "measured",
+        "pipeline": "measured",
+        "modelJudgement": "measured"
+      }
+    },
+    {
+      "id": "template-focus-timer",
+      "kind": "template",
+      "brief": "A 25 minute focus timer with a small screen and a knob, and a buzzer that beeps when time is up",
+      "expected": "build",
+      "outcome": "built",
+      "rulesWouldAccept": true,
+      "matchedExpectation": true,
+      "freeMemoryMbAtStart": 1433,
+      "modelCalls": 3,
+      "inputTokens": 7511,
+      "outputTokens": 886,
+      "costUsd": 0.01579,
+      "agentMs": 12166,
+      "pipelineMs": 36686,
+      "wallMs": 49393,
+      "jobs": [
+        {
+          "jobId": "877ef0e3-7740-44c3-a73d-937afef32a39",
+          "attempt": 1,
+          "ok": true,
+          "drcErrors": 0,
+          "compile": "compiled",
+          "caseOk": true,
+          "pipelineMs": 36686,
+          "cache": "miss",
+          "baseJobId": null,
+          "problems": []
+        }
+      ],
+      "messages": [
+        "A USB-powered 25-minute focus timer with a small countdown screen, a knob to set and start it, and a beep when time is up.",
+        "Built: 0 DRC errors, firmware compiled, case generated. Nothing has been printed, flashed or run on hardware; these are software checks only."
+      ],
+      "tools": [
+        "list_catalog",
+        "get_module",
+        "get_module",
+        "get_module",
+        "get_module",
+        "propose_design"
+      ],
+      "success": true,
+      "labels": {
+        "tokensAndCost": "measured",
+        "agentMs": "measured",
+        "pipeline": "measured",
+        "modelJudgement": "measured"
+      }
+    },
+    {
+      "id": "template-light-lamp",
+      "kind": "template",
+      "brief": "A little lamp that turns on when the room gets darker than 30%",
+      "expected": "build",
+      "outcome": "built",
+      "rulesWouldAccept": true,
+      "matchedExpectation": true,
+      "freeMemoryMbAtStart": 1583,
+      "modelCalls": 3,
+      "inputTokens": 7277,
+      "outputTokens": 709,
+      "costUsd": 0.01359,
+      "agentMs": 12026,
+      "pipelineMs": 28623,
+      "wallMs": 41178,
+      "jobs": [
+        {
+          "jobId": "9a7e0040-21e9-435e-830a-91c775355bd0",
+          "attempt": 1,
+          "ok": true,
+          "drcErrors": 0,
+          "compile": "compiled",
+          "caseOk": true,
+          "pipelineMs": 28623,
+          "cache": "miss",
+          "baseJobId": null,
+          "problems": []
+        }
+      ],
+      "messages": [
+        "A little USB-powered amber LED lamp that turns on when room brightness falls below 30% of the sensor range.",
+        "Built: 0 DRC errors, firmware compiled, case generated. Nothing has been printed, flashed or run on hardware; these are software checks only."
+      ],
+      "tools": [
+        "list_catalog",
+        "get_module",
+        "get_module",
+        "get_module",
+        "get_module",
+        "propose_design"
+      ],
+      "success": true,
+      "labels": {
+        "tokensAndCost": "measured",
+        "agentMs": "measured",
+        "pipeline": "measured",
+        "modelJudgement": "measured"
+      }
+    },
+    {
+      "id": "template-temp-monitor",
+      "kind": "template",
+      "brief": "A temperature monitor with a probe and a screen that alerts above 28 \u00b0C",
+      "expected": "build",
+      "outcome": "built",
+      "rulesWouldAccept": true,
+      "matchedExpectation": true,
+      "freeMemoryMbAtStart": 1612,
+      "modelCalls": 3,
+      "inputTokens": 7576,
+      "outputTokens": 840,
+      "costUsd": 0.01549,
+      "agentMs": 10542,
+      "pipelineMs": 36486,
+      "wallMs": 47720,
+      "jobs": [
+        {
+          "jobId": "2fb60ef4-0167-483e-9df3-f2713f0263fe",
+          "attempt": 1,
+          "ok": true,
+          "drcErrors": 0,
+          "compile": "compiled",
+          "caseOk": true,
+          "pipelineMs": 36486,
+          "cache": "miss",
+          "baseJobId": null,
+          "problems": []
+        }
+      ],
+      "messages": [
+        "A USB-powered temperature monitor with a DS18B20 sensor, a screen and an audible alert above 28 \u00b0C.",
+        "Built: 0 DRC errors, firmware compiled, case generated. Nothing has been printed, flashed or run on hardware; these are software checks only."
+      ],
+      "tools": [
+        "list_catalog",
+        "get_module",
+        "get_module",
+        "get_module",
+        "get_module",
+        "get_module",
+        "propose_design"
+      ],
+      "success": true,
+      "labels": {
+        "tokensAndCost": "measured",
+        "agentMs": "measured",
+        "pipeline": "measured",
+        "modelJudgement": "measured"
+      }
+    },
+    {
+      "id": "off-door-chime",
+      "kind": "off-template",
+      "brief": "A door chime that plays a tone when the door opens",
+      "expected": "decline",
+      "outcome": "declined",
+      "rulesWouldAccept": false,
+      "matchedExpectation": true,
+      "freeMemoryMbAtStart": 1520,
+      "modelCalls": 2,
+      "inputTokens": 3351,
+      "outputTokens": 113,
+      "costUsd": 0.00373,
+      "agentMs": 4569,
+      "pipelineMs": 0,
+      "wallMs": 4571,
+      "jobs": [],
+      "messages": [
+        "declined: The catalog has no door-open sensor, and none of the fixed firmware programs can trigger a tone when a door opens. Closest: A USB-powered countdown timer with a screen, a rotary knob, and a chime when time runs out."
+      ],
+      "tools": [
+        "list_catalog",
+        "decline"
+      ],
+      "success": true,
+      "labels": {
+        "tokensAndCost": "measured",
+        "agentMs": "measured",
+        "pipeline": "measured",
+        "modelJudgement": "measured"
+      }
+    },
+    {
+      "id": "off-pomodoro-ring",
+      "kind": "off-template",
+      "brief": "A pomodoro timer with an LED ring that shows the time left",
+      "expected": "decline",
+      "outcome": "declined",
+      "rulesWouldAccept": false,
+      "matchedExpectation": true,
+      "freeMemoryMbAtStart": 1582,
+      "modelCalls": 2,
+      "inputTokens": 3353,
+      "outputTokens": 121,
+      "costUsd": 0.00382,
+      "agentMs": 3643,
+      "pipelineMs": 0,
+      "wallMs": 3644,
+      "jobs": [],
+      "messages": [
+        "declined: The catalog has no LED ring, and the timer firmware cannot show remaining time on one. Closest: A USB-powered Pomodoro countdown timer with an OLED screen showing time left, a knob to set and start it, and an optional end chime."
+      ],
+      "tools": [
+        "list_catalog",
+        "decline"
+      ],
+      "success": true,
+      "labels": {
+        "tokensAndCost": "measured",
+        "agentMs": "measured",
+        "pipeline": "measured",
+        "modelJudgement": "measured"
+      }
+    },
+    {
+      "id": "off-desk-humidity",
+      "kind": "off-template",
+      "brief": "A desk humidity display",
+      "expected": "decline",
+      "outcome": "declined",
+      "rulesWouldAccept": true,
+      "matchedExpectation": true,
+      "freeMemoryMbAtStart": 1620,
+      "modelCalls": 2,
+      "inputTokens": 3335,
+      "outputTokens": 124,
+      "costUsd": 0.00383,
+      "agentMs": 3883,
+      "pipelineMs": 0,
+      "wallMs": 3884,
+      "jobs": [],
+      "messages": [
+        "declined: The catalog has a humidity sensor, but the available firmware only supports temperature monitoring, not a humidity display. Closest: A USB-powered desk temperature display using a BME280 sensor and an OLED screen."
+      ],
+      "tools": [
+        "list_catalog",
+        "decline"
+      ],
+      "success": true,
+      "labels": {
+        "tokensAndCost": "measured",
+        "agentMs": "measured",
+        "pipeline": "measured",
+        "modelJudgement": "measured"
+      }
+    },
+    {
+      "id": "off-reaction-game",
+      "kind": "off-template",
+      "brief": "A reaction-time game",
+      "expected": "decline",
+      "outcome": "declined",
+      "rulesWouldAccept": false,
+      "matchedExpectation": true,
+      "freeMemoryMbAtStart": 1648,
+      "modelCalls": 2,
+      "inputTokens": 3335,
+      "outputTokens": 130,
+      "costUsd": 0.00389,
+      "agentMs": 4666,
+      "pipelineMs": 0,
+      "wallMs": 4667,
+      "jobs": [],
+      "messages": [
+        "declined: A reaction-time game needs firmware that gives a cue and measures how quickly you press a button. None of the available firmware families supports that behavior. Closest: The closest buildable device is a USB-powered countdown timer with a screen, a rotary knob with a push switch, and an end chime; it cannot measure reaction time."
+      ],
+      "tools": [
+        "list_catalog",
+        "decline"
+      ],
+      "success": true,
+      "labels": {
+        "tokensAndCost": "measured",
+        "agentMs": "measured",
+        "pipeline": "measured",
+        "modelJudgement": "measured"
+      }
+    },
+    {
+      "id": "fix-failing",
+      "kind": "fixer",
+      "brief": "A temperature monitor with two pull-ups",
+      "expected": "build",
+      "outcome": "built",
+      "rulesWouldAccept": true,
+      "matchedExpectation": true,
+      "freeMemoryMbAtStart": 1660,
+      "modelCalls": 4,
+      "scriptedCalls": 1,
+      "scriptedNote": "The first call, which proposes the known bad design, came from a fixture at no cost. Every later call is the real model.",
+      "inputTokens": 7305,
+      "outputTokens": 332,
+      "costUsd": 0.01055,
+      "agentMs": 11366,
+      "pipelineMs": 55751,
+      "wallMs": 67649,
+      "jobs": [
+        {
+          "jobId": "0016781b-4edb-47e6-b55b-4b5fb03c1abf",
+          "attempt": 1,
+          "ok": false,
+          "drcErrors": 15,
+          "compile": "compiled",
+          "caseOk": true,
+          "pipelineMs": 33002,
+          "cache": "miss",
+          "baseJobId": null,
+          "problems": [
+            "DRC pcb_footprint_overlap_error: R1 overlaps R2: 2 footprint overlaps, 2 pad clearance violations. Move the components apart.",
+            "DRC pcb_autorouting_error: Autorouting was skipped because 1 PCB placement error was found. Fix the placement errors or set placementDrcChecksDisabled to true to route anyway.",
+            "DRC pcb_port_not_connected_error: Port [R1.1] is not connected to net [PLUS_3V3] by a PCB trace.",
+            "DRC pcb_port_not_connected_error: Port [R2.2] is not connected to net [PLUS_3V3] by a PCB trace.",
+            "DRC pcb_port_not_connected_error: Port [U1.3V3] is not connected to net [PLUS_3V3] by a PCB trace.",
+            "DRC pcb_port_not_connected_error: Port [U2.VCC] is not connected to net [PLUS_3V3] by a PCB trace.",
+            "DRC pcb_port_not_connected_error: Port [U3.VDD] is not connected to net [PLUS_3V3] by a PCB trace.",
+            "DRC pcb_port_not_connected_error: Port [U1.GPIO22] is not connected to net [I2C_SCL] by a PCB trace.",
+            "\u2026and 7 more DRC errors."
+          ]
+        },
+        {
+          "jobId": "234a3e62-9212-44bf-8d6c-524401911c3b",
+          "attempt": 2,
+          "ok": true,
+          "drcErrors": 0,
+          "compile": "compiled",
+          "caseOk": true,
+          "pipelineMs": 22749,
+          "cache": "miss",
+          "baseJobId": "0016781b-4edb-47e6-b55b-4b5fb03c1abf",
+          "problems": []
+        }
+      ],
+      "messages": [
+        "A deliberately failing design: R2 lands on R1.",
+        "The DRC error is \"R1 overlaps R2: 2 footprint overlaps, 2 pad clearance violations. Move the components apart.\" It also reports \"Autorouting was skipped because 1 PCB placement error was found. Fix the placement errors or set placementDrcChecksDisabled to true to route anyway.\" Move only R2 to (30, -24) mm to separate the resistors and let routing run. Its 2.6 \u00d7 16 mm footprint fits within the 75 ",
+        "Built after 1 retry: 0 DRC errors, firmware compiled, case generated. Nothing has been printed, flashed or run on hardware; these are software checks only."
+      ],
+      "tools": [
+        "propose_design",
+        "read_job",
+        "get_design",
+        "get_module",
+        "propose_fix"
+      ],
+      "success": true,
+      "labels": {
+        "tokensAndCost": "measured",
+        "agentMs": "measured",
+        "pipeline": "measured",
+        "modelJudgement": "measured"
+      }
+    },
+    {
+      "id": "off-freezer-alarm",
+      "kind": "off-template",
+      "brief": "A freezer door alarm that beeps if it warms above -10 degrees",
+      "expected": "build",
+      "outcome": "built",
+      "rulesWouldAccept": false,
+      "matchedExpectation": true,
+      "freeMemoryMbAtStart": 1615,
+      "modelCalls": 3,
+      "inputTokens": 7320,
+      "outputTokens": 651,
+      "costUsd": 0.01309,
+      "agentMs": 9796,
+      "pipelineMs": 29756,
+      "wallMs": 39933,
+      "jobs": [
+        {
+          "jobId": "a6305b8b-5eaa-4693-9d87-4c257fb07a65",
+          "attempt": 1,
+          "ok": true,
+          "drcErrors": 0,
+          "compile": "compiled",
+          "caseOk": true,
+          "pipelineMs": 29756,
+          "cache": "miss",
+          "baseJobId": null,
+          "problems": []
+        }
+      ],
+      "messages": [
+        "A USB-powered freezer alarm that beeps when the temperature rises above -10 \u00b0C.",
+        "Built: 0 DRC errors, firmware compiled, case generated. Nothing has been printed, flashed or run on hardware; these are software checks only."
+      ],
+      "tools": [
+        "list_catalog",
+        "get_module",
+        "get_module",
+        "get_module",
+        "get_module",
+        "propose_design"
+      ],
+      "success": true,
+      "labels": {
+        "tokensAndCost": "measured",
+        "agentMs": "measured",
+        "pipeline": "measured",
+        "modelJudgement": "measured"
+      }
+    },
+    {
+      "id": "off-reading-nook",
+      "kind": "off-template",
+      "brief": "A reading nook glow that comes on at dusk",
+      "expected": "build",
+      "outcome": "built",
+      "rulesWouldAccept": false,
+      "matchedExpectation": true,
+      "freeMemoryMbAtStart": 1520,
+      "modelCalls": 3,
+      "inputTokens": 7262,
+      "outputTokens": 721,
+      "costUsd": 0.0137,
+      "agentMs": 10497,
+      "pipelineMs": 28118,
+      "wallMs": 39620,
+      "jobs": [
+        {
+          "jobId": "7d068ce1-7a49-4352-84c7-8e0f89eaa572",
+          "attempt": 1,
+          "ok": true,
+          "drcErrors": 0,
+          "compile": "compiled",
+          "caseOk": true,
+          "pipelineMs": 28118,
+          "cache": "miss",
+          "baseJobId": null,
+          "problems": []
+        }
+      ],
+      "messages": [
+        "A USB-powered amber accent glow for your reading nook that switches on when the light sensor detects dusk.",
+        "Built: 0 DRC errors, firmware compiled, case generated. Nothing has been printed, flashed or run on hardware; these are software checks only."
+      ],
+      "tools": [
+        "list_catalog",
+        "get_module",
+        "get_module",
+        "get_module",
+        "get_module",
+        "propose_design"
+      ],
+      "success": true,
+      "labels": {
+        "tokensAndCost": "measured",
+        "agentMs": "measured",
+        "pipeline": "measured",
+        "modelJudgement": "measured"
+      }
+    }
+  ],
+  "pricing": {
+    "source": "https://developers.openai.com/api/docs/pricing, read 5 Nov 2026: gpt-6.1-sol $2.00 input, $0.10 cached input, $10.00 output per million tokens, standard tier",
+    "bench": "MOKI_AGENT_PRICE=2,10, which prices cached input at $0.20, so costUsd is slightly high",
+    "totalAtListedCachedPriceUsd": 0.09964,
+    "caveat": "Costs are the provider-reported tokens times these prices, not an OpenAI invoice."
+  },
+  "scope": {
+    "path": "runTurn called directly with the live model and the real job API on moki.service. It did not go through the chat, the gateway or the Cloudflare tunnel.",
+    "addedBriefs": "off-freezer-alarm and off-reading-nook were added by agent_core: all five requested off-template briefs have no catalog part or firmware, so none could prove an off-template build.",
+    "fixFailing": "The first call, proposing the known bad design, came from a fixture at no cost. The real model only played the Fixer.",
+    "expected": "`expected` was written before the run from the catalog and firmware families."
+  }
+}

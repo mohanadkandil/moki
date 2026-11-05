@@ -1,0 +1,257 @@
+{
+ "id": "off-desk-humidity",
+ "provenance": "recorded",
+ "brief": "A desk humidity display",
+ "calls": [
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_hZsD5FM41Wlp7pqpgfej0jah",
+     "name": "list_catalog",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 3,
+    "outputTokens": 14,
+    "cacheReadTokens": 1282,
+    "cacheWriteTokens": 0
+   },
+   "ms": 1503,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_JVBj4mho8NSjpgNeV8zkJ8R5",
+     "name": "get_module",
+     "input": {
+      "id": "esp32-devkitc-v4"
+     }
+    },
+    {
+     "type": "tool_use",
+     "id": "call_PhHhj22iX9XXWt3yqCVjPXEt",
+     "name": "get_module",
+     "input": {
+      "id": "ssd1306-oled-128x64-i2c"
+     }
+    },
+    {
+     "type": "tool_use",
+     "id": "call_Tj9GwhmmFGfFkTu5dET4ZNwT",
+     "name": "get_module",
+     "input": {
+      "id": "bme280-i2c-4pin"
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 3,
+    "outputTokens": 87,
+    "cacheReadTokens": 2327,
+    "cacheWriteTokens": 0
+   },
+   "ms": 1990,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_8Hv9ON1osAtM6LATJdjpQB36",
+     "name": "propose_design",
+     "input": {
+      "design": {
+       "schema": "moki.circuit-preview/1",
+       "template": "temp-monitor",
+       "title": "Desk humidity display",
+       "parts": [
+        {
+         "id": "U1",
+         "module": "esp32-devkitc-v4",
+         "role": "USB-powered controller"
+        },
+        {
+         "id": "U2",
+         "module": "ssd1306-oled-128x64-i2c",
+         "role": "Humidity display"
+        },
+        {
+         "id": "U3",
+         "module": "bme280-i2c-4pin",
+         "role": "Relative humidity sensor"
+        }
+       ],
+       "nets": [
+        {
+         "id": "power",
+         "name": "+3V3",
+         "kind": "power",
+         "volts": 3.3,
+         "why": "The controller supplies 3.3 V to the display and humidity sensor.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "3V3"
+          },
+          {
+           "part": "U2",
+           "pin": "VCC"
+          },
+          {
+           "part": "U3",
+           "pin": "VIN"
+          }
+         ]
+        },
+        {
+         "id": "ground",
+         "name": "GND",
+         "kind": "ground",
+         "why": "All modules share a common ground reference.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GND"
+          },
+          {
+           "part": "U2",
+           "pin": "GND"
+          },
+          {
+           "part": "U3",
+           "pin": "GND"
+          }
+         ]
+        },
+        {
+         "id": "scl",
+         "name": "I2C_SCL",
+         "kind": "signal",
+         "why": "GPIO22 supplies the shared I2C clock to the display and sensor.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO22"
+          },
+          {
+           "part": "U2",
+           "pin": "SCL"
+          },
+          {
+           "part": "U3",
+           "pin": "SCL"
+          }
+         ]
+        },
+        {
+         "id": "sda",
+         "name": "I2C_SDA",
+         "kind": "signal",
+         "why": "GPIO21 exchanges I2C data with the display and sensor.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO21"
+          },
+          {
+           "part": "U2",
+           "pin": "SDA"
+          },
+          {
+           "part": "U3",
+           "pin": "SDA"
+          }
+         ]
+        }
+       ],
+       "notes": [
+        {
+         "level": "info",
+         "text": "Power the controller through USB; the sensor must receive only 3.3 V.",
+         "part": "U3"
+        },
+        {
+         "level": "info",
+         "text": "Keep the sensor exposed to room air and away from controller heat.",
+         "part": "U3"
+        },
+        {
+         "level": "warning",
+         "text": "Check breakout pin labels and that I2C pull-ups connect to 3.3 V, not 5 V."
+        }
+       ],
+       "behavior": [
+        {
+         "label": "Refresh interval",
+         "value": "2 s between humidity readings"
+        },
+        {
+         "label": "Display resolution",
+         "value": "1% RH for the relative humidity readout"
+        }
+       ]
+      },
+      "summary": "A USB-powered desk display that shows room humidity on a small OLED screen.",
+      "custom_firmware": "Use the temp-monitor board layout with custom humidity-only firmware. Initialize I2C on SDA GPIO21 and SCL GPIO22 at 100 kHz. Detect the BME280 at 0x76 or 0x77 and SSD1306 128x64 OLED at 0x3C or 0x3D. Measure relative humidity every 2 seconds and display a large rounded integer with '% RH' and a smaller 'Humidity' label. Do not display temperature or pressure and do not implement alarms or controls. Until the first valid measurement show 'Reading...'. On sensor initialization failure or invalid/failed readings, replace the number with '-- % RH' and 'Sensor error', retrying sensor initialization every 2 seconds until recovered; never retain a stale number as a current reading."
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 3,
+    "outputTokens": 690,
+    "cacheReadTokens": 4108,
+    "cacheWriteTokens": 0
+   },
+   "ms": 10923,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_cPIX26khaGePrE76IGd6pJAw",
+     "name": "get_pin_map",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 635,
+    "outputTokens": 15,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0
+   },
+   "ms": 1179,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_C6iYa9qcOAOdPRBEprLfJIzJ",
+     "name": "compile_app",
+     "input": {
+      "source": "#include <Arduino.h>\n#include \"pins.h\"\n#include <Wire.h>\n#include <Adafruit_GFX.h>\n#include <Adafruit_SSD1306.h>\n#include <Adafruit_BME280.h>\n#include <math.h>\n\nAdafruit_SSD1306 display(128, 64, &Wire, -1, 100000, 100000);\nAdafruit_BME280 bme;\nbool screenOK = false, sensorOK = false;\nuint8_t sensorAddress = 0;\nunsigned long lastSample = 0;\nenum { READING, VALID, ERROR } state = READING;\nfloat humidity = 0;\n\nbool present(uint8_t address) {\n  Wire.beginTransmission(address);\n  return Wire.endTransmission() == 0;\n}\n\nvoid draw() {\n  if (!screenOK) return;\n  display.clearDisplay();\n  display.setTextColor(SSD1306_WHITE);\n  display.setTextSize(1);\n  display.setCursor(40, 0);\n  display.print(\"Humidity\");\n  if (state == READING) {\n    display.setTextSize(2);\n    display.setCursor(4, 26);\n    display.print(\"Reading...\");\n  } else {\n    String number = state == VALID ? String((int)(humidity + 0.5f)) : String(\"--\");\n    int width = number.length() * 18 + 54;\n    int x = (128 - width) / 2;\n    display.setTextSize(3);\n    display.setCursor(x, 24);\n    display.print(number);\n    display.setTextSize(2);\n    display.setCursor(x + number.length() * 18 + 6, 31);\n    display.print(\"% RH\");\n    if (state == ERROR) {\n      display.setTextSize(1);\n      display.setCursor(28, 54);\n      display.print(\"Sensor error\");\n    }\n  }\n  display.display();\n}\n\nvoid initScreen() {\n  uint8_t address = present(0x3C) ? 0x3C : (present(0x3D) ? 0x3D : 0);\n  screenOK = address && display.begin(SSD1306_SWITCHCAPVCC, address, true, false);\n  if (screenOK) {\n    display.setTextWrap(false);\n    Serial.printf(\"OLED detected at 0x%02X\\n\", address);\n    draw();\n  } else Serial.println(\"OLED error: missing or initialization failed\");\n}\n\nvoid initSensor() {\n  sensorOK = false;\n  for (uint8_t address = 0x76; address <= 0x77; ++address) {\n    if (present(address) && bme.begin(address, &Wire)) {\n      sensorAddress = address;\n      sensorOK = true;\n      Serial.printf(\"BME280 detected at 0x%02X\\n\", address);\n      break;\n    }\n  }\n  if (!sensorOK) {\n    state = ERROR;\n    Serial.println(\"Sensor error: BME280 initialization failed\");\n  }\n}\n\nvoid setup() {\n  Serial.begin(115200);\n  Wire.begin(PIN_I2C_SDA, PIN_I2C_SCL, 100000);\n  Wire.setTimeOut(50);\n  initScreen();\n  Serial.println(\"Reading...\");\n  initSensor();\n  draw();\n  lastSample = millis();\n}\n\nvoid loop() {\n  unsigned long now = millis();\n  if (now - lastSample < 2000) return;\n  lastSample = now;\n  if (!screenOK) initScreen();\n  if (!sensorOK) {\n    initSensor();\n    // Allow the newly initialized sensor a full measurement interval.\n    draw();\n    return;\n  }\n  float value = present(sensorAddress) ? bme.readHumidity() : NAN;\n  if (!present(sensorAddress) || !isfinite(value) || value < 0 || value > 100) {\n    sensorOK = false;\n    state = ERROR;\n    Serial.println(\"Sensor error: humidity reading failed\");\n  } else {\n    humidity = value;\n    state = VALID;\n    Serial.printf(\"Humidity: %.1f %% RH\\n\", humidity);\n  }\n  draw();\n}\n",
+      "summary": "The firmware detects the OLED and BME280 on 100 kHz I2C, displays rounded humidity every two seconds, and replaces failed readings with a sensor error while retrying initialization."
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 1305,
+    "outputTokens": 1493,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0
+   },
+   "ms": 22802,
+   "model": "gpt-6.1-sol"
+  }
+ ]
+}

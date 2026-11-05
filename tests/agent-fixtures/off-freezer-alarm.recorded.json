@@ -1,0 +1,220 @@
+{
+ "id": "off-freezer-alarm",
+ "provenance": "recorded",
+ "brief": "A freezer door alarm that beeps if it warms above -10 degrees",
+ "calls": [
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_FoMyWXNNDuRAjktUDuK4xcrm",
+     "name": "list_catalog",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 28,
+    "outputTokens": 14,
+    "cacheReadTokens": 1127,
+    "cacheWriteTokens": 0
+   },
+   "ms": 1140,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_wpuOB3VUCKU3Om4mGaAXv8BU",
+     "name": "get_module",
+     "input": {
+      "id": "esp32-devkitc-v4"
+     }
+    },
+    {
+     "type": "tool_use",
+     "id": "call_2pLbAvIetaknUZWzzXFQ9oGj",
+     "name": "get_module",
+     "input": {
+      "id": "ds18b20-to92"
+     }
+    },
+    {
+     "type": "tool_use",
+     "id": "call_QIoSo83qJHB57V9q8xtseWHY",
+     "name": "get_module",
+     "input": {
+      "id": "resistor-axial"
+     }
+    },
+    {
+     "type": "tool_use",
+     "id": "call_qt1YtQKaI1DC6yY8E8x9tjTQ",
+     "name": "get_module",
+     "input": {
+      "id": "piezo-passive-12mm"
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 1048,
+    "outputTokens": 97,
+    "cacheReadTokens": 1152,
+    "cacheWriteTokens": 0
+   },
+   "ms": 1865,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_JNZuu9wMZ5PJxSjpiJEDFtJN",
+     "name": "propose_design",
+     "input": {
+      "design": {
+       "schema": "moki.circuit-preview/1",
+       "template": "temp-monitor",
+       "title": "Freezer warm-temperature alarm",
+       "parts": [
+        {
+         "id": "U1",
+         "module": "esp32-devkitc-v4",
+         "role": "USB-powered controller"
+        },
+        {
+         "id": "U3",
+         "module": "ds18b20-to92",
+         "role": "Freezer temperature sensor"
+        },
+        {
+         "id": "R1",
+         "module": "resistor-axial",
+         "role": "One-Wire pull-up",
+         "value": "4.7 kΩ"
+        },
+        {
+         "id": "BZ1",
+         "module": "piezo-passive-12mm",
+         "role": "Warm-temperature audible alarm"
+        }
+       ],
+       "nets": [
+        {
+         "id": "pwr",
+         "name": "+3V3",
+         "kind": "power",
+         "volts": 3.3,
+         "why": "Supplies the temperature sensor and its data pull-up from the USB-powered controller.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "3V3"
+          },
+          {
+           "part": "U3",
+           "pin": "VDD"
+          },
+          {
+           "part": "R1",
+           "pin": "1"
+          }
+         ]
+        },
+        {
+         "id": "gnd",
+         "name": "GND",
+         "kind": "ground",
+         "why": "Provides the common return for the sensor and piezo.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GND"
+          },
+          {
+           "part": "U3",
+           "pin": "GND"
+          },
+          {
+           "part": "BZ1",
+           "pin": "-"
+          }
+         ]
+        },
+        {
+         "id": "temperature",
+         "name": "ONEWIRE_DQ",
+         "kind": "signal",
+         "why": "Connects the temperature sensor data line to GPIO4 with a 4.7 kΩ pull-up.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO4"
+          },
+          {
+           "part": "U3",
+           "pin": "DQ"
+          },
+          {
+           "part": "R1",
+           "pin": "2"
+          }
+         ]
+        },
+        {
+         "id": "alarm",
+         "name": "PIEZO",
+         "kind": "signal",
+         "why": "Lets GPIO25 drive the piezo when the temperature exceeds the alert threshold.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO25"
+          },
+          {
+           "part": "BZ1",
+           "pin": "+"
+          }
+         ]
+        }
+       ],
+       "notes": [
+        {
+         "level": "info",
+         "text": "This alarm senses warming above the threshold, not whether the freezer door is open."
+        },
+        {
+         "level": "warning",
+         "part": "U3",
+         "text": "The bare TO-92 sensor is not waterproof; protect its connections from condensation and check its pin order."
+        },
+        {
+         "level": "info",
+         "text": "Place the sensor inside the freezer and keep the USB-powered controller and piezo outside; check that the sensor cable does not compromise the door seal."
+        }
+       ],
+       "behavior": [
+        {
+         "label": "Alert above",
+         "value": "-10 °C"
+        }
+       ]
+      },
+      "summary": "A USB-powered freezer alarm that beeps when the temperature rises above -10 °C."
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 1768,
+    "outputTokens": 540,
+    "cacheReadTokens": 2197,
+    "cacheWriteTokens": 0
+   },
+   "ms": 6791,
+   "model": "gpt-6.1-sol"
+  }
+ ]
+}

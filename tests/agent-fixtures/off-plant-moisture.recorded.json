@@ -1,0 +1,49 @@
+{
+ "id": "off-plant-moisture",
+ "provenance": "recorded",
+ "brief": "plant moisture alarm",
+ "calls": [
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_rGspeVy4aG9Vfd0uE94QbJCP",
+     "name": "list_catalog",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 18,
+    "outputTokens": 14,
+    "cacheReadTokens": 1267,
+    "cacheWriteTokens": 0
+   },
+   "ms": 2073,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_3CWvh7oK1vBpru8Rr1RdjHqR",
+     "name": "decline",
+     "input": {
+      "message": "A plant moisture alarm needs a soil-moisture probe, which is not in the catalog. The available air-humidity sensor cannot measure soil moisture.",
+      "closest": "A USB-powered temperature monitor with a screen and an audible high-temperature alert.",
+      "closest_brief": "Build a USB-powered temperature monitor with a screen and a piezo that sounds when the temperature rises above 30 °C."
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 1048,
+    "outputTokens": 93,
+    "cacheReadTokens": 1282,
+    "cacheWriteTokens": 0
+   },
+   "ms": 3313,
+   "model": "gpt-6.1-sol"
+  }
+ ]
+}

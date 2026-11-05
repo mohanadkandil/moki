@@ -1,0 +1,259 @@
+{
+ "id": "fw-compile-fix",
+ "provenance": "recorded",
+ "brief": "A reaction-time game",
+ "calls": [
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "scripted-design",
+     "name": "propose_design",
+     "input": {
+      "design": {
+       "schema": "moki.circuit-preview/1",
+       "template": "focus-timer",
+       "title": "Focus timer",
+       "parts": [
+        {
+         "id": "U1",
+         "module": "esp32-devkitc-v4",
+         "role": "Runs the firmware and supplies 3.3 V from its USB-powered regulator."
+        },
+        {
+         "id": "U2",
+         "module": "ssd1306-oled-128x64-i2c",
+         "role": "Shows the time left in the session."
+        },
+        {
+         "id": "SW1",
+         "module": "ky040-rotary-encoder",
+         "role": "Turn to set the time; press to start or pause."
+        }
+       ],
+       "nets": [
+        {
+         "id": "+3V3",
+         "name": "+3V3",
+         "kind": "power",
+         "endpoints": [
+          {
+           "part": "SW1",
+           "pin": "VCC"
+          },
+          {
+           "part": "U1",
+           "pin": "3V3"
+          },
+          {
+           "part": "U2",
+           "pin": "VCC"
+          }
+         ],
+         "why": "One 3.3 V supply from the ESP32 board’s regulator. Every part here runs at 3.3 V, so its signals match the ESP32’s 3.3 V logic.",
+         "volts": 3.3
+        },
+        {
+         "id": "GND",
+         "name": "GND",
+         "kind": "ground",
+         "endpoints": [
+          {
+           "part": "SW1",
+           "pin": "GND"
+          },
+          {
+           "part": "U1",
+           "pin": "GND"
+          },
+          {
+           "part": "U2",
+           "pin": "GND"
+          }
+         ],
+         "why": "Common ground. Every signal is measured against it, so every part must share it."
+        },
+        {
+         "id": "I2C_SCL",
+         "name": "I2C_SCL",
+         "kind": "signal",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO22"
+          },
+          {
+           "part": "U2",
+           "pin": "SCL"
+          }
+         ],
+         "why": "I²C clock, driven by the ESP32. GPIO22 is the default SCL pin of the ESP32 Arduino Wire library. Most breakouts already carry pull-up resistors."
+        },
+        {
+         "id": "I2C_SDA",
+         "name": "I2C_SDA",
+         "kind": "signal",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO21"
+          },
+          {
+           "part": "U2",
+           "pin": "SDA"
+          }
+         ],
+         "why": "I²C data, in both directions. GPIO21 is the default SDA pin of the ESP32 Arduino Wire library."
+        },
+        {
+         "id": "ENC_A",
+         "name": "ENC_A",
+         "kind": "signal",
+         "endpoints": [
+          {
+           "part": "SW1",
+           "pin": "CLK"
+          },
+          {
+           "part": "U1",
+           "pin": "GPIO32"
+          }
+         ],
+         "why": "Encoder channel A (CLK). With channel B it tells which way the knob turned: whichever changes first gives the direction."
+        },
+        {
+         "id": "ENC_B",
+         "name": "ENC_B",
+         "kind": "signal",
+         "endpoints": [
+          {
+           "part": "SW1",
+           "pin": "DT"
+          },
+          {
+           "part": "U1",
+           "pin": "GPIO33"
+          }
+         ],
+         "why": "Encoder channel B (DT), read alongside channel A. GPIO32 and 33 are plain input/output pins with no boot role."
+        },
+        {
+         "id": "ENC_SW",
+         "name": "ENC_SW",
+         "kind": "signal",
+         "endpoints": [
+          {
+           "part": "SW1",
+           "pin": "SW"
+          },
+          {
+           "part": "U1",
+           "pin": "GPIO27"
+          }
+         ],
+         "why": "The knob’s push switch connects this pin to ground when pressed. Enable INPUT_PULLUP on GPIO27 so it reads high when released."
+        }
+       ],
+       "notes": [
+        {
+         "level": "warning",
+         "part": "U2",
+         "text": "This board expects GND-VCC-SCL-SDA. Check yours before plugging it in."
+        },
+        {
+         "level": "warning",
+         "part": "SW1",
+         "text": "Power the encoder from 3V3, not 5V: its pull-ups would otherwise put 5 V on ESP32 inputs."
+        }
+       ],
+       "behavior": [
+        {
+         "label": "Session length",
+         "value": "25 min"
+        },
+        {
+         "label": "Knob",
+         "value": "Turn to adjust, press to start or pause"
+        }
+       ]
+      },
+      "summary": "A reaction-time game.",
+      "custom_firmware": "Wait a random 2 to 6 seconds, beep if there is a buzzer, show GO on the screen, then time how long the knob button takes to be pressed and show it in milliseconds."
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0
+   },
+   "ms": 0,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "scripted-bad-source",
+     "name": "compile_app",
+     "input": {
+      "summary": "A deliberately broken first try.",
+      "source": "#include <Arduino.h>\n#include \"pins.h\"\nvoid setup() { pinMode(PIN_SW1_SW, INPUT_PULLUP); showScore(0); }\nvoid loop() { undefinedThing++; }\n"
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0
+   },
+   "ms": 0,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_6051f6cfaf954d30922ccb87235dec50",
+     "name": "get_pin_map",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 643,
+    "outputTokens": 15,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0
+   },
+   "ms": 1766,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_n3OHVtdZ6Weu3jX00WJXYBDC",
+     "name": "compile_app",
+     "input": {
+      "source": "#include <Arduino.h>\n#include \"pins.h\"\n#include <Wire.h>\n#include <Adafruit_GFX.h>\n#include <Adafruit_SSD1306.h>\n\nAdafruit_SSD1306 display(128, 64, &Wire, -1);\nbool screenOK = false;\nbool rawPressed = false, pressed = false;\nuint32_t changedAt = 0, waitAt = 0, waitFor = 0, goAt = 0;\nuint8_t state = 0; // Waiting, timing, result\n\nvoid show(const char *text, const char *hint) {\n  Serial.println(text);\n  Serial.println(hint);\n  if (!screenOK) return;\n  display.clearDisplay();\n  display.setTextColor(SSD1306_WHITE);\n  display.setTextSize(2);\n  display.setCursor(0, 8);\n  display.println(text);\n  display.setTextSize(1);\n  display.setCursor(0, 48);\n  display.println(hint);\n  display.display();\n}\n\nvoid startRound() {\n  state = 0;\n  show(\"Wait...\", \"Press only after GO\");\n  waitFor = random(2000, 6001);\n  waitAt = millis();\n}\n\nvoid setup() {\n  Serial.begin(115200);\n  pinMode(PIN_SW1_SW, INPUT_PULLUP);\n  pinMode(PIN_SW1_CLK, INPUT_PULLUP);\n  pinMode(PIN_SW1_DT, INPUT_PULLUP);\n  Wire.begin(PIN_I2C_SDA, PIN_I2C_SCL);\n  Wire.beginTransmission(0x3C);\n  bool found = Wire.endTransmission() == 0;\n  screenOK = found && display.begin(SSD1306_SWITCHCAPVCC, 0x3C);\n  if (!screenOK) Serial.println(\"Screen unavailable; using Serial.\");\n  Serial.println(\"No buzzer fitted. Reaction timer ready.\");\n  randomSeed(micros());\n  rawPressed = pressed = digitalRead(PIN_SW1_SW) == LOW;\n  changedAt = millis();\n  startRound();\n}\n\nvoid loop() {\n  uint32_t now = millis();\n  bool reading = digitalRead(PIN_SW1_SW) == LOW;\n  if (reading != rawPressed) {\n    rawPressed = reading;\n    changedAt = now;\n  }\n  bool pushed = false;\n  if (rawPressed != pressed && uint32_t(now - changedAt) >= 30) {\n    pressed = rawPressed;\n    pushed = pressed;\n  }\n  if (pushed) {\n    if (state == 2) {\n      startRound();\n      return;\n    }\n    if (state == 0) {\n      state = 2;\n      show(\"Too soon!\", \"Release, press to retry\");\n    } else {\n      char text[24];\n      snprintf(text, sizeof(text), \"%lu ms\", (unsigned long)(changedAt - goAt));\n      state = 2;\n      show(text, \"Press to try again\");\n    }\n  }\n  if (state == 0 && uint32_t(now - waitAt) >= waitFor) {\n    if (rawPressed || pressed) {\n      state = 2;\n      show(\"Too soon!\", \"Release, press to retry\");\n    } else {\n      show(\"GO\", \"Press the knob!\");\n      goAt = millis();\n      state = 1;\n    }\n  }\n}\n",
+      "summary": "The firmware waits a random 2–6 seconds, displays GO, measures the knob-button reaction time in milliseconds, and lets another press start a new round."
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 1348,
+    "outputTokens": 1109,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0
+   },
+   "ms": 16227,
+   "model": "gpt-6.1-sol"
+  }
+ ]
+}

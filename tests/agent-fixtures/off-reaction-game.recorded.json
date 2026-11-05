@@ -1,0 +1,313 @@
+{
+ "id": "off-reaction-game",
+ "provenance": "recorded",
+ "brief": "A reaction-time game",
+ "calls": [
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_C0AvGn8oJc73NBIiFq5g4zIh",
+     "name": "list_catalog",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 3,
+    "outputTokens": 14,
+    "cacheReadTokens": 1282,
+    "cacheWriteTokens": 0
+   },
+   "ms": 2747,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_yZEGQVRGUxX0bicCEk18nLDV",
+     "name": "get_module",
+     "input": {
+      "id": "esp32-devkitc-v4"
+     }
+    },
+    {
+     "type": "tool_use",
+     "id": "call_p9yJufCCebXW5Oy1ImFN02Hj",
+     "name": "get_module",
+     "input": {
+      "id": "ssd1306-oled-128x64-i2c"
+     }
+    },
+    {
+     "type": "tool_use",
+     "id": "call_X7g1cZQ9NGmyIPCzDzYZku0m",
+     "name": "get_module",
+     "input": {
+      "id": "ky040-rotary-encoder"
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 3,
+    "outputTokens": 85,
+    "cacheReadTokens": 2327,
+    "cacheWriteTokens": 0
+   },
+   "ms": 2591,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "text",
+     "text": "I’ll use the knob’s push button and a small screen. Press to start, wait for “GO!”, then press again to see your reaction time. Early presses count as false starts. This needs custom game firmware.\n\n"
+    },
+    {
+     "type": "tool_use",
+     "id": "call_20XLUyswIUB4hKDsOnXjPQ8B",
+     "name": "propose_design",
+     "input": {
+      "design": {
+       "schema": "moki.circuit-preview/1",
+       "template": "focus-timer",
+       "title": "Reaction-time game",
+       "parts": [
+        {
+         "id": "U1",
+         "module": "esp32-devkitc-v4",
+         "role": "USB-powered game controller"
+        },
+        {
+         "id": "U2",
+         "module": "ssd1306-oled-128x64-i2c",
+         "role": "Start cue and reaction-time display"
+        },
+        {
+         "id": "SW1",
+         "module": "ky040-rotary-encoder",
+         "role": "Push-button game input"
+        }
+       ],
+       "nets": [
+        {
+         "id": "p3v3",
+         "name": "+3V3",
+         "kind": "power",
+         "volts": 3.3,
+         "why": "The USB-powered controller supplies 3.3 V to the screen and encoder.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "3V3"
+          },
+          {
+           "part": "U2",
+           "pin": "VCC"
+          },
+          {
+           "part": "SW1",
+           "pin": "VCC"
+          }
+         ]
+        },
+        {
+         "id": "gnd",
+         "name": "GND",
+         "kind": "ground",
+         "why": "All modules share the controller ground reference.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GND"
+          },
+          {
+           "part": "U2",
+           "pin": "GND"
+          },
+          {
+           "part": "SW1",
+           "pin": "GND"
+          }
+         ]
+        },
+        {
+         "id": "scl",
+         "name": "I2C_SCL",
+         "kind": "signal",
+         "why": "GPIO22 clocks screen updates over I2C.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO22"
+          },
+          {
+           "part": "U2",
+           "pin": "SCL"
+          }
+         ]
+        },
+        {
+         "id": "sda",
+         "name": "I2C_SDA",
+         "kind": "signal",
+         "why": "GPIO21 exchanges display data over I2C.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO21"
+          },
+          {
+           "part": "U2",
+           "pin": "SDA"
+          }
+         ]
+        },
+        {
+         "id": "button",
+         "name": "BUTTON",
+         "kind": "signal",
+         "why": "GPIO25 reads the active-low push button with its internal pull-up enabled.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO25"
+          },
+          {
+           "part": "SW1",
+           "pin": "SW"
+          }
+         ]
+        },
+        {
+         "id": "encoder_dt",
+         "name": "ENCODER_DT",
+         "kind": "signal",
+         "why": "GPIO26 connects the encoder data output although rotation is unused in the game.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO26"
+          },
+          {
+           "part": "SW1",
+           "pin": "DT"
+          }
+         ]
+        },
+        {
+         "id": "encoder_clk",
+         "name": "ENCODER_CLK",
+         "kind": "signal",
+         "why": "GPIO27 connects the encoder clock output although rotation is unused in the game.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO27"
+          },
+          {
+           "part": "SW1",
+           "pin": "CLK"
+          }
+         ]
+        }
+       ],
+       "notes": [
+        {
+         "level": "info",
+         "text": "Power the controller through USB only; all connected modules use 3.3 V."
+        },
+        {
+         "level": "info",
+         "text": "Enable the internal pull-up on GPIO25 for the encoder push button.",
+         "part": "SW1"
+        },
+        {
+         "level": "warning",
+         "text": "Check the OLED address on the real module; it is usually 0x3C and sometimes 0x3D.",
+         "part": "U2"
+        },
+        {
+         "level": "info",
+         "text": "Reaction times are game estimates, not calibrated measurements; screen refresh and button timing add uncertainty."
+        }
+       ],
+       "behavior": [
+        {
+         "label": "Random wait",
+         "value": "2–5 s before the visual GO cue"
+        },
+        {
+         "label": "Result resolution",
+         "value": "1 ms displayed reaction-time increments"
+        },
+        {
+         "label": "Button debounce",
+         "value": "20 ms stable release before another press can be accepted"
+        },
+        {
+         "label": "Response timeout",
+         "value": "10 s after GO before showing no response"
+        }
+       ]
+      },
+      "summary": "A USB-powered reaction-time game with a screen and a push button that shows your response time and catches false starts.",
+      "custom_firmware": "Implement a visual reaction-time game, not the fixed focus timer. Use SSD1306 128x64 I2C on SDA GPIO21 and SCL GPIO22, auto-detect 0x3C then 0x3D. KY-040 push switch on GPIO25 is active-low with INPUT_PULLUP; configure GPIO26/27 as encoder inputs but ignore rotation. Show 'Press to start' at boot. A new button press starts a round; require button release stable for 20 ms before arming the waiting phase, so holding the start button cannot trigger a response. Display 'Wait...' and choose a fresh random delay uniformly from 2000 to 5000 ms using the ESP32 random source. Any falling edge during this waiting phase is a false start; display 'Too soon!' and offer another round after release. At expiry, display a large 'GO!' and begin reaction timing at completion of the cue's I2C transfer, using a monotonic microsecond clock. Capture the first button falling edge with a GPIO interrupt and timestamp it promptly, including while screen transfers run; do not delay timestamping for debounce. Handle captured edges at the cue boundary consistently, treating edges before cue transfer completion as false starts. Ignore subsequent switch bounce until released continuously for 20 ms. On a valid response display elapsed time rounded to integer milliseconds and session best valid result. If there is no response within 10 s, display 'No response' without updating best. Results remain visible until a fresh press starts the next round after stable release. Do not block button capture with display updates. Rotation has no effect. Keep all game state in RAM; no networking or persistent storage. Results are approximate because of OLED refresh latency and switch timing."
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 3,
+    "outputTokens": 1182,
+    "cacheReadTokens": 4124,
+    "cacheWriteTokens": 0
+   },
+   "ms": 21097,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_LPP0xVT8kQWsyW0VfBdTVcdH",
+     "name": "get_pin_map",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 826,
+    "outputTokens": 15,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0
+   },
+   "ms": 1160,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_EmswPGbbKymaMPx3PuR9qd9w",
+     "name": "compile_app",
+     "input": {
+      "source": "#include <Arduino.h>\n#include \"pins.h\"\n#include <Wire.h>\n#include <Adafruit_GFX.h>\n#include <Adafruit_SSD1306.h>\n\nextern \"C\" int64_t esp_timer_get_time(void);\nextern \"C\" uint32_t esp_random(void);\n\nAdafruit_SSD1306 display(128, 64, &Wire, -1);\nportMUX_TYPE mux = portMUX_INITIALIZER_UNLOCKED;\nvolatile bool buttonHigh = false, capturing = false, pending = false;\nvolatile int64_t highSince = 0, edgeTime = 0;\nbool screenOK = false;\nuint8_t address = 0;\nint64_t frameEnd = 0, cueTime = 0;\nuint32_t waitStart = 0, waitLength = 0, best = 0;\nbool haveBest = false;\nenum Phase { READY, RELEASE_START, WAITING, REACTION };\nPhase phase = READY;\n\nvoid IRAM_ATTR buttonISR() {\n  int64_t now = esp_timer_get_time();\n  bool high = digitalRead(PIN_SW1_SW) == HIGH;\n  portENTER_CRITICAL_ISR(&mux);\n  if (high && !buttonHigh) highSince = now;\n  if (!high && buttonHigh && capturing && !pending) {\n    edgeTime = now;\n    pending = true;\n    capturing = false; // First edge wins; subsequent bounce cannot replace it.\n  }\n  buttonHigh = high;\n  portEXIT_CRITICAL_ISR(&mux);\n}\n\nbool probe(uint8_t a) {\n  Wire.beginTransmission(a);\n  return Wire.endTransmission() == 0;\n}\n\nbool present() {\n  display.display(); // Interrupts remain enabled throughout the OLED transfer.\n  frameEnd = esp_timer_get_time();\n  if (!probe(address)) {\n    screenOK = false;\n    Serial.println(\"OLED communication failed; visual game stopped.\");\n  }\n  return screenOK;\n}\n\nvoid text(const char *title, const char *line = \"\") {\n  Serial.println(title);\n  if (*line) Serial.println(line);\n  display.clearDisplay();\n  display.setTextSize(1);\n  display.setCursor(0, 0);\n  display.println(title);\n  display.println();\n  display.println(line);\n  display.setCursor(0, 46);\n  display.println(\"Approximate timing\");\n  display.println(\"OLED / switch latency\");\n  present();\n}\n\nvoid stopCapture() {\n  portENTER_CRITICAL(&mux);\n  capturing = false;\n  pending = false;\n  portEXIT_CRITICAL(&mux);\n}\n\nbool armAfterRelease() {\n  bool armed = false;\n  portENTER_CRITICAL(&mux);\n  if (buttonHigh && esp_timer_get_time() - highSince >= 20000) {\n    pending = false;\n    capturing = true;\n    armed = true;\n  }\n  portEXIT_CRITICAL(&mux);\n  return armed;\n}\n\nbool takeEdge(int64_t &t) {\n  portENTER_CRITICAL(&mux);\n  bool found = pending;\n  if (found) {\n    t = edgeTime;\n    pending = false;\n  }\n  portEXIT_CRITICAL(&mux);\n  return found;\n}\n\nvoid result(const char *message) {\n  stopCapture();\n  phase = READY;\n  text(message, \"Release, then press\");\n}\n\nvoid response(int64_t t) {\n  if (t < cueTime) {\n    result(\"Too soon!\");\n  } else if (t - cueTime > 10000000LL) {\n    result(\"No response\");\n  } else {\n    uint32_t ms = (uint32_t)((t - cueTime + 500) / 1000);\n    if (!haveBest || ms < best) { best = ms; haveBest = true; }\n    char title[32], detail[64];\n    snprintf(title, sizeof(title), \"Time: %lu ms\", (unsigned long)ms);\n    snprintf(detail, sizeof(detail), \"Best: %lu ms\\nRelease, then press\", (unsigned long)best);\n    stopCapture();\n    phase = READY;\n    text(title, detail);\n  }\n}\n\nvoid setup() {\n  Serial.begin(115200);\n  pinMode(PIN_SW1_SW, INPUT_PULLUP);\n  pinMode(PIN_SW1_CLK, INPUT_PULLUP);\n  pinMode(PIN_SW1_DT, INPUT_PULLUP); // Rotation deliberately ignored.\n  buttonHigh = digitalRead(PIN_SW1_SW) == HIGH;\n  highSince = esp_timer_get_time();\n  attachInterrupt(digitalPinToInterrupt(PIN_SW1_SW), buttonISR, CHANGE);\n  Wire.begin(PIN_I2C_SDA, PIN_I2C_SCL);\n  Wire.setTimeOut(25);\n  if (probe(0x3C)) address = 0x3C;\n  else if (probe(0x3D)) address = 0x3D;\n  if (!address) {\n    Serial.println(\"OLED not found at 0x3C or 0x3D; visual game unavailable.\");\n    return;\n  }\n  screenOK = display.begin(SSD1306_SWITCHCAPVCC, address, true, false);\n  if (!screenOK) {\n    Serial.println(\"OLED initialization failed; visual game unavailable.\");\n    return;\n  }\n  display.setTextColor(SSD1306_WHITE);\n  display.setTextWrap(true);\n  Serial.printf(\"OLED at 0x%02X. Timing is approximate; no persistent storage.\\n\", address);\n  text(\"Press to start\");\n}\n\nvoid loop() {\n  if (!screenOK) return;\n  int64_t t;\n  switch (phase) {\n    case READY: {\n      // Do not re-arm a first edge that has already been captured.\n      portENTER_CRITICAL(&mux);\n      bool idle = !capturing && !pending;\n      portEXIT_CRITICAL(&mux);\n      if (idle) armAfterRelease();\n      if (takeEdge(t)) {\n        phase = RELEASE_START;\n        text(\"Release button\", \"Next: wait for GO!\");\n      }\n      break;\n    }\n    case RELEASE_START: {\n      // Rejection sampling gives exactly uniform inclusive 2000..5000 ms.\n      // A rejected draw is retried on the next loop, never in a busy loop.\n      uint32_t r = esp_random();\n      if (r < (-uint32_t(3001)) % 3001) return;\n      if (armAfterRelease()) {\n        waitLength = 2000 + r % 3001;\n        waitStart = millis();\n        phase = WAITING;\n        text(\"Wait...\");\n      }\n      break;\n    }\n    case WAITING:\n      if (takeEdge(t)) {\n        result(\"Too soon!\");\n      } else if ((uint32_t)(millis() - waitStart) >= waitLength) {\n        display.clearDisplay();\n        display.setTextSize(4);\n        display.setCursor(28, 16);\n        display.print(\"GO!\");\n        if (!present()) return;\n        cueTime = frameEnd; // Immediately after the complete cue transfer.\n        phase = REACTION;\n        // Includes edges captured during the cue transfer, not debounced ones.\n        if (takeEdge(t)) response(t);\n      }\n      break;\n    case REACTION:\n      if (takeEdge(t)) {\n        response(t);\n      } else if (esp_timer_get_time() - cueTime >= 10000000LL) {\n        // Recheck under the same lock used by the ISR before declaring timeout.\n        portENTER_CRITICAL(&mux);\n        bool found = pending;\n        if (found) { t = edgeTime; pending = false; }\n        capturing = false;\n        portEXIT_CRITICAL(&mux);\n        if (found) response(t);\n        else result(\"No response\");\n      }\n      break;\n  }\n}\n",
+      "summary": "The firmware runs a visual reaction-time game with interrupt-timestamped button presses, randomized waits, false-start detection, a ten-second timeout, and a RAM-only session best."
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 1486,
+    "outputTokens": 3204,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0
+   },
+   "ms": 53834,
+   "model": "gpt-6.1-sol"
+  }
+ ]
+}

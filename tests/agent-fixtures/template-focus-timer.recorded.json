@@ -1,0 +1,294 @@
+{
+ "id": "template-focus-timer",
+ "provenance": "recorded",
+ "brief": "A 25 minute focus timer with a small screen and a knob, and a buzzer that beeps when time is up",
+ "calls": [
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_XeOlKmQzYt7trVBOHXOEUFWB",
+     "name": "list_catalog",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 1306,
+    "outputTokens": 14,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0
+   },
+   "ms": 1645,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_5QZ44PSfYKo7tHxxfsA3fuwt",
+     "name": "get_module",
+     "input": {
+      "id": "esp32-devkitc-v4"
+     }
+    },
+    {
+     "type": "tool_use",
+     "id": "call_FLNmSk11GBBee39e9VWhGFlP",
+     "name": "get_module",
+     "input": {
+      "id": "ssd1306-oled-128x64-i2c"
+     }
+    },
+    {
+     "type": "tool_use",
+     "id": "call_HJugDrceHVBJHwdsTMVCAjxi",
+     "name": "get_module",
+     "input": {
+      "id": "ky040-rotary-encoder"
+     }
+    },
+    {
+     "type": "tool_use",
+     "id": "call_BU3Vo6QDHs2rEh5GmUvRvgzh",
+     "name": "get_module",
+     "input": {
+      "id": "piezo-passive-12mm"
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 1048,
+    "outputTokens": 105,
+    "cacheReadTokens": 1303,
+    "cacheWriteTokens": 0
+   },
+   "ms": 1717,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "text",
+     "text": "I’ll use the standard focus-timer program: a 25-minute countdown on a 0.96-inch screen, a push knob to set and start it, and a piezo beep when time is up. Power comes from USB.\n\n"
+    },
+    {
+     "type": "tool_use",
+     "id": "call_9i29wzm9aUlH88sWzg5Z10S4",
+     "name": "propose_design",
+     "input": {
+      "design": {
+       "schema": "moki.circuit-preview/1",
+       "template": "focus-timer",
+       "title": "25-minute focus timer",
+       "parts": [
+        {
+         "id": "U1",
+         "module": "esp32-devkitc-v4",
+         "role": "USB-powered controller"
+        },
+        {
+         "id": "U2",
+         "module": "ssd1306-oled-128x64-i2c",
+         "role": "Small screen showing the countdown"
+        },
+        {
+         "id": "SW1",
+         "module": "ky040-rotary-encoder",
+         "role": "Push knob to set and start the timer"
+        },
+        {
+         "id": "BZ1",
+         "module": "piezo-passive-12mm",
+         "role": "Beeps when the countdown ends"
+        }
+       ],
+       "nets": [
+        {
+         "id": "power",
+         "name": "+3V3",
+         "kind": "power",
+         "volts": 3.3,
+         "why": "The USB-powered controller supplies 3.3 V to the screen and encoder.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "3V3"
+          },
+          {
+           "part": "U2",
+           "pin": "VCC"
+          },
+          {
+           "part": "SW1",
+           "pin": "VCC"
+          }
+         ]
+        },
+        {
+         "id": "ground",
+         "name": "GND",
+         "kind": "ground",
+         "why": "All modules share the controller ground for power and signal return.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GND"
+          },
+          {
+           "part": "U2",
+           "pin": "GND"
+          },
+          {
+           "part": "SW1",
+           "pin": "GND"
+          },
+          {
+           "part": "BZ1",
+           "pin": "-"
+          }
+         ]
+        },
+        {
+         "id": "i2c-scl",
+         "name": "I2C_SCL",
+         "kind": "signal",
+         "why": "GPIO22 supplies the I2C clock to the screen.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO22"
+          },
+          {
+           "part": "U2",
+           "pin": "SCL"
+          }
+         ]
+        },
+        {
+         "id": "i2c-sda",
+         "name": "I2C_SDA",
+         "kind": "signal",
+         "why": "GPIO21 exchanges I2C display data with the screen.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO21"
+          },
+          {
+           "part": "U2",
+           "pin": "SDA"
+          }
+         ]
+        },
+        {
+         "id": "encoder-clk",
+         "name": "ENCODER_CLK",
+         "kind": "signal",
+         "why": "GPIO18 reads the encoder clock signal to detect knob movement.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO18"
+          },
+          {
+           "part": "SW1",
+           "pin": "CLK"
+          }
+         ]
+        },
+        {
+         "id": "encoder-dt",
+         "name": "ENCODER_DT",
+         "kind": "signal",
+         "why": "GPIO19 reads the encoder data signal to determine knob direction.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO19"
+          },
+          {
+           "part": "SW1",
+           "pin": "DT"
+          }
+         ]
+        },
+        {
+         "id": "encoder-sw",
+         "name": "ENCODER_SW",
+         "kind": "signal",
+         "why": "GPIO23 reads the knob push switch using its internal pull-up.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO23"
+          },
+          {
+           "part": "SW1",
+           "pin": "SW"
+          }
+         ]
+        },
+        {
+         "id": "buzzer",
+         "name": "BUZZER",
+         "kind": "signal",
+         "why": "GPIO25 drives the passive piezo with a tone when the countdown ends.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO25"
+          },
+          {
+           "part": "BZ1",
+           "pin": "+"
+          }
+         ]
+        }
+       ],
+       "notes": [
+        {
+         "level": "info",
+         "text": "Enable the internal pull-up on GPIO23 for the encoder push switch.",
+         "part": "SW1"
+        },
+        {
+         "level": "info",
+         "text": "Power the device through the controller USB port; all external modules use 3.3 V.",
+         "part": "U1"
+        },
+        {
+         "level": "warning",
+         "text": "Check the screen I2C address on the real module; it is usually 0x3C but may be 0x3D.",
+         "part": "U2"
+        },
+        {
+         "level": "info",
+         "text": "Use the catalog passive piezo, not a magnetic buzzer that needs a driver.",
+         "part": "BZ1"
+        }
+       ],
+       "behavior": [
+        {
+         "label": "Session length",
+         "value": "25 min"
+        }
+       ]
+      },
+      "summary": "A USB-powered 25-minute focus timer with a small screen, a push knob to set and start it, and a buzzer that beeps when time is up."
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 1926,
+    "outputTokens": 904,
+    "cacheReadTokens": 2348,
+    "cacheWriteTokens": 0
+   },
+   "ms": 10611,
+   "model": "gpt-6.1-sol"
+  }
+ ]
+}

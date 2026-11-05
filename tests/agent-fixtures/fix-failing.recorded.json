@@ -1,0 +1,277 @@
+{
+ "id": "fix-failing",
+ "provenance": "recorded",
+ "brief": "A temperature monitor with two pull-ups",
+ "calls": [
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "toolu_0071",
+     "name": "propose_design",
+     "input": {
+      "design": {
+       "schema": "moki.circuit-preview/1",
+       "template": "temp-monitor",
+       "title": "Deliberately failing monitor",
+       "parts": [
+        {
+         "id": "U1",
+         "module": "esp32-devkitc-v4",
+         "role": "Runs the firmware and supplies 3.3 V from its USB-powered regulator."
+        },
+        {
+         "id": "U2",
+         "module": "ssd1306-oled-128x64-i2c",
+         "role": "Shows the current temperature."
+        },
+        {
+         "id": "U3",
+         "module": "ds18b20-to92",
+         "role": "Measures temperature on a One-Wire bus."
+        },
+        {
+         "id": "R1",
+         "module": "resistor-axial",
+         "value": "4.7 kΩ",
+         "role": "Pull-up for the One-Wire data line."
+        },
+        {
+         "id": "R2",
+         "module": "resistor-axial",
+         "value": "4.7 kΩ",
+         "role": "A second pull-up, placed by codegen on top of R1. Deliberately failing bench case."
+        }
+       ],
+       "nets": [
+        {
+         "id": "+3V3",
+         "name": "+3V3",
+         "kind": "power",
+         "endpoints": [
+          {
+           "part": "R1",
+           "pin": "1"
+          },
+          {
+           "part": "U1",
+           "pin": "3V3"
+          },
+          {
+           "part": "U2",
+           "pin": "VCC"
+          },
+          {
+           "part": "U3",
+           "pin": "VDD"
+          },
+          {
+           "part": "R2",
+           "pin": "2"
+          }
+         ],
+         "why": "One 3.3 V supply from the ESP32 board’s regulator. Every part here runs at 3.3 V, so its signals match the ESP32’s 3.3 V logic.",
+         "volts": 3.3
+        },
+        {
+         "id": "GND",
+         "name": "GND",
+         "kind": "ground",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GND"
+          },
+          {
+           "part": "U2",
+           "pin": "GND"
+          },
+          {
+           "part": "U3",
+           "pin": "GND"
+          }
+         ],
+         "why": "Common ground. Every signal is measured against it, so every part must share it."
+        },
+        {
+         "id": "ONEWIRE",
+         "name": "ONEWIRE",
+         "kind": "signal",
+         "endpoints": [
+          {
+           "part": "R1",
+           "pin": "2"
+          },
+          {
+           "part": "U1",
+           "pin": "GPIO4"
+          },
+          {
+           "part": "U3",
+           "pin": "DQ"
+          },
+          {
+           "part": "R2",
+           "pin": "1"
+          }
+         ],
+         "why": "One-Wire data. The sensor and the ESP32 only ever pull this line low; the 4.7 kΩ resistor pulls it back up to 3.3 V between bits. GPIO4 has no boot role."
+        },
+        {
+         "id": "I2C_SCL",
+         "name": "I2C_SCL",
+         "kind": "signal",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO22"
+          },
+          {
+           "part": "U2",
+           "pin": "SCL"
+          }
+         ],
+         "why": "I²C clock, driven by the ESP32. GPIO22 is the default SCL pin of the ESP32 Arduino Wire library. Most breakouts already carry pull-up resistors."
+        },
+        {
+         "id": "I2C_SDA",
+         "name": "I2C_SDA",
+         "kind": "signal",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO21"
+          },
+          {
+           "part": "U2",
+           "pin": "SDA"
+          }
+         ],
+         "why": "I²C data, in both directions. GPIO21 is the default SDA pin of the ESP32 Arduino Wire library."
+        }
+       ],
+       "notes": [
+        {
+         "level": "warning",
+         "part": "U2",
+         "text": "This board expects GND-VCC-SCL-SDA. Check yours before plugging it in."
+        },
+        {
+         "level": "info",
+         "part": "U3",
+         "text": "A waterproof DS18B20 probe uses the same three wires (usually red VDD, black GND, yellow DQ)."
+        }
+       ],
+       "behavior": [
+        {
+         "label": "Sensor",
+         "value": "DS18B20 over One-Wire"
+        }
+       ]
+      },
+      "summary": "A deliberately failing design: R2 lands on R1."
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0
+   },
+   "ms": 0,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_8OU8raHV9Nb1w5A0JMcQm0de",
+     "name": "read_job",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 635,
+    "outputTokens": 14,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0
+   },
+   "ms": 1640,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_g8sAr4r2hgxOjH6I8q8KEgBx",
+     "name": "get_design",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 1670,
+    "outputTokens": 14,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0
+   },
+   "ms": 1451,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_Pc9lOYCyxmHo0xzt4FyM5PGp",
+     "name": "get_module",
+     "input": {
+      "id": "resistor-axial"
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 771,
+    "outputTokens": 38,
+    "cacheReadTokens": 1667,
+    "cacheWriteTokens": 0
+   },
+   "ms": 2253,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_0eekXodXRUzxumaGADHpC1od",
+     "name": "propose_fix",
+     "input": {
+      "reason": "The DRC error is \"R1 overlaps R2: 2 footprint overlaps, 2 pad clearance violations. Move the components apart.\" It also reports \"Autorouting was skipped because 1 PCB placement error was found. Fix the placement errors or set placementDrcChecksDisabled to true to route anyway.\" Move only R2 to (30, -24) mm to separate the resistors and let routing run. Its 2.6 × 16 mm footprint fits within the 75 × 75 mm board at this position. Keep all parts and connections unchanged; the next build will check placement and routing in software.",
+      "edits": {
+       "placements": [
+        {
+         "refdes": "R2",
+         "x": 30,
+         "y": -24,
+         "rotation": 0
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 127,
+    "outputTokens": 266,
+    "cacheReadTokens": 2435,
+    "cacheWriteTokens": 0
+   },
+   "ms": 6022,
+   "model": "gpt-6.1-sol"
+  }
+ ]
+}

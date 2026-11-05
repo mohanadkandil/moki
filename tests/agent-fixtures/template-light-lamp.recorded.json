@@ -1,0 +1,240 @@
+{
+ "id": "template-light-lamp",
+ "provenance": "recorded",
+ "brief": "A little lamp that turns on when the room gets darker than 30%",
+ "calls": [
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_W6IACNAalZz11VZGzvDsgNis",
+     "name": "list_catalog",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 28,
+    "outputTokens": 14,
+    "cacheReadTokens": 1127,
+    "cacheWriteTokens": 0
+   },
+   "ms": 3781,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_XtBW1hiTfQ7wprw7H2AwNlnU",
+     "name": "get_module",
+     "input": {
+      "id": "esp32-devkitc-v4"
+     }
+    },
+    {
+     "type": "tool_use",
+     "id": "call_k6qk7hZDk3ULwE1E2T9SJ1zt",
+     "name": "get_module",
+     "input": {
+      "id": "ldr-5mm"
+     }
+    },
+    {
+     "type": "tool_use",
+     "id": "call_qQeZkgNWDOak1jZ4rGxFxaEZ",
+     "name": "get_module",
+     "input": {
+      "id": "resistor-axial"
+     }
+    },
+    {
+     "type": "tool_use",
+     "id": "call_YktXsdn4R7slPcHmk0gQAvFO",
+     "name": "get_module",
+     "input": {
+      "id": "led-5mm-amber"
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 1048,
+    "outputTokens": 94,
+    "cacheReadTokens": 1152,
+    "cacheWriteTokens": 0
+   },
+   "ms": 1735,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_SVnVSCqub82ocjyQH8uTIW15",
+     "name": "propose_design",
+     "input": {
+      "design": {
+       "schema": "moki.circuit-preview/1",
+       "template": "light-lamp",
+       "title": "30% darkness-triggered little lamp",
+       "parts": [
+        {
+         "id": "U1",
+         "module": "esp32-devkitc-v4",
+         "role": "USB-powered controller"
+        },
+        {
+         "id": "LDR1",
+         "module": "ldr-5mm",
+         "role": "Room brightness sensor"
+        },
+        {
+         "id": "R1",
+         "module": "resistor-axial",
+         "role": "Light sensor divider resistor",
+         "value": "10 kΩ"
+        },
+        {
+         "id": "R2",
+         "module": "resistor-axial",
+         "role": "LED current-limiting resistor",
+         "value": "330 Ω"
+        },
+        {
+         "id": "D1",
+         "module": "led-5mm-amber",
+         "role": "Little amber lamp"
+        }
+       ],
+       "nets": [
+        {
+         "id": "pwr",
+         "name": "+3V3",
+         "kind": "power",
+         "volts": 3.3,
+         "why": "The USB-powered controller supplies 3.3 V to the light sensor divider.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "3V3"
+          },
+          {
+           "part": "LDR1",
+           "pin": "1"
+          }
+         ]
+        },
+        {
+         "id": "gnd",
+         "name": "GND",
+         "kind": "ground",
+         "why": "Ground provides the common return for the light sensor divider and LED.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GND"
+          },
+          {
+           "part": "R1",
+           "pin": "2"
+          },
+          {
+           "part": "D1",
+           "pin": "K"
+          }
+         ]
+        },
+        {
+         "id": "light",
+         "name": "LIGHT_SENSE",
+         "kind": "signal",
+         "analog": true,
+         "why": "GPIO32 reads the divider voltage, which falls as the room gets darker.",
+         "endpoints": [
+          {
+           "part": "LDR1",
+           "pin": "2"
+          },
+          {
+           "part": "R1",
+           "pin": "1"
+          },
+          {
+           "part": "U1",
+           "pin": "GPIO32"
+          }
+         ]
+        },
+        {
+         "id": "led_drive",
+         "name": "LED_DRIVE",
+         "kind": "signal",
+         "why": "GPIO18 switches the lamp through its current-limiting resistor.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO18"
+          },
+          {
+           "part": "R2",
+           "pin": "1"
+          }
+         ]
+        },
+        {
+         "id": "led_anode",
+         "name": "LED_ANODE",
+         "kind": "signal",
+         "why": "The series resistor limits current flowing into the LED anode.",
+         "endpoints": [
+          {
+           "part": "R2",
+           "pin": "2"
+          },
+          {
+           "part": "D1",
+           "pin": "A"
+          }
+         ]
+        }
+       ],
+       "notes": [
+        {
+         "level": "info",
+         "text": "The 30% threshold refers to the sensor range, not a calibrated percentage of room illumination."
+        },
+        {
+         "level": "info",
+         "text": "This lamp uses one small amber LED, not a room-lighting bulb.",
+         "part": "D1"
+        },
+        {
+         "level": "warning",
+         "text": "Keep the LED light away from the sensor to avoid affecting the brightness reading.",
+         "part": "LDR1"
+        }
+       ],
+       "behavior": [
+        {
+         "label": "Switch on below",
+         "value": "30% of the sensor range"
+        }
+       ]
+      },
+      "summary": "A little USB-powered amber LED lamp that turns on when room brightness falls below 30% of the sensor range."
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 1725,
+    "outputTokens": 601,
+    "cacheReadTokens": 2197,
+    "cacheWriteTokens": 0
+   },
+   "ms": 6510,
+   "model": "gpt-6.1-sol"
+  }
+ ]
+}

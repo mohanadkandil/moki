@@ -1,0 +1,244 @@
+{
+ "id": "off-reading-nook",
+ "provenance": "recorded",
+ "brief": "A reading nook glow that comes on at dusk",
+ "calls": [
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_88yAfyKex7O7PLkXnzNwcmCa",
+     "name": "list_catalog",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 23,
+    "outputTokens": 14,
+    "cacheReadTokens": 1127,
+    "cacheWriteTokens": 0
+   },
+   "ms": 1171,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_GN1Lo8ypgfUtGuhwkG5860bB",
+     "name": "get_module",
+     "input": {
+      "id": "esp32-devkitc-v4"
+     }
+    },
+    {
+     "type": "tool_use",
+     "id": "call_qOigfARZXeLOMnnWv7CtCIgs",
+     "name": "get_module",
+     "input": {
+      "id": "ldr-5mm"
+     }
+    },
+    {
+     "type": "tool_use",
+     "id": "call_apBdJVW9hYliq08zw1vIbTLA",
+     "name": "get_module",
+     "input": {
+      "id": "resistor-axial"
+     }
+    },
+    {
+     "type": "tool_use",
+     "id": "call_LQBBfy4KzmjDinF3uy9cwkXe",
+     "name": "get_module",
+     "input": {
+      "id": "led-5mm-amber"
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 1048,
+    "outputTokens": 94,
+    "cacheReadTokens": 1147,
+    "cacheWriteTokens": 0
+   },
+   "ms": 1818,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_9f7bEinc6t6reTlkjEAYJeOJ",
+     "name": "propose_design",
+     "input": {
+      "design": {
+       "schema": "moki.circuit-preview/1",
+       "template": "light-lamp",
+       "title": "Reading nook dusk glow",
+       "parts": [
+        {
+         "id": "U1",
+         "module": "esp32-devkitc-v4",
+         "role": "USB-powered controller"
+        },
+        {
+         "id": "LDR1",
+         "module": "ldr-5mm",
+         "role": "Ambient light sensor"
+        },
+        {
+         "id": "R1",
+         "module": "resistor-axial",
+         "role": "Light sensor divider resistor",
+         "value": "10 kΩ"
+        },
+        {
+         "id": "R2",
+         "module": "resistor-axial",
+         "role": "LED current-limiting resistor",
+         "value": "330 Ω"
+        },
+        {
+         "id": "D1",
+         "module": "led-5mm-amber",
+         "role": "Soft amber nook glow"
+        }
+       ],
+       "nets": [
+        {
+         "id": "power",
+         "name": "+3V3",
+         "kind": "power",
+         "volts": 3.3,
+         "why": "The USB-powered controller supplies 3.3 V to the light sensor divider.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "3V3"
+          },
+          {
+           "part": "LDR1",
+           "pin": "1"
+          }
+         ]
+        },
+        {
+         "id": "ground",
+         "name": "GND",
+         "kind": "ground",
+         "why": "Ground provides the return path for the sensor divider and amber LED.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GND"
+          },
+          {
+           "part": "R1",
+           "pin": "2"
+          },
+          {
+           "part": "D1",
+           "pin": "K"
+          }
+         ]
+        },
+        {
+         "id": "light",
+         "name": "LIGHT_SENSE",
+         "kind": "signal",
+         "analog": true,
+         "why": "GPIO32 reads the divider voltage, which falls as the nook gets darker.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO32"
+          },
+          {
+           "part": "LDR1",
+           "pin": "2"
+          },
+          {
+           "part": "R1",
+           "pin": "1"
+          }
+         ]
+        },
+        {
+         "id": "led_drive",
+         "name": "LED_DRIVE",
+         "kind": "signal",
+         "why": "GPIO25 switches the amber LED through its current-limiting resistor.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO25"
+          },
+          {
+           "part": "R2",
+           "pin": "1"
+          }
+         ]
+        },
+        {
+         "id": "led_anode",
+         "name": "LED_ANODE",
+         "kind": "signal",
+         "why": "The series resistor limits the current reaching the LED anode.",
+         "endpoints": [
+          {
+           "part": "R2",
+           "pin": "2"
+          },
+          {
+           "part": "D1",
+           "pin": "A"
+          }
+         ]
+        }
+       ],
+       "notes": [
+        {
+         "level": "info",
+         "text": "This is a small amber accent glow, not a lamp bright enough for reading."
+        },
+        {
+         "level": "warning",
+         "text": "Check the dusk threshold in your nook; the sensor range is not calibrated in lux.",
+         "part": "LDR1"
+        },
+        {
+         "level": "info",
+         "text": "Keep the light sensor out of the LED's direct light to avoid switching back and forth.",
+         "part": "LDR1"
+        },
+        {
+         "level": "info",
+         "text": "Power the controller through its USB port."
+        }
+       ],
+       "behavior": [
+        {
+         "label": "Switch on below",
+         "value": "25% of the sensor range"
+        }
+       ]
+      },
+      "summary": "A USB-powered amber accent glow for your reading nook that switches on when the light sensor detects dusk."
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 1725,
+    "outputTokens": 613,
+    "cacheReadTokens": 2192,
+    "cacheWriteTokens": 0
+   },
+   "ms": 7507,
+   "model": "gpt-6.1-sol"
+  }
+ ]
+}

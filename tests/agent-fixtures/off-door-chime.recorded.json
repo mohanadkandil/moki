@@ -1,0 +1,49 @@
+{
+ "id": "off-door-chime",
+ "provenance": "recorded",
+ "brief": "A door chime that plays a tone when the door opens",
+ "calls": [
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_1shXOdTJBjwyLw045qVgw0aw",
+     "name": "list_catalog",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 26,
+    "outputTokens": 14,
+    "cacheReadTokens": 1267,
+    "cacheWriteTokens": 0
+   },
+   "ms": 1327,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_7KKsTBEvk83l9mKZfWqawGh0",
+     "name": "decline",
+     "input": {
+      "message": "A door-opening sensor, such as a magnetic reed switch, is missing from the catalog, so I can’t build a chime triggered by the door opening.",
+      "closest": "The closest buildable option is a USB-powered chime triggered by pressing the rotary encoder’s button, using custom firmware.",
+      "closest_brief": "Build a USB-powered chime that plays a short tone on a piezo when I press the rotary encoder’s button."
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 1048,
+    "outputTokens": 103,
+    "cacheReadTokens": 1290,
+    "cacheWriteTokens": 0
+   },
+   "ms": 3204,
+   "model": "gpt-6.1-sol"
+  }
+ ]
+}

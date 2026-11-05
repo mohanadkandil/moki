@@ -1,0 +1,89 @@
+{
+ "id": "edit-firmware-bar",
+ "provenance": "recorded",
+ "brief": "show a progress bar on the screen while it counts down",
+ "calls": [
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_LF6x2EzBDBEID0nrCPUphOeD",
+     "name": "get_design",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 997,
+    "outputTokens": 14,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0
+   },
+   "ms": 1437,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_jJvYqB3Tqmw0sSB1ax06hyIn",
+     "name": "change_firmware",
+     "input": {
+      "request": "Keep the existing focus timer behavior and hardware. Add a progress bar to the SSD1306 OLED while counting down, keeping the remaining time visible. Show elapsed session progress: empty at the start and full at zero remaining, calculated against the duration selected when the session starts. Freeze the bar while paused and reset it for a new session. Preserve the rotary encoder's duration adjustment and press-to-start/pause controls.",
+      "summary": "Add an on-screen progress bar during the focus countdown."
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 1781,
+    "outputTokens": 113,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0
+   },
+   "ms": 3986,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_DcGNLGpSrftumNxvJH9O5C6L",
+     "name": "get_pin_map",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 1649,
+    "outputTokens": 15,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0
+   },
+   "ms": 1068,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_yFzSdnCpLs5M9epttarKaS5P",
+     "name": "compile_app",
+     "input": {
+      "source": "#include <Arduino.h>\n#include \"pins.h\"\n#include <Wire.h>\n#include <Adafruit_GFX.h>\n#include <Adafruit_SSD1306.h>\n#include <stdio.h>\n#include <string.h>\n\nAdafruit_SSD1306 display(128, 64, &Wire, -1);\nbool displayReady = false;\nuint32_t configuredMinutes = 25, remainingMs = 25 * 60000UL;\nuint32_t sessionMs = 25 * 60000UL;\nbool running = false, sessionStarted = false;\nuint32_t lastTick = 0, lastReport = 0, switchChangedAt = 0;\nuint8_t encoderPrevious = 0;\nint8_t encoderSteps = 0;\nbool switchRaw = HIGH, switchStable = HIGH;\n\nvoid screen(const char* clock) {\n  if (!displayReady) return;\n  // Keep the session's original duration through every pause/resume.\n  int progress = sessionStarted ? (uint64_t)(sessionMs - remainingMs) * 124 / sessionMs : 0;\n  const char* detail = running ? \"Press to pause\" : remainingMs == 0 ? \"Done - press restart\" : \"Turn mins / Press go\";\n  static char lastClock[16] = \"\";\n  static int lastProgress = -1, lastState = -1;\n  int state = running ? 1 : remainingMs == 0 ? 2 : 0;\n  if (!strcmp(clock, lastClock) && progress == lastProgress && state == lastState) return;\n  snprintf(lastClock, sizeof(lastClock), \"%s\", clock);\n  lastProgress = progress;\n  lastState = state;\n  display.clearDisplay();\n  display.setTextColor(SSD1306_WHITE);\n  display.setTextSize(1); display.setCursor(0, 0); display.println(\"FOCUS TIMER\");\n  display.setTextSize(2); display.setCursor(0, 20); display.println(clock);\n  display.drawRect(0, 41, 128, 8, SSD1306_WHITE);\n  if (progress) display.fillRect(2, 43, progress, 4, SSD1306_WHITE);\n  display.setTextSize(1); display.setCursor(0, 52); display.println(detail);\n  display.display();\n}\n\nvoid setup() {\n  Serial.begin(115200);\n  Wire.begin(PIN_I2C_SDA, PIN_I2C_SCL);\n  Wire.beginTransmission(0x3C);\n  bool oledPresent = Wire.endTransmission() == 0;\n  displayReady = oledPresent && display.begin(SSD1306_SWITCHCAPVCC, 0x3C);\n  if (!displayReady) Serial.println(\"OLED unavailable or init failed; using serial output\");\n  Serial.println(\"Focus timer: turn to set minutes, press to start/pause\");\n  pinMode(PIN_SW1_CLK, INPUT_PULLUP);\n  pinMode(PIN_SW1_DT, INPUT_PULLUP);\n  pinMode(PIN_SW1_SW, INPUT_PULLUP);\n  encoderPrevious = (digitalRead(PIN_SW1_CLK) << 1) | digitalRead(PIN_SW1_DT);\n  lastTick = millis();\n}\n\nvoid loop() {\n  uint32_t now = millis();\n  uint32_t elapsed = now - lastTick;\n  lastTick = now;\n  if (running) {\n    if (elapsed >= remainingMs) {\n      remainingMs = 0;\n      running = false;\n      Serial.println(\"Session complete\");\n    } else remainingMs -= elapsed;\n  }\n  static const int8_t transitions[] = {0,-1,1,0, 1,0,0,-1, -1,0,0,1, 0,1,-1,0};\n  uint8_t current = (digitalRead(PIN_SW1_CLK) << 1) | digitalRead(PIN_SW1_DT);\n  encoderSteps += transitions[(encoderPrevious << 2) | current];\n  encoderPrevious = current;\n  if (encoderSteps >= 4 || encoderSteps <= -4) {\n    if (!running) {\n      int next = int(configuredMinutes) + (encoderSteps > 0 ? 1 : -1);\n      configuredMinutes = constrain(next, 1, 180);\n      remainingMs = configuredMinutes * 60000UL;\n      sessionMs = remainingMs;\n      sessionStarted = false;\n    }\n    encoderSteps = 0;\n  }\n  bool raw = digitalRead(PIN_SW1_SW);\n  if (raw != switchRaw) { switchRaw = raw; switchChangedAt = now; }\n  if (raw != switchStable && now - switchChangedAt >= 30) {\n    switchStable = raw;\n    if (switchStable == LOW) {\n      if (remainingMs == 0) {\n        remainingMs = configuredMinutes * 60000UL;\n        sessionStarted = false;\n      }\n      if (!sessionStarted) {\n        sessionMs = remainingMs;\n        sessionStarted = true;\n      }\n      running = !running;\n      Serial.println(running ? \"Running\" : \"Paused\");\n    }\n  }\n  uint32_t seconds = (remainingMs + 999) / 1000;\n  char clock[16];\n  snprintf(clock, sizeof(clock), \"%02lu:%02lu\", (unsigned long)(seconds / 60), (unsigned long)(seconds % 60));\n  screen(clock);\n  if (now - lastReport >= 1000) {\n    lastReport = now;\n    Serial.println(clock);\n  }\n}\n",
+      "summary": "Preserves the adjustable focus timer and press-to-start/pause controls while adding an elapsed-session progress bar that freezes when paused and resets for each new session."
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 708,
+    "outputTokens": 1436,
+    "cacheReadTokens": 1646,
+    "cacheWriteTokens": 0
+   },
+   "ms": 14470,
+   "model": "gpt-6.1-sol"
+  }
+ ]
+}

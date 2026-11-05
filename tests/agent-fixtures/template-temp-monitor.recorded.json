@@ -1,0 +1,269 @@
+{
+ "id": "template-temp-monitor",
+ "provenance": "recorded",
+ "brief": "A temperature monitor with a probe and a screen that alerts above 28 °C",
+ "calls": [
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_SkDWIGo32kGumoKPxFfBkltz",
+     "name": "list_catalog",
+     "input": {}
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 30,
+    "outputTokens": 14,
+    "cacheReadTokens": 1127,
+    "cacheWriteTokens": 0
+   },
+   "ms": 1029,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_bbdpnMyStJ3aCs1MhoNx2Qwi",
+     "name": "get_module",
+     "input": {
+      "id": "esp32-devkitc-v4"
+     }
+    },
+    {
+     "type": "tool_use",
+     "id": "call_EogN2PvOC1HzU7cH0x9CFNfS",
+     "name": "get_module",
+     "input": {
+      "id": "ssd1306-oled-128x64-i2c"
+     }
+    },
+    {
+     "type": "tool_use",
+     "id": "call_mg29ev8iKeUvHf6ffMqkqNzA",
+     "name": "get_module",
+     "input": {
+      "id": "ds18b20-to92"
+     }
+    },
+    {
+     "type": "tool_use",
+     "id": "call_IXPjCk0EWuen0mjIRC2KTcdI",
+     "name": "get_module",
+     "input": {
+      "id": "resistor-axial"
+     }
+    },
+    {
+     "type": "tool_use",
+     "id": "call_vK7osQf85vCflhQAXBkgevTv",
+     "name": "get_module",
+     "input": {
+      "id": "piezo-passive-12mm"
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 1048,
+    "outputTokens": 150,
+    "cacheReadTokens": 1154,
+    "cacheWriteTokens": 0
+   },
+   "ms": 2826,
+   "model": "gpt-6.1-sol"
+  },
+  {
+   "content": [
+    {
+     "type": "tool_use",
+     "id": "call_CZIlImNhKBUcUKg0Mun6GIFk",
+     "name": "propose_design",
+     "input": {
+      "design": {
+       "schema": "moki.circuit-preview/1",
+       "template": "temp-monitor",
+       "title": "Temperature monitor with 28 °C alert",
+       "parts": [
+        {
+         "id": "U1",
+         "module": "esp32-devkitc-v4",
+         "role": "USB-powered controller"
+        },
+        {
+         "id": "U2",
+         "module": "ssd1306-oled-128x64-i2c",
+         "role": "Temperature screen"
+        },
+        {
+         "id": "U3",
+         "module": "ds18b20-to92",
+         "role": "Temperature sensor"
+        },
+        {
+         "id": "R1",
+         "module": "resistor-axial",
+         "role": "One-Wire pull-up",
+         "value": "4.7 kΩ"
+        },
+        {
+         "id": "BZ1",
+         "module": "piezo-passive-12mm",
+         "role": "Audible high-temperature alert"
+        }
+       ],
+       "nets": [
+        {
+         "id": "power",
+         "name": "+3V3",
+         "kind": "power",
+         "volts": 3.3,
+         "why": "The USB-powered controller supplies 3.3 V to the screen, sensor and data pull-up.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "3V3"
+          },
+          {
+           "part": "U2",
+           "pin": "VCC"
+          },
+          {
+           "part": "U3",
+           "pin": "VDD"
+          },
+          {
+           "part": "R1",
+           "pin": "1"
+          }
+         ]
+        },
+        {
+         "id": "ground",
+         "name": "GND",
+         "kind": "ground",
+         "why": "All powered parts and the piezo share the controller ground.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GND"
+          },
+          {
+           "part": "U2",
+           "pin": "GND"
+          },
+          {
+           "part": "U3",
+           "pin": "GND"
+          },
+          {
+           "part": "BZ1",
+           "pin": "-"
+          }
+         ]
+        },
+        {
+         "id": "scl",
+         "name": "I2C_SCL",
+         "kind": "signal",
+         "why": "GPIO22 supplies the screen's I2C clock.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO22"
+          },
+          {
+           "part": "U2",
+           "pin": "SCL"
+          }
+         ]
+        },
+        {
+         "id": "sda",
+         "name": "I2C_SDA",
+         "kind": "signal",
+         "why": "GPIO21 exchanges display data over I2C.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO21"
+          },
+          {
+           "part": "U2",
+           "pin": "SDA"
+          }
+         ]
+        },
+        {
+         "id": "temperature",
+         "name": "ONEWIRE_DQ",
+         "kind": "signal",
+         "why": "GPIO4 reads the temperature sensor over One-Wire with a 4.7 kΩ pull-up to 3.3 V.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO4"
+          },
+          {
+           "part": "U3",
+           "pin": "DQ"
+          },
+          {
+           "part": "R1",
+           "pin": "2"
+          }
+         ]
+        },
+        {
+         "id": "alert",
+         "name": "PIEZO",
+         "kind": "signal",
+         "why": "GPIO25 drives the piezo for the high-temperature alert.",
+         "endpoints": [
+          {
+           "part": "U1",
+           "pin": "GPIO25"
+          },
+          {
+           "part": "BZ1",
+           "pin": "+"
+          }
+         ]
+        }
+       ],
+       "notes": [
+        {
+         "level": "warning",
+         "text": "The catalog sensor is a bare TO-92 part, not a sealed immersion probe; keep it dry.",
+         "part": "U3"
+        },
+        {
+         "level": "info",
+         "text": "Check the screen's I2C address and the sensor's pin orientation on the real parts."
+        }
+       ],
+       "behavior": [
+        {
+         "label": "Alert above",
+         "value": "28 °C"
+        }
+       ]
+      },
+      "summary": "A USB-powered temperature monitor with a DS18B20 sensor, a screen and an audible alert above 28 °C."
+     }
+    }
+   ],
+   "stopReason": "tool_use",
+   "usage": {
+    "inputTokens": 2018,
+    "outputTokens": 676,
+    "cacheReadTokens": 2199,
+    "cacheWriteTokens": 0
+   },
+   "ms": 6687,
+   "model": "gpt-6.1-sol"
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+/** Routing-disabled diagnostic; never a routed/native DRC acceptance receipt. */
+import {createElement as e} from 'react';
+import {RootCircuit} from 'tscircuit';
+import {readFile,writeFile} from 'node:fs/promises';
+import {resolve,dirname} from 'node:path';
+import {resolvePlanBlocks,catalogPart} from '../../src/blocks/library';
+import {planGraph} from '../../src/blocks/graph';
+import {schematicHash} from '../../src/blocks/review';
+import {inspectBlockPadGeometry} from '../../src/blocks/test-block';
+import {ensurePart} from './imported';
+import {nativePart} from './schematic';
+import {legalizePlanGraph} from './legalize';
+const path=resolve(process.argv[2]!),plan=JSON.parse(await readFile(path,'utf8'));
+const blocks=resolvePlanBlocks(plan),imports=new Map();
+let graph=planGraph(plan,blocks);
+for(const p of graph.parts)if(!imports.has(p.part))imports.set(p.part,await ensurePart(p.part,catalogPart(p.part.lcsc,p.part.catalogReceipt)));
+const legalized=legalizePlanGraph(plan,graph,imports);graph=legalized.graph;
+await writeFile(resolve(dirname(path),'pad-port-plan-graph.json'),JSON.stringify(graph,null,2));
+await writeFile(resolve(dirname(path),'pad-port-placement.json'),JSON.stringify(legalized.changes,null,2));
+const map={schema:'moki.import-map/1' as const,inputHash:schematicHash(plan,blocks),parts:graph.parts.map(p=>({ref:p.ref,inst:p.inst,localRef:p.localRef,blockContentHash:p.block.contentHash,lcsc:p.part.lcsc,catalogReceipt:p.part.catalogReceipt,footprintSha256:catalogPart(p.part.lcsc,p.part.catalogReceipt).footprintSha256,pins:Object.fromEntries(imports.get(p.part).pins),omitPads:p.part.omitPads??[]}))};
+const c=new RootCircuit({platform:{routingDisabled:true}});c.add(e('board',{width:plan.board?.widthMm??100,height:plan.board?.heightMm??80,layers:plan.layers,schematicDisabled:true},...graph.parts.map(p=>nativePart(p,imports.get(p.part)))));c.render();await c.renderUntilSettled();
+const circuit=c.getCircuitJson();
+await writeFile(resolve(dirname(path),'pad-port-circuit.json'),JSON.stringify(circuit,null,2));
+const results=plan.blocks.map((i:any)=>{const b=blocks.find(b=>b.id===i.block&&b.version===i.version)!;const{contentHash,status,provenance,...fields}=b;return {inst:i.inst,...inspectBlockPadGeometry({...fields,provenance:{author:provenance.author,...provenance.authorId?{authorId:provenance.authorId}:{}}},plan,blocks,circuit,map)};});
+await writeFile(resolve(dirname(path),'pad-port-diagnostic.json'),JSON.stringify({scope:'routing-disabled physical pad/port identity only',results},null,2));console.log(JSON.stringify(results.map((r:any)=>({inst:r.inst,ok:r.ok,issues:r.issues}))));if(results.some((r:any)=>!r.ok))process.exitCode=2;

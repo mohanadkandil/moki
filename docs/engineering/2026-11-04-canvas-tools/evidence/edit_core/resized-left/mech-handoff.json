@@ -1,0 +1,773 @@
+{
+  "schema": "moki.mech-handoff/1",
+  "source": {
+    "circuitJsonSha256": "7528a292fb0d6ddbc646fc4eec65199e9ece075a20030e2f7f62ebd1ef5ad35c",
+    "label": null
+  },
+  "board": {
+    "widthMm": 120,
+    "heightMm": 120,
+    "thicknessMm": 1.6,
+    "center": {
+      "x": 0,
+      "y": 0
+    },
+    "outline": [
+      {
+        "x": 60,
+        "y": 53
+      },
+      {
+        "x": 59.961653,
+        "y": 53.731699
+      },
+      {
+        "x": 59.847033,
+        "y": 54.455382
+      },
+      {
+        "x": 59.657396,
+        "y": 55.163119
+      },
+      {
+        "x": 59.394818,
+        "y": 55.847157
+      },
+      {
+        "x": 59.062178,
+        "y": 56.5
+      },
+      {
+        "x": 58.663119,
+        "y": 57.114497
+      },
+      {
+        "x": 58.202014,
+        "y": 57.683914
+      },
+      {
+        "x": 57.683914,
+        "y": 58.202014
+      },
+      {
+        "x": 57.114497,
+        "y": 58.663119
+      },
+      {
+        "x": 56.5,
+        "y": 59.062178
+      },
+      {
+        "x": 55.847157,
+        "y": 59.394818
+      },
+      {
+        "x": 55.163119,
+        "y": 59.657396
+      },
+      {
+        "x": 54.455382,
+        "y": 59.847033
+      },
+      {
+        "x": 53.731699,
+        "y": 59.961653
+      },
+      {
+        "x": 53,
+        "y": 60
+      },
+      {
+        "x": -53,
+        "y": 60
+      },
+      {
+        "x": -53.731699,
+        "y": 59.961653
+      },
+      {
+        "x": -54.455382,
+        "y": 59.847033
+      },
+      {
+        "x": -55.163119,
+        "y": 59.657396
+      },
+      {
+        "x": -55.847157,
+        "y": 59.394818
+      },
+      {
+        "x": -56.5,
+        "y": 59.062178
+      },
+      {
+        "x": -57.114497,
+        "y": 58.663119
+      },
+      {
+        "x": -57.683914,
+        "y": 58.202014
+      },
+      {
+        "x": -58.202014,
+        "y": 57.683914
+      },
+      {
+        "x": -58.663119,
+        "y": 57.114497
+      },
+      {
+        "x": -59.062178,
+        "y": 56.5
+      },
+      {
+        "x": -59.394818,
+        "y": 55.847157
+      },
+      {
+        "x": -59.657396,
+        "y": 55.163119
+      },
+      {
+        "x": -59.847033,
+        "y": 54.455382
+      },
+      {
+        "x": -59.961653,
+        "y": 53.731699
+      },
+      {
+        "x": -60,
+        "y": 53
+      },
+      {
+        "x": -60,
+        "y": -53
+      },
+      {
+        "x": -59.961653,
+        "y": -53.731699
+      },
+      {
+        "x": -59.847033,
+        "y": -54.455382
+      },
+      {
+        "x": -59.657396,
+        "y": -55.163119
+      },
+      {
+        "x": -59.394818,
+        "y": -55.847157
+      },
+      {
+        "x": -59.062178,
+        "y": -56.5
+      },
+      {
+        "x": -58.663119,
+        "y": -57.114497
+      },
+      {
+        "x": -58.202014,
+        "y": -57.683914
+      },
+      {
+        "x": -57.683914,
+        "y": -58.202014
+      },
+      {
+        "x": -57.114497,
+        "y": -58.663119
+      },
+      {
+        "x": -56.5,
+        "y": -59.062178
+      },
+      {
+        "x": -55.847157,
+        "y": -59.394818
+      },
+      {
+        "x": -55.163119,
+        "y": -59.657396
+      },
+      {
+        "x": -54.455382,
+        "y": -59.847033
+      },
+      {
+        "x": -53.731699,
+        "y": -59.961653
+      },
+      {
+        "x": -53,
+        "y": -60
+      },
+      {
+        "x": 53,
+        "y": -60
+      },
+      {
+        "x": 53.731699,
+        "y": -59.961653
+      },
+      {
+        "x": 54.455382,
+        "y": -59.847033
+      },
+      {
+        "x": 55.163119,
+        "y": -59.657396
+      },
+      {
+        "x": 55.847157,
+        "y": -59.394818
+      },
+      {
+        "x": 56.5,
+        "y": -59.062178
+      },
+      {
+        "x": 57.114497,
+        "y": -58.663119
+      },
+      {
+        "x": 57.683914,
+        "y": -58.202014
+      },
+      {
+        "x": 58.202014,
+        "y": -57.683914
+      },
+      {
+        "x": 58.663119,
+        "y": -57.114497
+      },
+      {
+        "x": 59.062178,
+        "y": -56.5
+      },
+      {
+        "x": 59.394818,
+        "y": -55.847157
+      },
+      {
+        "x": 59.657396,
+        "y": -55.163119
+      },
+      {
+        "x": 59.847033,
+        "y": -54.455382
+      },
+      {
+        "x": 59.961653,
+        "y": -53.731699
+      },
+      {
+        "x": 60,
+        "y": -53
+      }
+    ],
+    "holes": [
+      {
+        "x": -55.475,
+        "y": -55.475,
+        "diameterMm": 3.2
+      },
+      {
+        "x": -55.475,
+        "y": 55.475,
+        "diameterMm": 3.2
+      },
+      {
+        "x": 55.475,
+        "y": -55.475,
+        "diameterMm": 3.2
+      },
+      {
+        "x": 55.475,
+        "y": 55.475,
+        "diameterMm": 3.2
+      }
+    ]
+  },
+  "parts": [
+    {
+      "id": "BZ1",
+      "module": "piezo-passive-12mm",
+      "name": "Passive piezo transducer, 12 mm",
+      "category": "output",
+      "center": {
+        "x": 18.94,
+        "y": 15
+      },
+      "rotationDeg": 90,
+      "bbox": {
+        "minX": 12.94,
+        "minY": 9,
+        "maxX": 24.94,
+        "maxY": 21
+      },
+      "stack": {
+        "mount": "soldered",
+        "socketMm": 0,
+        "spacerMm": 0,
+        "pcbMm": 0,
+        "componentsMm": 9.5,
+        "topMm": 9.5,
+        "raisedToLid": false
+      },
+      "fit": {
+        "method": "pads",
+        "pins": 2,
+        "maxResidualMm": 0
+      },
+      "blocks": [
+        {
+          "shape": "cylinder",
+          "color": "glass",
+          "label": "piezo",
+          "x": 18.94,
+          "y": 15,
+          "w": 12,
+          "h": 12,
+          "z0": 0,
+          "z1": 9.5,
+          "rotationDeg": 90
+        }
+      ],
+      "confidence": "12 mm body and 9.5 mm height are typical. The catalog pin spacing is 5 mm while many 12 mm transducers use 6.5-7.6 mm, so check the part."
+    },
+    {
+      "id": "R1",
+      "module": "resistor-axial",
+      "name": "Resistor, ¼ W through-hole",
+      "category": "passive",
+      "center": {
+        "x": -31.25,
+        "y": -3.4
+      },
+      "rotationDeg": 0,
+      "bbox": {
+        "minX": -32.55,
+        "minY": -12.4,
+        "maxX": -29.95,
+        "maxY": 5.6
+      },
+      "stack": {
+        "mount": "soldered",
+        "socketMm": 0,
+        "spacerMm": 0,
+        "pcbMm": 0,
+        "componentsMm": 3.2,
+        "topMm": 3.2,
+        "raisedToLid": false
+      },
+      "fit": {
+        "method": "pads",
+        "pins": 2,
+        "maxResidualMm": 0
+      },
+      "blocks": [
+        {
+          "shape": "box",
+          "color": "resistor",
+          "label": "resistor",
+          "x": -31.25,
+          "y": -3.4,
+          "w": 2.4,
+          "h": 7,
+          "z0": 0.8000000000000003,
+          "z1": 3.2,
+          "rotationDeg": 0
+        }
+      ],
+      "confidence": "Standard 1/4 W axial body, lying flat."
+    },
+    {
+      "id": "U1",
+      "module": "esp32-devkitc-v4",
+      "name": "ESP32-DevKitC V4",
+      "category": "controller",
+      "center": {
+        "x": -32.8,
+        "y": -26.86
+      },
+      "rotationDeg": 270,
+      "bbox": {
+        "minX": -61,
+        "minY": -40.81,
+        "maxX": -5.6,
+        "maxY": -12.91
+      },
+      "stack": {
+        "mount": "socketed",
+        "socketMm": 8.5,
+        "spacerMm": 2.54,
+        "pcbMm": 1.6,
+        "componentsMm": 4,
+        "topMm": 16.64,
+        "raisedToLid": false
+      },
+      "fit": {
+        "method": "pads",
+        "pins": 38,
+        "maxResidualMm": 0
+      },
+      "blocks": [
+        {
+          "shape": "box",
+          "color": "socket",
+          "label": "socket left",
+          "x": -35.36,
+          "y": -14.16,
+          "w": 2.54,
+          "h": 48.26,
+          "z0": 0,
+          "z1": 8.5,
+          "rotationDeg": 270
+        },
+        {
+          "shape": "box",
+          "color": "socket",
+          "label": "socket right",
+          "x": -35.36,
+          "y": -39.56,
+          "w": 2.54,
+          "h": 48.26,
+          "z0": 0,
+          "z1": 8.5,
+          "rotationDeg": 270
+        },
+        {
+          "shape": "box",
+          "color": "plastic",
+          "label": "male spacer left",
+          "x": -35.36,
+          "y": -14.16,
+          "w": 2.54,
+          "h": 48.26,
+          "z0": 8.5,
+          "z1": 11.04,
+          "rotationDeg": 270
+        },
+        {
+          "shape": "box",
+          "color": "plastic",
+          "label": "male spacer right",
+          "x": -35.36,
+          "y": -39.56,
+          "w": 2.54,
+          "h": 48.26,
+          "z0": 8.5,
+          "z1": 11.04,
+          "rotationDeg": 270
+        },
+        {
+          "shape": "box",
+          "color": "pcb-black",
+          "label": "devkit pcb",
+          "x": -32.8,
+          "y": -26.86,
+          "w": 27.9,
+          "h": 54.4,
+          "z0": 11.04,
+          "z1": 12.639999999999999,
+          "rotationDeg": 270
+        },
+        {
+          "shape": "box",
+          "color": "metal",
+          "label": "wroom shield",
+          "x": -22,
+          "y": -26.86,
+          "w": 16.1,
+          "h": 17.6,
+          "z0": 12.639999999999999,
+          "z1": 15.84,
+          "rotationDeg": 270
+        },
+        {
+          "shape": "box",
+          "color": "pcb-dark",
+          "label": "wroom antenna",
+          "x": -9.8,
+          "y": -26.86,
+          "w": 18,
+          "h": 6.6,
+          "z0": 12.639999999999999,
+          "z1": 13.44,
+          "rotationDeg": 270
+        },
+        {
+          "shape": "box",
+          "color": "metal",
+          "label": "micro-usb",
+          "x": -58.4,
+          "y": -26.86,
+          "w": 7.6,
+          "h": 6.2,
+          "z0": 12.639999999999999,
+          "z1": 15.639999999999999,
+          "rotationDeg": 270
+        },
+        {
+          "shape": "box",
+          "color": "plastic",
+          "label": "en button",
+          "x": -57.1,
+          "y": -19.61,
+          "w": 2.6,
+          "h": 2.6,
+          "z0": 12.639999999999999,
+          "z1": 16.14,
+          "rotationDeg": 270
+        },
+        {
+          "shape": "box",
+          "color": "plastic",
+          "label": "boot button",
+          "x": -57.1,
+          "y": -34.11,
+          "w": 2.6,
+          "h": 2.6,
+          "z0": 12.639999999999999,
+          "z1": 16.14,
+          "rotationDeg": 270
+        }
+      ],
+      "confidence": "Outline 54.4 x 27.9 mm is quoted by a third-party guide, whose own caption also says 48.2 mm; another database says 54 x 27 mm. Espressif publishes a drawing we could not read numerically. 25.4 mm row spacing comes from the catalog and was not confirmed. USB position and component height are estimates, and USB-C clones differ."
+    },
+    {
+      "id": "U2",
+      "module": "ssd1306-oled-128x64-i2c",
+      "name": "0.96″ OLED, SSD1306, I²C",
+      "category": "display",
+      "center": {
+        "x": 17.59,
+        "y": -5.3
+      },
+      "rotationDeg": 0,
+      "bbox": {
+        "minX": 3.94,
+        "minY": -19.2,
+        "maxX": 31.24,
+        "maxY": 8.6
+      },
+      "stack": {
+        "mount": "socketed",
+        "socketMm": 8.5,
+        "spacerMm": 2.54,
+        "pcbMm": 1.2,
+        "componentsMm": 2.9,
+        "topMm": 15.14,
+        "raisedToLid": false
+      },
+      "fit": {
+        "method": "pads",
+        "pins": 4,
+        "maxResidualMm": 0
+      },
+      "blocks": [
+        {
+          "shape": "box",
+          "color": "socket",
+          "label": "socket",
+          "x": 17.59,
+          "y": 7,
+          "w": 10.16,
+          "h": 2.54,
+          "z0": 0,
+          "z1": 8.5,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "plastic",
+          "label": "male spacer",
+          "x": 17.59,
+          "y": 7,
+          "w": 10.16,
+          "h": 2.54,
+          "z0": 8.5,
+          "z1": 11.04,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "pcb-blue",
+          "label": "oled pcb",
+          "x": 17.59,
+          "y": -5.3,
+          "w": 27.3,
+          "h": 27.8,
+          "z0": 11.04,
+          "z1": 12.239999999999998,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "glass",
+          "label": "oled glass",
+          "x": 17.59,
+          "y": -6,
+          "w": 26,
+          "h": 18.6,
+          "z0": 12.239999999999998,
+          "z1": 15.120000000000001,
+          "rotationDeg": 0
+        },
+        {
+          "shape": "box",
+          "color": "active",
+          "label": "oled active area",
+          "x": 17.59,
+          "y": -4,
+          "w": 21.744,
+          "h": 10.864,
+          "z0": 15.120000000000001,
+          "z1": 15.14,
+          "rotationDeg": 0
+        }
+      ],
+      "confidence": "Active area 21.744 x 10.864 mm is from a panel datasheet. PCB outline varies by seller (about 27 x 27 mm). The active area position on the PCB was not found in any drawing: y = 12.6 mm is estimated, so the window carries a 1.2 mm margin per side."
+    },
+    {
+      "id": "U3",
+      "module": "ds18b20-to92",
+      "name": "DS18B20 temperature sensor (TO-92)",
+      "category": "sensor",
+      "center": {
+        "x": 8.94,
+        "y": 12.1
+      },
+      "rotationDeg": 0,
+      "bbox": {
+        "minX": 6.44,
+        "minY": 10.1,
+        "maxX": 11.44,
+        "maxY": 14.1
+      },
+      "stack": {
+        "mount": "soldered",
+        "socketMm": 0,
+        "spacerMm": 0,
+        "pcbMm": 0,
+        "componentsMm": 13,
+        "topMm": 13,
+        "raisedToLid": false
+      },
+      "fit": {
+        "method": "pads",
+        "pins": 3,
+        "maxResidualMm": 0
+      },
+      "blocks": [
+        {
+          "shape": "cylinder",
+          "color": "plastic",
+          "label": "to-92 body",
+          "x": 8.94,
+          "y": 12.1,
+          "w": 4.6,
+          "h": 4.6,
+          "z0": 8.4,
+          "z1": 13,
+          "rotationDeg": 0
+        }
+      ],
+      "confidence": "TO-92 body is a standard package. 13 mm standing height comes from the catalog size with straight leads."
+    }
+  ],
+  "apertures": [
+    {
+      "id": "BZ1-sound",
+      "part": "BZ1",
+      "module": "piezo-passive-12mm",
+      "purpose": "sound",
+      "face": "z_pos",
+      "shape": "grid",
+      "center": {
+        "x": 18.94,
+        "y": 15
+      },
+      "zMm": 9.5,
+      "widthMm": 8,
+      "heightMm": 8,
+      "rotationDeg": 90,
+      "grid": {
+        "holeMm": 2,
+        "columns": 3,
+        "rows": 3,
+        "pitchMm": 3.2
+      },
+      "note": "Sound holes over the transducer."
+    },
+    {
+      "id": "U1-usb",
+      "part": "U1",
+      "module": "esp32-devkitc-v4",
+      "purpose": "usb",
+      "face": "x_neg",
+      "shape": "pill",
+      "center": {
+        "x": -60,
+        "y": -26.86
+      },
+      "zMm": 14.14,
+      "widthMm": 12.5,
+      "heightMm": 8.5,
+      "rotationDeg": 270,
+      "note": "Sized for a micro-USB cable overmould (estimated up to 12 x 8 mm). The plug and overmould pass through the wall."
+    },
+    {
+      "id": "U2-display-active-area",
+      "part": "U2",
+      "module": "ssd1306-oled-128x64-i2c",
+      "purpose": "display-active-area",
+      "face": "z_pos",
+      "shape": "rect",
+      "center": {
+        "x": 17.59,
+        "y": -4
+      },
+      "zMm": 15.14,
+      "widthMm": 24.144,
+      "heightMm": 13.264000000000001,
+      "rotationDeg": 0,
+      "activeAreaMm": {
+        "w": 21.744,
+        "h": 10.864
+      },
+      "note": "Window over the active area plus the margin."
+    },
+    {
+      "id": "U3-sensor-air",
+      "part": "U3",
+      "module": "ds18b20-to92",
+      "purpose": "sensor-air",
+      "face": "z_pos",
+      "shape": "grid",
+      "center": {
+        "x": 8.94,
+        "y": 12.1
+      },
+      "zMm": 13,
+      "widthMm": 9,
+      "heightMm": 9,
+      "rotationDeg": 0,
+      "grid": {
+        "holeMm": 2.5,
+        "columns": 3,
+        "rows": 3,
+        "pitchMm": 4
+      },
+      "note": "Lets room air reach the sensor. It will still read warm from the ESP32 inside the box."
+    }
+  ],
+  "warnings": [
+    "The board has a custom outline. Rounded rectangles are followed by the enclosure; other outlines use the conservative bounding rectangle."
+  ]
+}

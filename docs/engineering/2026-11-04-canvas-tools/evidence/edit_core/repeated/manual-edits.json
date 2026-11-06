@@ -1,0 +1,55 @@
+{
+  "pcb_placements": [
+    {
+      "selector": "BZ1",
+      "relative_to": "group_center",
+      "center": {
+        "x": 18.94,
+        "y": 21.5
+      },
+      "rotation": 0
+    },
+    {
+      "selector": "R1",
+      "relative_to": "group_center",
+      "center": {
+        "x": -31.25,
+        "y": -3.4
+      },
+      "rotation": 0
+    },
+    {
+      "selector": "U1",
+      "relative_to": "group_center",
+      "center": {
+        "x": -13.53,
+        "y": -2.3
+      },
+      "rotation": 0
+    },
+    {
+      "selector": "U2",
+      "relative_to": "group_center",
+      "center": {
+        "x": 17.59,
+        "y": -5.3
+      },
+      "rotation": 0
+    },
+    {
+      "selector": "U3",
+      "relative_to": "group_center",
+      "center": {
+        "x": 8.94,
+        "y": 18.6
+      },
+      "rotation": 0
+    }
+  ],
+  "routing": {
+    "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+    "planningClearanceMm": 0.25,
+    "minimumClearanceMm": 0.2,
+    "invocations": 1
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "schema": "moki.board-layout/1",
+  "board": {
+    "widthMm": 120,
+    "heightMm": 120,
+    "cornerRadiusMm": 7
+  },
+  "usbEdge": "left",
+  "parts": [
+    {
+      "refdes": "BZ1",
+      "module": "piezo-passive-12mm",
+      "center": {
+        "x": 18.939999999999998,
+        "y": 15
+      },
+      "origin": {
+        "x": 12.44,
+        "y": 15
+      },
+      "localCenter": {
+        "x": 0,
+        "y": -6.5
+      },
+      "rotation": 90
+    },
+    {
+      "refdes": "R1",
+      "module": "resistor-axial",
+      "center": {
+        "x": -31.25,
+        "y": -3.400000000000001
+      },
+      "origin": {
+        "x": -31.25,
+        "y": -3.4
+      },
+      "localCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rotation": 0
+    },
+    {
+      "refdes": "U1",
+      "module": "esp32-devkitc-v4",
+      "center": {
+        "x": -35.36,
+        "y": -26.86
+      },
+      "origin": {
+        "x": -32.8,
+        "y": -26.86
+      },
+      "localCenter": {
+        "x": 0,
+        "y": -2.56
+      },
+      "rotation": 270
+    },
+    {
+      "refdes": "U2",
+      "module": "ssd1306-oled-128x64-i2c",
+      "center": {
+        "x": 17.589999999999996,
+        "y": 7.000000000000001
+      },
+      "origin": {
+        "x": 17.59,
+        "y": -5.3
+      },
+      "localCenter": {
+        "x": 0,
+        "y": 12.3
+      },
+      "rotation": 0
+    },
+    {
+      "refdes": "U3",
+      "module": "ds18b20-to92",
+      "center": {
+        "x": 8.94,
+        "y": 12.100000000000001
+      },
+      "origin": {
+        "x": 8.94,
+        "y": 18.6
+      },
+      "localCenter": {
+        "x": 0,
+        "y": -6.5
+      },
+      "rotation": 0
+    }
+  ],
+  "mountingHoles": [
+    {
+      "x": -55.474874,
+      "y": -55.474874,
+      "diameterMm": 3.2
+    },
+    {
+      "x": -55.474874,
+      "y": 55.474874,
+      "diameterMm": 3.2
+    },
+    {
+      "x": 55.474874,
+      "y": -55.474874,
+      "diameterMm": 3.2
+    },
+    {
+      "x": 55.474874,
+      "y": 55.474874,
+      "diameterMm": 3.2
+    }
+  ]
+}

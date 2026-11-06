@@ -1,0 +1,408 @@
+{
+  "jobId": "bca6eb68-dff8-4560-8798-f06a2a90e1fe",
+  "status": "done",
+  "createdAt": "2026-11-06T11:12:52.150Z",
+  "input": {
+    "kind": "design",
+    "sourceSha256": "2ed7340ed04c78a90f87fa69d0a2c0e3bc3e698b838cd52bb07ca280a263f442",
+    "template": "temp-monitor",
+    "designContentId": "78f4d78544a4b494",
+    "baseJobId": "d206465f-4145-47a9-9423-8ee1025c5800",
+    "edits": {
+      "placements": [
+        {
+          "refdes": "U2",
+          "x": 17.59,
+          "y": 7,
+          "rotation": 0
+        }
+      ]
+    },
+    "layoutSha256": "1ad7dbaf8382549c8e029243d5c12fbe6e4d012d1634329cc7e4657ad922654d"
+  },
+  "cache": "hit",
+  "editSummary": [
+    "U2 moved 3 mm (X +0, Y +3)"
+  ],
+  "stages": [
+    {
+      "name": "codegen",
+      "status": "done",
+      "ms": 29.021185000000514
+    },
+    {
+      "name": "render",
+      "status": "done",
+      "ms": 18.098509999999806,
+      "note": "Cache hit: copied EDA artifacts"
+    },
+    {
+      "name": "route",
+      "status": "skipped",
+      "ms": 0,
+      "note": "Cache hit: reused artifact; original timing is in cache receipt"
+    },
+    {
+      "name": "svg",
+      "status": "skipped",
+      "ms": 0,
+      "note": "Cache hit: reused artifact; original timing is in cache receipt"
+    },
+    {
+      "name": "gltf",
+      "status": "skipped",
+      "ms": 0,
+      "note": "Cache hit: reused artifact; original timing is in cache receipt"
+    },
+    {
+      "name": "fab",
+      "status": "skipped",
+      "ms": 0,
+      "note": "Cache hit: reused artifact; original timing is in cache receipt"
+    },
+    {
+      "name": "enclosure",
+      "status": "done",
+      "ms": 966.598148,
+      "note": "build123d mech cache hit: same handoff and same modelling code"
+    },
+    {
+      "name": "firmware",
+      "status": "done",
+      "ms": 8.671810999999991
+    },
+    {
+      "name": "firmware-compile",
+      "status": "done",
+      "ms": 317.020489,
+      "note": "Reused a verified compilation of identical generated firmware and compiler; no physical flash."
+    }
+  ],
+  "totalMs": 1685.102694000001,
+  "drc": {
+    "checked": true,
+    "errors": [],
+    "warnings": [
+      {
+        "type": "source_refdes_convention_warning",
+        "message": "The \"R\" prefix is being used with a <chip />, try using it with a <resistor />"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "BZ1 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "BZ1 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on BZ1 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "R1 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "R1 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on R1 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "U1 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "U1 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on U1 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "U2 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "U2 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on U2 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "U3 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "U3 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on U3 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "schematic_missing_sheet_warning",
+        "message": "No <schematicsheet> was found. Add a <schematicsheet> to define the schematic drawing area."
+      },
+      {
+        "type": "pcb_component_missing_courtyard_warning",
+        "message": "BZ1 has no courtyard"
+      },
+      {
+        "type": "pcb_component_missing_courtyard_warning",
+        "message": "R1 has no courtyard"
+      },
+      {
+        "type": "pcb_component_missing_courtyard_warning",
+        "message": "U1 has no courtyard"
+      },
+      {
+        "type": "pcb_component_missing_courtyard_warning",
+        "message": "U2 has no courtyard"
+      },
+      {
+        "type": "pcb_component_missing_courtyard_warning",
+        "message": "U3 has no courtyard"
+      },
+      {
+        "type": "unverified_module_dimensions",
+        "message": "Footprints preserve approximate catalog pin coordinates. Verify actual module dimensions, pin order, sockets and fit before fabrication; Module and socket 3D shapes are illustrative, not exact manufacturer CAD."
+      }
+    ]
+  },
+  "board": {
+    "widthMm": 71,
+    "heightMm": 59,
+    "layers": 2,
+    "traceCount": 11,
+    "viaCount": 0
+  },
+  "artifacts": {
+    "board.tsx": {
+      "url": "/api/board/jobs/bca6eb68-dff8-4560-8798-f06a2a90e1fe/files/board.tsx",
+      "bytes": 182540,
+      "sha256": "2ed7340ed04c78a90f87fa69d0a2c0e3bc3e698b838cd52bb07ca280a263f442",
+      "kind": "source"
+    },
+    "circuit.json": {
+      "url": "/api/board/jobs/bca6eb68-dff8-4560-8798-f06a2a90e1fe/files/circuit.json",
+      "bytes": 1069750,
+      "sha256": "5dd4f49a0c39d6898d6d599cce1c4c8b6163ab85c96505e37468b2fab56702af",
+      "kind": "json"
+    },
+    "schematic.svg": {
+      "url": "/api/board/jobs/bca6eb68-dff8-4560-8798-f06a2a90e1fe/files/schematic.svg",
+      "bytes": 118234,
+      "sha256": "cf531d68f216588f60873a60256aba451a2c34efb1b64c48e62715d2279d9aff",
+      "kind": "svg"
+    },
+    "pcb.svg": {
+      "url": "/api/board/jobs/bca6eb68-dff8-4560-8798-f06a2a90e1fe/files/pcb.svg",
+      "bytes": 378971,
+      "sha256": "d19743d4c0a09ca85d0c37a3829f3c22c518ee44e1b56603be39996952dbec7b",
+      "kind": "svg"
+    },
+    "board.glb": {
+      "url": "/api/board/jobs/bca6eb68-dff8-4560-8798-f06a2a90e1fe/files/board.glb",
+      "bytes": 1540740,
+      "sha256": "95478c0ac3224dfd3435e9727fd116f69c3a1b5291f8a09a1e170099d0ad1216",
+      "kind": "glb"
+    },
+    "gerbers.zip": {
+      "url": "/api/board/jobs/bca6eb68-dff8-4560-8798-f06a2a90e1fe/files/gerbers.zip",
+      "bytes": 61620,
+      "sha256": "06fc766302e4608a72c81089ff490f20c110a603f968d1f7f806eeeba34e8190",
+      "kind": "zip"
+    },
+    "kicad.zip": {
+      "url": "/api/board/jobs/bca6eb68-dff8-4560-8798-f06a2a90e1fe/files/kicad.zip",
+      "bytes": 86898,
+      "sha256": "5e196a56adc1d3ab304809afad760763f6765757682517fa981d67755974ace6",
+      "kind": "zip"
+    },
+    "bom.csv": {
+      "url": "/api/board/jobs/bca6eb68-dff8-4560-8798-f06a2a90e1fe/files/bom.csv",
+      "bytes": 1571,
+      "sha256": "002ca891e363f0fc6fdad4decfdabc8b90876bf36815c054c1bb0370697156b7",
+      "kind": "csv"
+    },
+    "pnp.csv": {
+      "url": "/api/board/jobs/bca6eb68-dff8-4560-8798-f06a2a90e1fe/files/pnp.csv",
+      "bytes": 529,
+      "sha256": "2bc85f1a22047f413d5cd5ce24f74f2a7734dfda6c52a424d81e9842188a4605",
+      "kind": "csv"
+    },
+    "layout.json": {
+      "url": "/api/board/jobs/bca6eb68-dff8-4560-8798-f06a2a90e1fe/files/layout.json",
+      "bytes": 1960,
+      "sha256": "acc8558ba8adcc9c21abb3cd1d92ab7127178a68ffa6da21704978fbd19905e7",
+      "kind": "json"
+    },
+    "manual-edits.json": {
+      "url": "/api/board/jobs/bca6eb68-dff8-4560-8798-f06a2a90e1fe/files/manual-edits.json",
+      "bytes": 994,
+      "sha256": "6d002ef2b205653c85143bd6cbed101598d7a6930df370fea7092609345c3b10",
+      "kind": "json"
+    },
+    "design.json": {
+      "url": "/api/board/jobs/bca6eb68-dff8-4560-8798-f06a2a90e1fe/files/design.json",
+      "bytes": 3933,
+      "sha256": "a87bfbb1a16702f624beb1d90bdafb19dc030262690c935d000c407e5261e4c3",
+      "kind": "json"
+    },
+    "enclosure-base.stl": {
+      "url": "/api/board/jobs/bca6eb68-dff8-4560-8798-f06a2a90e1fe/files/enclosure-base.stl",
+      "bytes": 548584,
+      "sha256": "aa461a599086c4d6aee61b7e9fe734404846c493a512948013605ba556c0ac4b",
+      "kind": "stl"
+    },
+    "enclosure-lid.stl": {
+      "url": "/api/board/jobs/bca6eb68-dff8-4560-8798-f06a2a90e1fe/files/enclosure-lid.stl",
+      "bytes": 386784,
+      "sha256": "c9a770d3db3ffd34ae08ace8b5ade3cc81c148ff708237916e59f8ded0224f32",
+      "kind": "stl"
+    },
+    "assembly.glb": {
+      "url": "/api/board/jobs/bca6eb68-dff8-4560-8798-f06a2a90e1fe/files/assembly.glb",
+      "bytes": 2889028,
+      "sha256": "0a661202688ccaf574d38a8aed124608a4c3dfa5155729a84e6d81204d5bd4cd",
+      "kind": "glb"
+    },
+    "enclosure.json": {
+      "url": "/api/board/jobs/bca6eb68-dff8-4560-8798-f06a2a90e1fe/files/enclosure.json",
+      "bytes": 11769,
+      "sha256": "ca062a4d2d1226f16ac795679263fe5b41a8f77211a8eb0f6c13c89e390c5e75",
+      "kind": "json"
+    },
+    "enclosure.step": {
+      "url": "/api/board/jobs/bca6eb68-dff8-4560-8798-f06a2a90e1fe/files/enclosure.step",
+      "bytes": 1211243,
+      "sha256": "629d7f336e42cd88ae95733a0ff931b380822bef6051606fcdefe00bd68e35de",
+      "kind": "step"
+    },
+    "firmware.zip": {
+      "url": "/api/board/jobs/bca6eb68-dff8-4560-8798-f06a2a90e1fe/files/firmware.zip",
+      "bytes": 5666,
+      "sha256": "3b8c5eddeadb3b5b2c142e6b385cea00b79556f27fd5578a1494e64b90a8294c",
+      "kind": "zip"
+    },
+    "firmware-build.json": {
+      "url": "/api/board/jobs/bca6eb68-dff8-4560-8798-f06a2a90e1fe/files/firmware-build.json",
+      "bytes": 6052,
+      "sha256": "b535b834d9c78ac39202f5fb1509584a9ca52b1de1776e3720c977e86bcf8ee7",
+      "kind": "json"
+    },
+    "receipt.json": {
+      "url": "/api/board/jobs/bca6eb68-dff8-4560-8798-f06a2a90e1fe/files/receipt.json",
+      "bytes": 11831,
+      "sha256": "45ac7d4736af577b7df76cd2a1fa6759ec39450b6c01c2e0726d2d16e0b42bf9",
+      "kind": "json"
+    },
+    "mech-handoff.json": {
+      "url": "/api/board/jobs/bca6eb68-dff8-4560-8798-f06a2a90e1fe/files/mech-handoff.json",
+      "bytes": 15316,
+      "sha256": "37409c1f87c6f05edb55369660e577af7180b25f73a0f307b23d2195b527f784",
+      "kind": "json"
+    }
+  },
+  "toolVersions": {
+    "bun": "1.4.4",
+    "toolchainLockSha256": "03c17de90a541fb18d9c0551e9d48079d505c8da1b327b521149c39ce2bdfe92",
+    "mokiRendererSha256": "0241360186359759ab4eb49087dc2026f5d13d1b9279bc2a7a9c78b97e59ff2d",
+    "blocks/build.ts": "7d8b502e1760f2a50df9bb14cea47268474476cc528ad1d8f1d5c981c348a8b3",
+    "blocks/routing-frame.ts": "223194ea19366021490945764e0444a09b852b24f0ccd86e2d6da37c4c584966",
+    "blocks/locked-pads.ts": "34d3314977ad6643ab0640db5d8d8fd1de37d2be10f28591143e901e1d6abc9b",
+    "blocks/native-owner-guard.ts": "7919738110c25ef3ca193b1cd5e2c77891a9b63ed000367634d1794dfb099fdb",
+    "blocks/immutable-preloads.ts": "afde60c008104bb6e9c6f87495567b725989f3c408b4df91f8132d2dc7fce7df",
+    "blocks/auto-placement.ts": "d5629e228c18ed7ab5b223af0d08e324d97561872dd38b438e469ceefc6f74fc",
+    "blocks/sensor-exits.ts": "eacb59f86b9b0b2897957f30d068c4675be4ac316de87f55227027c3f13ef7e2",
+    "blocks/repair-saved-sources.ts": "26fc26a0ef2ba539a5e9e25d09c5464fe5afe2b1f8332b70b2bedae49e9f0cf7",
+    "blocks/repair-native-exits.ts": "fbf4b6a60cbe4bb761ceaa96043e99ed17d13725d49ad5e6c290f4bfd715c753",
+    "blocks/ground-plane.ts": "f13b221872ba7198c2f1604e52b3b786e5d81732a6b4d2fbb13517a741acab0a",
+    "blocks/rp-clock.ts": "2c44de68aff62c6835a288a4b0c14cb0a11b2616656c47a0be6eb887227eb04e",
+    "blocks/rp-escape.ts": "dc7ac147a6441a1d15af4a12d855e651510975cc00964f070c2cda6962feb95f",
+    "blocks/rp-signal-escape.ts": "1f3d0ce2045a2e3103f0b0d9481f5a93141beaaf00230003d606168398e258f9",
+    "blocks/usb-sink-escape.ts": "852dabbe596ee16d9d995595d57929987ea7874b010265cc0e71e0e42fdc50d0",
+    "blocks/native-handoffs.ts": "c21c9456478133eb165b61198fb50935537fde85cf531ab6fc43758e4df5d3c0",
+    "blocks/native-width.ts": "1187bf1c2f02a194457a57b3fcbabe46e0268b8b12ed1e5df1c781e3eb0b018a",
+    "blocks/native-replay.ts": "16495a897b1bb1334de838e0cb0ab9c8be7659b9be42743c95d5c8e2ba5d8abf",
+    "blocks/no-via-in-pad.ts": "52a922ab189963407fd1ad455107013dc62b76fdd7d71a43ab27de80e9f52a29",
+    "blocks/robust-routing-checks.ts": "e9f519ea8753d019a5d6bf9992ef7cfe943732b34c62949c0219c8b32c88375c",
+    "blocks/normalize-native-copper.ts": "ec435e306bc4bc571f4f1c58ad135bdfc2ff101f5de4ae4d7950a8b9bba33117",
+    "blocks/rp-phase-order.ts": "5db76c850d4bb8d985e0f15a4e6df9cb15ff45ab660b575afff40ace15540d92",
+    "blocks/drv8833-escape.ts": "7eb44f69c1e570e1e3092b7028e191ec579c0204ce8c3ace8f3ae0dcb44ba63a",
+    "blocks/grouped-breakouts.ts": "60fa24703cb707b9deaacd3e059077977ac1e8cf470669276558831784bb2e9b",
+    "blocks/copper-netlist.ts": "0e3a9a72193d3a68e2f09b568501d0c0d8d3b962b077a37a24a7bf847f4c46d0",
+    "blocks/debug-source.ts": "f251852b6dc2a57dd45e104dbdf80a4a2d0c442cb190afc320272259f6d87e1a",
+    "blocks/stitch-ground.ts": "8ebe7d596838943857c6239ddbc0dfe49423d71a83950ed381bd663ba3f4d300",
+    "blocks/imported.ts": "b6e315d31e689feb5068656b7545a24de52a2389ffc91be44d4f6e543beb0919",
+    "blocks/legalize.ts": "3bad7206526edba101d2579ecbe7f34f57e532eda5180d27581f0d880858bbd1",
+    "blocks/schematic.ts": "655f057b64baa7afc6206fab1a7d1cd6db8b7058ab16682242f7dc4871ab5c9f",
+    "../src/blocks/native-netlist.ts": "a83edcdcf74aca694dd340a73c87ff065bf22adefa7a76efc8d5d55364ea964d",
+    "../src/blocks/native-ports.ts": "4bc103d7c9bffdadb1f41aee033e3e697070f583265016f2df2d2c213a674a4f",
+    "../src/blocks/native-placement.ts": "785600eb36bf87b4ac249dbab1f3e15829807ea2b29dd8c304852949f662fcc8",
+    "../src/blocks/test-block.ts": "f5f5ccf1791e2a0cc32f776c9cb8a312eaa1e156896a88617328fa49c712d71b",
+    "../src/blocks/native-trace-width.ts": "488696d032eba153ffad75e9953ad894294888317831e6511d3ff191396a4847",
+    "../src/board/chip-firmware-worker.ts": "5045c7559571a07c8189f48cc4a0824c3bb62dd0e25427ff56471eb8fe18b21c",
+    "../src/board/bom.ts": "3eb90de40496ae439a9b4fdf8bd5816dc59e8b5d29d97b72740a446928335022",
+    "../src/circuit/catalog.ts": "f9a71d535ac1c39ece54337532e1662d3cdb95356134f548c1345c555ca1b51c",
+    "models/render-board.ts": "0ae3ad9913ed812f943bcb5e97f07de2dc39a5a8c9634bb8d175cf116a1e15b1",
+    "models/catalog-models.ts": "5bf9dba5c67d0e1239c33dc4874be44867226c08fb287dc21e63fb17895015bc",
+    "models/glb.ts": "ee795aaf36c5fa0f0bd94484c574f69cd14c308ee72d4e3fd0b6855dd4c14c80",
+    "models/compact-glb.ts": "76504398c0e871e0de9ab55d4e553a4401d7466b6c1750eca4cb856e212bbda4",
+    "apply-layout.ts": "5429544caab8d4ba86a0b4b269ce01c84aa47c0f0cc568fa6602dea23d40c6ff",
+    "edit-router.ts": "c607cef0777632dd2584a8132e684314e6452cc7195c2a93797d3abb9204a76c",
+    "blocks/router.ts": "da2184d0760737c41120ee084068458f7455cbe7c7fbb833639d47c58312b25b",
+    "blocks/fanout.ts": "83022aaaecc5be4e529398da0dbc241a5a0b9b39881f7baba18a0f02ee44b7df",
+    "blocks/schematic-notes.ts": "1cc5850e8cf97bbd24b7465b17bc31ba5153cf26d2d059c1844a5b3a9375e453",
+    "../src/blocks/fanout.ts": "f4b34d3e90ce124d2a4dcf1de44756958dc2d10f70be6e3200547c95e22221a1",
+    "../src/blocks/router-planning.ts": "ffba1d1a7440c7ff9c7a2a6cafaa0323632b3812ae3eb313313f6166f8cf06de",
+    "../src/board/router-planning.ts": "ffa9a86aded261477102d290e6f6faf3cad2a8c299e1990210027726b8d78504",
+    "../src/board/edits.ts": "24698a93ccfe6d3f780f9203834476556d9ce5234c79a18dde0d0f4e754208bb",
+    "enclosure/module-preview.ts": "646bb819b10f708851a820b5159b977c67300cf34b0a3d3f4d84b9a5d7c65f19",
+    "enclosure/module-mech.ts": "8054af43a5ba30428ac832464b43cb90dab5392a6933368b7fe56cc38e1a8103",
+    "@jscad/modeling": "2.13.0",
+    "@tscircuit/capacity-autorouter": "0.0.1037",
+    "@tscircuit/checks": "0.0.269",
+    "@tscircuit/circuit-json-util": "0.0.131",
+    "@tscircuit/core": "0.0.2266",
+    "@tscircuit/create-fdm-enclosure": "0.0.7",
+    "@tscircuit/footprinter": "0.0.450",
+    "@tscircuit/math-utils": "0.0.38",
+    "@tscircuit/ngspice-spice-engine": "0.0.20",
+    "@tscircuit/props": "0.0.718",
+    "circuit-json": "0.0.543",
+    "circuit-json-to-bom-csv": "0.0.28",
+    "circuit-json-to-gerber": "0.0.122",
+    "circuit-json-to-gltf": "0.0.164",
+    "circuit-json-to-kicad": "0.0.267",
+    "circuit-json-to-pnp-csv": "0.0.21",
+    "circuit-to-svg": "0.0.455",
+    "easyeda": "0.0.391",
+    "fflate": "0.8.3",
+    "jscad-planner": "0.0.14",
+    "kicad-to-circuit-json": "0.0.142",
+    "polygon-clipping": "0.15.7",
+    "react": "19.3.1",
+    "schematic-symbols": "0.0.251",
+    "tscircuit": "0.0.3075",
+    "enclosure:build123d": "0.13.0",
+    "firmware:platformio": "PlatformIO Core, version 6.1.19",
+    "firmware:framework-arduinoespressif32": "3.20017.241212+sha.dcc1105b",
+    "firmware:tool-esptoolpy": "1.40501.0 (4.5.1)",
+    "firmware:toolchain-xtensa-esp32": "8.4.0+2021r2-patch5",
+    "firmware:Adafruit BusIO": "1.17.0",
+    "firmware:Adafruit GFX Library": "1.11.11",
+    "firmware:Adafruit SSD1306": "2.5.13",
+    "firmware:DallasTemperature": "3.11.0",
+    "firmware:OneWire": "2.3.8",
+    "firmware:Wire": "2.0.0"
+  }
+}

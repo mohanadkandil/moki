@@ -1,0 +1,210 @@
+[
+  {
+    "gate": "erc",
+    "ok": true,
+    "issues": [
+      {
+        "rule": "unreviewed",
+        "severity": "warning",
+        "where": "usb-c-power-only",
+        "message": "Block has not passed independent promotion review"
+      },
+      {
+        "rule": "unreviewed",
+        "severity": "warning",
+        "where": "two-wire-probe",
+        "message": "Block has not passed independent promotion review"
+      },
+      {
+        "rule": "unreviewed",
+        "severity": "warning",
+        "where": "buzzer-switch",
+        "message": "Block has not passed independent promotion review"
+      }
+    ]
+  },
+  {
+    "gate": "power",
+    "ok": true,
+    "issues": []
+  },
+  {
+    "gate": "spice",
+    "ok": true,
+    "issues": [
+      {
+        "rule": "spice-coverage",
+        "severity": "warning",
+        "message": "Only declared isolated profiles are simulated; this is not whole-board analog verification"
+      },
+      {
+        "rule": "spice-evidence",
+        "severity": "warning",
+        "message": "Fixed netlists and raw engine results: /tmp/claude-1000/-home-sogo-design-skill-research-repos-moki/25596f12-8bc2-419f-8ccc-8a9af295e3dc/scratchpad/srv/jobs/9b5508da-b621-43de-b9b6-46ebf96f82b5/spice/run-bUmD2x/output.json"
+      }
+    ],
+    "measurements": [
+      {
+        "where": "probe.OUT with an assumed 200 kohm between the wires, over the threshold",
+        "name": "divider",
+        "measured": 4.166666666666667,
+        "target": 4.17,
+        "tolerance": 0.1,
+        "unit": "V",
+        "ok": true
+      }
+    ],
+    "inputHash": "e671f30c91ada8a40e6468184b462a2fe3e579bc4beff8ade830666d423654f4"
+  },
+  {
+    "gate": "review",
+    "ok": true,
+    "issues": []
+  },
+  {
+    "gate": "drc",
+    "ok": true,
+    "issues": []
+  },
+  {
+    "gate": "block-test",
+    "ok": true,
+    "issues": [
+      {
+        "rule": "block-pad-scope",
+        "severity": "warning",
+        "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+      },
+      {
+        "rule": "block-pad-scope",
+        "severity": "warning",
+        "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+      },
+      {
+        "rule": "block-pad-scope",
+        "severity": "warning",
+        "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+      }
+    ],
+    "measurements": [
+      {
+        "where": "alarm.Q1",
+        "name": "native-physical-pads",
+        "measured": 3,
+        "target": 3,
+        "tolerance": 0,
+        "unit": "pads",
+        "ok": true
+      },
+      {
+        "where": "alarm.BZ1",
+        "name": "native-physical-pads",
+        "measured": 2,
+        "target": 2,
+        "tolerance": 0,
+        "unit": "pads",
+        "ok": true
+      },
+      {
+        "where": "alarm.D1",
+        "name": "native-physical-pads",
+        "measured": 2,
+        "target": 2,
+        "tolerance": 0,
+        "unit": "pads",
+        "ok": true
+      },
+      {
+        "where": "probe.J1",
+        "name": "native-physical-pads",
+        "measured": 2,
+        "target": 2,
+        "tolerance": 0,
+        "unit": "pads",
+        "ok": true
+      },
+      {
+        "where": "probe.R1",
+        "name": "native-physical-pads",
+        "measured": 2,
+        "target": 2,
+        "tolerance": 0,
+        "unit": "pads",
+        "ok": true
+      },
+      {
+        "where": "probe.R2",
+        "name": "native-physical-pads",
+        "measured": 2,
+        "target": 2,
+        "tolerance": 0,
+        "unit": "pads",
+        "ok": true
+      },
+      {
+        "where": "usb.J1",
+        "name": "native-physical-pads",
+        "measured": 16,
+        "target": 16,
+        "tolerance": 0,
+        "unit": "pads",
+        "ok": true
+      },
+      {
+        "where": "usb.R1",
+        "name": "native-physical-pads",
+        "measured": 2,
+        "target": 2,
+        "tolerance": 0,
+        "unit": "pads",
+        "ok": true
+      },
+      {
+        "where": "usb.R2",
+        "name": "native-physical-pads",
+        "measured": 2,
+        "target": 2,
+        "tolerance": 0,
+        "unit": "pads",
+        "ok": true
+      },
+      {
+        "where": "usb.C1",
+        "name": "native-physical-pads",
+        "measured": 2,
+        "target": 2,
+        "tolerance": 0,
+        "unit": "pads",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "gate": "verify",
+    "ok": true,
+    "issues": [],
+    "results": [
+      {
+        "id": "probe",
+        "status": "pass",
+        "measured": "probe",
+        "target": "probe",
+        "evidence": "Declared interface probe is present"
+      },
+      {
+        "id": "buzzer",
+        "status": "pass",
+        "measured": "buzzer",
+        "target": "buzzer",
+        "evidence": "Declared interface buzzer is present"
+      },
+      {
+        "id": "usb",
+        "status": "pass",
+        "measured": "usb_power",
+        "target": "usb_power",
+        "evidence": "Declared interface usb_power is present"
+      }
+    ]
+  }
+]

@@ -1,0 +1,252 @@
+{
+ "at": "2026-11-06T10:28:39.158Z",
+ "scripted": "Model calls scripted; every other stage real. The plan was written by hand, and the review is scripted.",
+ "brief": "a night light that turns on when it gets dark",
+ "outcome": "built",
+ "wallMs": 14806,
+ "jobId": "3fe616b4-280d-42cd-a32e-67ad18f29976",
+ "status": "done",
+ "noFirmware": true,
+ "board": {
+  "widthMm": 20,
+  "heightMm": 42,
+  "layers": 2,
+  "traceCount": 20,
+  "viaCount": 11
+ },
+ "drc": {
+  "checked": true,
+  "errors": [],
+  "warnings": [
+   {
+    "type": "source_refdes_convention_warning",
+    "message": "The \"J\" prefix is being used with a <chip />, try using it with a <connector /> or <jumper />"
+   },
+   {
+    "type": "source_refdes_convention_warning",
+    "message": "The \"R\" prefix is being used with a <chip />, try using it with a <resistor />"
+   },
+   {
+    "type": "source_refdes_convention_warning",
+    "message": "The \"Q\" prefix is being used with a <chip />, try using it with a <transistor />"
+   },
+   {
+    "type": "source_no_power_pin_defined_warning",
+    "message": "J1 has no pin with requires_power=true"
+   },
+   {
+    "type": "source_no_ground_pin_defined_warning",
+    "message": "J1 has no pin with requires_ground=true"
+   },
+   {
+    "type": "source_component_pins_underspecified_warning",
+    "message": "All pins on J1 are underspecified (no pinAttributes set)"
+   },
+   {
+    "type": "source_no_power_pin_defined_warning",
+    "message": "R3 has no pin with requires_power=true"
+   },
+   {
+    "type": "source_no_ground_pin_defined_warning",
+    "message": "R3 has no pin with requires_ground=true"
+   },
+   {
+    "type": "source_component_pins_underspecified_warning",
+    "message": "All pins on R3 are underspecified (no pinAttributes set)"
+   },
+   {
+    "type": "source_no_power_pin_defined_warning",
+    "message": "Q1 has no pin with requires_power=true"
+   },
+   {
+    "type": "source_no_ground_pin_defined_warning",
+    "message": "Q1 has no pin with requires_ground=true"
+   },
+   {
+    "type": "source_component_pins_underspecified_warning",
+    "message": "All pins on Q1 are underspecified (no pinAttributes set)"
+   }
+  ]
+ },
+ "stages": [
+  "codegen:done",
+  "erc:done",
+  "power:done",
+  "spice:done",
+  "review:done",
+  "codegen:done",
+  "placement:done",
+  "svg:done",
+  "render:done",
+  "route:done",
+  "gltf:done",
+  "fab:done",
+  "drc:done",
+  "block-test:done",
+  "verify:done",
+  "enclosure:skipped"
+ ],
+ "gates": [
+  {
+   "gate": "erc",
+   "ok": true
+  },
+  {
+   "gate": "power",
+   "ok": true
+  },
+  {
+   "gate": "spice",
+   "ok": true,
+   "measurements": [
+    {
+     "where": "dark.DARK at 10 lux, under the 1 V threshold",
+     "name": "divider",
+     "measured": 0.6140350877192983,
+     "target": 0.61,
+     "tolerance": 0.1,
+     "unit": "V",
+     "ok": true
+    },
+    {
+     "where": "dark.DARK in the dark, over the threshold",
+     "name": "divider",
+     "measured": 4.545454545454545,
+     "target": 4.55,
+     "tolerance": 0.1,
+     "unit": "V",
+     "ok": true
+    },
+    {
+     "where": "light.LED current with the transistor on",
+     "name": "led-current",
+     "measured": 12.999999999999998,
+     "target": 13,
+     "tolerance": 2,
+     "unit": "mA",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "gate": "review",
+   "ok": true
+  },
+  {
+   "gate": "drc",
+   "ok": true
+  },
+  {
+   "gate": "block-test",
+   "ok": true,
+   "measurements": [
+    {
+     "where": "dark.R1",
+     "name": "native-physical-pads",
+     "measured": 2,
+     "target": 2,
+     "tolerance": 0,
+     "unit": "pads",
+     "ok": true
+    },
+    {
+     "where": "dark.R2",
+     "name": "native-physical-pads",
+     "measured": 2,
+     "target": 2,
+     "tolerance": 0,
+     "unit": "pads",
+     "ok": true
+    },
+    {
+     "where": "light.Q1",
+     "name": "native-physical-pads",
+     "measured": 3,
+     "target": 3,
+     "tolerance": 0,
+     "unit": "pads",
+     "ok": true
+    },
+    {
+     "where": "light.R1",
+     "name": "native-physical-pads",
+     "measured": 2,
+     "target": 2,
+     "tolerance": 0,
+     "unit": "pads",
+     "ok": true
+    },
+    {
+     "where": "light.D1",
+     "name": "native-physical-pads",
+     "measured": 2,
+     "target": 2,
+     "tolerance": 0,
+     "unit": "pads",
+     "ok": true
+    },
+    {
+     "where": "usb.J1",
+     "name": "native-physical-pads",
+     "measured": 16,
+     "target": 16,
+     "tolerance": 0,
+     "unit": "pads",
+     "ok": true
+    },
+    {
+     "where": "usb.R1",
+     "name": "native-physical-pads",
+     "measured": 2,
+     "target": 2,
+     "tolerance": 0,
+     "unit": "pads",
+     "ok": true
+    },
+    {
+     "where": "usb.R2",
+     "name": "native-physical-pads",
+     "measured": 2,
+     "target": 2,
+     "tolerance": 0,
+     "unit": "pads",
+     "ok": true
+    },
+    {
+     "where": "usb.C1",
+     "name": "native-physical-pads",
+     "measured": 2,
+     "target": 2,
+     "tolerance": 0,
+     "unit": "pads",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "gate": "verify",
+   "ok": true,
+   "results": [
+    "light:pass",
+    "led:pass",
+    "usb:pass"
+   ]
+  }
+ ],
+ "firmwareArtifacts": [],
+ "roles": [
+  "verifier",
+  "verifier",
+  "designer",
+  "reviewer"
+ ],
+ "messages": [
+  "verifier: This needs no code: a light sensor and a transistor can switch the LED on their own, so I’ll leave the microcontroller out.",
+  "designer: Dark-activated night light",
+  "reviewer: SPICE: dark.DARK at 10 lux, under the 1 V threshold divider: 0.6140350877192983 V, target 0.61 V ±0.1; dark.DARK in the dark, over the threshold divider: 4.545454545454545 V, target 4.55 V ±0.1; light.LED current with the transistor on led-current: 12.999999999999998 mA, target 13 mA ±2.",
+  "reviewer: A second agent checked 3 sections against the datasheets, with 3 findings and citations checked by code. No person has reviewed this schematic. No schematic review can settle these: Scripted replay: nobody reviewed this.; Scripted replay: nobody reviewed this.; Scripted replay: nobody reviewed this..",
+  "designer: Unreviewed blocks in this board: USB-C power, 5 V, Dark detector, Warm white LED and switch. They stay labelled unreviewed until a block review promotes them.",
+  "designer: Built: 0 DRC errors, and no firmware, because this board has no code. Nothing has been printed, flashed or run on hardware; these are software checks only."
+ ],
+ "refused": []
+}

@@ -1,0 +1,225 @@
+[
+  {
+    "gate": "erc",
+    "ok": true,
+    "issues": [
+      {
+        "rule": "unreviewed",
+        "severity": "warning",
+        "where": "usb-c-power-only",
+        "message": "Block has not passed independent promotion review"
+      },
+      {
+        "rule": "unreviewed",
+        "severity": "warning",
+        "where": "ldr-dark-detector",
+        "message": "Block has not passed independent promotion review"
+      },
+      {
+        "rule": "unreviewed",
+        "severity": "warning",
+        "where": "led-switch",
+        "message": "Block has not passed independent promotion review"
+      }
+    ]
+  },
+  {
+    "gate": "power",
+    "ok": true,
+    "issues": []
+  },
+  {
+    "gate": "spice",
+    "ok": true,
+    "issues": [
+      {
+        "rule": "spice-ideal-model",
+        "severity": "warning",
+        "where": "light.LED current with the transistor on",
+        "message": "Fixed forward-voltage LED model; not diode temperature/tolerance or dynamic behavior"
+      },
+      {
+        "rule": "spice-coverage",
+        "severity": "warning",
+        "message": "Only declared isolated profiles are simulated; this is not whole-board analog verification"
+      },
+      {
+        "rule": "spice-evidence",
+        "severity": "warning",
+        "message": "Fixed netlists and raw engine results: /tmp/claude-1000/-home-sogo-design-skill-research-repos-moki/25596f12-8bc2-419f-8ccc-8a9af295e3dc/scratchpad/srv/jobs/3fe616b4-280d-42cd-a32e-67ad18f29976/spice/run-7S0LEB/output.json"
+      }
+    ],
+    "measurements": [
+      {
+        "where": "dark.DARK at 10 lux, under the 1 V threshold",
+        "name": "divider",
+        "measured": 0.6140350877192983,
+        "target": 0.61,
+        "tolerance": 0.1,
+        "unit": "V",
+        "ok": true
+      },
+      {
+        "where": "dark.DARK in the dark, over the threshold",
+        "name": "divider",
+        "measured": 4.545454545454545,
+        "target": 4.55,
+        "tolerance": 0.1,
+        "unit": "V",
+        "ok": true
+      },
+      {
+        "where": "light.LED current with the transistor on",
+        "name": "led-current",
+        "measured": 12.999999999999998,
+        "target": 13,
+        "tolerance": 2,
+        "unit": "mA",
+        "ok": true
+      }
+    ],
+    "inputHash": "5c36c6a22a5e581c23dd4fcbf4c30f5c409a49e8b7bb3d112034b4c3314b03ea"
+  },
+  {
+    "gate": "review",
+    "ok": true,
+    "issues": []
+  },
+  {
+    "gate": "drc",
+    "ok": true,
+    "issues": []
+  },
+  {
+    "gate": "block-test",
+    "ok": true,
+    "issues": [
+      {
+        "rule": "block-pad-scope",
+        "severity": "warning",
+        "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+      },
+      {
+        "rule": "block-pad-scope",
+        "severity": "warning",
+        "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+      },
+      {
+        "rule": "block-pad-scope",
+        "severity": "warning",
+        "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+      }
+    ],
+    "measurements": [
+      {
+        "where": "dark.R1",
+        "name": "native-physical-pads",
+        "measured": 2,
+        "target": 2,
+        "tolerance": 0,
+        "unit": "pads",
+        "ok": true
+      },
+      {
+        "where": "dark.R2",
+        "name": "native-physical-pads",
+        "measured": 2,
+        "target": 2,
+        "tolerance": 0,
+        "unit": "pads",
+        "ok": true
+      },
+      {
+        "where": "light.Q1",
+        "name": "native-physical-pads",
+        "measured": 3,
+        "target": 3,
+        "tolerance": 0,
+        "unit": "pads",
+        "ok": true
+      },
+      {
+        "where": "light.R1",
+        "name": "native-physical-pads",
+        "measured": 2,
+        "target": 2,
+        "tolerance": 0,
+        "unit": "pads",
+        "ok": true
+      },
+      {
+        "where": "light.D1",
+        "name": "native-physical-pads",
+        "measured": 2,
+        "target": 2,
+        "tolerance": 0,
+        "unit": "pads",
+        "ok": true
+      },
+      {
+        "where": "usb.J1",
+        "name": "native-physical-pads",
+        "measured": 16,
+        "target": 16,
+        "tolerance": 0,
+        "unit": "pads",
+        "ok": true
+      },
+      {
+        "where": "usb.R1",
+        "name": "native-physical-pads",
+        "measured": 2,
+        "target": 2,
+        "tolerance": 0,
+        "unit": "pads",
+        "ok": true
+      },
+      {
+        "where": "usb.R2",
+        "name": "native-physical-pads",
+        "measured": 2,
+        "target": 2,
+        "tolerance": 0,
+        "unit": "pads",
+        "ok": true
+      },
+      {
+        "where": "usb.C1",
+        "name": "native-physical-pads",
+        "measured": 2,
+        "target": 2,
+        "tolerance": 0,
+        "unit": "pads",
+        "ok": true
+      }
+    ]
+  },
+  {
+    "gate": "verify",
+    "ok": true,
+    "issues": [],
+    "results": [
+      {
+        "id": "light",
+        "status": "pass",
+        "measured": "light_sensor",
+        "target": "light_sensor",
+        "evidence": "Declared interface light_sensor is present"
+      },
+      {
+        "id": "led",
+        "status": "pass",
+        "measured": "led",
+        "target": "led",
+        "evidence": "Declared interface led is present"
+      },
+      {
+        "id": "usb",
+        "status": "pass",
+        "measured": "usb_power",
+        "target": "usb_power",
+        "evidence": "Declared interface usb_power is present"
+      }
+    ]
+  }
+]

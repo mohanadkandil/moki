@@ -1,0 +1,156 @@
+[
+ {
+  "name": "focus-timer",
+  "jobId": "aea7fd95-8fb7-4e26-8d65-68f72a43d1a5",
+  "status": "done",
+  "seconds": 33,
+  "board": [
+   90,
+   100
+  ],
+  "areaMm2": 9000,
+  "drcErrors": 0,
+  "unrouted": 0,
+  "vias": 4,
+  "traces": 11,
+  "copper": true,
+  "stages": "codegen:done render:done route:done svg:done gltf:done fab:done enclosure:done firmware:done firmware-compile:done",
+  "firmware": "done",
+  "caseOuter": {
+   "x": 94.6,
+   "y": 105.6,
+   "z": 30.49
+  },
+  "caseWarnings": [
+   "The board has a custom outline. Rounded rectangles are followed by the enclosure; other outlines use the conservative bounding rectangle."
+  ],
+  "handoffWarnings": [
+   "The board has a custom outline. Rounded rectangles are followed by the enclosure; other outlines use the conservative bounding rectangle."
+  ],
+  "viewingAngle": 35,
+  "lip": 2.95
+ },
+ {
+  "name": "light-lamp",
+  "jobId": "afa0d82d-a9f3-40a1-8808-0ef1d181069c",
+  "status": "done",
+  "seconds": 29,
+  "board": [
+   90,
+   105
+  ],
+  "areaMm2": 9450,
+  "drcErrors": 0,
+  "unrouted": 0,
+  "vias": 0,
+  "traces": 7,
+  "copper": true,
+  "stages": "codegen:done render:done route:done svg:done gltf:done fab:done enclosure:done firmware:done firmware-compile:done",
+  "firmware": "done",
+  "caseOuter": {
+   "x": 94.6,
+   "y": 110.6,
+   "z": 30.49
+  },
+  "caseWarnings": [
+   "The board has a custom outline. Rounded rectangles are followed by the enclosure; other outlines use the conservative bounding rectangle."
+  ],
+  "handoffWarnings": [
+   "The board has a custom outline. Rounded rectangles are followed by the enclosure; other outlines use the conservative bounding rectangle."
+  ],
+  "lip": 2.95
+ },
+ {
+  "name": "temp-monitor",
+  "jobId": "7eebf8d4-3f6e-4bdd-bfc6-8d1df3040038",
+  "status": "done",
+  "seconds": 35,
+  "board": [
+   75,
+   75
+  ],
+  "areaMm2": 5625,
+  "drcErrors": 0,
+  "unrouted": 0,
+  "vias": 6,
+  "traces": 11,
+  "copper": true,
+  "stages": "codegen:done render:done route:done svg:done gltf:done fab:done enclosure:done firmware:done firmware-compile:done",
+  "firmware": "done",
+  "caseOuter": {
+   "x": 79.6,
+   "y": 80.6,
+   "z": 30.49
+  },
+  "caseWarnings": [
+   "The board has a custom outline. Rounded rectangles are followed by the enclosure; other outlines use the conservative bounding rectangle."
+  ],
+  "handoffWarnings": [
+   "The board has a custom outline. Rounded rectangles are followed by the enclosure; other outlines use the conservative bounding rectangle."
+  ],
+  "viewingAngle": 35,
+  "lip": 2.95
+ },
+ {
+  "name": "temp-monitor-bme280",
+  "jobId": "20e22b65-3d84-4643-94a5-bafe1893e69d",
+  "status": "done",
+  "seconds": 44,
+  "board": [
+   75,
+   75
+  ],
+  "areaMm2": 5625,
+  "drcErrors": 0,
+  "unrouted": 0,
+  "vias": 5,
+  "traces": 10,
+  "copper": true,
+  "stages": "codegen:done render:done route:done svg:done gltf:done fab:done enclosure:done firmware:done firmware-compile:done",
+  "firmware": "done",
+  "caseOuter": {
+   "x": 79.6,
+   "y": 80.6,
+   "z": 30.49
+  },
+  "caseWarnings": [
+   "The board has a custom outline. Rounded rectangles are followed by the enclosure; other outlines use the conservative bounding rectangle."
+  ],
+  "handoffWarnings": [
+   "The board has a custom outline. Rounded rectangles are followed by the enclosure; other outlines use the conservative bounding rectangle."
+  ],
+  "viewingAngle": 35,
+  "lip": 2.95
+ },
+ {
+  "name": "reaction",
+  "jobId": "cbd9f3c3-5c05-48d3-8fc7-e39eac4816f9",
+  "status": "done",
+  "seconds": 29,
+  "board": [
+   90,
+   100
+  ],
+  "areaMm2": 9000,
+  "drcErrors": 0,
+  "unrouted": 0,
+  "vias": 6,
+  "traces": 14,
+  "copper": true,
+  "stages": "codegen:done render:done route:done svg:done gltf:done fab:done enclosure:done firmware:done firmware-compile:done",
+  "firmware": "done",
+  "caseOuter": {
+   "x": 94.6,
+   "y": 105.6,
+   "z": 30.49
+  },
+  "caseWarnings": [
+   "The board has a custom outline. Rounded rectangles are followed by the enclosure; other outlines use the conservative bounding rectangle."
+  ],
+  "handoffWarnings": [
+   "The board has a custom outline. Rounded rectangles are followed by the enclosure; other outlines use the conservative bounding rectangle."
+  ],
+  "viewingAngle": 35,
+  "lip": 2.95
+ }
+]

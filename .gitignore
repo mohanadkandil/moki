@@ -7,3 +7,19 @@ dist/
 var/
 *.log
 .DS_Store
+
+# Kept local, not published (owner decision, 6 Nov 2026): strategy, naming and brand work
+docs/strategy/
+docs/sprint-2026-11-01/
+# Owner's own screenshots can show private links
+docs/**/owner-*.png
+# Evidence binaries stay local: 3D models, CAD, archives, third-party datasheet PDFs
+docs/**/*.glb
+docs/**/*.stl
+docs/**/*.step
+docs/**/*.zip
+docs/**/*.pdf
+docs/**/*.bin
+__pycache__/
+# Temporary per-job render scripts
+eda/.job-*.mjs

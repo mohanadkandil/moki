@@ -1,0 +1,77 @@
+{
+  "baseJobId": "c78fa2da-cfdc-487b-9b2f-9bf2b5044a6c",
+  "jobId": "3eb2b76f-dfdf-425f-9a84-b32e0f325378",
+  "status": "done",
+  "exactPlanPreserved": true,
+  "exactApplicationPreserved": true,
+  "modelCalls": 0,
+  "workerTimeoutMs": 600000,
+  "productionDefaultWorkerTimeoutMs": 240000,
+  "productionTimeoutChanged": false,
+  "serviceRestarted": false,
+  "nativeDrc": {
+    "checked": true,
+    "errors": 0,
+    "warnings": 19
+  },
+  "board": {
+    "widthMm": 40,
+    "heightMm": 60,
+    "layers": 2,
+    "traceCount": 122,
+    "viaCount": 107
+  },
+  "totalMs": 388768.992589,
+  "routeMs": 362632.817543,
+  "compileMs": 2257,
+  "gates": [
+    {
+      "gate": "erc",
+      "ok": true
+    },
+    {
+      "gate": "power",
+      "ok": true
+    },
+    {
+      "gate": "spice",
+      "ok": true
+    },
+    {
+      "gate": "review",
+      "ok": true
+    },
+    {
+      "gate": "drc",
+      "ok": true
+    },
+    {
+      "gate": "block-test",
+      "ok": true
+    },
+    {
+      "gate": "verify",
+      "ok": true
+    },
+    {
+      "gate": "compile",
+      "ok": true
+    }
+  ],
+  "firmware": {
+    "status": "done",
+    "board": "pico",
+    "environment": "rp2040",
+    "platform": "platformio/raspberrypi@1.20.0",
+    "framework": "arduino",
+    "sourceSha256": "1d85818f71aab4a1bd757dcea83b94e631083032d2fa2e27d713ebbf73603283"
+  },
+  "verification": {
+    "targeted": {
+      "pass": 18,
+      "fail": 0
+    },
+    "rootTypecheck": true,
+    "webTypecheck": true
+  }
+}

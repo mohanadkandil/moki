@@ -1,0 +1,220 @@
+{
+  "sourceJobId": "0ce3c0b1-1fc5-4c95-8ad7-0425dad42cc9",
+  "nativeRawSha256": "cab8fd69e82f31dc2cde5bfee4950d15804e98b9c46ddffbc7f5df00dda63220",
+  "finalCircuitSha256": "fa95450d07eeabd36f9c7edb423c7c336344da40cc12e31bdc1d035f7cfeb5d9",
+  "widthRefinement": [],
+  "pairs": [
+    {
+      "via": {
+        "type": "pcb_via",
+        "pcb_via_id": "pcb_via_0",
+        "pcb_trace_id": "source_net_29_0",
+        "x": 18.300116859012746,
+        "y": 7.6977220114091836,
+        "hole_diameter": 0.3,
+        "outer_diameter": 0.6,
+        "layers": [
+          "top",
+          "bottom"
+        ],
+        "from_layer": "bottom",
+        "to_layer": "top",
+        "subcircuit_id": "subcircuit_source_group_0",
+        "subcircuit_connectivity_map_key": "unnamedsubcircuitsubcircuit_source_group_0_connectivity_net29"
+      },
+      "viaOwner": {
+        "type": "pcb_trace",
+        "pcb_trace_id": "source_net_29_0",
+        "connection_name": "source_net_29",
+        "connectsTo": [
+          "saved_phase_null_2_24_exit",
+          "pcb_port_169"
+        ],
+        "subcircuit_id": "subcircuit_source_group_0",
+        "source_trace_id": "source_trace_151"
+      },
+      "viaNetName": "VINT_BYPASS",
+      "traceOwner": {
+        "type": "pcb_trace",
+        "pcb_trace_id": "source_net_4_mst6_0",
+        "connection_name": "source_net_4",
+        "connectsTo": [
+          "pcb_port_159",
+          "pcb_port_162"
+        ],
+        "subcircuit_id": "subcircuit_source_group_0",
+        "source_trace_id": "source_trace_67"
+      },
+      "traceNetName": "GND",
+      "actualEdgeGapMm": 0.11499999999999978,
+      "closestWireSegment": {
+        "index": 0,
+        "a": {
+          "route_type": "wire",
+          "x": 17.149993,
+          "y": 7.625092,
+          "width": 0.15,
+          "layer": "top",
+          "start_pcb_port_id": "pcb_port_159"
+        },
+        "b": {
+          "route_type": "wire",
+          "x": 17.935040507193087,
+          "y": 7.370889856714992,
+          "width": 0.15,
+          "layer": "top"
+        },
+        "projection": {
+          "x": 17.935040507193087,
+          "y": 7.370889856714992
+        },
+        "distanceToViaCenterMm": 0.48999999999999977
+      },
+      "rawAndFinalGeometrySameModuloWholeRouteReversal": {
+        "source_net_4_mst6_0": true,
+        "source_net_29_0": true
+      }
+    },
+    {
+      "via": {
+        "type": "pcb_via",
+        "pcb_via_id": "pcb_via_19",
+        "pcb_trace_id": "source_net_18_mst9_0",
+        "x": -17.12779740829468,
+        "y": 12.406800285828426,
+        "hole_diameter": 0.3,
+        "outer_diameter": 0.6,
+        "layers": [
+          "top",
+          "bottom"
+        ],
+        "from_layer": "top",
+        "to_layer": "bottom",
+        "subcircuit_id": "subcircuit_source_group_0",
+        "subcircuit_connectivity_map_key": "unnamedsubcircuitsubcircuit_source_group_0_connectivity_net18"
+      },
+      "viaOwner": {
+        "type": "pcb_trace",
+        "pcb_trace_id": "source_net_18_mst9_0",
+        "connection_name": "source_net_18",
+        "connectsTo": [
+          "pcb_port_78",
+          "pcb_port_71"
+        ],
+        "subcircuit_id": "subcircuit_source_group_0",
+        "source_trace_id": "source_trace_112"
+      },
+      "viaNetName": "VBUS",
+      "traceOwner": {
+        "type": "pcb_trace",
+        "pcb_trace_id": "source_net_4_mst28_0",
+        "connection_name": "source_net_4",
+        "connectsTo": [
+          "pcb_port_143",
+          "pcb_port_75"
+        ],
+        "subcircuit_id": "subcircuit_source_group_0",
+        "source_trace_id": "source_trace_37"
+      },
+      "traceNetName": "GND",
+      "actualEdgeGapMm": -0.00902895185114215,
+      "closestWireSegment": {
+        "index": 3,
+        "a": {
+          "route_type": "wire",
+          "x": -16.875795653378976,
+          "y": 13.508175355017816,
+          "width": 0.15,
+          "layer": "top"
+        },
+        "b": {
+          "route_type": "wire",
+          "x": -16.880621864044148,
+          "y": 12.676687407432306,
+          "width": 0.15,
+          "layer": "top"
+        },
+        "projection": {
+          "x": -16.880621864044148,
+          "y": 12.676687407432306
+        },
+        "distanceToViaCenterMm": 0.36597104814885784
+      },
+      "rawAndFinalGeometrySameModuloWholeRouteReversal": {
+        "source_net_4_mst28_0": true,
+        "source_net_18_mst9_0": true
+      }
+    },
+    {
+      "via": {
+        "type": "pcb_via",
+        "pcb_via_id": "pcb_via_85",
+        "pcb_trace_id": "source_net_3_0",
+        "x": 0.29449672704233487,
+        "y": 3.6066353445380486,
+        "hole_diameter": 0.3,
+        "outer_diameter": 0.6,
+        "layers": [
+          "top",
+          "bottom"
+        ],
+        "from_layer": "bottom",
+        "to_layer": "top",
+        "subcircuit_id": "subcircuit_source_group_0",
+        "subcircuit_connectivity_map_key": "unnamedsubcircuitsubcircuit_source_group_0_connectivity_net3"
+      },
+      "viaOwner": {
+        "type": "pcb_trace",
+        "pcb_trace_id": "source_net_3_0",
+        "connection_name": "source_net_3",
+        "connectsTo": [
+          "pcb_port_17",
+          "saved_phase_null_2_25_exit"
+        ],
+        "subcircuit_id": "subcircuit_source_group_0",
+        "source_trace_id": "source_trace_29"
+      },
+      "viaNetName": "IN2",
+      "traceOwner": {
+        "type": "pcb_trace",
+        "pcb_trace_id": "source_net_14_0",
+        "connection_name": "source_net_14",
+        "connectsTo": [
+          "saved_phase_null_2_10_exit",
+          "pcb_port_59"
+        ],
+        "subcircuit_id": "subcircuit_source_group_0",
+        "source_trace_id": "source_trace_100"
+      },
+      "traceNetName": "QSPI_SD2",
+      "actualEdgeGapMm": -0.08190571849387361,
+      "closestWireSegment": {
+        "index": 9,
+        "a": {
+          "route_type": "wire",
+          "x": -0.24558168545016573,
+          "y": 3.750250219444149,
+          "width": 0.15,
+          "layer": "bottom"
+        },
+        "b": {
+          "route_type": "wire",
+          "x": 1.7894646688125149,
+          "y": 1.6040144306221968,
+          "width": 0.15,
+          "layer": "bottom"
+        },
+        "projection": {
+          "x": 0.08181175642774596,
+          "y": 3.404968884445489
+        },
+        "distanceToViaCenterMm": 0.2930942815061264
+      },
+      "rawAndFinalGeometrySameModuloWholeRouteReversal": {
+        "source_net_14_0": true,
+        "source_net_3_0": true
+      }
+    }
+  ],
+  "scope": "Pure Euclidean wire-segment/circular-via physical pair measurements from actual raw/final records; no routing or wholeboard polygon computation"
+}

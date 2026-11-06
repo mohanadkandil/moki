@@ -1,0 +1,46 @@
+{
+  "at": "2026-11-06T05:01:16.936Z",
+  "scripted": "Model calls scripted; every other stage real.",
+  "outcome": "built",
+  "wallMs": 190881,
+  "sentBoard": {
+    "widthMm": 55,
+    "heightMm": 40
+  },
+  "boards": [
+    {
+      "widthMm": 46,
+      "heightMm": 66,
+      "cornerRadiusMm": 2
+    }
+  ],
+  "refused": [],
+  "messages": [
+    "designer: Scripted plan.",
+    "reviewer: A second agent checked 3 sections against the datasheets, with 3 findings and citations checked by code. No person has reviewed this schematic. No schematic review can settle these: Scripted replay: nobody reviewed this.; Scripted replay: nobody reviewed this.; Scripted replay: nobody reviewed this..",
+    "designer: Unreviewed blocks in this board: RP2040 bare-chip USB motor-controller core, DRV8833 single brushed DC motor, qualified5V USB supply, 3.3 V active-low application pushbutton. They stay labelled unreviewed until a block review promotes them.",
+    "firmware: Prints hello. A model wrote this firmware and it has only been compiled, so read it before you flash it.",
+    "designer: Built: 0 DRC errors, firmware compiled, case not generated. Nothing has been printed, flashed or run on hardware; these are software checks only."
+  ],
+  "jobs": [
+    {
+      "type": "job",
+      "jobId": "50a05041-34e8-4163-8d91-b2f87300acca",
+      "attempt": 1,
+      "baseJobId": null,
+      "label": "RP2040 single-button USB-C motor controller"
+    },
+    {
+      "type": "job-result",
+      "jobId": "50a05041-34e8-4163-8d91-b2f87300acca",
+      "attempt": 1,
+      "status": "done",
+      "ok": true,
+      "drcErrors": 0,
+      "compile": "compiled",
+      "caseOk": false,
+      "pipelineMs": 147294,
+      "problems": []
+    }
+  ]
+}

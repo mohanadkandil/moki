@@ -1,0 +1,118 @@
+TAP version 13
+# Subtest: actual native terminal-via serialization binds exact audited prefixes and physical barrels without geometry or diagnostic changes
+ok 1 - actual native terminal-via serialization binds exact audited prefixes and physical barrels without geometry or diagnostic changes
+  ---
+  duration_ms: 12.940541
+  type: 'test'
+  ...
+# Subtest: derived same-net via-exit joins require real native endpoint capture; bottom and inner-layer paths preserve all geometry
+ok 2 - derived same-net via-exit joins require real native endpoint capture; bottom and inner-layer paths preserve all geometry
+  ---
+  duration_ms: 11.86509
+  type: 'test'
+  ...
+# Subtest: wrong actual via dimensions, spans, source keys, prefix widths/geometry/identity and existing metadata reject
+ok 3 - wrong actual via dimensions, spans, source keys, prefix widths/geometry/identity and existing metadata reject
+  ---
+  duration_ms: 11.368805
+  type: 'test'
+  ...
+# Subtest: join capture, real annular contact, continuity and actual route-via ownership mutants fail closed
+ok 4 - join capture, real annular contact, continuity and actual route-via ownership mutants fail closed
+  ---
+  duration_ms: 13.637269
+  type: 'test'
+  ...
+# Subtest: unknown blank and unmatched failures remain visible rather than guessed or filtered
+ok 5 - unknown blank and unmatched failures remain visible rather than guessed or filtered
+  ---
+  duration_ms: 1.415295
+  type: 'test'
+  ...
+# Subtest: actual old SHT straight-prefix native join remains supported by the new independent proof
+ok 6 - actual old SHT straight-prefix native join remains supported by the new independent proof
+  ---
+  duration_ms: 90.664033
+  type: 'test'
+  ...
+# Subtest: native variable-width joins stay inside board minimum and captured nominal without using width as source identity
+ok 7 - native variable-width joins stay inside board minimum and captured nominal without using width as source identity
+  ---
+  duration_ms: 7.839526
+  type: 'test'
+  ...
+# Subtest: only proved missing physical via keys are completed; conflicts and preattributed foreign join sources reject
+ok 8 - only proved missing physical via keys are completed; conflicts and preattributed foreign join sources reject
+  ---
+  duration_ms: 8.17845
+  type: 'test'
+  ...
+# Subtest: derived native serialization of all14 actual RP profile exits proves exposed-pad aliases and source ownership
+ok 9 - derived native serialization of all14 actual RP profile exits proves exposed-pad aliases and source ownership
+  ---
+  duration_ms: 826.588288
+  type: 'test'
+  ...
+# Subtest: unexpected interior, wrong endpoint and foreign marker metadata rejects without inventing absent markers
+ok 10 - unexpected interior, wrong endpoint and foreign marker metadata rejects without inventing absent markers
+  ---
+  duration_ms: 6.556032
+  type: 'test'
+  ...
+# Subtest: two-layer derived barrel span is accepted only when the complete physical stack agrees
+ok 11 - two-layer derived barrel span is accepted only when the complete physical stack agrees
+  ---
+  duration_ms: 2.437747
+  type: 'test'
+  ...
+# Subtest: an actual-coordinate same-net endpoint marker is proved, while a foreign physical pin marker rejects
+ok 12 - an actual-coordinate same-net endpoint marker is proved, while a foreign physical pin marker rejects
+  ---
+  duration_ms: 2.168064
+  type: 'test'
+  ...
+# Subtest: existing source claims are checked against the proved net even without a routing capture
+ok 13 - existing source claims are checked against the proved net even without a routing capture
+  ---
+  duration_ms: 2.674869
+  type: 'test'
+  ...
+# Subtest: translated90degree actual RP profile binds subnanometre source coordinates while .001mm shifts still reject
+ok 14 - translated90degree actual RP profile binds subnanometre source coordinates while .001mm shifts still reject
+  ---
+  duration_ms: 410.14361
+  type: 'test'
+  ...
+# Subtest: native deduplicated saved barrels support same-net inner-layer joins without inventing barrels or changing geometry
+ok 15 - native deduplicated saved barrels support same-net inner-layer joins without inventing barrels or changing geometry
+  ---
+  duration_ms: 10.401914
+  type: 'test'
+  ...
+# Subtest: official post-DRC own-pad handoff markers and captured mixed via joins retain strict physical ownership
+ok 16 - official post-DRC own-pad handoff markers and captured mixed via joins retain strict physical ownership
+  ---
+  duration_ms: 16.003095
+  type: 'test'
+  ...
+# Subtest: actual native reversed via annotations prove coincident annular copper without rewriting route or barrel geometry
+ok 17 - actual native reversed via annotations prove coincident annular copper without rewriting route or barrel geometry
+  ---
+  duration_ms: 563.036243
+  type: 'test'
+  ...
+# Subtest: a native join can depart a proved saved through barrel on another physical layer only with positive annular copper
+ok 18 - a native join can depart a proved saved through barrel on another physical layer only with positive annular copper
+  ---
+  duration_ms: 10.449314
+  type: 'test'
+  ...
+1..18
+# tests 18
+# suites 0
+# pass 18
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2295.401367

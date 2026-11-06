@@ -1,0 +1,110 @@
+{
+  "schema": "moki.native-routing-readonly-diagnosis/1",
+  "author": "gnd_escape",
+  "native7Job": "8e46b9c1-f3b9-4e83-8a68-52586f27d516",
+  "artifactsSha256": {
+    "native-before-width.json": "c007f55c559ae491f30881ecc2791f818934d811d0a478a143b81fa5a087d6c0",
+    "router-input.json": "7e1ca0688c2d1e93b292741a415e6076814f3474e6b603de4937221e177580ad",
+    "circuit.json": "2cbffb6665e7da522ca5523118d701bcc78c5ce8c6785d749ede582a0b1ecf5f",
+    "native-width-refinement.json": "925e884974dbb116bbe215dfff782888922541d79a11840a71e6762075169fb3"
+  },
+  "rawNativeBeforeWidthTrace": "source_net_14_0",
+  "logicalNet": "QSPI_SD2",
+  "rawFinalGeometryIdentical": true,
+  "routePointCount": 86,
+  "onlyCorePointDifference": "start_pcb_port_id added at point0",
+  "wireWidths": [
+    0.15
+  ],
+  "actualForeignContacts": [
+    {
+      "pad": "U1.GPIO11",
+      "padId": "pcb_smtpad_43",
+      "segmentIndex": 28,
+      "a": {
+        "route_type": "wire",
+        "x": 0.579,
+        "y": 2.95,
+        "width": 0.15,
+        "layer": "top"
+      },
+      "b": {
+        "route_type": "wire",
+        "x": 0.45,
+        "y": 3.1,
+        "width": 0.15,
+        "layer": "top"
+      },
+      "padRectBounds": [
+        0.2500712,
+        2.1500585,
+        0.4500708,
+        3.0000695
+      ],
+      "centerlineDistanceToPadMm": 0.06510493064172261,
+      "edgeClearanceMm": -0.009895069358277386
+    },
+    {
+      "pad": "U1.GND",
+      "padId": "pcb_smtpad_0",
+      "segmentIndex": 62,
+      "a": {
+        "route_type": "wire",
+        "x": -3.8001250000000004,
+        "y": 4.200001000000001,
+        "width": 0.15,
+        "layer": "top"
+      },
+      "b": {
+        "route_type": "wire",
+        "x": -3.8001250000000004,
+        "y": 4.493405426379737,
+        "width": 0.15,
+        "layer": "top"
+      },
+      "padRectBounds": [
+        -3.8001239,
+        4.4500031,
+        -0.7001301,
+        7.5499969
+      ],
+      "centerlineDistanceToPadMm": 1.1000000004202093e-06,
+      "edgeClearanceMm": -0.07499889999999958
+    }
+  ],
+  "widthCleanup": "Only source_net_0_mst14_0 and source_net_0_mst16_0 mutable; trace14 fixed in both stages",
+  "conclusion": "These contacts exist in raw native7 solver output before wrapper width cleanup or Core materialization. Native7 output rejected; current root rerun uses native9. No per-internal-stage snapshot proves which native7 stage introduced the contacts.",
+  "pathingFailure65Rp0": {
+    "jobId": "7c9de92d-9d82-4f0f-b261-3b1dab6a6951",
+    "neverRoutedNet": "source_net_10 = USB_DP",
+    "attempts": 34,
+    "start": [
+      -15.250002,
+      1.600063,
+      "top"
+    ],
+    "end": [
+      -7,
+      2.496636,
+      "top"
+    ],
+    "startRegion": "cmn_731__sub_1_0",
+    "startRegionWidthMm": 0.15,
+    "startRegionHeightMm": 0.5375,
+    "availableZ": [
+      0
+    ],
+    "containsObstacleAndTarget": true,
+    "observation": "Saved short top-only prefix endpoint sits before coupled USB/power escape field; native tiny-terminal cannot complete. Global board size is not the immediate failing endpoint."
+  },
+  "limits": [
+    "Pure captured geometry/source inspection; no native router/checker/render/compile execution",
+    "No confirmed evidence that broad obstacle keys equate source_net_14 to GPIO11/GND; captured obstacle connectedTo lists exclude source_net_14",
+    "No claim that native9 has passed or that coupled exits solve routing"
+  ],
+  "internalStageInspection": {
+    "broadSameNetKeyEvidence": "None: captured GPIO11/GND obstacle lists do not include source_net_14",
+    "pipeline7BuiltInWidthStage": "PowerTraceExpansionSolver receives all newly routed traces; bundled expander mutableBlockerTraceIndices includes every trace with declared connection even outside onlyConnectionNames",
+    "interpretation": "Built-in native cleanup may move unrelated QSPI before onNativeSolved. No pre-expansion snapshot identifies which internal stage introduced observed contacts. Outer narrow cleanup demonstrably retained trace14 geometry."
+  }
+}

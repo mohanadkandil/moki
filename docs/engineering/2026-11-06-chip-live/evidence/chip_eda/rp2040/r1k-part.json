@@ -1,0 +1,38 @@
+{
+  "lcsc": "C21190",
+  "mpn": "0603WAF1001T5E",
+  "manufacturer": "UNI-ROYAL(厚声)",
+  "package": "R0603",
+  "description": "1KΩ (1001) ±1%",
+  "stock": 4980900,
+  "catalogReceipt": "sha256:4e3c00bd7b83ecd8265f93ac6bcec955f10e2394913ed70624bac5baca6e4407",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "50b9110098f283b4e975a01946e9a7b51e2e7515fcb131ad4dbcc8a38d04f281",
+  "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+  "pins": [
+    {
+      "pad": "2",
+      "labels": [
+        "2"
+      ]
+    },
+    {
+      "pad": "1",
+      "labels": [
+        "1"
+      ]
+    }
+  ],
+  "models": [
+    {
+      "format": "obj",
+      "url": "https://modules.easyeda.com/3dmodel/e06b23482b894f1ebafac2e1696a59f5"
+    },
+    {
+      "format": "step",
+      "url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/e06b23482b894f1ebafac2e1696a59f5"
+    }
+  ],
+  "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010130_UNI-ROYAL-Uniroyal-Elec-0603WAF1001T5E_C21190.pdf",
+  "datasheetReceipt": "sha256:dd20a19db0eaba652464e8fa4e244c869d693b6e662bb56488ff73a8e348321d"
+}

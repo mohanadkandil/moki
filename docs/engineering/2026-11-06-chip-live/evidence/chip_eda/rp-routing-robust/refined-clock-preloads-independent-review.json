@@ -1,0 +1,16 @@
+{
+  "reviewer": "rp_clock",
+  "author": "gnd_escape",
+  "helperSha256": "9bceb5e93a199a72ec6a9e9ecf73341a9559dd7d73db5ee39f6738b4d96815a7",
+  "testsSha256": "7ec17c6763a6aaa7eebc2b0ef98e352653fa3d4c1f83bb5316e9e1a74d25838d",
+  "findings": [],
+  "scope": "Independent source/captured getter/native Core replacement pure tests; no native routing or source edits",
+  "verification": {
+    "authoredTestsPassed": 7,
+    "elapsedMs": 5753.873562,
+    "strictNodeNextTypeScript": "pass",
+    "independentControlsPassed": 8
+  },
+  "limitation": "Actual native getter fixture; positive returned output derived because raw complete native output was not captured",
+  "required": "Fresh native return and postCore exact accepted-Cu/source certificate, followed by all physical gates"
+}

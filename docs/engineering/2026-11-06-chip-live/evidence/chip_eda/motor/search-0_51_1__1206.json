@@ -1,0 +1,40 @@
+[
+  {
+    "lcsc": "C269373",
+    "mpn": "RMC060320.51%N",
+    "manufacturer": "TyoHM",
+    "package": "0603",
+    "description": "100mW 20.5Ω 50V Thick Film Resistor ±1% ±100ppm/℃ 0603 Chip Resistor - Surface Mount ROHS",
+    "stock": 8,
+    "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_TyoHM-RMC060320-51-N_C269373.pdf",
+    "catalogReceipt": "sha256:98917e91c1245448c5a70c1805efb1e50312d8c5ae6221628f72f64ee2886545"
+  },
+  {
+    "lcsc": "C49167255",
+    "mpn": "HLY-SMA-KFD0.51-1",
+    "manufacturer": "HenryTech",
+    "package": "-",
+    "description": "-55℃~+165℃ 1 27GHz 4.4mm 50Ω 9.4mm Inner hole SMA - Coaxial Connectors (RF) ROHS",
+    "stock": 10,
+    "catalogReceipt": "sha256:98917e91c1245448c5a70c1805efb1e50312d8c5ae6221628f72f64ee2886545"
+  },
+  {
+    "lcsc": "C49167258",
+    "mpn": "HLY-SMA-KFD0.51-7",
+    "manufacturer": "HenryTech",
+    "package": "SMD",
+    "description": "-55℃~+165℃ 1 27GHz 4.4mm 50Ω 9.4mm Inner hole SMA SMD Coaxial Connectors (RF) ROHS",
+    "stock": 10,
+    "catalogReceipt": "sha256:98917e91c1245448c5a70c1805efb1e50312d8c5ae6221628f72f64ee2886545"
+  },
+  {
+    "lcsc": "C7014890",
+    "mpn": "40.51.9.012.2300",
+    "manufacturer": "Finder Relays, Inc.",
+    "package": "SOCKETABLE",
+    "description": "-40℃~+85℃ 1 Set Normally Open: 1A (SPST NO) 10A 12V 3ms 400V@AC 7ms AgNi SOCKETABLE Power Relays ROHS",
+    "stock": 0,
+    "datasheetUrl": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2312271356_Finder-Relays--Inc--40-51-9-012-2300_C7014890.pdf",
+    "catalogReceipt": "sha256:98917e91c1245448c5a70c1805efb1e50312d8c5ae6221628f72f64ee2886545"
+  }
+]

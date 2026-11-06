@@ -1,0 +1,35 @@
+{
+  "schema": "moki.independent-locked-pads-review/1",
+  "reviewer": "gnd_escape",
+  "at": "2026-11-06T09:32:33.196655+00:00",
+  "verdict": "no-actionable-findings-in-scoped-frozen-ownership-flag-helper",
+  "sourceHashes": {
+    "eda/blocks/locked-pads.ts": "34d3314977ad6643ab0640db5d8d8fd1de37d2be10f28591143e901e1d6abc9b",
+    "tests/blocks-locked-pads.test.ts": "0d402412a68633564d4d287bdacaff757db0cc41a9fd2fd92c168ffae6625d38"
+  },
+  "scope": "Set netIsAssignable:false on already-owned physical component pad obstacles after actual graph/import/catalog/native source/port/net/key/subcircuit checks; preserve all Cu/source records",
+  "validation": {
+    "focusedTestsPassed": 6,
+    "failed": 0,
+    "durationMs": 1952.303082,
+    "strictTypeScript": "pass",
+    "actual45GroundPadFixture": "45flags only; input/actualCircuit/graph/map unmutated; route/layer/width/coordinates/aliases unchanged"
+  },
+  "reviewedInvariants": [
+    "Every claimed physical obstacle must match unique actual pad,PCBport,component and canonical native port membership",
+    "Supplier receipt,partMPN,physical pin and one-port/net source ownership verified",
+    "Source net/subcircuit/key identities checked; known conflicting physical/source/isolated aliases reject",
+    "Net and isolated-token namespaces distinct, including hostile net names",
+    "Only actual true flags changed; already-unflagged and nonphysical assignables retained exactly",
+    "Existing routed Cu accepted as evidence and not removed or rewritten"
+  ],
+  "findings": [],
+  "limits": [
+    "This helper strengthens assignment semantics; it is not a new physical-shape or PCB-clearance oracle",
+    "Zero-physical-port converter fallback remains separate; native-owner-guard addresses source aliases only",
+    "Native endpoint-marker inference can still mask contact; mandatory all-net physical gate remains necessary",
+    "No actual native routing/full-board oracle or production restart run by reviewer",
+    "Private build integration is coordinator-owned,not approved by this helper-only receipt"
+  ],
+  "sourceEditsPerformed": false
+}

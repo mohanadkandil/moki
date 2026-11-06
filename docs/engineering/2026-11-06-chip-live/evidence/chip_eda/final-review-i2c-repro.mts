@@ -1,0 +1,17 @@
+/** Independent synthetic composite-block ERC reproduction; not a physical design. */
+import {checkPlan} from '../../../../../src/blocks/erc.js';
+import type {BlockDef,BoardPlan} from '../../../../../src/blocks/contract.js';
+const citation={url:'https://example.invalid/SYNTHETIC-composite-I2C'};
+const pin=(pad:string,role:any)=>({pad,role});
+const part=(ref:string,pins:any,x=0,value?:string)=>({ref,lcsc:`SYNTHETIC:${ref}`,mpn:`SYNTHETIC:${ref}`,catalogReceipt:`sha256:${'a'.repeat(64)}`,datasheet:citation,pinout:'verified' as const,pins,at:{x,y:0},...value?{value,valueWhy:citation}:{}});
+const block:BlockDef={schema:'moki.block/1',id:'synthetic-composite-i2c',version:1,contentHash:'a'.repeat(64),title:'SYNTHETIC MCU+sensor',summary:'Independent checker fixture only',class:'synthetic',status:'unreviewed',provenance:{author:'agent',authorId:'SYNTHETIC-INDEPENDENT-REVIEW',reviews:[]},
+parts:[part('U1',{V:pin('1','power-in'),G:pin('2','ground'),SDA:pin('3','bidirectional'),SCL:pin('4','bidirectional')}),part('U2',{V:pin('1','power-in'),G:pin('2','ground'),SDA:pin('3','bidirectional'),SCL:pin('4','bidirectional')},8),part('C1',{A:pin('1','passive'),B:pin('2','passive')},2,'100nF'),part('C2',{A:pin('1','passive'),B:pin('2','passive')},10,'100nF'),part('J1',{V:pin('1','passive'),G:pin('2','ground')})],
+nets:[{name:'VCC',pins:['J1.V','U1.V','U2.V','C1.A','C2.A']},{name:'GND',pins:['J1.G','U1.G','U2.G','C1.B','C2.B']},{name:'SDA',pins:['U1.SDA','U2.SDA']},{name:'SCL',pins:['U1.SCL','U2.SCL']}],
+ports:[{id:'OUT',label:'Synthetic supply',kind:'power-out',terminal:'net:VCC',volts:{min:3.3,max:3.3}},{id:'IN',label:'Synthetic load accounting',kind:'power-in',terminal:'net:VCC',volts:{min:3.3,max:3.3}},{id:'GND',label:'Ground',kind:'ground',terminal:'net:GND'},{id:'I2C',label:'Internal MCU+sensor I2C',kind:'bus',bus:{protocol:'i2c',role:'controller',signals:{SDA:'net:SDA',SCL:'net:SCL'}}}],
+params:[],power:{sources:[{port:'OUT',volts:3.3,maxMa:100,mode:'external'}],sinks:[{port:'IN',typicalMa:10,peakMa:10}]},constraints:[...['U1','U2'].map((ic,i)=>({kind:'decoupling' as const,ic,powerPin:'V',groundPin:'G',caps:[`C${i+1}`],minUf:.1,maxDistanceMm:3,citation}))],
+mcu:{family:'SYNTHETIC',pio:{platform:'SYNTHETIC',board:'SYNTHETIC',framework:'SYNTHETIC'},flashKb:1,ramKb:1,pins:[{id:'U1.SDA',gpio:1,caps:['input','output','i2c']},{id:'U1.SCL',gpio:2,caps:['input','output','i2c']}]}};
+const plan:BoardPlan={schema:'moki.plan/1',title:'SYNTHETIC internal active I2C missing pullups',layers:2,blocks:[{inst:'composite',block:block.id,version:1,params:{}}],links:[]};
+console.log(JSON.stringify({description:'Explicit I2C port joins powered MCU and powered sensor pins inside one block; there are no pullup parts or constraints.',gates:checkPlan(plan,[block])},null,2));
+const analog=structuredClone(block);analog.id='synthetic-composite-analog';analog.ports=analog.ports.filter(p=>p.id!=='I2C');analog.ports.push({id:'ANALOG',label:'Explicit internal analog consumer',kind:'analog',terminal:'net:SDA'});analog.parts.find(p=>p.ref==='U2')!.pins.SDA!.role='input';analog.mcu!.pins[0]!.caps=['input','output','adc'];
+const analogPlan:BoardPlan={...plan,title:'SYNTHETIC ADC-only MCU cannot drive internal analog input',blocks:[{inst:'composite',block:analog.id,version:1,params:{}}]};
+console.log(JSON.stringify({description:'Same composite block declares an ADC-only MCU on a net with an analog input consumer. No DAC capability exists.',gates:checkPlan(analogPlan,[analog])},null,2));

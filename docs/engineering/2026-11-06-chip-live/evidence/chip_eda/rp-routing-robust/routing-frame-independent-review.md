@@ -1,0 +1,9 @@
+# Independent native routing-frame review
+
+No actionable findings at frozen helper `223194ea…584966`, adapter `b9741935…55ecfe` and current root build `bedcee17…4dc69a`. This includes the runtime-undefined fix superseding the first helper hash. Full reviewed hashes are in the JSON receipt.
+
+The transform preserves actual physical shapes using exact cardinal coordinate swaps/signs. Intrinsic-angle rectangles/ovals keep their dimensions while the angle rotates; absent or explicitly undefined angles use world-axis dimension swaps. Every723captured obstacle plus asymmetric oval/undefined-angle controls passes independent physical corner/ellipse sample equivalence across three nonzero quarters:2175cases. Dimensions, layers, widths, via IDs, source/net metadata and terminal markers remain unchanged. Defined unknown constraints still fail closed; undefined optional JS fields retain JSON-absent meaning without mutating input.
+
+The nonzero frame is private CLI-only and requires the knownRP native-pad-escape diagnostic. Independent exact-source CLI/API probes reject invalid combinations and five public frame fields; worker environment exposes none. The root records actual framed native input separately and marks the source-proof SRJ as physical-frame normalized. Native output is inverted before capture, hard minimum-width repair, completion and Core materialization. Inspected Core source reads synchronous output after the completion event. Existing cancellation/error semantics remain intact.
+
+Sixteen pure helper/adapter tests and strict TypeScript pass. This source/protocol/geometry review ran no native router, render, compile or server and does not establish that the running q3 board routes or passes full acceptance. Full fresh native/source/all-net physical/fabrication/compile gates remain required.

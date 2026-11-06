@@ -1,0 +1,82 @@
+{
+  "scope": "Independent review of repair-native-exits.ts and tests; subsequent focused fixes authorized by root were implemented by this reviewer and require teammate re-review. No frozen RP profiles changed.",
+  "baseline": {
+    "sourceSha256": "272958ec957a9d35a2a4b16eaaf825707dcf615c52953e8a9429426b9f339007",
+    "testSha256": "faabf28d7f75111bf65d26ea8c890fc564a4e951e3cdc9ca475ebfd029c57b8a",
+    "testsPassed": 13
+  },
+  "findings": [
+    {
+      "id": "P2-1",
+      "confirmed": true,
+      "summary": "Exact port coordinate equality rejects valid cardinal translated profiles after floating point roundtrip",
+      "baselineObservation": {
+        "rotation": 90,
+        "translation": [
+          1.23,
+          -1.23
+        ],
+        "pin": "U1.1",
+        "nativePortX": 1.379928999999999,
+        "savedStartX": 1.3799289999999993,
+        "differenceMm": 2.220446049250313e-16,
+        "error": "Native exit lacks exact actual physical pad/port start"
+      },
+      "fix": "1e-7mm finite port/marker binding tolerance only; literal audited prefix and actual via geometry remain exact; .001mm mutants reject"
+    },
+    {
+      "id": "P2-2",
+      "confirmed": "derived native serialization matching installed physical-hole deduplication; no full native route executed",
+      "summary": "Prefix-owned same-net full-through barrel reused by MST is rejected by per-trace barrel-owner/direction requirement",
+      "baselineObservation": {
+        "error": "Native exit source proof requires exactly one physical barrel for unnamedsubcircuitsubcircuit_source_group_0_connectivity_net0"
+      },
+      "fix": "Only already-proved saved-prefix barrels may be shared at exactXY/dimensions/span/key, with required layers and positive annular contact. Unknown/foreign barrels reject."
+    }
+  ],
+  "verification": {
+    "testsPassed": 15,
+    "targetedStrictTypecheck": "pass",
+    "nativeRoutingOrCompile": "none",
+    "geometryAndDiagnosticsChanged": "none",
+    "afterProbes": [
+      "source-review-probe.json",
+      "source-review-shared-via.json"
+    ]
+  },
+  "finalFiles": [
+    {
+      "path": "eda/blocks/repair-native-exits.ts",
+      "sha256": "bc13e2f9d7f1bcda4cba36f9ac2ba3b285c32e71ce70ad2cb21577dc303cec06"
+    },
+    {
+      "path": "tests/blocks-repair-native-exits.test.ts",
+      "sha256": "2c9945547cd03721ab1bcb688eb3accf3b07685e4680cf51ee339461822e0bb3"
+    }
+  ],
+  "subsequentHandoffCorrection": {
+    "sourceSha256": "47013c9aaa9978d26f5e71b62c586f72fe9a1b18fab01c2262af82d2ad8b94b7",
+    "sourceTestsPassed": 16,
+    "strictTypescript": "pass",
+    "report": "signal-review.md",
+    "independentReview": {
+      "by": "gndworker",
+      "finding": "no blocker",
+      "combinedTests": 22,
+      "strictTypescript": "pass",
+      "sourceEdits": "none"
+    }
+  },
+  "subsequentPipeline7CaptureReview": {
+    "sourceSha256": "fbf4b6a60cbe4bb761ceaa96043e99ed17d13725d49ad5e6c290f4bfd715c753",
+    "previousStrictSourceSha256": "319991ec787047a42af818ed650c268851511525100999b9b64ba968f15b1464",
+    "exactPreviousHashReconstructedByRevertingOnlyTwoSolverFilters": true,
+    "sourceTestsPassed": 22,
+    "adapterTestsPassed": 7,
+    "strictBundlerTypescript": "pass",
+    "directNodeNextLimit": "15 pre-existing vendor TS2835 extensionless import diagnostics when including broad tscircuit export; no reviewed application errors",
+    "report": "pipeline7-review.md",
+    "physicalGuardChanges": "none",
+    "nativeRoutingOrCompile": "none by reviewer"
+  }
+}

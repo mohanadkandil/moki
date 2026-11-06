@@ -1,0 +1,174 @@
+{
+  "schema": "moki.plan/1",
+  "title": "S3 air",
+  "layers": 2,
+  "blocks": [
+    {
+      "inst": "mcu",
+      "block": "esp32-s3-core",
+      "version": 2,
+      "params": {}
+    },
+    {
+      "inst": "usb",
+      "block": "usb-c-sink",
+      "version": 2,
+      "params": {}
+    },
+    {
+      "inst": "ldo",
+      "block": "tps63001-usb-5v-3v3",
+      "version": 1,
+      "params": {}
+    },
+    {
+      "inst": "buttons",
+      "block": "boot-reset-buttons",
+      "version": 1,
+      "params": {}
+    },
+    {
+      "inst": "air",
+      "block": "sht40-ad1b-3v3",
+      "version": 3,
+      "params": {}
+    },
+    {
+      "inst": "display",
+      "block": "ssd1306-i2c-header",
+      "version": 1,
+      "params": {}
+    }
+  ],
+  "links": [
+    {
+      "from": "mcu.GND",
+      "to": "usb.GND"
+    },
+    {
+      "from": "mcu.GND",
+      "to": "ldo.GND"
+    },
+    {
+      "from": "mcu.GND",
+      "to": "buttons.GND"
+    },
+    {
+      "from": "mcu.GND",
+      "to": "air.GND"
+    },
+    {
+      "from": "mcu.GND",
+      "to": "display.GND"
+    },
+    {
+      "from": "usb.VBUS",
+      "to": "ldo.VBUS"
+    },
+    {
+      "from": "ldo.V3V3",
+      "to": "mcu.V3V3"
+    },
+    {
+      "from": "ldo.V3V3",
+      "to": "air.V3V3"
+    },
+    {
+      "from": "ldo.V3V3",
+      "to": "display.V3V3"
+    },
+    {
+      "from": "mcu.EN",
+      "to": "buttons.EN"
+    },
+    {
+      "from": "mcu.BOOT",
+      "to": "buttons.BOOT"
+    },
+    {
+      "from": "mcu.USB",
+      "to": "usb.USB"
+    },
+    {
+      "from": "mcu.I2C",
+      "to": "air.I2C"
+    },
+    {
+      "from": "mcu.I2C",
+      "to": "display.I2C_DISPLAY"
+    }
+  ],
+  "sections": [
+    {
+      "id": "mcu",
+      "title": "ESP32-S3 core",
+      "purpose": "Real catalog-bound functional section",
+      "insts": [
+        "mcu"
+      ],
+      "notes": [
+        "Native layout, routing and physical gates remain mandatory."
+      ]
+    },
+    {
+      "id": "usb",
+      "title": "USB-C power and data",
+      "purpose": "Real catalog-bound functional section",
+      "insts": [
+        "usb"
+      ],
+      "notes": [
+        "Known5V1.5A external source; independentCC Rd, noPD/current-advertisement detection.",
+        "USBLC6 VBUS100nF C_BUS follows STp11Fig17."
+      ]
+    },
+    {
+      "id": "ldo",
+      "title": "USB5V to3.3V buck-boost",
+      "purpose": "Real catalog-bound functional section",
+      "insts": [
+        "ldo"
+      ],
+      "notes": [
+        "QualifiedUSB4.75\u20135.25V,650mAcontinuous/800mApeak author allocation;85%efficiency assumed.",
+        "No low-battery boost, MLCC DC-bias or hardware transient qualification claim."
+      ]
+    },
+    {
+      "id": "buttons",
+      "title": "BOOT and RESET",
+      "purpose": "Real catalog-bound functional section",
+      "insts": [
+        "buttons"
+      ],
+      "notes": [
+        "Native layout, routing and physical gates remain mandatory."
+      ]
+    },
+    {
+      "id": "air",
+      "title": "SHT40 ambient sensor",
+      "purpose": "Real catalog-bound functional section",
+      "insts": [
+        "air"
+      ],
+      "notes": [
+        "SHT40 address0x44,100kHz,heater disabled; no central Cu/paste."
+      ]
+    },
+    {
+      "id": "display",
+      "title": "SSD1306 display header",
+      "purpose": "Real catalog-bound functional section",
+      "insts": [
+        "display"
+      ],
+      "notes": [
+        "Externaldisplay, not an onboardOLED;50mA reserved,0x3C address."
+      ]
+    }
+  ],
+  "app": {
+    "source": "#include <Arduino.h>\n#include <Wire.h>\n#include \"pins.h\"\nvoid setup(){ Serial.begin(115200); Wire.begin(PIN_AIR_I2C_SDA,PIN_AIR_I2C_SCL); Wire.setClock(100000); }\nvoid loop(){ delay(1000); }\n"
+  }
+}

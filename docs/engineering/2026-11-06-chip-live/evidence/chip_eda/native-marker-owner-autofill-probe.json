@@ -1,0 +1,156 @@
+{
+  "scope": "Pure complete pinned native checker counterfactual; only source-declared trace autofill skip in isolated temporary module, installed SDK unchanged",
+  "checksSha256": "d82ed6386d5bfff98d156a03f24b53b10e4f84b85f80a9abdac3ed58682f9039",
+  "counterfactualSha256": "7dc0c65487ef52f0b26cd2c0e65ded33b7dd1002c1df2b4999c75db04963a454",
+  "counterfactualGuard": "  for (const trace of pcbTraces) {\n    const declared = soup.filter((item) => item.type === \"source_trace\" && item.source_trace_id === trace.source_trace_id);\n    if (typeof trace.source_trace_id === \"string\" && trace.source_trace_id && declared.length === 1 &&\n      [declared[0].connected_source_port_ids, declared[0].connected_source_net_ids].every((refs) =>\n        Array.isArray(refs) && refs.length > 0 && refs.every((id) => typeof id === \"string\" && id.length > 0))) continue;",
+  "sourceRecordCaveat": "Native converter diagnostics contain source_trace alias references but no source_port/source_net table records; this is a unique structurally declared owner guard, not compiler-canonical source validation.",
+  "results": [
+    {
+      "name": "foreign-endpoint-unbound",
+      "baselineIssues": [],
+      "guardedIssues": [
+        "PCB trace unnamed trace overlaps with pcb_smtpad \"unnamed SMD pad\" (accidental contact)"
+      ],
+      "markersBefore": [
+        [
+          {},
+          {}
+        ]
+      ],
+      "markersAfter": [
+        [
+          {},
+          {}
+        ]
+      ]
+    },
+    {
+      "name": "foreign-endpoint-bound",
+      "baselineIssues": [],
+      "guardedIssues": [
+        "PCB trace unnamed trace overlaps with pcb_smtpad \"unnamed SMD pad\" (accidental contact)"
+      ],
+      "markersBefore": [
+        [
+          {},
+          {}
+        ]
+      ],
+      "markersAfter": [
+        [
+          {},
+          {}
+        ]
+      ]
+    },
+    {
+      "name": "legitimate-own-pad",
+      "baselineIssues": [],
+      "guardedIssues": [],
+      "markersBefore": [
+        [
+          {
+            "start": "pcb_port_52"
+          },
+          {}
+        ]
+      ],
+      "markersAfter": [
+        [
+          {
+            "start": "pcb_port_52"
+          },
+          {}
+        ]
+      ]
+    },
+    {
+      "name": "same-net-free-copper-T-junction",
+      "baselineIssues": [],
+      "guardedIssues": [],
+      "markersBefore": [
+        [
+          {},
+          {}
+        ],
+        [
+          {},
+          {}
+        ]
+      ],
+      "markersAfter": [
+        [
+          {},
+          {}
+        ],
+        [
+          {},
+          {}
+        ]
+      ]
+    },
+    {
+      "name": "preexisting-foreign-marker-preserved-limitation",
+      "baselineIssues": [],
+      "guardedIssues": [],
+      "markersBefore": [
+        [
+          {},
+          {
+            "end": "pcb_port_56"
+          }
+        ]
+      ],
+      "markersAfter": [
+        [
+          {},
+          {
+            "end": "pcb_port_56"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "unknown-legacy-control",
+      "baselineIssues": [],
+      "guardedIssues": [],
+      "markersBefore": [
+        [
+          {},
+          {}
+        ]
+      ],
+      "markersAfter": [
+        [
+          {
+            "start": "pcb_port_61"
+          },
+          {
+            "end": "pcb_port_56"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "empty-owner-refs-control",
+      "baselineIssues": [],
+      "guardedIssues": [],
+      "markersBefore": [
+        [
+          {},
+          {}
+        ]
+      ],
+      "markersAfter": [
+        [
+          {
+            "start": "pcb_port_61"
+          },
+          {
+            "end": "pcb_port_56"
+          }
+        ]
+      ]
+    }
+  ]
+}

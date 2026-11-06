@@ -1,0 +1,9 @@
+{
+  "scope": "Pure immutable input/ownership-mask proof, no native solve",
+  "originalObstacleCount": 302,
+  "addedColumnCount": 183,
+  "allOriginalObstaclesExact": true,
+  "connectionsAndTracesSameReference": true,
+  "hostileComponentNetAssignableAndLayerAliasesDropped": true,
+  "allDistinctFourLayerTransitionsCovered": true
+}

@@ -1,0 +1,14 @@
+{
+  "scope": "Pure derived contract mutant on actual immutable-clock fixture. No native solver or source edits.",
+  "sourceSha256": "218d5bcc8158b489c63e22f848bd050a35805a6029476eb15bd5d3ca348cc3d6",
+  "cases": [
+    {
+      "kind": "same-id-geometry-mutation",
+      "accepted": true
+    },
+    {
+      "kind": "replacement-of-nonclock",
+      "accepted": true
+    }
+  ]
+}

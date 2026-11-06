@@ -1,0 +1,66 @@
+[
+  {
+    "lcsc": "C25386",
+    "mpn": "1206W4J0511T5E",
+    "package": "1206",
+    "description": "-55℃~+155℃ 200V 250mW 510Ω Thick Film Resistor ±100ppm/℃ ±5% 1206 Chip Resistor - Surface Mount ROHS",
+    "stock": 698727,
+    "catalogReceipt": "sha256:4902a6dd1a49ecd7b9da638e8de5f21a9715dfdb8c027e0d8d79544411494148"
+  },
+  {
+    "lcsc": "C17991",
+    "mpn": "1206W4F5100T5E",
+    "package": "1206",
+    "description": "-55℃~+155℃ 200V 250mW 510Ω Thick Film Resistor ±1% ±100ppm/℃ 1206 Chip Resistor - Surface Mount ROHS",
+    "stock": 435411,
+    "catalogReceipt": "sha256:4902a6dd1a49ecd7b9da638e8de5f21a9715dfdb8c027e0d8d79544411494148"
+  },
+  {
+    "lcsc": "C7432784",
+    "mpn": "HGC1206R5107M100NSPJ",
+    "package": "1206",
+    "description": "100uF 10V X5R ±20% 1206 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS",
+    "stock": 162796,
+    "catalogReceipt": "sha256:4902a6dd1a49ecd7b9da638e8de5f21a9715dfdb8c027e0d8d79544411494148"
+  },
+  {
+    "lcsc": "C25353",
+    "mpn": "1206W4J0151T5E",
+    "package": "1206",
+    "description": "-55℃~+155℃ 150Ω 200V 250mW Thick Film Resistor ±100ppm/℃ ±5% 1206 Chip Resistor - Surface Mount ROHS",
+    "stock": 129049,
+    "catalogReceipt": "sha256:4902a6dd1a49ecd7b9da638e8de5f21a9715dfdb8c027e0d8d79544411494148"
+  },
+  {
+    "lcsc": "C434439",
+    "mpn": "SZYY1206G",
+    "package": "1206",
+    "description": "-40℃~+85℃ 100mW 120° 2.6V~3.1V 430mcd 513nm~528nm 525nm 5mA Discrete Diode Emerald Green Water Clear 1206 LED Indication - Discrete ROHS",
+    "stock": 120800,
+    "catalogReceipt": "sha256:4902a6dd1a49ecd7b9da638e8de5f21a9715dfdb8c027e0d8d79544411494148"
+  },
+  {
+    "lcsc": "C114946",
+    "mpn": "RC1206FR-07510RL",
+    "package": "1206",
+    "description": "-55℃~+155℃ 200V 250mW 510Ω Thick Film Resistor ±1% ±100ppm/℃ 1206 Chip Resistor - Surface Mount ROHS",
+    "stock": 72988,
+    "catalogReceipt": "sha256:4902a6dd1a49ecd7b9da638e8de5f21a9715dfdb8c027e0d8d79544411494148"
+  },
+  {
+    "lcsc": "C564857",
+    "mpn": "512160600",
+    "package": "-",
+    "description": "-40℃~+105℃ 1 2mm UL94V-0 White - Housings (Wire To Board / Wire To Wire ) ROHS",
+    "stock": 35548,
+    "catalogReceipt": "sha256:4902a6dd1a49ecd7b9da638e8de5f21a9715dfdb8c027e0d8d79544411494148"
+  },
+  {
+    "lcsc": "C377089",
+    "mpn": "TCC1206X7R224K251HT",
+    "package": "1206",
+    "description": "220nF 250V X7R ±10% 1206 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS",
+    "stock": 18437,
+    "catalogReceipt": "sha256:4902a6dd1a49ecd7b9da638e8de5f21a9715dfdb8c027e0d8d79544411494148"
+  }
+]

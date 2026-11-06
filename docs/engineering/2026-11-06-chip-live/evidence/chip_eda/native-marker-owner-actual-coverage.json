@@ -1,0 +1,3235 @@
+{
+  "scope": "Complete pinned owner-guarded native converter on captured actual original SRJ and raw simplified native traces; pure no routing",
+  "sourceMapSha256": "512aa13e0cf7fcb8106877d2d15732f41668fb7301683ab6109950ecd364590c",
+  "actualCases": [
+    {
+      "clockProof": {
+        "preloadClockOwners": [
+          {
+            "id": "source_net_5",
+            "ports": 3,
+            "nets": 11
+          },
+          {
+            "id": "source_net_6",
+            "ports": 2,
+            "nets": 8
+          },
+          {
+            "id": "source_net_17",
+            "ports": 3,
+            "nets": 11
+          }
+        ],
+        "clockLiteralSource": "All5audit paths match actual Core pcb_trace physical sequences up to reversal",
+        "clockNetIds": [
+          "source_net_5",
+          "source_net_6",
+          "source_net_17"
+        ],
+        "inputConnectionsExcludeClock": true,
+        "genericObstacleCount": 111,
+        "genericRows": [
+          {
+            "index": 191,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 1.4875315,
+              "y": 5.400052
+            },
+            "width": 0.7749369999999997,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 192,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 1.7999999999999998,
+              "y": 5.0837520000000005
+            },
+            "width": 0.15,
+            "height": 0.7825999999999992,
+            "convertedElements": 0
+          },
+          {
+            "index": 193,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 1.852214818181818,
+              "y": 4.715237181818182
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 194,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 1.9566444545454544,
+              "y": 4.610807545454546
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 195,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 2.0610740909090906,
+              "y": 4.50637790909091
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 196,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 2.165503727272727,
+              "y": 4.401948272727273
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 197,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 2.2699333636363637,
+              "y": 4.297518636363637
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 198,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 2.374363,
+              "y": 4.1930890000000005
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 199,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 2.478792636363636,
+              "y": 4.0886593636363635
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 200,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 2.5832222727272725,
+              "y": 3.9842297272727274
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 201,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 2.687651909090909,
+              "y": 3.8798000909090913
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 202,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 2.792081545454545,
+              "y": 3.775370454545455
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 203,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 2.8965111818181812,
+              "y": 3.6709408181818186
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 204,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 3.0009408181818182,
+              "y": 3.566511181818182
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 205,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 3.1053704545454544,
+              "y": 3.462081545454546
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 206,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 3.2098000909090905,
+              "y": 3.3576519090909094
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 207,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 3.3142297272727266,
+              "y": 3.253222272727273
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 208,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 3.4186593636363636,
+              "y": 3.1487926363636367
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 209,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 3.5230889999999997,
+              "y": 3.044363
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 210,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 3.6275186363636363,
+              "y": 2.9399333636363636
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 211,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 3.731948272727272,
+              "y": 2.8355037272727275
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 212,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 3.836377909090909,
+              "y": 2.731074090909091
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 213,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 3.940807545454545,
+              "y": 2.626644454545455
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 214,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 4.045237181818182,
+              "y": 2.5222148181818183
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 215,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 1.7999999999999998,
+              "y": 4.7674520000000005
+            },
+            "width": 0.15,
+            "height": 0.10606601717798213,
+            "convertedElements": 0
+          },
+          {
+            "index": 216,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 1.7999999999999998,
+              "y": 4.7674520000000005
+            },
+            "width": 0.10606601717798213,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 217,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 4.097452,
+              "y": 2.47
+            },
+            "width": 0.15,
+            "height": 0.10606601717798213,
+            "convertedElements": 0
+          },
+          {
+            "index": 218,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 4.097452,
+              "y": 2.47
+            },
+            "width": 0.10606601717798213,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 219,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 4.883725999999999,
+              "y": 2.47
+            },
+            "width": 1.7225480000000002,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 220,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 5.721667277777778,
+              "y": 2.521662555555556
+            },
+            "width": 0.2093957253556643,
+            "height": 0.2093959754454441,
+            "convertedElements": 0
+          },
+          {
+            "index": 221,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 5.825001833333333,
+              "y": 2.6249876666666667
+            },
+            "width": 0.2093957253556643,
+            "height": 0.2093959754454441,
+            "convertedElements": 0
+          },
+          {
+            "index": 222,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 5.928336388888889,
+              "y": 2.7283127777777776
+            },
+            "width": 0.2093957253556643,
+            "height": 0.2093959754454441,
+            "convertedElements": 0
+          },
+          {
+            "index": 223,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.0316709444444445,
+              "y": 2.8316378888888885
+            },
+            "width": 0.2093957253556643,
+            "height": 0.2093959754454441,
+            "convertedElements": 0
+          },
+          {
+            "index": 224,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.1350055,
+              "y": 2.9349629999999998
+            },
+            "width": 0.2093957253556643,
+            "height": 0.2093959754454441,
+            "convertedElements": 0
+          },
+          {
+            "index": 225,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.238340055555556,
+              "y": 3.0382881111111106
+            },
+            "width": 0.2093957253556643,
+            "height": 0.2093959754454441,
+            "convertedElements": 0
+          },
+          {
+            "index": 226,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.341674611111111,
+              "y": 3.1416132222222215
+            },
+            "width": 0.2093957253556643,
+            "height": 0.2093959754454441,
+            "convertedElements": 0
+          },
+          {
+            "index": 227,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.445009166666667,
+              "y": 3.2449383333333324
+            },
+            "width": 0.2093957253556643,
+            "height": 0.2093959754454441,
+            "convertedElements": 0
+          },
+          {
+            "index": 228,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.5483437222222225,
+              "y": 3.3482634444444432
+            },
+            "width": 0.2093957253556643,
+            "height": 0.2093959754454441,
+            "convertedElements": 0
+          },
+          {
+            "index": 229,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 5.67,
+              "y": 2.47
+            },
+            "width": 0.15,
+            "height": 0.10606601717798213,
+            "convertedElements": 0
+          },
+          {
+            "index": 230,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 5.67,
+              "y": 2.47
+            },
+            "width": 0.10606601717798213,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 231,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.600011,
+              "y": 3.399925999999999
+            },
+            "width": 0.15,
+            "height": 0.10606601717798213,
+            "convertedElements": 0
+          },
+          {
+            "index": 232,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.600011,
+              "y": 3.399925999999999
+            },
+            "width": 0.10606601717798213,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 233,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 5.920565264705881,
+              "y": 1.0705860588235285
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 234,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 5.961743794117646,
+              "y": 1.2117581764705874
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 235,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.002922323529411,
+              "y": 1.3529302941176462
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 236,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.044100852941176,
+              "y": 1.4941024117647048
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 237,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.08527938235294,
+              "y": 1.6352745294117637
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 238,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.126457911764705,
+              "y": 1.7764466470588225
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 239,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.1676364411764695,
+              "y": 1.9176187647058813
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 240,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.208814970588235,
+              "y": 2.05879088235294
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 241,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.2499934999999995,
+              "y": 2.199962999999999
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 242,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.291172029411764,
+              "y": 2.341135117647058
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 243,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.33235055882353,
+              "y": 2.4823072352941162
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 244,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.373529088235294,
+              "y": 2.6234793529411755
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 245,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.414707617647059,
+              "y": 2.7646514705882343
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 246,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.455886147058823,
+              "y": 2.905823588235293
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 247,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.497064676470588,
+              "y": 3.046995705882352
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 248,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.538243205882353,
+              "y": 3.188167823529411
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 249,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.579421735294118,
+              "y": 3.3293399411764693
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 250,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 5.899975999999999,
+              "y": 0.9999999999999991
+            },
+            "width": 0.15,
+            "height": 0.10606601717798213,
+            "convertedElements": 0
+          },
+          {
+            "index": 251,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 5.899975999999999,
+              "y": 0.9999999999999991
+            },
+            "width": 0.10606601717798213,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 252,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.600011,
+              "y": 3.399925999999999
+            },
+            "width": 0.15,
+            "height": 0.10606601717798213,
+            "convertedElements": 0
+          },
+          {
+            "index": 253,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.600011,
+              "y": 3.399925999999999
+            },
+            "width": 0.10606601717798213,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 254,
+            "clockNet": "source_net_6",
+            "center": {
+              "x": 1.5125315,
+              "y": 5.799848
+            },
+            "width": 0.8249369999999995,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 255,
+            "clockNet": "source_net_6",
+            "center": {
+              "x": 1.8499999999999996,
+              "y": 6.023242
+            },
+            "width": 0.15,
+            "height": 0.5967879999999998,
+            "convertedElements": 0
+          },
+          {
+            "index": 256,
+            "clockNet": "source_net_6",
+            "center": {
+              "x": 2.425,
+              "y": 6.246636
+            },
+            "width": 1.3000000000000003,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 257,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 3,
+              "y": 7.626713499999999
+            },
+            "width": 0.15,
+            "height": 0.40330100000000135,
+            "convertedElements": 0
+          },
+          {
+            "index": 258,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 3.052777472222222,
+              "y": 7.447285527777777
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 259,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 3.1583324166666666,
+              "y": 7.341730583333332
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 260,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 3.263887361111111,
+              "y": 7.236175638888888
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 261,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 3.3694423055555554,
+              "y": 7.130620694444444
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 262,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 3.47499725,
+              "y": 7.0250657499999996
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 263,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 3.5805521944444445,
+              "y": 6.9195108055555545
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 264,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 3.6861071388888886,
+              "y": 6.81395586111111
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 265,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 3.791662083333333,
+              "y": 6.708400916666665
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 266,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 3.897217027777778,
+              "y": 6.602845972222221
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 267,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.002771972222222,
+              "y": 6.497291027777777
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 268,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.108326916666666,
+              "y": 6.391736083333333
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 269,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.213881861111111,
+              "y": 6.286181138888888
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 270,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.319436805555555,
+              "y": 6.180626194444444
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 271,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.42499175,
+              "y": 6.075071249999999
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 272,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.530546694444444,
+              "y": 5.969516305555555
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 273,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.6361016388888885,
+              "y": 5.8639613611111105
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 274,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.741656583333333,
+              "y": 5.758406416666666
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 275,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.847211527777778,
+              "y": 5.652851472222221
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 276,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 3,
+              "y": 7.500062999999999
+            },
+            "width": 0.15,
+            "height": 0.10606601717798213,
+            "convertedElements": 0
+          },
+          {
+            "index": 277,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 3,
+              "y": 7.500062999999999
+            },
+            "width": 0.10606601717798213,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 278,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899989,
+              "y": 5.600073999999999
+            },
+            "width": 0.15,
+            "height": 0.10606601717798213,
+            "convertedElements": 0
+          },
+          {
+            "index": 279,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899989,
+              "y": 5.600073999999999
+            },
+            "width": 0.10606601717798213,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 280,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899999694444444,
+              "y": 8.224978722222223
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 281,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899999083333333,
+              "y": 8.074984166666667
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 282,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899998472222222,
+              "y": 7.924989611111112
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 283,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899997861111111,
+              "y": 7.774995055555556
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 284,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.89999725,
+              "y": 7.6250005000000005
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 285,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899996638888889,
+              "y": 7.475005944444445
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 286,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899996027777778,
+              "y": 7.325011388888889
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 287,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899995416666667,
+              "y": 7.175016833333333
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 288,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899994805555556,
+              "y": 7.0250222777777775
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 289,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899994194444444,
+              "y": 6.875027722222223
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 290,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899993583333333,
+              "y": 6.725033166666667
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 291,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899992972222222,
+              "y": 6.575038611111111
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 292,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899992361111111,
+              "y": 6.4250440555555555
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 293,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.89999175,
+              "y": 6.2750495
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 294,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899991138888889,
+              "y": 6.125054944444444
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 295,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899990527777778,
+              "y": 5.975060388888888
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 296,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899989916666667,
+              "y": 5.8250658333333325
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 297,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899989305555556,
+              "y": 5.675071277777777
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 298,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.9,
+              "y": 8.299976000000001
+            },
+            "width": 0.15,
+            "height": 0.10606601717798213,
+            "convertedElements": 0
+          },
+          {
+            "index": 299,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.9,
+              "y": 8.299976000000001
+            },
+            "width": 0.10606601717798213,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 300,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899989,
+              "y": 5.600073999999999
+            },
+            "width": 0.15,
+            "height": 0.10606601717798213,
+            "convertedElements": 0
+          },
+          {
+            "index": 301,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899989,
+              "y": 5.600073999999999
+            },
+            "width": 0.10606601717798213,
+            "height": 0.15,
+            "convertedElements": 0
+          }
+        ],
+        "convertedClockTraceCount": 0,
+        "convertedClockSourceOwners": 0,
+        "preloadCounterfactual": [
+          {
+            "id": "saved_phase_null_0_0",
+            "net": "source_net_5",
+            "routePoints": 6,
+            "exactGeometryRetained": true
+          },
+          {
+            "id": "saved_phase_null_0_1",
+            "net": "source_net_5",
+            "routePoints": 2,
+            "exactGeometryRetained": true
+          },
+          {
+            "id": "saved_phase_null_0_2",
+            "net": "source_net_6",
+            "routePoints": 4,
+            "exactGeometryRetained": true
+          },
+          {
+            "id": "saved_phase_null_0_3",
+            "net": "source_net_17",
+            "routePoints": 3,
+            "exactGeometryRetained": true
+          },
+          {
+            "id": "saved_phase_null_0_4",
+            "net": "source_net_17",
+            "routePoints": 2,
+            "exactGeometryRetained": true
+          }
+        ]
+      },
+      "job": "71e5d163-a9c4-47f1-b00b-55896bb5af8d",
+      "inputSha": "04c8397b9b83e8d2760bac3da84b0a0d404e976b328865a08f170576d2825013",
+      "nativeTraceCount": 117,
+      "inputPreloadedTraces": 0,
+      "sourceOwners": 27,
+      "ownersEligible": 27,
+      "portsEmpty": [],
+      "netRefsEmpty": [],
+      "pcbTracesCovered": 117,
+      "rows": [
+        {
+          "id": "source_net_0",
+          "ports": 23,
+          "nets": 99,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_0_mst0_0",
+            "source_net_0_mst1_0",
+            "source_net_0_mst2_0",
+            "source_net_0_mst3_0",
+            "source_net_0_mst4_0",
+            "source_net_0_mst5_0",
+            "source_net_0_mst6_0",
+            "source_net_0_mst7_0",
+            "source_net_0_mst8_0",
+            "source_net_0_mst9_0",
+            "source_net_0_mst10_0",
+            "source_net_0_mst11_0",
+            "source_net_0_mst12_0",
+            "source_net_0_mst13_0",
+            "source_net_0_mst14_0",
+            "source_net_0_mst15_0",
+            "source_net_0_mst16_0",
+            "source_net_0_mst17_0",
+            "source_net_0_mst18_0",
+            "source_net_0_mst19_0",
+            "source_net_0_mst20_0",
+            "source_net_0_mst21_0",
+            "source_net_0_mst22_0"
+          ]
+        },
+        {
+          "id": "source_net_1",
+          "ports": 2,
+          "nets": 15,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_1_mst0_0",
+            "source_net_1_mst1_0"
+          ]
+        },
+        {
+          "id": "source_net_2",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_2_0"
+          ]
+        },
+        {
+          "id": "source_net_3",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_3_0"
+          ]
+        },
+        {
+          "id": "source_net_4",
+          "ports": 44,
+          "nets": 183,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_4_mst0_0",
+            "source_net_4_mst1_0",
+            "source_net_4_mst2_0",
+            "source_net_4_mst3_0",
+            "source_net_4_mst4_0",
+            "source_net_4_mst5_0",
+            "source_net_4_mst6_0",
+            "source_net_4_mst7_0",
+            "source_net_4_mst8_0",
+            "source_net_4_mst9_0",
+            "source_net_4_mst10_0",
+            "source_net_4_mst11_0",
+            "source_net_4_mst12_0",
+            "source_net_4_mst13_0",
+            "source_net_4_mst14_0",
+            "source_net_4_mst15_0",
+            "source_net_4_mst16_0",
+            "source_net_4_mst17_0",
+            "source_net_4_mst18_0",
+            "source_net_4_mst19_0",
+            "source_net_4_mst20_0",
+            "source_net_4_mst21_0",
+            "source_net_4_mst22_0",
+            "source_net_4_mst23_0",
+            "source_net_4_mst24_0",
+            "source_net_4_mst25_0",
+            "source_net_4_mst26_0",
+            "source_net_4_mst27_0",
+            "source_net_4_mst28_0",
+            "source_net_4_mst29_0",
+            "source_net_4_mst30_0",
+            "source_net_4_mst31_0",
+            "source_net_4_mst32_0",
+            "source_net_4_mst33_0",
+            "source_net_4_mst34_0",
+            "source_net_4_mst35_0",
+            "source_net_4_mst36_0",
+            "source_net_4_mst37_0",
+            "source_net_4_mst38_0",
+            "source_net_4_mst39_0",
+            "source_net_4_mst40_0",
+            "source_net_4_mst41_0",
+            "source_net_4_mst42_0",
+            "source_net_4_mst43_0"
+          ]
+        },
+        {
+          "id": "source_net_7",
+          "ports": 5,
+          "nets": 27,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_7_mst0_0",
+            "source_net_7_mst1_0",
+            "source_net_7_mst2_0",
+            "source_net_7_mst3_0",
+            "source_net_7_mst4_0"
+          ]
+        },
+        {
+          "id": "source_net_8",
+          "ports": 2,
+          "nets": 15,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_8_mst0_0",
+            "source_net_8_mst1_0"
+          ]
+        },
+        {
+          "id": "source_net_9",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_9_0"
+          ]
+        },
+        {
+          "id": "source_net_10",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_10_0"
+          ]
+        },
+        {
+          "id": "source_net_11",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_11_0"
+          ]
+        },
+        {
+          "id": "source_net_12",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_12_0"
+          ]
+        },
+        {
+          "id": "source_net_13",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_13_0"
+          ]
+        },
+        {
+          "id": "source_net_14",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_14_0"
+          ]
+        },
+        {
+          "id": "source_net_15",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_15_0"
+          ]
+        },
+        {
+          "id": "source_net_16",
+          "ports": 3,
+          "nets": 19,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_16_mst0_0",
+            "source_net_16_mst1_0",
+            "source_net_16_mst2_0"
+          ]
+        },
+        {
+          "id": "source_net_18",
+          "ports": 12,
+          "nets": 55,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_18_mst0_0",
+            "source_net_18_mst1_0",
+            "source_net_18_mst2_0",
+            "source_net_18_mst3_0",
+            "source_net_18_mst4_0",
+            "source_net_18_mst5_0",
+            "source_net_18_mst6_0",
+            "source_net_18_mst7_0",
+            "source_net_18_mst8_0",
+            "source_net_18_mst9_0",
+            "source_net_18_mst10_0",
+            "source_net_18_mst11_0"
+          ]
+        },
+        {
+          "id": "source_net_19",
+          "ports": 4,
+          "nets": 23,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_19_mst0_0",
+            "source_net_19_mst1_0",
+            "source_net_19_mst2_0",
+            "source_net_19_mst3_0"
+          ]
+        },
+        {
+          "id": "source_net_20",
+          "ports": 4,
+          "nets": 23,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_20_mst0_0",
+            "source_net_20_mst1_0",
+            "source_net_20_mst2_0",
+            "source_net_20_mst3_0"
+          ]
+        },
+        {
+          "id": "source_net_21",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_21_0"
+          ]
+        },
+        {
+          "id": "source_net_22",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_22_0"
+          ]
+        },
+        {
+          "id": "source_net_23",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_23_0"
+          ]
+        },
+        {
+          "id": "source_net_24",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_24_0"
+          ]
+        },
+        {
+          "id": "source_net_25",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_25_0"
+          ]
+        },
+        {
+          "id": "source_net_26",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_26_0"
+          ]
+        },
+        {
+          "id": "source_net_27",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_27_0"
+          ]
+        },
+        {
+          "id": "source_net_28",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_28_0"
+          ]
+        },
+        {
+          "id": "source_net_29",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_29_0"
+          ]
+        }
+      ],
+      "uncoveredTraces": []
+    },
+    {
+      "clockProof": {
+        "preloadClockOwners": [],
+        "clockLiteralSource": "No routed Core clock traces present in this captured circuit.json; no preload claim for this case",
+        "clockNetIds": [
+          "source_net_5",
+          "source_net_6",
+          "source_net_17"
+        ],
+        "inputConnectionsExcludeClock": true,
+        "genericObstacleCount": 111,
+        "genericRows": [
+          {
+            "index": 191,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 1.4875315,
+              "y": 5.400052
+            },
+            "width": 0.7749369999999997,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 192,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 1.7999999999999998,
+              "y": 5.0837520000000005
+            },
+            "width": 0.15,
+            "height": 0.7825999999999992,
+            "convertedElements": 0
+          },
+          {
+            "index": 193,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 1.852214818181818,
+              "y": 4.715237181818182
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 194,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 1.9566444545454544,
+              "y": 4.610807545454546
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 195,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 2.0610740909090906,
+              "y": 4.50637790909091
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 196,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 2.165503727272727,
+              "y": 4.401948272727273
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 197,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 2.2699333636363637,
+              "y": 4.297518636363637
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 198,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 2.374363,
+              "y": 4.1930890000000005
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 199,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 2.478792636363636,
+              "y": 4.0886593636363635
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 200,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 2.5832222727272725,
+              "y": 3.9842297272727274
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 201,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 2.687651909090909,
+              "y": 3.8798000909090913
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 202,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 2.792081545454545,
+              "y": 3.775370454545455
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 203,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 2.8965111818181812,
+              "y": 3.6709408181818186
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 204,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 3.0009408181818182,
+              "y": 3.566511181818182
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 205,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 3.1053704545454544,
+              "y": 3.462081545454546
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 206,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 3.2098000909090905,
+              "y": 3.3576519090909094
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 207,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 3.3142297272727266,
+              "y": 3.253222272727273
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 208,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 3.4186593636363636,
+              "y": 3.1487926363636367
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 209,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 3.5230889999999997,
+              "y": 3.044363
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 210,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 3.6275186363636363,
+              "y": 2.9399333636363636
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 211,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 3.731948272727272,
+              "y": 2.8355037272727275
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 212,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 3.836377909090909,
+              "y": 2.731074090909091
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 213,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 3.940807545454545,
+              "y": 2.626644454545455
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 214,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 4.045237181818182,
+              "y": 2.5222148181818183
+            },
+            "width": 0.21049565354161848,
+            "height": 0.21049565354161848,
+            "convertedElements": 0
+          },
+          {
+            "index": 215,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 1.7999999999999998,
+              "y": 4.7674520000000005
+            },
+            "width": 0.15,
+            "height": 0.10606601717798213,
+            "convertedElements": 0
+          },
+          {
+            "index": 216,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 1.7999999999999998,
+              "y": 4.7674520000000005
+            },
+            "width": 0.10606601717798213,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 217,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 4.097452,
+              "y": 2.47
+            },
+            "width": 0.15,
+            "height": 0.10606601717798213,
+            "convertedElements": 0
+          },
+          {
+            "index": 218,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 4.097452,
+              "y": 2.47
+            },
+            "width": 0.10606601717798213,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 219,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 4.883725999999999,
+              "y": 2.47
+            },
+            "width": 1.7225480000000002,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 220,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 5.721667277777778,
+              "y": 2.521662555555556
+            },
+            "width": 0.2093957253556643,
+            "height": 0.2093959754454441,
+            "convertedElements": 0
+          },
+          {
+            "index": 221,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 5.825001833333333,
+              "y": 2.6249876666666667
+            },
+            "width": 0.2093957253556643,
+            "height": 0.2093959754454441,
+            "convertedElements": 0
+          },
+          {
+            "index": 222,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 5.928336388888889,
+              "y": 2.7283127777777776
+            },
+            "width": 0.2093957253556643,
+            "height": 0.2093959754454441,
+            "convertedElements": 0
+          },
+          {
+            "index": 223,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.0316709444444445,
+              "y": 2.8316378888888885
+            },
+            "width": 0.2093957253556643,
+            "height": 0.2093959754454441,
+            "convertedElements": 0
+          },
+          {
+            "index": 224,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.1350055,
+              "y": 2.9349629999999998
+            },
+            "width": 0.2093957253556643,
+            "height": 0.2093959754454441,
+            "convertedElements": 0
+          },
+          {
+            "index": 225,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.238340055555556,
+              "y": 3.0382881111111106
+            },
+            "width": 0.2093957253556643,
+            "height": 0.2093959754454441,
+            "convertedElements": 0
+          },
+          {
+            "index": 226,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.341674611111111,
+              "y": 3.1416132222222215
+            },
+            "width": 0.2093957253556643,
+            "height": 0.2093959754454441,
+            "convertedElements": 0
+          },
+          {
+            "index": 227,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.445009166666667,
+              "y": 3.2449383333333324
+            },
+            "width": 0.2093957253556643,
+            "height": 0.2093959754454441,
+            "convertedElements": 0
+          },
+          {
+            "index": 228,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.5483437222222225,
+              "y": 3.3482634444444432
+            },
+            "width": 0.2093957253556643,
+            "height": 0.2093959754454441,
+            "convertedElements": 0
+          },
+          {
+            "index": 229,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 5.67,
+              "y": 2.47
+            },
+            "width": 0.15,
+            "height": 0.10606601717798213,
+            "convertedElements": 0
+          },
+          {
+            "index": 230,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 5.67,
+              "y": 2.47
+            },
+            "width": 0.10606601717798213,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 231,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.600011,
+              "y": 3.399925999999999
+            },
+            "width": 0.15,
+            "height": 0.10606601717798213,
+            "convertedElements": 0
+          },
+          {
+            "index": 232,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.600011,
+              "y": 3.399925999999999
+            },
+            "width": 0.10606601717798213,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 233,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 5.920565264705881,
+              "y": 1.0705860588235285
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 234,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 5.961743794117646,
+              "y": 1.2117581764705874
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 235,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.002922323529411,
+              "y": 1.3529302941176462
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 236,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.044100852941176,
+              "y": 1.4941024117647048
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 237,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.08527938235294,
+              "y": 1.6352745294117637
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 238,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.126457911764705,
+              "y": 1.7764466470588225
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 239,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.1676364411764695,
+              "y": 1.9176187647058813
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 240,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.208814970588235,
+              "y": 2.05879088235294
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 241,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.2499934999999995,
+              "y": 2.199962999999999
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 242,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.291172029411764,
+              "y": 2.341135117647058
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 243,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.33235055882353,
+              "y": 2.4823072352941162
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 244,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.373529088235294,
+              "y": 2.6234793529411755
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 245,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.414707617647059,
+              "y": 2.7646514705882343
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 246,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.455886147058823,
+              "y": 2.905823588235293
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 247,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.497064676470588,
+              "y": 3.046995705882352
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 248,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.538243205882353,
+              "y": 3.188167823529411
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 249,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.579421735294118,
+              "y": 3.3293399411764693
+            },
+            "width": 0.1851776167794167,
+            "height": 0.1831752465457892,
+            "convertedElements": 0
+          },
+          {
+            "index": 250,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 5.899975999999999,
+              "y": 0.9999999999999991
+            },
+            "width": 0.15,
+            "height": 0.10606601717798213,
+            "convertedElements": 0
+          },
+          {
+            "index": 251,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 5.899975999999999,
+              "y": 0.9999999999999991
+            },
+            "width": 0.10606601717798213,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 252,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.600011,
+              "y": 3.399925999999999
+            },
+            "width": 0.15,
+            "height": 0.10606601717798213,
+            "convertedElements": 0
+          },
+          {
+            "index": 253,
+            "clockNet": "source_net_5",
+            "center": {
+              "x": 6.600011,
+              "y": 3.399925999999999
+            },
+            "width": 0.10606601717798213,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 254,
+            "clockNet": "source_net_6",
+            "center": {
+              "x": 1.5125315,
+              "y": 5.799848
+            },
+            "width": 0.8249369999999995,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 255,
+            "clockNet": "source_net_6",
+            "center": {
+              "x": 1.8499999999999996,
+              "y": 6.023242
+            },
+            "width": 0.15,
+            "height": 0.5967879999999998,
+            "convertedElements": 0
+          },
+          {
+            "index": 256,
+            "clockNet": "source_net_6",
+            "center": {
+              "x": 2.425,
+              "y": 6.246636
+            },
+            "width": 1.3000000000000003,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 257,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 3,
+              "y": 7.626713499999999
+            },
+            "width": 0.15,
+            "height": 0.40330100000000135,
+            "convertedElements": 0
+          },
+          {
+            "index": 258,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 3.052777472222222,
+              "y": 7.447285527777777
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 259,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 3.1583324166666666,
+              "y": 7.341730583333332
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 260,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 3.263887361111111,
+              "y": 7.236175638888888
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 261,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 3.3694423055555554,
+              "y": 7.130620694444444
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 262,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 3.47499725,
+              "y": 7.0250657499999996
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 263,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 3.5805521944444445,
+              "y": 6.9195108055555545
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 264,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 3.6861071388888886,
+              "y": 6.81395586111111
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 265,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 3.791662083333333,
+              "y": 6.708400916666665
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 266,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 3.897217027777778,
+              "y": 6.602845972222221
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 267,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.002771972222222,
+              "y": 6.497291027777777
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 268,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.108326916666666,
+              "y": 6.391736083333333
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 269,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.213881861111111,
+              "y": 6.286181138888888
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 270,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.319436805555555,
+              "y": 6.180626194444444
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 271,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.42499175,
+              "y": 6.075071249999999
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 272,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.530546694444444,
+              "y": 5.969516305555555
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 273,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.6361016388888885,
+              "y": 5.8639613611111105
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 274,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.741656583333333,
+              "y": 5.758406416666666
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 275,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.847211527777778,
+              "y": 5.652851472222221
+            },
+            "width": 0.21162096162242655,
+            "height": 0.21162096162242655,
+            "convertedElements": 0
+          },
+          {
+            "index": 276,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 3,
+              "y": 7.500062999999999
+            },
+            "width": 0.15,
+            "height": 0.10606601717798213,
+            "convertedElements": 0
+          },
+          {
+            "index": 277,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 3,
+              "y": 7.500062999999999
+            },
+            "width": 0.10606601717798213,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 278,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899989,
+              "y": 5.600073999999999
+            },
+            "width": 0.15,
+            "height": 0.10606601717798213,
+            "convertedElements": 0
+          },
+          {
+            "index": 279,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899989,
+              "y": 5.600073999999999
+            },
+            "width": 0.10606601717798213,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 280,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899999694444444,
+              "y": 8.224978722222223
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 281,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899999083333333,
+              "y": 8.074984166666667
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 282,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899998472222222,
+              "y": 7.924989611111112
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 283,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899997861111111,
+              "y": 7.774995055555556
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 284,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.89999725,
+              "y": 7.6250005000000005
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 285,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899996638888889,
+              "y": 7.475005944444445
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 286,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899996027777778,
+              "y": 7.325011388888889
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 287,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899995416666667,
+              "y": 7.175016833333333
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 288,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899994805555556,
+              "y": 7.0250222777777775
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 289,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899994194444444,
+              "y": 6.875027722222223
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 290,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899993583333333,
+              "y": 6.725033166666667
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 291,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899992972222222,
+              "y": 6.575038611111111
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 292,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899992361111111,
+              "y": 6.4250440555555555
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 293,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.89999175,
+              "y": 6.2750495
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 294,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899991138888889,
+              "y": 6.125054944444444
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 295,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899990527777778,
+              "y": 5.975060388888888
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 296,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899989916666667,
+              "y": 5.8250658333333325
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 297,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899989305555556,
+              "y": 5.675071277777777
+            },
+            "width": 0.1500006111098662,
+            "height": 0.14999516668884866,
+            "convertedElements": 0
+          },
+          {
+            "index": 298,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.9,
+              "y": 8.299976000000001
+            },
+            "width": 0.15,
+            "height": 0.10606601717798213,
+            "convertedElements": 0
+          },
+          {
+            "index": 299,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.9,
+              "y": 8.299976000000001
+            },
+            "width": 0.10606601717798213,
+            "height": 0.15,
+            "convertedElements": 0
+          },
+          {
+            "index": 300,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899989,
+              "y": 5.600073999999999
+            },
+            "width": 0.15,
+            "height": 0.10606601717798213,
+            "convertedElements": 0
+          },
+          {
+            "index": 301,
+            "clockNet": "source_net_17",
+            "center": {
+              "x": 4.899989,
+              "y": 5.600073999999999
+            },
+            "width": 0.10606601717798213,
+            "height": 0.15,
+            "convertedElements": 0
+          }
+        ],
+        "convertedClockTraceCount": 0,
+        "convertedClockSourceOwners": 0,
+        "preloadCounterfactual": []
+      },
+      "job": "d7bdf1b1-c49a-49db-94fd-a9c4236dc3c4",
+      "inputSha": "fb51d653ecb3e3abcf337800f9242390ff941526c0b78aa1e4dfb6ccfee5c0d6",
+      "nativeTraceCount": 117,
+      "inputPreloadedTraces": 0,
+      "sourceOwners": 27,
+      "ownersEligible": 25,
+      "portsEmpty": [
+        "source_net_2",
+        "source_net_3"
+      ],
+      "netRefsEmpty": [],
+      "pcbTracesCovered": 115,
+      "rows": [
+        {
+          "id": "source_net_0",
+          "ports": 15,
+          "nets": 34,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_0_mst0_0",
+            "source_net_0_mst1_0",
+            "source_net_0_mst2_0",
+            "source_net_0_mst3_0",
+            "source_net_0_mst4_0",
+            "source_net_0_mst5_0",
+            "source_net_0_mst6_0",
+            "source_net_0_mst7_0",
+            "source_net_0_mst8_0",
+            "source_net_0_mst9_0",
+            "source_net_0_mst10_0",
+            "source_net_0_mst11_0",
+            "source_net_0_mst12_0",
+            "source_net_0_mst13_0",
+            "source_net_0_mst14_0",
+            "source_net_0_mst15_0",
+            "source_net_0_mst16_0",
+            "source_net_0_mst17_0",
+            "source_net_0_mst18_0",
+            "source_net_0_mst19_0",
+            "source_net_0_mst20_0",
+            "source_net_0_mst21_0",
+            "source_net_0_mst22_0"
+          ]
+        },
+        {
+          "id": "source_net_1",
+          "ports": 2,
+          "nets": 15,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_1_mst0_0",
+            "source_net_1_mst1_0"
+          ]
+        },
+        {
+          "id": "source_net_2",
+          "ports": 0,
+          "nets": 5,
+          "eligible": false,
+          "pcbTraceIds": [
+            "source_net_2_0"
+          ]
+        },
+        {
+          "id": "source_net_3",
+          "ports": 0,
+          "nets": 5,
+          "eligible": false,
+          "pcbTraceIds": [
+            "source_net_3_0"
+          ]
+        },
+        {
+          "id": "source_net_4",
+          "ports": 42,
+          "nets": 185,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_4_mst0_0",
+            "source_net_4_mst1_0",
+            "source_net_4_mst2_0",
+            "source_net_4_mst3_0",
+            "source_net_4_mst4_0",
+            "source_net_4_mst5_0",
+            "source_net_4_mst6_0",
+            "source_net_4_mst7_0",
+            "source_net_4_mst8_0",
+            "source_net_4_mst9_0",
+            "source_net_4_mst10_0",
+            "source_net_4_mst11_0",
+            "source_net_4_mst12_0",
+            "source_net_4_mst13_0",
+            "source_net_4_mst14_0",
+            "source_net_4_mst15_0",
+            "source_net_4_mst16_0",
+            "source_net_4_mst17_0",
+            "source_net_4_mst18_0",
+            "source_net_4_mst19_0",
+            "source_net_4_mst20_0",
+            "source_net_4_mst21_0",
+            "source_net_4_mst22_0",
+            "source_net_4_mst23_0",
+            "source_net_4_mst24_0",
+            "source_net_4_mst25_0",
+            "source_net_4_mst26_0",
+            "source_net_4_mst27_0",
+            "source_net_4_mst28_0",
+            "source_net_4_mst29_0",
+            "source_net_4_mst30_0",
+            "source_net_4_mst31_0",
+            "source_net_4_mst32_0",
+            "source_net_4_mst33_0",
+            "source_net_4_mst34_0",
+            "source_net_4_mst35_0",
+            "source_net_4_mst36_0",
+            "source_net_4_mst37_0",
+            "source_net_4_mst38_0",
+            "source_net_4_mst39_0",
+            "source_net_4_mst40_0",
+            "source_net_4_mst41_0",
+            "source_net_4_mst42_0",
+            "source_net_4_mst43_0"
+          ]
+        },
+        {
+          "id": "source_net_7",
+          "ports": 3,
+          "nets": 10,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_7_mst0_0",
+            "source_net_7_mst1_0",
+            "source_net_7_mst2_0",
+            "source_net_7_mst3_0",
+            "source_net_7_mst4_0"
+          ]
+        },
+        {
+          "id": "source_net_8",
+          "ports": 2,
+          "nets": 15,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_8_mst0_0",
+            "source_net_8_mst1_0"
+          ]
+        },
+        {
+          "id": "source_net_9",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_9_0"
+          ]
+        },
+        {
+          "id": "source_net_10",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_10_0"
+          ]
+        },
+        {
+          "id": "source_net_11",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_11_0"
+          ]
+        },
+        {
+          "id": "source_net_12",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_12_0"
+          ]
+        },
+        {
+          "id": "source_net_13",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_13_0"
+          ]
+        },
+        {
+          "id": "source_net_14",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_14_0"
+          ]
+        },
+        {
+          "id": "source_net_15",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_15_0"
+          ]
+        },
+        {
+          "id": "source_net_16",
+          "ports": 3,
+          "nets": 19,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_16_mst0_0",
+            "source_net_16_mst1_0",
+            "source_net_16_mst2_0"
+          ]
+        },
+        {
+          "id": "source_net_18",
+          "ports": 11,
+          "nets": 56,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_18_mst0_0",
+            "source_net_18_mst1_0",
+            "source_net_18_mst2_0",
+            "source_net_18_mst3_0",
+            "source_net_18_mst4_0",
+            "source_net_18_mst5_0",
+            "source_net_18_mst6_0",
+            "source_net_18_mst7_0",
+            "source_net_18_mst8_0",
+            "source_net_18_mst9_0",
+            "source_net_18_mst10_0",
+            "source_net_18_mst11_0"
+          ]
+        },
+        {
+          "id": "source_net_19",
+          "ports": 3,
+          "nets": 24,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_19_mst0_0",
+            "source_net_19_mst1_0",
+            "source_net_19_mst2_0",
+            "source_net_19_mst3_0"
+          ]
+        },
+        {
+          "id": "source_net_20",
+          "ports": 3,
+          "nets": 24,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_20_mst0_0",
+            "source_net_20_mst1_0",
+            "source_net_20_mst2_0",
+            "source_net_20_mst3_0"
+          ]
+        },
+        {
+          "id": "source_net_21",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_21_0"
+          ]
+        },
+        {
+          "id": "source_net_22",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_22_0"
+          ]
+        },
+        {
+          "id": "source_net_23",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_23_0"
+          ]
+        },
+        {
+          "id": "source_net_24",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_24_0"
+          ]
+        },
+        {
+          "id": "source_net_25",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_25_0"
+          ]
+        },
+        {
+          "id": "source_net_26",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_26_0"
+          ]
+        },
+        {
+          "id": "source_net_27",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_27_0"
+          ]
+        },
+        {
+          "id": "source_net_28",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_28_0"
+          ]
+        },
+        {
+          "id": "source_net_29",
+          "ports": 1,
+          "nets": 11,
+          "eligible": true,
+          "pcbTraceIds": [
+            "source_net_29_0"
+          ]
+        }
+      ],
+      "uncoveredTraces": [
+        {
+          "id": "source_net_3_0",
+          "owner": "source_net_3",
+          "eligible": false
+        },
+        {
+          "id": "source_net_2_0",
+          "owner": "source_net_2",
+          "eligible": false
+        }
+      ]
+    }
+  ]
+}

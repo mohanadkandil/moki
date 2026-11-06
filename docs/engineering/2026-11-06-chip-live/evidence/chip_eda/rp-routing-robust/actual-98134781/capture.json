@@ -1,0 +1,16 @@
+{
+  "artifacts": [
+    {
+      "source": "var/board-jobs-test-chip/98134781-4436-43a6-9114-1d89695e39e7/circuit.json",
+      "file": "circuit.json",
+      "bytes": 2033831,
+      "sha256": "fa6b2ac3c222f742d86ea1f47891f52e9b5b7ccf981f5c571f55547131a300a0"
+    },
+    {
+      "source": "var/board-jobs-test-chip/98134781-4436-43a6-9114-1d89695e39e7/native-routing.json",
+      "file": "native-routing.json",
+      "bytes": 1188672,
+      "sha256": "cc244c96fe75b6af7933e2d65d006f80df893556c402b4e236991f549b5a6aad"
+    }
+  ]
+}

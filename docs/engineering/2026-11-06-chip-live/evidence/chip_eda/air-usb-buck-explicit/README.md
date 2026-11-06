@@ -1,0 +1,1 @@
+Native replay of the coordinator's70x80 explicit air-replay positions, applied to the same already reviewed electrical engineering fixture. Original reg instance maps to ldo here; parts/nets/requirements are unchanged. This does not claim automatic placement or AQI sensing.

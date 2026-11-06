@@ -1,0 +1,44 @@
+{
+  "author": "/root/final_review",
+  "at": "2026-11-06T08:35:32.273615+00:00",
+  "independentApproval": false,
+  "scope": "Optional source-known fine-pitch existing-pad handoff fallback; original passive-first default preserved.",
+  "sourceSha256": "c21c9456478133eb165b61198fb50935537fde85cf531ab6fc43758e4df5d3c0",
+  "testSha256": "d363a915c1cb2e984c1cbcd5f2e615e93b3d9f7b12d4cf9d8f11a56d825d2cdd",
+  "api": "createNativePadHandoffs(circuit,graph,mapping,netNames,{allowFinePitchPads:true})",
+  "tests": {
+    "passed": 13,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 3190.473788,
+    "strictTargetedTypecheck": "pass"
+  },
+  "guards": [
+    "Default registered two-pin passives are considered before optional fine owners regardless of net endpoint order. Defaultfalse/omitted behavior remains unchanged.",
+    "Only current known immutable RP2040/minimal3/4 C2040/RP2040 andC82317/W25Q16JVSSIQ endpoints qualify as fine owners; actual registered receipt/MPN/all physical pins/source/supplier/import/PCB/port/net/subcircuit mappings are proved.",
+    "Only one actual TOP rect/cardinal rotated_rect land with finite positive geometry and exact canonicalportcenter is accepted; nonzero/invalid rounded corners and unsupported shapes fail safely.",
+    "Exactlytwo.20mm-separated wire points along actual pad long axis; bothfull width-radius caps strictly inside own native rectangular land. Convex rectangle therefore contains whole capsule. No outside copper or vias.",
+    "Original source width retained and must meet actual board minimum. Official trace-overlap and trace-to-hole near-clearance checks both run for fine candidates. Native near-clearance alone omits overlaps,so complementary overlap check is required.",
+    "No plan/source/CJ records mutated; handoff selects a native phase exit and does not establish routed physical continuity.",
+    "All TOP-reaching physical drill void bounds,including same-netPTH, are checked before native guards. Annulus/source/connectivity labels never restore missing copper."
+  ],
+  "coverage": [
+    "Actual sixQSPI nets; registered passiveQSPI_SS endpoint still wins over earlierMCU.",
+    "2/4physical layers\u00d7all4cardinal world rotations; completecapsuleerosion checked.",
+    "Wrong supplier/alias/shape/noncardinalpose/corner geometry/minimum/unknown revision and malformed option rejection.",
+    "Physical drill voids cutting both possiblefine endpoints reject.",
+    "Prior passive-default/repeated normal/source/immutability/remote-switch-unrouted regressions remain passing.",
+    "Same-netPTH at startandclippingcapsule; NPTH/PTHcircle/pill/rect/square,offsets,mixeddiameter/slotfields,unknownshape/null/nonfinite,existingvia rejection anddistantdrillpositive."
+  ],
+  "limits": [
+    "This is author proof,not independent approval. rp_clock requested for independent review.",
+    "No native route,compile,private build integration or whole-board acceptance executed/claimed.",
+    "Caller private RP variant/final native physical/fabrication gates are parent-owned."
+  ],
+  "reviewerFindingFix": {
+    "finding": "Native own-net plated copper overlap exemptions allowed an actual drill void to be counted as existing pad copper.",
+    "fix": "Explicit conservative drill-void bounds independentofelectricalownership: circleexactradius,noncircle enclosingdisc,all supplied drill dimensions enlarge bound,offsetlength enlargesaroundbase,unknown/invaliddimensions/shapes/layers reject. Entire fine wire capsule must be disjoint. Existing pre-routed via prohibition remains.",
+    "originalIndependentReproduction": "/tmp/moki-review-fine-handoff.mts now rejects",
+    "independentClosure": "pending rp_clock; this remains author proof"
+  }
+}

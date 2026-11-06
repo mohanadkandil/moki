@@ -1,0 +1,42 @@
+{
+  "scope": "Exact production materialization AST on actual066 captured native input/output/audit andpre-pour CJ; accepted records hash-bound to actual native audit. No routing or geometry rewrite.",
+  "sourceSha256": "7d8b502e1760f2a50df9bb14cea47268474476cc528ad1d8f1d5c981c348a8b3",
+  "sourceJobId": "06605725-c013-4e62-b67f-d8b8cef80836",
+  "cases": [
+    {
+      "kind": "actual-same-net-normalization",
+      "accepted": true,
+      "checkRan": true
+    },
+    {
+      "kind": "duplicate-ID",
+      "accepted": false,
+      "error": "Error: Refined clock source or unique materialized identity differs from native output"
+    },
+    {
+      "kind": "foreign-source",
+      "accepted": false,
+      "error": "Error: Materialized clock lacks a unique canonical declaration on its original net"
+    },
+    {
+      "kind": "changed-copper",
+      "accepted": false,
+      "error": "Error: Refined native clock copper was not materialized exactly"
+    },
+    {
+      "kind": "extra-clock-ID",
+      "accepted": false,
+      "error": "Error: Refined clock materialization contains additional uncertified clock copper"
+    },
+    {
+      "kind": "fatal-native-marker",
+      "accepted": true,
+      "checkRan": false
+    },
+    {
+      "kind": "fatal-async",
+      "accepted": true,
+      "checkRan": false
+    }
+  ]
+}

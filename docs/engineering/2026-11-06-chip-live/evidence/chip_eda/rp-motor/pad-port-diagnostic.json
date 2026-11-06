@@ -1,0 +1,411 @@
+{
+  "scope": "routing-disabled physical pad/port identity only",
+  "results": [
+    {
+      "inst": "rp",
+      "gate": "block-test",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "block-pad-scope",
+          "severity": "warning",
+          "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+        }
+      ],
+      "measurements": [
+        {
+          "where": "rp.U1",
+          "name": "native-physical-pads",
+          "measured": 57,
+          "target": 57,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.U2",
+          "name": "native-physical-pads",
+          "measured": 8,
+          "target": 8,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.X1",
+          "name": "native-physical-pads",
+          "measured": 4,
+          "target": 4,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.U3",
+          "name": "native-physical-pads",
+          "measured": 5,
+          "target": 5,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.U4",
+          "name": "native-physical-pads",
+          "measured": 6,
+          "target": 6,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.J1",
+          "name": "native-physical-pads",
+          "measured": 16,
+          "target": 16,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.SW1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.SW2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.R1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.R2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.R3",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.R4",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.R5",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.R6",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.R7",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.R8",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C3",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C4",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C5",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C6",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C7",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C8",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C9",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C10",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C11",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C12",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C13",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C14",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C15",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C16",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C17",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "inst": "motor",
+      "gate": "block-test",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "block-pad-scope",
+          "severity": "warning",
+          "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+        }
+      ],
+      "measurements": [
+        {
+          "where": "motor.U1",
+          "name": "native-physical-pads",
+          "measured": 17,
+          "target": 17,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "motor.C1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "motor.C2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "motor.C3",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "motor.C4",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "motor.C5",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "motor.R1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "motor.R2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "motor.J1",
+          "name": "native-physical-pads",
+          "measured": 4,
+          "target": 4,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        }
+      ]
+    }
+  ]
+}

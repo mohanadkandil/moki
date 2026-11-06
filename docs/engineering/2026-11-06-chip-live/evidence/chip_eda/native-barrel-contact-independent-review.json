@@ -1,0 +1,41 @@
+{
+  "schema": "moki.independent-native-barrel-review/1",
+  "reviewer": "gnd_escape",
+  "at": "2026-11-06T06:45:38.261771+00:00",
+  "verdict": "no-actionable-findings-in-scoped-frozen-patch",
+  "reviewedSource": {
+    "path": "eda/blocks/repair-native-exits.ts",
+    "sha256": "dcfb02f710822fff80ff7e832be6c6110b7e3dc48cbaa3d7c6dbae6096d252d2"
+  },
+  "scope": "Quantized native MST endpoints contacting an already-proved saved full-span barrel",
+  "validation": {
+    "targetedTests": {
+      "passed": 25,
+      "failed": 0,
+      "durationMs": 3183.713101
+    },
+    "strictTypeScript": true,
+    "actualRawTraceCount": 164,
+    "sourceAssignments": 1,
+    "unrepairedTraceIds": [],
+    "inputUnchanged": true,
+    "independentRejectedMutants": [
+      "Whole endpoint cap protrudes1e-6 mm outside owned outer disk",
+      "Noncontiguous endpoint layer",
+      "Contiguous endpoint run wholly inside drill"
+    ]
+  },
+  "reviewedInvariants": [
+    "Actual saved prefix,captured endpoint,canonical source identity and physical barrel ownership retained",
+    "Full endpoint cap strictly inside verified barrel outer disk",
+    "Contiguous same-layer wire reaches positive annular copper on a physical barrel layer",
+    "Explicit via traversal retains exact coincident adjacent contacts and positive annular proof",
+    "Board wire-width floor remains hard; no coordinate tolerance or geometry mutation"
+  ],
+  "findings": [],
+  "limits": [
+    "Pure actual captured input and focused mutant tests; no native routing/render/compile",
+    "Does not approve unrelated routing or waive final physical/fabrication gates"
+  ],
+  "sourceEditsPerformed": false
+}

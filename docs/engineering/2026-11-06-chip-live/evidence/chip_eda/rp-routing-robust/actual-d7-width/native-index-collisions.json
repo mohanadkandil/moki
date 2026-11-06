@@ -1,0 +1,688 @@
+[
+  {
+    "thinSegment": 0,
+    "affectedSegment": 0,
+    "a": {
+      "route_type": "wire",
+      "x": -4.75,
+      "y": 3.9,
+      "width": 0.1480572238900163,
+      "layer": "top"
+    },
+    "b": {
+      "route_type": "wire",
+      "x": -4.6665900974233026,
+      "y": 3.8721966991411008,
+      "width": 0.1480572238900163,
+      "layer": "top"
+    },
+    "proposedWidth": 0.15,
+    "collisions": [
+      {
+        "minX": -4.945457435513637,
+        "minY": 4.035342878673199,
+        "maxX": -4.345457435513637,
+        "maxY": 4.635342878673199,
+        "layers": [
+          "top",
+          "bottom"
+        ],
+        "kind": "via",
+        "connectionNames": [
+          "source_net_13",
+          "saved_phase_null_2_23_exit",
+          "pcb_port_61"
+        ],
+        "copperObjectId": "fixed-trace:34",
+        "routeStartIndex": 9,
+        "routeEndIndex": 9,
+        "viaHoleDiameter": 0.3,
+        "exactShape": {
+          "type": "circle",
+          "center": {
+            "x": -4.645457435513637,
+            "y": 4.335342878673199
+          },
+          "radius": 0.3
+        }
+      }
+    ]
+  },
+  {
+    "thinSegment": 0,
+    "affectedSegment": 1,
+    "a": {
+      "route_type": "wire",
+      "x": -4.6665900974233026,
+      "y": 3.8721966991411008,
+      "width": 0.1480572238900163,
+      "layer": "top"
+    },
+    "b": {
+      "route_type": "wire",
+      "x": -4.661060940807764,
+      "y": 3.8703536469359214,
+      "width": 0.14807432605434048,
+      "layer": "top"
+    },
+    "proposedWidth": 0.15,
+    "collisions": [
+      {
+        "minX": -4.945457435513637,
+        "minY": 4.035342878673199,
+        "maxX": -4.345457435513637,
+        "maxY": 4.635342878673199,
+        "layers": [
+          "top",
+          "bottom"
+        ],
+        "kind": "via",
+        "connectionNames": [
+          "source_net_13",
+          "saved_phase_null_2_23_exit",
+          "pcb_port_61"
+        ],
+        "copperObjectId": "fixed-trace:34",
+        "routeStartIndex": 9,
+        "routeEndIndex": 9,
+        "viaHoleDiameter": 0.3,
+        "exactShape": {
+          "type": "circle",
+          "center": {
+            "x": -4.645457435513637,
+            "y": 4.335342878673199
+          },
+          "radius": 0.3
+        }
+      }
+    ]
+  },
+  {
+    "thinSegment": 1,
+    "affectedSegment": 0,
+    "a": {
+      "route_type": "wire",
+      "x": -4.75,
+      "y": 3.9,
+      "width": 0.1480572238900163,
+      "layer": "top"
+    },
+    "b": {
+      "route_type": "wire",
+      "x": -4.6665900974233026,
+      "y": 3.8721966991411008,
+      "width": 0.1480572238900163,
+      "layer": "top"
+    },
+    "proposedWidth": 0.15,
+    "collisions": [
+      {
+        "minX": -4.945457435513637,
+        "minY": 4.035342878673199,
+        "maxX": -4.345457435513637,
+        "maxY": 4.635342878673199,
+        "layers": [
+          "top",
+          "bottom"
+        ],
+        "kind": "via",
+        "connectionNames": [
+          "source_net_13",
+          "saved_phase_null_2_23_exit",
+          "pcb_port_61"
+        ],
+        "copperObjectId": "fixed-trace:34",
+        "routeStartIndex": 9,
+        "routeEndIndex": 9,
+        "viaHoleDiameter": 0.3,
+        "exactShape": {
+          "type": "circle",
+          "center": {
+            "x": -4.645457435513637,
+            "y": 4.335342878673199
+          },
+          "radius": 0.3
+        }
+      }
+    ]
+  },
+  {
+    "thinSegment": 1,
+    "affectedSegment": 1,
+    "a": {
+      "route_type": "wire",
+      "x": -4.6665900974233026,
+      "y": 3.8721966991411008,
+      "width": 0.1480572238900163,
+      "layer": "top"
+    },
+    "b": {
+      "route_type": "wire",
+      "x": -4.661060940807764,
+      "y": 3.8703536469359214,
+      "width": 0.14807432605434048,
+      "layer": "top"
+    },
+    "proposedWidth": 0.15,
+    "collisions": [
+      {
+        "minX": -4.945457435513637,
+        "minY": 4.035342878673199,
+        "maxX": -4.345457435513637,
+        "maxY": 4.635342878673199,
+        "layers": [
+          "top",
+          "bottom"
+        ],
+        "kind": "via",
+        "connectionNames": [
+          "source_net_13",
+          "saved_phase_null_2_23_exit",
+          "pcb_port_61"
+        ],
+        "copperObjectId": "fixed-trace:34",
+        "routeStartIndex": 9,
+        "routeEndIndex": 9,
+        "viaHoleDiameter": 0.3,
+        "exactShape": {
+          "type": "circle",
+          "center": {
+            "x": -4.645457435513637,
+            "y": 4.335342878673199
+          },
+          "radius": 0.3
+        }
+      }
+    ]
+  },
+  {
+    "thinSegment": 1,
+    "affectedSegment": 2,
+    "a": {
+      "route_type": "wire",
+      "x": -4.661060940807764,
+      "y": 3.8703536469359214,
+      "width": 0.14807432605434048,
+      "layer": "top"
+    },
+    "b": {
+      "route_type": "wire",
+      "x": -4.572121881615529,
+      "y": 3.8407072938718425,
+      "width": 0.14834942233229184,
+      "layer": "top"
+    },
+    "proposedWidth": 0.15,
+    "collisions": [
+      {
+        "minX": -4.945457435513637,
+        "minY": 4.035342878673199,
+        "maxX": -4.345457435513637,
+        "maxY": 4.635342878673199,
+        "layers": [
+          "top",
+          "bottom"
+        ],
+        "kind": "via",
+        "connectionNames": [
+          "source_net_13",
+          "saved_phase_null_2_23_exit",
+          "pcb_port_61"
+        ],
+        "copperObjectId": "fixed-trace:34",
+        "routeStartIndex": 9,
+        "routeEndIndex": 9,
+        "viaHoleDiameter": 0.3,
+        "exactShape": {
+          "type": "circle",
+          "center": {
+            "x": -4.645457435513637,
+            "y": 4.335342878673199
+          },
+          "radius": 0.3
+        }
+      }
+    ]
+  },
+  {
+    "thinSegment": 2,
+    "affectedSegment": 1,
+    "a": {
+      "route_type": "wire",
+      "x": -4.6665900974233026,
+      "y": 3.8721966991411008,
+      "width": 0.1480572238900163,
+      "layer": "top"
+    },
+    "b": {
+      "route_type": "wire",
+      "x": -4.661060940807764,
+      "y": 3.8703536469359214,
+      "width": 0.14807432605434048,
+      "layer": "top"
+    },
+    "proposedWidth": 0.15,
+    "collisions": [
+      {
+        "minX": -4.945457435513637,
+        "minY": 4.035342878673199,
+        "maxX": -4.345457435513637,
+        "maxY": 4.635342878673199,
+        "layers": [
+          "top",
+          "bottom"
+        ],
+        "kind": "via",
+        "connectionNames": [
+          "source_net_13",
+          "saved_phase_null_2_23_exit",
+          "pcb_port_61"
+        ],
+        "copperObjectId": "fixed-trace:34",
+        "routeStartIndex": 9,
+        "routeEndIndex": 9,
+        "viaHoleDiameter": 0.3,
+        "exactShape": {
+          "type": "circle",
+          "center": {
+            "x": -4.645457435513637,
+            "y": 4.335342878673199
+          },
+          "radius": 0.3
+        }
+      }
+    ]
+  },
+  {
+    "thinSegment": 2,
+    "affectedSegment": 2,
+    "a": {
+      "route_type": "wire",
+      "x": -4.661060940807764,
+      "y": 3.8703536469359214,
+      "width": 0.14807432605434048,
+      "layer": "top"
+    },
+    "b": {
+      "route_type": "wire",
+      "x": -4.572121881615529,
+      "y": 3.8407072938718425,
+      "width": 0.14834942233229184,
+      "layer": "top"
+    },
+    "proposedWidth": 0.15,
+    "collisions": [
+      {
+        "minX": -4.945457435513637,
+        "minY": 4.035342878673199,
+        "maxX": -4.345457435513637,
+        "maxY": 4.635342878673199,
+        "layers": [
+          "top",
+          "bottom"
+        ],
+        "kind": "via",
+        "connectionNames": [
+          "source_net_13",
+          "saved_phase_null_2_23_exit",
+          "pcb_port_61"
+        ],
+        "copperObjectId": "fixed-trace:34",
+        "routeStartIndex": 9,
+        "routeEndIndex": 9,
+        "viaHoleDiameter": 0.3,
+        "exactShape": {
+          "type": "circle",
+          "center": {
+            "x": -4.645457435513637,
+            "y": 4.335342878673199
+          },
+          "radius": 0.3
+        }
+      }
+    ]
+  },
+  {
+    "thinSegment": 2,
+    "affectedSegment": 3,
+    "a": {
+      "route_type": "wire",
+      "x": -4.572121881615529,
+      "y": 3.8407072938718425,
+      "width": 0.14834942233229184,
+      "layer": "top"
+    },
+    "b": {
+      "route_type": "wire",
+      "x": -4.57,
+      "y": 3.84,
+      "width": 0.14835598549745221,
+      "layer": "top"
+    },
+    "proposedWidth": 0.15,
+    "collisions": [
+      {
+        "minX": -4.945457435513637,
+        "minY": 4.035342878673199,
+        "maxX": -4.345457435513637,
+        "maxY": 4.635342878673199,
+        "layers": [
+          "top",
+          "bottom"
+        ],
+        "kind": "via",
+        "connectionNames": [
+          "source_net_13",
+          "saved_phase_null_2_23_exit",
+          "pcb_port_61"
+        ],
+        "copperObjectId": "fixed-trace:34",
+        "routeStartIndex": 9,
+        "routeEndIndex": 9,
+        "viaHoleDiameter": 0.3,
+        "exactShape": {
+          "type": "circle",
+          "center": {
+            "x": -4.645457435513637,
+            "y": 4.335342878673199
+          },
+          "radius": 0.3
+        }
+      }
+    ]
+  },
+  {
+    "thinSegment": 3,
+    "affectedSegment": 2,
+    "a": {
+      "route_type": "wire",
+      "x": -4.661060940807764,
+      "y": 3.8703536469359214,
+      "width": 0.14807432605434048,
+      "layer": "top"
+    },
+    "b": {
+      "route_type": "wire",
+      "x": -4.572121881615529,
+      "y": 3.8407072938718425,
+      "width": 0.14834942233229184,
+      "layer": "top"
+    },
+    "proposedWidth": 0.15,
+    "collisions": [
+      {
+        "minX": -4.945457435513637,
+        "minY": 4.035342878673199,
+        "maxX": -4.345457435513637,
+        "maxY": 4.635342878673199,
+        "layers": [
+          "top",
+          "bottom"
+        ],
+        "kind": "via",
+        "connectionNames": [
+          "source_net_13",
+          "saved_phase_null_2_23_exit",
+          "pcb_port_61"
+        ],
+        "copperObjectId": "fixed-trace:34",
+        "routeStartIndex": 9,
+        "routeEndIndex": 9,
+        "viaHoleDiameter": 0.3,
+        "exactShape": {
+          "type": "circle",
+          "center": {
+            "x": -4.645457435513637,
+            "y": 4.335342878673199
+          },
+          "radius": 0.3
+        }
+      }
+    ]
+  },
+  {
+    "thinSegment": 3,
+    "affectedSegment": 3,
+    "a": {
+      "route_type": "wire",
+      "x": -4.572121881615529,
+      "y": 3.8407072938718425,
+      "width": 0.14834942233229184,
+      "layer": "top"
+    },
+    "b": {
+      "route_type": "wire",
+      "x": -4.57,
+      "y": 3.84,
+      "width": 0.14835598549745221,
+      "layer": "top"
+    },
+    "proposedWidth": 0.15,
+    "collisions": [
+      {
+        "minX": -4.945457435513637,
+        "minY": 4.035342878673199,
+        "maxX": -4.345457435513637,
+        "maxY": 4.635342878673199,
+        "layers": [
+          "top",
+          "bottom"
+        ],
+        "kind": "via",
+        "connectionNames": [
+          "source_net_13",
+          "saved_phase_null_2_23_exit",
+          "pcb_port_61"
+        ],
+        "copperObjectId": "fixed-trace:34",
+        "routeStartIndex": 9,
+        "routeEndIndex": 9,
+        "viaHoleDiameter": 0.3,
+        "exactShape": {
+          "type": "circle",
+          "center": {
+            "x": -4.645457435513637,
+            "y": 4.335342878673199
+          },
+          "radius": 0.3
+        }
+      }
+    ]
+  },
+  {
+    "thinSegment": 3,
+    "affectedSegment": 4,
+    "a": {
+      "route_type": "wire",
+      "x": -4.57,
+      "y": 3.84,
+      "width": 0.14835598549745221,
+      "layer": "top"
+    },
+    "b": {
+      "route_type": "wire",
+      "x": -4.6347097035587295,
+      "y": 3.7752902964412707,
+      "width": 0.1486245186102432,
+      "layer": "top"
+    },
+    "proposedWidth": 0.15,
+    "collisions": [
+      {
+        "minX": -4.945457435513637,
+        "minY": 4.035342878673199,
+        "maxX": -4.345457435513637,
+        "maxY": 4.635342878673199,
+        "layers": [
+          "top",
+          "bottom"
+        ],
+        "kind": "via",
+        "connectionNames": [
+          "source_net_13",
+          "saved_phase_null_2_23_exit",
+          "pcb_port_61"
+        ],
+        "copperObjectId": "fixed-trace:34",
+        "routeStartIndex": 9,
+        "routeEndIndex": 9,
+        "viaHoleDiameter": 0.3,
+        "exactShape": {
+          "type": "circle",
+          "center": {
+            "x": -4.645457435513637,
+            "y": 4.335342878673199
+          },
+          "radius": 0.3
+        }
+      }
+    ]
+  },
+  {
+    "thinSegment": 4,
+    "affectedSegment": 3,
+    "a": {
+      "route_type": "wire",
+      "x": -4.572121881615529,
+      "y": 3.8407072938718425,
+      "width": 0.14834942233229184,
+      "layer": "top"
+    },
+    "b": {
+      "route_type": "wire",
+      "x": -4.57,
+      "y": 3.84,
+      "width": 0.14835598549745221,
+      "layer": "top"
+    },
+    "proposedWidth": 0.15,
+    "collisions": [
+      {
+        "minX": -4.945457435513637,
+        "minY": 4.035342878673199,
+        "maxX": -4.345457435513637,
+        "maxY": 4.635342878673199,
+        "layers": [
+          "top",
+          "bottom"
+        ],
+        "kind": "via",
+        "connectionNames": [
+          "source_net_13",
+          "saved_phase_null_2_23_exit",
+          "pcb_port_61"
+        ],
+        "copperObjectId": "fixed-trace:34",
+        "routeStartIndex": 9,
+        "routeEndIndex": 9,
+        "viaHoleDiameter": 0.3,
+        "exactShape": {
+          "type": "circle",
+          "center": {
+            "x": -4.645457435513637,
+            "y": 4.335342878673199
+          },
+          "radius": 0.3
+        }
+      }
+    ]
+  },
+  {
+    "thinSegment": 4,
+    "affectedSegment": 4,
+    "a": {
+      "route_type": "wire",
+      "x": -4.57,
+      "y": 3.84,
+      "width": 0.14835598549745221,
+      "layer": "top"
+    },
+    "b": {
+      "route_type": "wire",
+      "x": -4.6347097035587295,
+      "y": 3.7752902964412707,
+      "width": 0.1486245186102432,
+      "layer": "top"
+    },
+    "proposedWidth": 0.15,
+    "collisions": [
+      {
+        "minX": -4.945457435513637,
+        "minY": 4.035342878673199,
+        "maxX": -4.345457435513637,
+        "maxY": 4.635342878673199,
+        "layers": [
+          "top",
+          "bottom"
+        ],
+        "kind": "via",
+        "connectionNames": [
+          "source_net_13",
+          "saved_phase_null_2_23_exit",
+          "pcb_port_61"
+        ],
+        "copperObjectId": "fixed-trace:34",
+        "routeStartIndex": 9,
+        "routeEndIndex": 9,
+        "viaHoleDiameter": 0.3,
+        "exactShape": {
+          "type": "circle",
+          "center": {
+            "x": -4.645457435513637,
+            "y": 4.335342878673199
+          },
+          "radius": 0.3
+        }
+      }
+    ]
+  },
+  {
+    "thinSegment": 5,
+    "affectedSegment": 4,
+    "a": {
+      "route_type": "wire",
+      "x": -4.57,
+      "y": 3.84,
+      "width": 0.14835598549745221,
+      "layer": "top"
+    },
+    "b": {
+      "route_type": "wire",
+      "x": -4.6347097035587295,
+      "y": 3.7752902964412707,
+      "width": 0.1486245186102432,
+      "layer": "top"
+    },
+    "proposedWidth": 0.15,
+    "collisions": [
+      {
+        "minX": -4.945457435513637,
+        "minY": 4.035342878673199,
+        "maxX": -4.345457435513637,
+        "maxY": 4.635342878673199,
+        "layers": [
+          "top",
+          "bottom"
+        ],
+        "kind": "via",
+        "connectionNames": [
+          "source_net_13",
+          "saved_phase_null_2_23_exit",
+          "pcb_port_61"
+        ],
+        "copperObjectId": "fixed-trace:34",
+        "routeStartIndex": 9,
+        "routeEndIndex": 9,
+        "viaHoleDiameter": 0.3,
+        "exactShape": {
+          "type": "circle",
+          "center": {
+            "x": -4.645457435513637,
+            "y": 4.335342878673199
+          },
+          "radius": 0.3
+        }
+      }
+    ]
+  }
+]

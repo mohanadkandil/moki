@@ -1,0 +1,45 @@
+{
+  "accepted": false,
+  "freshNativeRoutes": true,
+  "results": [
+    {
+      "baseJobId": "1f1e315c-44e7-4fc4-af58-8dce62a7adad",
+      "jobId": "7366be6e-e9dc-45b1-8f2b-58ac69019e6a",
+      "planSha256": "99fecf49996618420d6be3b69e9686c3aa767545392a21308ceee671eafebe2a",
+      "exactOriginalElectricalPlan": true,
+      "modelCalls": 0,
+      "strategy": "coupled18-fixed-exits+SMT-layer-projections+native9-minimum-only",
+      "status": "failed",
+      "accepted": false,
+      "totalMs": 600284.51898,
+      "error": "Worker timed out after 600000 ms; process group killed; escaped sessions require a sandbox",
+      "compileRun": false
+    },
+    {
+      "baseJobId": "05e69207-83d3-45b6-a751-b657b2a2e3dc",
+      "jobId": "d7bdf1b1-c49a-49db-94fd-a9c4236dc3c4",
+      "planSha256": "a1644e6b13e193dbb00ec3d8cc0cded32594de5ffe0e2b19d96950c76aad0adb",
+      "exactOriginalElectricalPlan": true,
+      "modelCalls": 0,
+      "strategy": "coupled18-fixed-exits+SMT-layer-projections+native9-minimum-only",
+      "status": "failed",
+      "accepted": false,
+      "totalMs": 360273.185464,
+      "error": "drc: Native width expansion leaves 0.1480572238900163mm below required 0.15mm; Port [U1.IOVDD6] is not connected to net [V3V3] by a PCB trace.; Port [U1.IOVDD5] is not connected to net [V3V3] by a PCB trace.; Port [U1.IOVDD4] is not connected to net [V3V3] by a PCB trace.; 134 more issues in gates.json",
+      "compileRun": false
+    },
+    {
+      "baseJobId": "4e68bf02-2224-41fd-8269-1f2bcd422f95",
+      "jobId": "da232f89-bd79-49d4-8aaa-2ec528875f72",
+      "planSha256": "d363031edce8777464d1e1ad04420a5ae5b8b751a149d6751d6c306052edd5f0",
+      "exactOriginalElectricalPlan": true,
+      "modelCalls": 0,
+      "strategy": "coupled18-fixed-exits+SMT-layer-projections+native9-minimum-only",
+      "status": "failed",
+      "accepted": false,
+      "totalMs": 271519.82977899996,
+      "error": "drc: PCB trace .U1 > .pin50 to net.VCORE is too close to .U1 > .pin43 to net.V3V3 (gap: 0.100mm); PCB trace .U1 > .pin51 to net.QSPI_SD3 is too close to .U2 > .pin2 to net.QSPI_SD1 (gap: 0.101mm); PCB trace .U1 > .pin52 to net.QSPI_SCLK is too close to .U2 > .pin2 to net.QSPI_SD1 (gap: 0.101mm); PCB trace .U1 > .pin53 to net.QSPI_SD0 is too close to .U2 > .pin2 to net.QSPI_SD1 (gap: 0.101mm); 176 more issues in gates.json",
+      "compileRun": false
+    }
+  ]
+}

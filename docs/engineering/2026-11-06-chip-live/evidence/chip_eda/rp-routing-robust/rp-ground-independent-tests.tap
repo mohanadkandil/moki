@@ -1,0 +1,118 @@
+TAP version 13
+# Subtest: finite connected GPIO17/18 inward vias pass actual native geometry on2/4layers and all cardinal orientations
+ok 1 - finite connected GPIO17/18 inward vias pass actual native geometry on2/4layers and all cardinal orientations
+  ---
+  duration_ms: 5725.466791
+  type: 'test'
+  ...
+# Subtest: default14prefix API remains unchanged and actual55x40 native90degree placement also validates16
+ok 2 - default14prefix API remains unchanged and actual55x40 native90degree placement also validates16
+  ---
+  duration_ms: 1008.682666
+  type: 'test'
+  ...
+# Subtest: only connected application pins receive vias; unsupported aliases, roles and counterfeit optional prefix ownership reject
+ok 3 - only connected application pins receive vias; unsupported aliases, roles and counterfeit optional prefix ownership reject
+  ---
+  duration_ms: 1980.056787
+  type: 'test'
+  ...
+# Subtest: foreign clock copper and same-net SMD copper at a proposed via remain hard geometry failures
+ok 4 - foreign clock copper and same-net SMD copper at a proposed via remain hard geometry failures
+  ---
+  duration_ms: 857.185658
+  type: 'test'
+  ...
+# Subtest: coupled USB/power profile validates18 escapes plus8 signals on actual2/4layer cardinal geometry
+ok 5 - coupled USB/power profile validates18 escapes plus8 signals on actual2/4layer cardinal geometry
+  ---
+  duration_ms: 5206.600193
+  type: 'test'
+  ...
+# Subtest: USB mode remains optional, only emits connected USB pins, and refuses forged USB ownership or aliases
+ok 6 - USB mode remains optional, only emits connected USB pins, and refuses forged USB ownership or aliases
+  ---
+  duration_ms: 2426.119835
+  type: 'test'
+  ...
+# Subtest: old outward power45 barrel physically collides with the new USB46 barrel, so USB and power relocation must stay coupled
+ok 7 - old outward power45 barrel physically collides with the new USB46 barrel, so USB and power relocation must stay coupled
+  ---
+  duration_ms: 1114.812717
+  type: 'test'
+  ...
+# Subtest: actual failed4layer placement admits14 native off-pad power/ground escapes preserving every clock limit and immutable input
+ok 8 - actual failed4layer placement admits14 native off-pad power/ground escapes preserving every clock limit and immutable input
+  ---
+  duration_ms: 432.470933
+  type: 'test'
+  ...
+# Subtest: same actual profile validates on2/4layers with independently changed enclosing board sizes
+ok 9 - same actual profile validates on2/4layers with independently changed enclosing board sizes
+  ---
+  duration_ms: 1463.034329
+  type: 'test'
+  ...
+# Subtest: clock and escape profiles follow actual cardinal90degree placement on4layers
+ok 10 - clock and escape profiles follow actual cardinal90degree placement on4layers
+  ---
+  duration_ms: 374.081667
+  type: 'test'
+  ...
+# Subtest: foreign copper, clock encroachment, off-board vias and native mapping mutants reject
+ok 11 - foreign copper, clock encroachment, off-board vias and native mapping mutants reject
+  ---
+  duration_ms: 1026.378668
+  type: 'test'
+  ...
+# Subtest: captured4layer failure is a later foreign supply route, while the new pin22 escape leaves away from saved XOUT
+ok 12 - captured4layer failure is a later foreign supply route, while the new pin22 escape leaves away from saved XOUT
+  ---
+  duration_ms: 333.20376
+  type: 'test'
+  ...
+# Subtest: clock and escape-only profiles fit centered55x40/40x55 boards with90degree and translated native frames
+ok 13 - clock and escape-only profiles fit centered55x40/40x55 boards with90degree and translated native frames
+  ---
+  duration_ms: 425.059488
+  type: 'test'
+  ...
+# Subtest: ground-only actual2/4layer cardinal profile emits exactlyTESTEN19 andEP57 with unchanged input and literal dimensions
+ok 14 - ground-only actual2/4layer cardinal profile emits exactlyTESTEN19 andEP57 with unchanged input and literal dimensions
+  ---
+  duration_ms: 1386.664418
+  type: 'test'
+  ...
+# Subtest: unused power barrel collision is excluded before preflight while actual obstacles remain checked
+ok 15 - unused power barrel collision is excluded before preflight while actual obstacles remain checked
+  ---
+  duration_ms: 388.926036
+  type: 'test'
+  ...
+# Subtest: ground-only requires actual ground flags,canonical net/role/source/map/pad identity and rejects collisions
+ok 16 - ground-only requires actual ground flags,canonical net/role/source/map/pad identity and rejects collisions
+  ---
+  duration_ms: 661.986232
+  type: 'test'
+  ...
+# Subtest: ground-only conflicts fail and all prior default/application/coupled counts and scope remain unchanged
+ok 17 - ground-only conflicts fail and all prior default/application/coupled counts and scope remain unchanged
+  ---
+  duration_ms: 446.586094
+  type: 'test'
+  ...
+# Subtest: saved foreign oscillator copper through a selected ground escape remains a hard native preflight failure
+ok 18 - saved foreign oscillator copper through a selected ground escape remains a hard native preflight failure
+  ---
+  duration_ms: 194.6853
+  type: 'test'
+  ...
+1..18
+# tests 18
+# suites 0
+# pass 18
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 19264.017548

@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: actual native air blank saved-exit join repairs only metadata; official14 errors become10 with .052 real clearance retained
+ok 1 - actual native air blank saved-exit join repairs only metadata; official14 errors become10 with .052 real clearance retained
+  ---
+  duration_ms: 404.441875
+  type: 'test'
+  ...
+# Subtest: lost saved-prefix sources bind uniquely to actual canonical physical pads and compiler sources
+ok 2 - lost saved-prefix sources bind uniquely to actual canonical physical pads and compiler sources
+  ---
+  duration_ms: 81.644712
+  type: 'test'
+  ...
+# Subtest: without native-input proof blank join stays unrepaired, and repeated repair is idempotent
+ok 3 - without native-input proof blank join stays unrepaired, and repeated repair is idempotent
+  ---
+  duration_ms: 180.827068
+  type: 'test'
+  ...
+# Subtest: shifted prefix, width, wrong pad/source identity and ambiguous compiler source reject
+ok 4 - shifted prefix, width, wrong pad/source identity and ambiguous compiler source reject
+  ---
+  duration_ms: 326.91157
+  type: 'test'
+  ...
+# Subtest: join native identity, net, audited endpoints, route envelope and capture mutants reject
+ok 5 - join native identity, net, audited endpoints, route envelope and capture mutants reject
+  ---
+  duration_ms: 493.856036
+  type: 'test'
+  ...
+# Subtest: pre-pour database attribution makes actual join a foreign GND obstacle and regenerated pour clears its copper
+ok 6 - pre-pour database attribution makes actual join a foreign GND obstacle and regenerated pour clears its copper
+  ---
+  duration_ms: 148.834295
+  type: 'test'
+  ...
+# Subtest: pre-pour prefixes without later DRC markers repair lost sources without inventing route markers
+ok 7 - pre-pour prefixes without later DRC markers repair lost sources without inventing route markers
+  ---
+  duration_ms: 223.03928
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2682.197986

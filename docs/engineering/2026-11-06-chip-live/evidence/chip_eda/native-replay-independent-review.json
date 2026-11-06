@@ -1,0 +1,69 @@
+{
+  "schema": "moki.independent-native-replay-review/1",
+  "reviewer": "gnd_escape",
+  "at": "2026-11-06T06:45:38.260857+00:00",
+  "verdict": "no-actionable-findings-in-scoped-frozen-integration",
+  "reviewedSources": [
+    {
+      "path": "eda/blocks/native-replay.ts",
+      "sha256": "e5174ea9a83095fcf791a76deeb6be3004ad147076e24ba698cae3d5112acc62"
+    },
+    {
+      "path": "eda/blocks/build.ts",
+      "sha256": "e3c47996a59506a59bdb348558a8fefef8a8e8ca46d142a5258f4bbc21a8f455"
+    },
+    {
+      "path": "eda/blocks/replay-job-evidence.ts",
+      "sha256": "b408aab3dfec181ed0ca527a36c736c3607d001ba1b41602098a1e3d2bff344a"
+    },
+    {
+      "path": "server/board-api.ts",
+      "sha256": "e9755b695c99db76338fd0b0f5b335c32f9d5550c729777eda5f2031e2b6a92d"
+    },
+    {
+      "path": "src/board/process.ts",
+      "sha256": "321444cd7e529b5f9a6d1ddda724c0d8c373f8f0012d0998b7c08ff78a66cbe3"
+    },
+    {
+      "path": "src/board/chip-firmware-worker.ts",
+      "sha256": "5045c7559571a07c8189f48cc4a0824c3bb62dd0e25427ff56471eb8fe18b21c"
+    }
+  ],
+  "sourceJobId": "134193af-e7d3-4376-8a28-1979f18628bd",
+  "distinctCurrentProbeJobId": "a81367d2-ae01-4908-b81e-c52b4398c9d6",
+  "validation": {
+    "targetedTests": {
+      "passed": 9,
+      "failed": 0,
+      "durationMs": 620.366146
+    },
+    "strictTypeScript": true,
+    "actualRecords": 117,
+    "minimumWireWidthMm": 0.15,
+    "independentChecks": [
+      "Actual manifest loads all117 unchanged records against a distinct fresh job",
+      "1e-12 mm current SRJ mutation rejected",
+      "Current placement mismatch rejected",
+      "Rehashed candidate with0.106 mm wire rejected",
+      "Unexpected builtinType manifest field rejected",
+      "Old gate canary is neither read nor returned; freshGatesMandatory remains true"
+    ],
+    "freshPipelineEvidence": "Actual a81367d2 reached fresh Core materialization and then failed the old source-proof gate; no inherited gate success"
+  },
+  "reviewedInvariants": [
+    "Seven exact canonical input bindings: SRJ plus plan,graph,imports,placement,clock and fixed exits",
+    "Raw output SHA verified and native Cu records preserved verbatim",
+    "No executable builtinType or eval in loader",
+    "Private offline shim appends flag only for exact build.ts worker; HTTP parser and worker env have no replay input",
+    "Replay branch rejoins normal build/service flow; fresh source,pours,DRC,physical,pad/verification and sandbox compile remain required",
+    "Receipt states freshRouting:false and freshGatesMandatory:true"
+  ],
+  "findings": [],
+  "limits": [
+    "Pure captured-input tests/source review; no native routing,render,compile or server started by reviewer",
+    "Native algorithm provenance is backed by separate captured stage evidence and raw SHA, not inferred from arbitrary copper",
+    "Successful loader validation is not full-board gate acceptance",
+    "Private operator controls the offline manifest; no public replay API was added"
+  ],
+  "sourceEditsPerformed": false
+}

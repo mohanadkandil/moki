@@ -1,0 +1,28 @@
+[
+ {
+  "board": [
+   40,
+   60
+  ],
+  "jobId": "13a6ffa2-7615-489c-bc97-5c081ba86530",
+  "status": "done",
+  "drcErrors": 0,
+  "drcChecked": true,
+  "totalS": 151,
+  "error": "",
+  "first": []
+ },
+ {
+  "board": [
+   65,
+   55
+  ],
+  "jobId": "bff4e1d1-a311-4532-bca3-a9dcdb30efb6",
+  "status": "failed",
+  "drcErrors": 0,
+  "drcChecked": true,
+  "totalS": 139,
+  "error": "block-test: Missing/degenerate/unsupported physical pad shape U5",
+  "first": []
+ }
+]

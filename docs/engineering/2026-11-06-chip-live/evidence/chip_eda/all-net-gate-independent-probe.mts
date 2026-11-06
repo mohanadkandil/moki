@@ -1,0 +1,31 @@
+import assert from 'node:assert/strict';
+import {readFileSync,writeFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import ts from 'typescript';
+const root='/home/sogo/design-skill-research/repos/moki/',dir=root+'docs/engineering/2026-11-06-chip-live/evidence/chip_eda/';
+const source=readFileSync(root+'eda/blocks/build.ts','utf8');
+const begin=source.indexOf('  if (plan.layers === 4 || hasRpProfile) {');
+const end=source.indexOf('  const sensorCheck =',begin);
+assert.ok(begin>0&&end>begin);
+const block=source.slice(begin,end);
+const patched=block.replace("const { checkCopperNetlist } = await import('./copper-netlist');",'const { checkCopperNetlist } = oracle;');
+assert.notEqual(patched,block);
+const wrapped='exports.run = async function(plan,hasRpProfile,graph,cj,imports,useTopGroundPlane,oracle,save,errors){'+patched+'};';
+const js=ts.transpileModule(wrapped,{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.CommonJS}}).outputText;
+const compiled={exports:{} as any};new Function('exports','module',js)(compiled.exports,compiled);
+const run=compiled.exports.run;
+const graph={parts:[],nets:[{name:'GND'},{name:'SIGNAL'}]};
+const valid={issues:[],checked:true,scope:'all-nets-actual-copper',ok:true,networks:[{name:'SIGNAL'},{name:'GND'}]};
+const cases=[['pass',valid,false],['not-ok',{...valid,ok:false},true],['unchecked',{...valid,checked:false},true],['ground-only',{...valid,scope:'ground-only-actual-copper'},true],['missing-net',{...valid,networks:[{name:'GND'}]},true],['extra-net',{...valid,networks:[...valid.networks,{name:'FOREIGN'}]},true],['missing-results',{...valid,networks:undefined},true]]as const;
+const records=[];
+for(const layers of[2,4])for(const[name,result,reject]of cases){
+ const errors:any[]=[],saves:any[]=[],calls:any[]=[];
+ await run({layers},true,graph,[],{get(){throw Error('No parts in linkage fixture');}},false,{checkCopperNetlist(...args:any[]){calls.push(args);return result;}},async(...args:any[])=>{saves.push(args);},errors);
+ assert.equal(calls.length,1);assert.deepEqual(calls[0][3],{policy:'physical-network',scope:'all'});
+ assert.equal(saves[0][0],'all-net-copper-check.json');assert.equal(errors.length,Number(reject),`${layers} ${name}`);
+ if(reject)assert.equal(errors[0].type,'pcb_physical_netlist_error');
+ records.push({layers,name,rejected:!!errors.length});
+}
+let thrown=false;try{await run({layers:2},true,graph,[],{},false,{checkCopperNetlist(){throw Error('UNKNOWN oracle failure');}},async()=>{},[]);}catch(e){assert.match(String(e),/UNKNOWN oracle failure/);thrown=true;}assert.equal(thrown,true);
+const result={scope:'Exact production all-net build guard extracted and evaluated with tiny stub-oracle results; no native solve',buildSha256:createHash('sha256').update(source).digest('hex'),guardSha256:createHash('sha256').update(block).digest('hex'),cases:records,oracleThrowPropagates:true,allCasesPass:true};
+writeFileSync(dir+'all-net-gate-independent-probe.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));

@@ -1,0 +1,610 @@
+{
+  "props": {
+    "name": "compiler-pad-exits",
+    "phaseIndex": 1,
+    "autorouter": "fanout",
+    "fanoutPourNetMap": {},
+    "connections": [
+      ".U2 > .pin1",
+      ".U2 > .pin2",
+      ".U2 > .pin3",
+      ".U2 > .pin4",
+      ".U2 > .pin5",
+      ".U2 > .pin6",
+      ".U2 > .pin7",
+      ".U2 > .pin8",
+      ".U2 > .pin10",
+      ".U2 > .pin9",
+      ".U4 > .pin4",
+      ".U4 > .pin3",
+      ".U4 > .pin1",
+      ".U4 > .pin2"
+    ],
+    "pcbTracePaths": [
+      {
+        "connection": ".U2 > .pin1",
+        "route": [
+          {
+            "route_type": "wire",
+            "x": -2.4873985999999997,
+            "y": -10.2500274,
+            "layer": "top",
+            "width": 0.3
+          },
+          {
+            "route_type": "wire",
+            "x": -3.4123406,
+            "y": -10.2500274,
+            "layer": "top",
+            "width": 0.3
+          }
+        ]
+      },
+      {
+        "connection": ".U2 > .pin2",
+        "route": [
+          {
+            "route_type": "wire",
+            "x": -2.4873985999999997,
+            "y": -10.7498994,
+            "layer": "top",
+            "width": 0.15
+          },
+          {
+            "route_type": "wire",
+            "x": -3.4123406,
+            "y": -10.7498994,
+            "layer": "top",
+            "width": 0.15
+          }
+        ]
+      },
+      {
+        "connection": ".U2 > .pin3",
+        "route": [
+          {
+            "route_type": "wire",
+            "x": -2.4873985999999997,
+            "y": -11.2500254,
+            "layer": "top",
+            "width": 0.3
+          },
+          {
+            "route_type": "wire",
+            "x": -3.4123406,
+            "y": -11.2500254,
+            "layer": "top",
+            "width": 0.3
+          }
+        ]
+      },
+      {
+        "connection": ".U2 > .pin4",
+        "route": [
+          {
+            "route_type": "wire",
+            "x": -2.4873985999999997,
+            "y": -11.7498974,
+            "layer": "top",
+            "width": 0.15
+          },
+          {
+            "route_type": "wire",
+            "x": -3.4123406,
+            "y": -11.7498974,
+            "layer": "top",
+            "width": 0.15
+          }
+        ]
+      },
+      {
+        "connection": ".U2 > .pin5",
+        "route": [
+          {
+            "route_type": "wire",
+            "x": -2.4873985999999997,
+            "y": -12.2500234,
+            "layer": "top",
+            "width": 0.3
+          },
+          {
+            "route_type": "wire",
+            "x": -3.4123406,
+            "y": -12.2500234,
+            "layer": "top",
+            "width": 0.3
+          }
+        ]
+      },
+      {
+        "connection": ".U2 > .pin6",
+        "route": [
+          {
+            "route_type": "wire",
+            "x": 0.5123414,
+            "y": -12.2500234,
+            "layer": "top",
+            "width": 0.3
+          },
+          {
+            "route_type": "wire",
+            "x": 1.4123405999999998,
+            "y": -12.2500234,
+            "layer": "top",
+            "width": 0.3
+          }
+        ]
+      },
+      {
+        "connection": ".U2 > .pin7",
+        "route": [
+          {
+            "route_type": "wire",
+            "x": 0.5123414,
+            "y": -11.7498974,
+            "layer": "top",
+            "width": 0.3
+          },
+          {
+            "route_type": "wire",
+            "x": 1.4123405999999998,
+            "y": -11.7498974,
+            "layer": "top",
+            "width": 0.3
+          }
+        ]
+      },
+      {
+        "connection": ".U2 > .pin8",
+        "route": [
+          {
+            "route_type": "wire",
+            "x": 0.5123414,
+            "y": -11.2500254,
+            "layer": "top",
+            "width": 0.3
+          },
+          {
+            "route_type": "wire",
+            "x": 1.4123405999999998,
+            "y": -11.2500254,
+            "layer": "top",
+            "width": 0.3
+          }
+        ]
+      },
+      {
+        "connection": ".U2 > .pin10",
+        "route": [
+          {
+            "route_type": "wire",
+            "x": 0.5123414,
+            "y": -10.2500274,
+            "layer": "top",
+            "width": 0.3
+          },
+          {
+            "route_type": "wire",
+            "x": 1.4123405999999998,
+            "y": -10.2500274,
+            "layer": "top",
+            "width": 0.3
+          }
+        ]
+      },
+      {
+        "connection": ".U2 > .pin9",
+        "route": [
+          {
+            "route_type": "wire",
+            "x": 0.5123414,
+            "y": -10.7498994,
+            "layer": "top",
+            "width": 0.3
+          },
+          {
+            "route_type": "wire",
+            "x": 1.4123405999999998,
+            "y": -10.7498994,
+            "layer": "top",
+            "width": 0.3
+          }
+        ]
+      },
+      {
+        "connection": ".U4 > .pin4",
+        "route": [
+          {
+            "route_type": "wire",
+            "x": 10.427418,
+            "y": -8.34995,
+            "layer": "top",
+            "width": 0.15
+          },
+          {
+            "route_type": "wire",
+            "x": 10.95,
+            "y": -8.34995,
+            "layer": "top",
+            "width": 0.15
+          }
+        ]
+      },
+      {
+        "connection": ".U4 > .pin3",
+        "route": [
+          {
+            "route_type": "wire",
+            "x": 10.427418,
+            "y": -9.15005,
+            "layer": "top",
+            "width": 0.15
+          },
+          {
+            "route_type": "wire",
+            "x": 10.95,
+            "y": -9.15005,
+            "layer": "top",
+            "width": 0.15
+          }
+        ]
+      },
+      {
+        "connection": ".U4 > .pin1",
+        "route": [
+          {
+            "route_type": "wire",
+            "x": 9.072582,
+            "y": -8.34995,
+            "layer": "top",
+            "width": 0.15
+          },
+          {
+            "route_type": "wire",
+            "x": 8.55,
+            "y": -8.34995,
+            "layer": "top",
+            "width": 0.15
+          }
+        ]
+      },
+      {
+        "connection": ".U4 > .pin2",
+        "route": [
+          {
+            "route_type": "wire",
+            "x": 9.072582,
+            "y": -9.15005,
+            "layer": "top",
+            "width": 0.15
+          },
+          {
+            "route_type": "wire",
+            "x": 8.55,
+            "y": -9.15005,
+            "layer": "top",
+            "width": 0.15
+          }
+        ]
+      }
+    ]
+  },
+  "audit": [
+    {
+      "ref": "U2",
+      "pad": "1",
+      "selector": ".U2 > .pin1",
+      "netNames": [
+        "V3V3"
+      ],
+      "diagnosticSourcePortId": "source_port_95",
+      "diagnosticPcbPortId": "pcb_port_95",
+      "widthMm": 0.3,
+      "start": {
+        "x": -2.4873985999999997,
+        "y": -10.2500274
+      },
+      "end": {
+        "x": -3.4123406,
+        "y": -10.2500274
+      }
+    },
+    {
+      "ref": "U2",
+      "pad": "2",
+      "selector": ".U2 > .pin2",
+      "netNames": [
+        "SW_L2"
+      ],
+      "diagnosticSourcePortId": "source_port_96",
+      "diagnosticPcbPortId": "pcb_port_96",
+      "widthMm": 0.15,
+      "start": {
+        "x": -2.4873985999999997,
+        "y": -10.7498994
+      },
+      "end": {
+        "x": -3.4123406,
+        "y": -10.7498994
+      }
+    },
+    {
+      "ref": "U2",
+      "pad": "3",
+      "selector": ".U2 > .pin3",
+      "netNames": [
+        "GND"
+      ],
+      "diagnosticSourcePortId": "source_port_97",
+      "diagnosticPcbPortId": "pcb_port_97",
+      "widthMm": 0.3,
+      "start": {
+        "x": -2.4873985999999997,
+        "y": -11.2500254
+      },
+      "end": {
+        "x": -3.4123406,
+        "y": -11.2500254
+      }
+    },
+    {
+      "ref": "U2",
+      "pad": "4",
+      "selector": ".U2 > .pin4",
+      "netNames": [
+        "SW_L1"
+      ],
+      "diagnosticSourcePortId": "source_port_98",
+      "diagnosticPcbPortId": "pcb_port_98",
+      "widthMm": 0.15,
+      "start": {
+        "x": -2.4873985999999997,
+        "y": -11.7498974
+      },
+      "end": {
+        "x": -3.4123406,
+        "y": -11.7498974
+      }
+    },
+    {
+      "ref": "U2",
+      "pad": "5",
+      "selector": ".U2 > .pin5",
+      "netNames": [
+        "VBUS"
+      ],
+      "diagnosticSourcePortId": "source_port_99",
+      "diagnosticPcbPortId": "pcb_port_99",
+      "widthMm": 0.3,
+      "start": {
+        "x": -2.4873985999999997,
+        "y": -12.2500234
+      },
+      "end": {
+        "x": -3.4123406,
+        "y": -12.2500234
+      }
+    },
+    {
+      "ref": "U2",
+      "pad": "6",
+      "selector": ".U2 > .pin6",
+      "netNames": [
+        "VBUS"
+      ],
+      "diagnosticSourcePortId": "source_port_100",
+      "diagnosticPcbPortId": "pcb_port_100",
+      "widthMm": 0.3,
+      "start": {
+        "x": 0.5123414,
+        "y": -12.2500234
+      },
+      "end": {
+        "x": 1.4123405999999998,
+        "y": -12.2500234
+      }
+    },
+    {
+      "ref": "U2",
+      "pad": "7",
+      "selector": ".U2 > .pin7",
+      "netNames": [
+        "GND"
+      ],
+      "diagnosticSourcePortId": "source_port_101",
+      "diagnosticPcbPortId": "pcb_port_101",
+      "widthMm": 0.3,
+      "start": {
+        "x": 0.5123414,
+        "y": -11.7498974
+      },
+      "end": {
+        "x": 1.4123405999999998,
+        "y": -11.7498974
+      }
+    },
+    {
+      "ref": "U2",
+      "pad": "8",
+      "selector": ".U2 > .pin8",
+      "netNames": [
+        "VBUS"
+      ],
+      "diagnosticSourcePortId": "source_port_102",
+      "diagnosticPcbPortId": "pcb_port_102",
+      "widthMm": 0.3,
+      "start": {
+        "x": 0.5123414,
+        "y": -11.2500254
+      },
+      "end": {
+        "x": 1.4123405999999998,
+        "y": -11.2500254
+      }
+    },
+    {
+      "ref": "U2",
+      "pad": "10",
+      "selector": ".U2 > .pin10",
+      "netNames": [
+        "V3V3"
+      ],
+      "diagnosticSourcePortId": "source_port_104",
+      "diagnosticPcbPortId": "pcb_port_104",
+      "widthMm": 0.3,
+      "start": {
+        "x": 0.5123414,
+        "y": -10.2500274
+      },
+      "end": {
+        "x": 1.4123405999999998,
+        "y": -10.2500274
+      }
+    },
+    {
+      "ref": "U2",
+      "pad": "9",
+      "selector": ".U2 > .pin9",
+      "netNames": [
+        "GND"
+      ],
+      "diagnosticSourcePortId": "source_port_103",
+      "diagnosticPcbPortId": "pcb_port_103",
+      "widthMm": 0.3,
+      "start": {
+        "x": 0.5123414,
+        "y": -10.7498994
+      },
+      "end": {
+        "x": 1.4123405999999998,
+        "y": -10.7498994
+      }
+    },
+    {
+      "ref": "U4",
+      "pad": "4",
+      "selector": ".U4 > .pin4",
+      "netNames": [
+        "GND"
+      ],
+      "diagnosticSourcePortId": "source_port_127",
+      "diagnosticPcbPortId": "pcb_port_127",
+      "widthMm": 0.15,
+      "start": {
+        "x": 10.427418,
+        "y": -8.34995
+      },
+      "end": {
+        "x": 10.95,
+        "y": -8.34995
+      }
+    },
+    {
+      "ref": "U4",
+      "pad": "3",
+      "selector": ".U4 > .pin3",
+      "netNames": [
+        "V3V3"
+      ],
+      "diagnosticSourcePortId": "source_port_126",
+      "diagnosticPcbPortId": "pcb_port_126",
+      "widthMm": 0.15,
+      "start": {
+        "x": 10.427418,
+        "y": -9.15005
+      },
+      "end": {
+        "x": 10.95,
+        "y": -9.15005
+      }
+    },
+    {
+      "ref": "U4",
+      "pad": "1",
+      "selector": ".U4 > .pin1",
+      "netNames": [
+        "SDA"
+      ],
+      "diagnosticSourcePortId": "source_port_124",
+      "diagnosticPcbPortId": "pcb_port_124",
+      "widthMm": 0.15,
+      "start": {
+        "x": 9.072582,
+        "y": -8.34995
+      },
+      "end": {
+        "x": 8.55,
+        "y": -8.34995
+      }
+    },
+    {
+      "ref": "U4",
+      "pad": "2",
+      "selector": ".U4 > .pin2",
+      "netNames": [
+        "SCL"
+      ],
+      "diagnosticSourcePortId": "source_port_125",
+      "diagnosticPcbPortId": "pcb_port_125",
+      "widthMm": 0.15,
+      "start": {
+        "x": 9.072582,
+        "y": -9.15005
+      },
+      "end": {
+        "x": 8.55,
+        "y": -9.15005
+      }
+    }
+  ],
+  "netNames": [
+    "GND",
+    "SCL",
+    "SDA",
+    "SW_L1",
+    "SW_L2",
+    "V3V3",
+    "VBUS"
+  ],
+  "omittedGround": [],
+  "retainedGround": [],
+  "groundPlane": null,
+  "preRoutedFootprintHints": [
+    {
+      "ref": "U4",
+      "pad": "4",
+      "diagnosticPcbTraceId": "pcb_trace_0",
+      "diagnosticSourceTraceId": "source_trace_30",
+      "diagnosticPcbPortId": "pcb_port_127",
+      "netName": "GND",
+      "lengthMm": 0.5225819999999999
+    },
+    {
+      "ref": "U4",
+      "pad": "3",
+      "diagnosticPcbTraceId": "pcb_trace_1",
+      "diagnosticSourceTraceId": "source_trace_43",
+      "diagnosticPcbPortId": "pcb_port_126",
+      "netName": "V3V3",
+      "lengthMm": 0.5225819999999999
+    },
+    {
+      "ref": "U4",
+      "pad": "1",
+      "diagnosticPcbTraceId": "pcb_trace_2",
+      "diagnosticSourceTraceId": "source_trace_53",
+      "diagnosticPcbPortId": "pcb_port_124",
+      "netName": "SDA",
+      "lengthMm": 0.5225819999999999
+    },
+    {
+      "ref": "U4",
+      "pad": "2",
+      "diagnosticPcbTraceId": "pcb_trace_3",
+      "diagnosticSourceTraceId": "source_trace_63",
+      "diagnosticPcbPortId": "pcb_port_125",
+      "netName": "SCL",
+      "lengthMm": 0.5225819999999999
+    }
+  ]
+}

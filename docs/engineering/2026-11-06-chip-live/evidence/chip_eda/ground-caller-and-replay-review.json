@@ -1,0 +1,43 @@
+{
+  "reviewer": "/root/final_review",
+  "at": "2026-11-06T10:45:43.168842+00:00",
+  "verdict": "no actionable finding in narrow root-authored ground-caller flow; authored replay guard separately tested",
+  "scope": "Read-only review of optional groundOnly caller/merged native paths/audits/private CLI dependencies, not geometry-helper reapproval or native routing. New replay/clock incompatibility guard authored under root request.",
+  "buildSnapshotSha256": "754ce11345e3109f37e80bc8e1efd4673911d6a8ff03958db49f3ad2469bb30c",
+  "rpEscapeHelperSha256": "dc7ac147a6441a1d15af4a12d855e651510975cc00964f070c2cda6962feb95f",
+  "groundCallerVerified": [
+    "--native-ground-escapes requires --native-clock-preloads, which requires owner guard, physical frame0, pad ownership locking, native-pad-escape and known RP profile. Consequently full rpEscape is null when rpGround is enabled.",
+    "Caller invokes createRpEscapePhase(...,{groundOnly:true}), preserving the helper finite canonical19/57 profile and actual graph/source proofs. Helper geometry/source identity is a separate worker scope.",
+    "rpGround paths/netNames/audit are included in mergedPaths, mergedNames and nativeExitPhases; hasRpProfile registers them even without a driver. No source-evidence omission.",
+    "Ground net is included in selectedNetNames before missing-core handoffs are generated, avoiding an extra same-net handoff in the merged phase.",
+    "Existing source traces for knownRP19/57 remain0.15mm; motor returns remain0.3mm. Caller does not rewrite emitted copper, barrel dimensions or graph net ownership.",
+    "Both ground paths share the joint compiler-pad-exits phase and have full source-audit evidence; knownRP ground-phase split stays disabled.",
+    "Canonical-source, every-graph-net physical copper, all-trace minimum width and native/fabrication gates remain mandatory, including explicit diagnostics."
+  ],
+  "replayGuard": {
+    "authored": true,
+    "condition": "nativeReplayManifest && nativeClockPreloads",
+    "behavior": "Reject before any chipRouter execution because captured-output replay cannot produce live native getter verification.",
+    "privatePlumbing": "HTTP worker invokes fixed build.ts --job dir; flags are supplied only by trusted configured Bun shim. Existing replay-named shim files without --native-replay still perform fresh routing.",
+    "regression": "Exact production AST guard truth table covers allfour manifest/clock states."
+  },
+  "checks": {
+    "focusedClockAndReplayTests": {
+      "passed": 7,
+      "failed": 0,
+      "durationMs": 1971.96547
+    },
+    "strictBuildAndTestTypecheck": "pass exit0/zero diagnostics",
+    "nativeSolverIterations": 0,
+    "routingJobRun": false,
+    "wholeBoardOracleRun": false
+  },
+  "files": {
+    "tests/blocks-clock-phase-binding.test.ts": "86b5427708ac2143a7de4ebab9abbc75ba73313377fa282c5bd2afc0a9bca3ac"
+  },
+  "limits": [
+    "No new native route or physical/fabrication acceptance is claimed.",
+    "This reviewer authored binder and replay guard; binder was separately read/approved by root. Replay-guard final independent approval belongs to root.",
+    "Ground geometry/profile source has not been independently re-approved by this caller-only review."
+  ]
+}

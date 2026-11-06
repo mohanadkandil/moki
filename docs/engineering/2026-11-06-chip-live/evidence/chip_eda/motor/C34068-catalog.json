@@ -1,0 +1,29 @@
+{
+  "lcsc": "C34068",
+  "mpn": "1206W4F510LT5E",
+  "manufacturer": "UNI-ROYAL(厚声)",
+  "package": "R1206",
+  "description": "0.51Ω (R510) ±1%",
+  "stock": 18350,
+  "catalogReceipt": "sha256:3fe7f67489f93ccd76efe5a3cc390980bb3fe926aa669faacf548cbf9d55ff35",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "a3edf892ab22828ffdb71b9cc3ed0289b2a5926fe10914efb4b813ec79982e1c",
+  "footprintSha256": "02e451dde6f3e233fd8584786a9a0c3aa13a8e41f970c2e31b3dc664b1da7f2b",
+  "pins": [
+    {
+      "pad": "2",
+      "labels": [
+        "2"
+      ]
+    },
+    {
+      "pad": "1",
+      "labels": [
+        "1"
+      ]
+    }
+  ],
+  "models": [],
+  "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010030_UNI-ROYAL-Uniroyal-Elec-1206W4F510LT5E_C34068.pdf",
+  "datasheetReceipt": "sha256:c5272dc28adaa49fc3fa375fe9f3f3f932ca19a65ff9c247279cc561113984da"
+}

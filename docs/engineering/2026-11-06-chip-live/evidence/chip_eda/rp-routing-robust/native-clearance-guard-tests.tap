@@ -1,0 +1,88 @@
+TAP version 13
+# Subtest: pinned bundle changes one source predicate and both runtime marker functions, rejecting changed SDK
+ok 1 - pinned bundle changes one source predicate and both runtime marker functions, rejecting changed SDK
+  ---
+  duration_ms: 60.929068
+  type: 'test'
+  ...
+# Subtest: complete native converter blocks foreign ownership for zero/one physical ports and either assignability flag
+ok 2 - complete native converter blocks foreign ownership for zero/one physical ports and either assignability flag
+  ---
+  duration_ms: 47.745346
+  type: 'test'
+  ...
+# Subtest: unchanged external root checker retains its endpoint-inference limitation
+ok 3 - unchanged external root checker retains its endpoint-inference limitation
+  ---
+  duration_ms: 10.810092
+  type: 'test'
+  ...
+# Subtest: private utility registry chunk is immutable and a corrupt cached copy fails closed
+ok 4 - private utility registry chunk is immutable and a corrupt cached copy fails closed
+  ---
+  duration_ms: 222.050166
+  type: 'test'
+  ...
+# Subtest: complete native converter preserves explicit own-owner and unowned controls without any Cu change
+ok 5 - complete native converter preserves explicit own-owner and unowned controls without any Cu change
+  ---
+  duration_ms: 22.745159
+  type: 'test'
+  ...
+# Subtest: canonical native MST root references preserve own aliases and never authorize foreign endpoints
+ok 6 - canonical native MST root references preserve own aliases and never authorize foreign endpoints
+  ---
+  duration_ms: 26.194122
+  type: 'test'
+  ...
+# Subtest: private copy relocates only pinned imports, verifies cache bytes and leaves installed SDK unchanged
+ok 7 - private copy relocates only pinned imports, verifies cache bytes and leaves installed SDK unchanged
+  ---
+  duration_ms: 886.539441
+  type: 'test'
+  ...
+# Subtest: original tscircuit SDK and private Pipeline9 coexist in one process without registry override
+ok 8 - original tscircuit SDK and private Pipeline9 coexist in one process without registry override
+  ---
+  duration_ms: 5692.75426
+  type: 'test'
+  ...
+# Subtest: both exact bundled marker bodies suppress only unique declared-owner autofill and preserve all records
+ok 9 - both exact bundled marker bodies suppress only unique declared-owner autofill and preserve all records
+  ---
+  duration_ms: 2366.039469
+  type: 'test'
+  ...
+# Subtest: optional clearance propagation changes exact pinned sites while default v2 stays byte-identical
+ok 10 - optional clearance propagation changes exact pinned sites while default v2 stays byte-identical
+  ---
+  duration_ms: 266.877675
+  type: 'test'
+  ...
+# Subtest: mutable force uses actual planning rule while immutable global reference keeps fabrication rule and explicit targets
+ok 11 - mutable force uses actual planning rule while immutable global reference keeps fabrication rule and explicit targets
+  ---
+  duration_ms: 1.045692
+  type: 'test'
+  ...
+# Subtest: actual native via0/GND pair exactly exhausts original .1+.015 force target but receives .15 planning target
+ok 12 - actual native via0/GND pair exactly exhausts original .1+.015 force target but receives .15 planning target
+  ---
+  duration_ms: 2.115226
+  type: 'test'
+  ...
+# Subtest: clearance variant audit and isolated registry differ while both public constructors coexist without solve
+ok 13 - clearance variant audit and isolated registry differ while both public constructors coexist without solve
+  ---
+  duration_ms: 882.247543
+  type: 'test'
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 13
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 13368.653976

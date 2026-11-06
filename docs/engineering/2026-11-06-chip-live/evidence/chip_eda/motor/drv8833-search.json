@@ -1,0 +1,18 @@
+[
+  {
+    "lcsc": "C50506",
+    "mpn": "DRV8833PWPR",
+    "package": "TSSOP-16-EP",
+    "description": "-40℃~+85℃ 1.5A 2 2.7V~10.8V 360mΩ Bipolar Driver Yes TSSOP-16-EP Stepper Motor Driver ROHS",
+    "stock": 24969,
+    "catalogReceipt": "sha256:c36ecb18b830e052bf34d71cdf0f13b4797912007af9d82b11f93862a1acacb5"
+  },
+  {
+    "lcsc": "C53055901",
+    "mpn": "DRV8833PWPR-HX",
+    "package": "TSSOP-16",
+    "description": "-40℃~+125℃ 1.2A 2 800mA 800mΩ TSSOP-16 Brushed DC Motor Drivers ROHS",
+    "stock": 2494,
+    "catalogReceipt": "sha256:c36ecb18b830e052bf34d71cdf0f13b4797912007af9d82b11f93862a1acacb5"
+  }
+]

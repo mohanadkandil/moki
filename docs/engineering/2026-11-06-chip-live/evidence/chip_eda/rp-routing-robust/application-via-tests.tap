@@ -1,0 +1,112 @@
+TAP version 13
+# Subtest: finite connected GPIO17/18 inward vias pass actual native geometry on2/4layers and all cardinal orientations
+ok 1 - finite connected GPIO17/18 inward vias pass actual native geometry on2/4layers and all cardinal orientations
+  ---
+  duration_ms: 5462.867601
+  type: 'test'
+  ...
+# Subtest: default14prefix API remains unchanged and actual55x40 native90degree placement also validates16
+ok 2 - default14prefix API remains unchanged and actual55x40 native90degree placement also validates16
+  ---
+  duration_ms: 997.463703
+  type: 'test'
+  ...
+# Subtest: only connected application pins receive vias; unsupported aliases, roles and counterfeit optional prefix ownership reject
+ok 3 - only connected application pins receive vias; unsupported aliases, roles and counterfeit optional prefix ownership reject
+  ---
+  duration_ms: 1865.367855
+  type: 'test'
+  ...
+# Subtest: foreign clock copper and same-net SMD copper at a proposed via remain hard geometry failures
+ok 4 - foreign clock copper and same-net SMD copper at a proposed via remain hard geometry failures
+  ---
+  duration_ms: 814.311061
+  type: 'test'
+  ...
+# Subtest: actual failed4layer placement admits14 native off-pad power/ground escapes preserving every clock limit and immutable input
+ok 5 - actual failed4layer placement admits14 native off-pad power/ground escapes preserving every clock limit and immutable input
+  ---
+  duration_ms: 391.708494
+  type: 'test'
+  ...
+# Subtest: same actual profile validates on2/4layers with independently changed enclosing board sizes
+ok 6 - same actual profile validates on2/4layers with independently changed enclosing board sizes
+  ---
+  duration_ms: 1446.932293
+  type: 'test'
+  ...
+# Subtest: clock and escape profiles follow actual cardinal90degree placement on4layers
+ok 7 - clock and escape profiles follow actual cardinal90degree placement on4layers
+  ---
+  duration_ms: 364.577866
+  type: 'test'
+  ...
+# Subtest: foreign copper, clock encroachment, off-board vias and native mapping mutants reject
+ok 8 - foreign copper, clock encroachment, off-board vias and native mapping mutants reject
+  ---
+  duration_ms: 1010.142206
+  type: 'test'
+  ...
+# Subtest: captured4layer failure is a later foreign supply route, while the new pin22 escape leaves away from saved XOUT
+ok 9 - captured4layer failure is a later foreign supply route, while the new pin22 escape leaves away from saved XOUT
+  ---
+  duration_ms: 313.136161
+  type: 'test'
+  ...
+# Subtest: clock and escape-only profiles fit centered55x40/40x55 boards with90degree and translated native frames
+ok 10 - clock and escape-only profiles fit centered55x40/40x55 boards with90degree and translated native frames
+  ---
+  duration_ms: 424.454427
+  type: 'test'
+  ...
+# Subtest: actual captured65x55 geometry admits ten signal stubs against all14 power prefixes and saved clock copper
+ok 11 - actual captured65x55 geometry admits ten signal stubs against all14 power prefixes and saved clock copper
+  ---
+  duration_ms: 660.223948
+  type: 'test'
+  ...
+# Subtest: GPIO14/15 physical17/18 have native accepted inside-pad handoffs when no other phase owns their nets
+ok 12 - GPIO14/15 physical17/18 have native accepted inside-pad handoffs when no other phase owns their nets
+  ---
+  duration_ms: 1771.314261
+  type: 'test'
+  ...
+# Subtest: long outward pin17/18 candidates still collide with unchanged clock geometry
+ok 13 - long outward pin17/18 candidates still collide with unchanged clock geometry
+  ---
+  duration_ms: 647.348881
+  type: 'test'
+  ...
+# Subtest: short USB_DM stub avoids actual power45 via while a uniform1.2mm normal stub fails unchanged native DRC
+ok 14 - short USB_DM stub avoids actual power45 via while a uniform1.2mm normal stub fails unchanged native DRC
+  ---
+  duration_ms: 559.167119
+  type: 'test'
+  ...
+# Subtest: all cardinal placements on2/4layers preserve physical pad normals and .15mm source widths
+ok 15 - all cardinal placements on2/4layers preserve physical pad normals and .15mm source widths
+  ---
+  duration_ms: 4765.380993
+  type: 'test'
+  ...
+# Subtest: real foreign VBUS pad at a free exit cannot be accepted through a copied same-net label
+ok 16 - real foreign VBUS pad at a free exit cannot be accepted through a copied same-net label
+  ---
+  duration_ms: 742.316643
+  type: 'test'
+  ...
+# Subtest: foreign power-via contact, unsupported source/land identity, incomplete prefixes and board bounds fail closed
+ok 17 - foreign power-via contact, unsupported source/land identity, incomplete prefixes and board bounds fail closed
+  ---
+  duration_ms: 922.177208
+  type: 'test'
+  ...
+1..17
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 10886.4326

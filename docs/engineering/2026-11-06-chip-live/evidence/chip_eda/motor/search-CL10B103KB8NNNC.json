@@ -1,0 +1,22 @@
+[
+  {
+    "lcsc": "C5137477",
+    "mpn": "FCC0603B103K500CT",
+    "manufacturer": "FOJAN",
+    "package": "0603",
+    "description": "-55℃~+125℃ 10nF 50V X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS",
+    "stock": 4031578,
+    "datasheetUrl": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2208181800_FOJAN-FCC0603B103K500CT_C5137477.pdf",
+    "catalogReceipt": "sha256:22c8fa14c27abca47849e62e0fac7f01471dcad1d6f3ce5dda261dc46f0b7000"
+  },
+  {
+    "lcsc": "C1589",
+    "mpn": "CL10B103KB8NNNC",
+    "manufacturer": "Samsung Electro-Mechanics",
+    "package": "0603",
+    "description": "10nF 50V X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS",
+    "stock": 2227024,
+    "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL10B103KB8NNNC_C1589.pdf",
+    "catalogReceipt": "sha256:22c8fa14c27abca47849e62e0fac7f01471dcad1d6f3ce5dda261dc46f0b7000"
+  }
+]

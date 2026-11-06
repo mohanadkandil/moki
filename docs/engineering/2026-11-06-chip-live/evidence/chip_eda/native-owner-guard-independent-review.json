@@ -1,0 +1,39 @@
+{
+  "reviewer": "/root/final_review",
+  "at": "2026-11-06T09:30:09.429963+00:00",
+  "verdict": "pass within reviewed module scope; no actionable finding",
+  "scope": "Independent read-only review of GND-authored isolated native-owner-guard loader, exact pinned predicate, source-converter behavior and focused tests. Parent guarded-constructor integration not yet present and not approved by this receipt.",
+  "files": {
+    "eda/blocks/native-owner-guard.ts": "0ddf702d95b325a85a41508ec8cf308025f6ee70ca7fc8fb5c178d920977af2b",
+    "tests/blocks-native-owner-guard.test.ts": "482439ae0f983492464d8e3c4f575a6c1271956b70e74665b9f7ec961a9ec1f5"
+  },
+  "checks": {
+    "focusedTests": {
+      "passed": 6,
+      "failed": 0,
+      "durationMs": 3193.198433
+    },
+    "targetedStrictTypecheck": "pass",
+    "solverInstantiated": false,
+    "heavyRoutingOrWholeBoardOracle": false
+  },
+  "verified": [
+    "Exact pinned version and original bundle SHA required; exactly one source-inference predicate replaced. Every other native bundle byte remains identical after reversing audited static dependency relocations.",
+    "Private cached module loads the official native Pipeline9 constructor without writing installed SDK files. Invalid version/bytes, cache tamper and installed dependency output directory reject.",
+    "Original ESM dependency entries remain equivalent: conditional/alternate export layouts reject and resolved entry plus file/manifest hashes are audited.",
+    "Complete unchanged native pure converter helpers with real native math/connectivity libraries verify zero/one-physical-port foreign GND owner rejection and own/unowned/canonical MST root-alias controls.",
+    "Pre-annotation native connectivity map exposes foreign contact after corrected source inference; a separate positive limitation test records default native checker foreign endpoint annotation.",
+    "Geometry, widths, vias, clearances and pathfinding code are not changed by the predicate patch."
+  ],
+  "limits": [
+    "This is an explicitly private SDK module copy, not unmodified upstream SDK. Its provenance must remain visible in job audit.",
+    "No actual native routed improvement or rootcause is established. Native endpoint inference can still hide contacts; source/all-net physical/fabrication/minimum-width hard gates remain mandatory.",
+    "This reviewer authored locked-pads.ts; it is excluded from this independent module verdict and is independently reviewed by gnd_escape.",
+    "Caller integration and private-flag reachability require separate review after integration."
+  ],
+  "evidence": [
+    "assignable-native-converter-probe.json",
+    "native-endpoint-inference-probe.json",
+    "virtual-exit-port-counterfactual.json"
+  ]
+}

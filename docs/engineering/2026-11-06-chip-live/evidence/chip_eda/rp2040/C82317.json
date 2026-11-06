@@ -1,0 +1,64 @@
+{
+  "lcsc": "C82317",
+  "mpn": "W25Q16JVSSIQ",
+  "manufacturer": "Winbond(华邦)",
+  "package": "SOIC-8_L5.3-W5.3-P1.27-LS8.0-BL",
+  "stock": 2727,
+  "catalogReceipt": "sha256:d1e71a9ad2a23d2062dde6e9c84fcacc2cc642364cb583b5927d07c820531740",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "d669c63bb95bbe734544e5a75b4c37be7b90924e36d10b206c443170eae0d1dc",
+  "footprintSha256": "90f833fb09ec32a3c8c7e36f19034964cb0ab528e2fd0eba3b89e3001ebc84b8",
+  "pins": [
+    {
+      "pad": "1",
+      "labels": [
+        "/CS"
+      ]
+    },
+    {
+      "pad": "2",
+      "labels": [
+        "DO/IO1"
+      ]
+    },
+    {
+      "pad": "3",
+      "labels": [
+        "IO2"
+      ]
+    },
+    {
+      "pad": "4",
+      "labels": [
+        "GND"
+      ]
+    },
+    {
+      "pad": "5",
+      "labels": [
+        "DI/IO0"
+      ]
+    },
+    {
+      "pad": "6",
+      "labels": [
+        "CLK"
+      ]
+    },
+    {
+      "pad": "7",
+      "labels": [
+        "IO3"
+      ]
+    },
+    {
+      "pad": "8",
+      "labels": [
+        "VCC"
+      ]
+    }
+  ],
+  "models": [],
+  "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121543_Winbond-Elec-W25Q16JVSSIQ_C82317.pdf",
+  "datasheetReceipt": "sha256:445311868af4a79d3756e67f82a2d91ce1c7cbbdf9531466462671e2daa94af4"
+}

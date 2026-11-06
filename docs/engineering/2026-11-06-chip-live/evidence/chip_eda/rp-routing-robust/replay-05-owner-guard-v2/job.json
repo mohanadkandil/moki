@@ -1,0 +1,1066 @@
+{
+  "jobId": "fb974464-6d3d-4d9f-a60e-0e4d07e80ef3",
+  "status": "failed",
+  "createdAt": "2026-11-06T09:57:42.590Z",
+  "input": {
+    "kind": "plan",
+    "sourceSha256": "df9f6bed20c166be81e730dfd5479c42c04fb27a602d96ff8d30c8ed96355de8",
+    "plan": {
+      "schema": "moki.plan/1",
+      "title": "RP2040 single-button USB-C motor controller",
+      "layers": 2,
+      "board": {
+        "widthMm": 65,
+        "heightMm": 55
+      },
+      "sections": [
+        {
+          "id": "controller",
+          "title": "RP2040, USB-C input and logic power",
+          "purpose": "Receive USB-C power, generate logic supplies, run and flash firmware.",
+          "insts": [
+            "core"
+          ],
+          "notes": [
+            "Integrated core: separate 5.1k CC pull-downs, USB ESD and 27 ohm data resistors, AP2112K 3.3 V regulator, RP2040, 12 MHz crystal, 2 MB QSPI, BOOTSEL and RUN service switches. Label input, regulator and MCU subsections clearly.",
+            "Use 100 nF supply-pin decoupling, 1 uF internal-regulator input/output bypass, 15 pF crystal caps, and 1 uF AP2112 input/output capacitors.",
+            "Requires known 5 V USB-C supply advertising at least 1.5 A; no PD negotiation or current detection.",
+            "Logic peak 130.34 mA is below conservative 150 mA allocation and AP2112 600 mA rating. USB peak approximately 635.44 mA is below 1500 mA. Motor bypasses logic regulator.",
+            "Service buttons are not application controls; no expansion headers.",
+            "Unreviewed block: RP2040 bare-chip USB motor-controller core."
+          ],
+          "reference": {
+            "lcsc": "C2040",
+            "page": 14,
+            "figure": "Figure 11",
+            "quote": "Complete schematic of the minimal board",
+            "datasheetUrl": "https://datasheets.raspberrypi.com/rp2040/hardware-design-with-rp2040.pdf"
+          }
+        },
+        {
+          "id": "motor",
+          "title": "5 V brushed motor driver",
+          "purpose": "PWM-drive one small 5 V brushed motor from VBUS.",
+          "insts": [
+            "driver"
+          ],
+          "notes": [
+            "DRV8833 bridge A feeds two-pin motor connector; unused bridge B inputs and BISEN grounded, outputs unconnected.",
+            "10 nF VM-to-VCP, 2.2 uF VINT bypass, 2x10 uF VM ceramics and 47 uF bulk. 47k nSLEEP pull-up.",
+            "0.51 ohm sense resistor sets approximately 392 mA nominal chopping, not a hard stall-current limit. Actual motor startup/stall, thermal behavior, USB inrush and regeneration require qualification.",
+            "GP14 PWM drives IN1; GP15 holds IN2 low. Startup and stop both low/coast. Fixed forward direction.",
+            "Unreviewed block: DRV8833 single brushed DC motor, qualified5V USB supply."
+          ],
+          "reference": {
+            "lcsc": "C50506",
+            "page": 15,
+            "figure": "Figure 10",
+            "quote": "The VM pin should be bypassed to GND using low-ESR ceramic bypass capacitors",
+            "datasheetUrl": "https://www.ti.com/lit/ds/symlink/drv8833.pdf"
+          }
+        },
+        {
+          "id": "button",
+          "title": "Single user button",
+          "purpose": "Start, stop and select speed.",
+          "insts": [
+            "button"
+          ],
+          "notes": [
+            "Active-low GP0 input with 10k pull-up to 3.3 V. Debounce 30 ms.",
+            "Each press advances stopped, 40%, 70%, 100%, stopped. Always start stopped; no saved settings.",
+            "Unreviewed block: 3.3 V active-low application pushbutton."
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "inst": "core",
+          "block": "rp2040-minimal",
+          "version": 4,
+          "params": {}
+        },
+        {
+          "inst": "driver",
+          "block": "dc-motor-drv8833",
+          "version": 2,
+          "params": {}
+        },
+        {
+          "inst": "button",
+          "block": "application-pushbutton-fixed",
+          "version": 1,
+          "params": {}
+        }
+      ],
+      "links": [
+        {
+          "from": "core.VBUS",
+          "to": "core.VBUS_IN"
+        },
+        {
+          "from": "core.V3V3",
+          "to": "core.V3V3_IN"
+        },
+        {
+          "from": "core.VCORE",
+          "to": "core.VCORE_IN"
+        },
+        {
+          "from": "core.USB",
+          "to": "core.USB_HOST"
+        },
+        {
+          "from": "core.VBUS",
+          "to": "driver.VM"
+        },
+        {
+          "from": "core.GND",
+          "to": "driver.GND"
+        },
+        {
+          "from": "core.MOTOR_IN1",
+          "to": "driver.IN1"
+        },
+        {
+          "from": "core.MOTOR_IN2",
+          "to": "driver.IN2"
+        },
+        {
+          "from": "core.V3V3",
+          "to": "button.V3V3"
+        },
+        {
+          "from": "core.GND",
+          "to": "button.GND"
+        },
+        {
+          "from": "core.GP0",
+          "to": "button.BUTTON"
+        }
+      ],
+      "drafts": [
+        {
+          "schema": "moki.block/1",
+          "id": "application-pushbutton-fixed",
+          "version": 1,
+          "title": "3.3 V active-low application pushbutton",
+          "summary": "Single normally-open application button to ground with a 10k pull-up; BUTTON is high released and low pressed. No IC or service-function assignment.",
+          "class": "button",
+          "provenance": {
+            "author": "agent",
+            "authorId": "openai:gpt-6.1-sol:author"
+          },
+          "parts": [
+            {
+              "ref": "R1",
+              "lcsc": "C25804",
+              "mpn": "0603WAF1002T5E",
+              "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+              "datasheet": {
+                "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010045_UNI-ROYAL-Uniroyal-Elec-0603WAF1002T5E_C25804.pdf",
+                "pages": "1",
+                "note": "Catalog 10kΩ ±1% 0603 resistor."
+              },
+              "pinout": "verified",
+              "pins": {
+                "1": {
+                  "pad": "1",
+                  "role": "passive",
+                  "required": true
+                },
+                "2": {
+                  "pad": "2",
+                  "role": "passive",
+                  "required": true
+                }
+              },
+              "at": {
+                "x": 0,
+                "y": -3,
+                "rotation": 90
+              },
+              "value": "10k",
+              "valueWhy": {
+                "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010045_UNI-ROYAL-Uniroyal-Elec-0603WAF1002T5E_C25804.pdf",
+                "pages": "1",
+                "note": "Maker specifies 10k pull-up; catalog identifies this part as 10k ±1%."
+              }
+            },
+            {
+              "ref": "SW1",
+              "lcsc": "C231329",
+              "mpn": "B3U-1000P",
+              "catalogReceipt": "sha256:a24e67ec11e21bf4a5e7763e4e5a4d01cd52d23e77d993e7decc0626fed3771c",
+              "datasheet": {
+                "url": "https://www.lcsc.com/product-detail/C231329.html",
+                "pages": "catalog",
+                "note": "Catalog SPST momentary tactile switch, SMD, 12 V 50 mA; two catalog pads."
+              },
+              "pinout": "verified",
+              "pins": {
+                "1": {
+                  "pad": "1",
+                  "role": "passive",
+                  "required": true
+                },
+                "2": {
+                  "pad": "2",
+                  "role": "passive",
+                  "required": true
+                }
+              },
+              "at": {
+                "x": 0,
+                "y": 3,
+                "rotation": 0
+              }
+            }
+          ],
+          "nets": [
+            {
+              "name": "V3V3",
+              "pins": [
+                "R1.1"
+              ]
+            },
+            {
+              "name": "BUTTON",
+              "pins": [
+                "R1.2",
+                "SW1.1"
+              ]
+            },
+            {
+              "name": "GND",
+              "pins": [
+                "SW1.2"
+              ]
+            }
+          ],
+          "params": [],
+          "ports": [
+            {
+              "id": "V3V3",
+              "label": "V3V3",
+              "kind": "power-in",
+              "terminal": "net:V3V3",
+              "volts": {
+                "min": 3.234,
+                "max": 3.366
+              }
+            },
+            {
+              "id": "GND",
+              "label": "GND",
+              "kind": "ground",
+              "terminal": "net:GND"
+            },
+            {
+              "id": "BUTTON",
+              "label": "BUTTON",
+              "kind": "gpio",
+              "terminal": "net:BUTTON"
+            }
+          ],
+          "power": {
+            "sources": [],
+            "sinks": [
+              {
+                "port": "V3V3",
+                "typicalMa": 0.33,
+                "peakMa": 0.34
+              }
+            ]
+          },
+          "constraints": []
+        }
+      ],
+      "app": {
+        "source": "#include <Arduino.h>\n#include \"pins.h\"\n\nconst uint8_t duties[] = {0, 102, 179, 255};\nconst uint8_t speeds[] = {0, 40, 70, 100};\nuint8_t stage = 0;\nbool rawPressed = false, stablePressed = false, armed = false;\nunsigned long changedAt = 0;\n\nvoid setup() {\n  digitalWrite(PIN_DRIVER_IN1, LOW);\n  digitalWrite(PIN_DRIVER_IN2, LOW);\n  pinMode(PIN_DRIVER_IN1, OUTPUT);\n  pinMode(PIN_DRIVER_IN2, OUTPUT);\n  delay(2);  // Driver wake time; motor remains coasting.\n  pinMode(PIN_BUTTON_BUTTON, INPUT_PULLUP);\n  rawPressed = stablePressed = (digitalRead(PIN_BUTTON_BUTTON) == LOW);\n  armed = !stablePressed;\n  changedAt = millis();\n  Serial.begin(115200);\n  Serial.println(\"Stopped/coast. Using core-default PWM; listed API has no 20 kHz frequency control.\");\n}\n\nvoid loop() {\n  unsigned long now = millis();\n  bool pressed = (digitalRead(PIN_BUTTON_BUTTON) == LOW);\n  if (pressed != rawPressed) {\n    rawPressed = pressed;\n    changedAt = now;\n  }\n  if (rawPressed != stablePressed && now - changedAt >= 30) {\n    stablePressed = rawPressed;\n    if (!stablePressed) {\n      armed = true;\n    } else if (armed) {\n      armed = false;\n      stage = (stage + 1) % 4;\n      digitalWrite(PIN_DRIVER_IN2, LOW);\n      analogWrite(PIN_DRIVER_IN1, duties[stage]);\n      Serial.print(\"Motor PWM: \");\n      Serial.print(speeds[stage]);\n      Serial.println(stage == 0 ? \"% (coast)\" : \"% forward\");\n    }\n  }\n}\n"
+      },
+      "requirements": [
+        {
+          "id": "rp2040",
+          "plain": "Uses an RP2040 microcontroller circuit.",
+          "metric": "interface_present",
+          "args": {
+            "kind": "rp2040-minimal"
+          },
+          "op": "present",
+          "source": "brief"
+        },
+        {
+          "id": "usb_c_power",
+          "plain": "Accepts power through USB-C.",
+          "metric": "interface_present",
+          "args": {
+            "kind": "usb_c_sink"
+          },
+          "op": "present",
+          "source": "brief"
+        },
+        {
+          "id": "motor_driver",
+          "plain": "Has a motor driver circuit.",
+          "metric": "interface_present",
+          "args": {
+            "kind": "motor_driver"
+          },
+          "op": "present",
+          "source": "inferred"
+        }
+      ]
+    }
+  },
+  "cache": "miss",
+  "stages": [
+    {
+      "name": "codegen",
+      "status": "done",
+      "ms": 113.49865299999999,
+      "note": "Validated JSON plan; no author TSX is executed"
+    },
+    {
+      "name": "erc",
+      "status": "done",
+      "ms": 0,
+      "note": "Block has not passed independent promotion review; Block has not passed independent promotion review; Block has not passed independent promotion review; USB peripheral relies on an external host through the declared passive connector"
+    },
+    {
+      "name": "power",
+      "status": "done",
+      "ms": 0,
+      "note": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+    },
+    {
+      "name": "spice",
+      "status": "done",
+      "ms": 19.815506000000028,
+      "note": "No applicable SPICE profiles declared; electrical behavior is not simulated"
+    },
+    {
+      "name": "verify",
+      "status": "done",
+      "ms": 0,
+      "note": ""
+    },
+    {
+      "name": "review",
+      "status": "done",
+      "ms": 0,
+      "note": ""
+    },
+    {
+      "name": "codegen",
+      "status": "done",
+      "ms": 2530.0961479999996
+    },
+    {
+      "name": "placement",
+      "status": "done",
+      "ms": 55.59431399999994
+    },
+    {
+      "name": "svg",
+      "status": "done",
+      "ms": 4299.800313
+    },
+    {
+      "name": "fanout",
+      "status": "done",
+      "ms": 1928.1379699999998
+    },
+    {
+      "name": "fanout",
+      "status": "done",
+      "ms": 2223.571616000001
+    },
+    {
+      "name": "render",
+      "status": "done",
+      "ms": 716.7504069999995
+    },
+    {
+      "name": "route",
+      "status": "done",
+      "ms": 110949.570918
+    },
+    {
+      "name": "gltf",
+      "status": "done",
+      "ms": 3689.2908079999906
+    },
+    {
+      "name": "fab",
+      "status": "done",
+      "ms": 1207.3720009999815
+    },
+    {
+      "name": "drc",
+      "status": "failed",
+      "ms": 0,
+      "note": "PCB trace .U1 > .pin56 to net.QSPI_SS is too close to .U1 > .pin53 to net.QSPI_SD0 (gap: 0.110mm); PCB trace .U1 > .pin55 to net.QSPI_SD1 is too close to .U1 > .pin1 to net.V3V3 (gap: 0.117mm); PCB trace .U1 > .pin51 to net.QSPI_SD3 is too close to .U1 > .pin1 to net.V3V3 (gap: 0.062mm); PCB trace .U1 > .pin23 to net.VCORE overlaps with pcb_via \"unnamed via\" (accidental contact); PCB trace .U4 > .pin2 to net.GND overlaps with pcb_via \"unnamed via\" (accidental contact); Pad U1.QSPI_SD2 and trace .U1 > .pin53 to net.QSPI_SD0 are too close (clearance: 0.101mm, minimum: 0.127mm); Trace .J1 > .pin15 to net.VBUS is too close to non-plated hole unnamed hole (gap: 0.186989mm, required: 0.2mm); Via unnamed via and trace .U5 > .pin10 to net.GND are too close (clearance: 0.115mm, minimum: 0.127mm); Via unnamed via and trace .U1 > .pin2 to net.BUTTON are too close (clearance: 0.115mm, minimum: 0.127mm); Via unnamed via and trace .U1 > .pin51 to net.QSPI_SD3 are too close (clearance: 0.107mm, minimum: 0.127mm); Via unnamed via and trace .U1 > .pin51 to net.QSPI_SD3 are too close (clearance: 0.094mm, minimum: 0.127mm); Via unnamed via and trace .U1 > .pin51 to net.QSPI_SD3 are too close (clearance: 0.115mm, minimum: 0.127mm); Via unnamed via and trace .U2 > .pin8 to net.V3V3 are too close (clearance: 0.115mm, minimum: 0.127mm); Via unnamed via and trace .U1 > .pin45 to net.VCORE are too close (clearance: 0.077mm, minimum: 0.127mm); Via unnamed via and trace .U1 > .pin44 to net.V3V3 are too close (clearance: 0.088mm, minimum: 0.127mm); Via unnamed via and trace .U1 > .pin54 to net.QSPI_SD2 are too close (clearance: 0.111mm, minimum: 0.127mm); Via unnamed via and trace .U1 > .pin51 to net.QSPI_SD3 are too close (clearance: 0.115mm, minimum: 0.127mm); Via unnamed via and trace .U2 > .pin8 to net.V3V3 are too close (clearance: 0.115mm, minimum: 0.127mm); Via unnamed via and trace .U1 > .pin47 to net.USB_DP are too close (clearance: 0.115mm, minimum: 0.127mm); Via unnamed via and trace .U2 > .pin8 to net.V3V3 are too close (clearance: 0.115mm, minimum: 0.127mm); Via unnamed via and trace .U1 > .pin54 to net.QSPI_SD2 are too close (clearance: 0.085mm, minimum: 0.127mm); Via unnamed via and trace .U1 > .pin54 to net.QSPI_SD2 are too close (clearance: 0.121mm, minimum: 0.127mm); Via unnamed via and trace .U1 > .pin55 to net.QSPI_SD1 are too close (clearance: 0.066mm, minimum: 0.127mm); Via unnamed via and trace .C1 > .pin2 to net.GND are too close (clearance: 0.121mm, minimum: 0.127mm); Via unnamed via and trace .U1 > .pin23 to net.VCORE are too close (clearance: 0.115mm, minimum: 0.127mm); Ground copper touches foreign, isolated or NC physical terminals; Net VCORE copper touches foreign, isolated or NC physical terminals; Net RUN copper touches foreign, isolated or NC physical terminals; Net VBUS copper touches foreign, isolated or NC physical terminals"
+    }
+  ],
+  "totalMs": 145913.29928500002,
+  "drc": {
+    "checked": true,
+    "errors": [
+      {
+        "type": "pcb_trace_error",
+        "message": "PCB trace .U1 > .pin56 to net.QSPI_SS is too close to .U1 > .pin53 to net.QSPI_SD0 (gap: 0.110mm)"
+      },
+      {
+        "type": "pcb_trace_error",
+        "message": "PCB trace .U1 > .pin55 to net.QSPI_SD1 is too close to .U1 > .pin1 to net.V3V3 (gap: 0.117mm)"
+      },
+      {
+        "type": "pcb_trace_error",
+        "message": "PCB trace .U1 > .pin51 to net.QSPI_SD3 is too close to .U1 > .pin1 to net.V3V3 (gap: 0.062mm)"
+      },
+      {
+        "type": "pcb_trace_error",
+        "message": "PCB trace .U1 > .pin23 to net.VCORE overlaps with pcb_via \"unnamed via\" (accidental contact)"
+      },
+      {
+        "type": "pcb_trace_error",
+        "message": "PCB trace .U4 > .pin2 to net.GND overlaps with pcb_via \"unnamed via\" (accidental contact)"
+      },
+      {
+        "type": "pcb_pad_trace_clearance_error",
+        "message": "Pad U1.QSPI_SD2 and trace .U1 > .pin53 to net.QSPI_SD0 are too close (clearance: 0.101mm, minimum: 0.127mm)"
+      },
+      {
+        "type": "pcb_trace_error",
+        "message": "Trace .J1 > .pin15 to net.VBUS is too close to non-plated hole unnamed hole (gap: 0.186989mm, required: 0.2mm)"
+      },
+      {
+        "type": "pcb_via_trace_clearance_error",
+        "message": "Via unnamed via and trace .U5 > .pin10 to net.GND are too close (clearance: 0.115mm, minimum: 0.127mm)"
+      },
+      {
+        "type": "pcb_via_trace_clearance_error",
+        "message": "Via unnamed via and trace .U1 > .pin2 to net.BUTTON are too close (clearance: 0.115mm, minimum: 0.127mm)"
+      },
+      {
+        "type": "pcb_via_trace_clearance_error",
+        "message": "Via unnamed via and trace .U1 > .pin51 to net.QSPI_SD3 are too close (clearance: 0.107mm, minimum: 0.127mm)"
+      },
+      {
+        "type": "pcb_via_trace_clearance_error",
+        "message": "Via unnamed via and trace .U1 > .pin51 to net.QSPI_SD3 are too close (clearance: 0.094mm, minimum: 0.127mm)"
+      },
+      {
+        "type": "pcb_via_trace_clearance_error",
+        "message": "Via unnamed via and trace .U1 > .pin51 to net.QSPI_SD3 are too close (clearance: 0.115mm, minimum: 0.127mm)"
+      },
+      {
+        "type": "pcb_via_trace_clearance_error",
+        "message": "Via unnamed via and trace .U2 > .pin8 to net.V3V3 are too close (clearance: 0.115mm, minimum: 0.127mm)"
+      },
+      {
+        "type": "pcb_via_trace_clearance_error",
+        "message": "Via unnamed via and trace .U1 > .pin45 to net.VCORE are too close (clearance: 0.077mm, minimum: 0.127mm)"
+      },
+      {
+        "type": "pcb_via_trace_clearance_error",
+        "message": "Via unnamed via and trace .U1 > .pin44 to net.V3V3 are too close (clearance: 0.088mm, minimum: 0.127mm)"
+      },
+      {
+        "type": "pcb_via_trace_clearance_error",
+        "message": "Via unnamed via and trace .U1 > .pin54 to net.QSPI_SD2 are too close (clearance: 0.111mm, minimum: 0.127mm)"
+      },
+      {
+        "type": "pcb_via_trace_clearance_error",
+        "message": "Via unnamed via and trace .U1 > .pin51 to net.QSPI_SD3 are too close (clearance: 0.115mm, minimum: 0.127mm)"
+      },
+      {
+        "type": "pcb_via_trace_clearance_error",
+        "message": "Via unnamed via and trace .U2 > .pin8 to net.V3V3 are too close (clearance: 0.115mm, minimum: 0.127mm)"
+      },
+      {
+        "type": "pcb_via_trace_clearance_error",
+        "message": "Via unnamed via and trace .U1 > .pin47 to net.USB_DP are too close (clearance: 0.115mm, minimum: 0.127mm)"
+      },
+      {
+        "type": "pcb_via_trace_clearance_error",
+        "message": "Via unnamed via and trace .U2 > .pin8 to net.V3V3 are too close (clearance: 0.115mm, minimum: 0.127mm)"
+      },
+      {
+        "type": "pcb_via_trace_clearance_error",
+        "message": "Via unnamed via and trace .U1 > .pin54 to net.QSPI_SD2 are too close (clearance: 0.085mm, minimum: 0.127mm)"
+      },
+      {
+        "type": "pcb_via_trace_clearance_error",
+        "message": "Via unnamed via and trace .U1 > .pin54 to net.QSPI_SD2 are too close (clearance: 0.121mm, minimum: 0.127mm)"
+      },
+      {
+        "type": "pcb_via_trace_clearance_error",
+        "message": "Via unnamed via and trace .U1 > .pin55 to net.QSPI_SD1 are too close (clearance: 0.066mm, minimum: 0.127mm)"
+      },
+      {
+        "type": "pcb_via_trace_clearance_error",
+        "message": "Via unnamed via and trace .C1 > .pin2 to net.GND are too close (clearance: 0.121mm, minimum: 0.127mm)"
+      },
+      {
+        "type": "pcb_via_trace_clearance_error",
+        "message": "Via unnamed via and trace .U1 > .pin23 to net.VCORE are too close (clearance: 0.115mm, minimum: 0.127mm)"
+      },
+      {
+        "type": "pcb_physical_netlist_error",
+        "message": "Ground copper touches foreign, isolated or NC physical terminals"
+      },
+      {
+        "type": "pcb_physical_netlist_error",
+        "message": "Net VCORE copper touches foreign, isolated or NC physical terminals"
+      },
+      {
+        "type": "pcb_physical_netlist_error",
+        "message": "Net RUN copper touches foreign, isolated or NC physical terminals"
+      },
+      {
+        "type": "pcb_physical_netlist_error",
+        "message": "Net VBUS copper touches foreign, isolated or NC physical terminals"
+      }
+    ],
+    "warnings": [
+      {
+        "type": "source_refdes_convention_warning",
+        "message": "The \"J\" prefix is being used with a <chip />, try using it with a <connector /> or <jumper />"
+      },
+      {
+        "type": "source_refdes_convention_warning",
+        "message": "The \"J\" prefix is being used with a <chip />, try using it with a <connector /> or <jumper />"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "U1 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "U4 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "U4 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on U4 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "J1 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "J1 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on J1 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "U5 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "J2 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "J2 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on J2 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "pcb_connector_not_in_accessible_orientation_warning",
+        "message": "J1 is inferred to face x+ from its cable insertion center because no explicit footprint insertionDirection is defined, but should face x- so the connector is accessible from the board edge. Set insertionDirection on the <footprint> to specify the actual direction in the footprint's unrotated orientation; for example, <footprint insertionDirection=\"from_above\"> for a connector accessed from above the PCB (+Z)."
+      },
+      {
+        "type": "pcb_connector_not_in_accessible_orientation_warning",
+        "message": "J2 is inferred to face x- from its cable insertion center because no explicit footprint insertionDirection is defined, but should face x+ so the connector is accessible from the board edge. Set insertionDirection on the <footprint> to specify the actual direction in the footprint's unrotated orientation; for example, <footprint insertionDirection=\"from_above\"> for a connector accessed from above the PCB (+Z)."
+      }
+    ]
+  },
+  "board": {
+    "widthMm": 65,
+    "heightMm": 55,
+    "layers": 2,
+    "traceCount": 149,
+    "viaCount": 103
+  },
+  "artifacts": {
+    "circuit.json": {
+      "url": "/api/board/jobs/fb974464-6d3d-4d9f-a60e-0e4d07e80ef3/files/circuit.json",
+      "bytes": 1649944,
+      "sha256": "2748cd63f788ae6659ee3ea18231d5d3044b3c1a7c92b62f126d2fca78482044",
+      "kind": "json"
+    },
+    "schematic.svg": {
+      "url": "/api/board/jobs/fb974464-6d3d-4d9f-a60e-0e4d07e80ef3/files/schematic.svg",
+      "bytes": 425713,
+      "sha256": "b44bde343563eb56044df6e6a466b2c0f6a48f5c030904e22619b35effed3a68",
+      "kind": "svg"
+    },
+    "pcb.svg": {
+      "url": "/api/board/jobs/fb974464-6d3d-4d9f-a60e-0e4d07e80ef3/files/pcb.svg",
+      "bytes": 893968,
+      "sha256": "3eabd397832a9ca08b422fc0f286ab2c9d425299be94f2598cd86a8933a16362",
+      "kind": "svg"
+    },
+    "board.glb": {
+      "url": "/api/board/jobs/fb974464-6d3d-4d9f-a60e-0e4d07e80ef3/files/board.glb",
+      "bytes": 13666380,
+      "sha256": "17dbac097b462f72c45bd29f6b01191edbabc24a15897e437df136c9567a6ff1",
+      "kind": "glb"
+    },
+    "gerbers.zip": {
+      "url": "/api/board/jobs/fb974464-6d3d-4d9f-a60e-0e4d07e80ef3/files/gerbers.zip",
+      "bytes": 112725,
+      "sha256": "419744847f1afc8f329d81ff4861a2035c4bffa27f02f96161e82893b59d1c61",
+      "kind": "zip"
+    },
+    "kicad.zip": {
+      "url": "/api/board/jobs/fb974464-6d3d-4d9f-a60e-0e4d07e80ef3/files/kicad.zip",
+      "bytes": 264806,
+      "sha256": "f2fa5cb10bb747d57d92d4f05653e9a3606155c37890c71ca47690a4c77089dd",
+      "kind": "zip"
+    },
+    "bom.csv": {
+      "url": "/api/board/jobs/fb974464-6d3d-4d9f-a60e-0e4d07e80ef3/files/bom.csv",
+      "bytes": 2093,
+      "sha256": "8b00d08e29c7726f08f14eb7a700544e1067c4698ede195ff05674c292c8e271",
+      "kind": "csv"
+    },
+    "pnp.csv": {
+      "url": "/api/board/jobs/fb974464-6d3d-4d9f-a60e-0e4d07e80ef3/files/pnp.csv",
+      "bytes": 2687,
+      "sha256": "f522ba20d5124438aadae718145a714f31fda29449dab89d36d14bb777dcb8fb",
+      "kind": "csv"
+    },
+    "receipt.json": {
+      "url": "/api/board/jobs/fb974464-6d3d-4d9f-a60e-0e4d07e80ef3/files/receipt.json",
+      "bytes": 28532,
+      "sha256": "073f725344ede0657184903b7869ff37661de43c3c8d4a5f7cd900d00e2858ca",
+      "kind": "json"
+    },
+    "plan.json": {
+      "url": "/api/board/jobs/fb974464-6d3d-4d9f-a60e-0e4d07e80ef3/files/plan.json",
+      "bytes": 10016,
+      "sha256": "a1644e6b13e193dbb00ec3d8cc0cded32594de5ffe0e2b19d96950c76aad0adb",
+      "kind": "json"
+    },
+    "plan-graph.json": {
+      "url": "/api/board/jobs/fb974464-6d3d-4d9f-a60e-0e4d07e80ef3/files/plan-graph.json",
+      "bytes": 4376044,
+      "sha256": "adc8b14cef786bfb56dbb641a61be6f4e51e47ca43811d9efefa6884cf804d12",
+      "kind": "json"
+    },
+    "gates.json": {
+      "url": "/api/board/jobs/fb974464-6d3d-4d9f-a60e-0e4d07e80ef3/files/gates.json",
+      "bytes": 8476,
+      "sha256": "986f24ce99a025e2a2152488d84d7a787af832416e02adb1426dd0297ebbf131",
+      "kind": "json"
+    },
+    "spice.json": {
+      "url": "/api/board/jobs/fb974464-6d3d-4d9f-a60e-0e4d07e80ef3/files/spice.json",
+      "bytes": 327,
+      "sha256": "37c96aa414f79373bdf7d38772e2cde3416e634597c3e72e37b424dd3144a764",
+      "kind": "json"
+    },
+    "verification.json": {
+      "url": "/api/board/jobs/fb974464-6d3d-4d9f-a60e-0e4d07e80ef3/files/verification.json",
+      "bytes": 646,
+      "sha256": "17943e615fc053040b4909de67e400bc88c95d8937cd8ce50d70669b4a8104d2",
+      "kind": "json"
+    },
+    "schematic-circuit.json": {
+      "url": "/api/board/jobs/fb974464-6d3d-4d9f-a60e-0e4d07e80ef3/files/schematic-circuit.json",
+      "bytes": 507458,
+      "sha256": "6e9bda38c1e8173cb524433181327d47ec3a5ab13cde9492d8b54c2ba70aa270",
+      "kind": "json"
+    },
+    "import-map.json": {
+      "url": "/api/board/jobs/fb974464-6d3d-4d9f-a60e-0e4d07e80ef3/files/import-map.json",
+      "bytes": 26264,
+      "sha256": "0bd48dea7683cd6dba656fc8a46050a06445378f1ea3cbcf61eb6dc121bd5ba3",
+      "kind": "json"
+    },
+    "netlist-check.json": {
+      "url": "/api/board/jobs/fb974464-6d3d-4d9f-a60e-0e4d07e80ef3/files/netlist-check.json",
+      "bytes": 32,
+      "sha256": "1b237b6d36a5cf2f8b7272800f91f3e98f39caafdd95fc3bd739ecfb75b0d664",
+      "kind": "json"
+    },
+    "placement.json": {
+      "url": "/api/board/jobs/fb974464-6d3d-4d9f-a60e-0e4d07e80ef3/files/placement.json",
+      "bytes": 13786,
+      "sha256": "cf5784b79d65c2ec98409cdc6b9e63b23f7843d6b163b5157c1e35f08b49dc7d",
+      "kind": "json"
+    },
+    "placement-check.json": {
+      "url": "/api/board/jobs/fb974464-6d3d-4d9f-a60e-0e4d07e80ef3/files/placement-check.json",
+      "bytes": 1651,
+      "sha256": "64372d3a392764cb8e8bda16f2b9f4b96154263dd82d2ce5117fbf5577ded959",
+      "kind": "json"
+    },
+    "fanout-check.json": {
+      "url": "/api/board/jobs/fb974464-6d3d-4d9f-a60e-0e4d07e80ef3/files/fanout-check.json",
+      "bytes": 56,
+      "sha256": "7731d796c57fd20da13b30427f01fe075acc5b867f0aa7207bcd93df30a7a7d9",
+      "kind": "json"
+    },
+    "fanout-phase.json": {
+      "url": "/api/board/jobs/fb974464-6d3d-4d9f-a60e-0e4d07e80ef3/files/fanout-phase.json",
+      "bytes": 23660,
+      "sha256": "f1e046e3319acbea767cf7f935e93e22b3726abf6b938877dfe8ed75ef5810ac",
+      "kind": "json"
+    },
+    "native-async-errors.json": {
+      "url": "/api/board/jobs/fb974464-6d3d-4d9f-a60e-0e4d07e80ef3/files/native-async-errors.json",
+      "bytes": 32,
+      "sha256": "29bffd8c93a762daf2b9740027793a4ffef823ddd839405684bed68c614f11e3",
+      "kind": "json"
+    },
+    "native-routing.json": {
+      "url": "/api/board/jobs/fb974464-6d3d-4d9f-a60e-0e4d07e80ef3/files/native-routing.json",
+      "bytes": 995071,
+      "sha256": "50fe8173b90a17712ac6f77bc11008da127bcf823dab462838a335204db46911",
+      "kind": "json"
+    },
+    "routing-plan.json": {
+      "url": "/api/board/jobs/fb974464-6d3d-4d9f-a60e-0e4d07e80ef3/files/routing-plan.json",
+      "bytes": 886,
+      "sha256": "ce5fff436c07ab6d14b48f7e0c5a8abecfe99f747e81c0762261e429b3c8c9b9",
+      "kind": "json"
+    }
+  },
+  "toolVersions": {
+    "bun": "1.4.4",
+    "toolchainLockSha256": "03c17de90a541fb18d9c0551e9d48079d505c8da1b327b521149c39ce2bdfe92",
+    "mokiRendererSha256": "0241360186359759ab4eb49087dc2026f5d13d1b9279bc2a7a9c78b97e59ff2d",
+    "blocks/build.ts": "0ed4f227fdc19eb0a85fad68df1ce81e96fe886f8a39a0904bf9cafdc8486e1f",
+    "blocks/routing-frame.ts": "223194ea19366021490945764e0444a09b852b24f0ccd86e2d6da37c4c584966",
+    "blocks/locked-pads.ts": "34d3314977ad6643ab0640db5d8d8fd1de37d2be10f28591143e901e1d6abc9b",
+    "blocks/native-owner-guard.ts": "9ba6434f64f345a150dcbde0c2ef6b37cf2117bee055be10c9b1e56d70f761e2",
+    "blocks/auto-placement.ts": "62b0b34e8d47995cae6e949bd0964bcd4eea37f26957228ddbed39d959c25658",
+    "blocks/sensor-exits.ts": "eacb59f86b9b0b2897957f30d068c4675be4ac316de87f55227027c3f13ef7e2",
+    "blocks/repair-saved-sources.ts": "26fc26a0ef2ba539a5e9e25d09c5464fe5afe2b1f8332b70b2bedae49e9f0cf7",
+    "blocks/repair-native-exits.ts": "fbf4b6a60cbe4bb761ceaa96043e99ed17d13725d49ad5e6c290f4bfd715c753",
+    "blocks/ground-plane.ts": "f13b221872ba7198c2f1604e52b3b786e5d81732a6b4d2fbb13517a741acab0a",
+    "blocks/rp-clock.ts": "2c44de68aff62c6835a288a4b0c14cb0a11b2616656c47a0be6eb887227eb04e",
+    "blocks/rp-escape.ts": "f5c06554869d11d8b4116f180f67a6f2fd9d95afc8b63b11c7d6a2c782f5edb6",
+    "blocks/rp-signal-escape.ts": "1f3d0ce2045a2e3103f0b0d9481f5a93141beaaf00230003d606168398e258f9",
+    "blocks/usb-sink-escape.ts": "852dabbe596ee16d9d995595d57929987ea7874b010265cc0e71e0e42fdc50d0",
+    "blocks/native-handoffs.ts": "c21c9456478133eb165b61198fb50935537fde85cf531ab6fc43758e4df5d3c0",
+    "blocks/native-width.ts": "82e35629f96ff92ee9212afe8dc1ac3d2e589ac08ba307f94e6038120bac355a",
+    "blocks/native-replay.ts": "16495a897b1bb1334de838e0cb0ab9c8be7659b9be42743c95d5c8e2ba5d8abf",
+    "blocks/no-via-in-pad.ts": "52a922ab189963407fd1ad455107013dc62b76fdd7d71a43ab27de80e9f52a29",
+    "blocks/robust-routing-checks.ts": "e9f519ea8753d019a5d6bf9992ef7cfe943732b34c62949c0219c8b32c88375c",
+    "blocks/normalize-native-copper.ts": "ec435e306bc4bc571f4f1c58ad135bdfc2ff101f5de4ae4d7950a8b9bba33117",
+    "blocks/rp-phase-order.ts": "5db76c850d4bb8d985e0f15a4e6df9cb15ff45ab660b575afff40ace15540d92",
+    "blocks/drv8833-escape.ts": "7eb44f69c1e570e1e3092b7028e191ec579c0204ce8c3ace8f3ae0dcb44ba63a",
+    "blocks/grouped-breakouts.ts": "60fa24703cb707b9deaacd3e059077977ac1e8cf470669276558831784bb2e9b",
+    "blocks/copper-netlist.ts": "0e3a9a72193d3a68e2f09b568501d0c0d8d3b962b077a37a24a7bf847f4c46d0",
+    "blocks/debug-source.ts": "f251852b6dc2a57dd45e104dbdf80a4a2d0c442cb190afc320272259f6d87e1a",
+    "blocks/stitch-ground.ts": "8ebe7d596838943857c6239ddbc0dfe49423d71a83950ed381bd663ba3f4d300",
+    "blocks/imported.ts": "b6e315d31e689feb5068656b7545a24de52a2389ffc91be44d4f6e543beb0919",
+    "blocks/legalize.ts": "7fd324038b326fd30126026b60424241e20cf16a668c23504d91544bb90178b0",
+    "blocks/schematic.ts": "655f057b64baa7afc6206fab1a7d1cd6db8b7058ab16682242f7dc4871ab5c9f",
+    "../src/blocks/native-netlist.ts": "a83edcdcf74aca694dd340a73c87ff065bf22adefa7a76efc8d5d55364ea964d",
+    "../src/blocks/native-ports.ts": "4bc103d7c9bffdadb1f41aee033e3e697070f583265016f2df2d2c213a674a4f",
+    "../src/blocks/native-placement.ts": "785600eb36bf87b4ac249dbab1f3e15829807ea2b29dd8c304852949f662fcc8",
+    "../src/blocks/test-block.ts": "f5f5ccf1791e2a0cc32f776c9cb8a312eaa1e156896a88617328fa49c712d71b",
+    "../src/blocks/native-trace-width.ts": "488696d032eba153ffad75e9953ad894294888317831e6511d3ff191396a4847",
+    "../src/board/chip-firmware-worker.ts": "5045c7559571a07c8189f48cc4a0824c3bb62dd0e25427ff56471eb8fe18b21c",
+    "../src/board/bom.ts": "3eb90de40496ae439a9b4fdf8bd5816dc59e8b5d29d97b72740a446928335022",
+    "../src/circuit/catalog.ts": "f9a71d535ac1c39ece54337532e1662d3cdb95356134f548c1345c555ca1b51c",
+    "models/render-board.ts": "0ae3ad9913ed812f943bcb5e97f07de2dc39a5a8c9634bb8d175cf116a1e15b1",
+    "models/catalog-models.ts": "5bf9dba5c67d0e1239c33dc4874be44867226c08fb287dc21e63fb17895015bc",
+    "models/glb.ts": "ee795aaf36c5fa0f0bd94484c574f69cd14c308ee72d4e3fd0b6855dd4c14c80",
+    "models/compact-glb.ts": "76504398c0e871e0de9ab55d4e553a4401d7466b6c1750eca4cb856e212bbda4",
+    "apply-layout.ts": "5429544caab8d4ba86a0b4b269ce01c84aa47c0f0cc568fa6602dea23d40c6ff",
+    "edit-router.ts": "c607cef0777632dd2584a8132e684314e6452cc7195c2a93797d3abb9204a76c",
+    "blocks/router.ts": "460b7922ba1039f80a6123c4aebd56affbf8c447063bf9d29f26e7ef15aedd0e",
+    "blocks/fanout.ts": "83022aaaecc5be4e529398da0dbc241a5a0b9b39881f7baba18a0f02ee44b7df",
+    "blocks/schematic-notes.ts": "1cc5850e8cf97bbd24b7465b17bc31ba5153cf26d2d059c1844a5b3a9375e453",
+    "../src/blocks/fanout.ts": "f4b34d3e90ce124d2a4dcf1de44756958dc2d10f70be6e3200547c95e22221a1",
+    "../src/blocks/router-planning.ts": "ffba1d1a7440c7ff9c7a2a6cafaa0323632b3812ae3eb313313f6166f8cf06de",
+    "../src/board/router-planning.ts": "ffa9a86aded261477102d290e6f6faf3cad2a8c299e1990210027726b8d78504",
+    "../src/board/edits.ts": "ff1061d2213db22acacf7ac26c2d097c97a4be81ffe92d8eaedb262c7c6f2bf0",
+    "enclosure/module-preview.ts": "646bb819b10f708851a820b5159b977c67300cf34b0a3d3f4d84b9a5d7c65f19",
+    "enclosure/module-mech.ts": "8054af43a5ba30428ac832464b43cb90dab5392a6933368b7fe56cc38e1a8103",
+    "@jscad/modeling": "2.13.0",
+    "@tscircuit/capacity-autorouter": "0.0.1037",
+    "@tscircuit/checks": "0.0.269",
+    "@tscircuit/circuit-json-util": "0.0.131",
+    "@tscircuit/core": "0.0.2266",
+    "@tscircuit/create-fdm-enclosure": "0.0.7",
+    "@tscircuit/footprinter": "0.0.450",
+    "@tscircuit/math-utils": "0.0.38",
+    "@tscircuit/ngspice-spice-engine": "0.0.20",
+    "@tscircuit/props": "0.0.718",
+    "circuit-json": "0.0.543",
+    "circuit-json-to-bom-csv": "0.0.28",
+    "circuit-json-to-gerber": "0.0.122",
+    "circuit-json-to-gltf": "0.0.164",
+    "circuit-json-to-kicad": "0.0.267",
+    "circuit-json-to-pnp-csv": "0.0.21",
+    "circuit-to-svg": "0.0.455",
+    "easyeda": "0.0.391",
+    "fflate": "0.8.3",
+    "jscad-planner": "0.0.14",
+    "kicad-to-circuit-json": "0.0.142",
+    "polygon-clipping": "0.15.7",
+    "react": "19.3.1",
+    "schematic-symbols": "0.0.251",
+    "tscircuit": "0.0.3075"
+  },
+  "gates": [
+    {
+      "gate": "erc",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "rp2040-minimal",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "dc-motor-drv8833",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "application-pushbutton-fixed",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "usb-external-host",
+          "severity": "warning",
+          "where": "core.USB, core.USB_HOST",
+          "message": "USB peripheral relies on an external host through the declared passive connector"
+        }
+      ]
+    },
+    {
+      "gate": "power",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "thermal-assumption",
+          "severity": "warning",
+          "where": "core.V3V3",
+          "message": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+        }
+      ]
+    },
+    {
+      "gate": "spice",
+      "inputHash": "46136e8f0f8018008fe799db6d2e75cd6c10cc3b757afc0a64eb5562a827d3c2",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "spice-coverage",
+          "severity": "warning",
+          "message": "No applicable SPICE profiles declared; electrical behavior is not simulated"
+        }
+      ],
+      "measurements": []
+    },
+    {
+      "gate": "verify",
+      "ok": true,
+      "issues": [],
+      "results": [
+        {
+          "id": "rp2040",
+          "status": "pass",
+          "measured": "rp2040_minimal",
+          "target": "rp2040_minimal",
+          "evidence": "Declared interface rp2040_minimal is present"
+        },
+        {
+          "id": "usb_c_power",
+          "status": "pass",
+          "measured": "usb_c_sink",
+          "target": "usb_c_sink",
+          "evidence": "Declared interface usb_c_sink is present"
+        },
+        {
+          "id": "motor_driver",
+          "status": "pass",
+          "measured": "motor_driver",
+          "target": "motor_driver",
+          "evidence": "Declared interface motor_driver is present"
+        }
+      ]
+    },
+    {
+      "gate": "review",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "gate": "drc",
+      "ok": false,
+      "issues": [
+        {
+          "rule": "pcb_trace_error",
+          "severity": "error",
+          "message": "PCB trace .U1 > .pin56 to net.QSPI_SS is too close to .U1 > .pin53 to net.QSPI_SD0 (gap: 0.110mm)"
+        },
+        {
+          "rule": "pcb_trace_error",
+          "severity": "error",
+          "message": "PCB trace .U1 > .pin55 to net.QSPI_SD1 is too close to .U1 > .pin1 to net.V3V3 (gap: 0.117mm)"
+        },
+        {
+          "rule": "pcb_trace_error",
+          "severity": "error",
+          "message": "PCB trace .U1 > .pin51 to net.QSPI_SD3 is too close to .U1 > .pin1 to net.V3V3 (gap: 0.062mm)"
+        },
+        {
+          "rule": "pcb_trace_error",
+          "severity": "error",
+          "message": "PCB trace .U1 > .pin23 to net.VCORE overlaps with pcb_via \"unnamed via\" (accidental contact)"
+        },
+        {
+          "rule": "pcb_trace_error",
+          "severity": "error",
+          "message": "PCB trace .U4 > .pin2 to net.GND overlaps with pcb_via \"unnamed via\" (accidental contact)"
+        },
+        {
+          "rule": "pcb_pad_trace_clearance_error",
+          "severity": "error",
+          "message": "Pad U1.QSPI_SD2 and trace .U1 > .pin53 to net.QSPI_SD0 are too close (clearance: 0.101mm, minimum: 0.127mm)"
+        },
+        {
+          "rule": "pcb_trace_error",
+          "severity": "error",
+          "message": "Trace .J1 > .pin15 to net.VBUS is too close to non-plated hole unnamed hole (gap: 0.186989mm, required: 0.2mm)"
+        },
+        {
+          "rule": "pcb_via_trace_clearance_error",
+          "severity": "error",
+          "message": "Via unnamed via and trace .U5 > .pin10 to net.GND are too close (clearance: 0.115mm, minimum: 0.127mm)"
+        },
+        {
+          "rule": "pcb_via_trace_clearance_error",
+          "severity": "error",
+          "message": "Via unnamed via and trace .U1 > .pin2 to net.BUTTON are too close (clearance: 0.115mm, minimum: 0.127mm)"
+        },
+        {
+          "rule": "pcb_via_trace_clearance_error",
+          "severity": "error",
+          "message": "Via unnamed via and trace .U1 > .pin51 to net.QSPI_SD3 are too close (clearance: 0.107mm, minimum: 0.127mm)"
+        },
+        {
+          "rule": "pcb_via_trace_clearance_error",
+          "severity": "error",
+          "message": "Via unnamed via and trace .U1 > .pin51 to net.QSPI_SD3 are too close (clearance: 0.094mm, minimum: 0.127mm)"
+        },
+        {
+          "rule": "pcb_via_trace_clearance_error",
+          "severity": "error",
+          "message": "Via unnamed via and trace .U1 > .pin51 to net.QSPI_SD3 are too close (clearance: 0.115mm, minimum: 0.127mm)"
+        },
+        {
+          "rule": "pcb_via_trace_clearance_error",
+          "severity": "error",
+          "message": "Via unnamed via and trace .U2 > .pin8 to net.V3V3 are too close (clearance: 0.115mm, minimum: 0.127mm)"
+        },
+        {
+          "rule": "pcb_via_trace_clearance_error",
+          "severity": "error",
+          "message": "Via unnamed via and trace .U1 > .pin45 to net.VCORE are too close (clearance: 0.077mm, minimum: 0.127mm)"
+        },
+        {
+          "rule": "pcb_via_trace_clearance_error",
+          "severity": "error",
+          "message": "Via unnamed via and trace .U1 > .pin44 to net.V3V3 are too close (clearance: 0.088mm, minimum: 0.127mm)"
+        },
+        {
+          "rule": "pcb_via_trace_clearance_error",
+          "severity": "error",
+          "message": "Via unnamed via and trace .U1 > .pin54 to net.QSPI_SD2 are too close (clearance: 0.111mm, minimum: 0.127mm)"
+        },
+        {
+          "rule": "pcb_via_trace_clearance_error",
+          "severity": "error",
+          "message": "Via unnamed via and trace .U1 > .pin51 to net.QSPI_SD3 are too close (clearance: 0.115mm, minimum: 0.127mm)"
+        },
+        {
+          "rule": "pcb_via_trace_clearance_error",
+          "severity": "error",
+          "message": "Via unnamed via and trace .U2 > .pin8 to net.V3V3 are too close (clearance: 0.115mm, minimum: 0.127mm)"
+        },
+        {
+          "rule": "pcb_via_trace_clearance_error",
+          "severity": "error",
+          "message": "Via unnamed via and trace .U1 > .pin47 to net.USB_DP are too close (clearance: 0.115mm, minimum: 0.127mm)"
+        },
+        {
+          "rule": "pcb_via_trace_clearance_error",
+          "severity": "error",
+          "message": "Via unnamed via and trace .U2 > .pin8 to net.V3V3 are too close (clearance: 0.115mm, minimum: 0.127mm)"
+        },
+        {
+          "rule": "pcb_via_trace_clearance_error",
+          "severity": "error",
+          "message": "Via unnamed via and trace .U1 > .pin54 to net.QSPI_SD2 are too close (clearance: 0.085mm, minimum: 0.127mm)"
+        },
+        {
+          "rule": "pcb_via_trace_clearance_error",
+          "severity": "error",
+          "message": "Via unnamed via and trace .U1 > .pin54 to net.QSPI_SD2 are too close (clearance: 0.121mm, minimum: 0.127mm)"
+        },
+        {
+          "rule": "pcb_via_trace_clearance_error",
+          "severity": "error",
+          "message": "Via unnamed via and trace .U1 > .pin55 to net.QSPI_SD1 are too close (clearance: 0.066mm, minimum: 0.127mm)"
+        },
+        {
+          "rule": "pcb_via_trace_clearance_error",
+          "severity": "error",
+          "message": "Via unnamed via and trace .C1 > .pin2 to net.GND are too close (clearance: 0.121mm, minimum: 0.127mm)"
+        },
+        {
+          "rule": "pcb_via_trace_clearance_error",
+          "severity": "error",
+          "message": "Via unnamed via and trace .U1 > .pin23 to net.VCORE are too close (clearance: 0.115mm, minimum: 0.127mm)"
+        },
+        {
+          "rule": "pcb_physical_netlist_error",
+          "severity": "error",
+          "message": "Ground copper touches foreign, isolated or NC physical terminals"
+        },
+        {
+          "rule": "pcb_physical_netlist_error",
+          "severity": "error",
+          "message": "Net VCORE copper touches foreign, isolated or NC physical terminals"
+        },
+        {
+          "rule": "pcb_physical_netlist_error",
+          "severity": "error",
+          "message": "Net RUN copper touches foreign, isolated or NC physical terminals"
+        },
+        {
+          "rule": "pcb_physical_netlist_error",
+          "severity": "error",
+          "message": "Net VBUS copper touches foreign, isolated or NC physical terminals"
+        }
+      ]
+    }
+  ],
+  "error": "drc: PCB trace .U1 > .pin56 to net.QSPI_SS is too close to .U1 > .pin53 to net.QSPI_SD0 (gap: 0.110mm); PCB trace .U1 > .pin55 to net.QSPI_SD1 is too close to .U1 > .pin1 to net.V3V3 (gap: 0.117mm); PCB trace .U1 > .pin51 to net.QSPI_SD3 is too close to .U1 > .pin1 to net.V3V3 (gap: 0.062mm); PCB trace .U1 > .pin23 to net.VCORE overlaps with pcb_via \"unnamed via\" (accidental contact); 25 more issues in gates.json"
+}

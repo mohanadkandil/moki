@@ -1,0 +1,27 @@
+{
+  "targeted": {
+    "tests": 41,
+    "pass": 41,
+    "fail": 0,
+    "skipped": 0,
+    "durationMs": 6099.020242,
+    "log": "targeted.tap"
+  },
+  "typecheck": {
+    "root": true,
+    "web": true,
+    "exitCode": 0,
+    "log": "typecheck.log"
+  },
+  "fullSuite": {
+    "tests": 907,
+    "pass": 907,
+    "fail": 0,
+    "skipped": 0,
+    "suites": 74,
+    "durationMs": 211593.110782,
+    "exitCode": 0,
+    "log": "full-test.tap"
+  },
+  "scope": "Code verification only. S3 and full53 native jobs remain failed; acceptedRP native/compile evidence is separate. No production rebuild or server restart."
+}

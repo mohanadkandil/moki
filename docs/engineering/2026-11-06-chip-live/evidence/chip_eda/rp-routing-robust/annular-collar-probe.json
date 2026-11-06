@@ -1,0 +1,86 @@
+{
+  "sourceSha256": "5f348ecd0fad2c3afed48acdf60e588e1441561509c5363cb6d2f77b5cb68af3",
+  "scope": "4 actual via annuli with every actual drill; bounded polygon geometry, not whole-board oracle",
+  "results": [
+    {
+      "id": "pcb_via_59",
+      "ok": true,
+      "r0": 0.15032185062109493,
+      "r1": 0.28841306485277884,
+      "collarOuterRadius": 0.2193674577369369,
+      "lowerPieces": 1,
+      "remainingArea": 0.21046756343930184,
+      "collarArea": 0.07996166964085205,
+      "collarOutsideRemainingArea": 0
+    },
+    {
+      "id": "pcb_via_60",
+      "ok": true,
+      "r0": 0.15032185062109493,
+      "r1": 0.28841306485277884,
+      "collarOuterRadius": 0.2193674577369369,
+      "lowerPieces": 1,
+      "remainingArea": 0.21046756343928053,
+      "collarArea": 0.07996166964085916,
+      "collarOutsideRemainingArea": 0
+    },
+    {
+      "id": "pcb_via_70",
+      "ok": true,
+      "r0": 0.15032185062109493,
+      "r1": 0.2629766216522337,
+      "collarOuterRadius": 0.2066492361366643,
+      "lowerPieces": 1,
+      "remainingArea": 0.2070903113208331,
+      "collarArea": 0.06298854048718283,
+      "collarOutsideRemainingArea": 0
+    },
+    {
+      "id": "pcb_via_84",
+      "ok": true,
+      "r0": 0.15032185062109493,
+      "r1": 0.2629766216522337,
+      "collarOuterRadius": 0.2066492361366643,
+      "lowerPieces": 1,
+      "remainingArea": 0.20709031132082245,
+      "collarArea": 0.06298854048717573,
+      "collarOutsideRemainingArea": 0
+    }
+  ],
+  "negativeControls": [
+    {
+      "name": "fully drilled away",
+      "ok": false,
+      "r0": 0.15032185062109493,
+      "r1": -0.5010728354036499,
+      "collarOuterRadius": -0.17537549239127748,
+      "lowerPieces": 0,
+      "remainingArea": 0,
+      "collarArea": 0,
+      "collarOutsideRemainingArea": null
+    },
+    {
+      "name": "foreign drill reaches own wall",
+      "ok": false,
+      "r0": 0.15032185062109493,
+      "r1": 0.09967814937890501,
+      "collarOuterRadius": 0.12499999999999997,
+      "lowerPieces": 1,
+      "remainingArea": 0.17046049535189747,
+      "collarArea": 0,
+      "collarOutsideRemainingArea": null
+    },
+    {
+      "name": "foreign upper disks tangent",
+      "ok": false,
+      "r0": 0.15032185062109493,
+      "r1": 0.15032185062109488,
+      "collarOuterRadius": 0.1503218506210949,
+      "lowerPieces": 1,
+      "remainingArea": 0.1798577328230203,
+      "collarArea": 0,
+      "collarOutsideRemainingArea": null
+    }
+  ],
+  "netLabelsUsedForProof": false
+}

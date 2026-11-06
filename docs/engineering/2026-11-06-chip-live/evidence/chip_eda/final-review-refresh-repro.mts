@@ -1,0 +1,34 @@
+// Independent bounded mutation of the exact current build refresh block.
+// Uses actual captured circuit plus clearly synthetic unmatched errors; no route/build.
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import ts from 'typescript';
+import {repairSavedSources} from '../../../../../eda/blocks/repair-saved-sources.js';
+import {runAllPlacementChecks,runAllRoutingChecks} from '../../../../../eda/node_modules/@tscircuit/checks/dist/index.js';
+const root=new URL('./usb-buck/saved-sources/',import.meta.url);
+const read=(p:string)=>JSON.parse(readFileSync(new URL(p,root),'utf8'));
+const original=read('circuit.json'), graph=read('plan-graph.json'),phase=read('fanout-phase.json');
+const mapping=Object.fromEntries(read('import-map.json').parts.map((p:any)=>[p.ref,p.pins]));
+const checks=async(c:any[])=>[...await runAllPlacementChecks(structuredClone(c)),...await runAllRoutingChecks(structuredClone(c))];
+const injected=[{type:'pcb_autorouting_error',message:'INDEPENDENT unknown engine failure; keep me'}, {type:'source_trace_connection_error',message:'INDEPENDENT source failure; keep me'}, {type:'pcb_trace_error',message:'INDEPENDENT non-reproducible trace failure; keep me'}];
+const baseline=await checks(original);
+let cj=[...original,...baseline,...injected];
+const repair=repairSavedSources(cj,graph,mapping,phase,{nativeRoutingInputs:read('native-routing.json')});
+assert.equal(repair.audit.length,1);
+const source=readFileSync(new URL('../../../../../eda/blocks/build.ts',import.meta.url),'utf8');
+const start=source.indexOf('      const checks = async (circuit: any[]) => [');
+const terminal='      cj = [...retained, ...await checks(retained)];';
+const end=source.indexOf(terminal,start)+terminal.length;
+assert.ok(start>0&&end>start,'exact reviewed refresh block must exist');
+const block=source.slice(start,end);
+const js=ts.transpileModule(block,{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ESNext}}).outputText;
+const AsyncFunction=Object.getPrototypeOf(async function(){}).constructor;
+cj=await new AsyncFunction('cj','repaired','runAllPlacementChecks','runAllRoutingChecks',js+'\nreturn cj;')(cj,repair,runAllPlacementChecks,runAllRoutingChecks);
+for(const failure of injected)assert.ok(cj.some((i:any)=>JSON.stringify(i)===JSON.stringify(failure)),failure.message);
+const diagnostics=cj.filter((i:any)=>i.type.endsWith('_error')||i.type.endsWith('_warning'));
+assert.ok(diagnostics.some((i:any)=>i.message?.includes('0.052mm')),'actual physical clearance remains');
+assert.ok(!diagnostics.some((i:any)=>i.message?.includes('unnamed trace (accidental contact)')),'attribution-only false contact regenerated away');
+const geometry=(c:any[])=>c.filter(i=>!i.type.endsWith('_error')&&!i.type.endsWith('_warning')).map(i=>{const clone=structuredClone(i);if(i.type==='pcb_trace'){delete clone.source_trace_id;delete clone.source_net_id;}return clone;});
+assert.deepEqual(geometry(cj),geometry(original));
+console.log(JSON.stringify({refreshBlockSha256:createHash('sha256').update(block).digest('hex'),unmatchedFailuresRetained:injected.length,realClearanceRetained:true,falseUnattributedContactRemoved:true,physicalGeometryAndSourceRecordsUnchanged:true,baselineChecks:baseline.length,outputDiagnostics:diagnostics.length},null,2));

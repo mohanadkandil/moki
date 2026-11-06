@@ -1,0 +1,30 @@
+{
+  "validationOnly": true,
+  "currentDirectoryIsSourceForSmoke": true,
+  "traceCount": 117,
+  "receipt": {
+    "schema": "moki.native-output-reuse/1",
+    "freshRouting": false,
+    "nativeOutputReuse": true,
+    "execution": "captured-native-output",
+    "sourceJobId": "134193af-e7d3-4376-8a28-1979f18628bd",
+    "sourceJobDir": "/home/sogo/design-skill-research/repos/moki/var/board-jobs-test-chip/134193af-e7d3-4376-8a28-1979f18628bd",
+    "currentJobId": "134193af-e7d3-4376-8a28-1979f18628bd",
+    "manifestSha256": "103d286f5d6b5f9960008c8b937308f2ff0bea6588c0aba90190ad2d31dae36c",
+    "inputSha256": "090e3cf70a5663bc6a9afd655f65f2d8b22736fc9855eb40ae651e59db6e5a7f",
+    "outputSha256": "54f88d66facc2c3f55ff51899242a84ce4e585b59e8c86336f3153312977f987",
+    "sourceCaptureSha256": "378be249db8c7e96c53074fa0fbf8f2945019026698093941e4c831ed0cac483",
+    "artifactSha256": {
+      "plan.json": "2e55ce7d66068a3498ae2fa2cc58aa13cf5c9597cacf9f882569f8a381e85cd0",
+      "plan-graph.json": "6f5bfca27692aa836f3662daffd3a689f99e85d2924f3171950831544fd13338",
+      "import-map.json": "071c4c5e4a5abc262e1f9b7eedfc46ab0bb3410fe304541abd6ea6c8b97c565b",
+      "placement.json": "166728afdeb443d0014047e42a390413e762d588066f9bcedf7dfca400a13a5e",
+      "clock-phase.json": "d61c02cdbf1cd7806cce51bb189a44517aa8306e8237911a1dcb56ca4f28fd76",
+      "native-exit-phase.json": "681fd3666824d0f6e0bb8ee7ca775064325de9ac0bec59b3e628950eeef0e1bf"
+    },
+    "traceCount": 117,
+    "minimumWireWidthMm": 0.15,
+    "freshGatesMandatory": true
+  },
+  "freshNativeGatesRun": false
+}

@@ -1,0 +1,26 @@
+{
+  "scope": "Author evidence only: known physical component pad ownership lock; independent review separately required",
+  "source": "eda/blocks/locked-pads.ts",
+  "sourceSha256": "34d3314977ad6643ab0640db5d8d8fd1de37d2be10f28591143e901e1d6abc9b",
+  "tests": "tests/blocks-locked-pads.test.ts",
+  "testsSha256": "0d402412a68633564d4d287bdacaff757db0cc41a9fd2fd92c168ffae6625d38",
+  "fixture": "locked-pads-fixture.json",
+  "fixtureSha256": "2bca32910354fcddc3b2019f5f288e3063341cf505d16141ef437a18a07df58e",
+  "checks": {
+    "focusedTests": {
+      "passed": 6,
+      "failed": 0,
+      "durationMs": 2026.643988
+    },
+    "targetedStrictTypecheck": "pass",
+    "actualFlagChanges": 45,
+    "actualAllOtherPropertiesPreserved": true,
+    "inputAndActualCircuitImmutable": true
+  },
+  "limits": [
+    "No native routing run or physical acceptance claim",
+    "False flags alone do not stop the native converter zero-physical-port inference branch; separate guarded native converter work is required",
+    "No installed SDK mutation; no fabrication constraints changed",
+    "Only owner-proven physical assignables changed; nonphysical assignables unchanged"
+  ]
+}

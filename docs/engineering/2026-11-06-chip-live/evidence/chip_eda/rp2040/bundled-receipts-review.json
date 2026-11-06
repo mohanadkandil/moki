@@ -1,0 +1,47 @@
+{
+  "by": "chip_review",
+  "scope": "Independent review of root-authored loadCatalogReceipt bundled fallback and last catalog regression only",
+  "independence": "Reviewer authored RP block data, not this fallback implementation; this receipt does not independently approve RP electrical data",
+  "verdict": "pass-scoped",
+  "findings": [],
+  "files": [
+    {
+      "path": "src/blocks/catalog.ts",
+      "sha256": "b0a60059648e5054b44a14f2efd7d1c1df32bf2eea4c1e8ceaed0e38c4db0ea4"
+    },
+    {
+      "path": "tests/blocks-catalog.test.ts",
+      "sha256": "356922b872d04a2114cb7b655dc37933b714d6f829c36a9db0d140172f59e77d"
+    }
+  ],
+  "checks": [
+    "Only cache read ENOENT activates fallback; malformed present JSON and integrity errors do not",
+    "Code-owned JSON data files resolved relative to import.meta.url, with no arbitrary TSX execution",
+    "Same ID/schema/whole-record SHA/raw-body SHA checks apply to bundled and cached receipts",
+    "Explicit cacheDir remains primary; a missing requested cache permits bundled fallback as designed",
+    "Fallback only reads files and returns decoded data, with no network request or cache mutation"
+  ],
+  "tests": {
+    "catalogSuite": {
+      "passed": 17,
+      "failed": 0,
+      "durationMs": 661.014322
+    },
+    "independentReplay": {
+      "command": "node --import tsx docs/engineering/2026-11-06-chip-live/evidence/chip_eda/rp2040/bundled-receipts-review.mjs",
+      "receiptsChecked": 75,
+      "peripheral": 23,
+      "motor": 24,
+      "rp2040": 28,
+      "networkCalls": 0,
+      "explicitAndDefaultMissingCachesUnchanged": true,
+      "explicitOverridesCorruptDefault": true,
+      "presentMalformedAndHashCorruptRecordsRemainUnchanged": true,
+      "unknownIdRetainsENOENT": true
+    }
+  },
+  "limits": [
+    "Code-owned bundles must be shipped with deployment; missing/malformed asset files fail closed",
+    "No native generation, compiled firmware, physical crystal or electrical acceptance is established by this cache review"
+  ]
+}

@@ -1,0 +1,15 @@
+# Read-only native route reuse assessment
+
+The installed core provides a public completed-autorouter boundary through `platform.autorouterMap.{auto,default}.createAutorouter` or a phase `algorithmFn`. A code-owned replay adapter can return previously computed native traces through the existing complete/error/start/stop/output protocol. Core then materializes trace/via records and continues into fresh copper pouring and native DRC. This reuses native output; it does not supply a new router or waive any gate.
+
+The built-in `platform.localCacheEngine` also caches whole phase results, but installed core159190 explicitly disables that cache for custom `algorithmFn`, precomputed paths and uncacheable strategies. The current wrapper is custom. The cache-key/result helpers are private, so forging their keys is not the appropriate interface.
+
+The public `autorouting:end` event includes `simpleRouteJson` for the completed stage. It also emits full replayable `pcbTracePaths` when the whole stage can be expressed by the saved port-anchored API, or an explicit unavailable reason. Free-exit MST joins need not be representable as saved port paths. Future native runs should capture that public event before pouring.
+
+For the existing134 capture, raw pre-pour records are already actual native PCB traces. A narrowly bound completed adapter can replay only the native automatic traces, preserving their order, IDs, connection names, connectsTo and route geometry. Existing saved clock/exit traces must remain supplied by their original literal phases and must not be emitted twice. Return the normal SRJ protocol rather than clearing connections to claim completion. Bind reuse to the original job and exact planned SRJ fingerprint plus original plan/actual board, placement, native source/import geometry and tool/route-source identities. Any mismatch is a cache miss or explicit failure. Replayed trace/via geometry should be compared with the captured native geometry before any new acceptance claim.
+
+Do not assume the public CircuitJSON→SRJ converter preserves metadata verbatim. Installed core147234 prefers `source_trace_id` over the original `connection_name`; it also drops wire port markers and augments connectsTo from markers. Its geometry conversion is legitimate, but an unexamined converter roundtrip can break the exact source/exit identity proof required here. Original native trace records avoid that metadata rewrite when their route shape is already supported.
+
+A replay still needs fresh canonical source attribution, native trace/via materialization and pours, full official placement/routing checks, independent physical ground and sensor gates, fabrication checks, and firmware compile through the existing API path. Provenance must say that the native routing came from134 rather than reporting a fresh409-second solve. This assessment does not approve a cache implementation or any board. No new native solver, build, server or compile was run.
+
+Pipeline7 evaluation was stopped when Pipeline9 completed. No solver switch was made or claimed to improve routing.

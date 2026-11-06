@@ -1,0 +1,37 @@
+{
+  "reviewer": "/root/final_review",
+  "at": "2026-11-06T08:48:17.174580+00:00",
+  "scope": "Read-only pinned native clearance semantics and completed-with-violations assessment; no SDK edits/solver/evaluator execution.",
+  "nativeVersion": "0.0.1037",
+  "nativeBundleSha256": "9424629cc1f77f18fba24335effb5e5fc40da9a15e25aa97213b6c34af47f6fa",
+  "nativeSourceMapSha256": "512aa13e0cf7fcb8106877d2d15732f41668fb7301683ab6109950ecd364590c",
+  "extractedPrimarySourcesSha256": {
+    "AutoroutingDrcEngine.ts": "52635d707105be831729234e8fecb6bdcb53fea6e00c2788b13fa045c7ffd41d",
+    "Pipeline9JointDrcRepairSolver.ts": "dcd2cc0b5a52f3d2244ddf874684cb884c12a5ab49bebb9590a57a1a9b8645e8",
+    "Pipeline9EffortCleanupSolver.ts": "9bdd884f3308b8d2d217f79e71972e0e978ab2f738a29b5b609c3ac2cf6eabf5",
+    "AutoroutingPipelineSolver9_PreloadedTraceGraph.ts": "ecb2d7e8606e7b7a50d01b3ad578e6dba4bb652ff5eec01267f5bfa69dfa10ae",
+    "createPipeline9AutoroutingDrcEvaluator.ts": "d3757b1f297c172d6ea78af4c46dff947e5d29f7fe9de2f4c99ea9808883f6d1",
+    "create-pipeline7-autorouting-drc-evaluator.ts": "1ae4abc3de335c1c3abcba8e5183276239cae6e3a40fe327f8943ffb6b391e92"
+  },
+  "hypothesis": "RELAXED_DRC_OPTIONS.viaClearance0.1 causes native to accept0.115mm via-trace gaps despite declared0.15.",
+  "conclusion": "Rejected. That option controls via-via copper pairs; trace-via compares declared traceClearance. No SDK patch justified without an actual scorer counterexample.",
+  "semantics": {
+    "traceClearance": "Trace-trace,trace-via,trace-obstacle copper-edge gap. Joint9 reads originalSRJ.minTraceToPadEdgeClearance then defaultObstacleMargin then relaxedfallback.",
+    "viaClearance": "Fastengine same/different-net via-via copper-edge gap only; separate from drill-hole spacing.",
+    "viaToPadClearance": "Separate via-pad copper-gap parameter.",
+    "viaHoleClearance": "Reference/projection via pair hole spacing supplied separately from SRJ.",
+    "pipeline7Caveat": "Pinned privateP7 fast evaluator hardcodes traceClearance0.1,unlike current defaultP9. This can explain its own relaxed search but doesnot change final hard gates."
+  },
+  "bestInvalidProof": [
+    "Joint9finishBoundedRegionalRepair adopts result.routes and records publishedDrcIssueCount without requiringzero.",
+    "finishWithTraceContactCheck sets solved when noNEWcontactpairs exist; this isnot a full clearancezero assertion.",
+    "getCombinedOutput mayreturn bounded/exact/input fallback routes.",
+    "EffortCleanup initializes bestRoutes from prior input,validates only proposed improvements; an unchanged invalidbaseline can survive. Its P9caller passes declaredtraceclearance to the reference callback."
+  ],
+  "actualPairReceipt": "native-clearance-pair-assessment.json",
+  "limits": [
+    "Actual0.114997mmVBUSvia-vsGNDtrace pair matchesfinalhardcheck and wouldfallbelow declared0.15native trace-via threshold.",
+    "Internal final fast/reference scoring counts were notcaptured; do not assert this exactpair wasmissed versusretained best-invalid.",
+    "No change to installeddependency,isolatedSDKcopy,router,DRC orproduction performed."
+  ]
+}

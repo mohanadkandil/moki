@@ -1,0 +1,75 @@
+[
+  {
+    "lcsc": "C48970212",
+    "mpn": "RYHS16V47UF5*7",
+    "manufacturer": "Honor Elec",
+    "package": "Plugin,D5xL7mm",
+    "description": "16V 2000hrs@105℃ 47uF 48mΩ@100kHz 5mm 7mm 950mA@100kHz Plug-in Polarized Polymer Plugin,D5xL7mm Polymer Aluminum Capacitors ROHS",
+    "stock": 898,
+    "catalogReceipt": "sha256:64a03ef56914a32965178fd9975135141c8ca1e16a96e9e35f22508a4b0d6649"
+  },
+  {
+    "lcsc": "C48970225",
+    "mpn": "RYHS16V47UF6*7",
+    "manufacturer": "Honor Elec",
+    "package": "Plugin,D6.3xL7mm",
+    "description": "1.25A 16V 2000hrs@105℃ 32mΩ@100kHz 47uF 6.3mm 7mm Plug-in Polarized Polymer Plugin,D6.3xL7mm Polymer Aluminum Capacitors ROHS",
+    "stock": 890,
+    "catalogReceipt": "sha256:64a03ef56914a32965178fd9975135141c8ca1e16a96e9e35f22508a4b0d6649"
+  },
+  {
+    "lcsc": "C48970295",
+    "mpn": "RYHS16V47UF6*8",
+    "manufacturer": "Honor Elec",
+    "package": "Plugin,D6.3xL8mm",
+    "description": "1.35A 16V 2000hrs@105℃ 32mΩ@100kHz 47uF 6.3mm 8mm Plug-in Polarized Polymer Plugin,D6.3xL8mm Polymer Aluminum Capacitors ROHS",
+    "stock": 980,
+    "catalogReceipt": "sha256:64a03ef56914a32965178fd9975135141c8ca1e16a96e9e35f22508a4b0d6649"
+  },
+  {
+    "lcsc": "C48970317",
+    "mpn": "RYHS16V47UF5*8",
+    "manufacturer": "Honor Elec",
+    "package": "Plugin,D5xL8mm",
+    "description": "1.15A 16V 2000hrs@105℃ 47uF 48mΩ@100kHz 5mm 8mm Plug-in Polarized Polymer Plugin,D5xL8mm Polymer Aluminum Capacitors ROHS",
+    "stock": 319,
+    "catalogReceipt": "sha256:64a03ef56914a32965178fd9975135141c8ca1e16a96e9e35f22508a4b0d6649"
+  },
+  {
+    "lcsc": "C48970685",
+    "mpn": "RYHV16V47UF5*5",
+    "manufacturer": "Honor Elec",
+    "package": "SMD,D5xL5.8mm",
+    "description": "-55℃~+105℃ 16V 2000hrs@105℃ 47uF 5mm 8mm Polarized Polymer SMD ±20% SMD,D5xL5.8mm Polymer Aluminum Capacitors ROHS",
+    "stock": 1920,
+    "catalogReceipt": "sha256:64a03ef56914a32965178fd9975135141c8ca1e16a96e9e35f22508a4b0d6649"
+  },
+  {
+    "lcsc": "C48970692",
+    "mpn": "RYHV16V47UF6*5",
+    "manufacturer": "Honor Elec",
+    "package": "SMD,D6.3xL5.8mm",
+    "description": "-55℃~+105℃ 16V 2000hrs@105℃ 47uF 5.8mm 6.3mm Polarized Polymer SMD ±20% SMD,D6.3xL5.8mm Polymer Aluminum Capacitors ROHS",
+    "stock": 775,
+    "catalogReceipt": "sha256:64a03ef56914a32965178fd9975135141c8ca1e16a96e9e35f22508a4b0d6649"
+  },
+  {
+    "lcsc": "C53120974",
+    "mpn": "PH16V47M5X7",
+    "manufacturer": "jieerrui",
+    "package": "Plugin,D5xL7mm",
+    "description": "-55℃~+125℃ 100mA@100kHz 16V 2.5mm 2000hrs@125℃ 28mΩ 47uF 5mm 7mm Polarized Polymer ±20% Plugin,D5xL7mm Polymer Aluminum Capacitors ROHS",
+    "stock": 2905,
+    "catalogReceipt": "sha256:64a03ef56914a32965178fd9975135141c8ca1e16a96e9e35f22508a4b0d6649"
+  },
+  {
+    "lcsc": "C134850",
+    "mpn": "OCR470M1CBK-0605",
+    "manufacturer": "Lelon",
+    "package": "Plugin,D6.3xL5.5mm",
+    "description": "-55℃~+105℃ 1.65A@100kHz 16V 2.5mm 2000hrs@105℃ 47uF 5.5mm 50mΩ@100kHz 6.3mm Polarized ±20% Plugin,D6.3xL5.5mm Polymer Aluminum Capacitors ROHS",
+    "stock": 19,
+    "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Lelon-OCR470M1CBK-0605_C134850.pdf",
+    "catalogReceipt": "sha256:64a03ef56914a32965178fd9975135141c8ca1e16a96e9e35f22508a4b0d6649"
+  }
+]

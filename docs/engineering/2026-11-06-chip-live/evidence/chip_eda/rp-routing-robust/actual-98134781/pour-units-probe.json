@@ -1,0 +1,15 @@
+{
+  "scale": 1000,
+  "changedLengthFields": 31293,
+  "check": "checkCopperPourShorts ONLY; no routing/placement check called with scaled units",
+  "angleDifferences": [],
+  "idsAndLayersPreserved": true,
+  "originalMillimeters": {
+    "error": "Error: source_net_13_0: Cannot complete boolean operation",
+    "ms": 472.97945300000003
+  },
+  "sameGeometryMicrometers": {
+    "errors": [],
+    "ms": 1575.7415930000002
+  }
+}

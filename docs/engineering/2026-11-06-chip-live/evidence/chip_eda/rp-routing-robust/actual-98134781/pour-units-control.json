@@ -1,0 +1,18 @@
+{
+  "1": [
+    {
+      "type": "pcb_placement_error",
+      "pcb_placement_error_id": "copper_pour_short_control-pour-a_control-pour-b",
+      "error_type": "pcb_placement_error",
+      "message": "Copper pour unnamed copper pour (A) shorts to unnamed copper pour on top (accidental copper contact)"
+    }
+  ],
+  "1000": [
+    {
+      "type": "pcb_placement_error",
+      "pcb_placement_error_id": "copper_pour_short_control-pour-a_control-pour-b",
+      "error_type": "pcb_placement_error",
+      "message": "Copper pour unnamed copper pour (A) shorts to unnamed copper pour on top (accidental copper contact)"
+    }
+  ]
+}

@@ -1,0 +1,795 @@
+{
+  "stages": [
+    {
+      "name": "codegen",
+      "status": "done",
+      "ms": 81.92145199999999,
+      "note": "Validated JSON plan; no author TSX is executed"
+    },
+    {
+      "name": "erc",
+      "status": "done",
+      "ms": 0,
+      "note": "Block has not passed independent promotion review; Block has not passed independent promotion review; Block has not passed independent promotion review; USB peripheral relies on an external host through the declared passive connector"
+    },
+    {
+      "name": "power",
+      "status": "done",
+      "ms": 0,
+      "note": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+    },
+    {
+      "name": "spice",
+      "status": "done",
+      "ms": 21.678678000000048,
+      "note": "No applicable SPICE profiles declared; electrical behavior is not simulated"
+    },
+    {
+      "name": "review",
+      "status": "done",
+      "ms": 0,
+      "note": ""
+    },
+    {
+      "name": "codegen",
+      "status": "done",
+      "ms": 2461.23838
+    },
+    {
+      "name": "placement",
+      "status": "done",
+      "ms": 86.92379600000004
+    },
+    {
+      "name": "svg",
+      "status": "done",
+      "ms": 4108.016605
+    },
+    {
+      "name": "fanout",
+      "status": "done",
+      "ms": 2943.033966000001
+    },
+    {
+      "name": "render",
+      "status": "done",
+      "ms": 1219.1052230000005
+    },
+    {
+      "name": "route",
+      "status": "done",
+      "ms": 362632.817543
+    },
+    {
+      "name": "gltf",
+      "status": "done",
+      "ms": 7084.6423199999845
+    },
+    {
+      "name": "fab",
+      "status": "done",
+      "ms": 2178.8591050000396
+    },
+    {
+      "name": "drc",
+      "status": "done",
+      "ms": 0,
+      "note": ""
+    },
+    {
+      "name": "block-test",
+      "status": "done",
+      "ms": 0,
+      "note": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates; Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates; Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+    },
+    {
+      "name": "verify",
+      "status": "done",
+      "ms": 0,
+      "note": ""
+    },
+    {
+      "name": "firmware",
+      "status": "done",
+      "ms": 106.04887199999999
+    },
+    {
+      "name": "firmware-compile",
+      "status": "done",
+      "ms": 2257,
+      "note": "Compile checked for rp2040; no physical flash."
+    },
+    {
+      "name": "compile",
+      "status": "done",
+      "ms": 0,
+      "note": ""
+    },
+    {
+      "name": "enclosure",
+      "status": "skipped",
+      "ms": 0,
+      "note": "Chip-level enclosure handoff is not implemented"
+    }
+  ],
+  "totalMs": 388768.992589,
+  "drc": {
+    "checked": true,
+    "errors": [],
+    "warnings": [
+      {
+        "type": "source_refdes_convention_warning",
+        "message": "The \"J\" prefix is being used with a <chip />, try using it with a <connector /> or <jumper />"
+      },
+      {
+        "type": "source_refdes_convention_warning",
+        "message": "The \"J\" prefix is being used with a <chip />, try using it with a <connector /> or <jumper />"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "U1 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "U4 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "U4 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on U4 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "J1 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "J1 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on J1 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "U5 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "J2 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "J2 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on J2 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "source_pin_missing_trace_warning",
+        "message": "Port pin3 on SW3 is missing a trace"
+      },
+      {
+        "type": "source_pin_missing_trace_warning",
+        "message": "Port pin3_internal_1 on SW3 is missing a trace"
+      },
+      {
+        "type": "source_pin_missing_trace_warning",
+        "message": "Port pin3_internal_2 on SW3 is missing a trace"
+      },
+      {
+        "type": "pcb_connector_not_in_accessible_orientation_warning",
+        "message": "J1 is inferred to face y- from its cable insertion center because no explicit footprint insertionDirection is defined, but should face y+ so the connector is accessible from the board edge. Set insertionDirection on the <footprint> to specify the actual direction in the footprint's unrotated orientation; for example, <footprint insertionDirection=\"from_above\"> for a connector accessed from above the PCB (+Z)."
+      },
+      {
+        "type": "pcb_connector_not_in_accessible_orientation_warning",
+        "message": "J2 is inferred to face y+ from its cable insertion center because no explicit footprint insertionDirection is defined, but should face x- so the connector is accessible from the board edge. Set insertionDirection on the <footprint> to specify the actual direction in the footprint's unrotated orientation; for example, <footprint insertionDirection=\"from_above\"> for a connector accessed from above the PCB (+Z)."
+      },
+      {
+        "type": "pcb_trace_style_warning",
+        "message": ".U1 > .pin2 to net.SIGNAL has a 5.46 mm segment on bottom at 334.27°, 19.27° from the nearest allowed direction (315°). Prefer a multiple of 45° for segments longer than 5 mm (tolerance 4°)."
+      }
+    ]
+  },
+  "board": {
+    "widthMm": 40,
+    "heightMm": 60,
+    "layers": 2,
+    "traceCount": 122,
+    "viaCount": 107
+  },
+  "toolVersions": {
+    "bun": "1.4.4",
+    "toolchainLockSha256": "03c17de90a541fb18d9c0551e9d48079d505c8da1b327b521149c39ce2bdfe92",
+    "mokiRendererSha256": "0241360186359759ab4eb49087dc2026f5d13d1b9279bc2a7a9c78b97e59ff2d",
+    "blocks/build.ts": "1965b983fcb783a5dc3761e310016c99321eb0e006af6aee5d324850e87050b5",
+    "blocks/auto-placement.ts": "318f1aac873bf211309414939c4f9dc66c5c3ab054590e17b1e58ac38304f5d5",
+    "blocks/sensor-exits.ts": "eacb59f86b9b0b2897957f30d068c4675be4ac316de87f55227027c3f13ef7e2",
+    "blocks/repair-saved-sources.ts": "26fc26a0ef2ba539a5e9e25d09c5464fe5afe2b1f8332b70b2bedae49e9f0cf7",
+    "blocks/ground-plane.ts": "f13b221872ba7198c2f1604e52b3b786e5d81732a6b4d2fbb13517a741acab0a",
+    "blocks/rp-clock.ts": "2c44de68aff62c6835a288a4b0c14cb0a11b2616656c47a0be6eb887227eb04e",
+    "blocks/grouped-breakouts.ts": "60fa24703cb707b9deaacd3e059077977ac1e8cf470669276558831784bb2e9b",
+    "blocks/copper-netlist.ts": "47a5b43a503ed93d229e40e7a4c0dac68dd3483f874e6fe6ffa0fbf6cf335f3b",
+    "blocks/debug-source.ts": "f251852b6dc2a57dd45e104dbdf80a4a2d0c442cb190afc320272259f6d87e1a",
+    "blocks/stitch-ground.ts": "8ebe7d596838943857c6239ddbc0dfe49423d71a83950ed381bd663ba3f4d300",
+    "blocks/imported.ts": "b6e315d31e689feb5068656b7545a24de52a2389ffc91be44d4f6e543beb0919",
+    "blocks/legalize.ts": "7fd324038b326fd30126026b60424241e20cf16a668c23504d91544bb90178b0",
+    "blocks/schematic.ts": "b29cb6a4c2afa633408d08f4bad26d70c09a9ae5981042270fa3d36d8fcca9a7",
+    "../src/blocks/native-netlist.ts": "a83edcdcf74aca694dd340a73c87ff065bf22adefa7a76efc8d5d55364ea964d",
+    "../src/blocks/native-ports.ts": "4bc103d7c9bffdadb1f41aee033e3e697070f583265016f2df2d2c213a674a4f",
+    "../src/blocks/native-placement.ts": "785600eb36bf87b4ac249dbab1f3e15829807ea2b29dd8c304852949f662fcc8",
+    "../src/board/chip-firmware-worker.ts": "5045c7559571a07c8189f48cc4a0824c3bb62dd0e25427ff56471eb8fe18b21c",
+    "../src/board/bom.ts": "3eb90de40496ae439a9b4fdf8bd5816dc59e8b5d29d97b72740a446928335022",
+    "../src/circuit/catalog.ts": "f9a71d535ac1c39ece54337532e1662d3cdb95356134f548c1345c555ca1b51c",
+    "models/render-board.ts": "0ae3ad9913ed812f943bcb5e97f07de2dc39a5a8c9634bb8d175cf116a1e15b1",
+    "models/catalog-models.ts": "5bf9dba5c67d0e1239c33dc4874be44867226c08fb287dc21e63fb17895015bc",
+    "models/glb.ts": "ee795aaf36c5fa0f0bd94484c574f69cd14c308ee72d4e3fd0b6855dd4c14c80",
+    "models/compact-glb.ts": "76504398c0e871e0de9ab55d4e553a4401d7466b6c1750eca4cb856e212bbda4",
+    "apply-layout.ts": "5429544caab8d4ba86a0b4b269ce01c84aa47c0f0cc568fa6602dea23d40c6ff",
+    "edit-router.ts": "c607cef0777632dd2584a8132e684314e6452cc7195c2a93797d3abb9204a76c",
+    "blocks/router.ts": "fc1aa37b09865e2627b6fc40e8894aed6a301454341ff658050a1fc8f865ae74",
+    "blocks/fanout.ts": "83022aaaecc5be4e529398da0dbc241a5a0b9b39881f7baba18a0f02ee44b7df",
+    "blocks/schematic-notes.ts": "1cc5850e8cf97bbd24b7465b17bc31ba5153cf26d2d059c1844a5b3a9375e453",
+    "../src/blocks/fanout.ts": "f4b34d3e90ce124d2a4dcf1de44756958dc2d10f70be6e3200547c95e22221a1",
+    "../src/blocks/router-planning.ts": "ffba1d1a7440c7ff9c7a2a6cafaa0323632b3812ae3eb313313f6166f8cf06de",
+    "../src/board/router-planning.ts": "ffa9a86aded261477102d290e6f6faf3cad2a8c299e1990210027726b8d78504",
+    "../src/board/edits.ts": "ff1061d2213db22acacf7ac26c2d097c97a4be81ffe92d8eaedb262c7c6f2bf0",
+    "enclosure/module-preview.ts": "646bb819b10f708851a820b5159b977c67300cf34b0a3d3f4d84b9a5d7c65f19",
+    "enclosure/module-mech.ts": "8054af43a5ba30428ac832464b43cb90dab5392a6933368b7fe56cc38e1a8103",
+    "@jscad/modeling": "2.13.0",
+    "@tscircuit/capacity-autorouter": "0.0.1037",
+    "@tscircuit/checks": "0.0.269",
+    "@tscircuit/circuit-json-util": "0.0.131",
+    "@tscircuit/core": "0.0.2266",
+    "@tscircuit/create-fdm-enclosure": "0.0.7",
+    "@tscircuit/footprinter": "0.0.450",
+    "@tscircuit/math-utils": "0.0.38",
+    "@tscircuit/ngspice-spice-engine": "0.0.20",
+    "@tscircuit/props": "0.0.718",
+    "circuit-json": "0.0.543",
+    "circuit-json-to-bom-csv": "0.0.28",
+    "circuit-json-to-gerber": "0.0.122",
+    "circuit-json-to-gltf": "0.0.164",
+    "circuit-json-to-kicad": "0.0.267",
+    "circuit-json-to-pnp-csv": "0.0.21",
+    "circuit-to-svg": "0.0.455",
+    "easyeda": "0.0.391",
+    "fflate": "0.8.3",
+    "jscad-planner": "0.0.14",
+    "kicad-to-circuit-json": "0.0.142",
+    "polygon-clipping": "0.15.7",
+    "react": "19.3.1",
+    "schematic-symbols": "0.0.251",
+    "tscircuit": "0.0.3075"
+  },
+  "gates": [
+    {
+      "gate": "erc",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "rp2040-minimal",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "dc-motor-drv8833",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "rp2040-gp0-application-button",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "usb-external-host",
+          "severity": "warning",
+          "where": "core.USB, core.USB_HOST",
+          "message": "USB peripheral relies on an external host through the declared passive connector"
+        }
+      ]
+    },
+    {
+      "gate": "power",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "thermal-assumption",
+          "severity": "warning",
+          "where": "core.V3V3",
+          "message": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+        }
+      ]
+    },
+    {
+      "gate": "spice",
+      "inputHash": "e1ad268ce805fb603c88a787588b33c8971192df879998dd15e3a893d71ca78c",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "spice-coverage",
+          "severity": "warning",
+          "message": "No applicable SPICE profiles declared; electrical behavior is not simulated"
+        }
+      ],
+      "measurements": []
+    },
+    {
+      "gate": "review",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "gate": "drc",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "gate": "block-test",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "block-pad-scope",
+          "severity": "warning",
+          "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+        },
+        {
+          "rule": "block-pad-scope",
+          "severity": "warning",
+          "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+        },
+        {
+          "rule": "block-pad-scope",
+          "severity": "warning",
+          "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+        }
+      ],
+      "measurements": [
+        {
+          "where": "motor.U1",
+          "name": "native-physical-pads",
+          "measured": 17,
+          "target": 17,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "motor.C1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "motor.C2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "motor.C3",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "motor.C4",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "motor.C5",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "motor.R1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "motor.R2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "motor.J1",
+          "name": "native-physical-pads",
+          "measured": 4,
+          "target": 4,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.U1",
+          "name": "native-physical-pads",
+          "measured": 57,
+          "target": 57,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.U2",
+          "name": "native-physical-pads",
+          "measured": 8,
+          "target": 8,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.X1",
+          "name": "native-physical-pads",
+          "measured": 4,
+          "target": 4,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.U3",
+          "name": "native-physical-pads",
+          "measured": 5,
+          "target": 5,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.U4",
+          "name": "native-physical-pads",
+          "measured": 6,
+          "target": 6,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.J1",
+          "name": "native-physical-pads",
+          "measured": 16,
+          "target": 16,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.SW1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.SW2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.R1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.R2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.R3",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.R4",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.R5",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.R6",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.R7",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.R8",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.C1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.C2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.C3",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.C4",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.C5",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.C6",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.C7",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.C8",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.C9",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.C10",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.C11",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.C12",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.C13",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.C14",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.C15",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.C16",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "core.C17",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "button.SW1",
+          "name": "native-physical-pads",
+          "measured": 3,
+          "target": 3,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "button.R1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "gate": "verify",
+      "ok": true,
+      "issues": [],
+      "results": [
+        {
+          "id": "rp2040",
+          "status": "pass",
+          "measured": "rp2040_minimal",
+          "target": "rp2040_minimal",
+          "evidence": "Declared interface rp2040_minimal is present"
+        },
+        {
+          "id": "usb_c_power",
+          "status": "pass",
+          "measured": "usb_c_sink",
+          "target": "usb_c_sink",
+          "evidence": "Declared interface usb_c_sink is present"
+        },
+        {
+          "id": "motor_driver",
+          "status": "pass",
+          "measured": "motor_driver",
+          "target": "motor_driver",
+          "evidence": "Declared interface motor_driver is present"
+        },
+        {
+          "id": "button_input",
+          "status": "pass",
+          "measured": "input",
+          "target": "input",
+          "evidence": "Declared interface input is present"
+        }
+      ]
+    },
+    {
+      "gate": "compile",
+      "ok": true,
+      "issues": []
+    }
+  ]
+}

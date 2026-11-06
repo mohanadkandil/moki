@@ -1,0 +1,106 @@
+{
+  "schema": "moki.plan/1",
+  "title": "S3 air",
+  "layers": 2,
+  "board": {
+    "widthMm": 60,
+    "heightMm": 70,
+    "cornerRadiusMm": 0
+  },
+  "blocks": [
+    {
+      "inst": "mcu",
+      "block": "esp32-s3-core",
+      "version": 2,
+      "params": {}
+    },
+    {
+      "inst": "usb",
+      "block": "usb-c-sink",
+      "version": 2,
+      "params": {}
+    },
+    {
+      "inst": "ldo",
+      "block": "tps63001-usb-sys-3v3",
+      "version": 1,
+      "params": {}
+    },
+    {
+      "inst": "buttons",
+      "block": "boot-reset-buttons",
+      "version": 1,
+      "params": {}
+    },
+    {
+      "inst": "air",
+      "block": "sht40-ad1b-3v3",
+      "version": 3,
+      "params": {}
+    },
+    {
+      "inst": "display",
+      "block": "ssd1306-i2c-header",
+      "version": 1,
+      "params": {}
+    }
+  ],
+  "links": [
+    {
+      "from": "mcu.GND",
+      "to": "usb.GND"
+    },
+    {
+      "from": "mcu.GND",
+      "to": "ldo.GND"
+    },
+    {
+      "from": "mcu.GND",
+      "to": "buttons.GND"
+    },
+    {
+      "from": "mcu.GND",
+      "to": "air.GND"
+    },
+    {
+      "from": "mcu.GND",
+      "to": "display.GND"
+    },
+    {
+      "from": "usb.VBUS",
+      "to": "ldo.SYS"
+    },
+    {
+      "from": "ldo.V3V3",
+      "to": "mcu.V3V3"
+    },
+    {
+      "from": "ldo.V3V3",
+      "to": "air.V3V3"
+    },
+    {
+      "from": "ldo.V3V3",
+      "to": "display.V3V3"
+    },
+    {
+      "from": "mcu.EN",
+      "to": "buttons.EN"
+    },
+    {
+      "from": "mcu.BOOT",
+      "to": "buttons.BOOT"
+    },
+    {
+      "from": "mcu.USB",
+      "to": "usb.USB"
+    },
+    {
+      "from": "mcu.I2C",
+      "to": "air.I2C"
+    },
+    {
+      "from": "mcu.I2C",
+      "to": "display.I2C_DISPLAY"
+    }
+  ]
+}

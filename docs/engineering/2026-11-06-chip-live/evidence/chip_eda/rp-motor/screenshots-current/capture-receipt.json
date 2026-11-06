@@ -1,0 +1,34 @@
+{
+  "jobId": "193f6a73-452d-4124-9785-0a14940322b0",
+  "status": "done",
+  "scope": "Offline screenshots of the actual Moki job artifacts; no app UI/server capture and no reference artifacts substituted",
+  "captures": [
+    {
+      "name": "schematic",
+      "file": "schematic.png"
+    },
+    {
+      "name": "pcb-top",
+      "file": "pcb-top.png"
+    },
+    {
+      "name": "pcb-bottom",
+      "file": "pcb-bottom.png"
+    }
+  ],
+  "models": {
+    "sourceParts": 42,
+    "cadRecords": 42,
+    "declaredExternalModels": 42,
+    "missingCad": [],
+    "note": "Native job GLB uses declared importer models; dimensions, material fidelity and manufacturer STEP equivalence are not independently qualified."
+  },
+  "schematicVisualUpdate": {
+    "source": "../schematic-current/schematic.svg",
+    "scope": "Current notes/reference wrapping of exactacceptedplan; no new PCB or firmware run",
+    "planGraphDeepEqualToAcceptedJob": true,
+    "originalAcceptedJobUntouched": true,
+    "inspected": true,
+    "result": "AllDRVnotesandfullreferencefitinsidegrowingsectionbox; no texttruncation"
+  }
+}

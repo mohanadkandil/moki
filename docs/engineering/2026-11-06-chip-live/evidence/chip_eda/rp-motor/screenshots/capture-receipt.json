@@ -1,0 +1,40 @@
+{
+  "jobId": "193f6a73-452d-4124-9785-0a14940322b0",
+  "status": "done",
+  "scope": "Offline screenshots of the actual Moki job artifacts; no app UI/server capture and no reference artifacts substituted",
+  "captures": [
+    {
+      "name": "schematic",
+      "file": "schematic.png"
+    },
+    {
+      "name": "pcb-top",
+      "file": "pcb-top.png"
+    },
+    {
+      "name": "pcb-bottom",
+      "file": "pcb-bottom.png"
+    },
+    {
+      "name": "assembly-3d",
+      "file": "assembly-3d.png",
+      "source": "actual accepted job board.glb; existing offline evidence renderer"
+    }
+  ],
+  "models": {
+    "sourceParts": 42,
+    "cadRecords": 42,
+    "declaredExternalModels": 42,
+    "missingCad": [],
+    "note": "Native job GLB uses declared importer models; dimensions, material fidelity and manufacturer STEP equivalence are not independently qualified."
+  },
+  "inspection": {
+    "status": "inspected",
+    "notes": [
+      "Native sectioned schematic and both copper layer images captured from own accepted job; no reference output substituted.",
+      "3D shows RP2040/QSPI/passive bodies, USB shell, driver and motor connector, bulk capacitor and buttons. No missing CAD records among42 parts; fine model/dimensional fidelity is unqualified.",
+      "Existing100x80board has excess unused area; automatic compact RP replay is a separate pending job.",
+      "Native DRC and sandbox compile pass; six routing-style warnings and connector/passive orientation warnings remain documented."
+    ]
+  }
+}

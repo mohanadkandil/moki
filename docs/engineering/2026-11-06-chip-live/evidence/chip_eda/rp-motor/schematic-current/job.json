@@ -1,0 +1,980 @@
+{
+  "jobId": "193f6a73-452d-4124-9785-0a14940322b0",
+  "status": "done",
+  "createdAt": "2026-11-06T02:32:01.019Z",
+  "input": {
+    "kind": "plan",
+    "sourceSha256": "5226b0ee55f2c54954850965fc2e4438d128c707db39c971bdcc9052c6832edc",
+    "plan": {
+      "schema": "moki.plan/1",
+      "title": "RP2040 DC motor controller — qualified5V USB state",
+      "layers": 2,
+      "board": {
+        "widthMm": 100,
+        "heightMm": 80,
+        "cornerRadiusMm": 3
+      },
+      "blocks": [
+        {
+          "inst": "rp",
+          "block": "rp2040-minimal",
+          "version": 4,
+          "params": {},
+          "at": {
+            "x": -15,
+            "y": 0
+          }
+        },
+        {
+          "inst": "motor",
+          "block": "dc-motor-drv8833",
+          "version": 2,
+          "params": {},
+          "at": {
+            "x": 25,
+            "y": 0
+          }
+        }
+      ],
+      "links": [
+        {
+          "from": "rp.VBUS",
+          "to": "motor.VM"
+        },
+        {
+          "from": "rp.GND",
+          "to": "motor.GND"
+        },
+        {
+          "from": "rp.GP14",
+          "to": "motor.IN1"
+        },
+        {
+          "from": "rp.GP15",
+          "to": "motor.IN2"
+        }
+      ],
+      "sections": [
+        {
+          "id": "rp",
+          "title": "RP2040 USB core",
+          "purpose": "RP2040, QSPI flash, clock, USB and core supply",
+          "insts": [
+            "rp"
+          ],
+          "notes": [
+            "USB supply must provide known5V1.5A; Arduino mbed core and code-owned ARM toolchain override.",
+            "No external motor, physical operating state or fabrication qualification claimed."
+          ],
+          "reference": {
+            "lcsc": "C2040",
+            "datasheetUrl": "https://datasheets.raspberrypi.com/rp2040/hardware-design-with-rp2040.pdf",
+            "page": 14,
+            "quote": "Complete schematic of the minimal board",
+            "figure": "11"
+          }
+        },
+        {
+          "id": "motor",
+          "title": "DRV8833 DC motor",
+          "purpose": "BridgeA PWM, current-sense and motor connector",
+          "insts": [
+            "motor"
+          ],
+          "notes": [
+            "GP14 and GP15 support PWM. Motor is external and unqualified.",
+            "205mA typical/505mA peak supply reservation is an author estimate, not a stall guarantee.",
+            "Single bridgeA adaptation per TI pages9–11; bridgeB inputs/sense grounded, outputs unused. Layout figure is a reference, not an exact application schematic."
+          ],
+          "reference": {
+            "lcsc": "C50506",
+            "datasheetUrl": "https://www.ti.com/lit/ds/symlink/drv8833.pdf",
+            "page": 15,
+            "quote": "Recommended Layout Example",
+            "figure": "10"
+          }
+        }
+      ],
+      "app": {
+        "source": "#include <Arduino.h>\n#include \"pins.h\"\nvoid setup() {\n  digitalWrite(PIN_MOTOR_IN1, LOW);\n  digitalWrite(PIN_MOTOR_IN2, LOW);\n  pinMode(PIN_MOTOR_IN1, OUTPUT);\n  pinMode(PIN_MOTOR_IN2, OUTPUT);\n  delay(2);\n  analogWrite(PIN_MOTOR_IN1, 0);\n  analogWrite(PIN_MOTOR_IN2, 0);\n}\nvoid loop() { delay(20); }\n"
+      }
+    }
+  },
+  "cache": "miss",
+  "stages": [
+    {
+      "name": "codegen",
+      "status": "done",
+      "ms": 116.48748599999999,
+      "note": "Validated JSON plan; no author TSX is executed"
+    },
+    {
+      "name": "erc",
+      "status": "done",
+      "ms": 0,
+      "note": "Block has not passed independent promotion review; Block has not passed independent promotion review; USB peripheral relies on an external host through the declared passive connector"
+    },
+    {
+      "name": "power",
+      "status": "done",
+      "ms": 0,
+      "note": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+    },
+    {
+      "name": "spice",
+      "status": "done",
+      "ms": 19.502635000000055,
+      "note": "No applicable SPICE profiles declared; electrical behavior is not simulated"
+    },
+    {
+      "name": "review",
+      "status": "done",
+      "ms": 0,
+      "note": ""
+    },
+    {
+      "name": "codegen",
+      "status": "done",
+      "ms": 2345.2143159999996
+    },
+    {
+      "name": "placement",
+      "status": "done",
+      "ms": 34.59797800000024
+    },
+    {
+      "name": "svg",
+      "status": "done",
+      "ms": 4053.6594209999994
+    },
+    {
+      "name": "fanout",
+      "status": "done",
+      "ms": 3015.2398829999984
+    },
+    {
+      "name": "render",
+      "status": "done",
+      "ms": 1198.8208730000006
+    },
+    {
+      "name": "route",
+      "status": "done",
+      "ms": 136514.688688
+    },
+    {
+      "name": "gltf",
+      "status": "done",
+      "ms": 5081.529898000008
+    },
+    {
+      "name": "fab",
+      "status": "done",
+      "ms": 1908.076475000009
+    },
+    {
+      "name": "drc",
+      "status": "done",
+      "ms": 0,
+      "note": ""
+    },
+    {
+      "name": "block-test",
+      "status": "done",
+      "ms": 0,
+      "note": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates; Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+    },
+    {
+      "name": "verify",
+      "status": "done",
+      "ms": 0,
+      "note": ""
+    },
+    {
+      "name": "firmware",
+      "status": "done",
+      "ms": 128.206905
+    },
+    {
+      "name": "firmware-compile",
+      "status": "done",
+      "ms": 2310,
+      "note": "Compile checked for rp2040; no physical flash."
+    },
+    {
+      "name": "compile",
+      "status": "done",
+      "ms": 0,
+      "note": ""
+    },
+    {
+      "name": "enclosure",
+      "status": "skipped",
+      "ms": 0,
+      "note": "Chip-level enclosure handoff is not implemented"
+    }
+  ],
+  "totalMs": 160858.882349,
+  "drc": {
+    "checked": true,
+    "errors": [],
+    "warnings": [
+      {
+        "type": "source_refdes_convention_warning",
+        "message": "The \"J\" prefix is being used with a <chip />, try using it with a <connector /> or <jumper />"
+      },
+      {
+        "type": "source_refdes_convention_warning",
+        "message": "The \"J\" prefix is being used with a <chip />, try using it with a <connector /> or <jumper />"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "U1 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "U4 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "U4 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on U4 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "J1 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "J1 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on J1 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "U5 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "J2 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "J2 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on J2 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "pcb_connector_not_in_accessible_orientation_warning",
+        "message": "J1 is inferred to face y- from its cable insertion center because no explicit footprint insertionDirection is defined, but should face y+ so the connector is accessible from the board edge. Set insertionDirection on the <footprint> to specify the actual direction in the footprint's unrotated orientation; for example, <footprint insertionDirection=\"from_above\"> for a connector accessed from above the PCB (+Z)."
+      },
+      {
+        "type": "pcb_connector_not_in_accessible_orientation_warning",
+        "message": "J2 is inferred to face y+ from its cable insertion center because no explicit footprint insertionDirection is defined, but should face x+ so the connector is accessible from the board edge. Set insertionDirection on the <footprint> to specify the actual direction in the footprint's unrotated orientation; for example, <footprint insertionDirection=\"from_above\"> for a connector accessed from above the PCB (+Z)."
+      },
+      {
+        "type": "pcb_trace_style_warning",
+        "message": ".U1 > .pin51 to net.QSPI_SD3 has a 9.15 mm segment on bottom at 14.68°, 14.68° from the nearest allowed direction (0°). Prefer a multiple of 45° for segments longer than 5 mm (tolerance 4°)."
+      },
+      {
+        "type": "pcb_trace_style_warning",
+        "message": ".U1 > .pin56 to net.QSPI_SS has a 7.72 mm segment on bottom at 335.43°, 20.43° from the nearest allowed direction (315°). Prefer a multiple of 45° for segments longer than 5 mm (tolerance 4°)."
+      },
+      {
+        "type": "pcb_trace_style_warning",
+        "message": ".U1 > .pin55 to net.QSPI_SD1 has a 9.73 mm segment on bottom at 331.98°, 16.98° from the nearest allowed direction (315°). Prefer a multiple of 45° for segments longer than 5 mm (tolerance 4°)."
+      },
+      {
+        "type": "pcb_trace_style_warning",
+        "message": ".U1 > .pin54 to net.QSPI_SD2 has a 10.85 mm segment on bottom at 333.97°, 18.97° from the nearest allowed direction (315°). Prefer a multiple of 45° for segments longer than 5 mm (tolerance 4°)."
+      },
+      {
+        "type": "pcb_trace_style_warning",
+        "message": ".U1 > .pin53 to net.QSPI_SD0 has a 6.89 mm segment on bottom at 13.65°, 13.65° from the nearest allowed direction (0°). Prefer a multiple of 45° for segments longer than 5 mm (tolerance 4°)."
+      },
+      {
+        "type": "pcb_trace_style_warning",
+        "message": ".U1 > .pin18 to net.IN2 has a 6.99 mm segment on bottom at 351.97°, 8.03° from the nearest allowed direction (0°). Prefer a multiple of 45° for segments longer than 5 mm (tolerance 4°)."
+      }
+    ]
+  },
+  "board": {
+    "widthMm": 100,
+    "heightMm": 80,
+    "layers": 2,
+    "traceCount": 118,
+    "viaCount": 81
+  },
+  "artifacts": {
+    "circuit.json": {
+      "url": "/api/board/jobs/193f6a73-452d-4124-9785-0a14940322b0/files/circuit.json",
+      "bytes": 1981123,
+      "sha256": "e419f2fea37f1be9bcd3fca05bffa2fa920d4b88f89654f14a37751c8fd83782",
+      "kind": "json"
+    },
+    "schematic.svg": {
+      "url": "/api/board/jobs/193f6a73-452d-4124-9785-0a14940322b0/files/schematic.svg",
+      "bytes": 413799,
+      "sha256": "1af9602506f91b3e709c7075a73992f31ecc4060ad4d835a702cc0d9eecd80d6",
+      "kind": "svg"
+    },
+    "pcb.svg": {
+      "url": "/api/board/jobs/193f6a73-452d-4124-9785-0a14940322b0/files/pcb.svg",
+      "bytes": 1059181,
+      "sha256": "dbf73b43680327eaab2df10d40a521c341326bd390567eaac0ebea4be4e78888",
+      "kind": "svg"
+    },
+    "board.glb": {
+      "url": "/api/board/jobs/193f6a73-452d-4124-9785-0a14940322b0/files/board.glb",
+      "bytes": 13314224,
+      "sha256": "5a9c82704acca08e6b0e0a7969604dbd0203848484d8f8a6346726718776d27e",
+      "kind": "glb"
+    },
+    "gerbers.zip": {
+      "url": "/api/board/jobs/193f6a73-452d-4124-9785-0a14940322b0/files/gerbers.zip",
+      "bytes": 141824,
+      "sha256": "841fc4a94a7099f910f22ef51988e1bbbf08f3a301ecc68ab8cf6fad69d4f62f",
+      "kind": "zip"
+    },
+    "kicad.zip": {
+      "url": "/api/board/jobs/193f6a73-452d-4124-9785-0a14940322b0/files/kicad.zip",
+      "bytes": 361414,
+      "sha256": "59804c933a7104defc7ae872e90d368ffd7a39a7bbdd30bcf9ac5463f566c462",
+      "kind": "zip"
+    },
+    "bom.csv": {
+      "url": "/api/board/jobs/193f6a73-452d-4124-9785-0a14940322b0/files/bom.csv",
+      "bytes": 1999,
+      "sha256": "d3caacd3ca342d231656b98dc8ecd8b00455de951189d9af17d170ad5ea03dd7",
+      "kind": "csv"
+    },
+    "pnp.csv": {
+      "url": "/api/board/jobs/193f6a73-452d-4124-9785-0a14940322b0/files/pnp.csv",
+      "bytes": 2156,
+      "sha256": "b36c1cfd09d6213a073008fbbe8d1e59de74e9218b24a845bdb99606fbeae8b3",
+      "kind": "csv"
+    },
+    "firmware.zip": {
+      "url": "/api/board/jobs/193f6a73-452d-4124-9785-0a14940322b0/files/firmware.zip",
+      "bytes": 1416,
+      "sha256": "54049eefe350859ebb3530631277c3039de227fbedf935cf279a738a9fc91360",
+      "kind": "zip"
+    },
+    "firmware-build.json": {
+      "url": "/api/board/jobs/193f6a73-452d-4124-9785-0a14940322b0/files/firmware-build.json",
+      "bytes": 5249,
+      "sha256": "efa96931ef02969311ec712c826d199125dab184483c1de7770bc705c5544018",
+      "kind": "json"
+    },
+    "receipt.json": {
+      "url": "/api/board/jobs/193f6a73-452d-4124-9785-0a14940322b0/files/receipt.json",
+      "bytes": 22618,
+      "sha256": "cab4260aa80bcf4f658de55013a110031c8a76291fc76650acd3450586e6cd51",
+      "kind": "json"
+    },
+    "plan.json": {
+      "url": "/api/board/jobs/193f6a73-452d-4124-9785-0a14940322b0/files/plan.json",
+      "bytes": 2585,
+      "sha256": "58f1ba650efee59f3399e0ccbef43cbd9ce6f6ebfcc2966d7cdff0db192b6cef",
+      "kind": "json"
+    },
+    "plan-graph.json": {
+      "url": "/api/board/jobs/193f6a73-452d-4124-9785-0a14940322b0/files/plan-graph.json",
+      "bytes": 4364552,
+      "sha256": "616edaf4382cecf6d3c8237d759b50f4db820a655d156212418132954619f0fd",
+      "kind": "json"
+    },
+    "gates.json": {
+      "url": "/api/board/jobs/193f6a73-452d-4124-9785-0a14940322b0/files/gates.json",
+      "bytes": 10355,
+      "sha256": "ed4233c375c123b97366573f910a84bac61db22d44557e47ac6c5999d9ff4fb9",
+      "kind": "json"
+    },
+    "spice.json": {
+      "url": "/api/board/jobs/193f6a73-452d-4124-9785-0a14940322b0/files/spice.json",
+      "bytes": 327,
+      "sha256": "fdb81edf0829c5dc0d24fc692b7257e11d6d4b8c8c0bf85a307a545979da56c6",
+      "kind": "json"
+    },
+    "verification.json": {
+      "url": "/api/board/jobs/193f6a73-452d-4124-9785-0a14940322b0/files/verification.json",
+      "bytes": 69,
+      "sha256": "f2d8714a7244d59bd5a4c986bbf75b38ebf4a37ede0fb9396861ac444e594bd6",
+      "kind": "json"
+    },
+    "schematic-circuit.json": {
+      "url": "/api/board/jobs/193f6a73-452d-4124-9785-0a14940322b0/files/schematic-circuit.json",
+      "bytes": 493262,
+      "sha256": "0e78540e370bf85835b9522598b20b3aca278ba908538f91352dfe7962a7a874",
+      "kind": "json"
+    },
+    "import-map.json": {
+      "url": "/api/board/jobs/193f6a73-452d-4124-9785-0a14940322b0/files/import-map.json",
+      "bytes": 25098,
+      "sha256": "fe7591580faca71180eb31308143fbbc2ae051be193b47cf78ff5ddfec4257c1",
+      "kind": "json"
+    },
+    "netlist-check.json": {
+      "url": "/api/board/jobs/193f6a73-452d-4124-9785-0a14940322b0/files/netlist-check.json",
+      "bytes": 32,
+      "sha256": "1b237b6d36a5cf2f8b7272800f91f3e98f39caafdd95fc3bd739ecfb75b0d664",
+      "kind": "json"
+    },
+    "placement.json": {
+      "url": "/api/board/jobs/193f6a73-452d-4124-9785-0a14940322b0/files/placement.json",
+      "bytes": 10934,
+      "sha256": "05a94b0c260d526e01ccf4eafe7be406584e63c02056e2cca3cb764f4fa5e1d0",
+      "kind": "json"
+    },
+    "placement-check.json": {
+      "url": "/api/board/jobs/193f6a73-452d-4124-9785-0a14940322b0/files/placement-check.json",
+      "bytes": 1587,
+      "sha256": "fe48cd5abed32c2b24e01b0d66b16745ad34afa074688fc04d227c958bf36942",
+      "kind": "json"
+    },
+    "native-async-errors.json": {
+      "url": "/api/board/jobs/193f6a73-452d-4124-9785-0a14940322b0/files/native-async-errors.json",
+      "bytes": 32,
+      "sha256": "29bffd8c93a762daf2b9740027793a4ffef823ddd839405684bed68c614f11e3",
+      "kind": "json"
+    },
+    "native-routing.json": {
+      "url": "/api/board/jobs/193f6a73-452d-4124-9785-0a14940322b0/files/native-routing.json",
+      "bytes": 536102,
+      "sha256": "158979c0c045d0d6a9d88eaa222e15f43e8888f743cdff255df139e08ebacbb8",
+      "kind": "json"
+    }
+  },
+  "toolVersions": {
+    "bun": "1.4.4",
+    "toolchainLockSha256": "03c17de90a541fb18d9c0551e9d48079d505c8da1b327b521149c39ce2bdfe92",
+    "mokiRendererSha256": "0241360186359759ab4eb49087dc2026f5d13d1b9279bc2a7a9c78b97e59ff2d",
+    "blocks/build.ts": "7bfeebdcc66f29c138aead3005e71621bba6b7539b7128515c151386fc7f94bb",
+    "blocks/grouped-breakouts.ts": "60fa24703cb707b9deaacd3e059077977ac1e8cf470669276558831784bb2e9b",
+    "blocks/copper-netlist.ts": "47a5b43a503ed93d229e40e7a4c0dac68dd3483f874e6fe6ffa0fbf6cf335f3b",
+    "blocks/debug-source.ts": "f251852b6dc2a57dd45e104dbdf80a4a2d0c442cb190afc320272259f6d87e1a",
+    "blocks/stitch-ground.ts": "8ebe7d596838943857c6239ddbc0dfe49423d71a83950ed381bd663ba3f4d300",
+    "blocks/imported.ts": "b6e315d31e689feb5068656b7545a24de52a2389ffc91be44d4f6e543beb0919",
+    "blocks/legalize.ts": "b1d962b9cbbf6d79a3af2d5e2d1eff9da0ca4fcb5ce72d660b6d8d1ee424a2fa",
+    "blocks/schematic.ts": "91891ea4c205d895f94b336c57ac74283274cc764f9c4c1d55e2b54dbc7b7cd5",
+    "../src/blocks/native-netlist.ts": "a83edcdcf74aca694dd340a73c87ff065bf22adefa7a76efc8d5d55364ea964d",
+    "../src/blocks/native-ports.ts": "4bc103d7c9bffdadb1f41aee033e3e697070f583265016f2df2d2c213a674a4f",
+    "../src/blocks/native-placement.ts": "785600eb36bf87b4ac249dbab1f3e15829807ea2b29dd8c304852949f662fcc8",
+    "../src/board/bom.ts": "3eb90de40496ae439a9b4fdf8bd5816dc59e8b5d29d97b72740a446928335022",
+    "../src/circuit/catalog.ts": "f9a71d535ac1c39ece54337532e1662d3cdb95356134f548c1345c555ca1b51c",
+    "models/render-board.ts": "0ae3ad9913ed812f943bcb5e97f07de2dc39a5a8c9634bb8d175cf116a1e15b1",
+    "models/catalog-models.ts": "5bf9dba5c67d0e1239c33dc4874be44867226c08fb287dc21e63fb17895015bc",
+    "models/glb.ts": "ee795aaf36c5fa0f0bd94484c574f69cd14c308ee72d4e3fd0b6855dd4c14c80",
+    "models/compact-glb.ts": "76504398c0e871e0de9ab55d4e553a4401d7466b6c1750eca4cb856e212bbda4",
+    "apply-layout.ts": "5429544caab8d4ba86a0b4b269ce01c84aa47c0f0cc568fa6602dea23d40c6ff",
+    "edit-router.ts": "c607cef0777632dd2584a8132e684314e6452cc7195c2a93797d3abb9204a76c",
+    "blocks/router.ts": "fc1aa37b09865e2627b6fc40e8894aed6a301454341ff658050a1fc8f865ae74",
+    "blocks/fanout.ts": "5648e81dc78f50af0f5172ef8e265cd19186f81093c7a32fd8a9acb60482c8eb",
+    "../src/blocks/fanout.ts": "f4b34d3e90ce124d2a4dcf1de44756958dc2d10f70be6e3200547c95e22221a1",
+    "../src/blocks/router-planning.ts": "ffba1d1a7440c7ff9c7a2a6cafaa0323632b3812ae3eb313313f6166f8cf06de",
+    "../src/board/router-planning.ts": "ffa9a86aded261477102d290e6f6faf3cad2a8c299e1990210027726b8d78504",
+    "../src/board/edits.ts": "ff1061d2213db22acacf7ac26c2d097c97a4be81ffe92d8eaedb262c7c6f2bf0",
+    "enclosure/module-preview.ts": "646bb819b10f708851a820b5159b977c67300cf34b0a3d3f4d84b9a5d7c65f19",
+    "enclosure/module-mech.ts": "8054af43a5ba30428ac832464b43cb90dab5392a6933368b7fe56cc38e1a8103",
+    "@jscad/modeling": "2.13.0",
+    "@tscircuit/capacity-autorouter": "0.0.1037",
+    "@tscircuit/checks": "0.0.269",
+    "@tscircuit/circuit-json-util": "0.0.131",
+    "@tscircuit/core": "0.0.2266",
+    "@tscircuit/create-fdm-enclosure": "0.0.7",
+    "@tscircuit/footprinter": "0.0.450",
+    "@tscircuit/math-utils": "0.0.38",
+    "@tscircuit/ngspice-spice-engine": "0.0.20",
+    "@tscircuit/props": "0.0.718",
+    "circuit-json": "0.0.543",
+    "circuit-json-to-bom-csv": "0.0.28",
+    "circuit-json-to-gerber": "0.0.122",
+    "circuit-json-to-gltf": "0.0.164",
+    "circuit-json-to-kicad": "0.0.267",
+    "circuit-json-to-pnp-csv": "0.0.21",
+    "circuit-to-svg": "0.0.455",
+    "easyeda": "0.0.391",
+    "fflate": "0.8.3",
+    "jscad-planner": "0.0.14",
+    "kicad-to-circuit-json": "0.0.142",
+    "polygon-clipping": "0.15.7",
+    "react": "19.3.1",
+    "schematic-symbols": "0.0.251",
+    "tscircuit": "0.0.3075"
+  },
+  "gates": [
+    {
+      "gate": "erc",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "rp2040-minimal",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "dc-motor-drv8833",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "usb-external-host",
+          "severity": "warning",
+          "where": "rp.USB, rp.USB_HOST",
+          "message": "USB peripheral relies on an external host through the declared passive connector"
+        }
+      ]
+    },
+    {
+      "gate": "power",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "thermal-assumption",
+          "severity": "warning",
+          "where": "rp.V3V3",
+          "message": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+        }
+      ]
+    },
+    {
+      "gate": "spice",
+      "inputHash": "7416fdaaeebaa679cd9332e3beb2f2b9e3ceac9b748be02a0b20ae9a1fdb045e",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "spice-coverage",
+          "severity": "warning",
+          "message": "No applicable SPICE profiles declared; electrical behavior is not simulated"
+        }
+      ],
+      "measurements": []
+    },
+    {
+      "gate": "review",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "gate": "drc",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "gate": "block-test",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "block-pad-scope",
+          "severity": "warning",
+          "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+        },
+        {
+          "rule": "block-pad-scope",
+          "severity": "warning",
+          "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+        }
+      ],
+      "measurements": [
+        {
+          "where": "motor.U1",
+          "name": "native-physical-pads",
+          "measured": 17,
+          "target": 17,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "motor.C1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "motor.C2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "motor.C3",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "motor.C4",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "motor.C5",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "motor.R1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "motor.R2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "motor.J1",
+          "name": "native-physical-pads",
+          "measured": 4,
+          "target": 4,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.U1",
+          "name": "native-physical-pads",
+          "measured": 57,
+          "target": 57,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.U2",
+          "name": "native-physical-pads",
+          "measured": 8,
+          "target": 8,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.X1",
+          "name": "native-physical-pads",
+          "measured": 4,
+          "target": 4,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.U3",
+          "name": "native-physical-pads",
+          "measured": 5,
+          "target": 5,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.U4",
+          "name": "native-physical-pads",
+          "measured": 6,
+          "target": 6,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.J1",
+          "name": "native-physical-pads",
+          "measured": 16,
+          "target": 16,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.SW1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.SW2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.R1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.R2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.R3",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.R4",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.R5",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.R6",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.R7",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.R8",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C3",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C4",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C5",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C6",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C7",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C8",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C9",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C10",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C11",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C12",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C13",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C14",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C15",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C16",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "rp.C17",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "gate": "verify",
+      "ok": true,
+      "issues": [],
+      "results": []
+    },
+    {
+      "gate": "compile",
+      "ok": true,
+      "issues": []
+    }
+  ]
+}

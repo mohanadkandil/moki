@@ -1,0 +1,52 @@
+{
+  "scope": "Read-only actual Cu pair geometry + primary native rule assessment; no native evaluator/solver run",
+  "jobId": "71e5d163-a9c4-47f1-b00b-55896bb5af8d",
+  "nativeError": {
+    "type": "pcb_via_trace_clearance_error",
+    "pcb_via_trace_clearance_error_id": "via_trace_clearance_pcb_via_17_source_net_4_mst6_0",
+    "error_type": "pcb_via_trace_clearance_error",
+    "message": "Via unnamed via and trace .U5 > .pin10 to net.GND are too close (clearance: 0.115mm, minimum: 0.127mm)",
+    "pcb_via_id": "pcb_via_17",
+    "pcb_trace_id": "source_net_4_mst6_0",
+    "minimum_clearance": 0.127,
+    "actual_clearance": 0.1149970079643677,
+    "center": {
+      "x": 18.148199413230746,
+      "y": 6.595119701002471
+    }
+  },
+  "via": {
+    "type": "pcb_via",
+    "pcb_via_id": "pcb_via_17",
+    "pcb_trace_id": "source_net_18_mst8_0",
+    "x": 17.989612876173588,
+    "y": 6.274720745614476,
+    "hole_diameter": 0.3,
+    "outer_diameter": 0.6,
+    "layers": [
+      "top",
+      "bottom"
+    ],
+    "from_layer": "top",
+    "to_layer": "bottom",
+    "subcircuit_id": "subcircuit_source_group_0",
+    "subcircuit_connectivity_map_key": "unnamedsubcircuitsubcircuit_source_group_0_connectivity_net18"
+  },
+  "traceId": "source_net_4_mst6_0",
+  "traceConnection": "source_net_4",
+  "viaOwnerId": "source_net_18_mst8_0",
+  "viaConnection": "source_net_18",
+  "traceSourceKey": "unnamedsubcircuitsubcircuit_source_group_0_connectivity_net4",
+  "viaSourceKey": "unnamedsubcircuitsubcircuit_source_group_0_connectivity_net18",
+  "closestSegment": {
+    "segmentIndex": 17,
+    "gap": 0.11499700796436853,
+    "widths": [
+      0.15,
+      0.15
+    ],
+    "layer": "top"
+  },
+  "declaredNativeTraceClearance": 0.15,
+  "conclusion": "Different physical source nets and .114997mm Cu gap are below declared .15mm native trace-via rule; viaClearance .1 is not used for this pair. Artifact does not capture final fast/reference issue counts,so solved best-invalid is supported primary behavior rather than an observed specific scoring history."
+}

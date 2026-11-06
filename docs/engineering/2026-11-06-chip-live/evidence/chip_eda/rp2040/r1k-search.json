@@ -1,0 +1,42 @@
+[
+  {
+    "lcsc": "C21190",
+    "mpn": "0603WAF1001T5E",
+    "package": "0603",
+    "description": "-55℃~+155℃ 100mW 1kΩ 75V Thick Film Resistor ±1% ±100ppm/℃ 0603 Chip Resistor - Surface Mount ROHS",
+    "stock": 29178193,
+    "catalogReceipt": "sha256:4faf0b9fd676ddb30351ffc25491501549b294b32d2ed3aa7c603d9d5977d3d0"
+  },
+  {
+    "lcsc": "C23186",
+    "mpn": "0603WAF5101T5E",
+    "package": "0603",
+    "description": "-55℃~+155℃ 100mW 5.1kΩ 75V Thick Film Resistor ±1% ±100ppm/℃ 0603 Chip Resistor - Surface Mount ROHS",
+    "stock": 20799412,
+    "catalogReceipt": "sha256:4faf0b9fd676ddb30351ffc25491501549b294b32d2ed3aa7c603d9d5977d3d0"
+  },
+  {
+    "lcsc": "C22548",
+    "mpn": "RC0603FR-071KL",
+    "package": "0603",
+    "description": "-55℃~+155℃ 100mW 1kΩ 75V Thick Film Resistor ±1% ±100ppm/℃ 0603 Chip Resistor - Surface Mount ROHS",
+    "stock": 14388584,
+    "catalogReceipt": "sha256:4faf0b9fd676ddb30351ffc25491501549b294b32d2ed3aa7c603d9d5977d3d0"
+  },
+  {
+    "lcsc": "C22356467",
+    "mpn": "RCA035K1FLF",
+    "package": "0603",
+    "description": "-55℃~+155℃ 100mW 5.1kΩ 75V Thick Film Resistor ±1% ±100ppm/℃ 0603 Chip Resistor - Surface Mount ROHS",
+    "stock": 12893424,
+    "catalogReceipt": "sha256:4faf0b9fd676ddb30351ffc25491501549b294b32d2ed3aa7c603d9d5977d3d0"
+  },
+  {
+    "lcsc": "C2907113",
+    "mpn": "FRC0603J102 TS",
+    "package": "0603",
+    "description": "-55℃~+155℃ 100mW 1kΩ 75V Thick Film Resistor ±100ppm/℃ ±5% 0603 Chip Resistor - Surface Mount ROHS",
+    "stock": 9659353,
+    "catalogReceipt": "sha256:4faf0b9fd676ddb30351ffc25491501549b294b32d2ed3aa7c603d9d5977d3d0"
+  }
+]

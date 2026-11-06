@@ -1,0 +1,130 @@
+TAP version 13
+# Subtest: actual SHT native local paths pass narrow preflight without mutation; default rejects
+ok 1 - actual SHT native local paths pass narrow preflight without mutation; default rejects
+  ---
+  duration_ms: 76.798276
+  type: 'test'
+  ...
+# Subtest: incomplete, duplicate, extra routed and via paths fail closed
+ok 2 - incomplete, duplicate, extra routed and via paths fail closed
+  ---
+  duration_ms: 35.552125
+  type: 'test'
+  ...
+# Subtest: spoofed physical source, pad binding, net and local geometry cannot unlock preflight
+ok 3 - spoofed physical source, pad binding, net and local geometry cannot unlock preflight
+  ---
+  duration_ms: 53.46373
+  type: 'test'
+  ...
+# Subtest: native foreign copper, drills, board edge and keepouts still reject retained hints
+ok 4 - native foreign copper, drills, board edge and keepouts still reject retained hints
+  ---
+  duration_ms: 106.742977
+  type: 'test'
+  ...
+# Subtest: a new exit cannot cross a retained foreign-net footprint trace even when pads are clear
+ok 5 - a new exit cannot cross a retained foreign-net footprint trace even when pads are clear
+  ---
+  duration_ms: 32.262928
+  type: 'test'
+  ...
+# Subtest: actual SHT profile follows cardinal native component transforms
+ok 6 - actual SHT profile follows cardinal native component transforms
+  ---
+  duration_ms: 85.655537
+  type: 'test'
+  ...
+# Subtest: actual dense IC pads produce outward normal stubs, preserving graph widths and immutable inputs
+ok 7 - actual dense IC pads produce outward normal stubs, preserving graph widths and immutable inputs
+  ---
+  duration_ms: 128.258303
+  type: 'test'
+  ...
+# Subtest: central exposed pads, NC pads and unconnected optional pads emit no route but remain geometry
+ok 8 - central exposed pads, NC pads and unconnected optional pads emit no route but remain geometry
+  ---
+  duration_ms: 91.961969
+  type: 'test'
+  ...
+# Subtest: retained full placement obstructions are reported, rather than silently applying partial fanout
+ok 9 - retained full placement obstructions are reported, rather than silently applying partial fanout
+  ---
+  duration_ms: 88.954454
+  type: 'test'
+  ...
+# Subtest: cardinal component rotations are derived from actual pad geometry
+ok 10 - cardinal component rotations are derived from actual pad geometry
+  ---
+  duration_ms: 54.490942
+  type: 'test'
+  ...
+# Subtest: board boundary and same-layer keepouts reject a swept exit; opposite-layer keepout does not
+ok 11 - board boundary and same-layer keepouts reject a swept exit; opposite-layer keepout does not
+  ---
+  duration_ms: 155.980859
+  type: 'test'
+  ...
+# Subtest: individually clear component exits still reject crossings with other proposed stubs
+ok 12 - individually clear component exits still reject crossings with other proposed stubs
+  ---
+  duration_ms: 51.79639
+  type: 'test'
+  ...
+# Subtest: wrong physical mapping, arbitrary rotation and unsupported copper fail closed
+ok 13 - wrong physical mapping, arbitrary rotation and unsupported copper fail closed
+  ---
+  duration_ms: 83.37411
+  type: 'test'
+  ...
+# Subtest: missing, unknown and malformed keepout layer declarations reject the plan
+ok 14 - missing, unknown and malformed keepout layer declarations reject the plan
+  ---
+  duration_ms: 92.485615
+  type: 'test'
+  ...
+# Subtest: connected square or polygon perimeter pads cannot silently lose their required exits
+ok 15 - connected square or polygon perimeter pads cannot silently lose their required exits
+  ---
+  duration_ms: 60.135206
+  type: 'test'
+  ...
+# Subtest: foreign via copper and NPTH drills beneath an actual proposed stub are rejected
+ok 16 - foreign via copper and NPTH drills beneath an actual proposed stub are rejected
+  ---
+  duration_ms: 142.225262
+  type: 'test'
+  ...
+# Subtest: a drill void is excluded from via copper but cannot make a drilled-away stub valid
+ok 17 - a drill void is excluded from via copper but cannot make a drilled-away stub valid
+  ---
+  duration_ms: 75.912385
+  type: 'test'
+  ...
+# Subtest: NPTH clearance uses at least0.2mm from swept trace copper to drill edge
+ok 18 - NPTH clearance uses at least0.2mm from swept trace copper to drill edge
+  ---
+  duration_ms: 149.179261
+  type: 'test'
+  ...
+# Subtest: foreign pad layers must be present and belong to the actual board stack
+ok 19 - foreign pad layers must be present and belong to the actual board stack
+  ---
+  duration_ms: 89.742104
+  type: 'test'
+  ...
+# Subtest: malformed via annuli and unknown or contradictory via layer spans fail closed
+ok 20 - malformed via annuli and unknown or contradictory via layer spans fail closed
+  ---
+  duration_ms: 60.677372
+  type: 'test'
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1602.651078

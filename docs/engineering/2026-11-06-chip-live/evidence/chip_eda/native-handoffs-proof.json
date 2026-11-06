@@ -1,0 +1,39 @@
+{
+  "at": "2026-11-06T06:05:30.804981+00:00",
+  "author": "/root/final_review",
+  "scope": "Authored existing-land native handoff producer; independent review belongs to gnd_escape",
+  "sourceSha256": "44c0305a6479724078c1d42d75802bc2a515d1a9db6dc077fb07f92771a27711",
+  "testsSha256": "9d20386ecc3ac0c8b29cd8b056aac447fdd834fffe1debf70c3e44fb0c6f369c",
+  "api": "createNativePadHandoffs(circuit,graph,mapping,netNames:ReadonlySet<string>) -> {proposals,audit,netNames}",
+  "actualBootsel": {
+    "part": "R2",
+    "pad": "2",
+    "lengthMm": 0.2,
+    "sourceWidthMm": 0.15,
+    "landMm": [
+      0.8064754,
+      0.8640064
+    ],
+    "capsuleRemainingNormalMarginMm": 0.12823769999999995,
+    "newCopperOutsideLand": false,
+    "connectsRemoteEndpoint": false
+  },
+  "verification": {
+    "testsPassed": 6,
+    "testsFailed": 0,
+    "durationMs": 1151.705137,
+    "strictTargetedTypecheck": "pass",
+    "remoteConnectivity": "Official native connectivity checker still reports SW2 on BOOTSEL unrouted when only the derived in-pad prefix exists."
+  },
+  "independentReviewReported": {
+    "by": "/root/gnd_escape",
+    "producerHash": "44c0305a6479724078c1d42d75802bc2a515d1a9db6dc077fb07f92771a27711",
+    "binderHashPrefix": "47013c9a",
+    "reported": "No actionable findings;24tests/strictTS; actual producer/binder probe and seven mutants verified; full board/fabrication acceptance excluded.",
+    "receipt": "native-handoffs-independent-review.json"
+  },
+  "limits": [
+    "Only registered two-pin all-passive rectangular top SMT lands with cardinal source placement are eligible; switches, unsupported shapes, ambiguous normals, insufficient land and wrong source identity fail clearly.",
+    "One0.20mm prefix per requested net retains exact original native source width and creates no vias. It does not establish routing,DRC or hardware acceptance."
+  ]
+}

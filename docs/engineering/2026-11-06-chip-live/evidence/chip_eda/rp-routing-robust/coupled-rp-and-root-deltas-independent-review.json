@@ -1,0 +1,54 @@
+{
+  "schema": "moki.independent-coupled-rp-review/1",
+  "reviewer": "gnd_escape",
+  "at": "2026-11-06T07:50:25.555553+00:00",
+  "verdict": "no-actionable-findings-in-new-coupled-option-and-root-deltas",
+  "reviewedHashes": {
+    "eda/blocks/rp-escape.ts": "f5c06554869d11d8b4116f180f67a6f2fd9d95afc8b63b11c7d6a2c782f5edb6",
+    "eda/blocks/rp-signal-escape.ts": "1f3d0ce2045a2e3103f0b0d9481f5a93141beaaf00230003d606168398e258f9",
+    "tests/blocks-rp-application-escape.test.ts": "0e2831346a0fb960bf4c3885d7f249d8676d91db6875b3b4548bb8baa635fb85",
+    "eda/blocks/native-width.ts": "82e35629f96ff92ee9212afe8dc1ac3d2e589ac08ba307f94e6038120bac355a",
+    "eda/blocks/auto-placement.ts": "40bbbe1d623e5ee37406d0029f926401fe45b628ab9a9d783685d22ad367f371"
+  },
+  "scope": [
+    "RPworker usbVias:true new finite coupled power+USB escape profile and admission checks",
+    "Root long-axis ordering for unanchored MCU cardinal variants",
+    "Root narrow native width cleanup mutable/fixed trace partition"
+  ],
+  "independentValidation": {
+    "coupledPhysicalMatrix": "2/4layers x0/90/180/270 each18via+8stub; input unchanged",
+    "rejectedMutants": [
+      "USB audit diagnostic source points to foreign canonical pin",
+      "USB audit kind falsely identifies GPIO application route",
+      "Previous outward power45 barrel restored beside new USB46 barrel"
+    ],
+    "rootFocusedTests": {
+      "passed": 15,
+      "failed": 0,
+      "durationMs": 874.0753
+    },
+    "strictTypeScript": "pass"
+  },
+  "inspectedAuthorValidation": {
+    "coupledTests": 7,
+    "failed": 0,
+    "durationMs": 18438.41588,
+    "coverage": "Connected-only USB one/none; old14/app16 unchanged; actual55x40; forged source/kind/alias/role; same-net via-in-pad; physically incompatible old45barrel"
+  },
+  "reviewedInvariants": [
+    "Known immutable RP3/4 identity only; actual native source/net/pad membership and cardinal placement remain checked",
+    "Both USB signal exits use unchanged0.15mm necks and0.6/0.3 physical full-span barrels",
+    "Adjacent42/44/45 power exits relocated together only when a connected USB pin uses optional profile",
+    "No-via-in-pad forced false for combined native physical preflight; all existing clock/power/foreign geometry checks retained",
+    "Signal proposals exclude producer-owned optional USB/application nets when caller passes producer netNames; no duplicate source escape",
+    "MCU orientation preference changes only order of permissible variants; explicit anchors,antenna orientations,actual envelopes,board shape and keepouts remain hard",
+    "Native width helper supplies only actual below-minimum trace IDs as mutable; conforming traces including same-net siblings become fixedTraces and return verbatim",
+    "Bundled native expander clones input and indexes fixedTraces as physical obstacles; no new via insertion; final hardwidth/nativeDRC/allnet physical gates required"
+  ],
+  "findings": [],
+  "limits": [
+    "Reviewer authored original signal/auto-placement baseline: this receipt independently reviews only new other-author deltas,not those baselines",
+    "Matrix is finite actual-footprint geometry preflight,not full native autorouting success",
+    "No native routing/render/compile/server starts or source changes by reviewer"
+  ]
+}

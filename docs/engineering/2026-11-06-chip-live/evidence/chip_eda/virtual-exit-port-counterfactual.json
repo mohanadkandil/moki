@@ -1,0 +1,51 @@
+{
+  "scope": "Pure complete pinned converter on actual71e5 native saved-exit input; DERIVED metadata-only counterfactual. No routing, no actual-job edits.",
+  "nativeSourceMapSha256": "512aa13e0cf7fcb8106877d2d15732f41668fb7301683ab6109950ecd364590c",
+  "primarySourceSha256": {
+    "../lib/utils/connection-point-utils.ts": "94f66afab8e08e55594987ae03c2bdaf6b94a6358f53ae7db71111edc9ee3912",
+    "../lib/utils/mapLayerNameToZ.ts": "39f65025d71f81bc0c6c49b969c8792893a67aeb8f180111c2c15aa4ef8412b2",
+    "../lib/utils/mapZToLayerName.ts": "c8b4a19387c96368dde4f04df603405e8c5a904a89519fd834229666f7cc1bd2",
+    "../node_modules/high-density-repair03/lib/utils/mapZToLayerName.ts": "80f9dcba54c3560fdbf5e5ec2e15c76c4c303474ee53b5a6e919cd3446e3ae88",
+    "../node_modules/high-density-repair03/lib/utils/getViaLayers.ts": "fa4d3843d00c670e667588f68b6f0aec4f2ed3be911e1b22c777c1c88b3655c4",
+    "../lib/utils/getConnectivityMapFromSimpleRouteJson.ts": "68ba743f3241a4ff75d6c9ccfd6586e1c2a1f15e6e5d3dff5e97d7575bc9643a",
+    "../lib/utils/getViaDimensions.ts": "1994c50d7c0802c73af323f1199c4d0d1c2ef1a921f4df7608ecc16029e48e1d",
+    "../lib/utils/getSrjWithImportedPadPortIds.ts": "109fed1dad6446aee090e7668de9872e336559b52dfbf8311ba6977079978cb7",
+    "../lib/utils/convertToCircuitJson.ts": "8256f9ac6c89668a89cc40c5a3d1fedb6b83102a5984f371435f28f5cc476990"
+  },
+  "sourceJobId": "71e5d163-a9c4-47f1-b00b-55896bb5af8d",
+  "selector": ".R3 > .pin1",
+  "virtualExit": {
+    "x": 0.7500000000000013,
+    "y": 24.046636,
+    "layer": "top",
+    "pointId": "saved_phase_null_2_0_exit"
+  },
+  "actualPhysicalPort": {
+    "type": "pcb_port",
+    "pcb_port_id": "pcb_port_104",
+    "pcb_component_id": "pcb_component_10",
+    "layers": [
+      "top"
+    ],
+    "subcircuit_id": "subcircuit_source_group_0",
+    "x": 0.7500000000000013,
+    "y": 24.246636,
+    "source_port_id": "source_port_104"
+  },
+  "derivedConverterPhysicalPort": {
+    "type": "pcb_port",
+    "pcb_port_id": "pcb_port_104",
+    "source_port_id": "pcb_port_104",
+    "x": 0.7500000000000013,
+    "y": 24.046636,
+    "layers": [
+      "top"
+    ]
+  },
+  "displacementMm": 0.1999999999999993,
+  "sourceProofGuard": {
+    "file": "eda/blocks/repair-native-exits.ts",
+    "requirement": "captured virtual exit pcb_port_id must be undefined; actual original port binding is proved separately"
+  },
+  "conclusion": "Attaching original pcb_port_id to a saved exit changes native physical-port coordinates, rather than merely carrying origin identity. Native createPcbPorts and getPcbPortPositionMap both interpret it as point coordinates. Do not attach this ID to virtual exits."
+}

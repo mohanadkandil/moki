@@ -1,0 +1,59 @@
+{
+  "stages": [
+    {
+      "name": "codegen",
+      "status": "done",
+      "ms": 2278.9590829999997
+    },
+    {
+      "name": "placement",
+      "status": "done",
+      "ms": 43.00210100000004
+    },
+    {
+      "name": "svg",
+      "status": "done",
+      "ms": 4074.8450930000004
+    }
+  ],
+  "totalMs": 6661.448922,
+  "parts": 42,
+  "gates": [
+    {
+      "gate": "erc",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "rp2040-minimal",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "dc-motor-drv8833",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "usb-external-host",
+          "severity": "warning",
+          "where": "rp.USB, rp.USB_HOST",
+          "message": "USB peripheral relies on an external host through the declared passive connector"
+        }
+      ]
+    },
+    {
+      "gate": "power",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "thermal-assumption",
+          "severity": "warning",
+          "where": "rp.V3V3",
+          "message": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+        }
+      ]
+    }
+  ]
+}

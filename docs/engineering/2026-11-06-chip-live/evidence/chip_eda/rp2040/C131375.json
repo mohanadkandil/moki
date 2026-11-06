@@ -1,0 +1,15 @@
+{
+  "lcsc": "C131375",
+  "mpn": "W25Q16JVSSIQTR",
+  "manufacturer": "Winbond Elec",
+  "package": "SOIC-8-208MIL",
+  "description": "SOIC-8 New Arrivals ROHS",
+  "stock": 0,
+  "catalogReceipt": "sha256:934122c8e2fe02fbb28f2cd161b975a286112be032dd6ec7819777c88d6f69cd",
+  "importer": "jlcpcb-metadata-only",
+  "rawSha256": "d54c6874f2dca25ee661b0e6decdfe4794742a40196709d44488032c640b029c",
+  "footprintSha256": "",
+  "pins": [],
+  "models": [],
+  "importerUnavailableReceipt": "sha256:4169569137478ebebbd9b876880c5eba02a8d47324030e7b4edc0e63c7f7f3b9"
+}

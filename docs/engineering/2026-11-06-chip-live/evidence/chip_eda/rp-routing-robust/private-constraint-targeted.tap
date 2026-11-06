@@ -1,0 +1,148 @@
+TAP version 13
+# Subtest: all45actual knownGNDcomponent pads are locked with no changes to geometry,aliases,source or routing data
+ok 1 - all45actual knownGNDcomponent pads are locked with no changes to geometry,aliases,source or routing data
+  ---
+  duration_ms: 378.740797
+  type: 'test'
+  ...
+# Subtest: nonphysical assignables and unflagged knownphysical pads retain their exact records
+ok 2 - nonphysical assignables and unflagged knownphysical pads retain their exact records
+  ---
+  duration_ms: 282.652292
+  type: 'test'
+  ...
+# Subtest: forged pad,port,component,ambiguous metadata and missing owner aliases reject
+ok 3 - forged pad,port,component,ambiguous metadata and missing owner aliases reject
+  ---
+  duration_ms: 537.24042
+  type: 'test'
+  ...
+# Subtest: actual catalog,source,import,graph and subcircuit identity must prove the same physical net
+ok 4 - actual catalog,source,import,graph and subcircuit identity must prove the same physical net
+  ---
+  duration_ms: 234.822901
+  type: 'test'
+  ...
+# Subtest: missing or duplicate actual pad and physical-port identities reject without partial input mutations
+ok 5 - missing or duplicate actual pad and physical-port identities reject without partial input mutations
+  ---
+  duration_ms: 255.348017
+  type: 'test'
+  ...
+# Subtest: source net names cannot impersonate isolated-terminal ownership tokens
+ok 6 - source net names cannot impersonate isolated-terminal ownership tokens
+  ---
+  duration_ms: 53.91162
+  type: 'test'
+  ...
+# Subtest: run shares a pending promise and resolves once; event start and synchronous output stay compatible
+ok 7 - run shares a pending promise and resolves once; event start and synchronous output stay compatible
+  ---
+  duration_ms: 19.437103
+  type: 'test'
+  ...
+# Subtest: failed run preserves original solver error even when the diagnostic writer throws
+ok 8 - failed run preserves original solver error even when the diagnostic writer throws
+  ---
+  duration_ms: 3.660322
+  type: 'test'
+  ...
+# Subtest: native failed flag rejects with its actual reason and emits one error event
+ok 9 - native failed flag rejects with its actual reason and emits one error event
+  ---
+  duration_ms: 2.742552
+  type: 'test'
+  ...
+# Subtest: stop rejects pending run while a native step awaits, and suppresses late completion
+ok 10 - stop rejects pending run while a native step awaits, and suppresses late completion
+  ---
+  duration_ms: 4.561892
+  type: 'test'
+  ...
+# Subtest: stop during failure diagnostics rejects run and suppresses the late original error event
+ok 11 - stop during failure diagnostics rejects run and suppresses the late original error event
+  ---
+  duration_ms: 2.63015
+  type: 'test'
+  ...
+# Subtest: width refinement completes before run resolves and its actual output is materialized
+ok 12 - width refinement completes before run resolves and its actual output is materialized
+  ---
+  duration_ms: 3.130516
+  type: 'test'
+  ...
+# Subtest: explicit public Pipeline7 selection and default/explicit Pipeline9 retain the same adapter protocol
+ok 13 - explicit public Pipeline7 selection and default/explicit Pipeline9 retain the same adapter protocol
+  ---
+  duration_ms: 4.188968
+  type: 'test'
+  ...
+# Subtest: minimum-only mode bypasses broad native power widening while retaining the hard width repair
+ok 14 - minimum-only mode bypasses broad native power widening while retaining the hard width repair
+  ---
+  duration_ms: 5.902707
+  type: 'test'
+  ...
+# Subtest: minimum-only mode requires the hard fabrication width constraints
+ok 15 - minimum-only mode requires the hard fabrication width constraints
+  ---
+  duration_ms: 0.953571
+  type: 'test'
+  ...
+# Subtest: private solver frame is inverted before materialization, evidence and hard width refinement
+ok 16 - private solver frame is inverted before materialization, evidence and hard width refinement
+  ---
+  duration_ms: 5.112379
+  type: 'test'
+  ...
+# Subtest: private guarded constructor keeps the native protocol and cannot be combined with Pipeline7
+ok 17 - private guarded constructor keeps the native protocol and cannot be combined with Pipeline7
+  ---
+  duration_ms: 1.838021
+  type: 'test'
+  ...
+# Subtest: captured 723 obstacles,144 terminals and117 raw native traces roundtrip all cardinal frames without input mutation
+ok 18 - captured 723 obstacles,144 terminals and117 raw native traces roundtrip all cardinal frames without input mutation
+  ---
+  duration_ms: 226.908531
+  type: 'test'
+  ...
+# Subtest: rotated intrinsic rect keeps dimensions while absent-angle rect and oval rotate world axes
+ok 19 - rotated intrinsic rect keeps dimensions while absent-angle rect and oval rotate world axes
+  ---
+  duration_ms: 7.014161
+  type: 'test'
+  ...
+# Subtest: four-layer terminals and full-span via inverse preserve all layer,source,width and marker identities
+ok 20 - four-layer terminals and full-span via inverse preserve all layer,source,width and marker identities
+  ---
+  duration_ms: 77.865376
+  type: 'test'
+  ...
+# Subtest: unknown geometry,constraints,noncardinal obstacles and ambiguous terminal geometry fail closed
+ok 21 - unknown geometry,constraints,noncardinal obstacles and ambiguous terminal geometry fail closed
+  ---
+  duration_ms: 83.009514
+  type: 'test'
+  ...
+# Subtest: inverse output rejects unknown path shapes and malformed dimensions instead of losing native geometry
+ok 22 - inverse output rejects unknown path shapes and malformed dimensions instead of losing native geometry
+  ---
+  duration_ms: 54.151463
+  type: 'test'
+  ...
+# Subtest: actual JS optional undefined fields are JSON-absent while defined unknown constraints still reject by field name
+ok 23 - actual JS optional undefined fields are JSON-absent while defined unknown constraints still reject by field name
+  ---
+  duration_ms: 163.511281
+  type: 'test'
+  ...
+1..23
+# tests 23
+# suites 0
+# pass 23
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4423.884809

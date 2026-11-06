@@ -1,0 +1,21 @@
+{
+  "scope": "Pure independent physical-shape samples, exact root CLI/API AST and worker env guard; no router instantiated",
+  "physicalCases": 2175,
+  "quarters": [
+    1,
+    2,
+    3
+  ],
+  "shapeEvidence": "All723captured obstacles plus derived noncircular intrinsic-angle oval and undefined-angle rect preserve physical rotated corner/ellipse sample sets",
+  "cliNegativeCases": 5,
+  "httpUnknownFrameFieldsRejected": 5,
+  "defaultFrameQuarter": 0,
+  "workerEnvFrameInputsExcluded": true,
+  "sourceHashes": {
+    "eda/blocks/routing-frame.ts": "223194ea19366021490945764e0444a09b852b24f0ccd86e2d6da37c4c584966",
+    "eda/blocks/router.ts": "b9741935ee8276cbafdda380761d31efdd9050876ea5d2b92c43f3d5f855ecfe",
+    "eda/blocks/build.ts": "bedcee17bd0641b1919fc1eaebef4e0bac8f4172d57d733e63d86efedb4dc69a",
+    "server/board-api.ts": "e9755b695c99db76338fd0b0f5b335c32f9d5550c729777eda5f2031e2b6a92d",
+    "src/board/process.ts": "321444cd7e529b5f9a6d1ddda724c0d8c373f8f0012d0998b7c08ff78a66cbe3"
+  }
+}

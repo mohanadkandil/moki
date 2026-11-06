@@ -1,0 +1,257 @@
+[
+  {
+    "ref": "C20",
+    "inst": "motor",
+    "localRef": "C3",
+    "from": {
+      "x": 29.5,
+      "y": 2,
+      "rotation": 0
+    },
+    "to": {
+      "x": 29.5,
+      "y": 2,
+      "rotation": 90
+    }
+  },
+  {
+    "ref": "C21",
+    "inst": "motor",
+    "localRef": "C4",
+    "from": {
+      "x": 29.5,
+      "y": 4,
+      "rotation": 0
+    },
+    "to": {
+      "x": 28,
+      "y": 5.25,
+      "rotation": 0
+    }
+  },
+  {
+    "ref": "C10",
+    "inst": "rp",
+    "localRef": "C10",
+    "from": {
+      "x": -10.5,
+      "y": -4.5,
+      "rotation": 0
+    },
+    "to": {
+      "x": -10.5,
+      "y": -5,
+      "rotation": 0
+    }
+  },
+  {
+    "ref": "C12",
+    "inst": "rp",
+    "localRef": "C12",
+    "from": {
+      "x": -1,
+      "y": 5,
+      "rotation": 0
+    },
+    "to": {
+      "x": -1,
+      "y": 6,
+      "rotation": 0
+    }
+  },
+  {
+    "ref": "C4",
+    "inst": "rp",
+    "localRef": "C4",
+    "from": {
+      "x": -9.5,
+      "y": -3,
+      "rotation": 90
+    },
+    "to": {
+      "x": -9.25,
+      "y": -3,
+      "rotation": 180
+    }
+  },
+  {
+    "ref": "C7",
+    "inst": "rp",
+    "localRef": "C7",
+    "from": {
+      "x": -9.5,
+      "y": 6.5,
+      "rotation": 90
+    },
+    "to": {
+      "x": -9.75,
+      "y": 7.25,
+      "rotation": 180
+    }
+  },
+  {
+    "ref": "C15",
+    "inst": "rp",
+    "localRef": "C15",
+    "from": {
+      "x": -20,
+      "y": -8.85,
+      "rotation": 180
+    },
+    "to": {
+      "x": -20,
+      "y": -8.85,
+      "rotation": 270
+    }
+  },
+  {
+    "ref": "C18",
+    "inst": "motor",
+    "localRef": "C1",
+    "from": {
+      "x": 29.5,
+      "y": 0,
+      "rotation": 0
+    },
+    "to": {
+      "x": 29.5,
+      "y": -1.5,
+      "rotation": 90
+    }
+  },
+  {
+    "ref": "C19",
+    "inst": "motor",
+    "localRef": "C2",
+    "from": {
+      "x": 29.5,
+      "y": -2,
+      "rotation": 0
+    },
+    "to": {
+      "x": 29.5,
+      "y": -3.75,
+      "rotation": 0
+    }
+  },
+  {
+    "ref": "R10",
+    "inst": "motor",
+    "localRef": "R2",
+    "from": {
+      "x": 20.5,
+      "y": -2,
+      "rotation": 0
+    },
+    "to": {
+      "x": 22,
+      "y": -5.25,
+      "rotation": 0
+    }
+  },
+  {
+    "ref": "R1",
+    "inst": "rp",
+    "localRef": "R1",
+    "from": {
+      "x": -14,
+      "y": -5.5,
+      "rotation": 270
+    },
+    "to": {
+      "x": -14,
+      "y": -5.25,
+      "rotation": 0
+    }
+  },
+  {
+    "ref": "R4",
+    "inst": "rp",
+    "localRef": "R4",
+    "from": {
+      "x": -22,
+      "y": -9,
+      "rotation": 0
+    },
+    "to": {
+      "x": -22,
+      "y": -9,
+      "rotation": 90
+    }
+  },
+  {
+    "ref": "R5",
+    "inst": "rp",
+    "localRef": "R5",
+    "from": {
+      "x": -10,
+      "y": 6,
+      "rotation": 0
+    },
+    "to": {
+      "x": -7.5,
+      "y": 6,
+      "rotation": 90
+    }
+  },
+  {
+    "ref": "R6",
+    "inst": "rp",
+    "localRef": "R6",
+    "from": {
+      "x": -7,
+      "y": 6,
+      "rotation": 0
+    },
+    "to": {
+      "x": -5.75,
+      "y": 6,
+      "rotation": 90
+    }
+  },
+  {
+    "ref": "R7",
+    "inst": "rp",
+    "localRef": "R7",
+    "from": {
+      "x": -20,
+      "y": 21,
+      "rotation": 0
+    },
+    "to": {
+      "x": -21.25,
+      "y": 21,
+      "rotation": 90
+    }
+  },
+  {
+    "ref": "R8",
+    "inst": "rp",
+    "localRef": "R8",
+    "from": {
+      "x": -10,
+      "y": 21,
+      "rotation": 0
+    },
+    "to": {
+      "x": -8.75,
+      "y": 21,
+      "rotation": 90
+    }
+  },
+  {
+    "ref": "R9",
+    "inst": "motor",
+    "localRef": "R1",
+    "from": {
+      "x": 20.5,
+      "y": 2,
+      "rotation": 0
+    },
+    "to": {
+      "x": 20.5,
+      "y": 2,
+      "rotation": 90
+    }
+  }
+]

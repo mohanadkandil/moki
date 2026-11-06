@@ -1,0 +1,42 @@
+[
+  {
+    "lcsc": "C13167",
+    "mpn": "0603WAF2701T5E",
+    "package": "0603",
+    "description": "-55℃~+155℃ 100mW 2.7kΩ 75V Thick Film Resistor ±1% ±100ppm/℃ 0603 Chip Resistor - Surface Mount ROHS",
+    "stock": 735062,
+    "catalogReceipt": "sha256:21a64b82fe96b0323c0f70ca22f97fefe5f6c3cacd7e48a8256b4ac27b80f54f"
+  },
+  {
+    "lcsc": "C22966",
+    "mpn": "0603WAF2700T5E",
+    "package": "0603",
+    "description": "-55℃~+155℃ 100mW 270Ω 75V Thick Film Resistor ±1% ±100ppm/℃ 0603 Chip Resistor - Surface Mount ROHS",
+    "stock": 561962,
+    "catalogReceipt": "sha256:21a64b82fe96b0323c0f70ca22f97fefe5f6c3cacd7e48a8256b4ac27b80f54f"
+  },
+  {
+    "lcsc": "C12100",
+    "mpn": "SDCL1608C27NJTDF",
+    "package": "0603",
+    "description": "1.7GHz 12@100MHz 27nH 300mA 650mΩ ±5% 0603 Inductors (SMD) ROHS",
+    "stock": 421637,
+    "catalogReceipt": "sha256:21a64b82fe96b0323c0f70ca22f97fefe5f6c3cacd7e48a8256b4ac27b80f54f"
+  },
+  {
+    "lcsc": "C2930147",
+    "mpn": "FRC0603F2704TS",
+    "package": "0603",
+    "description": "-55℃~+155℃ 100mW 2.7MΩ 75V Thick Film Resistor ±1% ±100ppm/℃ 0603 Chip Resistor - Surface Mount ROHS",
+    "stock": 272007,
+    "catalogReceipt": "sha256:21a64b82fe96b0323c0f70ca22f97fefe5f6c3cacd7e48a8256b4ac27b80f54f"
+  },
+  {
+    "lcsc": "C2933137",
+    "mpn": "FRC0603F1272TS",
+    "package": "0603",
+    "description": "-55℃~+155℃ 100mW 12.7kΩ 75V Thick Film Resistor ±1% ±100ppm/℃ 0603 Chip Resistor - Surface Mount ROHS",
+    "stock": 221639,
+    "catalogReceipt": "sha256:21a64b82fe96b0323c0f70ca22f97fefe5f6c3cacd7e48a8256b4ac27b80f54f"
+  }
+]

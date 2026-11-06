@@ -1,0 +1,33 @@
+{
+  "author": "/root/final_review",
+  "at": "2026-11-06T07:02:44.606813+00:00",
+  "independentApproval": false,
+  "module": "eda/blocks/robust-routing-checks.ts",
+  "sourceSha256": "e9f519ea8753d019a5d6bf9992ef7cfe943732b34c62949c0219c8b32c88375c",
+  "testSha256": "ed246fc3cf1bac940c4c50f2feee580065659eb22df7eceb7837f7e0c001b08d",
+  "api": "async runRobustRoutingChecks(circuit) -> {issues,retries}",
+  "nativeVersion": "0.0.269",
+  "nativeCheckCount": 22,
+  "tests": {
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 8500.133411,
+    "actualFixtureMs": 6445.566883,
+    "strictTargetedTypecheck": "pass"
+  },
+  "coverage": [
+    "Normal native aggregate always first; asynchronous rejection awaited.",
+    "Only same exact known boolean failure reproduced by isolated native copper-pour shorts enables retry.",
+    "All22public checks mirror pinned native aggregate order/options; every check except shorts receives original unscaled circuit.",
+    "Shorts alone receives deep-cloned geometry in micrometres, retaining angles,ring bulges,IDs,nets and layers.",
+    "Real actual981 captured precision failure reproduced and recovered; remaining real native diagnostics still report failures.",
+    "Actual different-net pour-short control returns identical native diagnostics at both unit scales.",
+    "Unknown aggregate/isolated/later checker/scaled-oracle failures and changed native error schema reject."
+  ],
+  "limits": [
+    "Author implementation proof, not independent approval.",
+    "No clearance rule,geometry,netlist,source attribution or native other-check precision changed.",
+    "Not a native routing/fabrication pass; actual unresolved native violations remain blocking."
+  ]
+}

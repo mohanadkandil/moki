@@ -1,0 +1,609 @@
+{
+  "jobId": "3f7c7ea7-9af8-455e-8e13-2d6a862a25f8",
+  "status": "failed",
+  "createdAt": "2026-11-06T03:33:57.947Z",
+  "input": {
+    "kind": "plan",
+    "sourceSha256": "98980512a0bc2d45f885795948bcc96d97ca5441f75817281f99237b189370b2",
+    "plan": {
+      "schema": "moki.plan/1",
+      "title": "RP2040 DC motor controller — qualified5V USB state",
+      "layers": 2,
+      "blocks": [
+        {
+          "inst": "rp",
+          "block": "rp2040-minimal",
+          "version": 4,
+          "params": {}
+        },
+        {
+          "inst": "motor",
+          "block": "dc-motor-drv8833",
+          "version": 2,
+          "params": {}
+        }
+      ],
+      "links": [
+        {
+          "from": "rp.VBUS",
+          "to": "motor.VM"
+        },
+        {
+          "from": "rp.GND",
+          "to": "motor.GND"
+        },
+        {
+          "from": "rp.GP14",
+          "to": "motor.IN1"
+        },
+        {
+          "from": "rp.GP15",
+          "to": "motor.IN2"
+        }
+      ],
+      "sections": [
+        {
+          "id": "rp",
+          "title": "RP2040 USB core",
+          "purpose": "RP2040, QSPI flash, clock, USB and core supply",
+          "insts": [
+            "rp"
+          ],
+          "notes": [
+            "USB supply must provide known5V1.5A; Arduino mbed core and code-owned ARM toolchain override.",
+            "No external motor, physical operating state or fabrication qualification claimed."
+          ],
+          "reference": {
+            "lcsc": "C2040",
+            "datasheetUrl": "https://datasheets.raspberrypi.com/rp2040/hardware-design-with-rp2040.pdf",
+            "page": 14,
+            "quote": "Complete schematic of the minimal board",
+            "figure": "11"
+          }
+        },
+        {
+          "id": "motor",
+          "title": "DRV8833 DC motor",
+          "purpose": "BridgeA PWM, current-sense and motor connector",
+          "insts": [
+            "motor"
+          ],
+          "notes": [
+            "GP14 and GP15 support PWM. Motor is external and unqualified.",
+            "205mA typical/505mA peak supply reservation is an author estimate, not a stall guarantee.",
+            "Single bridgeA adaptation per TI pages9–11; bridgeB inputs/sense grounded, outputs unused. Layout figure is a reference, not an exact application schematic."
+          ],
+          "reference": {
+            "lcsc": "C50506",
+            "datasheetUrl": "https://www.ti.com/lit/ds/symlink/drv8833.pdf",
+            "page": 15,
+            "quote": "Recommended Layout Example",
+            "figure": "10"
+          }
+        }
+      ],
+      "app": {
+        "source": "#include <Arduino.h>\n#include \"pins.h\"\nvoid setup() {\n  digitalWrite(PIN_MOTOR_IN1, LOW);\n  digitalWrite(PIN_MOTOR_IN2, LOW);\n  pinMode(PIN_MOTOR_IN1, OUTPUT);\n  pinMode(PIN_MOTOR_IN2, OUTPUT);\n  delay(2);\n  analogWrite(PIN_MOTOR_IN1, 0);\n  analogWrite(PIN_MOTOR_IN2, 0);\n}\nvoid loop() { delay(20); }\n"
+      }
+    }
+  },
+  "cache": "miss",
+  "stages": [
+    {
+      "name": "codegen",
+      "status": "done",
+      "ms": 79.358755,
+      "note": "Validated JSON plan; no author TSX is executed"
+    },
+    {
+      "name": "erc",
+      "status": "done",
+      "ms": 0,
+      "note": "Block has not passed independent promotion review; Block has not passed independent promotion review; USB peripheral relies on an external host through the declared passive connector"
+    },
+    {
+      "name": "power",
+      "status": "done",
+      "ms": 0,
+      "note": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+    },
+    {
+      "name": "spice",
+      "status": "done",
+      "ms": 15.720341000000019,
+      "note": "No applicable SPICE profiles declared; electrical behavior is not simulated"
+    },
+    {
+      "name": "verify",
+      "status": "done",
+      "ms": 0,
+      "note": ""
+    },
+    {
+      "name": "review",
+      "status": "done",
+      "ms": 0,
+      "note": ""
+    },
+    {
+      "name": "codegen",
+      "status": "done",
+      "ms": 2535.753208
+    },
+    {
+      "name": "placement",
+      "status": "done",
+      "ms": 102.78206500000033
+    },
+    {
+      "name": "svg",
+      "status": "done",
+      "ms": 4107.761101000001
+    },
+    {
+      "name": "fanout",
+      "status": "done",
+      "ms": 3005.448065999999
+    },
+    {
+      "name": "render",
+      "status": "done",
+      "ms": 1201.0880530000013
+    },
+    {
+      "name": "route",
+      "status": "done",
+      "ms": 147320.013305
+    },
+    {
+      "name": "gltf",
+      "status": "done",
+      "ms": 4907.571564000013
+    },
+    {
+      "name": "fab",
+      "status": "done",
+      "ms": 1528.4377090000198
+    },
+    {
+      "name": "drc",
+      "status": "failed",
+      "ms": 0,
+      "note": "Port [U1.QSPI_SD1] is not connected to net [QSPI_SD1] by a PCB trace.; PCB trace .U1 > .pin56 to net.QSPI_SS overlaps with pcb_via \"unnamed via\" (accidental contact); PCB trace .U1 > .pin56 to net.QSPI_SS is too close to .U1 > .pin23 to net.VCORE (gap: 0.017mm); PCB trace .U2 > .pin2 to net.QSPI_SD1 overlaps with .U1 > .pin51 to net.QSPI_SD3 (accidental contact); PCB trace .U1 > .pin23 to net.VCORE overlaps with pcb_via \"unnamed via\" (accidental contact); PCB trace .U1 > .pin23 to net.VCORE is too close to .U1 > .pin26 to net.RUN (gap: 0.112mm); Via unnamed via and trace .U1 > .pin46 to net.USB_DM are too close (clearance: 0.054mm, minimum: 0.127mm); Via unnamed via and trace .U1 > .pin22 to net.V3V3 are too close (clearance: 0.093mm, minimum: 0.127mm); Via unnamed via and pad R1.pin1 are too close (clearance: 0.073mm, minimum: 0.127mm); Via unnamed via and pad R1.pin2 are too close (clearance: 0.116mm, minimum: 0.127mm); Trace [.U2 > .pin2 to net.QSPI_SD1] has dangling endpoint at (-4.95, 3.18)"
+    }
+  ],
+  "totalMs": 168041.759636,
+  "drc": {
+    "checked": true,
+    "errors": [
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [U1.QSPI_SD1] is not connected to net [QSPI_SD1] by a PCB trace."
+      },
+      {
+        "type": "pcb_trace_error",
+        "message": "PCB trace .U1 > .pin56 to net.QSPI_SS overlaps with pcb_via \"unnamed via\" (accidental contact)"
+      },
+      {
+        "type": "pcb_trace_error",
+        "message": "PCB trace .U1 > .pin56 to net.QSPI_SS is too close to .U1 > .pin23 to net.VCORE (gap: 0.017mm)"
+      },
+      {
+        "type": "pcb_trace_error",
+        "message": "PCB trace .U2 > .pin2 to net.QSPI_SD1 overlaps with .U1 > .pin51 to net.QSPI_SD3 (accidental contact)"
+      },
+      {
+        "type": "pcb_trace_error",
+        "message": "PCB trace .U1 > .pin23 to net.VCORE overlaps with pcb_via \"unnamed via\" (accidental contact)"
+      },
+      {
+        "type": "pcb_trace_error",
+        "message": "PCB trace .U1 > .pin23 to net.VCORE is too close to .U1 > .pin26 to net.RUN (gap: 0.112mm)"
+      },
+      {
+        "type": "pcb_via_trace_clearance_error",
+        "message": "Via unnamed via and trace .U1 > .pin46 to net.USB_DM are too close (clearance: 0.054mm, minimum: 0.127mm)"
+      },
+      {
+        "type": "pcb_via_trace_clearance_error",
+        "message": "Via unnamed via and trace .U1 > .pin22 to net.V3V3 are too close (clearance: 0.093mm, minimum: 0.127mm)"
+      },
+      {
+        "type": "pcb_pad_pad_clearance_error",
+        "message": "Via unnamed via and pad R1.pin1 are too close (clearance: 0.073mm, minimum: 0.127mm)"
+      },
+      {
+        "type": "pcb_pad_pad_clearance_error",
+        "message": "Via unnamed via and pad R1.pin2 are too close (clearance: 0.116mm, minimum: 0.127mm)"
+      },
+      {
+        "type": "pcb_trace_error",
+        "message": "Trace [.U2 > .pin2 to net.QSPI_SD1] has dangling endpoint at (-4.95, 3.18)"
+      }
+    ],
+    "warnings": [
+      {
+        "type": "source_refdes_convention_warning",
+        "message": "The \"J\" prefix is being used with a <chip />, try using it with a <connector /> or <jumper />"
+      },
+      {
+        "type": "source_refdes_convention_warning",
+        "message": "The \"J\" prefix is being used with a <chip />, try using it with a <connector /> or <jumper />"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "U1 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "U4 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "U4 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on U4 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "J1 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "J1 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on J1 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "U5 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "J2 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "J2 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on J2 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "pcb_connector_not_in_accessible_orientation_warning",
+        "message": "J1 is inferred to face y- from its cable insertion center because no explicit footprint insertionDirection is defined, but should face y+ so the connector is accessible from the board edge. Set insertionDirection on the <footprint> to specify the actual direction in the footprint's unrotated orientation; for example, <footprint insertionDirection=\"from_above\"> for a connector accessed from above the PCB (+Z)."
+      },
+      {
+        "type": "pcb_connector_not_in_accessible_orientation_warning",
+        "message": "J2 is inferred to face y+ from its cable insertion center because no explicit footprint insertionDirection is defined, but should face x- so the connector is accessible from the board edge. Set insertionDirection on the <footprint> to specify the actual direction in the footprint's unrotated orientation; for example, <footprint insertionDirection=\"from_above\"> for a connector accessed from above the PCB (+Z)."
+      }
+    ]
+  },
+  "board": {
+    "widthMm": 40,
+    "heightMm": 60,
+    "layers": 2,
+    "traceCount": 118,
+    "viaCount": 121
+  },
+  "artifacts": {
+    "circuit.json": {
+      "url": "/api/board/jobs/3f7c7ea7-9af8-455e-8e13-2d6a862a25f8/files/circuit.json",
+      "bytes": 1805297,
+      "sha256": "74cd7ea5f65b8f1b380a43f53a4c32d35b725ea2609bcdb06e3e9e27bc48030e",
+      "kind": "json"
+    },
+    "schematic.svg": {
+      "url": "/api/board/jobs/3f7c7ea7-9af8-455e-8e13-2d6a862a25f8/files/schematic.svg",
+      "bytes": 413799,
+      "sha256": "1af9602506f91b3e709c7075a73992f31ecc4060ad4d835a702cc0d9eecd80d6",
+      "kind": "svg"
+    },
+    "pcb.svg": {
+      "url": "/api/board/jobs/3f7c7ea7-9af8-455e-8e13-2d6a862a25f8/files/pcb.svg",
+      "bytes": 973790,
+      "sha256": "4979c2a5d51e1049fd0f3c4f53d225553b7d5da2c2e6c900ebf1a01b59eff48f",
+      "kind": "svg"
+    },
+    "board.glb": {
+      "url": "/api/board/jobs/3f7c7ea7-9af8-455e-8e13-2d6a862a25f8/files/board.glb",
+      "bytes": 13481404,
+      "sha256": "e90d40dbbf21f36b48d4805de086d3cf09e07d5fd1af57437994769632b7aeae",
+      "kind": "glb"
+    },
+    "gerbers.zip": {
+      "url": "/api/board/jobs/3f7c7ea7-9af8-455e-8e13-2d6a862a25f8/files/gerbers.zip",
+      "bytes": 127289,
+      "sha256": "64d96759a9d3664794991834582c2d993b422261378e59c50b08c5946310d3d2",
+      "kind": "zip"
+    },
+    "kicad.zip": {
+      "url": "/api/board/jobs/3f7c7ea7-9af8-455e-8e13-2d6a862a25f8/files/kicad.zip",
+      "bytes": 317575,
+      "sha256": "0b482f1cfc3708729185d331955cccabfd511479e0201b0ec042ad37d7f28f15",
+      "kind": "zip"
+    },
+    "bom.csv": {
+      "url": "/api/board/jobs/3f7c7ea7-9af8-455e-8e13-2d6a862a25f8/files/bom.csv",
+      "bytes": 1999,
+      "sha256": "d3caacd3ca342d231656b98dc8ecd8b00455de951189d9af17d170ad5ea03dd7",
+      "kind": "csv"
+    },
+    "pnp.csv": {
+      "url": "/api/board/jobs/3f7c7ea7-9af8-455e-8e13-2d6a862a25f8/files/pnp.csv",
+      "bytes": 2294,
+      "sha256": "a856561e70f69175744bbe52d973c59b5c12b242b6e93aff212de7cdc3c4c67d",
+      "kind": "csv"
+    },
+    "receipt.json": {
+      "url": "/api/board/jobs/3f7c7ea7-9af8-455e-8e13-2d6a862a25f8/files/receipt.json",
+      "bytes": 16257,
+      "sha256": "989ca92ea3547c78dd94378b26602f3ad4f2d1fa51ab8677294fea284c4d6b32",
+      "kind": "json"
+    },
+    "plan.json": {
+      "url": "/api/board/jobs/3f7c7ea7-9af8-455e-8e13-2d6a862a25f8/files/plan.json",
+      "bytes": 2392,
+      "sha256": "4236366d68a4952f322f14f00f77b0a8f941688094abe4a54243f6643ade5a18",
+      "kind": "json"
+    },
+    "plan-graph.json": {
+      "url": "/api/board/jobs/3f7c7ea7-9af8-455e-8e13-2d6a862a25f8/files/plan-graph.json",
+      "bytes": 4364690,
+      "sha256": "14270d2eecbe5c53291275bc59e2694f9d5ae7b994c8960d81e4cc3ce962e381",
+      "kind": "json"
+    },
+    "gates.json": {
+      "url": "/api/board/jobs/3f7c7ea7-9af8-455e-8e13-2d6a862a25f8/files/gates.json",
+      "bytes": 3714,
+      "sha256": "be1c1629867b9572fea3788ce779caea2b92e76db7f3afe8bf08c8b7fe1c7c55",
+      "kind": "json"
+    },
+    "spice.json": {
+      "url": "/api/board/jobs/3f7c7ea7-9af8-455e-8e13-2d6a862a25f8/files/spice.json",
+      "bytes": 327,
+      "sha256": "fdb81edf0829c5dc0d24fc692b7257e11d6d4b8c8c0bf85a307a545979da56c6",
+      "kind": "json"
+    },
+    "verification.json": {
+      "url": "/api/board/jobs/3f7c7ea7-9af8-455e-8e13-2d6a862a25f8/files/verification.json",
+      "bytes": 69,
+      "sha256": "f2d8714a7244d59bd5a4c986bbf75b38ebf4a37ede0fb9396861ac444e594bd6",
+      "kind": "json"
+    },
+    "schematic-circuit.json": {
+      "url": "/api/board/jobs/3f7c7ea7-9af8-455e-8e13-2d6a862a25f8/files/schematic-circuit.json",
+      "bytes": 493262,
+      "sha256": "0e78540e370bf85835b9522598b20b3aca278ba908538f91352dfe7962a7a874",
+      "kind": "json"
+    },
+    "import-map.json": {
+      "url": "/api/board/jobs/3f7c7ea7-9af8-455e-8e13-2d6a862a25f8/files/import-map.json",
+      "bytes": 25098,
+      "sha256": "fe7591580faca71180eb31308143fbbc2ae051be193b47cf78ff5ddfec4257c1",
+      "kind": "json"
+    },
+    "netlist-check.json": {
+      "url": "/api/board/jobs/3f7c7ea7-9af8-455e-8e13-2d6a862a25f8/files/netlist-check.json",
+      "bytes": 32,
+      "sha256": "1b237b6d36a5cf2f8b7272800f91f3e98f39caafdd95fc3bd739ecfb75b0d664",
+      "kind": "json"
+    },
+    "placement.json": {
+      "url": "/api/board/jobs/3f7c7ea7-9af8-455e-8e13-2d6a862a25f8/files/placement.json",
+      "bytes": 12331,
+      "sha256": "366b88dcea19d26308316ae8b7d22ab0da690602e6dc0559df05f8d885507234",
+      "kind": "json"
+    },
+    "placement-check.json": {
+      "url": "/api/board/jobs/3f7c7ea7-9af8-455e-8e13-2d6a862a25f8/files/placement-check.json",
+      "bytes": 1587,
+      "sha256": "fe48cd5abed32c2b24e01b0d66b16745ad34afa074688fc04d227c958bf36942",
+      "kind": "json"
+    },
+    "native-async-errors.json": {
+      "url": "/api/board/jobs/3f7c7ea7-9af8-455e-8e13-2d6a862a25f8/files/native-async-errors.json",
+      "bytes": 32,
+      "sha256": "29bffd8c93a762daf2b9740027793a4ffef823ddd839405684bed68c614f11e3",
+      "kind": "json"
+    },
+    "native-routing.json": {
+      "url": "/api/board/jobs/3f7c7ea7-9af8-455e-8e13-2d6a862a25f8/files/native-routing.json",
+      "bytes": 474845,
+      "sha256": "227780409867dbea3143155e733b7d1adac6f252ab787f708ce435811d384999",
+      "kind": "json"
+    }
+  },
+  "toolVersions": {
+    "bun": "1.4.4",
+    "toolchainLockSha256": "03c17de90a541fb18d9c0551e9d48079d505c8da1b327b521149c39ce2bdfe92",
+    "mokiRendererSha256": "0241360186359759ab4eb49087dc2026f5d13d1b9279bc2a7a9c78b97e59ff2d",
+    "blocks/build.ts": "24c062f7da1edefe478c128fcd9c8140092249eecc71a8466fd7b1b13a20cc37",
+    "blocks/auto-placement.ts": "318f1aac873bf211309414939c4f9dc66c5c3ab054590e17b1e58ac38304f5d5",
+    "blocks/sensor-exits.ts": "eacb59f86b9b0b2897957f30d068c4675be4ac316de87f55227027c3f13ef7e2",
+    "blocks/repair-saved-sources.ts": "aca88c219f1441cf7e3657beb2de582f88686eec1dbd20b51ec3e45d7b15be68",
+    "blocks/ground-plane.ts": "f13b221872ba7198c2f1604e52b3b786e5d81732a6b4d2fbb13517a741acab0a",
+    "blocks/rp-clock.ts": "2c44de68aff62c6835a288a4b0c14cb0a11b2616656c47a0be6eb887227eb04e",
+    "blocks/grouped-breakouts.ts": "60fa24703cb707b9deaacd3e059077977ac1e8cf470669276558831784bb2e9b",
+    "blocks/copper-netlist.ts": "47a5b43a503ed93d229e40e7a4c0dac68dd3483f874e6fe6ffa0fbf6cf335f3b",
+    "blocks/debug-source.ts": "f251852b6dc2a57dd45e104dbdf80a4a2d0c442cb190afc320272259f6d87e1a",
+    "blocks/stitch-ground.ts": "8ebe7d596838943857c6239ddbc0dfe49423d71a83950ed381bd663ba3f4d300",
+    "blocks/imported.ts": "b6e315d31e689feb5068656b7545a24de52a2389ffc91be44d4f6e543beb0919",
+    "blocks/legalize.ts": "b1d962b9cbbf6d79a3af2d5e2d1eff9da0ca4fcb5ce72d660b6d8d1ee424a2fa",
+    "blocks/schematic.ts": "91891ea4c205d895f94b336c57ac74283274cc764f9c4c1d55e2b54dbc7b7cd5",
+    "../src/blocks/native-netlist.ts": "a83edcdcf74aca694dd340a73c87ff065bf22adefa7a76efc8d5d55364ea964d",
+    "../src/blocks/native-ports.ts": "4bc103d7c9bffdadb1f41aee033e3e697070f583265016f2df2d2c213a674a4f",
+    "../src/blocks/native-placement.ts": "785600eb36bf87b4ac249dbab1f3e15829807ea2b29dd8c304852949f662fcc8",
+    "../src/board/chip-firmware-worker.ts": "5045c7559571a07c8189f48cc4a0824c3bb62dd0e25427ff56471eb8fe18b21c",
+    "../src/board/bom.ts": "3eb90de40496ae439a9b4fdf8bd5816dc59e8b5d29d97b72740a446928335022",
+    "../src/circuit/catalog.ts": "f9a71d535ac1c39ece54337532e1662d3cdb95356134f548c1345c555ca1b51c",
+    "models/render-board.ts": "0ae3ad9913ed812f943bcb5e97f07de2dc39a5a8c9634bb8d175cf116a1e15b1",
+    "models/catalog-models.ts": "5bf9dba5c67d0e1239c33dc4874be44867226c08fb287dc21e63fb17895015bc",
+    "models/glb.ts": "ee795aaf36c5fa0f0bd94484c574f69cd14c308ee72d4e3fd0b6855dd4c14c80",
+    "models/compact-glb.ts": "76504398c0e871e0de9ab55d4e553a4401d7466b6c1750eca4cb856e212bbda4",
+    "apply-layout.ts": "5429544caab8d4ba86a0b4b269ce01c84aa47c0f0cc568fa6602dea23d40c6ff",
+    "edit-router.ts": "c607cef0777632dd2584a8132e684314e6452cc7195c2a93797d3abb9204a76c",
+    "blocks/router.ts": "a71fadbd7d450ffba58528e5fbdcf9a9909219e2bf5d662f0ca18743e392bcda",
+    "blocks/fanout.ts": "83022aaaecc5be4e529398da0dbc241a5a0b9b39881f7baba18a0f02ee44b7df",
+    "../src/blocks/fanout.ts": "f4b34d3e90ce124d2a4dcf1de44756958dc2d10f70be6e3200547c95e22221a1",
+    "../src/blocks/router-planning.ts": "ffba1d1a7440c7ff9c7a2a6cafaa0323632b3812ae3eb313313f6166f8cf06de",
+    "../src/board/router-planning.ts": "ffa9a86aded261477102d290e6f6faf3cad2a8c299e1990210027726b8d78504",
+    "../src/board/edits.ts": "ff1061d2213db22acacf7ac26c2d097c97a4be81ffe92d8eaedb262c7c6f2bf0",
+    "enclosure/module-preview.ts": "646bb819b10f708851a820b5159b977c67300cf34b0a3d3f4d84b9a5d7c65f19",
+    "enclosure/module-mech.ts": "8054af43a5ba30428ac832464b43cb90dab5392a6933368b7fe56cc38e1a8103",
+    "@jscad/modeling": "2.13.0",
+    "@tscircuit/capacity-autorouter": "0.0.1037",
+    "@tscircuit/checks": "0.0.269",
+    "@tscircuit/circuit-json-util": "0.0.131",
+    "@tscircuit/core": "0.0.2266",
+    "@tscircuit/create-fdm-enclosure": "0.0.7",
+    "@tscircuit/footprinter": "0.0.450",
+    "@tscircuit/math-utils": "0.0.38",
+    "@tscircuit/ngspice-spice-engine": "0.0.20",
+    "@tscircuit/props": "0.0.718",
+    "circuit-json": "0.0.543",
+    "circuit-json-to-bom-csv": "0.0.28",
+    "circuit-json-to-gerber": "0.0.122",
+    "circuit-json-to-gltf": "0.0.164",
+    "circuit-json-to-kicad": "0.0.267",
+    "circuit-json-to-pnp-csv": "0.0.21",
+    "circuit-to-svg": "0.0.455",
+    "easyeda": "0.0.391",
+    "fflate": "0.8.3",
+    "jscad-planner": "0.0.14",
+    "kicad-to-circuit-json": "0.0.142",
+    "polygon-clipping": "0.15.7",
+    "react": "19.3.1",
+    "schematic-symbols": "0.0.251",
+    "tscircuit": "0.0.3075"
+  },
+  "gates": [
+    {
+      "gate": "erc",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "rp2040-minimal",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "dc-motor-drv8833",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "usb-external-host",
+          "severity": "warning",
+          "where": "rp.USB, rp.USB_HOST",
+          "message": "USB peripheral relies on an external host through the declared passive connector"
+        }
+      ]
+    },
+    {
+      "gate": "power",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "thermal-assumption",
+          "severity": "warning",
+          "where": "rp.V3V3",
+          "message": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+        }
+      ]
+    },
+    {
+      "gate": "spice",
+      "inputHash": "7416fdaaeebaa679cd9332e3beb2f2b9e3ceac9b748be02a0b20ae9a1fdb045e",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "spice-coverage",
+          "severity": "warning",
+          "message": "No applicable SPICE profiles declared; electrical behavior is not simulated"
+        }
+      ],
+      "measurements": []
+    },
+    {
+      "gate": "verify",
+      "ok": true,
+      "issues": [],
+      "results": []
+    },
+    {
+      "gate": "review",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "gate": "drc",
+      "ok": false,
+      "issues": [
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [U1.QSPI_SD1] is not connected to net [QSPI_SD1] by a PCB trace."
+        },
+        {
+          "rule": "pcb_trace_error",
+          "severity": "error",
+          "message": "PCB trace .U1 > .pin56 to net.QSPI_SS overlaps with pcb_via \"unnamed via\" (accidental contact)"
+        },
+        {
+          "rule": "pcb_trace_error",
+          "severity": "error",
+          "message": "PCB trace .U1 > .pin56 to net.QSPI_SS is too close to .U1 > .pin23 to net.VCORE (gap: 0.017mm)"
+        },
+        {
+          "rule": "pcb_trace_error",
+          "severity": "error",
+          "message": "PCB trace .U2 > .pin2 to net.QSPI_SD1 overlaps with .U1 > .pin51 to net.QSPI_SD3 (accidental contact)"
+        },
+        {
+          "rule": "pcb_trace_error",
+          "severity": "error",
+          "message": "PCB trace .U1 > .pin23 to net.VCORE overlaps with pcb_via \"unnamed via\" (accidental contact)"
+        },
+        {
+          "rule": "pcb_trace_error",
+          "severity": "error",
+          "message": "PCB trace .U1 > .pin23 to net.VCORE is too close to .U1 > .pin26 to net.RUN (gap: 0.112mm)"
+        },
+        {
+          "rule": "pcb_via_trace_clearance_error",
+          "severity": "error",
+          "message": "Via unnamed via and trace .U1 > .pin46 to net.USB_DM are too close (clearance: 0.054mm, minimum: 0.127mm)"
+        },
+        {
+          "rule": "pcb_via_trace_clearance_error",
+          "severity": "error",
+          "message": "Via unnamed via and trace .U1 > .pin22 to net.V3V3 are too close (clearance: 0.093mm, minimum: 0.127mm)"
+        },
+        {
+          "rule": "pcb_pad_pad_clearance_error",
+          "severity": "error",
+          "message": "Via unnamed via and pad R1.pin1 are too close (clearance: 0.073mm, minimum: 0.127mm)"
+        },
+        {
+          "rule": "pcb_pad_pad_clearance_error",
+          "severity": "error",
+          "message": "Via unnamed via and pad R1.pin2 are too close (clearance: 0.116mm, minimum: 0.127mm)"
+        },
+        {
+          "rule": "pcb_trace_error",
+          "severity": "error",
+          "message": "Trace [.U2 > .pin2 to net.QSPI_SD1] has dangling endpoint at (-4.95, 3.18)"
+        }
+      ]
+    }
+  ],
+  "error": "drc: Port [U1.QSPI_SD1] is not connected to net [QSPI_SD1] by a PCB trace.; PCB trace .U1 > .pin56 to net.QSPI_SS overlaps with pcb_via \"unnamed via\" (accidental contact); PCB trace .U1 > .pin56 to net.QSPI_SS is too close to .U1 > .pin23 to net.VCORE (gap: 0.017mm); PCB trace .U2 > .pin2 to net.QSPI_SD1 overlaps with .U1 > .pin51 to net.QSPI_SD3 (accidental contact); 7 more issues in gates.json"
+}

@@ -1,0 +1,40 @@
+{
+  "artifacts": [
+    {
+      "source": "var/board-jobs-test-chip/e7a97ca9-ae26-463f-914a-71ccf257a6c7/pre-pour-circuit.json",
+      "file": "pre-pour-circuit.json",
+      "bytes": 851331,
+      "sha256": "4ba2f3ca8967dae13dbeb86c7cb0baab033eccaff21c123c7a5ac90561b32341"
+    },
+    {
+      "source": "var/board-jobs-test-chip/e7a97ca9-ae26-463f-914a-71ccf257a6c7/plan-graph.json",
+      "file": "plan-graph.json",
+      "bytes": 4376093,
+      "sha256": "9eb07813e73f9d7a5f9c67ec48f0c0faceb9d122f32111d894f18c67250e9965"
+    },
+    {
+      "source": "var/board-jobs-test-chip/e7a97ca9-ae26-463f-914a-71ccf257a6c7/import-map.json",
+      "file": "import-map.json",
+      "bytes": 26264,
+      "sha256": "0bd48dea7683cd6dba656fc8a46050a06445378f1ea3cbcf61eb6dc121bd5ba3"
+    },
+    {
+      "source": "var/board-jobs-test-chip/e7a97ca9-ae26-463f-914a-71ccf257a6c7/native-exit-phase.json",
+      "file": "native-exit-phase.json",
+      "bytes": 64676,
+      "sha256": "217262554133dec01353a4adfdf97bcf8230b561af03c9b8f3aebf9c723a9b04"
+    },
+    {
+      "source": "var/board-jobs-test-chip/e7a97ca9-ae26-463f-914a-71ccf257a6c7/router-input.json",
+      "file": "router-input.json",
+      "bytes": 646735,
+      "sha256": "d15b425602e52744ded203d02669ff0e24d09d48e4e2f2d9ebd540b0caeb086f"
+    },
+    {
+      "source": "var/board-jobs-test-chip/e7a97ca9-ae26-463f-914a-71ccf257a6c7/native-phase-output-2.json",
+      "file": "native-phase-output-2.json",
+      "bytes": 690429,
+      "sha256": "b0454fc66dcc6b489781cb6bb9c507dc5f724da0afda21353367d1ed89c282cd"
+    }
+  ]
+}

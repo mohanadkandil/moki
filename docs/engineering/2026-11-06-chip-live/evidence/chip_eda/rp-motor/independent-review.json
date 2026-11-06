@@ -1,0 +1,59 @@
+{
+  "ok": true,
+  "by": "independent engineering reviewer /root/final_review",
+  "inputHash": "7416fdaaeebaa679cd9332e3beb2f2b9e3ceac9b748be02a0b20ae9a1fdb045e",
+  "findings": [
+    {
+      "status": "pass",
+      "scope": "pre-layout electrical review",
+      "message": "RP2040 supply/core-regulator, QSPI flash, 12MHz crystal, RUN/BOOTSEL, USB and physical pin mappings agree with the recorded manufacturer references. GP14/GP15 are PWM-capable physical pins17/18 and connect to DRV8833 AIN1/AIN2. Current exact plan ERC and power gates pass."
+    },
+    {
+      "status": "pass",
+      "scope": "single bridge A adaptation",
+      "message": "DRV8833PWPR physical pin map, exposed-ground pad, VCP-to-VM 10nF, VINT-to-ground 2.2uF, VM bypass/bulk, 47k sleep pull-up, 0.51ohm sense resistor and unused bridge-B terminations are consistent with TI pages3-11. The cited page15 Figure10 is explicitly a layout reference rather than a claim to reproduce the parallel-bridge application circuit."
+    },
+    {
+      "status": "condition",
+      "scope": "qualified supply and external motor",
+      "message": "Approval applies only to the declared known5V/1.5A USB-source state and bounded author load reservations. External motor startup/stall, regeneration/braking, effective capacitor values, thermal behavior and hardware performance remain unqualified. The current-limit tolerance and blanking interval are not a hard instantaneous motor-current guarantee."
+    },
+    {
+      "status": "condition",
+      "scope": "downstream gates",
+      "message": "This receipt permits layout evaluation only. It does not attest native placement/routing/DRC, copper continuity, USB impedance/return path, clock startup, manufacturing or hardware. Firmware compilation is a separate gate; schematicHash excludes app source and board dimensions."
+    },
+    {
+      "status": "pass",
+      "scope": "immutable revision2 amendment",
+      "message": "Exact v1-to-v2 comparison changes only version/hash, RP crystal loadCapacitancePf10 from actual Abracon specification, and motor omitImportedVias with TI correction citation. All electrical nets, values, part identities and pin maps are unchanged. Imported motor geometry contains17 SMT lands plus4 optional vias; nativePart removes only via elements, and supplied routing-disabled diagnostic retains all17 native lands including PowerPAD. This does not qualify the resulting thermal design or native routing."
+    },
+    {
+      "status": "pass",
+      "scope": "RP revision3 placement-only amendment",
+      "message": "Exact comparison confirms only X1/R1/C15/C16/C3/C10 placement hints and RP revision/hash changed from revision2. Nets, values, MPNs, supplier receipts, physical pin maps, citations and all electrical constraints are unchanged; motor remains revision2. Current exact-plan ERC and power gates pass. This permits another layout attempt; native clock path length/zero-via, clearance, copper and thermal gates remain unproven."
+    },
+    {
+      "status": "pass",
+      "scope": "revision4 exact delta",
+      "message": "Independent runtime comparison RP3\u2192RP4 confirms only R1 and C3 placement hints,revision and contentHash changed. All other part values,nets,physical pins,catalog identities,ports,source references and firmware declarations compare equal. R1local(-.3,-5.5,270)\u2192(1,-5.5,270), C3local(2,-5,0)\u2192(5.5,0,90). Existing author7mm origin-distance constraint remains unchanged and C3origin distance5.5mm fits."
+    },
+    {
+      "status": "pass",
+      "scope": "fresh exact-plan preflight",
+      "message": "Current RP4/motor2 plan independently resolves to RP hashcf9273e0368b198270d03a042def0e49b784b9e1573b08e109f0fda65bcb832b; actual schematicHash matches this receipt. Fresh public ERC and power both pass with zero error issues."
+    },
+    {
+      "status": "condition",
+      "scope": "physical placement and clock acceptance",
+      "message": "This amendment does not qualify clock routing or decoupling loop performance. C3moved away from its previous native supply-pad region; actual short pad-to-pad bypass loop/return,voltage transient/effective capacitance and clock startup remain downstream layout/hardware requirements. Native10mm/zero-via oscillator limits,clearance and copper checks must still pass."
+    }
+  ],
+  "at": "2026-11-06T02:28:34.815905+00:00",
+  "scope": "RP2040 revision4 two-placement amendment to inherited qualified USB-state electrical review; pre-layout only",
+  "inheritedReview": {
+    "path": "independent-review-rp3.json",
+    "inputHash": "10ccd49e088d6fae211d1a5dfc93da039da09901decfaf0a3fad072c95db6a67",
+    "by": "independent engineering reviewer /root/review_models"
+  }
+}

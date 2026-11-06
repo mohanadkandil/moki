@@ -1,0 +1,17 @@
+{
+  "pio": {
+    "platform": "platformio/raspberrypi@1.20.0",
+    "board": "pico",
+    "framework": "arduino",
+    "environment": "rp2040"
+  },
+  "applicationSha256": "1d85818f71aab4a1bd757dcea83b94e631083032d2fa2e27d713ebbf73603283",
+  "projectSha256": "41a0d57b047664afc7e09ec0ab4561a204f2fe442b4cf952229d3f8b66a233fb",
+  "files": [
+    "platformio.ini",
+    "include/pins.h",
+    "src/main.cpp",
+    "README.md"
+  ],
+  "note": "Pure project generation preview only; native routing and actual sandbox compile are separate checks."
+}

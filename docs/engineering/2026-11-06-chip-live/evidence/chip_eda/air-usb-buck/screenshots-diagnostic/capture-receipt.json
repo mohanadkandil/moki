@@ -1,0 +1,37 @@
+{
+  "jobId": "448386df-0901-4ccf-b75c-07e610c8027a",
+  "status": "failed",
+  "scope": "Offline screenshots of the actual Moki job artifacts; no app UI/server capture and no reference artifacts substituted",
+  "captures": [
+    {
+      "name": "schematic",
+      "file": "schematic.png"
+    },
+    {
+      "name": "pcb-top",
+      "file": "pcb-top.png"
+    },
+    {
+      "name": "pcb-bottom",
+      "file": "pcb-bottom.png"
+    },
+    {
+      "name": "drc-failures",
+      "file": "drc-failures.png"
+    }
+  ],
+  "models": {
+    "sourceParts": 30,
+    "cadRecords": 30,
+    "declaredExternalModels": 30,
+    "missingCad": [],
+    "note": "Native job GLB uses declared importer models; dimensions, material fidelity and manufacturer STEP equivalence are not independently qualified."
+  },
+  "inspection": {
+    "status": "inspected",
+    "accepted": false,
+    "nativeErrors": 12,
+    "copperViewAnnotations": "Overlapping native text suppressed in Cu views only; exact errors shown in drc-failures.png and gates.json",
+    "sensorCopperCheck": true
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "gridMm": 0.000001,
+  "maxShiftMm": 7.03050770543404e-7,
+  "changedPoints": 1805,
+  "changedBarrels": 77,
+  "normalizedRuns": 61,
+  "source13Points": [
+    127,
+    72
+  ],
+  "fixedTraceCount": 47,
+  "fixedCuUnchanged": true,
+  "placement": {
+    "errors": [
+      {
+        "type": "pcb_placement_error",
+        "message": "Via hole at (-11.20mm, -2.44mm) overlaps SMD pad C3.pin2 at (-10.75mm, -2.05mm)"
+      },
+      {
+        "type": "pcb_placement_error",
+        "message": "Via hole at (-11.20mm, -0.54mm) overlaps SMD pad C5.pin1 at (-10.75mm, -0.45mm)"
+      },
+      {
+        "type": "pcb_placement_error",
+        "message": "Via hole at (-11.21mm, 0.10mm) overlaps SMD pad C5.pin1 at (-10.75mm, -0.45mm)"
+      },
+      {
+        "type": "pcb_placement_error",
+        "message": "Via hole at (-14.01mm, 2.71mm) overlaps SMD pad C6.pin2 at (-14.05mm, 2.75mm)"
+      },
+      {
+        "type": "pcb_placement_error",
+        "message": "Via hole at (-15.28mm, 3.19mm) overlaps SMD pad C6.pin1 at (-15.45mm, 2.75mm)"
+      },
+      {
+        "type": "pcb_placement_error",
+        "message": "Via hole at (-11.15mm, 0.75mm) overlaps SMD pad C5.pin2 at (-10.75mm, 0.95mm)"
+      },
+      {
+        "type": "pcb_placement_error",
+        "message": "Via hole at (-13.80mm, 25.77mm) overlaps SMD pad J1.VBUS1 at (-13.85mm, 25.42mm)"
+      },
+      {
+        "type": "pcb_placement_error",
+        "message": "Via hole at (-15.93mm, -2.55mm) overlaps SMD pad U1.GND at (-16.25mm, -2.75mm)"
+      },
+      {
+        "type": "pcb_placement_error",
+        "message": "Via hole at (-14.87mm, -2.55mm) overlaps SMD pad U1.GND at (-16.25mm, -2.75mm)"
+      },
+      {
+        "type": "pcb_placement_error",
+        "message": "Via hole at (-14.98mm, -4.32mm) overlaps SMD pad U1.GND at (-16.25mm, -2.75mm)"
+      }
+    ]
+  },
+  "routing": {
+    "error": "Error: source_net_13_0: Cannot complete boolean operation",
+    "stack": "Error: source_net_13_0: Cannot complete boolean operation\n    at convertCircuitJsonToFlattenJs (/home/sogo/design-skill-research/repos/moki/eda/node_modules/@tscircuit/checks/node_modules/@tscircuit/circuit-json-to-flattenjs/lib/convert.ts:260:33)\n    at checkCopperPourShorts (/home/sogo/design-skill-research/repos/moki/eda/node_modules/@tscircuit/checks/lib/check-copper-pour-shorts.ts:67:32)\n    at runAllRoutingChecks (/home/sogo/design-skill-research/repos/moki/eda/node_modules/@tscircuit/checks/lib/run-all-checks.ts:137:8)\n    at <anonymous> (/tmp/moki-precision-probe.mts:7:135)"
+  },
+  "viaInPadBefore": [
+    {
+      "type": "pcb_placement_error",
+      "message": "Via hole at (-11.20mm, -2.44mm) overlaps SMD pad C3.pin2 at (-10.75mm, -2.05mm)"
+    },
+    {
+      "type": "pcb_placement_error",
+      "message": "Via hole at (-11.20mm, -0.54mm) overlaps SMD pad C5.pin1 at (-10.75mm, -0.45mm)"
+    },
+    {
+      "type": "pcb_placement_error",
+      "message": "Via hole at (-11.21mm, 0.10mm) overlaps SMD pad C5.pin1 at (-10.75mm, -0.45mm)"
+    },
+    {
+      "type": "pcb_placement_error",
+      "message": "Via hole at (-14.01mm, 2.71mm) overlaps SMD pad C6.pin2 at (-14.05mm, 2.75mm)"
+    },
+    {
+      "type": "pcb_placement_error",
+      "message": "Via hole at (-15.28mm, 3.19mm) overlaps SMD pad C6.pin1 at (-15.45mm, 2.75mm)"
+    },
+    {
+      "type": "pcb_placement_error",
+      "message": "Via hole at (-11.15mm, 0.75mm) overlaps SMD pad C5.pin2 at (-10.75mm, 0.95mm)"
+    },
+    {
+      "type": "pcb_placement_error",
+      "message": "Via hole at (-13.80mm, 25.77mm) overlaps SMD pad J1.VBUS1 at (-13.85mm, 25.42mm)"
+    },
+    {
+      "type": "pcb_placement_error",
+      "message": "Via hole at (-15.93mm, -2.55mm) overlaps SMD pad U1.GND at (-16.25mm, -2.75mm)"
+    },
+    {
+      "type": "pcb_placement_error",
+      "message": "Via hole at (-14.87mm, -2.55mm) overlaps SMD pad U1.GND at (-16.25mm, -2.75mm)"
+    },
+    {
+      "type": "pcb_placement_error",
+      "message": "Via hole at (-14.98mm, -4.32mm) overlaps SMD pad U1.GND at (-16.25mm, -2.75mm)"
+    }
+  ],
+  "viaInPadAfter": [
+    {
+      "type": "pcb_placement_error",
+      "message": "Via hole at (-11.20mm, -2.44mm) overlaps SMD pad C3.pin2 at (-10.75mm, -2.05mm)"
+    },
+    {
+      "type": "pcb_placement_error",
+      "message": "Via hole at (-11.20mm, -0.54mm) overlaps SMD pad C5.pin1 at (-10.75mm, -0.45mm)"
+    },
+    {
+      "type": "pcb_placement_error",
+      "message": "Via hole at (-11.21mm, 0.10mm) overlaps SMD pad C5.pin1 at (-10.75mm, -0.45mm)"
+    },
+    {
+      "type": "pcb_placement_error",
+      "message": "Via hole at (-14.01mm, 2.71mm) overlaps SMD pad C6.pin2 at (-14.05mm, 2.75mm)"
+    },
+    {
+      "type": "pcb_placement_error",
+      "message": "Via hole at (-15.28mm, 3.19mm) overlaps SMD pad C6.pin1 at (-15.45mm, 2.75mm)"
+    },
+    {
+      "type": "pcb_placement_error",
+      "message": "Via hole at (-11.15mm, 0.75mm) overlaps SMD pad C5.pin2 at (-10.75mm, 0.95mm)"
+    },
+    {
+      "type": "pcb_placement_error",
+      "message": "Via hole at (-13.80mm, 25.77mm) overlaps SMD pad J1.VBUS1 at (-13.85mm, 25.42mm)"
+    },
+    {
+      "type": "pcb_placement_error",
+      "message": "Via hole at (-15.93mm, -2.55mm) overlaps SMD pad U1.GND at (-16.25mm, -2.75mm)"
+    },
+    {
+      "type": "pcb_placement_error",
+      "message": "Via hole at (-14.87mm, -2.55mm) overlaps SMD pad U1.GND at (-16.25mm, -2.75mm)"
+    },
+    {
+      "type": "pcb_placement_error",
+      "message": "Via hole at (-14.98mm, -4.32mm) overlaps SMD pad U1.GND at (-16.25mm, -2.75mm)"
+    }
+  ],
+  "sameViaInPadMessages": true
+}

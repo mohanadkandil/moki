@@ -1,0 +1,79 @@
+{
+  "scope": "Exact production all-net build guard extracted and evaluated with tiny stub-oracle results; no native solve",
+  "buildSha256": "1c11a011fcc9b20ba6d7969a8179caea75779c517d6ba7e50e61d288cf7ff41e",
+  "guardSha256": "896db951aab1be5c5215731bb5e5d76140318b7e47974768dc0a50da8917a20c",
+  "cases": [
+    {
+      "layers": 2,
+      "name": "pass",
+      "rejected": false
+    },
+    {
+      "layers": 2,
+      "name": "not-ok",
+      "rejected": true
+    },
+    {
+      "layers": 2,
+      "name": "unchecked",
+      "rejected": true
+    },
+    {
+      "layers": 2,
+      "name": "ground-only",
+      "rejected": true
+    },
+    {
+      "layers": 2,
+      "name": "missing-net",
+      "rejected": true
+    },
+    {
+      "layers": 2,
+      "name": "extra-net",
+      "rejected": true
+    },
+    {
+      "layers": 2,
+      "name": "missing-results",
+      "rejected": true
+    },
+    {
+      "layers": 4,
+      "name": "pass",
+      "rejected": false
+    },
+    {
+      "layers": 4,
+      "name": "not-ok",
+      "rejected": true
+    },
+    {
+      "layers": 4,
+      "name": "unchecked",
+      "rejected": true
+    },
+    {
+      "layers": 4,
+      "name": "ground-only",
+      "rejected": true
+    },
+    {
+      "layers": 4,
+      "name": "missing-net",
+      "rejected": true
+    },
+    {
+      "layers": 4,
+      "name": "extra-net",
+      "rejected": true
+    },
+    {
+      "layers": 4,
+      "name": "missing-results",
+      "rejected": true
+    }
+  ],
+  "oracleThrowPropagates": true,
+  "allCasesPass": true
+}

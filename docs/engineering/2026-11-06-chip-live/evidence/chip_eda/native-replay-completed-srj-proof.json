@@ -1,0 +1,37 @@
+{
+  "author": "/root/final_review",
+  "at": "2026-11-06T08:10:12.986958+00:00",
+  "independentApproval": false,
+  "scope": "Authored private completed-native-SRJ replay fallback; prior independent source receipt covers the old loader only.",
+  "sourceSha256": "16495a897b1bb1334de838e0cb0ab9c8be7659b9be42743c95d5c8e2ba5d8abf",
+  "testSha256": "2145c671d2c12dd8508a195fd7d8c30a91242452fe8ffb8b42954f2f977f9964",
+  "tests": {
+    "passed": 13,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 1216.699196,
+    "strictTargetedTypecheck": "pass"
+  },
+  "guards": [
+    "Fallback only when pre-pour capture is absent withENOENT; present malformed/fatal data never falls back.",
+    "Failed source job must begin with exact outer Native width expansion leaves... message; router finalPipeline9phase25/power timing and sole native asyncerror must corroborate it.",
+    "Completed nativeSRJ must match exact saved input after replacing only traces and verifying/removing native-derived zLayers/__zLayers caches. Geometry,connectivity,otheroptions andmetadata remain exact.",
+    "Completed source route records must be known finite native geometry; raw subminimum widths can explain failure,but candidate still meets board minimum.",
+    "Seven original current/source fingerprint checks and raw candidate-byte hash remain strict. Candidate native traceID/name/order coverage must match completed snapshot.",
+    "Receipt explicitly identifies sourceCaptureKind and continues freshRouting:false/nativeOutputReuse:true/freshGatesMandatory:true. No prior gate is loaded or reused."
+  ],
+  "actualSourceReadOnlyCheck": {
+    "jobId": "d7bdf1b1-c49a-49db-94fd-a9c4236dc3c4",
+    "layerCount": 2,
+    "traceCount": 117,
+    "obstacleCount": 723,
+    "validatedNativeCacheFields": 1446,
+    "normalizedSnapshotExactInput": true,
+    "nativeStageOrCandidateLoadRun": false
+  },
+  "limits": [
+    "Independent parent review required for this new authored hash.",
+    "No new native solver/widthstage/compile or fresh fabrication gate run by author.",
+    "New fallback intentionally supports only pinned completed Pipeline9 phase25; other engines/versions fail closed."
+  ]
+}

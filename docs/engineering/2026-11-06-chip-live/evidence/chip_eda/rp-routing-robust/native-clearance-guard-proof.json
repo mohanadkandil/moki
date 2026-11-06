@@ -1,0 +1,186 @@
+{
+  "schema": "moki.private-native-owner-guard/2",
+  "sdkVersion": "0.0.1037",
+  "upstreamBundleSha256": "9424629cc1f77f18fba24335effb5e5fc40da9a15e25aa97213b6c34af47f6fa",
+  "predicatePatchedSha256": "c0276ea5257ba045d2547c005b706b753f834d58c887b7fda855d5cfda8db0c0",
+  "loadedModuleSha256": "8572a1e1474c9b9941a8aa146eccaaecf3b53f78755cbc8319a18d450b3fa6d8",
+  "helperSha256": "7919738110c25ef3ca193b1cd5e2c77891a9b63ed000367634d1794dfb099fdb",
+  "moduleUrl": "file:///tmp/moki-native-clearance-guard-proof/native-owner-guard/sdk-8572a1e1474c9b9941a8aa146eccaaecf3b53f78755cbc8319a18d450b3fa6d8.mjs",
+  "predicateReplacementCount": 1,
+  "markerReplacementCount": 2,
+  "markerHelperInjectionCount": 1,
+  "markerFunctionPaths": [
+    "@tscircuit/checks:addStartAndEndPortIdsIfMissing (inline iP)",
+    "lib/utils/autorouting-drc/annotateTraceEndpointPorts.ts (aR)"
+  ],
+  "utilityIsolation": {
+    "version": "0.0.23",
+    "sourceTreeSha256": "d8edf8bc02f636fc95ec86e393c95de92e671934abfc95b7c1262bfc30921367",
+    "copiedTreeSha256": "0992dd8a360874673f669382b78151e9601740e15db8c4f3073a34a9331b5b8d",
+    "directory": "/tmp/moki-native-clearance-guard-proof/native-owner-guard/solver-utils-000d5b78a12b1827c5794ee671428b801bc95e297505533c05cd9fa3956df930",
+    "files": [
+      {
+        "path": "index.js",
+        "sourceSha256": "8dccabc62b65504da61bd35f007565c1f8733310cae4c4bba3c025c53f094bb5",
+        "copiedSha256": "3bbc6d0f7327de6f62bc29bbb902dcfd7a5bb2aaa4090ab52640338da2a7338a"
+      },
+      {
+        "path": "chunk-FCNBEO2E.js",
+        "sourceSha256": "af1bc555661669f65a26d5973e1faf7de9688004843f4b3270c522c1f09f2de7",
+        "copiedSha256": "af1bc555661669f65a26d5973e1faf7de9688004843f4b3270c522c1f09f2de7"
+      }
+    ],
+    "sharedGraphicsDebugUrl": "file:///home/sogo/design-skill-research/repos/moki/eda/node_modules/graphics-debug/dist/lib/index.js",
+    "sharedGraphicsDebugSha256": "899147875ef2515ac7ff06c367350ad05a43569548f8225331ac48166dcfcf3b",
+    "graphicsManifestSha256": "b12d049aea7a67b80651c0a83015e89d9b5854b64ed906ef2f699508276740e5",
+    "manifestSha256": "b00be11b8b222fd311a6cec8e41c89490b30bef3faf98ed0788f379aa193f968"
+  },
+  "nativePathfindingChanged": false,
+  "clearanceRulesChanged": false,
+  "dependencyRelocations": [
+    {
+      "specifier": "./chunk-G3PMV62Z.js",
+      "replacements": 1,
+      "url": "file:///home/sogo/design-skill-research/repos/moki/eda/node_modules/@tscircuit/capacity-autorouter/dist/chunk-G3PMV62Z.js",
+      "sha256": "f56621bcf6948c31eebf5b9b9186b7bd4042af9895b947f0eaedfc40271421c4"
+    },
+    {
+      "specifier": "@tscircuit/solver-utils",
+      "replacements": 92,
+      "url": "file:///tmp/moki-native-clearance-guard-proof/native-owner-guard/solver-utils-000d5b78a12b1827c5794ee671428b801bc95e297505533c05cd9fa3956df930/index.js",
+      "sha256": "3bbc6d0f7327de6f62bc29bbb902dcfd7a5bb2aaa4090ab52640338da2a7338a",
+      "originalSha256": "8dccabc62b65504da61bd35f007565c1f8733310cae4c4bba3c025c53f094bb5",
+      "manifestSha256": "b00be11b8b222fd311a6cec8e41c89490b30bef3faf98ed0788f379aa193f968",
+      "version": "0.0.23"
+    },
+    {
+      "specifier": "object-hash",
+      "replacements": 3,
+      "url": "file:///home/sogo/design-skill-research/repos/moki/eda/node_modules/object-hash/index.js",
+      "sha256": "99af0590e6993552b8a3313cb40843cfa9ad5be62abd966340d394a2f732178d",
+      "manifestSha256": "f86b3a8a18078fbbf71ea1cf4468129e609566f860b9d93f99f63dc2543962eb",
+      "version": "3.0.0"
+    }
+  ],
+  "clearanceGuard": {
+    "floorMm": 0.127,
+    "referenceEpsilonCompensationMm": 0.005000001,
+    "nativeClearancePropagationChanged": true,
+    "declaredFabricationRulesChanged": false,
+    "mutableForceUsesPlanningReserve": true,
+    "globalReferenceUsesFabricationRule": true,
+    "sites": [
+      {
+        "id": "repair-error-severity-floor",
+        "replacementCount": 1,
+        "originalExpressionSha256": "0436e5b561eb768bb911bec66dfd4b5c352e68f93fc474bbe94d5c9cc63fb8e7",
+        "replacementExpressionSha256": "de388316999fff5b73cae99dcdc15146336b441abac03ff57ab8db3a529edd46"
+      },
+      {
+        "id": "repair-spatial-envelope",
+        "replacementCount": 1,
+        "originalExpressionSha256": "5095dfa24990e35424592a59b268c9394b2700ab875c02cfaf82cd67c34a6d1b",
+        "replacementExpressionSha256": "e18692137cea0f05d5af31ffbc734021ff1d91fefb80c39478eb32f63187b4b8"
+      },
+      {
+        "id": "repair-board-edge-proximity",
+        "replacementCount": 1,
+        "originalExpressionSha256": "e7e8963fa79c5ab7e7ba02fe0d0e08994c977cd728e4586d53b4566c9ebb5c1b",
+        "replacementExpressionSha256": "5707b9972a28e7b1b931542452c7937be0b42ae07dbe973af7d2d28536e27390"
+      },
+      {
+        "id": "repair-via-segment-target",
+        "replacementCount": 1,
+        "originalExpressionSha256": "a51fbeef1b264f1d1a998fc18c1c88e5939561c114dcf3d5967a7250450673d1",
+        "replacementExpressionSha256": "1d6f22ba60735b526a0136f2940f24cb939941fad37df66f1fe0a9069a21ae9b"
+      },
+      {
+        "id": "repair-segment-segment-target",
+        "replacementCount": 1,
+        "originalExpressionSha256": "d008f0fc888f2dd71e4cc2defa5804a0c01e7867cd1c54f7b0aae31c829943bd",
+        "replacementExpressionSha256": "6ec1efb3c8ebcf4d61db6fe0a53aa70b008e43a946b23ffe2539de37454d71a6"
+      },
+      {
+        "id": "repair-trace-error-target",
+        "replacementCount": 1,
+        "originalExpressionSha256": "1b6ef0d175791c145669f0a79eea9045cdd6b9681373d9b6d9949fe939c57e4e",
+        "replacementExpressionSha256": "faa75b99aaeab40ef3409af1e8b75c418efcd1d0942d8e2026e015c92f889d47"
+      },
+      {
+        "id": "repair-via-error-target",
+        "replacementCount": 1,
+        "originalExpressionSha256": "184f58254b68b074428caa421edad2f2407837f5c5da86ee6bf56e1da318f3a8",
+        "replacementExpressionSha256": "64119e4e80ee49b84853a0165683c3f2b6ff6a563c650e2a83ec3455907a96e9"
+      },
+      {
+        "id": "repair-layer-corridor-target",
+        "replacementCount": 1,
+        "originalExpressionSha256": "75d7260dc51c0454e28249050683435990b4c1da3a59109472835547428282b4",
+        "replacementExpressionSha256": "01da444a9a1b1447c7bd17252a2d85b5748abf682c30bb03602b9904940a1ec5"
+      },
+      {
+        "id": "repair-reference-evaluator",
+        "replacementCount": 1,
+        "originalExpressionSha256": "1ddef14518bfc6308221df7ccd43865c9ce63be038f004c8899dfc9fddffcaa6",
+        "replacementExpressionSha256": "f3a6405aa47c5f10dd70a4d99558785f2102ff8c2b5ff7db7fd3cd703057d979"
+      },
+      {
+        "id": "repair-indexed-engine-entries",
+        "replacementCount": 2,
+        "originalExpressionSha256": "b2edfbb68e99c918b4a214eab360f290d335ee1b7f2f66fde600cb6eea89f4a2",
+        "replacementExpressionSha256": "5abc235c35af2b73102221211942ca46985fa0cc355aa9a0c3b7a690285b0ad3"
+      },
+      {
+        "id": "indexed-engine-default",
+        "replacementCount": 1,
+        "originalExpressionSha256": "40c9da02799122982bc35d7f9e763113b3ae81b4781286639e33d763c05aa418",
+        "replacementExpressionSha256": "de02a95225386eb460341c24e8586a47742eb024491b7e9e2be6c8c515e6ae26"
+      },
+      {
+        "id": "projection-default",
+        "replacementCount": 1,
+        "originalExpressionSha256": "5f42dd67edab386094a87bae46dca6175848773ea4fdadc88302d4702b34e170",
+        "replacementExpressionSha256": "6fd1d04272a1550fb046559b229a6e0ce603a0f72535d09cc9046d6e370b4a0f"
+      },
+      {
+        "id": "pipeline9-reference-evaluator",
+        "replacementCount": 1,
+        "originalExpressionSha256": "5e5a2657b036b42a22816009ebec0913f5b63043223362dd61740539d35eee9a",
+        "replacementExpressionSha256": "8f9ccf3f797eddea462086c73c2bcebd428a8ac09e116d79a4c7bec14d4cfbd6"
+      },
+      {
+        "id": "pipeline9-joint-internal-reference-target",
+        "replacementCount": 1,
+        "originalExpressionSha256": "77f6c82d9d119fca5d1c920a5c5767442e158a3ad09bd8b53651e9d745bf7627",
+        "replacementExpressionSha256": "7b05b5cabc7a41ee090ea0a21557c6ab351ef3107052eb7f929d1d87025a83f2"
+      },
+      {
+        "id": "pipeline9-cleanup-internal-reference-target",
+        "replacementCount": 1,
+        "originalExpressionSha256": "29e16a234a63ba3c96c566c8d25c75e95e31351a80afb73779f2670e7ccf6624",
+        "replacementExpressionSha256": "b589b1ea3d8da0e14fe0c432d51f49a9b255b99cc4716a7f0e47e0c2c28ed838"
+      }
+    ],
+    "replacementCount": 16
+  },
+  "scope": "private-offline-declared-owner-inference",
+  "testSha256": "bf983c70ed942f8955d3da6f3965fbcd1e56ce824ee3829f720f6937e358dd92",
+  "actualPairFixtureSha256": "8d9feda81984d7c510b2cd2a12266d2cc3579665a45b6d85b1eb29e4e82b02ba",
+  "actualSourceJob": "0ce3c0b1-1fc5-4c95-8ad7-0425dad42cc9",
+  "actualRawSourceSha256": "cab8fd69e82f31dc2cde5bfee4950d15804e98b9c46ddffbc7f5df00dda63220",
+  "actualGapMm": 0.11499999999999978,
+  "originalNativeForceCopperTargetMm": 0.115,
+  "configuredForcePlanningRuleMm": 0.15,
+  "guardedNativeForceCopperTargetMm": 0.16499999999999998,
+  "referenceFabricationRuleMm": 0.127,
+  "testsPassed": 13,
+  "strictTypecheckPassed": true,
+  "nativeSolverIterations": 0,
+  "limitations": [
+    "Bounded pinned native constraint propagation, not a board routing acceptance",
+    "Actual fabrication floor must be proved by private caller against native pcb_board",
+    "Generic explicit reference targets remain monotone; exactly two internal planner-derived targets corrected to fabrication reference",
+    "Default v2 behavioral output unchanged",
+    "No native route or physical whole-board oracle run by this worker"
+  ]
+}

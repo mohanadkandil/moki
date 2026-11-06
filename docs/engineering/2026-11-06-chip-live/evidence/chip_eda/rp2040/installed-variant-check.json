@@ -1,0 +1,23 @@
+{
+  "method": "read-only installed framework source inspection",
+  "files": [
+    {
+      "path": "/home/sogo/.local/share/moki-tools/platformio-core/packages/framework-arduino-mbed/variants/RASPBERRY_PI_PICO/variant.cpp",
+      "sha256": "03f797fc9c66b158d53b9b4ea0c48431091f02bb18a8bc74017f8fdc5eeff3f5",
+      "bytes": 1904
+    },
+    {
+      "path": "/home/sogo/.local/share/moki-tools/platformio-core/packages/framework-arduino-mbed/variants/RASPBERRY_PI_PICO/pins_arduino.h",
+      "sha256": "4f8785a39cf8fb54af112714891a712a71e947878c8e893d3c6356fc686c0a58",
+      "bytes": 2226
+    }
+  ],
+  "facts": [
+    "variant.cpp digitalPinToPinName array maps digital0..29 to p0..p29",
+    "variant.cpp initVariant is empty",
+    "pins_arduino.h A0..A3 map26..29",
+    "Default Wire SDA4/SCL5; GP20/21 requires explicitly configured MbedI2C or mbed I2C",
+    "Bare-chip block has no physical Pico LED/VSYS divider/SMPS"
+  ],
+  "claim": "source mapping only, no compile/native/hardware claim by block author"
+}

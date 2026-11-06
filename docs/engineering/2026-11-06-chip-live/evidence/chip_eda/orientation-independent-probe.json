@@ -1,0 +1,97 @@
+{
+  "scope": "Read/pure actual pad connectivity HPWL assessment; candidate has no native routing result",
+  "sourceJobId": "7c9de92d-9d82-4f0f-b261-3b1dab6a6951",
+  "autoPlacementSha256": "40bbbe1d623e5ee37406d0029f926401fe45b628ab9a9d783685d22ad367f371",
+  "oldPlacements": [
+    {
+      "inst": "core",
+      "at": {
+        "x": -16.25,
+        "y": -2.75,
+        "rotation": 0
+      }
+    },
+    {
+      "inst": "driver",
+      "at": {
+        "x": 12.75,
+        "y": 14,
+        "rotation": 90
+      }
+    },
+    {
+      "inst": "button",
+      "at": {
+        "x": 23.75,
+        "y": 22,
+        "rotation": 0
+      }
+    }
+  ],
+  "newPlacements": [
+    {
+      "inst": "core",
+      "at": {
+        "x": -2.25,
+        "y": 6,
+        "rotation": 90
+      }
+    },
+    {
+      "inst": "driver",
+      "at": {
+        "x": -16.75,
+        "y": -17.5,
+        "rotation": 0
+      }
+    },
+    {
+      "inst": "button",
+      "at": {
+        "x": 17.5,
+        "y": 22,
+        "rotation": 0
+      }
+    }
+  ],
+  "reservePaddingMm": 1,
+  "legalizationChanges": 17,
+  "crossSectionNets": [
+    {
+      "name": "V3V3",
+      "hpwlMm": 77.75,
+      "candidateHpwlMm": 61.29660799999999
+    },
+    {
+      "name": "BUTTON",
+      "hpwlMm": 68.974915,
+      "candidateHpwlMm": 44.374956999999995
+    },
+    {
+      "name": "IN1",
+      "hpwlMm": 45.850076,
+      "candidateHpwlMm": 39.050036000000006
+    },
+    {
+      "name": "IN2",
+      "hpwlMm": 46.100012,
+      "candidateHpwlMm": 38.80010000000001
+    },
+    {
+      "name": "GND",
+      "hpwlMm": 91.6892334,
+      "candidateHpwlMm": 97.3741414
+    },
+    {
+      "name": "VBUS",
+      "hpwlMm": 49.7241208,
+      "candidateHpwlMm": 55.0040968
+    }
+  ],
+  "totalHpwlMm": 380.08835719999996,
+  "candidateTotalHpwlMm": 335.8999392,
+  "limits": [
+    "HPWL is a wirelength lower-bound heuristic, not routing or clearance proof.",
+    "Board/rotation/legalization/mask/width changes across actual jobs confound any causal claim that90degrees alone solves routing."
+  ]
+}

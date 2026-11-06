@@ -1,0 +1,28 @@
+{
+  "lcsc": "C162430",
+  "mpn": "GRM21BZ71C106KE15L",
+  "manufacturer": "muRata(村田)",
+  "package": "C0805",
+  "stock": 0,
+  "catalogReceipt": "sha256:fac7c295d74c60b33cd57238b664281effc5d6bb3ffb9770380e74ceb2960ac8",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "83f039e7094360f32028b210f7edd00b8856f7f457c17b9945cd8369e5a034ce",
+  "footprintSha256": "2fd4de27c5ec2503a3ea4fb5a77d71ae325918676f6b988d6012ce8d6cd83063",
+  "pins": [
+    {
+      "pad": "1",
+      "labels": [
+        "1"
+      ]
+    },
+    {
+      "pad": "2",
+      "labels": [
+        "2"
+      ]
+    }
+  ],
+  "models": [],
+  "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_1912111437_Murata-Electronics-GRM21BZ71C106KE15L_C162430.pdf",
+  "datasheetReceipt": "sha256:fa1bd48d520f7e28e11b23279794c6faefbc022d5ae38a66d237414d72724674"
+}

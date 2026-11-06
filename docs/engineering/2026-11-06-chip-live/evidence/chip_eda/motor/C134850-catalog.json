@@ -1,0 +1,28 @@
+{
+  "lcsc": "C134850",
+  "mpn": "OCR470M1CBK-0605",
+  "manufacturer": "Lelon(立隆)",
+  "package": "CAP-TH_BD6.3-P2.50-D1.0-FD",
+  "stock": 1570,
+  "catalogReceipt": "sha256:49dd22cf2e6e63e6d256497ac3cfb345ebb67878c05abbd2584796310198fdd0",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "227dbe38b61242e60a4952d256fd160147474d66cf3e779a6b27752dcdd41ed7",
+  "footprintSha256": "07a636fa31b3409c0c3c2e796b698a13fd5c129161a8a22d6057599613c06d2a",
+  "pins": [
+    {
+      "pad": "1",
+      "labels": [
+        "1"
+      ]
+    },
+    {
+      "pad": "2",
+      "labels": [
+        "2"
+      ]
+    }
+  ],
+  "models": [],
+  "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Lelon-OCR470M1CBK-0605_C134850.pdf",
+  "datasheetReceipt": "sha256:e16d18673d6c446366a89e548c6568e66b43280e0284b826772d9ffd90ba088e"
+}

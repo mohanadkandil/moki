@@ -1,0 +1,43 @@
+{
+  "at": "2026-11-06T05:16:25.720196+00:00",
+  "owner": "/root/final_review (implementation author; parent independent review required)",
+  "scope": "Proof-only native exit source attribution; no native RP board acceptance",
+  "api": "repairNativeExits(circuit, graph, mapping, phases, {nativeRoutingInputs?}) -> {circuit,audit,viaAudit,unrepairedTraceIds}",
+  "sourceSha256": {
+    "eda/blocks/repair-native-exits.ts": "602286ddbf8625f2665d90b596429ac36cf567e2f4c6dac07862ea92d5c34ad2",
+    "tests/blocks-repair-native-exits.test.ts": "f08b7ea1bfc9c596ee3ad7ee2424f95d208dbd50b7ae911f0105f24e78b13bcc"
+  },
+  "serialization": {
+    "artifact": "native-exit-serialization.json",
+    "source": "native-exit-serialization-source.mts",
+    "native": "Actual native four-layer two-resistor saved terminal-via materialization and follow-up SRJ. Precomputed pass-through callback returns only existing saved traces. No route finder, compile, network or fabrication run.",
+    "expected": "Trailing top-to-bottom via serializes two original top wires + native extra top contact +via+two coincident bottom contacts. Actual .6/.3 barrel spans all four physical layers.",
+    "limits": "Derived test joins and solver-envelope labels are synthetic; no claim native P9 ran in this fixture. Actual old SHT native P9 join separately exercises real captured input."
+  },
+  "verification": {
+    "focusedTests": {
+      "passed": 12,
+      "failed": 0,
+      "skipped": 0,
+      "durationMs": 1267.066782
+    },
+    "strictTargetedTypecheck": "pass",
+    "unknownErrors": "Unrepaired trace IDs remain explicit and existing diagnostics are never removed.",
+    "geometry": "Only absent source_trace_id/source_net_id and proven absent via connectivity keys are completed; route/pad/width/layer/barrel/source netlist unchanged.",
+    "actualRpProfileReplay": "All14 actual RP power/GND profile exits prove against original native source/pad records including exposed-pad virtual aliases; route materialization is derived from independently captured native serialization, not a new RP route.",
+    "markers": "Unexpected interior and conflicting/null markers reject. Absent markers stay absent. A genuine same-net endpoint marker requires exact actual coordinates/layer and canonical physical graph ownership, so legitimate native endpoint joins are retained.",
+    "barrels": "Both2/4physical-layer spans tested. Missing proved via keys are completed through viaAudit; conflicting keys/dimensions/span reject. Layer-changing joins require exact actual owned .6/.3 barrels."
+  },
+  "limits": [
+    "Independent parent review remains required for this authored helper.",
+    "Global RP rerouting, final native DRC, physical copper continuity, official Gerber shorts and hardware acceptance remain separate."
+  ],
+  "integration": "Apply trace audit source IDs and viaAudit connectivity keys to native DB synchronously before pouring. Refresh post-route official diagnostics if either audit is nonempty; retain unmatched failures and reject all unrepairedTraceIds.",
+  "frozen": true,
+  "currentSourceSha256": "bc13e2f9d7f1bcda4cba36f9ac2ba3b285c32e71ce70ad2cb21577dc303cec06",
+  "laterCompatibilityFix": {
+    "author": "/root/rp_clock",
+    "independentChangedAreaReview": "final-review.json independentNativeExitCompatibilityPatch",
+    "originalAuthoredSnapshotPreserved": true
+  }
+}

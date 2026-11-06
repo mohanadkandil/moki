@@ -1,0 +1,48 @@
+{
+  "lcsc": "C20625731",
+  "mpn": "ABM8-272-T3",
+  "manufacturer": "ABRACON",
+  "package": "CRYSTAL-SMD_4P-L3.2-W2.5-BL",
+  "catalogReceipt": "sha256:8436d4111f1a8adfcbabb19db3e9eb5a61238113141b2309dd974f177a14a3ed",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "bab6351e1e7749f3718a97409f115c379bd943aededdd1e09ec31cfe7baa7c68",
+  "footprintSha256": "9653521281544e92a578e4580da97d4c6e6bd87a0574d505f9b5d8bae0db1d85",
+  "pins": [
+    {
+      "pad": "1",
+      "labels": [
+        "1"
+      ]
+    },
+    {
+      "pad": "3",
+      "labels": [
+        "3"
+      ]
+    },
+    {
+      "pad": "4",
+      "labels": [
+        "GND"
+      ]
+    },
+    {
+      "pad": "2",
+      "labels": [
+        "GND"
+      ]
+    }
+  ],
+  "models": [
+    {
+      "format": "obj",
+      "url": "https://modules.easyeda.com/3dmodel/746387225ae94e1eb16bd4c83e4f7933"
+    },
+    {
+      "format": "step",
+      "url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/746387225ae94e1eb16bd4c83e4f7933"
+    }
+  ],
+  "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121909_Abracon-LLC-ABM8-272-T3_C20625731.pdf",
+  "datasheetReceipt": "sha256:990921994354fccbc1e93e97555f856cd3f089501cf71b648b83a6189cd97629"
+}

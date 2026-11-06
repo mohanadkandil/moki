@@ -1,0 +1,21 @@
+import assert from'node:assert/strict';import{readFileSync,writeFileSync}from'node:fs';
+import{prepareImmutablePreloads}from'/home/sogo/design-skill-research/repos/moki/eda/blocks/immutable-preloads.ts';
+import{verifyRefinedClockPreloads}from'/home/sogo/design-skill-research/repos/moki/eda/blocks/refined-clock-preloads.ts';
+const root='/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-06-chip-live/evidence/chip_eda/rp-routing-robust/';
+const original=JSON.parse(readFileSync(root+'refined-clock-preloads-fixture.json','utf8'));
+const fresh=()=>{const f=structuredClone(original);return{...f,expected:prepareImmutablePreloads(f.inputWithoutPreloads,f.fixedTraces).expected,output:{traces:structuredClone(f.updatedPreloadedTraces)}};};
+const run=(f:any)=>verifyRefinedClockPreloads({getUpdatedPreloadedTraces:()=>structuredClone(f.updatedPreloadedTraces),getMutatedPreloadedTraces:()=>structuredClone(f.mutatedPreloadedTraces)},f.output,f.expected);
+const sync=(f:any)=>{f.mutatedPreloadedTraces=[structuredClone(f.updatedPreloadedTraces[0])];f.output.traces=structuredClone(f.updatedPreloadedTraces);};
+const length=(t:any)=>t.route.slice(1).reduce((s:number,p:any,i:number)=>s+Math.hypot(p.x-t.route[i].x,p.y-t.route[i].y),0);
+const results:any[]=[];
+for(const [name,change]of[
+ ['foreign-source-net',(f:any)=>{f.updatedPreloadedTraces[0].source_net_id='foreign';sync(f);}],
+ ['same-point-foreign-marker',(f:any)=>{f.updatedPreloadedTraces[0].route[0].start_pcb_port_id='other-canonical-port';sync(f);}],
+ ['new-internal-own-marker',(f:any)=>{f.updatedPreloadedTraces[0].route[2].end_pcb_port_id=f.fixedTraces[0].connectsTo[0];sync(f);}],
+ ['other-preload-replacement',(f:any)=>{f.updatedPreloadedTraces[0].__replaces_pcb_trace_id=f.fixedTraces[1].pcb_trace_id;sync(f);}],
+ ['foreign-output-replacement',(f:any)=>{f.output.traces.push({...structuredClone(f.output.traces[1]),pcb_trace_id:'new-foreign-claim',__replaces_pcb_trace_id:f.fixedTraces[1].pcb_trace_id});}],
+ ['output-disagreement',(f:any)=>{f.output.traces[0].route[2].y+=1e-8;}],
+ ['total-net-overlength-with-individual-under10',(f:any)=>{let found=false;for(let dx=.25;dx<6;dx+=.25){const t=structuredClone(original.updatedPreloadedTraces[0]);t.route[2].x+=dx;const own=length(t),sum=f.updatedPreloadedTraces.filter((p:any)=>p.connection_name===t.connection_name&&p.pcb_trace_id!==t.pcb_trace_id).reduce((s:number,p:any)=>s+length(p),own);if(own<10&&sum>10){f.updatedPreloadedTraces[0]=t;f.overlengthControl={singleTraceMm:own,totalNetMm:sum};found=true;break;}}assert.ok(found);sync(f);}],
+]as const){const f=fresh();change(f);const before=structuredClone(f);assert.throws(()=>run(f),/Refined clock/);assert.deepEqual(f,before);results.push({name,rejected:true,...f.overlengthControl?{lengthControl:f.overlengthControl}:{}});}
+const f=fresh(),global={type:'pcb_trace',pcb_trace_id:'unrelated-new',connection_name:'global-net',source_trace_id:'global-source',route:[{route_type:'wire',x:30,y:30,width:.2,layer:'bottom'},{route_type:'wire',x:31,y:30,width:.2,layer:'bottom'}],nativeMetadata:{proof:'preserved'}};f.output={nativeHeader:{unchanged:true},traces:[...f.updatedPreloadedTraces,global]};const before=structuredClone(f),r=run(f);assert.deepEqual(f,before);assert.deepEqual(r.outputWithFixedTracesRemoved.nativeHeader,{unchanged:true});assert.deepEqual(r.outputWithFixedTracesRemoved.traces.at(-1),global);assert.equal(r.outputWithFixedTracesRemoved.traces.length,2);assert.deepEqual(r.acceptedClockTraces,f.updatedPreloadedTraces);const asArray=verifyRefinedClockPreloads({getUpdatedPreloadedTraces:()=>f.updatedPreloadedTraces,getMutatedPreloadedTraces:()=>f.mutatedPreloadedTraces},f.output.traces,f.expected);assert.ok(Array.isArray(asArray.outputWithFixedTracesRemoved));assert.deepEqual(asArray.outputWithFixedTracesRemoved,r.outputWithFixedTracesRemoved.traces);results.push({name:'literal-global-metadata-and-array-output-positive',passed:true,acceptedClockCount:r.acceptedClockTraces.length});
+const evidence={scope:'Independent pure controls on actual getter fixture; output intentionally derived because raw native return was not captured',results};writeFileSync(root+'refined-clock-preloads-independent-probe.json',JSON.stringify(evidence,null,2)+'\n');console.log(JSON.stringify(evidence));

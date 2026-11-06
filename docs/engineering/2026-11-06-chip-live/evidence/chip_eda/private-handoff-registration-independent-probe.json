@@ -1,0 +1,32 @@
+{
+  "scope": "Exact production AST registration block with tiny synthetic path/source-audit inputs; no native circuit/router execution",
+  "buildSha256": "bedcee17bd0641b1919fc1eaebef4e0bac8f4172d57d733e63d86efedb4dc69a",
+  "registrationSha256": "615c5c03d593cd55503eed87825e5338814d2894a0ae14cd26adcac66a4d346f",
+  "cases": [
+    {
+      "name": "private-RP-no-motor",
+      "registeredPhases": 1
+    },
+    {
+      "name": "private-RP-with-motor",
+      "registeredPhases": 1
+    },
+    {
+      "name": "default-RP-fixed-prefixes",
+      "registeredPhases": 1
+    },
+    {
+      "name": "nonRP-no-profile",
+      "registeredPhases": 0
+    },
+    {
+      "name": "nonRP-driver",
+      "registeredPhases": 1
+    },
+    {
+      "name": "no-paths",
+      "registeredPhases": 0
+    }
+  ],
+  "allPass": true
+}

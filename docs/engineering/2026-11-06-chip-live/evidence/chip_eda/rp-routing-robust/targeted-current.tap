@@ -1,0 +1,208 @@
+TAP version 13
+# Subtest: actual six-block30-part device packs missing anchors inside explicit70x80 and80x90 before legalization
+ok 1 - actual six-block30-part device packs missing anchors inside explicit70x80 and80x90 before legalization
+  ---
+  duration_ms: 110.708471
+  type: 'test'
+  ...
+# Subtest: absent board produces a compact rounded board with unchanged input and deterministic anchors
+ok 2 - absent board produces a compact rounded board with unchanged input and deterministic anchors
+  ---
+  duration_ms: 289.935553
+  type: 'test'
+  ...
+# Subtest: explicit maker anchors and board radius remain exact while only missing anchors are packed
+ok 3 - explicit maker anchors and board radius remain exact while only missing anchors are packed
+  ---
+  duration_ms: 10.643086
+  type: 'test'
+  ...
+# Subtest: an impossible explicit board reports actual envelope sizes and never silently grows
+ok 4 - an impossible explicit board reports actual envelope sizes and never silently grows
+  ---
+  duration_ms: 4.408652
+  type: 'test'
+  ...
+# Subtest: confirmed board size limits constrain automatic packing without modifying requirements
+ok 5 - confirmed board size limits constrain automatic packing without modifying requirements
+  ---
+  duration_ms: 53.126149
+  type: 'test'
+  ...
+# Subtest: declared empty antenna space is reserved independently of physical footprints
+ok 6 - declared empty antenna space is reserved independently of physical footprints
+  ---
+  duration_ms: 5.394504
+  type: 'test'
+  ...
+# Subtest: actual live55x40RP plan rotates the MCU section and reduces only optional reserve, preserving board and electrical data
+ok 7 - actual live55x40RP plan rotates the MCU section and reduces only optional reserve, preserving board and electrical data
+  ---
+  duration_ms: 66.74375
+  type: 'test'
+  ...
+# Subtest: unanchored MCU long axis follows wider65x55 maker board on two and four layers
+ok 8 - unanchored MCU long axis follows wider65x55 maker board on two and four layers
+  ---
+  duration_ms: 90.872196
+  type: 'test'
+  ...
+# Subtest: invalid actual geometry and off-board explicit anchors reject instead of guessing footprints or moving the anchor
+ok 9 - invalid actual geometry and off-board explicit anchors reject instead of guessing footprints or moving the anchor
+  ---
+  duration_ms: 10.339602
+  type: 'test'
+  ...
+# Subtest: exact failing 65x55 job attests all actual motor parts, including sixteen rotated pill lands and EP
+ok 10 - exact failing 65x55 job attests all actual motor parts, including sixteen rotated pill lands and EP
+  ---
+  duration_ms: 83.899874
+  type: 'test'
+  ...
+# Subtest: native pill and rotated_pill representations retain actual source aliases at every cardinal rotation
+ok 11 - native pill and rotated_pill representations retain actual source aliases at every cardinal rotation
+  ---
+  duration_ms: 231.253978
+  type: 'test'
+  ...
+# Subtest: supported rotated rectangle has a finite angle; missing, nonfinite or malformed angles fail for both rotated shapes
+ok 12 - supported rotated rectangle has a finite angle; missing, nonfinite or malformed angles fail for both rotated shapes
+  ---
+  duration_ms: 137.477028
+  type: 'test'
+  ...
+# Subtest: degenerate dimensions, unsupported foreign shapes/layers and nonfinite coordinates still fail closed
+ok 13 - degenerate dimensions, unsupported foreign shapes/layers and nonfinite coordinates still fail closed
+  ---
+  duration_ms: 80.623474
+  type: 'test'
+  ...
+# Subtest: actual import/source/pad identity and complete physical coverage remain required
+ok 14 - actual import/source/pad identity and complete physical coverage remain required
+  ---
+  duration_ms: 53.889958
+  type: 'test'
+  ...
+# Subtest: actual connector annuli must survive their drills and keep top-to-bottom barrel layers
+ok 15 - actual connector annuli must survive their drills and keep top-to-bottom barrel layers
+  ---
+  duration_ms: 190.860419
+  type: 'test'
+  ...
+# Subtest: actual134 VCORE taper from canonical one-port source83 escapes official source-thickness checking but fails board minimum
+ok 16 - actual134 VCORE taper from canonical one-port source83 escapes official source-thickness checking but fails board minimum
+  ---
+  duration_ms: 24.724853
+  type: 'test'
+  ...
+# Subtest: absolute minimum accepts .15, rejects .1499 and checks either tapered endpoint irrespective of nominal widths
+ok 17 - absolute minimum accepts .15, rejects .1499 and checks either tapered endpoint irrespective of nominal widths
+  ---
+  duration_ms: 0.618527
+  type: 'test'
+  ...
+# Subtest: finite subfloor coincident via contacts alone are ignored; participation in any free wire segment still fails
+ok 18 - finite subfloor coincident via contacts alone are ignored; participation in any free wire segment still fails
+  ---
+  duration_ms: 0.603207
+  type: 'test'
+  ...
+# Subtest: malformed widths, coordinates, route types and board rules fail closed even on isolated contacts
+ok 19 - malformed widths, coordinates, route types and board rules fail closed even on isolated contacts
+  ---
+  duration_ms: 0.549927
+  type: 'test'
+  ...
+# Subtest: direct wire-layer jumps and displaced via-only segments reject; reversed explicit via labels do not change width proof
+ok 20 - direct wire-layer jumps and displaced via-only segments reject; reversed explicit via labels do not change width proof
+  ---
+  duration_ms: 0.374365
+  type: 'test'
+  ...
+# Subtest: inspection preserves all source, native route and diagnostic records
+ok 21 - inspection preserves all source, native route and diagnostic records
+  ---
+  duration_ms: 0.715928
+  type: 'test'
+  ...
+# Subtest: native width replay mutates only subminimum trace IDs and freezes conforming copper even on the same net
+ok 22 - native width replay mutates only subminimum trace IDs and freezes conforming copper even on the same net
+  ---
+  duration_ms: 11.464295
+  type: 'test'
+  ...
+# Subtest: native width replay stops at a residual subminimum wire and preserves native failures
+ok 23 - native width replay stops at a residual subminimum wire and preserves native failures
+  ---
+  duration_ms: 5.774428
+  type: 'test'
+  ...
+# Subtest: cancellation during a native width loop rejects before consuming output
+ok 24 - cancellation during a native width loop rejects before consuming output
+  ---
+  duration_ms: 3.855766
+  type: 'test'
+  ...
+# Subtest: an already cancelled replay rejects even when native stage starts solved
+ok 25 - an already cancelled replay rejects even when native stage starts solved
+  ---
+  duration_ms: 0.731649
+  type: 'test'
+  ...
+# Subtest: native width replay enforces its per-stage time budget
+ok 26 - native width replay enforces its per-stage time budget
+  ---
+  duration_ms: 1.612379
+  type: 'test'
+  ...
+# Subtest: malformed native inputs and changed trace identity or coverage fail closed
+ok 27 - malformed native inputs and changed trace identity or coverage fail closed
+  ---
+  duration_ms: 2.323028
+  type: 'test'
+  ...
+# Subtest: normal aggregate results stay native; pinned fallback sequence exactly matches installed primary source
+ok 28 - normal aggregate results stay native; pinned fallback sequence exactly matches installed primary source
+  ---
+  duration_ms: 6.170673
+  type: 'test'
+  ...
+# Subtest: only shorts gets unit-scaled geometry; all 22 unchanged public checks complete in native order/options
+ok 29 - only shorts gets unit-scaled geometry; all 22 unchanged public checks complete in native order/options
+  ---
+  duration_ms: 2.798713
+  type: 'test'
+  ...
+# Subtest: unknown aggregate errors and unrelated/absent isolated failures fail closed
+ok 30 - unknown aggregate errors and unrelated/absent isolated failures fail closed
+  ---
+  duration_ms: 1.476578
+  type: 'test'
+  ...
+# Subtest: scaled oracle failure, every later native checker error and changed error schema propagate
+ok 31 - scaled oracle failure, every later native checker error and changed error schema propagate
+  ---
+  duration_ms: 2.605711
+  type: 'test'
+  ...
+# Subtest: real different-net short positive control remains identical through native unit retry
+ok 32 - real different-net short positive control remains identical through native unit retry
+  ---
+  duration_ms: 13.677842
+  type: 'test'
+  ...
+# Subtest: actual981 boolean precision failure is reproduced and recovered without skipping the remaining native checks
+ok 33 - actual981 boolean precision failure is reproduced and recovered without skipping the remaining native checks
+  ---
+  duration_ms: 6470.038982
+  type: 'test'
+  ...
+1..33
+# tests 33
+# suites 0
+# pass 33
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 11031.009419

@@ -1,0 +1,73 @@
+{
+  "schema": "moki.circular-annulus-collar-proof/1",
+  "author": "gnd_escape",
+  "at": "2026-11-06T08:35:46.595411+00:00",
+  "status": "implemented; independently reviewed; coordinator actual retained-board all-net and minimum-width rechecks pass",
+  "sourceSha256": "0e3a9a72193d3a68e2f09b568501d0c0d8d3b962b077a37a24a7bf847f4c46d0",
+  "testSha256": "523c3dc151f6c3b0e73d71becf0327e8db008801c8a4f618ba292a6db2716922",
+  "actualSourceJob": "13a6ffa2-7615-489c-bc97-5c081ba86530",
+  "problem": "Old oracle rejected any foreign drill intersecting nominal outer via ring, including connected same-GND clusters whose barrel walls and complete inner copper collars survive.",
+  "actualPairs": [
+    {
+      "vias": [
+        "pcb_via_59",
+        "pcb_via_60"
+      ],
+      "centerDistanceMm": 0.4387349154738752,
+      "holeEdgeGapMm": 0.1387349154738752,
+      "outerRingNotchDepthMm": 0.011265084526124736
+    },
+    {
+      "vias": [
+        "pcb_via_70",
+        "pcb_via_84"
+      ],
+      "centerDistanceMm": 0.4132984722733293,
+      "holeEdgeGapMm": 0.11329847227332926,
+      "outerRingNotchDepthMm": 0.03670152772667068
+    }
+  ],
+  "nativeBoardMinViaHoleEdgeClearanceMm": 0.1,
+  "scope": "Centered circular pcb_via only; all other partial-cut plated geometry still fails closed",
+  "certificate": [
+    "Own upper drill circumscribed radius and outer lower copper inradius bound a full circular collar",
+    "Every actual foreign drill upper polygon is conservatively enclosed by a disk; strict positive radial clearance preserves complete barrel wall/collar",
+    "After ALL actual upper-drill voids, each physical layer must have exactly one positive-area lower annulus polygon containing the entire lower-bound collar",
+    "Existing DSU barrel-key links therefore join actual connected copper; no source/net labels excuse drill damage"
+  ],
+  "auditOutput": "annulusCollarCertificates[] with ID and each layer conservative inner/outer full-collar radii",
+  "unchanged": [
+    "Literal copper and drill geometry",
+    "Nominal0.6/0.3 via and0.15mm nominal annulus checks",
+    "All native fabrication/hole-clearance checks",
+    "Ground pour policy and all-net physical continuity/isolation",
+    "Min/max endpoint width bounds,source identities,drill subtraction and nonzero bulge rejection"
+  ],
+  "validation": {
+    "boundedActualProbe": "annular-collar-probe.json:4 actual annuli against every actual source drill, each1 remaining polygon and collar outside area0; no whole-board oracle",
+    "focusedCurrentTestsPassed": 15,
+    "focusedCurrentActualOptInSkipped": 1,
+    "legacyGroundSyntheticPassed": 19,
+    "strictTypeScript": "pass",
+    "negativeCoverage": [
+      "Fully drilled away",
+      "Foreign drill reaches actual barrel wall",
+      "Tangent circumscribed drill bounds",
+      "Foreign inner-layer damage on4layer barrel",
+      "Detached second lower polygon despite intact inner collar",
+      "Offcenter via and non-via plated-pad partial cuts",
+      "Actual foreign terminal/net contact remains short"
+    ]
+  },
+  "independentReview": "../annular-collar-independent-review.json: final_review PASS at0e3a9a72",
+  "wholeBoardAcceptanceClaimed": false,
+  "coordinatorActualRechecks": {
+    "jobId": "13a6ffa2-7615-489c-bc97-5c081ba86530",
+    "allNetOracle": "pass",
+    "allNetTap": "old-40x60-all-net-collar.tap",
+    "testDurationMs": 22297.244104,
+    "suiteDurationMs": 23003.491891,
+    "minWidth": "pass; old-40x60-minwidth.json has ok:true/issues:[]",
+    "scope": "Retained old accepted40x60 geometry rechecked; not a fresh route or current65/55 plan acceptance"
+  }
+}

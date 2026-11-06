@@ -1,0 +1,48 @@
+{
+  "jobId": "193f6a73-452d-4124-9785-0a14940322b0",
+  "checks": [
+    {
+      "check": "netlist",
+      "file": "rp4.circuit.json",
+      "exitCode": 1,
+      "log": "/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-06-chip-live/evidence/chip_eda/rp-motor/official-0-netlist.log"
+    },
+    {
+      "check": "schematic-placement",
+      "file": "schematic-rp.circuit.json",
+      "exitCode": 0,
+      "log": "/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-06-chip-live/evidence/chip_eda/rp-motor/official-1-schematic-placement.log"
+    },
+    {
+      "check": "schematic-placement",
+      "file": "schematic-motor.circuit.json",
+      "exitCode": 0,
+      "log": "/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-06-chip-live/evidence/chip_eda/rp-motor/official-2-schematic-placement.log"
+    },
+    {
+      "check": "placement",
+      "file": "rp4.circuit.json",
+      "exitCode": 1,
+      "log": "/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-06-chip-live/evidence/chip_eda/rp-motor/official-3-placement.log"
+    },
+    {
+      "check": "shorts",
+      "file": "rp4.circuit.json",
+      "exitCode": 0,
+      "log": "/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-06-chip-live/evidence/chip_eda/rp-motor/official-4-shorts.log"
+    },
+    {
+      "check": "pcb-style",
+      "file": "rp4.circuit.json",
+      "exitCode": 1,
+      "log": "/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-06-chip-live/evidence/chip_eda/rp-motor/official-5-pcb-style.log"
+    }
+  ],
+  "interpretation": {
+    "netlist": "CLI cannot consume prebuilt Circuit JSON for this command (React array error); authoritative compiled source-netlist check passed in job.",
+    "schematicPlacement": "Both native schematic sections pass.",
+    "pcbPlacement": "Zero placement DRC errors; seven suboptimal passive orientations and two connector access warnings remain.",
+    "shorts": "Default Gerber-derived all-layer short check passes.",
+    "style": "Six native long odd-angle warnings remain; cleanup candidate pending."
+  }
+}

@@ -1,0 +1,623 @@
+PHYSICAL PDF PAGE 3
+1
+2
+3
+4
+5
+6
+7
+8
+16
+15
+14
+13
+12
+11
+10
+9
+AIN1
+AIN2
+VINT
+GND
+VM
+VCP
+BIN2
+BIN1
+BOUT1
+nFAULT
+BOUT2
+BISEN
+AISEN
+AOUT2
+AOUT1
+nSLEEP
+1
+2
+3
+4
+5 6 7 8
+16 15 14 13
+12
+11
+10
+9
+GND
+(PPAD)
+AOUT1nSLEEPAIN1AIN2
+VINT
+GND
+VM
+VCP
+BIN1BIN2
+BOUT1nFAULT
+BOUT2
+BISEN
+AOUT2
+AISEN
+1
+2
+3
+4
+5
+6
+7
+8
+16
+15
+14
+13
+12
+11
+10
+9
+GND
+(PPAD)
+AIN1
+AIN2
+VINT
+GND
+VM
+VCP
+BIN2
+BIN1
+BOUT1
+nFAULT
+BOUT2
+BISEN
+AISEN
+AOUT2
+AOUT1
+nSLEEP
+DRV8833
+www.ti.com SLVSAR1E – JANUARY 2011 – REVISED JULY 2015
+5 Pin Configuration and Functions
+PWP Package RTY Package16-Pin HTSSOP 16-Pin WQFNTop View Top View
+PW Package
+16-Pin TSSOP
+Top View
+Pin Functions
+PIN
+EXTERNAL COMPONENTSI/O (1) DESCRIPTIONHTSSOP, OR CONNECTIONSNAME WQFN TSSOP
+POWER AND GROUND
+11 Device ground. HTSSOP package Both the GND pin and device PowerPADGND 13 —PPAD has PowerPAD. must be connected to ground.
+Bypass to GND with 2.2-μF, 6.3-VVINT 12 14 — Internal supply bypass capacitor.
+Connect to motor supply. A 10-µF
+VM 10 12 — Device power supply (minimum) ceramic bypass capacitor to
+GND is recommended.
+Connect a 0.01-μF, 16-V (minimum) X7RVCP 9 11 IO High-side gate drive voltage ceramic capacitor to VM.
+CONTROL
+Logic input controls state of AOUT1.AIN1 14 16 I Bridge A input 1 Internal pulldown.
+Logic input controls state of AOUT2.AIN2 13 15 I Bridge A input 2 Internal pulldown.
+Logic input controls state of BOUT1.BIN1 7 9 I Bridge B input 1 Internal pulldown.
+Logic input controls state of BOUT2.BIN2 8 10 I Bridge B input 2 Internal pulldown.
+Logic high to enable device, logic low to
+nSLEEP 15 1 I Sleep mode input enter low-power sleep mode and reset all
+internal logic. Internal pulldown.
+(1) I = Input, O = Output, OZ = Tri-state output, OD = Open-drain output, IO = Input/output
+Copyright © 2011–2015, Texas Instruments Incorporated Submit Documentation Feedback 3
+Product Folder Links: DRV8833
+
+PHYSICAL PDF PAGE 4
+DRV8833
+SLVSAR1E – JANUARY 2011 – REVISED JULY 2015 www.ti.com
+Pin Functions (continued)
+PIN
+EXTERNAL COMPONENTSI/O (1) DESCRIPTIONHTSSOP, OR CONNECTIONSNAME WQFN TSSOP
+STATUS
+Logic low when in fault conditionnFAULT 6 8 OD Fault output (overtemperature, overcurrent)
+OUTPUT
+Connect to current sense resistor for bridgeAISEN 1 3 IO Bridge A ground / ISENSE A, or GND if current control not needed
+Connect to current sense resistor for bridgeBISEN 4 6 IO Bridge B ground / ISENSE B, or GND if current control not needed
+AOUT1 16 2 O Bridge A output 1
+Connect to motor winding A
+AOUT2 2 4 O Bridge A output 2
+BOUT1 5 7 O Bridge B output 1
+Connect to motor winding B
+BOUT2 3 5 O Bridge B output 2
+4 Submit Documentation Feedback Copyright © 2011–2015, Texas Instruments Incorporated
+Product Folder Links: DRV8833
+
+PHYSICAL PDF PAGE 5
+DRV8833
+www.ti.com SLVSAR1E – JANUARY 2011 – REVISED JULY 2015
+6 Specifications
+6.1 Absolute Maximum Ratings
+over operating free-air temperature range (unless otherwise noted) (1)
+MIN MAX UNIT
+VM Power supply voltage –0.3 11.8 V
+Digital input pin voltage –0.5 7 V
+xISEN pin voltage –0.3 0.5 V
+Peak motor drive output current Internally limited A
+TJ Operating junction temperature –40 150 °C
+Tstg Storage temperature –60 150 °C
+(1) Stresses beyond those listed under Absolute Maximum Ratings may cause permanent damage to the device. These are stress ratings
+only, which do not imply functional operation of the device at these or any other conditions beyond those indicated under Recommended
+Operating Conditions. Exposure to absolute-maximum-rated conditions for extended periods may affect device reliability.
+6.2 ESD Ratings
+VALUE UNIT
+Human body model (HBM), per ANSI/ESDA/JEDEC JS-001, all pins (1) ±4000
+ElectrostaticV(ESD) VCharged device model (CDM), per JEDEC specification JESD22-C101, alldischarge ±1500pins (2)
+(1) JEDEC document JEP155 states that 500-V HBM allows safe manufacturing with a standard ESD control process.
+(2) JEDEC document JEP157 states that 250-V CDM allows safe manufacturing with a standard ESD control process.
+6.3 Recommended Operating Conditions
+TA = 25°C (unless otherwise noted)
+MIN NOM MAX UNIT
+VM Motor power supply voltage range (1) 2.7 10.8 V
+VDIGIN Digital input pin voltage range –0.3 5.75 V
+IOUT RTY package continuous RMS or DC output current per bridge (2) 1.5 A
+(1) RDS(ON) increases and maximum output current is reduced at VM supply voltages below 5 V.
+(2) VM = 5 V, power dissipation and thermal limits must be observed.
+6.4 Thermal Information
+DRV8833
+PWP RTY PWTHERMAL METRIC (1) UNIT(HTSSOP) (WQFN) (TSSOP)
+16 PINS 16 PINS 16 PINS
+RθJA Junction-to-ambient thermal resistance 40.5 37.2 103.1 °C/W
+RθJC(top) Junction-to-case (top) thermal resistance 32.9 34.3 38 °C/W
+RθJB Junction-to-board thermal resistance 28.8 15.3 48.1 °C/W
+ψJT Junction-to-top characterization parameter 0.6 0.3 3 °C/W
+ψJB Junction-to-board characterization parameter 11.5 15.4 47.5 °C/W
+RθJC(bot) Junction-to-case (bottom) thermal resistance 4.8 3.5 N/A °C/W
+(1) For more information about traditional and new thermal metrics, see the Semiconductor and IC Package Thermal Metrics application
+report, SPRA953.
+Copyright © 2011–2015, Texas Instruments Incorporated Submit Documentation Feedback 5
+Product Folder Links: DRV8833
+
+PHYSICAL PDF PAGE 6
+DRV8833
+SLVSAR1E – JANUARY 2011 – REVISED JULY 2015 www.ti.com
+6.5 Electrical Characteristics
+TA = 25°C (unless otherwise noted)
+PARAMETER TEST CONDITIONS MIN TYP MAX UNIT
+POWER SUPPLY
+IVM VM operating supply current VM = 5 V, xIN1 = 0 V, xIN2 = 0 V 1.7 3 mA
+IVMQ VM sleep mode supply current VM = 5 V 1.6 2.5 μA
+VUVLO VM undervoltage lockout voltage VM falling 2.6 V
+VM undervoltage lockoutVHYS 90 mVhysteresis
+LOGIC-LEVEL INPUTS
+nSLEEP 0.5
+VIL Input low voltage VAll other pins 0.7
+nSLEEP 2.5
+VIH Input high voltage VAll other pins 2
+VHYS Input hysteresis 0.4 V
+nSLEEP 500
+RPD Input pulldown resistance kΩAll except nSLEEP 150
+IIL Input low current VIN = 0 1 μA
+VIN = 3.3 V, nSLEEP 6.6 13
+IIH Input high current μAVIN = 3.3 V, all except nSLEEP 16.5 33
+tDEG Input deglitch time 450 ns
+nFAULT OUTPUT (OPEN-DRAIN OUTPUT)
+VOL Output low voltage IO = 5 mA 0.5 V
+IOH Output high leakage current VO = 3.3 V 1 μA
+H-BRIDGE FETs
+VM = 5 V, I O = 500 mA, TJ = 25°C 200
+VM = 5 V, IO = 500 mA, TJ = 85°C 325HS FET on resistance
+VM = 2.7 V, I O = 500 mA, TJ = 25°C 250
+VM = 2.7 V, IO = 500 mA, TJ = 85°C 350RDS(ON) mΩVM = 5 V, I O = 500 mA, TJ = 25°C 160
+VM = 5 V, IO = 500 mA, TJ = 85°C 275LS FET on resistance
+VM = 2.7 V, I O = 500 mA, TJ = 25°C 200
+VM = 2.7 V, IO = 500 mA, TJ = 85°C 300
+IOFF Off-state leakage current VM = 5 V, TJ = 25°C, VOUT = 0 V –1 1 μA
+MOTOR DRIVER
+ƒPWM Current control PWM frequency Internal PWM frequency 50 kHz
+tR Rise time VM = 5 V, 16 Ω to GND, 10% to 90% VM 180 ns
+tF Fall time VM = 5 V, 16 Ω to GND, 10% to 90% VM 160 ns
+tPROP Propagation delay INx to OUTx VM = 5 V 1.1 µs
+tDEAD Dead time (1) VM = 5 V 450 ns
+PROTECTION CIRCUITS
+IOCP Overcurrent protection trip level 2 3.3 A
+tDEG OCP Deglitch time 4 µs
+tOCP Overcurrent protection period 1.35 ms
+tTSD Thermal shutdown temperature Die temperature 150 160 180 °C
+(1) Internal dead time. External implementation is not necessary.
+6 Submit Documentation Feedback Copyright © 2011–2015, Texas Instruments Incorporated
+Product Folder Links: DRV8833
+
+PHYSICAL PDF PAGE 7
+0
+100
+200
+300
+400
+500
+600
+700
+800
+2.7 3.6 4.5 5.4 6.3 7.2 8.1 9.0 9.9 10.8
+RDS(ON) (HS + LS) (m/c9f) 
+VVM (V) 
+-40° C
+25° C
+85° C
+C004 
+0
+100
+200
+300
+400
+500
+600
+700
+800
+/cb140 /cb130 /cb120 /cb110 0 10 20 30 40 50 60 70 80
+RDS(ON) (HS + LS) (m/c9f) 
+Temperature (/c83C) 
+2.7 V
+5 V
+10.8 V
+C003 
+0.0
+0.5
+1.0
+1.5
+2.0
+2.5
+3.0
+2.7 3.6 4.5 5.4 6.3 7.2 8.1 9.0 9.9 10.8
+IVM (mA) 
+VVM (V) 
+/cb140/c83C 
+25° C
+85° C
+C001 
+/cb15.0 
+0.0
+5.0
+10.0
+15.0
+20.0
+25.0
+2.7 3.6 4.5 5.4 6.3 7.2 8.1 9.0 9.9 10.8
+ IVMQ (uA) 
+VVM (V) 
+/cb140/c83C 
+25° C
+85° C
+C002 
+DRV8833
+www.ti.com SLVSAR1E – JANUARY 2011 – REVISED JULY 2015
+Electrical Characteristics (continued)
+TA = 25°C (unless otherwise noted)
+PARAMETER TEST CONDITIONS MIN TYP MAX UNIT
+CURRENT CONTROL
+VTRIP xISEN trip voltage 160 200 240 mV
+tBLANK Current sense blanking time 3.75 µs
+SLEEP MODE
+tWAKE Start-up time nSLEEP inactive high to H-bridge on 1 ms
+6.6 Typical Characteristics
+Figure 2. Sleep CurrentFigure 1. Operating Current
+Figure 3. RDS(on) (HS + LS) Figure 4. RDS(on) (HS + LS)
+Copyright © 2011–2015, Texas Instruments Incorporated Submit Documentation Feedback 7
+Product Folder Links: DRV8833
+
+PHYSICAL PDF PAGE 9
+xOUT1
+xOUT 2
+VM
+xISEN
+xIN2
+Pre-
+drive
+VCP, VINT
+VM
++
+-
+PWM
+OCP
+OCP
+xIN1
+REF (200mV)
+DCM
+Optional
+DRV8833
+www.ti.com SLVSAR1E – JANUARY 2011 – REVISED JULY 2015
+7.3 Feature Description
+7.3.1 Fixed-Frequency PWM Motor Drivers
+DRV8833 contains two identical H-bridge motor drivers with current-control PWM circuitry. Figure 5 shows a
+block diagram of the circuitry.
+Figure 5. Motor Control Circuitry
+7.3.2 Bridge Control and Decay Modes
+The AIN1 and AIN2 input pins control the state of the AOUT1 and AOUT2 outputs; similarly, the BIN1 and BIN2
+input pins control the state of the BOUT1 and BOUT2 outputs. Table 1 shows the logic.
+Table 1. H-Bridge Logic
+xIN1 xIN2 xOUT1 xOUT2 FUNCTION
+Coast/fast0 0 Z Z decay
+0 1 L H Reverse
+1 0 H L Forward
+Brake/slow1 1 L L decay
+The inputs can also be used for PWM control of the motor speed. When controlling a winding with PWM, when
+the drive current is interrupted, the inductive nature of the motor requires that the current must continue to flow.
+This is called recirculation current. To handle this recirculation current, the H-bridge can operate in two different
+states: fast decay or slow decay. In fast decay mode, the H-bridge is disabled and recirculation current flows
+through the body diodes; in slow decay, the motor winding is shorted.
+To PWM using fast decay, the PWM signal is applied to one xIN pin while the other is held low; to use slow
+decay, one xIN pin is held high.
+Table 2. PWM Control of Motor Speed
+xIN1 xIN2 FUNCTION
+PWM 0 Forward PWM, fast decay
+1 PWM Forward PWM, slow decay
+0 PWM Reverse PWM, fast decay
+PWM 1 Reverse PWM, slow decay
+Copyright © 2011–2015, Texas Instruments Incorporated Submit Documentation Feedback 9
+Product Folder Links: DRV8833
+
+PHYSICAL PDF PAGE 10
+CHOP
+ISENSE
+200 mVI R/c20
+xOUT 1 xOUT 2
+1
+2
+3
+Forward drive
+Slow decay
+Fast decay
+VM
+1
+2
+1
+2
+3
+Reverse drive
+Slow decay
+Fast decay
+xOUT 1 xOUT 2
+3
+VM
+1
+2
+3
+FORWARD REVERSE
+DRV8833
+SLVSAR1E – JANUARY 2011 – REVISED JULY 2015 www.ti.com
+Figure 6 shows the current paths in different drive and decay modes.
+Figure 6. Drive and Decay Modes
+7.3.3 Current Control
+The current through the motor windings may be limited, or controlled, by a fixed-frequency PWM current
+regulation, or current chopping. For DC motors, current control is used to limit the start-up and stall current of the
+motor. For stepper motors, current control is often used at all times.
+When an H-bridge is enabled, current rises through the winding at a rate dependent on the DC voltage and
+inductance of the winding. If the current reaches the current chopping threshold, the bridge disables the current
+until the beginning of the next PWM cycle. Immediately after the current is enabled, the voltage on the xISEN pin
+is ignored for a fixed period of time before enabling the current sense circuitry. This blanking time is fixed at 3.75
+μs. This blanking time also sets the minimum on time of the PWM when operating in current chopping mode.
+The PWM chopping current is set by a comparator which compares the voltage across a current sense resistor
+connected to the xISEN pins with a reference voltage. The reference voltage is fixed at 200 mV.
+The chopping current is calculated in Equation 1.
+(1)
+Example: If a 1-Ω sense resistor is used, the chopping current will be 200 mV/1 Ω = 200 mA.
+Once the chopping current threshold is reached, the H-bridge switches to slow decay mode. Winding current is
+recirculated by enabling both of the low-side FETs in the bridge. This state is held until the beginning of the next
+fixed-frequency PWM cycle.
+If current control is not needed, the xISEN pins should be connected directly to ground.
+10 Submit Documentation Feedback Copyright © 2011–2015, Texas Instruments Incorporated
+Product Folder Links: DRV8833
+
+PHYSICAL PDF PAGE 11
+DRV8833
+www.ti.com SLVSAR1E – JANUARY 2011 – REVISED JULY 2015
+7.3.4 nSLEEP Operation
+Driving nSLEEP low will put the device into a low power sleep state. In this state, the H-bridges are disabled, the
+gate drive charge pump is stopped, all internal logic is reset, and all internal clocks are stopped. All inputs are
+ignored until nSLEEP returns inactive high. When returning from sleep mode, some time (up to 1 ms) needs to
+pass before the motor driver becomes fully operational. To make the board design simple, the nSLEEP can be
+pulled up to the supply (VM). TI recommends using a pullup resistor when this is done. This resistor limits the
+current to the input in case VM is higher than 6.5 V. Internally, the nSLEEP pin has a 500-kΩ resistor to GND. It
+also has a clamping Zener diode that clamps the voltage at the pin at 6.5 V. Currents greater than 250 µA can
+cause damage to the input structure. Hence the recommended pullup resistor would be between 20 kΩ and
+75 kΩ.
+7.3.5 Protection Circuits
+The DRV8833 is fully protected against undervoltage, overcurrent and overtemperature events.
+7.3.5.1 Overcurrent Protection (OCP)
+An analog current limit circuit on each FET limits the current through the FET by limiting the gate drive. If this
+analog current limit persists for longer than the OCP deglitch time, all FETs in the H-bridge will be disabled and
+the nFAULT pin will be driven low. The driver will be re-enabled after the OCP retry period (tOCP) has passed.
+nFAULT becomes high again at this time. If the fault condition is still present, the cycle repeats. If the fault is no
+longer present, normal operation resumes and nFAULT remains deasserted. Please note that only the H-bridge
+in which the OCP is detected will be disabled while the other bridge will function normally.
+Overcurrent conditions are detected independently on both high- and low-side devices; that is, a short to ground,
+supply, or across the motor winding will all result in an overcurrent shutdown. Overcurrent protection does not
+use the current sense circuitry used for PWM current control, so it functions even without presence of the xISEN
+resistors.
+7.3.5.2 Thermal Shutdown (TSD)
+If the die temperature exceeds safe limits, all FETs in the H-bridge will be disabled and the nFAULT pin will be
+driven low. Once the die temperature has fallen to a safe level, operation will automatically resume.
+7.3.5.3 Undervoltage Lockout (UVLO)
+If at any time the voltage on the VM pin falls below the undervoltage lockout threshold voltage, all circuitry in the
+device will be disabled, and all internal logic will be reset. Operation will resume when VM rises above the UVLO
+threshold. nFAULT is driven low in the event of an undervoltage condition.
+Table 3. Device Protection
+INTERNALFAULT CONDITION ERROR REPORT H-BRIDGE RECOVERYCIRCUITS
+VM undervoltage VM < 2.5 V None Disabled Disabled VM > 2.7 V(UVLO)
+Overcurrent (OCP) IOUT > IOCP FAULTn Disabled Operating OCP
+Thermal Shutdown TJ > TTSD FAULTn Disabled Operating TJ < TTSD – THYS(TSD)
+7.4 Device Functional Modes
+The DRV8833 is active unless the nSLEEP pin is brought logic low. In sleep mode, the H-bridge FETs are
+disabled (Hi-Z). The DRV8833 is brought out of sleep mode automatically if nSLEEP is brought logic high.
+tWAKE must elapse before the outputs change state after wakeup.
+Table 4. Modes of Operation
+FAULT CONDITION H-BRIDGE INTERNAL CIRCUITS
+Operating nSLEEP pin high Operating Operating
+Sleep mode nSLEEP pin low Disabled Disabled
+Fault encountered Any fault condition met Disabled See Table 3
+Copyright © 2011–2015, Texas Instruments Incorporated Submit Documentation Feedback 11
+Product Folder Links: DRV8833
+
+PHYSICAL PDF PAGE 13
+DRV8833
+www.ti.com SLVSAR1E – JANUARY 2011 – REVISED JULY 2015
+8.2.2.2 Motor Current Trip Point
+When the voltage on pin xISEN exceeds VTRIP (0.2 V), current regulation is activated. The RISENSE resistor should
+be sized to set the desired ICHOP level.
+RISENSE = 0.2 V / ICHOP (2)
+To set ICHOP to 1 A, RSENSE = 0.2 V / 1 A = 0.2 Ω.
+8.2.2.3 Sense Resistor
+For optimal performance, it is important for the sense resistor to be:
+• Surface-mount
+• Low inductance
+• Rated for high enough power
+• Placed closely to the motor driver
+The power dissipated by the sense resistor equals IRMS2 × R. For example, if peak motor current is 3 A, RMS
+motor current is 2 A, and a 0.05-Ω sense resistor is used, the resistor will dissipate 2 A2× 0.05 Ω = 0.2 W. The
+power quickly increases with higher current levels.
+Resistors typically have a rated power within some ambient temperature range, along with a derated power curve
+for high ambient temperatures. When a PCB is shared with other components generating heat, margin should be
+added. For best practice, measure the actual sense resistor temperature in a final system, along with the power
+MOSFETs, as those are often the hottest components.
+Because power resistors are larger and more expensive than standard resistors, the common practice is to use
+multiple standard resistors in parallel, between the sense node and ground. This distributes the current and heat
+dissipation.
+8.2.3 Application Curve
+Figure 8. Current Regulation
+Copyright © 2011–2015, Texas Instruments Incorporated Submit Documentation Feedback 13
+Product Folder Links: DRV8833
+
+PHYSICAL PDF PAGE 14
+Local 
+Bulk Capacitor
+Parasitic Wire
+Inductance
++
+/cb1
+Motor 
+Driver
+Power Supply Motor Drive System
+VM
+GND
++
+IC Bypass 
+Capacitor
+DRV8833
+SLVSAR1E – JANUARY 2011 – REVISED JULY 2015 www.ti.com
+9 Power Supply Recommendations
+9.1 Bulk Capacitance
+Having an appropriate local bulk capacitance is an important factor in motor drive system design. It is generally
+beneficial to have more bulk capacitance, while the disadvantages are increased cost and physical size.
+The amount of local capacitance needed depends on a variety of factors, including:
+• The highest current required by the motor system
+• The capacitance and ability to source current
+• The amount of parasitic inductance between the power supply and motor system
+• The acceptable voltage ripple
+• The type of motor used (brushed DC, brushless DC, stepper)
+• The motor braking method
+The inductance between the power supply and the motor drive system limits the rate current can change from
+the power supply. If the local bulk capacitance is too small, the system responds to excessive current demands
+or dumps from the motor with a change in voltage. When adequate bulk capacitance is used, the motor voltage
+remains stable and high current can be quickly supplied.
+The data sheet generally provides a recommended value, but system-level testing is required to determine the
+appropriate sized bulk capacitor.
+Figure 9. Example Setup of Motor Drive System With External Power Supply
+The voltage rating for bulk capacitors should be higher than the operating voltage, to provide margin for cases
+when the motor transfers energy to the supply.
+9.2 Power Supply and Logic Sequencing
+There is no specific sequence for powering up the DRV8833. The presence of digital input signals is acceptable
+before VM is applied. After VM is applied to the DRV8833, the device begins operation based on the status of
+the control pins.
+14 Submit Documentation Feedback Copyright © 2011–2015, Texas Instruments Incorporated
+Product Folder Links: DRV8833
+
+PHYSICAL PDF PAGE 15
+2.2 µF
+nSLEEP
+AOUT1
+AISEN
+AOUT2
+BOUT2
+BISEN
+BOUT1
+nFAULT
+AIN1
+AIN2
+VINT
+GND
+VM
+BIN2
+BIN1
+RAISEN
+RBISEN 10 µF
+VCP
+.01 µF
+DRV8833
+www.ti.com SLVSAR1E – JANUARY 2011 – REVISED JULY 2015
+10 Layout
+10.1 Layout Guidelines
+The VM pin should be bypassed to GND using low-ESR ceramic bypass capacitors with a recommended value
+of 10-μF rated for VM. This capacitor should be placed as close to the VM pin as possible with a thick trace or
+ground plane connection to the device GND pin.
+A low-ESR ceramic capacitor must be placed in between the VM and VCP pins. TI recommends a value of 0.01-
+μF rated for 16 V. Place this component as close to the pins as possible.
+Bypass VINT to ground with a 2.2-μF ceramic capacitor rated 6.3 V. Place this bypass capacitor as close to the
+pin as possible.
+10.1.1 Heatsinking
+The PowerPAD package uses an exposed pad to remove heat from the device. For proper operation, this pad
+must be thermally connected to copper on the PCB to dissipate heat. On a multilayer PCB with a ground plane,
+this can be accomplished by adding a number of vias to connect the thermal pad to the ground plane. On PCBs
+without internal planes, copper area can be added on either side of the PCB to dissipate heat. If the copper area
+is on the opposite side of the PCB from the device, thermal vias are used to transfer the heat between top and
+bottom layers.
+For details about how to design the PCB, refer to TI application report, PowerPAD™ Thermally Enhanced
+Package (SLMA002) and TI application brief, PowerPAD™ Made Easy (SLMA004), available at www.ti.com.
+In general, the more copper area that can be provided, the more power can be dissipated.
+NOTE
+The PW package option is not thermally enhanced and TI recommends adhering to the
+power dissipation limits.
+10.2 Layout Example
+Figure 10. Recommended Layout Example
+Copyright © 2011–2015, Texas Instruments Incorporated Submit Documentation Feedback 15
+Product Folder Links: DRV8833
+
+PHYSICAL PDF PAGE 16
+/c0b /c0c /c0b /c0c
+2 2
+TOT DS(ON) OUT(RMS) DS(ON) OUT(RMS)/c33 /c03/c20/c03 /c2b/c36 /cb1 /c35 /c2c /c2f/c36 /cb1 /c35 /c2c/c75 /c0e /c75
+DRV8833
+SLVSAR1E – JANUARY 2011 – REVISED JULY 2015 www.ti.com
+10.3 Thermal Considerations
+10.3.1 Maximum Output Current
+In actual operation, the maximum output current achievable with a motor driver is a function of die temperature.
+This, in turn, is greatly affected by ambient temperature and PCB design. Basically, the maximum motor current
+will be the amount of current that results in a power dissipation level that, along with the thermal resistance of the
+package and PCB, keeps the die at a low enough temperature to stay out of thermal shutdown.
+The dissipation ratings given in the data sheet can be used as a guide to calculate the approximate maximum
+power dissipation that can be expected to be possible without entering thermal shutdown for several different
+PCB constructions. However, for accurate data, the actual PCB design must be analyzed through measurement
+or thermal simulation.
+10.3.2 Thermal Protection
+The DRV8833 has thermal shutdown (TSD) as described above. If the die temperature exceeds approximately
+150°C, the device will be disabled until the temperature drops by 45°C.
+Any tendency of the device to enter TSD is an indication of either excessive power dissipation, insufficient
+heatsinking, or too high an ambient temperature.
+10.4 Power Dissipation
+Power dissipation in the DRV8833 is dominated by the DC power dissipated in the output FET resistance, or
+RDS(ON). There is additional power dissipated due to PWM switching losses, which are dependent on PWM
+frequency, rise and fall times, and VM supply voltages. These switching losses are typically on the order of 10%
+to 30% of the DC power dissipation.
+The DC power dissipation of one H-bridge can be roughly estimated by Equation 3.
+where
+• PTOT is the total power dissipation
+• HS - RDS(ON) is the resistance of the high-side FET
+• LS - RDS(ON) is the resistance of the low-side FET
+• IOUT(RMS) is the RMS output current being applied to the motor (3)
+RDS(ON) increases with temperature, so as the device heats, the power dissipation increases. This must be taken
+into consideration when sizing the heatsink.
+16 Submit Documentation Feedback Copyright © 2011–2015, Texas Instruments Incorporated
+Product Folder Links: DRV8833

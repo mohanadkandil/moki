@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: private captured-output replay cannot bypass live immutable clock getter verification
+ok 1 - private captured-output replay cannot bypass live immutable clock getter verification
+  ---
+  duration_ms: 1.618859
+  type: 'test'
+  ...
+# Subtest: actual public clock event is cloned only at the correct phase and rejects conflicting repeats
+ok 2 - actual public clock event is cloned only at the correct phase and rejects conflicting repeats
+  ---
+  duration_ms: 5.444427
+  type: 'test'
+  ...
+# Subtest: actual zero-PCBtrace source snapshot binds source identity only, preserving all five literal records
+ok 3 - actual zero-PCBtrace source snapshot binds source identity only, preserving all five literal records
+  ---
+  duration_ms: 27.344413
+  type: 'test'
+  ...
+# Subtest: clock profiles must be covered bijectively, including two branches on the same net
+ok 4 - clock profiles must be covered bijectively, including two branches on the same net
+  ---
+  duration_ms: 3.404282
+  type: 'test'
+  ...
+# Subtest: every connectsTo alias must be a unique complete actual same-clock-net physical port
+ok 5 - every connectsTo alias must be a unique complete actual same-clock-net physical port
+  ---
+  duration_ms: 15.073744
+  type: 'test'
+  ...
+# Subtest: clock copper and existing source metadata cannot change, and source evidence must exist
+ok 6 - clock copper and existing source metadata cannot change, and source evidence must exist
+  ---
+  duration_ms: 15.779873
+  type: 'test'
+  ...
+# Subtest: compiler net IDs may be renumbered without guessing aliases or altering copper
+ok 7 - compiler net IDs may be renumbered without guessing aliases or altering copper
+  ---
+  duration_ms: 5.420626
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1716.203595

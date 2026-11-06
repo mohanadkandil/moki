@@ -1,0 +1,27 @@
+{
+  "scope": "Pure targeted actual captured geometry and source tests; no routing acceptance",
+  "sources": [
+    {
+      "path": "eda/blocks/legalize.ts",
+      "sha256": "3bad7206526edba101d2579ecbe7f34f57e532eda5180d27581f0d880858bbd1"
+    },
+    {
+      "path": "eda/blocks/auto-placement.ts",
+      "sha256": "d5629e228c18ed7ab5b223af0d08e324d97561872dd38b438e469ceefc6f74fc"
+    },
+    {
+      "path": "tests/blocks-legalize-covariance.test.ts",
+      "sha256": "c7b66a17815279b765a0a3cfa296fa07f87870b6b5767a54eee11eef79a3012b"
+    },
+    {
+      "path": "tests/blocks-auto-placement.test.ts",
+      "sha256": "b2e11848e104fe6a07a5d963404159a0d9d0699bcbd45acb4ec76cdac0b99e50"
+    }
+  ],
+  "targetedTests": {
+    "count": 22,
+    "passed": 22,
+    "elapsedMs": 2737.190964
+  },
+  "strictNodeNextTypeScript": "passed"
+}

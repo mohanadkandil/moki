@@ -1,0 +1,137 @@
+{
+  "inputHash": "10ccd49e088d6fae211d1a5dfc93da039da09901decfaf0a3fad072c95db6a67",
+  "blocks": [
+    {
+      "id": "dc-motor-drv8833",
+      "version": 2,
+      "contentHash": "7c9bdacc012828840b1a88bd2ae9826fa2f5087fe8331c0fe98d9f9298d50d5c",
+      "partCount": 9
+    },
+    {
+      "id": "rp2040-minimal",
+      "version": 3,
+      "contentHash": "b5913db2ff6230dcc2413c58ee2a02d5137f6c64d0a5555f32a7f7038d6fdcea",
+      "partCount": 33
+    }
+  ],
+  "exactPlanGates": [
+    {
+      "gate": "erc",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "rp2040-minimal",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "dc-motor-drv8833",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "usb-external-host",
+          "severity": "warning",
+          "where": "rp.USB, rp.USB_HOST",
+          "message": "USB peripheral relies on an external host through the declared passive connector"
+        }
+      ]
+    },
+    {
+      "gate": "power",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "thermal-assumption",
+          "severity": "warning",
+          "where": "rp.V3V3",
+          "message": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+        }
+      ]
+    }
+  ],
+  "pinMap": {
+    "family": "rp2040",
+    "pio": {
+      "platform": "platformio/raspberrypi@1.20.0",
+      "board": "pico",
+      "framework": "arduino",
+      "environment": "rp2040"
+    },
+    "pins": {
+      "PIN_MOTOR_IN1": {
+        "gpio": 14,
+        "port": "motor.IN1"
+      },
+      "PIN_MOTOR_IN2": {
+        "gpio": 15,
+        "port": "motor.IN2"
+      }
+    },
+    "libs": [],
+    "includes": [
+      "Arduino.h",
+      "Wire.h"
+    ],
+    "usage": [
+      {
+        "block": "rp",
+        "note": "Official PlatformIO RaspberryPi1.20.0 board=pico, Arduino-mbed (not earlephilhower). Installed Arduino-mbed4.6.0 RASPBERRY_PI_PICO variant.cpp explicitly maps D0–D29 to p0–p29 and has empty initVariant; pins_arduino.h maps A0–A3 to26–29. Default Wire uses GP4/5; optional GP20/21 bus needs mbed::I2C or MbedI2C configured explicitly, not unmodified global Wire. no onboardLED/VSYS divider/SMPS hardware is implied. Motoroutputs GP14/15 defaultLOW/coast before PWM. GP26–29ADC inputs must stay within actualADC_AVDD; conservativeexternalinputportmax3.234V. Do not repurpose QSPI/crystal/USB/RUN/TESTEN/debug pins or disable/change1.1V regulator.2MB flash/12MHz clock compatible configuration still needs sandbox compile and native/electrical review. All currentbudgets are bounded author estimates; core regulator100mArating is distinct from fault currentlimit. Keep QSPI/crystal/decaps short andUSB differential return/impedance qualified; no nativeDRC,hardware,current/clock/ESD certification or independentpromotion is claimed."
+      },
+      {
+        "block": "motor",
+        "note": "MCU must drive IN1/IN2 using output-capable pins; speedPWM additionally requires actual PWM capability (RP2040 agreed GP14/15). Port schema has no PWM-requirement field, so plan review must check MCU facts. Set both pinsLOW before enabling OUTPUT, wait>=1ms afterVM valid (2ms authorpolicy). 00coast,10forward,01reverse,11brake; fast-decay speedPWM appliesPWM toonepin whileotherLOW. Use targetcore analogWrite/digitalWrite, no extra library. Startspeed0, clampduty, coast before reversing; software is not stall/current/temperature protection. Fixedsleep47k is alwaysenabled, no shutdownGPIO. Never ground either motor terminal or route motor current through3.3VLDO. Qualify motor/supply startup, stall, USBinrush, EMI, regeneration/braking, effectivecaps andthermalbehavior; no hardware-fit/manufacturing claim."
+      }
+    ]
+  },
+  "appSyntax": {
+    "keys": [
+      "source"
+    ],
+    "newlineCount": 12,
+    "literalBackslashNCount": 0
+  },
+  "sections": [
+    {
+      "id": "rp",
+      "title": "RP2040 USB core",
+      "purpose": "RP2040, QSPI flash, clock, USB and core supply",
+      "insts": [
+        "rp"
+      ],
+      "notes": [
+        "USB supply must provide known5V1.5A; Arduino mbed core and code-owned ARM toolchain override.",
+        "No external motor, physical operating state or fabrication qualification claimed."
+      ],
+      "reference": {
+        "lcsc": "C2040",
+        "datasheetUrl": "https://datasheets.raspberrypi.com/rp2040/hardware-design-with-rp2040.pdf",
+        "page": 14,
+        "quote": "Complete schematic of the minimal board",
+        "figure": "11"
+      }
+    },
+    {
+      "id": "motor",
+      "title": "DRV8833 DC motor",
+      "purpose": "BridgeA PWM, current-sense and motor connector",
+      "insts": [
+        "motor"
+      ],
+      "notes": [
+        "GP14 and GP15 support PWM. Motor is external and unqualified.",
+        "205mA typical/505mA peak supply reservation is an author estimate, not a stall guarantee.",
+        "Single bridgeA adaptation per TI pages9–11; bridgeB inputs/sense grounded, outputs unused. Layout figure is a reference, not an exact application schematic."
+      ],
+      "reference": {
+        "lcsc": "C50506",
+        "datasheetUrl": "https://www.ti.com/lit/ds/symlink/drv8833.pdf",
+        "page": 15,
+        "quote": "Recommended Layout Example",
+        "figure": "10"
+      }
+    }
+  ]
+}

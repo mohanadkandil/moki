@@ -1,0 +1,16 @@
+{
+  "scope": "Pure derived contract mutant on actual immutable-clock fixture. No native solver or source edits.",
+  "sourceSha256": "afde60c008104bb6e9c6f87495567b725989f3c408b4df91f8132d2dc7fce7df",
+  "cases": [
+    {
+      "kind": "same-id-geometry-mutation",
+      "accepted": false,
+      "error": "Error: Immutable preload returned fixed copper changed"
+    },
+    {
+      "kind": "replacement-of-nonclock",
+      "accepted": false,
+      "error": "Error: Immutable preload native output replaces fixed copper"
+    }
+  ]
+}

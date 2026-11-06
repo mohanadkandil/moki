@@ -1,0 +1,114 @@
+{
+  "kind": "derived valid physical-hole reuse matching installednative materializer dedup policy; no native routing",
+  "join": {
+    "type": "pcb_trace",
+    "pcb_trace_id": "source_net_0_mst0_0",
+    "connection_name": "source_net_0",
+    "subcircuit_id": "subcircuit_source_group_0",
+    "connectsTo": [
+      "saved_phase_null_1_0_exit",
+      "saved_phase_null_1_1_exit"
+    ],
+    "route": [
+      {
+        "route_type": "wire",
+        "x": -4.51,
+        "y": 2,
+        "width": 0.15,
+        "layer": "bottom"
+      },
+      {
+        "route_type": "via",
+        "x": -4.51,
+        "y": 2,
+        "from_layer": "bottom",
+        "to_layer": "inner1",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      },
+      {
+        "route_type": "wire",
+        "x": -4.51,
+        "y": 2,
+        "width": 0.15,
+        "layer": "inner1"
+      },
+      {
+        "route_type": "wire",
+        "x": 3.49,
+        "y": 2,
+        "width": 0.15,
+        "layer": "inner1"
+      },
+      {
+        "route_type": "via",
+        "x": 3.49,
+        "y": 2,
+        "from_layer": "inner1",
+        "to_layer": "bottom",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      },
+      {
+        "route_type": "wire",
+        "x": 3.49,
+        "y": 2,
+        "width": 0.15,
+        "layer": "bottom"
+      }
+    ]
+  },
+  "barrels": [
+    {
+      "type": "pcb_via",
+      "pcb_via_id": "pcb_via_0",
+      "pcb_trace_id": "saved_phase_null_1_0",
+      "x": -4.51,
+      "y": 2,
+      "hole_diameter": 0.3,
+      "outer_diameter": 0.6,
+      "layers": [
+        "top",
+        "inner1",
+        "inner2",
+        "bottom"
+      ],
+      "from_layer": "top",
+      "to_layer": "bottom",
+      "subcircuit_id": "subcircuit_source_group_0",
+      "subcircuit_connectivity_map_key": "unnamedsubcircuitsubcircuit_source_group_0_connectivity_net0"
+    },
+    {
+      "type": "pcb_via",
+      "pcb_via_id": "pcb_via_1",
+      "pcb_trace_id": "saved_phase_null_1_1",
+      "x": 3.49,
+      "y": 2,
+      "hole_diameter": 0.3,
+      "outer_diameter": 0.6,
+      "layers": [
+        "top",
+        "inner1",
+        "inner2",
+        "bottom"
+      ],
+      "from_layer": "top",
+      "to_layer": "bottom",
+      "subcircuit_id": "subcircuit_source_group_0",
+      "subcircuit_connectivity_map_key": "unnamedsubcircuitsubcircuit_source_group_0_connectivity_net0"
+    }
+  ],
+  "result": {
+    "repaired": [
+      {
+        "pcbTraceId": "source_net_0_mst0_0",
+        "ref": "R1",
+        "pad": "1",
+        "sourceTraceId": "source_trace_0",
+        "sourceNetId": "source_net_0",
+        "netName": "SUPPLY",
+        "kind": "saved-exit-join"
+      }
+    ]
+  }
+}

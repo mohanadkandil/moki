@@ -1,0 +1,8 @@
+{
+  "url": "https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf",
+  "status": 200,
+  "method": "curl --http1.1 Mozilla/5.0",
+  "sha256": "be56fbb75ba0ae9e26558a73c93ac3e75c2ad4e6878d3b6703de2a76d886ea8c",
+  "bytes": 5301205,
+  "pages": 642
+}

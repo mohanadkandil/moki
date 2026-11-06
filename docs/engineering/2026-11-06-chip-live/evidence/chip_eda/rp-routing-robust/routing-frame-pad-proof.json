@@ -1,0 +1,42 @@
+{
+  "id": "pcb_smtpad_57",
+  "pad": {
+    "type": "pcb_smtpad",
+    "pcb_smtpad_id": "pcb_smtpad_57",
+    "pcb_component_id": "pcb_component_1",
+    "pcb_port_id": "pcb_port_57",
+    "layer": "top",
+    "shape": "rotated_pill",
+    "x": 1.2800920000000007,
+    "y": 18.095,
+    "radius": 0.3149981,
+    "height": 2.2500082,
+    "width": 0.6299962,
+    "ccw_rotation": 90,
+    "port_hints": [
+      "pin1"
+    ],
+    "is_covered_with_solder_mask": false,
+    "subcircuit_id": "subcircuit_source_group_0"
+  },
+  "obstacle": {
+    "center": {
+      "x": 1.2800920000000007,
+      "y": 18.095
+    },
+    "width": 0.6299962,
+    "height": 2.2500082,
+    "ccwRotationDegrees": 90
+  },
+  "polygonKeys": [
+    "faces",
+    "edges"
+  ],
+  "box": {
+    "xmin": 0.15508790000000028,
+    "ymin": 17.7800019,
+    "xmax": 2.405096100000001,
+    "ymax": 18.4099981,
+    "name": "box"
+  }
+}

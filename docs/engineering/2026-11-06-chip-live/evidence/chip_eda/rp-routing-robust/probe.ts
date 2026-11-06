@@ -1,0 +1,4 @@
+import{readFileSync,writeFileSync}from'node:fs';import{createRpClockPhase}from'../../../../../../eda/blocks/rp-clock.js';import{createRpEscapePhase}from'../../../../../../eda/blocks/rp-escape.js';
+const read=(p:string)=>JSON.parse(readFileSync(new URL(p,import.meta.url),'utf8'));
+const original=read('circuit.json'),c=original.filter((e:any)=>!['pcb_trace','pcb_via','pcb_copper_pour'].includes(e.type)&&!e.error_type),g=read('plan-graph.json'),m=Object.fromEntries(read('import-map.json').parts.map((p:any)=>[p.ref,p.pins]));
+const clock=createRpClockPhase(c,g,m);try{const escape=createRpEscapePhase(c,g,m,clock);writeFileSync(new URL('escape-probe.json',import.meta.url),JSON.stringify({clock,escape},null,2));console.log(JSON.stringify({paths:escape.audit.length,nets:escape.netNames}));}catch(e){console.error(String(e));process.exitCode=1;}

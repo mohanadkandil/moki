@@ -1,0 +1,366 @@
+{
+  "lcsc": "C2040",
+  "mpn": "RP2040",
+  "manufacturer": "Raspberry Pi(树莓派)",
+  "package": "LQFN-56_L7.0-W7.0-P0.4-EP",
+  "catalogReceipt": "sha256:f2fd5dede8d33de7b18cc65185bf3b664f5e7bc50b2f96f6d533fd7a31218916",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "fafad17424f9acc085327fc980ff7055af0e0cf28fcb1f1e8ee315e760164f0c",
+  "footprintSha256": "9d256da897b195f1ffcedff10b24c759c2734ddfa3d860113cd20b32c55a5ada",
+  "pins": [
+    {
+      "pad": "9",
+      "labels": [
+        "GPIO7"
+      ]
+    },
+    {
+      "pad": "8",
+      "labels": [
+        "GPIO6"
+      ]
+    },
+    {
+      "pad": "7",
+      "labels": [
+        "GPIO5"
+      ]
+    },
+    {
+      "pad": "6",
+      "labels": [
+        "GPIO4"
+      ]
+    },
+    {
+      "pad": "57",
+      "labels": [
+        "GND"
+      ]
+    },
+    {
+      "pad": "56",
+      "labels": [
+        "QSPI_SS"
+      ]
+    },
+    {
+      "pad": "55",
+      "labels": [
+        "QSPI_SD1"
+      ]
+    },
+    {
+      "pad": "54",
+      "labels": [
+        "QSPI_SD2"
+      ]
+    },
+    {
+      "pad": "53",
+      "labels": [
+        "QSPI_SD0"
+      ]
+    },
+    {
+      "pad": "52",
+      "labels": [
+        "QSPI_SCLK"
+      ]
+    },
+    {
+      "pad": "51",
+      "labels": [
+        "QSPI_SD3"
+      ]
+    },
+    {
+      "pad": "50",
+      "labels": [
+        "DVDD"
+      ]
+    },
+    {
+      "pad": "5",
+      "labels": [
+        "GPIO3"
+      ]
+    },
+    {
+      "pad": "49",
+      "labels": [
+        "IOVDD"
+      ]
+    },
+    {
+      "pad": "48",
+      "labels": [
+        "USB_VDD"
+      ]
+    },
+    {
+      "pad": "47",
+      "labels": [
+        "USB_DP"
+      ]
+    },
+    {
+      "pad": "46",
+      "labels": [
+        "USB_DM"
+      ]
+    },
+    {
+      "pad": "45",
+      "labels": [
+        "VREG_VOUT"
+      ]
+    },
+    {
+      "pad": "44",
+      "labels": [
+        "VREG_IN"
+      ]
+    },
+    {
+      "pad": "43",
+      "labels": [
+        "ADC_AVDD"
+      ]
+    },
+    {
+      "pad": "42",
+      "labels": [
+        "IOVDD"
+      ]
+    },
+    {
+      "pad": "41",
+      "labels": [
+        "GPIO29_ADC3"
+      ]
+    },
+    {
+      "pad": "40",
+      "labels": [
+        "GPIO28_ADC2"
+      ]
+    },
+    {
+      "pad": "4",
+      "labels": [
+        "GPIO2"
+      ]
+    },
+    {
+      "pad": "39",
+      "labels": [
+        "GPIO27_ADC1"
+      ]
+    },
+    {
+      "pad": "38",
+      "labels": [
+        "GPIO26_ADC0"
+      ]
+    },
+    {
+      "pad": "37",
+      "labels": [
+        "GPIO25"
+      ]
+    },
+    {
+      "pad": "36",
+      "labels": [
+        "GPIO24"
+      ]
+    },
+    {
+      "pad": "35",
+      "labels": [
+        "GPIO23"
+      ]
+    },
+    {
+      "pad": "34",
+      "labels": [
+        "GPIO22"
+      ]
+    },
+    {
+      "pad": "33",
+      "labels": [
+        "IOVDD"
+      ]
+    },
+    {
+      "pad": "32",
+      "labels": [
+        "GPIO21"
+      ]
+    },
+    {
+      "pad": "31",
+      "labels": [
+        "GPIO20"
+      ]
+    },
+    {
+      "pad": "30",
+      "labels": [
+        "GPIO19"
+      ]
+    },
+    {
+      "pad": "3",
+      "labels": [
+        "GPIO1"
+      ]
+    },
+    {
+      "pad": "29",
+      "labels": [
+        "GPIO18"
+      ]
+    },
+    {
+      "pad": "28",
+      "labels": [
+        "GPIO17"
+      ]
+    },
+    {
+      "pad": "27",
+      "labels": [
+        "GPIO16"
+      ]
+    },
+    {
+      "pad": "26",
+      "labels": [
+        "RUN"
+      ]
+    },
+    {
+      "pad": "25",
+      "labels": [
+        "SWD"
+      ]
+    },
+    {
+      "pad": "24",
+      "labels": [
+        "SWCLK"
+      ]
+    },
+    {
+      "pad": "23",
+      "labels": [
+        "DVDD"
+      ]
+    },
+    {
+      "pad": "22",
+      "labels": [
+        "IOVDD"
+      ]
+    },
+    {
+      "pad": "21",
+      "labels": [
+        "XOUT"
+      ]
+    },
+    {
+      "pad": "20",
+      "labels": [
+        "XIN"
+      ]
+    },
+    {
+      "pad": "2",
+      "labels": [
+        "GPIO0"
+      ]
+    },
+    {
+      "pad": "19",
+      "labels": [
+        "TESTEN"
+      ]
+    },
+    {
+      "pad": "18",
+      "labels": [
+        "GPIO15"
+      ]
+    },
+    {
+      "pad": "17",
+      "labels": [
+        "GPIO14"
+      ]
+    },
+    {
+      "pad": "16",
+      "labels": [
+        "GPIO13"
+      ]
+    },
+    {
+      "pad": "15",
+      "labels": [
+        "GPIO12"
+      ]
+    },
+    {
+      "pad": "14",
+      "labels": [
+        "GPIO11"
+      ]
+    },
+    {
+      "pad": "13",
+      "labels": [
+        "GPIO10"
+      ]
+    },
+    {
+      "pad": "12",
+      "labels": [
+        "GPIO9"
+      ]
+    },
+    {
+      "pad": "11",
+      "labels": [
+        "GPIO8"
+      ]
+    },
+    {
+      "pad": "10",
+      "labels": [
+        "IOVDD"
+      ]
+    },
+    {
+      "pad": "1",
+      "labels": [
+        "IOVDD"
+      ]
+    }
+  ],
+  "models": [
+    {
+      "format": "obj",
+      "url": "https://modules.easyeda.com/3dmodel/f6d2993935a84fdbb806981c138b32e5"
+    },
+    {
+      "format": "step",
+      "url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/f6d2993935a84fdbb806981c138b32e5"
+    }
+  ],
+  "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2201101600_Raspberry-Pi-RP2040_C2040.pdf",
+  "datasheetReceipt": "sha256:62802a7643af5306c53d317341c87f38f5c1c9bb402fabb52e7783b97e0897da"
+}

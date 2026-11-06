@@ -1,0 +1,15 @@
+/** Derived native serialization + official annotation probe; no native routing. */
+import{readFileSync,writeFileSync}from'node:fs';import{createRpSignalEscapeProposals}from'../../../../../../eda/blocks/rp-signal-escape.js';import{createNativeFanoutPhase}from'../../../../../../eda/blocks/fanout.js';import{repairNativeExits}from'../../../../../../eda/blocks/repair-native-exits.js';import{checkEachPcbTraceNonOverlapping}from'../../../../../../eda/node_modules/@tscircuit/checks/dist/index.js';
+const root=new URL('./',import.meta.url),f=JSON.parse(readFileSync(new URL('rp-signal-escape-fixture.json',root),'utf8')),signals=createRpSignalEscapeProposals(f.circuit,f.graph,f.mapping,f.clock,f.power,new Set()),bound=createNativeFanoutPhase(f.circuit,signals.proposals),paths=[...f.power.props.pcbTracePaths,...bound.props!.pcbTracePaths],audit=[...f.power.audit,...signals.audit];
+const phase={props:{phaseIndex:2,pcbTracePaths:paths},audit},c=structuredClone(f.circuit);
+for(const[index,p]of paths.entries()){
+ const a=audit[index],source=c.find((e:any)=>e.type==='source_trace'&&e.source_trace_id===a.diagnosticSourceTraceId),last=p.route.at(-1),wire=(layer:string)=>({route_type:'wire',x:last.x,y:last.y,width:.15,layer}),pcb_trace_id=`saved_phase_null_2_${index}`;
+ const route=last.route_type==='via'?[...p.route.slice(0,-1),wire('top'),last,wire('bottom'),wire('bottom')]:structuredClone(p.route);
+ c.push({type:'pcb_trace',pcb_trace_id,source_trace_id:source.source_trace_id,connection_name:source.connected_source_net_ids[0],subcircuit_id:source.subcircuit_id,route});
+ if(last.route_type==='via')c.push({type:'pcb_via',pcb_via_id:'DERIVED_HANDOFF_'+index,pcb_trace_id,x:last.x,y:last.y,outer_diameter:.6,hole_diameter:.3,from_layer:'top',to_layer:'bottom',layers:f.circuit.find((e:any)=>e.type==='pcb_board').num_layers===4?['top','inner1','inner2','bottom']:['top','bottom'],subcircuit_id:source.subcircuit_id,subcircuit_connectivity_map_key:source.subcircuit_connectivity_map_key});
+}
+let before:any,after:any;try{before={repairs:repairNativeExits(c,f.graph,f.mapping,[phase]).audit.length};}catch(error){before={error:String(error)};}
+const annotated=structuredClone(c);checkEachPcbTraceNonOverlapping(annotated,{minClearance:.127});
+try{after={repairs:repairNativeExits(annotated,f.graph,f.mapping,[phase]).audit.length};}catch(error){after={error:String(error)};}
+const markers=audit.filter((p:any)=>['17','18'].includes(p.pad)).map((p:any)=>{const index=audit.indexOf(p),trace=annotated.find((e:any)=>e.type==='pcb_trace'&&e.pcb_trace_id===`saved_phase_null_2_${index}`),port=f.circuit.find((e:any)=>e.type==='pcb_port'&&e.pcb_port_id===p.diagnosticPcbPortId);return{pad:p.pad,endpoint:trace.route.at(-1),port:{id:port.pcb_port_id,x:port.x,y:port.y}};});
+const result={kind:'derived exact native prefix serialization/official native marker insertion, no native router',prefixes:paths.length,before,after,markers};writeFileSync(new URL('signal-review-handoff.json',root),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result,null,2));

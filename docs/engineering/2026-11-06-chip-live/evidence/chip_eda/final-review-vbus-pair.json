@@ -1,0 +1,39 @@
+{
+  "jobId": "dad50cbf-26e5-4564-bef1-8161737012aa",
+  "actualFailure": "Error: Pipeline9 primary high-density routing failed: B01 failed: No path found for source_net_18_mst4; regional fallback failed: Failed to solve 1 nodes, cmn_23. err0: GrowShrinkHighDensityIntraNodeSolver failed after resizing to 8x. Last error: High-density scale solution rejected by validator.",
+  "nativePair": {
+    "name": "source_net_18_mst4",
+    "nominalTraceWidth": 0.3,
+    "width": 0.3,
+    "pointsToConnect": [
+      {
+        "x": -8.25,
+        "y": 13.399096,
+        "layer": "top",
+        "pointId": "pcb_port_78",
+        "pcb_port_id": "pcb_port_78"
+      },
+      {
+        "x": -6.950024,
+        "y": 16.25,
+        "layer": "top",
+        "pointId": "pcb_port_148",
+        "pcb_port_id": "pcb_port_148"
+      }
+    ],
+    "__rootConnectionNames": [
+      "source_net_18"
+    ]
+  },
+  "owners": [
+    "U4.pin5 USBLC6 VBUS",
+    "C17.pin1 VBUS bypass"
+  ],
+  "automaticPreloadedTraceCount": 10,
+  "artifactSha256": {
+    "router-error.json": "efb4e011f2afb35ca679a653ae8a54eb61f8d8c86490fcc2df01ade98c5b3dbf",
+    "router-input.json": "37121cb2d4f277b1734798337b3694becf3874233aed24b6a13abb1e40294be0"
+  },
+  "nativeContract": "Installed Pipeline9HighDensitySolver documents regional fallback rerouting/splicing intersecting preload, and exposes replacement/mutation-mask structures. Core withFixedTraces instead removes saved fixed prefixes from traces and converts them to obstacles.",
+  "acceptance": false
+}

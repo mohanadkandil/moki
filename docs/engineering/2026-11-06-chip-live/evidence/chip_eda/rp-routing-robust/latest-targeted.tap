@@ -1,0 +1,178 @@
+TAP version 13
+# Subtest: canonical fingerprint ignores object key order and optional undefined fields while retaining exact numbers and array order
+ok 1 - canonical fingerprint ignores object key order and optional undefined fields while retaining exact numbers and array order
+  ---
+  duration_ms: 2.702238
+  type: 'test'
+  ...
+# Subtest: matching native records survive verbatim; receipt claims reuse only and requires every fresh gate
+ok 2 - matching native records survive verbatim; receipt claims reuse only and requires every fresh gate
+  ---
+  duration_ms: 73.457436
+  type: 'test'
+  ...
+# Subtest: current input, source input and declared hashes must match exactly
+ok 3 - current input, source input and declared hashes must match exactly
+  ---
+  duration_ms: 16.727116
+  type: 'test'
+  ...
+# Subtest: plan, source graph, imports, placements, clock and native prefix changes each block replay
+ok 4 - plan, source graph, imports, placements, clock and native prefix changes each block replay
+  ---
+  duration_ms: 83.765822
+  type: 'test'
+  ...
+# Subtest: output byte hash prevents unnoticed mutation even when record shapes remain valid
+ok 5 - output byte hash prevents unnoticed mutation even when record shapes remain valid
+  ---
+  duration_ms: 16.087227
+  type: 'test'
+  ...
+# Subtest: missing native capture, a fatal native capture and a nonfailed source job are not proof of this replay source
+ok 6 - missing native capture, a fatal native capture and a nonfailed source job are not proof of this replay source
+  ---
+  duration_ms: 22.561678
+  type: 'test'
+  ...
+# Subtest: stage0 below-floor copper, unsupported routes, foreign names, duplicate and saved-prefix IDs all reject
+ok 7 - stage0 below-floor copper, unsupported routes, foreign names, duplicate and saved-prefix IDs all reject
+  ---
+  duration_ms: 185.61542
+  type: 'test'
+  ...
+# Subtest: minimum-width numeric tolerance never rounds or edits candidate copper, and motor expansion has no artificial nominal maximum
+ok 8 - minimum-width numeric tolerance never rounds or edits candidate copper, and motor expansion has no artificial nominal maximum
+  ---
+  duration_ms: 22.057351
+  type: 'test'
+  ...
+# Subtest: two-layer capture cannot replay a route onto an inner layer
+ok 9 - two-layer capture cannot replay a route onto an inner layer
+  ---
+  duration_ms: 25.49984
+  type: 'test'
+  ...
+# Subtest: actual134 VCORE taper from canonical one-port source83 escapes official source-thickness checking but fails board minimum
+ok 10 - actual134 VCORE taper from canonical one-port source83 escapes official source-thickness checking but fails board minimum
+  ---
+  duration_ms: 26.753258
+  type: 'test'
+  ...
+# Subtest: absolute minimum accepts .15, rejects .1499 and checks either tapered endpoint irrespective of nominal widths
+ok 11 - absolute minimum accepts .15, rejects .1499 and checks either tapered endpoint irrespective of nominal widths
+  ---
+  duration_ms: 0.71869
+  type: 'test'
+  ...
+# Subtest: finite subfloor coincident via contacts alone are ignored; participation in any free wire segment still fails
+ok 12 - finite subfloor coincident via contacts alone are ignored; participation in any free wire segment still fails
+  ---
+  duration_ms: 0.634249
+  type: 'test'
+  ...
+# Subtest: malformed widths, coordinates, route types and board rules fail closed even on isolated contacts
+ok 13 - malformed widths, coordinates, route types and board rules fail closed even on isolated contacts
+  ---
+  duration_ms: 0.603649
+  type: 'test'
+  ...
+# Subtest: direct wire-layer jumps and displaced via-only segments reject; reversed explicit via labels do not change width proof
+ok 14 - direct wire-layer jumps and displaced via-only segments reject; reversed explicit via labels do not change width proof
+  ---
+  duration_ms: 0.443366
+  type: 'test'
+  ...
+# Subtest: inspection preserves all source, native route and diagnostic records
+ok 15 - inspection preserves all source, native route and diagnostic records
+  ---
+  duration_ms: 0.773971
+  type: 'test'
+  ...
+# Subtest: native width replay selects every net, then only residual nets, preserving fixed obstacles and returning native-owned geometry
+ok 16 - native width replay selects every net, then only residual nets, preserving fixed obstacles and returning native-owned geometry
+  ---
+  duration_ms: 10.759432
+  type: 'test'
+  ...
+# Subtest: native width replay stops at a residual subminimum wire and preserves native failures
+ok 17 - native width replay stops at a residual subminimum wire and preserves native failures
+  ---
+  duration_ms: 7.09646
+  type: 'test'
+  ...
+# Subtest: cancellation during a native width loop rejects before consuming output
+ok 18 - cancellation during a native width loop rejects before consuming output
+  ---
+  duration_ms: 4.049097
+  type: 'test'
+  ...
+# Subtest: an already cancelled replay rejects even when native stage starts solved
+ok 19 - an already cancelled replay rejects even when native stage starts solved
+  ---
+  duration_ms: 0.805131
+  type: 'test'
+  ...
+# Subtest: native width replay enforces its per-stage time budget
+ok 20 - native width replay enforces its per-stage time budget
+  ---
+  duration_ms: 1.304018
+  type: 'test'
+  ...
+# Subtest: missing pinned stage, invalid fabrication margins and nonfinite widths fail closed
+ok 21 - missing pinned stage, invalid fabrication margins and nonfinite widths fail closed
+  ---
+  duration_ms: 1.134856
+  type: 'test'
+  ...
+# Subtest: run shares a pending promise and resolves once; event start and synchronous output stay compatible
+ok 22 - run shares a pending promise and resolves once; event start and synchronous output stay compatible
+  ---
+  duration_ms: 15.287096
+  type: 'test'
+  ...
+# Subtest: failed run preserves original solver error even when the diagnostic writer throws
+ok 23 - failed run preserves original solver error even when the diagnostic writer throws
+  ---
+  duration_ms: 3.427368
+  type: 'test'
+  ...
+# Subtest: native failed flag rejects with its actual reason and emits one error event
+ok 24 - native failed flag rejects with its actual reason and emits one error event
+  ---
+  duration_ms: 2.323833
+  type: 'test'
+  ...
+# Subtest: stop rejects pending run while a native step awaits, and suppresses late completion
+ok 25 - stop rejects pending run while a native step awaits, and suppresses late completion
+  ---
+  duration_ms: 1.567742
+  type: 'test'
+  ...
+# Subtest: stop during failure diagnostics rejects run and suppresses the late original error event
+ok 26 - stop during failure diagnostics rejects run and suppresses the late original error event
+  ---
+  duration_ms: 1.996068
+  type: 'test'
+  ...
+# Subtest: width refinement completes before run resolves and its actual output is materialized
+ok 27 - width refinement completes before run resolves and its actual output is materialized
+  ---
+  duration_ms: 1.702705
+  type: 'test'
+  ...
+# Subtest: run waits for optional width restoration and exposes only the completed restored output
+ok 28 - run waits for optional width restoration and exposes only the completed restored output
+  ---
+  duration_ms: 1.781345
+  type: 'test'
+  ...
+1..28
+# tests 28
+# suites 0
+# pass 28
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1476.086828

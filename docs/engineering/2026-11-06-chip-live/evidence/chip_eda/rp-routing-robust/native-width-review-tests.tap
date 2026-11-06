@@ -1,0 +1,82 @@
+TAP version 13
+# Subtest: native width replay selects every net, then only residual nets, preserving fixed obstacles and returning native-owned geometry
+ok 1 - native width replay selects every net, then only residual nets, preserving fixed obstacles and returning native-owned geometry
+  ---
+  duration_ms: 12.559659
+  type: 'test'
+  ...
+# Subtest: native width replay stops at a residual subminimum wire and preserves native failures
+ok 2 - native width replay stops at a residual subminimum wire and preserves native failures
+  ---
+  duration_ms: 10.864
+  type: 'test'
+  ...
+# Subtest: cancellation during a native width loop rejects before consuming output
+ok 3 - cancellation during a native width loop rejects before consuming output
+  ---
+  duration_ms: 4.636972
+  type: 'test'
+  ...
+# Subtest: an already cancelled replay rejects even when native stage starts solved
+ok 4 - an already cancelled replay rejects even when native stage starts solved
+  ---
+  duration_ms: 0.608046
+  type: 'test'
+  ...
+# Subtest: native width replay enforces its per-stage time budget
+ok 5 - native width replay enforces its per-stage time budget
+  ---
+  duration_ms: 1.056812
+  type: 'test'
+  ...
+# Subtest: missing pinned stage, invalid fabrication margins and nonfinite widths fail closed
+ok 6 - missing pinned stage, invalid fabrication margins and nonfinite widths fail closed
+  ---
+  duration_ms: 1.294535
+  type: 'test'
+  ...
+# Subtest: run shares a pending promise and resolves once; event start and synchronous output stay compatible
+ok 7 - run shares a pending promise and resolves once; event start and synchronous output stay compatible
+  ---
+  duration_ms: 17.15995
+  type: 'test'
+  ...
+# Subtest: failed run preserves original solver error even when the diagnostic writer throws
+ok 8 - failed run preserves original solver error even when the diagnostic writer throws
+  ---
+  duration_ms: 3.973644
+  type: 'test'
+  ...
+# Subtest: native failed flag rejects with its actual reason and emits one error event
+ok 9 - native failed flag rejects with its actual reason and emits one error event
+  ---
+  duration_ms: 2.388866
+  type: 'test'
+  ...
+# Subtest: stop rejects pending run while a native step awaits, and suppresses late completion
+ok 10 - stop rejects pending run while a native step awaits, and suppresses late completion
+  ---
+  duration_ms: 3.688361
+  type: 'test'
+  ...
+# Subtest: stop during failure diagnostics rejects run and suppresses the late original error event
+ok 11 - stop during failure diagnostics rejects run and suppresses the late original error event
+  ---
+  duration_ms: 2.990113
+  type: 'test'
+  ...
+# Subtest: width refinement completes before run resolves and its actual output is materialized
+ok 12 - width refinement completes before run resolves and its actual output is materialized
+  ---
+  duration_ms: 2.292906
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1514.667422

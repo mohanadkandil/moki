@@ -1,0 +1,15 @@
+{
+  "stages": [
+    {
+      "name": "firmware",
+      "status": "done",
+      "ms": 100.348409
+    },
+    {
+      "name": "firmware-compile",
+      "status": "done",
+      "ms": 2348,
+      "note": "Compile checked for rp2040; no physical flash."
+    }
+  ]
+}

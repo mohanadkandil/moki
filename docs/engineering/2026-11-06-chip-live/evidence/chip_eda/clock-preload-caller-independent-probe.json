@@ -1,0 +1,17 @@
+{
+  "scope": "Historical pure logic probe using exact initial selection AST and POST-GLOBAL actual71e5 captured records; not runtime callback evidence.",
+  "buildSha256": "1a88bebd726ae881648fdc00161dbf0903b3573a599511411e3c350cb6d7109d",
+  "selectionSha256": "6c9d46fe1c26e1cb4919296b50aac7fa84a93442255776cd0c7f4ec50f2168a7",
+  "flagCases": 16,
+  "actualLiteralClockTraces": 5,
+  "obstaclesUnchanged": true,
+  "geometryUnchanged": true,
+  "negativeCases": [
+    "duplicate-source-net",
+    "missing-clock",
+    "missing-source-identity",
+    "wrong-profile-count"
+  ],
+  "runtimeLimit": "Actual97402c60 native callback has zero rendered pcb_trace records. This initial selection strategy fails there; corrected phase-event capture requires separate review.",
+  "integrationVerdict": "not approved from this probe"
+}

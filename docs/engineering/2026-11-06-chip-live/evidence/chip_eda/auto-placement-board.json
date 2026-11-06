@@ -1,0 +1,231 @@
+{
+  "schema": "moki.plan/1",
+  "title": "ESP32-S3 desk monitor (replay)",
+  "layers": 2,
+  "blocks": [
+    {
+      "inst": "mcu",
+      "block": "esp32-s3-core",
+      "version": 2,
+      "params": {},
+      "at": {
+        "x": -2,
+        "y": 9.75,
+        "rotation": 0
+      }
+    },
+    {
+      "inst": "usb",
+      "block": "usb-c-sink",
+      "version": 2,
+      "params": {},
+      "at": {
+        "x": -17.25,
+        "y": -14.75,
+        "rotation": 0
+      }
+    },
+    {
+      "inst": "reg",
+      "block": "tps63001-usb-5v-3v3",
+      "version": 1,
+      "params": {},
+      "at": {
+        "x": -1,
+        "y": -11.25,
+        "rotation": 0
+      }
+    },
+    {
+      "inst": "buttons",
+      "block": "boot-reset-buttons",
+      "version": 1,
+      "params": {},
+      "at": {
+        "x": 21.25,
+        "y": 0.25,
+        "rotation": 90
+      }
+    },
+    {
+      "inst": "display",
+      "block": "ssd1306-i2c-header",
+      "version": 1,
+      "params": {},
+      "at": {
+        "x": -3.25,
+        "y": -24,
+        "rotation": 0
+      }
+    },
+    {
+      "inst": "air",
+      "block": "sht40-ad1b-3v3",
+      "version": 3,
+      "params": {},
+      "at": {
+        "x": 9.75,
+        "y": -8.75,
+        "rotation": 0
+      }
+    }
+  ],
+  "links": [
+    {
+      "from": "mcu.GND",
+      "to": "usb.GND"
+    },
+    {
+      "from": "mcu.GND",
+      "to": "reg.GND"
+    },
+    {
+      "from": "mcu.GND",
+      "to": "buttons.GND"
+    },
+    {
+      "from": "mcu.GND",
+      "to": "air.GND"
+    },
+    {
+      "from": "mcu.GND",
+      "to": "display.GND"
+    },
+    {
+      "from": "usb.VBUS",
+      "to": "reg.VBUS"
+    },
+    {
+      "from": "reg.V3V3",
+      "to": "mcu.V3V3"
+    },
+    {
+      "from": "reg.V3V3",
+      "to": "air.V3V3"
+    },
+    {
+      "from": "reg.V3V3",
+      "to": "display.V3V3"
+    },
+    {
+      "from": "mcu.EN",
+      "to": "buttons.EN"
+    },
+    {
+      "from": "mcu.BOOT",
+      "to": "buttons.BOOT"
+    },
+    {
+      "from": "mcu.USB",
+      "to": "usb.USB"
+    },
+    {
+      "from": "mcu.I2C",
+      "to": "air.I2C"
+    },
+    {
+      "from": "mcu.I2C",
+      "to": "display.I2C_DISPLAY"
+    }
+  ],
+  "sections": [
+    {
+      "id": "mcu",
+      "title": "ESP32-S3 · I2S capture and playback",
+      "purpose": "ESP32-S3 + reset and boot bias",
+      "insts": [
+        "mcu"
+      ],
+      "notes": [
+        "Actual imported parts; electrical and thermal budgets are assumptions pending hardware tests."
+      ],
+      "reference": {
+        "lcsc": "C2913198",
+        "datasheetUrl": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+        "page": 41,
+        "quote": "This is the typical application circuit of the module"
+      }
+    },
+    {
+      "id": "usb",
+      "title": "USB-C sink + ESD",
+      "purpose": "USB-C Rd sink with native data ESD. Requires a known 5V supply advertising at least1.5A; no PD negotiation/current-detection claim.",
+      "insts": [
+        "usb"
+      ],
+      "notes": [
+        "Source ratings apply only to the declared USB operating condition."
+      ],
+      "reference": {
+        "lcsc": "C7519",
+        "datasheetUrl": "https://www.st.com/resource/en/datasheet/usblc6-2.pdf",
+        "page": 9,
+        "figure": "13",
+        "quote": "USB 2.0 port application diagram using USBLC6-2"
+      }
+    },
+    {
+      "id": "reg",
+      "title": "TPS63001 3.3V from USB-present SYS",
+      "purpose": "USB-present4.2–4.5V SYS input; fixed3.3V,800mA peak/650mA continuous author budget at25C/85% assumed efficiency. Battery-input operating envelope remains unverified. 1.8A switch rating is not output capacity.",
+      "insts": [
+        "reg"
+      ],
+      "notes": [
+        "Source ratings apply only to the declared USB operating condition."
+      ],
+      "reference": {
+        "lcsc": "C28060",
+        "datasheetUrl": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+        "page": 6,
+        "figure": "4",
+        "quote": "0 200 400 600 800 1000 1200 1400 1600 1800 1.8 2.6 3.4 4.2 5"
+      }
+    },
+    {
+      "id": "buttons",
+      "title": "BOOT / RESET buttons",
+      "purpose": "BOOT / RESET buttons",
+      "insts": [
+        "buttons"
+      ],
+      "notes": [
+        "Actual imported parts; electrical and thermal budgets are assumptions pending hardware tests."
+      ]
+    },
+    {
+      "id": "display",
+      "title": "3.3V SSD1306 module cable header",
+      "purpose": "Connector contract only: JST SH1mm1GND2+3.3V3SCL4SDA, external3.3V SSD1306 I2C0x3C module. No bare OLED IC or selected module is claimed. External device must stay within50mA reserve; actual module consumption/polarity/address mus",
+      "insts": [
+        "display"
+      ],
+      "notes": [
+        "Actual imported parts; electrical and thermal budgets are assumptions pending hardware tests."
+      ]
+    },
+    {
+      "id": "air",
+      "title": "SHT40 · temperature and humidity",
+      "purpose": "3.3 V SHT40 at fixed I2C address 0x44, 100 nF bypass; uses existing carrier 10kOhm bus pull-ups at 100 kHz. Imported central copper pad explicitly omitted; physical realization pending.",
+      "insts": [
+        "air"
+      ],
+      "notes": [
+        "0x44, 100kHz; heater disabled; CRC-8 checked by firmware.",
+        "100nF local bypass; shared10k pull-ups; no central copper/paste."
+      ],
+      "reference": {
+        "lcsc": "C2909890",
+        "datasheetUrl": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
+        "page": 16,
+        "quote": "There shall be no copper under the sensor other than at the pin pads."
+      }
+    }
+  ],
+  "board": {
+    "widthMm": 50,
+    "heightMm": 58,
+    "cornerRadiusMm": 2
+  }
+}

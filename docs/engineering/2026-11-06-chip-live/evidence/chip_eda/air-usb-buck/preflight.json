@@ -1,0 +1,139 @@
+{
+  "gates": [
+    {
+      "gate": "erc",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "esp32-s3-core",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "usb-c-sink",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "tps63001-usb-5v-3v3",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "boot-reset-buttons",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "ssd1306-i2c-header",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "usb-external-host",
+          "severity": "warning",
+          "where": "mcu.USB, usb.USB",
+          "message": "USB peripheral relies on an external host through the declared passive connector"
+        },
+        {
+          "rule": "layout-constraint-pending",
+          "severity": "warning",
+          "where": "esp32-s3-core",
+          "message": "Keepout realization must be checked against final imported PCB geometry"
+        },
+        {
+          "rule": "layout-constraint-pending",
+          "severity": "warning",
+          "where": "sht40-ad1b-3v3",
+          "message": "Keepout realization must be checked against final imported PCB geometry"
+        }
+      ]
+    },
+    {
+      "gate": "power",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "thermal-assumption",
+          "severity": "warning",
+          "where": "ldo.V3V3",
+          "message": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+        }
+      ]
+    }
+  ],
+  "pinMap": {
+    "family": "esp32s3",
+    "pio": {
+      "platform": "platformio/espressif32@6.10.0",
+      "board": "esp32-s3-devkitc-1",
+      "framework": "arduino",
+      "environment": "esp32s3"
+    },
+    "pins": {
+      "PIN_AIR_I2C_SDA": {
+        "gpio": 8,
+        "port": "air.I2C.SDA"
+      },
+      "PIN_AIR_I2C_SCL": {
+        "gpio": 9,
+        "port": "air.I2C.SCL"
+      },
+      "PIN_DISPLAY_I2C_DISPLAY_SCL": {
+        "gpio": 9,
+        "port": "display.I2C_DISPLAY.SCL"
+      },
+      "PIN_DISPLAY_I2C_DISPLAY_SDA": {
+        "gpio": 8,
+        "port": "display.I2C_DISPLAY.SDA"
+      }
+    },
+    "libs": [
+      "adafruit/Adafruit BusIO@1.17.0",
+      "adafruit/Adafruit GFX Library@1.11.11",
+      "adafruit/Adafruit SSD1306@2.5.13"
+    ],
+    "includes": [
+      "Adafruit_GFX.h",
+      "Adafruit_SSD1306.h",
+      "Arduino.h",
+      "Wire.h",
+      "pins.h"
+    ],
+    "usage": [
+      {
+        "block": "mcu",
+        "note": "Fixed native USB and BOOT/RESET are not application GPIOs. Application IO ports preserve their physical digital input/output/PWM capabilities; analog identifies ADC capability, not a DAC. GPIO8/9 remain assigned to I2C. ADC range/attenuation and source impedance require application configuration."
+      },
+      {
+        "block": "usb",
+        "note": "Fixed native USB and BOOT/RESET are not application GPIOs."
+      },
+      {
+        "block": "ldo",
+        "note": "Always on, EN=VBUS, PS/SYNC=GND; fixed FB=VOUT. TI SLVS520C fixed TPS63001: FB directly to VOUT; 1.2A buck headline at VIN3.6–5.5V supports this derated author allocation of650mA continuous/800mA peak at USB4.75–5.25V only. Not a1.8V boost or all-temperature guarantee. Efficiency85%, output+/-5%, ambient25C and thetaJA60C/W are conservative screening assumptions, not measured performance. Native loops/EP thermal copper, DC-biased effective capacitance and hardware startup/load/temperature require qualification. Complete fixed-output reference: VIN/VINA share input directly, EN high, PS low, FB directly VOUT; no mixed partial filtered-VINA reference. Additional parallel actual10uF capacitors provide nominal20uF input/30uF output. Effective capacitance remains a qualification item. Exact LPS4012-222MRC2.2uH+/-20%, DCRmax0.100ohm. At25C: Isat2.3A for10% inductance drop; Irms1.2A for20C rise. Temperature-rise currents are reference values. Buck CCM corner screen uses Lmin1.76uH and fmin1.25MHz, not a boost-current inference. Core loss, switching current and thermal behavior remain unmeasured. Manufacturer Murata part sheet, retained via supplier: GRM21BZ71C106KE15L10uF+/-10%,16Vdc,X7R0805. Higher voltage rating replaces old6.3V capacitors in this separate USB variant. Sheet does not supply a DC-bias curve/minimum effective capacitance; nominal20/30uF is not an effective-capacitance guarantee."
+      },
+      {
+        "block": "buttons",
+        "note": "Fixed native USB and BOOT/RESET are not application GPIOs."
+      },
+      {
+        "block": "air",
+        "note": "Fixed address 0x44. Use Wire at 100000 Hz with shared 3.3V supply/pull-ups; do not duplicate carrier 10kOhm pull-ups. Never issue heater commands. Wait >=1ms after power-up and >=8.3ms for high-repeatability measurement (10ms policy); busy reads NACK, no clock stretching. Validate 6-byte measurement CRC-8 (polynomial 0x31, initial 0xFF). Measurement <=0.5mA plus both 10kOhm +/-1% pull-ups at 3.6V is <1.23mA; 2mA peak is author margin, not heater capacity. Actual total bus capacitance/waveforms remain unverified unless supplied and measured; 100kHz alone does not prove timing. No powered bus driving an unpowered sensor, no 5V interface. Preserve airflow, avoid warm MCU/regulator placement; no final thermal/accuracy/manufacturing claim."
+      },
+      {
+        "block": "display",
+        "note": "Conditional external128x64 SSD1306 I2C module at0x3C: Wire.begin(SDA,SCL), Adafruit_SSD1306(128,64,&Wire,-1), begin(SSD1306_SWITCHCAPVCC,0x3C); handle false result. This is a cable/module contract, not a bare controller circuit. Select/verify3.3V-compatible module,cablepolarity,pullups,address,50mA maximumdraw and matingSH1mmconnector. FiftymA typical/peak is a conservative reserved budget, not an observed or manufacturer module consumption."
+      }
+    ]
+  },
+  "notes": [
+    "Original60x70board retained; explicit section anchors replace default3column grid that placedMCUoutsideoutline.",
+    "Buckid/inputport updated; engineering Wire compile fixture, no functionaldisplay/hardware claim."
+  ]
+}

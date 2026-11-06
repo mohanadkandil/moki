@@ -1,0 +1,332 @@
+{
+  "scope": "finite-rp2040-clock-profile-native-geometry",
+  "netNames": [
+    "XIN",
+    "XOUT",
+    "XTAL_OUT"
+  ],
+  "audit": [
+    {
+      "from": ".U1 > .pin20",
+      "to": ".X1 > .pin1",
+      "net": "XIN",
+      "lengthMm": 7.39434684395435,
+      "route": [
+        {
+          "x": -15.599948,
+          "y": -3.425063,
+          "route_type": "wire",
+          "layer": "top",
+          "width": 0.15
+        },
+        {
+          "x": -15.599948,
+          "y": -4.05,
+          "route_type": "wire",
+          "layer": "top",
+          "width": 0.15
+        },
+        {
+          "x": -16.232548,
+          "y": -4.05,
+          "route_type": "wire",
+          "layer": "top",
+          "width": 0.15
+        },
+        {
+          "x": -18.53,
+          "y": -6.347452,
+          "route_type": "wire",
+          "layer": "top",
+          "width": 0.15
+        },
+        {
+          "x": -18.53,
+          "y": -7.92,
+          "route_type": "wire",
+          "layer": "top",
+          "width": 0.15
+        },
+        {
+          "x": -17.600074,
+          "y": -8.850011,
+          "route_type": "wire",
+          "layer": "top",
+          "width": 0.15
+        }
+      ]
+    },
+    {
+      "from": ".C15 > .pin1",
+      "to": ".X1 > .pin1",
+      "net": "XIN",
+      "lengthMm": 2.499938760590148,
+      "route": [
+        {
+          "x": -20,
+          "y": -8.149975999999999,
+          "route_type": "wire",
+          "layer": "top",
+          "width": 0.15
+        },
+        {
+          "x": -17.600074,
+          "y": -8.850011,
+          "route_type": "wire",
+          "layer": "top",
+          "width": 0.15
+        }
+      ]
+    },
+    {
+      "from": ".U1 > .pin21",
+      "to": ".R1 > .pin1",
+      "net": "XOUT",
+      "lengthMm": 2.2717249999999996,
+      "route": [
+        {
+          "x": -15.200152,
+          "y": -3.425063,
+          "route_type": "wire",
+          "layer": "top",
+          "width": 0.15
+        },
+        {
+          "x": -15.200152,
+          "y": -4.1,
+          "route_type": "wire",
+          "layer": "top",
+          "width": 0.15
+        },
+        {
+          "x": -14.753364,
+          "y": -4.1,
+          "route_type": "wire",
+          "layer": "top",
+          "width": 0.15
+        },
+        {
+          "x": -14.753364,
+          "y": -5.25,
+          "route_type": "wire",
+          "layer": "top",
+          "width": 0.15
+        }
+      ]
+    },
+    {
+      "from": ".R1 > .pin2",
+      "to": ".X1 > .pin3",
+      "net": "XTAL_OUT",
+      "lengthMm": 2.940291212159695,
+      "route": [
+        {
+          "x": -13.246636,
+          "y": -5.25,
+          "route_type": "wire",
+          "layer": "top",
+          "width": 0.15
+        },
+        {
+          "x": -13.499937000000001,
+          "y": -5.25,
+          "route_type": "wire",
+          "layer": "top",
+          "width": 0.15
+        },
+        {
+          "x": -15.399926,
+          "y": -7.149989,
+          "route_type": "wire",
+          "layer": "top",
+          "width": 0.15
+        }
+      ]
+    },
+    {
+      "from": ".C16 > .pin1",
+      "to": ".X1 > .pin3",
+      "net": "XTAL_OUT",
+      "lengthMm": 2.6999020000224094,
+      "route": [
+        {
+          "x": -12.700023999999999,
+          "y": -7.15,
+          "route_type": "wire",
+          "layer": "top",
+          "width": 0.15
+        },
+        {
+          "x": -15.399926,
+          "y": -7.149989,
+          "route_type": "wire",
+          "layer": "top",
+          "width": 0.15
+        }
+      ]
+    }
+  ],
+  "lengthsByNet": {
+    "XIN": 9.894285604544498,
+    "XOUT": 2.2717249999999996,
+    "XTAL_OUT": 5.640193212182105
+  },
+  "props": {
+    "name": "rp2040-clock-first",
+    "phaseIndex": 0,
+    "autorouter": "auto",
+    "connections": [
+      ".U1 > .pin20",
+      ".C15 > .pin1",
+      ".U1 > .pin21",
+      ".R1 > .pin2",
+      ".C16 > .pin1"
+    ],
+    "pcbTracePaths": [
+      {
+        "connection": ".U1 > .pin20",
+        "route": [
+          {
+            "x": -15.599948,
+            "y": -3.425063,
+            "route_type": "wire",
+            "layer": "top",
+            "width": 0.15
+          },
+          {
+            "x": -15.599948,
+            "y": -4.05,
+            "route_type": "wire",
+            "layer": "top",
+            "width": 0.15
+          },
+          {
+            "x": -16.232548,
+            "y": -4.05,
+            "route_type": "wire",
+            "layer": "top",
+            "width": 0.15
+          },
+          {
+            "x": -18.53,
+            "y": -6.347452,
+            "route_type": "wire",
+            "layer": "top",
+            "width": 0.15
+          },
+          {
+            "x": -18.53,
+            "y": -7.92,
+            "route_type": "wire",
+            "layer": "top",
+            "width": 0.15
+          },
+          {
+            "x": -17.600074,
+            "y": -8.850011,
+            "route_type": "wire",
+            "layer": "top",
+            "width": 0.15
+          }
+        ]
+      },
+      {
+        "connection": ".C15 > .pin1",
+        "route": [
+          {
+            "x": -20,
+            "y": -8.149975999999999,
+            "route_type": "wire",
+            "layer": "top",
+            "width": 0.15
+          },
+          {
+            "x": -17.600074,
+            "y": -8.850011,
+            "route_type": "wire",
+            "layer": "top",
+            "width": 0.15
+          }
+        ]
+      },
+      {
+        "connection": ".U1 > .pin21",
+        "route": [
+          {
+            "x": -15.200152,
+            "y": -3.425063,
+            "route_type": "wire",
+            "layer": "top",
+            "width": 0.15
+          },
+          {
+            "x": -15.200152,
+            "y": -4.1,
+            "route_type": "wire",
+            "layer": "top",
+            "width": 0.15
+          },
+          {
+            "x": -14.753364,
+            "y": -4.1,
+            "route_type": "wire",
+            "layer": "top",
+            "width": 0.15
+          },
+          {
+            "x": -14.753364,
+            "y": -5.25,
+            "route_type": "wire",
+            "layer": "top",
+            "width": 0.15
+          }
+        ]
+      },
+      {
+        "connection": ".R1 > .pin2",
+        "route": [
+          {
+            "x": -13.246636,
+            "y": -5.25,
+            "route_type": "wire",
+            "layer": "top",
+            "width": 0.15
+          },
+          {
+            "x": -13.499937000000001,
+            "y": -5.25,
+            "route_type": "wire",
+            "layer": "top",
+            "width": 0.15
+          },
+          {
+            "x": -15.399926,
+            "y": -7.149989,
+            "route_type": "wire",
+            "layer": "top",
+            "width": 0.15
+          }
+        ]
+      },
+      {
+        "connection": ".C16 > .pin1",
+        "route": [
+          {
+            "x": -12.700023999999999,
+            "y": -7.15,
+            "route_type": "wire",
+            "layer": "top",
+            "width": 0.15
+          },
+          {
+            "x": -15.399926,
+            "y": -7.149989,
+            "route_type": "wire",
+            "layer": "top",
+            "width": 0.15
+          }
+        ]
+      }
+    ]
+  }
+}

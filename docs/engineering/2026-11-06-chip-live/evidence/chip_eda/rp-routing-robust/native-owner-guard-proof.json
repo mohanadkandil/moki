@@ -1,0 +1,62 @@
+{
+  "schema": "moki.native-owner-guard-proof/1",
+  "author": "gnd_escape",
+  "status": "frozen-and-independently-reviewed; private-caller-integration-not-reviewed-here",
+  "audit": {
+    "schema": "moki.private-native-owner-guard/1",
+    "sdkVersion": "0.0.1037",
+    "upstreamBundleSha256": "9424629cc1f77f18fba24335effb5e5fc40da9a15e25aa97213b6c34af47f6fa",
+    "predicatePatchedSha256": "db18b814b4f29dad8b31a129f785b3254ddebee172ca0cba09dc4d25eb57a301",
+    "loadedModuleSha256": "bf9b085908be10123e8f5625f4ce7db9c5e5ee0a7f164ead5f0468a637502dbb",
+    "helperSha256": "0ddf702d95b325a85a41508ec8cf308025f6ee70ca7fc8fb5c178d920977af2b",
+    "moduleUrl": "file:///tmp/moki-owner-evidence-YTBof6/native-owner-guard/sdk-bf9b085908be10123e8f5625f4ce7db9c5e5ee0a7f164ead5f0468a637502dbb.mjs",
+    "predicateReplacementCount": 1,
+    "nativePathfindingChanged": false,
+    "clearanceRulesChanged": false,
+    "dependencyRelocations": [
+      {
+        "specifier": "./chunk-G3PMV62Z.js",
+        "replacements": 1,
+        "url": "file:///home/sogo/design-skill-research/repos/moki/eda/node_modules/@tscircuit/capacity-autorouter/dist/chunk-G3PMV62Z.js",
+        "sha256": "f56621bcf6948c31eebf5b9b9186b7bd4042af9895b947f0eaedfc40271421c4"
+      },
+      {
+        "specifier": "@tscircuit/solver-utils",
+        "replacements": 92,
+        "url": "file:///home/sogo/design-skill-research/repos/moki/eda/node_modules/@tscircuit/solver-utils/dist/index.js",
+        "sha256": "8dccabc62b65504da61bd35f007565c1f8733310cae4c4bba3c025c53f094bb5",
+        "manifestSha256": "b00be11b8b222fd311a6cec8e41c89490b30bef3faf98ed0788f379aa193f968",
+        "version": "0.0.23"
+      },
+      {
+        "specifier": "object-hash",
+        "replacements": 3,
+        "url": "file:///home/sogo/design-skill-research/repos/moki/eda/node_modules/object-hash/index.js",
+        "sha256": "99af0590e6993552b8a3313cb40843cfa9ad5be62abd966340d394a2f732178d",
+        "manifestSha256": "f86b3a8a18078fbbf71ea1cf4468129e609566f860b9d93f99f63dc2543962eb",
+        "version": "3.0.0"
+      }
+    ],
+    "scope": "private-offline-explicit-owner-source-inference"
+  },
+  "temporaryModuleRemovedAfterProof": true,
+  "tests": {
+    "passed": 6,
+    "failed": 0,
+    "durationMs": 3393.21788,
+    "strictTypeScript": true
+  },
+  "sourceBehavior": "Complete pinned original converter and unchanged primary helper modules use real native math/connectivity dependencies. AST-replaced same predicate blocks foreignowner aliases for0/1physicalports,eitherassignabilityflag; explicitown/unowned/canonicalMSTcontrols unchanged.",
+  "limitations": [
+    "Not a custom router; no native routing search/clearance rule changed",
+    "Default native endpoint-marker inference can still hide physicalcontact independently ofsource aliasguard; mandatoryall-net physicaloracle remainshard",
+    "No solver instantiated/native route/fullboard oracle/productionchange",
+    "SDK installedbytesunchanged; onlyprivate modulecopy tested",
+    "Caller mustgateloadNativeOwnerGuard behindprivateofflineflag"
+  ],
+  "independentReview": "../native-owner-guard-independent-review.json",
+  "sourceHashes": {
+    "eda/blocks/native-owner-guard.ts": "0ddf702d95b325a85a41508ec8cf308025f6ee70ca7fc8fb5c178d920977af2b",
+    "tests/blocks-native-owner-guard.test.ts": "482439ae0f983492464d8e3c4f575a6c1271956b70e74665b9f7ec961a9ec1f5"
+  }
+}

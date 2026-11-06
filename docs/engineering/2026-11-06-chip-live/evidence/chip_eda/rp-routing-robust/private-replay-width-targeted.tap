@@ -1,0 +1,148 @@
+TAP version 13
+# Subtest: pinned public empty-selection width stage preserves conforming signal and power copper verbatim
+ok 1 - pinned public empty-selection width stage preserves conforming signal and power copper verbatim
+  ---
+  duration_ms: 21.484169
+  type: 'test'
+  ...
+# Subtest: canonical fingerprint ignores object key order and optional undefined fields while retaining exact numbers and array order
+ok 2 - canonical fingerprint ignores object key order and optional undefined fields while retaining exact numbers and array order
+  ---
+  duration_ms: 2.55339
+  type: 'test'
+  ...
+# Subtest: matching native records survive verbatim; receipt claims reuse only and requires every fresh gate
+ok 3 - matching native records survive verbatim; receipt claims reuse only and requires every fresh gate
+  ---
+  duration_ms: 59.888535
+  type: 'test'
+  ...
+# Subtest: current input, source input and declared hashes must match exactly
+ok 4 - current input, source input and declared hashes must match exactly
+  ---
+  duration_ms: 24.709046
+  type: 'test'
+  ...
+# Subtest: plan, source graph, imports, placements, clock and native prefix changes each block replay
+ok 5 - plan, source graph, imports, placements, clock and native prefix changes each block replay
+  ---
+  duration_ms: 91.769464
+  type: 'test'
+  ...
+# Subtest: output byte hash prevents unnoticed mutation even when record shapes remain valid
+ok 6 - output byte hash prevents unnoticed mutation even when record shapes remain valid
+  ---
+  duration_ms: 14.180444
+  type: 'test'
+  ...
+# Subtest: missing native capture, a fatal native capture and a nonfailed source job are not proof of this replay source
+ok 7 - missing native capture, a fatal native capture and a nonfailed source job are not proof of this replay source
+  ---
+  duration_ms: 23.488432
+  type: 'test'
+  ...
+# Subtest: stage0 below-floor copper, unsupported routes, foreign names, duplicate and saved-prefix IDs all reject
+ok 8 - stage0 below-floor copper, unsupported routes, foreign names, duplicate and saved-prefix IDs all reject
+  ---
+  duration_ms: 213.694478
+  type: 'test'
+  ...
+# Subtest: minimum-width numeric tolerance never rounds or edits candidate copper, and motor expansion has no artificial nominal maximum
+ok 9 - minimum-width numeric tolerance never rounds or edits candidate copper, and motor expansion has no artificial nominal maximum
+  ---
+  duration_ms: 13.074192
+  type: 'test'
+  ...
+# Subtest: two-layer capture cannot replay a route onto an inner layer
+ok 10 - two-layer capture cannot replay a route onto an inner layer
+  ---
+  duration_ms: 45.145684
+  type: 'test'
+  ...
+# Subtest: completed native SRJ fallback reuses only a width-valid candidate and explicitly distinguishes its capture kind
+ok 11 - completed native SRJ fallback reuses only a width-valid candidate and explicitly distinguishes its capture kind
+  ---
+  duration_ms: 91.119097
+  type: 'test'
+  ...
+# Subtest: completed SRJ fallback requires failed job and matching sole outer width error after the final native phase
+ok 12 - completed SRJ fallback requires failed job and matching sole outer width error after the final native phase
+  ---
+  duration_ms: 259.392328
+  type: 'test'
+  ...
+# Subtest: completed SRJ must retain exact captured input and known finite native records; malformed present pre-pour never falls back
+ok 13 - completed SRJ must retain exact captured input and known finite native records; malformed present pre-pour never falls back
+  ---
+  duration_ms: 251.381355
+  type: 'test'
+  ...
+# Subtest: completed source may explain thin raw output but replay still rejects thin candidates or changed native trace coverage
+ok 14 - completed source may explain thin raw output but replay still rejects thin candidates or changed native trace coverage
+  ---
+  duration_ms: 60.429261
+  type: 'test'
+  ...
+# Subtest: run shares a pending promise and resolves once; event start and synchronous output stay compatible
+ok 15 - run shares a pending promise and resolves once; event start and synchronous output stay compatible
+  ---
+  duration_ms: 19.387905
+  type: 'test'
+  ...
+# Subtest: failed run preserves original solver error even when the diagnostic writer throws
+ok 16 - failed run preserves original solver error even when the diagnostic writer throws
+  ---
+  duration_ms: 3.504441
+  type: 'test'
+  ...
+# Subtest: native failed flag rejects with its actual reason and emits one error event
+ok 17 - native failed flag rejects with its actual reason and emits one error event
+  ---
+  duration_ms: 3.211958
+  type: 'test'
+  ...
+# Subtest: stop rejects pending run while a native step awaits, and suppresses late completion
+ok 18 - stop rejects pending run while a native step awaits, and suppresses late completion
+  ---
+  duration_ms: 4.720734
+  type: 'test'
+  ...
+# Subtest: stop during failure diagnostics rejects run and suppresses the late original error event
+ok 19 - stop during failure diagnostics rejects run and suppresses the late original error event
+  ---
+  duration_ms: 2.934994
+  type: 'test'
+  ...
+# Subtest: width refinement completes before run resolves and its actual output is materialized
+ok 20 - width refinement completes before run resolves and its actual output is materialized
+  ---
+  duration_ms: 3.706683
+  type: 'test'
+  ...
+# Subtest: explicit public Pipeline7 selection and default/explicit Pipeline9 retain the same adapter protocol
+ok 21 - explicit public Pipeline7 selection and default/explicit Pipeline9 retain the same adapter protocol
+  ---
+  duration_ms: 5.573424
+  type: 'test'
+  ...
+# Subtest: minimum-only mode bypasses broad native power widening while retaining the hard width repair
+ok 22 - minimum-only mode bypasses broad native power widening while retaining the hard width repair
+  ---
+  duration_ms: 6.108031
+  type: 'test'
+  ...
+# Subtest: minimum-only mode requires the hard fabrication width constraints
+ok 23 - minimum-only mode requires the hard fabrication width constraints
+  ---
+  duration_ms: 1.005772
+  type: 'test'
+  ...
+1..23
+# tests 23
+# suites 0
+# pass 23
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1607.039516

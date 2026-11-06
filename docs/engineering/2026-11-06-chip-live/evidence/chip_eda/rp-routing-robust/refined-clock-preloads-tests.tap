@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: actual0de7 native single-XIN refinement forwards literal replacement and all five accepted getter records
+ok 1 - actual0de7 native single-XIN refinement forwards literal replacement and all five accepted getter records
+  ---
+  duration_ms: 67.417403
+  type: 'test'
+  ...
+# Subtest: official Core accumulated-stage replacement consumes the parent ID and literal native replacement without duplicate clock Cu
+ok 2 - official Core accumulated-stage replacement consumes the parent ID and literal native replacement without duplicate clock Cu
+  ---
+  duration_ms: 2378.327574
+  type: 'test'
+  ...
+# Subtest: synchronized foreign source/net/subcircuit/alias/trace identity and endpoint mutations fail physical/source constraints
+ok 3 - synchronized foreign source/net/subcircuit/alias/trace identity and endpoint mutations fail physical/source constraints
+  ---
+  duration_ms: 238.275755
+  type: 'test'
+  ...
+# Subtest: overlength, width change, lower layer, nonfinite coordinates, added via and unknown wire data reject even when getters/output agree
+ok 4 - overlength, width change, lower layer, nonfinite coordinates, added via and unknown wire data reject even when getters/output agree
+  ---
+  duration_ms: 241.740992
+  type: 'test'
+  ...
+# Subtest: all three native disclosures must uniquely cover identical changed records, with replacement present in returned output
+ok 5 - all three native disclosures must uniquely cover identical changed records, with replacement present in returned output
+  ---
+  duration_ms: 329.134289
+  type: 'test'
+  ...
+# Subtest: unchanged five clock records strip as before and compiler-renumbered owners keep the same bounded refinement
+ok 6 - unchanged five clock records strip as before and compiler-renumbered owners keep the same bounded refinement
+  ---
+  duration_ms: 78.127077
+  type: 'test'
+  ...
+# Subtest: unrelated prior preloads remain immutable and unrelated new copper/metadata remain literal
+ok 7 - unrelated prior preloads remain immutable and unrelated new copper/metadata remain literal
+  ---
+  duration_ms: 79.25661
+  type: 'test'
+  ...
+# Subtest: unexpected new clock IDs cannot bypass per-net length or five-record coverage through any owner alias
+ok 8 - unexpected new clock IDs cannot bypass per-net length or five-record coverage through any owner alias
+  ---
+  duration_ms: 359.772298
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5432.081951

@@ -1,0 +1,69 @@
+{
+  "lcsc": "C2843335",
+  "mpn": "W25Q16JVUXIQ",
+  "manufacturer": "Winbond(华邦)",
+  "package": "USON-8_L3.0-W2.0-P0.50-BL-EP",
+  "catalogReceipt": "sha256:6544ae1b73d5eb5c2f7a9b945e72e77f79420c8ebe27ae8b71c802b55351835b",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "6ef4185d9dca792d096d45ede68096073edcbfb243e2245cf72d5ff176d41b5b",
+  "footprintSha256": "66f8cc81f6f2bd7d2714160ad935d4cc0e4cf0976a5fcc8378bb0d69a1f50f2f",
+  "pins": [
+    {
+      "pad": "1",
+      "labels": [
+        "CS#"
+      ]
+    },
+    {
+      "pad": "2",
+      "labels": [
+        "DO(IO1)"
+      ]
+    },
+    {
+      "pad": "3",
+      "labels": [
+        "WP#(IO2)"
+      ]
+    },
+    {
+      "pad": "4",
+      "labels": [
+        "GND"
+      ]
+    },
+    {
+      "pad": "5",
+      "labels": [
+        "DI(IO0)"
+      ]
+    },
+    {
+      "pad": "6",
+      "labels": [
+        "CLK"
+      ]
+    },
+    {
+      "pad": "7",
+      "labels": [
+        "HOLD#orRESET#(IO3)"
+      ]
+    },
+    {
+      "pad": "8",
+      "labels": [
+        "VCC"
+      ]
+    },
+    {
+      "pad": "9",
+      "labels": [
+        "EP"
+      ]
+    }
+  ],
+  "models": [],
+  "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2205122030_Winbond-Elec-W25Q16JVUXIQ_C2843335.pdf",
+  "datasheetReceipt": "sha256:9c535b48afa52e49b40a807837779c162338fb3f7e5a1013cc1355908604381e"
+}

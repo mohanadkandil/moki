@@ -1,0 +1,31 @@
+{
+  "actualFailedJob": "4e68bf02-2224-41fd-8269-1f2bcd422f95",
+  "files": [
+    {
+      "file": "circuit.json",
+      "source": "var/board-jobs-app/4e68bf02-2224-41fd-8269-1f2bcd422f95/circuit.json",
+      "sha256": "2417754070a25a46f154832a36a2f06cb31fe6a9f9671dba6bbd6894a188293a"
+    },
+    {
+      "file": "plan-graph.json",
+      "source": "var/board-jobs-app/4e68bf02-2224-41fd-8269-1f2bcd422f95/plan-graph.json",
+      "sha256": "0bd92bb61371b0994ef9285be99ae6700d7165db37790dde1e5bef8edd2751a5"
+    },
+    {
+      "file": "import-map.json",
+      "source": "var/board-jobs-app/4e68bf02-2224-41fd-8269-1f2bcd422f95/import-map.json",
+      "sha256": "3a03e16607ff65a6fc8e87c08eec1e9700244e29618fadd33cbbc61d0c96c8e3"
+    },
+    {
+      "file": "clock-phase.json",
+      "source": "var/board-jobs-app/4e68bf02-2224-41fd-8269-1f2bcd422f95/clock-phase.json",
+      "sha256": "4a6f57321452a628e83e84c1fc4d83608ce0567b7f86089b62b18c11c71d937d"
+    },
+    {
+      "file": "router-input.json",
+      "source": "var/board-jobs-app/4e68bf02-2224-41fd-8269-1f2bcd422f95/router-input.json",
+      "sha256": "619c8d4122e6fcfa725e78ea4979663c7274193cf96f21ecbe71034e7c7e322f"
+    }
+  ],
+  "derivation": "Tests remove final routing traces/vias/pours/error records to obtain explicitly derived actual native placement/source geometry, not a fresh routingDisabled render."
+}

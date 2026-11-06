@@ -1,0 +1,27 @@
+{
+  "scope": "Synthetic supported native BREP bulge; no routing",
+  "oracle": {
+    "ok": false,
+    "checked": true,
+    "scope": "all-nets-actual-copper",
+    "policy": "physical-network",
+    "issues": [
+      {
+        "rule": "copper-geometry-unverified",
+        "severity": "error",
+        "message": "Unsupported nonzero/nonfinite copper polygon bulge"
+      }
+    ],
+    "groundNets": [],
+    "networks": [],
+    "counts": {},
+    "method": "All-net actual-copper continuity and isolation; policy=physical-network. Every ground pad piece shares one physical copper component containing an actual copper pour; direct TOP pour contact is optional. Every graph net must have all actual terminal pieces in one physical copper component and no foreign terminal contact; non-ground nets need no pour. Per-layer polygon contact and physical plated barrels join layers. Positive connectivity uses inscribed copper/circumscribed drills and minimum endpoint trace width; short detection reverses bounds and uses maximum width. No electrical union by source trace, connectivity key, logical terminal alias or declared net. Rounded contacts are bounded48-gons;1e-6mm coordinate touch tolerance. Not impedance, manufactured-board proof."
+  },
+  "nativeArcContactIds": [
+    "copper_pour_short_B:pad_arc-pour"
+  ],
+  "nativeStraightContactIds": [
+    "copper_pour_short_A:pad_arc-pour",
+    "copper_pour_short_B:pad_arc-pour"
+  ]
+}

@@ -1,0 +1,160 @@
+TAP version 13
+# Subtest: actual five clock CJ records become literal cloned preloads without removing 111 existing clock rectangles
+ok 1 - actual five clock CJ records become literal cloned preloads without removing 111 existing clock rectangles
+  ---
+  duration_ms: 71.224732
+  type: 'test'
+  ...
+# Subtest: exact public getter records permit output without clocks or strip only exact duplicate fixed IDs
+ok 2 - exact public getter records permit output without clocks or strip only exact duplicate fixed IDs
+  ---
+  duration_ms: 71.091011
+  type: 'test'
+  ...
+# Subtest: any canonical geometry, width, source, alias, via, ID or route-order mutation fails before output
+ok 3 - any canonical geometry, width, source, alias, via, ID or route-order mutation fails before output
+  ---
+  duration_ms: 32.479371
+  type: 'test'
+  ...
+# Subtest: getter omission, duplicate, unknown, mutation-list entries and replacement claims fail closed
+ok 4 - getter omission, duplicate, unknown, mutation-list entries and replacement claims fail closed
+  ---
+  duration_ms: 32.414529
+  type: 'test'
+  ...
+# Subtest: unknown fixed data, duplicate IDs, nonfinite widths and active direct/root clock owners reject at preparation
+ok 5 - unknown fixed data, duplicate IDs, nonfinite widths and active direct/root clock owners reject at preparation
+  ---
+  duration_ms: 115.902402
+  type: 'test'
+  ...
+# Subtest: canonical optional undefined object fields match while alias and array ordering stays exact
+ok 6 - canonical optional undefined object fields match while alias and array ordering stays exact
+  ---
+  duration_ms: 22.142892
+  type: 'test'
+  ...
+# Subtest: preexisting unrelated preloads retain metadata and are also immutable but are never stripped
+ok 7 - preexisting unrelated preloads retain metadata and are also immutable but are never stripped
+  ---
+  duration_ms: 24.781363
+  type: 'test'
+  ...
+# Subtest: caller-proven clock ownership survives arbitrary compiler net/trace/source/subcircuit renumbering
+ok 8 - caller-proven clock ownership survives arbitrary compiler net/trace/source/subcircuit renumbering
+  ---
+  duration_ms: 62.22095
+  type: 'test'
+  ...
+# Subtest: native width replay mutates only subminimum trace IDs and freezes conforming copper even on the same net
+ok 9 - native width replay mutates only subminimum trace IDs and freezes conforming copper even on the same net
+  ---
+  duration_ms: 15.602698
+  type: 'test'
+  ...
+# Subtest: native width replay stops at a residual subminimum wire and preserves native failures
+ok 10 - native width replay stops at a residual subminimum wire and preserves native failures
+  ---
+  duration_ms: 9.732231
+  type: 'test'
+  ...
+# Subtest: cancellation during a native width loop rejects before consuming output
+ok 11 - cancellation during a native width loop rejects before consuming output
+  ---
+  duration_ms: 4.784095
+  type: 'test'
+  ...
+# Subtest: an already cancelled replay rejects even when native stage starts solved
+ok 12 - an already cancelled replay rejects even when native stage starts solved
+  ---
+  duration_ms: 0.529646
+  type: 'test'
+  ...
+# Subtest: native width replay enforces its per-stage time budget
+ok 13 - native width replay enforces its per-stage time budget
+  ---
+  duration_ms: 1.354015
+  type: 'test'
+  ...
+# Subtest: malformed native inputs and changed trace identity or coverage fail closed
+ok 14 - malformed native inputs and changed trace identity or coverage fail closed
+  ---
+  duration_ms: 2.410827
+  type: 'test'
+  ...
+# Subtest: run shares a pending promise and resolves once; event start and synchronous output stay compatible
+ok 15 - run shares a pending promise and resolves once; event start and synchronous output stay compatible
+  ---
+  duration_ms: 18.43141
+  type: 'test'
+  ...
+# Subtest: failed run preserves original solver error even when the diagnostic writer throws
+ok 16 - failed run preserves original solver error even when the diagnostic writer throws
+  ---
+  duration_ms: 3.374878
+  type: 'test'
+  ...
+# Subtest: native failed flag rejects with its actual reason and emits one error event
+ok 17 - native failed flag rejects with its actual reason and emits one error event
+  ---
+  duration_ms: 2.736912
+  type: 'test'
+  ...
+# Subtest: stop rejects pending run while a native step awaits, and suppresses late completion
+ok 18 - stop rejects pending run while a native step awaits, and suppresses late completion
+  ---
+  duration_ms: 4.243408
+  type: 'test'
+  ...
+# Subtest: stop during failure diagnostics rejects run and suppresses the late original error event
+ok 19 - stop during failure diagnostics rejects run and suppresses the late original error event
+  ---
+  duration_ms: 2.532149
+  type: 'test'
+  ...
+# Subtest: width refinement completes before run resolves and its actual output is materialized
+ok 20 - width refinement completes before run resolves and its actual output is materialized
+  ---
+  duration_ms: 3.333198
+  type: 'test'
+  ...
+# Subtest: explicit public Pipeline7 selection and default/explicit Pipeline9 retain the same adapter protocol
+ok 21 - explicit public Pipeline7 selection and default/explicit Pipeline9 retain the same adapter protocol
+  ---
+  duration_ms: 4.135887
+  type: 'test'
+  ...
+# Subtest: minimum-only mode bypasses broad native power widening while retaining the hard width repair
+ok 22 - minimum-only mode bypasses broad native power widening while retaining the hard width repair
+  ---
+  duration_ms: 5.610824
+  type: 'test'
+  ...
+# Subtest: minimum-only mode requires the hard fabrication width constraints
+ok 23 - minimum-only mode requires the hard fabrication width constraints
+  ---
+  duration_ms: 1.076893
+  type: 'test'
+  ...
+# Subtest: private solver frame is inverted before materialization, evidence and hard width refinement
+ok 24 - private solver frame is inverted before materialization, evidence and hard width refinement
+  ---
+  duration_ms: 4.789015
+  type: 'test'
+  ...
+# Subtest: private guarded constructor keeps the native protocol and cannot be combined with Pipeline7
+ok 25 - private guarded constructor keeps the native protocol and cannot be combined with Pipeline7
+  ---
+  duration_ms: 2.120385
+  type: 'test'
+  ...
+1..25
+# tests 25
+# suites 0
+# pass 25
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1692.093142

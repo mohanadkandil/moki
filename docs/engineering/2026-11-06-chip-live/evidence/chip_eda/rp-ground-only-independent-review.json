@@ -1,0 +1,39 @@
+{
+  "verdict": "pass-scoped-no-actionable-finding",
+  "reviewer": "gnd_escape",
+  "scope": "Independent read-only review of groundOnly branch and unchanged default/application/coupled behavior in createRpEscapePhase",
+  "files": {
+    "eda/blocks/rp-escape.ts": "dc7ac147a6441a1d15af4a12d855e651510975cc00964f070c2cda6962feb95f",
+    "tests/blocks-rp-ground-escape.test.ts": "f5b9dfb4ad2435772e2b5a05b68b5ba939666f5a6bd39aa9eead01ccdcf33d7b",
+    "tests/blocks-rp-escape.test.ts": "61f6e71501da8486e349c4a81dec8d9c1d044e781a402f84fbf8090b309d386a",
+    "tests/blocks-rp-application-escape.test.ts": "0e2831346a0fb960bf4c3885d7f249d8676d91db6875b3b4548bb8baa635fb85",
+    "src/blocks/native-ports.ts": "4bc103d7c9bffdadb1f41aee033e3e697070f583265016f2df2d2c213a674a4f",
+    "src/blocks/native-netlist.ts": "a83edcdcf74aca694dd340a73c87ff065bf22adefa7a76efc8d5d55364ea964d"
+  },
+  "independence": "Reviewer did not author rp-escape or its groundOnly branch; prior rp-signal work is outside this reviewed producer",
+  "measured": {
+    "testsPassed": 18,
+    "testsFailed": 0,
+    "durationMs": 19264.017548,
+    "strictTypecheckPassed": true,
+    "testLog": "rp-routing-robust/rp-ground-independent-tests.tap",
+    "typecheckLog": "rp-routing-robust/rp-ground-independent-typecheck.log",
+    "nativeRoutingExecuted": false
+  },
+  "checked": [
+    "GroundOnly selects physical19 TESTEN and57 GND before native geometry preflight; unused14profile exits are absent while original actual pads/holes/clock copper remain",
+    "Actual C2040 RP2040 immutable block3/4 identity, component placement, source graph, canonical physical port number/name/hints and one-port-to-net source trace ownership are checked",
+    "Both selected logical roles are strict input/ground respectively, source_net.is_ground must be true and resulting selections must share one actual graph/net name",
+    "Widths0.15mm, via0.6/0.3mm and full top-bottom span are literal; 2/4layer cardinal matrix passes; via-in-pad independently forbidden",
+    "All11 native geometry checks plus convex board-edge cap/radius proof retained and apply to clock copper and only selected escape copper",
+    "Ground-only true conflicts with application/USB true; malformed options fail; explicitgroundOnlyfalse equalsdefault;14/16/18 existing profile counts retained",
+    "Unused power-barrel collision excludes only unselected proposed copper; selected-pad/foreign-pad/hole/offboard and foreignclock controls fail",
+    "Input circuit, graph, mapping and saved clock data remain unmodified"
+  ],
+  "limits": [
+    "No whole native route, physical all-net oracle, render, compile or service change executed",
+    "Upcoming root private flag/caller integration not reviewed; root must retain generic native binder/source proof, native DRC, minimum-width and mandatory all-net physical gates",
+    "Review does not prove routability or global GND continuity; fixed exits only reach actual off-pad barrels",
+    "Historical baseline equivalence beyond existing focused regressions and branch inspection not rerouted"
+  ]
+}

@@ -1,0 +1,974 @@
+{
+  "reviewer": "/root/final_review",
+  "at": "2026-11-06T02:24:35.622125+00:00",
+  "scope": "Incremental ADC/GPIO/unused-I2C guards,catalog aliases/bundled receipts,chip target metadata,native ground-plane adapter,and finite RPclock profile/integration. Incremental automatic section packing, effective-plan geometry integration, exact SHT40 pretrace preflight, and mixed-phase sensor endpoint relocation. Saved prefix/join exact source attribution, synchronous pre-pour metadata update, diagnostic refresh and public native obstacle-margin adapter.",
+  "verdict": "pass within reviewed scope; no unresolved confirmed review finding",
+  "findings": [
+    {
+      "id": "P2-composite-i2c",
+      "severity": "P2",
+      "file": "src/blocks/erc.ts",
+      "location": "I2C pullup check guarded solely by connectedPorts",
+      "confirmed": true,
+      "impact": "A powered internal MCU+sensor bus entirely within one block passes ERC with no pullups because no external BoardPlan link names its I2C port. This weakens the electrical correctness gate for composite authored blocks.",
+      "reproduction": "Run final-review-i2c-repro.mts first case; current gates ERC=true,power=true despite no resistor parts or pullup constraints. Fixture is explicitly synthetic.",
+      "recommendation": "Require verified pullups when the bus port is linked OR an explicit bus signal physically joins multiple active component owners. Continue allowing an unused MCU mux-only port without pullups.",
+      "status": "resolved",
+      "verifiedFix": "Independent original reproduction rerun now returns ERC=false with the expected specific rule; power remains true. Added focused implementation regression covers the composite case and preserves positive source behavior."
+    },
+    {
+      "id": "P2-composite-analog",
+      "severity": "P2",
+      "file": "src/blocks/erc.ts",
+      "location": "Connected analog direction analogPeers filter excludes entire same instance",
+      "confirmed": true,
+      "impact": "An ADC-only MCU connected to an explicit analog input consumer on another IC inside the same block passes without any DAC. The cross-instance direction guard skips the internal consumer.",
+      "reproduction": "Run final-review-i2c-repro.mts second case; current gates ERC=true,power=true for ADC-only MCU driving an explicit analog input.",
+      "recommendation": "Follow actual physical root/component ownership, excluding the MCU own physical component rather than every part in its block instance; preserve cross-instance and alias checks.",
+      "status": "resolved",
+      "verifiedFix": "Independent original reproduction rerun now returns ERC=false with the expected specific rule; power remains true. Added focused implementation regression covers the composite case and preserves positive source behavior."
+    },
+    {
+      "id": "P2-clock-profile-scope",
+      "severity": "P2",
+      "file": "eda/blocks/build.ts",
+      "location": "createRpClockPhase called for every C2040 part",
+      "status": "resolved",
+      "confirmed": true,
+      "impact": "Any newly agent-authored RP2040 block with a different id is routed through a finite helper that only accepts rp2040-minimal@>=3 and throws before generic routing. The cache becomes an unintended limit on otherwise valid authored reference circuits.",
+      "recommendation": "Invoke the finite saved-path helper only for its known rp2040-minimal profile. Other RP2040 blocks should retain ordinary native autorouting and all native DRC,or an explicitly designed applicable profile.",
+      "verifiedFix": "Reread actual root integration: optional clock profile is invoked only for C2040 in rp2040-minimal revision3 or4. Differently authored RP2040 blocks retain ordinary native routing and hard DRC."
+    },
+    {
+      "id": "P2-auto-board-within",
+      "severity": "P2",
+      "file": "eda/blocks/auto-placement.ts",
+      "confirmed": true,
+      "status": "resolved",
+      "impact": "Automatic packing initially honored board_size_mm <= but ignored equally supported within bounds. Actual six-block fixture with confirmed within [20,20] packed 50x58mm. Final physical verifier still rejected this result, so this was an early constraint/expensive routing bug rather than an acceptance bypass.",
+      "reproduction": "final-review-placement-repro.mts; original independently observed board50x58 and failed evaluated within [20,20].",
+      "verifiedFix": "Current packer constrains both <= and within. Independent assertion replay rejects [20,20] before routing, packs [52,60] as50x58 and verifies actual dimensions pass while requirements remain unchanged."
+    },
+    {
+      "id": "P2-native-default-followup",
+      "severity": "P2",
+      "confirmed": true,
+      "status": "resolved",
+      "file": "eda/blocks/build.ts",
+      "impact": "Mapping only platform.autorouterMap.auto leaves the native saved fanout follow-up default preset outside the intended DRV obstacle-margin/capture wrapper. The most relevant dense global routes would miss that planning margin. Native DRC remained hard; no acceptance bypass.",
+      "evidence": "Installed getLocalAutoroutingStages resolves strategy.followUpAutorouter default separately from auto; independently observed same behavior in the earlier no-router native serialization fixture.",
+      "verifiedFix": "Current RootCircuit maps both auto and default to public native chipRouter. DRV .25 obstacle margin now applies only when actual phase input contains nominal width above .15; pure .15 signal phases retain pre-existing planning. Native fabrication minima unchanged."
+    },
+    {
+      "id": "P2-router-diagnostic-stop-race",
+      "severity": "P2",
+      "confirmed": true,
+      "status": "resolved",
+      "file": "eda/blocks/router.ts",
+      "impact": "Awaited optional onFailure callback introduced a cancellation window: stop during diagnostic I/O still emitted original error after cancellation.",
+      "evidence": "Independent exact-wrapper extraction with fake already-failed solver: lateErrorsAfterStop initially1. No native route ran.",
+      "verifiedFix": "Final emit rechecks !stopped after diagnostics await. Saved reproduction now returns lateErrorsAfterStop0 and verifies callback write failure still preserves the original native error."
+    },
+    {
+      "id": "P2-copper-ring-bulge",
+      "severity": "P2",
+      "confirmed": true,
+      "status": "resolved",
+      "file": "eda/blocks/copper-netlist.ts",
+      "location": "ring() maps native vertex x/y but silently ignores nonzero bulge",
+      "impact": "A supported native inward curved copper edge is replaced by its straight chord. The oracle can certify disconnected terminal copper as one physical net, undermining all-net physical gate and existing-join geometry deferral safety for such inputs.",
+      "reproduction": "all-net-bulge-independent-probe.{mts,json}: native semicircular notch excludes A(2,.5) while B(2,3) touches pour; oracle reports both one net and ok:true. Native short-contact oracle independently proves curved vs straight contact difference.",
+      "recommendation": "Fail closed on nonzero/nonfinite/unsupported bulge before polygon approximation; retain exact straight geometry. No arc implementation or DRC relaxation required.",
+      "actualScope": "Current actual-e7a97ca9 pre-pour capture contains zero nonzero bulges; this particular native geometry is not invalidated by the finding.",
+      "verifiedFix": "Other-worker narrow guard rejects any supplied bulge that is not finite numeric zero in outer/inner/pad rings. Original independent curved-edge counterexample now fails closed; official native geometry positive controls remain unchanged. Two selected new regressions independently pass0.653s."
+    },
+    {
+      "id": "P2-private-rp-source-evidence",
+      "severity": "P2",
+      "confirmed": true,
+      "status": "resolved",
+      "file": "eda/blocks/build.ts",
+      "location": "native-exit-phase registration was guarded by rpEscape props orDRV presence",
+      "impact": "Private pad-escape mode disables rpEscape,but accepts anyknownRP input. Without aDRVdriver,merged handoff paths were created without nativeExitPhases; strictsource-completion hook andpostcheck wouldnotrun. Physical/allnet/width/DRC gatesremainedhard; nounsafeCuacceptancewasobserved. Currentthreeowner motorcaseswereunaffected.",
+      "verifiedFix": "Guard now includes hasRpProfile. ExactAST-extracted block produces onefullphase/audit and savesartifact for privateknownRP/noDRV; sixmode/no-path controls pass.",
+      "reproduction": "private-handoff-registration-independent-probe.{mts,json}"
+    }
+  ],
+  "noConfirmedFindings": [
+    "Exact C50506 packaging-title alias is narrowly bound to supplier,component and footprint identities; no general suffix stripping.",
+    "Bundled receipt fallback activates only on ENOENT, validates whole receipt and raw response hashes, and does not heal present corruption. Existing75-receipt independent replay covers explicit-path precedence and unchanged caches.",
+    "Chip firmware metadata now reports actual approved MCU board/platform/framework and preserves selected compile environment separately; failed compile status is retained."
+  ],
+  "reproduction": "final-review-i2c-repro.mts",
+  "limits": [
+    "No whole-board native routing or firmware compile run by this reviewer. Bounded native checks and6x6mm actual-converter/pour fixture regression were rerun.",
+    "Full53 electrical prelayout receipt is separately conditional; this code review does not close routing/DRC/copper/firmware acceptance.",
+    "Root current RP4/motor2 job log reports all eight gates passing; independent reviewer did not perform that native job, official shorts/PCB-style or hardware verification."
+  ],
+  "initialSourceSha256": {
+    "src/blocks/erc.ts": "d58299afae844c3c36bb76e0cca4232bfb97403d0e6bc97c03da1352b7e4c740",
+    "src/blocks/catalog.ts": "b0a60059648e5054b44a14f2efd7d1c1df32bf2eea4c1e8ceaed0e38c4db0ea4",
+    "src/board/chip-firmware-worker.ts": "5045c7559571a07c8189f48cc4a0824c3bb62dd0e25427ff56471eb8fe18b21c"
+  },
+  "sourceSha256": {
+    "src/blocks/erc.ts": "efcb9042752888bae1e11c13f8c462e192755b14b44ba7e430baac31326ddeac",
+    "src/blocks/catalog.ts": "b0a60059648e5054b44a14f2efd7d1c1df32bf2eea4c1e8ceaed0e38c4db0ea4",
+    "src/board/chip-firmware-worker.ts": "5045c7559571a07c8189f48cc4a0824c3bb62dd0e25427ff56471eb8fe18b21c",
+    "eda/blocks/ground-plane.ts": "a829c00c66ba2f2f3a56f97b8b797019d69e2391722292f700e5d657be745601",
+    "tests/blocks-ground-plane.test.ts": "8a49ba1ef65eb4fdd9f17b085f8dce701c0dfc1a8c4f38259e63434d4aa9fd96",
+    "eda/blocks/rp-clock.ts": "2c44de68aff62c6835a288a4b0c14cb0a11b2616656c47a0be6eb887227eb04e",
+    "tests/blocks-rp-clock.test.ts": "4f9e9fa59a07b76c840ce6c3a3e637d1c873606ec954152c2a552da86769f4c7",
+    "eda/blocks/build.ts": "bedcee17bd0641b1919fc1eaebef4e0bac8f4172d57d733e63d86efedb4dc69a",
+    "eda/blocks/auto-placement.ts": "62b0b34e8d47995cae6e949bd0964bcd4eea37f26957228ddbed39d959c25658",
+    "eda/blocks/sensor-exits.ts": "eacb59f86b9b0b2897957f30d068c4675be4ac316de87f55227027c3f13ef7e2",
+    "eda/blocks/fanout.ts": "83022aaaecc5be4e529398da0dbc241a5a0b9b39881f7baba18a0f02ee44b7df",
+    "server/board-api.ts": "6dac30108f0cf43ccc590ccc159a28f2d8223419d07a966035b3cede9c57753d",
+    "tests/blocks-auto-placement.test.ts": "60c6f9b76ce3fcef5e668a8c331ef3132f631338b2afb72ce07b7ba8c7712a64",
+    "tests/blocks-sensor-exits.test.ts": "26f2f2498d75fd41c157d09da57ef446797e286f1a434abb9269a23a58d0d9bc",
+    "tests/blocks-fanout-preflight.test.ts": "89a71d620a9ff0ce9e77df089f885a10687493bbad05726389bfb41fc6d83e91",
+    "tests/blocks-fanout.test.ts": "27816066e76fc5a185d8aaa840f699d1a939b8af0f8659c039b6fb1ccbffca75",
+    "eda/blocks/repair-saved-sources.ts": "26fc26a0ef2ba539a5e9e25d09c5464fe5afe2b1f8332b70b2bedae49e9f0cf7",
+    "tests/blocks-repair-saved-sources.test.ts": "9231bb0fd26fa5f91b2e579534d4c65231a0d7b76a1c6d57042f7892171ed72b",
+    "eda/blocks/router.ts": "4ca98258dd56ed2c2a8d661eed7149888c26112759aa866733ca41f563e09ca4",
+    "src/blocks/router-planning.ts": "ffba1d1a7440c7ff9c7a2a6cafaa0323632b3812ae3eb313313f6166f8cf06de",
+    "eda/blocks/schematic.ts": "b29cb6a4c2afa633408d08f4bad26d70c09a9ae5981042270fa3d36d8fcca9a7",
+    "eda/blocks/schematic-notes.ts": "1cc5850e8cf97bbd24b7465b17bc31ba5153cf26d2d059c1844a5b3a9375e453",
+    "tests/blocks-schematic-notes.test.ts": "7a9c9fbe611e50327ac2f9f42c25eae82791a2f823dc4b902683e5e34d0494c9",
+    "eda/blocks/generate-rp2040.ts": "502f2c7ec9e9470cd3d3d44d9ada105697d245ecad68569d2d72564fe85f1756",
+    "eda/blocks/drv8833-escape.ts": "7eb44f69c1e570e1e3092b7028e191ec579c0204ce8c3ace8f3ae0dcb44ba63a",
+    "src/blocks/test-block.ts": "f5f5ccf1791e2a0cc32f776c9cb8a312eaa1e156896a88617328fa49c712d71b",
+    "tests/blocks-drv8833-escape.test.ts": "ade949c3e347f62c91ac404a7a2165995f73923412981db83c835bf3914a238e",
+    "tests/blocks-native-shape-rotation.test.ts": "6a139a229299a5cebd271f16ba79be1a239f88baf6b9af3ac6ad44e325bceaae",
+    "eda/blocks/rp-phase-order.ts": "5db76c850d4bb8d985e0f15a4e6df9cb15ff45ab660b575afff40ace15540d92",
+    "tests/blocks-rp-phase-order.test.ts": "f845d6c02f230e2fbcdf34b33ca017d987089b71f7680c640a3a5fc929c37f82",
+    "eda/blocks/usb-sink-escape.ts": "852dabbe596ee16d9d995595d57929987ea7874b010265cc0e71e0e42fdc50d0",
+    "tests/blocks-usb-sink-escape.test.ts": "3647d49fca56a3c5af7c18aba393ee509c8eed2ad3a772eaf3ff0e5a6fd29937",
+    "tests/blocks-router-adapter.test.ts": "7587a349f74872a9088ccc5818c2ccba86371f66c68a549c348a33d442eaa205",
+    "eda/blocks/no-via-in-pad.ts": "52a922ab189963407fd1ad455107013dc62b76fdd7d71a43ab27de80e9f52a29",
+    "src/blocks/native-trace-width.ts": "488696d032eba153ffad75e9953ad894294888317831e6511d3ff191396a4847",
+    "tests/blocks-no-via-in-pad.test.ts": "56b8ec45a5592bb7832563e470ed5e19baa5028920e2a88764b0d68627732d7b",
+    "tests/blocks-native-trace-width.test.ts": "0b4b89e8a9df93a6a54807ed28145c97b600f0ba0675a5e609ee86a14d56aad0",
+    "eda/blocks/copper-netlist.ts": "0e3a9a72193d3a68e2f09b568501d0c0d8d3b962b077a37a24a7bf847f4c46d0",
+    "eda/blocks/repair-native-exits.ts": "319991ec787047a42af818ed650c268851511525100999b9b64ba968f15b1464",
+    "tests/blocks-copper-all-nets.test.ts": "68d94e98061de13918e17aa11bfa67793ba05da3dd8ce41edf0c41c2d8b90583",
+    "eda/blocks/native-width.ts": "82e35629f96ff92ee9212afe8dc1ac3d2e589ac08ba307f94e6038120bac355a",
+    "tests/blocks-native-width.test.ts": "aeb9f95f27bcc1dab94fa459f33da8de971365b67796aed46975c4b786946beb",
+    "tests/blocks-native-power-bypass.test.ts": "4cc40864d93d5884f4baeecbffef5e6717923f3b0ac650ffdb1012311ce46e65",
+    "tests/blocks-copper-annulus.test.ts": "523c3dc151f6c3b0e73d71becf0327e8db008801c8a4f618ba292a6db2716922"
+  },
+  "updatedAt": "2026-11-06T08:54:19.275308+00:00",
+  "verification": {
+    "independentOriginalRepro": {
+      "internalI2c": "rejects i2c-pullup-missing on both SDA and SCL",
+      "internalAnalogConsumer": "rejects mcu-analog-direction without DAC"
+    },
+    "pureTests": {
+      "command": "node_modules/.bin/tsx --test tests/blocks-erc.test.ts tests/blocks-analog-direction-review.test.ts tests/blocks-ground-plane.test.ts",
+      "passed": 53,
+      "failed": 0,
+      "skipped": 0,
+      "durationMs": 1502.409492
+    },
+    "groundPlaneReview": {
+      "confirmedFindings": [],
+      "scope": "Source inspection and actual captured-input pure identity/normal/negative regressions; not a whole-board native acceptance",
+      "checks": [
+        "Canonical and repeated source ports resolved using strict same-component native internal-connection proof.",
+        "Only actual GND single-port source traces in singleton bottom-plane buses accepted.",
+        "Only verified alias obstacle connectedTo identifiers added; input/context cloned, all physical obstacle geometry/rules/connections preserved.",
+        "Native same-net merge and outward-direction options used; no pathfinder implementation and no via-in-pad enabled.",
+        "Native failure/partial output never emitted as complete; full solver validation/counts required.",
+        "Root build retains native DRC and independent physical-network copper oracle after generated copper."
+      ],
+      "retainedWorkerReplay": "ground-plane-replay.json reports solved61traces; this reviewer did not rerun a native solver."
+    },
+    "rpClockReview": {
+      "confirmedProfileFindings": [],
+      "integrationFinding": "P2-clock-profile-scope resolved",
+      "sourceHash": "2c44de68aff62c6835a288a4b0c14cb0a11b2616656c47a0be6eb887227eb04e",
+      "pureTests": {
+        "passed": 8,
+        "failed": 0,
+        "skipped": 0,
+        "durationMs": 2413.006755
+      },
+      "independentMutation": {
+        "fixture": "final-review-clock-repro.mts",
+        "case": "Off-copper pill bounding-box corner",
+        "offCopperDistanceMm": 0.15154295795465578,
+        "traceRadiusMm": 0.075,
+        "result": "Rejected by physical-land contact guard"
+      },
+      "scope": [
+        "Finite declared RP placement profile,not a new router.",
+        "Actual source/native pad identities,physical world poses and exact top-layer endpoint contact checked.",
+        "Three named clock nets preserved by five N\u22121 saved paths; no source graph rewrite.",
+        "Per-net summed length respects native minimum(max_length,10mm); zero-via top paths and board minimum width retained.",
+        "Native pad/trace,hole/via,keepout/cutout and board-edge checks remain enabled.",
+        "Actual full native API output and final hard gates remain root acceptance work; derived fixture is not presented as a new native build."
+      ]
+    },
+    "automaticPlacementAndSensor": {
+      "confirmedUnresolvedFindings": [],
+      "pureTests": {
+        "command": "node_modules/.bin/tsx --test --test-concurrency=1 tests/blocks-auto-placement.test.ts tests/blocks-sensor-exits.test.ts tests/blocks-fanout-preflight.test.ts tests/blocks-fanout.test.ts",
+        "passed": 29,
+        "failed": 0,
+        "skipped": 0,
+        "durationMs": 3485.762412
+      },
+      "independentWithinAssertions": "final-review-placement-repro.mts passes positive and negative actual-envelope assertions",
+      "checks": [
+        "Input plan, confirmed requirements, explicit anchors and explicit board dimensions/radius are preserved. Effective plan is compiler geometry only; graph source nets and reference allocation are compared after regeneration.",
+        "Actual imported envelopes and rotated keepouts are used, antenna reserved at top board edge, automatic packing followed by existing constrained secondary-part legalization.",
+        "placement.json records actual resolved dimensions and anchors; final server verify reevaluates requirements against native receipt board dimensions.",
+        "SHT pretrace exception is code-owned and narrow: four exact supplier/model, source/net/subcircuit/physical pad identities and cardinal native local paths; native pad/trace/drill/keepout/edge/cutout checks remain hard.",
+        "Foreign-net proposed dense exits are checked against retained SHT copper. Default pre-routed copper still rejects.",
+        "Pure sensor phase relocation clones input and moves only applicable original known-pad coordinates, so0/1/2/4 phase subsets and a rotated subset work while unrelated connection/obstacle data remain."
+      ],
+      "limits": [
+        "Captured actual-envelope packing and derived native-record preflight tests are not new whole-board native output.",
+        "Heuristic packing may reject an arrangement a different placement could fit; no completeness guarantee.",
+        "Source-only scoped review does not close air native routing, fabrication, physical copper continuity, thermal, EMI or hardware behavior acceptance."
+      ]
+    },
+    "savedSourceRepairAndIntegration": {
+      "confirmedUnresolvedFindings": [],
+      "focusedTests": {
+        "command": "node_modules/.bin/tsx --test tests/blocks-repair-saved-sources.test.ts",
+        "passed": 7,
+        "failed": 0,
+        "skipped": 0,
+        "durationMs": 2608.903974
+      },
+      "independentExactRefreshMutation": {
+        "script": "final-review-refresh-repro.mts",
+        "extractedCurrentBuildBlockSha256": "9b7dfea6ba55b5f5385f69d554d1a182a8afb2f2ac90245c433ee93899f82e5c",
+        "unmatchedEngineSourceTraceFailuresRetained": 3,
+        "baselineCheckCount": 17,
+        "actual0052mmClearanceRetained": true,
+        "falseUnattributedContactRemoved": true,
+        "physicalGeometryAndSourceRecordsUnchanged": true
+      },
+      "checks": [
+        "Physical graph/import mapping and unique actual source component/port/land/net/subcircuit membership must agree before any repair.",
+        "Saved prefix literal two-point route, phase/index, selector, native pad center and audit start/end/width must match. Conflicting existing source metadata rejects.",
+        "Blank saved-exit joins require two proven same-net prefixes, unique actual captured Pipeline9 connection, exact endpoint IDs/layers/coordinates/width and actual route contact. Unknown blank traces remain unproved and block acceptance.",
+        "Only source_trace_id/source_net_id are updated. No source graph, route shape, layers, width, pad/via geometry or checks removed by helper.",
+        "Installed core lifecycle emits synchronously after asynchronous routing dependencies and before the pour converter. Hook updates native DB metadata and refuses unrepaired traces; later native DRC observes attributed Cu.",
+        "Post-route fallback refresh removes only exact(type,message) diagnostics produced by the same official placement+routing checks on original CJ and appends all fresh checks. Unmatched engine/source diagnostics are retained.",
+        "Specialized ground single-port phase applies only4layers with more than40ground terminals; ordinary smaller4layer jobs use normal hypernets. All4layer jobs now require independent physical-network GND oracle.",
+        "Final rollback reread: plain new RootCircuit, USB-first explicit phase order and pre-existing RP chipAutorouter restored. Experimental mixed-sensor platform callback and obstacleMarginOnlyMm option are NOT retained. No phase-only fabrication-floor experiment remains."
+      ],
+      "limits": [
+        "Derived captured fixtures and small official converter/pour run prove attribution effect,not whole-board routing or actual pour acceptance.",
+        "Actual remaining physical DRC errors are intentionally preserved. Fullair acceptance remains root native evaluation."
+      ]
+    },
+    "air4LayerPrelayout": {
+      "inputHash": "a854b3f25ad201985ba5286ab0301c89a72662771813467b0efe5fd318670d8b",
+      "onlyDelta": "layers2 to4",
+      "freshGates": [
+        "erc:pass",
+        "power:pass"
+      ],
+      "receipt": "air-usb-buck-4layer/independent-review.json",
+      "nativeAcceptance": false
+    },
+    "finalPhaseAndSchematicNotesDelta": {
+      "confirmedUnresolvedFindings": [],
+      "scope": "Source inspection and five pure text-layout regressions only; no native render/route or final visual inspection.",
+      "pureTests": {
+        "command": "node_modules/.bin/tsx --test tests/blocks-schematic-notes.test.ts",
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0,
+        "durationMs": 193.75848
+      },
+      "checks": [
+        "Empty experimental phase-floor object removed; no fabrication rule change.",
+        "Final retained phase order is USB at offset, dense at offset+1, specialized GND when applicable at offset+2. Distinct phase indices for both clock offsets0 and1; mixed dense-first experiment was removed.",
+        "Board routeRemaining=true retains unassigned connections; installed native phase planner includes implicit remaining phase.",
+        "routing-plan.json rename to usbNets+usbPhase has no repository code reader other than artifact allowlist.",
+        "Every note and full reference quote is wrapped without slice/truncation; unbroken tokens split by Unicode code point and explicit paragraphs survive.",
+        "Conservative font advances and line lengths keep default text within950px section; reference13px uses14px measurement. Caller XML escaping remains applied to all text and URLs.",
+        "Section neededHeight includes last text baseline and padding; per-row maximum height plus30px controls next row and final document/footer dimensions."
+      ],
+      "limits": [
+        "Final regenerated schematic needs visual inspection, especially native symbol placement/title lengths, which this small delta does not change.",
+        "Actual physical acceptance remains root native evaluation; no claim that the reverted experimental callback or dense-first ordering passed."
+      ]
+    },
+    "prePourAbsentMarkerDelta": {
+      "confirmedUnresolvedFindings": [],
+      "sourceHash": "db1b0e98e2a5153ade3c71969d37fc8ef49d304b06acb4254d87d3c42c2fe9c8",
+      "scope": "Narrow missing start_pcb_port_id allowance only; same exact literal and native physical/source proofs remain.",
+      "checks": [
+        "undefined start marker may be absent before late native DRC attaches it; existing marker must strictly equal actual canonical PCB port ID.",
+        "Present wrong ID, null and empty string reject. Wrong source/selector/index/net/route width/capture tests still reject.",
+        "No marker is invented and no route coordinate, width or layer is changed.",
+        "Derived pre-pour indexedDB/converter/pour test strips late port markers before attribution proof and still produces foreign GND obstacle plus one real clearance hole."
+      ],
+      "focusedTests": {
+        "passed": 7,
+        "failed": 0,
+        "skipped": 0,
+        "durationMs": 2608.903974
+      },
+      "limits": [
+        "Fresh native artifacts now read independently; source-hook integration works on raw absent-marker records, but the board still fails12real physical clearances."
+      ]
+    },
+    "freshPrePourNativeArtifacts": {
+      "jobId": "448386df-0901-4ccf-b75c-07e610c8027a",
+      "totalMs": 82279.30994899999,
+      "acceptance": "FAIL:12 real physical clearance errors remain",
+      "rawPrefixCount": 14,
+      "rawPrefixesWithoutStartMarkers": 14,
+      "prePourSourceRepair": {
+        "beforePour": [
+          {
+            "pcbTraceId": "source_net_1_mst7_0",
+            "ref": "U2",
+            "pad": "1",
+            "sourceTraceId": "source_trace_38",
+            "sourceNetId": "source_net_1",
+            "netName": "V3V3",
+            "kind": "saved-exit-join"
+          }
+        ],
+        "audit": [],
+        "unrepairedTraceIds": []
+      },
+      "rawToFinalAndPriorRouteGeometryIdentical": true,
+      "priorNativeErrorCount": 17,
+      "currentNativeErrorCount": 12,
+      "resolved": "Four false same-net/unnamed trace contacts and one actual foreign-trace GND pour short. Three existing real errors gain proper trace labels and remain.",
+      "sensorCopper": true,
+      "async": {
+        "ok": true,
+        "errors": []
+      },
+      "artifactsSha256": {
+        "pre-pour-circuit.json": "999dc3cceafbe174a5b5e21ceda8e97704955e3d60e896e113480a8c0302e00b",
+        "native-source-attribution.json": "216b99fa017ba85946b823e9dee4e983f9125cfab90c5157385788f48c165f9b",
+        "circuit.json": "8aa70a05d66822f8c21bb2ed5ff4bd43ea0a935e4ca8348c3fc8ef38ea6d2094",
+        "receipt.json": "7746d378bfca8d7738c4f1af90bf5164f2f7d2746cbd3d9b9347cb922e3b62be",
+        "sensor-copper-check.json": "d6f1b8dc221d45e968e0776664c63fb9342fcc3563c7e3e5724cb9d81040e6a3"
+      }
+    },
+    "finalStrictTsDelta": {
+      "confirmedUnresolvedFindings": [],
+      "checks": [
+        "Source mapper now validates each mapping entry then returns string; same missing-entry runtime guard with improved static narrowing.",
+        "RPgenerator pin24 assertion is compile-time only after existing1..57pin population; no runtime/net/value/geometry change."
+      ],
+      "rootReportedChecks": {
+        "fullNpmTests": {
+          "passed": 907,
+          "failed": 0,
+          "skipped": 0,
+          "seconds": 211.59
+        },
+        "focusedTests": {
+          "passed": 41,
+          "seconds": 6.099
+        },
+        "rootAndWebTypecheck": "pass"
+      },
+      "independentRerun": "Not repeated: receipt-only read/source refresh; prior independently rerun7focused regressions are recorded separately."
+    },
+    "independentRpIntegrationPackingAndAttestation": {
+      "confirmedUnresolvedFindings": [],
+      "scope": "Independent review of root/other-worker implementation only; repair-native-exits.ts is excluded because this reviewer authored it. Parent independently reviews that helper.",
+      "pureTests": {
+        "command": "node_modules/.bin/tsx --test --test-concurrency=1 tests/blocks-auto-placement.test.ts tests/blocks-native-shape-rotation.test.ts tests/blocks-drv8833-escape.test.ts",
+        "passed": 21,
+        "failed": 0,
+        "skipped": 0,
+        "durationMs": 8127.050991
+      },
+      "checks": [
+        "Exact RP clock phase0, connector/CC phase1 and unified saved RP14/DRV9 phase2 preserve source nets; unassigned signals remain native implicit remaining routes.",
+        "Actual44-part packing fixture selects only J1/R7/R8 for composite USB. Selected nets are USB_DM_EXT,USB_DP_EXT,CC1,CC2; oscillator,QSPI and application signals are excluded.",
+        "Canonical RP low-current pin19/57 returns use.15mm; other motor return traces retain.3mm. Source geometry/netlist/physical hard checks remain.",
+        "Pre-pour integration updates both trace IDs and returned actual via connectivity keys in native DB. Post-route official-check refresh triggers on either trace or via audit and retains unmatched engine/source diagnostics.",
+        "Fatal native async/autorouting failures now save raw failure evidence and mark source attribution checked:false instead of masking the route error with absent expected-prefix failure. Fully solved source attribution remains hard.",
+        "Non-antenna MCU missing-anchor packing considers four cardinal rotations; explicit anchors remain fixed. Optional1/.5/0mm reserve fallback only shrinks compiler wiggle room in explicit outlines; actual footprint envelopes,keepouts and packing1.5mm gap remain. Final constrained legalizer/native checks remain authoritative.",
+        "Actual55x40 fixture rotates RP section90degrees and packs at zero optional reserve,then legalizes all actual footprint corners inside the original board. Input electrical fields,requirements and explicit dimensions remain identical.",
+        "Rotated-pill attestation adds only supported native SMT representation with finite positive dimensions/angle; physical pad/source/import receipt/coverage and plated-annulus requirements remain.",
+        "DRV profile verifies actual immutable supplier/MPN/all physical rows/pitch,source mapping,cardinal pose and source widths. Foreign pad ownership is proved from actual graph/native source ports before isolated physical-obstacle checking,preventing copied net-label or free-end inference bypasses."
+      ],
+      "limits": [
+        "Focused native geometry checks over captures and derived mutants are not a whole-board native route or acceptance.",
+        "Packing is heuristic and its1.5mm gap is a section-packing constraint; final legalization may move secondary parts subject to hard physical constraints.",
+        "Current native routing outcomes remain root-owned. No independent success claim for the3requested RP jobs.",
+        "The authored repair-native-exits.ts helper has a separate implementation proof receipt and requires parent review."
+      ]
+    },
+    "independentNativeExitCompatibilityPatch": {
+      "confirmedUnresolvedFindings": [],
+      "independence": "Original helper authored by this reviewer and reviewed by parent/rp_clock. This independent review covers only subsequent fixes authored by rp_clock.",
+      "sourceSha256": "bc13e2f9d7f1bcda4cba36f9ac2ba3b285c32e71ce70ad2cb21577dc303cec06",
+      "testsSha256": "2c9945547cd03721ab1bcb688eb3accf3b07685e4680cf51ee339461822e0bb3",
+      "focusedTests": {
+        "matched": 4,
+        "passed": 4,
+        "failed": 0,
+        "durationMs": 1348.655462
+      },
+      "checks": [
+        "samePortPoint first requires finite numeric coordinates,then <=1e-7mm only for canonical physical-port/marker binding. Literal audited prefix routes,widths,layers and via coordinates remain exact.",
+        ".001mm coordinate and wrong literal geometry mutations reject; no physical geometry is moved or regenerated.",
+        "Shared route-via reuse can resolve only a previously proved same-net audited saved-prefix barrel at exact coordinates,with actual0.6/0.3dimensions,complete physical layer span and matching key/subcircuit. No arbitrary coordinate-only barrel lookup.",
+        "Native retained owner/direction metadata is distinguished from actual physical full-span connectivity; counted route-owned barrels still reject missing/extra/unproved physical records.",
+        "Positive annular copper contact must exist on the actual outgoing layer,including reversed joins. Drilled-away,wrong-key/span/owner/coordinate mutations still reject.",
+        "Independent final-review-shared-barrel-repro.mts checks valid nonredundant via\u2192wire/ wire\u2192via segment representation with unchanged geometry and rejects an unproved physical barrel owner. Official installed Gerber converter explicitly emits these via-wire segments."
+      ],
+      "limits": [
+        "No new native route or whole-board success claim.",
+        "This does not retroactively make this reviewer independent of the original helper implementation."
+      ]
+    },
+    "rpCriticalSignalPhaseSelection": {
+      "confirmedUnresolvedFindings": [],
+      "pureTests": {
+        "passed": 6,
+        "failed": 0,
+        "durationMs": 201.660015
+      },
+      "checks": [
+        "Selection follows supported actual RP2040 pin/part identity and full-net roles rather than display names.",
+        "Clock phase0 and existing saved-fanout ownership always win; power,ground and DRV-owned GPIO signals stay outside the early selector.",
+        "Actual captured graph selects sixQSPI,internalUSB,RUN andBUTTON without mutating the graph; coordinate/reference/net renames preserve logical selection.",
+        "Existing build inline phase ordering reviewed: four-layer guarded early-set union with actual USB connector/CC nets,phase1 after clock0 and before merged dense2; default and auto native wrappers retain correct scope."
+      ],
+      "integrationLimit": "Pure helper present and reviewed; root final helper-call integration may change after this source snapshot.",
+      "nativeLimit": "Ordering alone already failed actual later power routing; no robustness/acceptance claim."
+    },
+    "independentJointPrefixAndDiagnosticsIntegration": {
+      "confirmedUnresolvedFindings": [],
+      "scope": "Root build/router integration only; rp-signal-escape.ts independently reviewed by another worker, and original repair helper excluded from this independent review.",
+      "checks": [
+        "Both2/4layer RP profile calls retained. Existing clock object and exact driver-owned net exclusions are passed to signal-exit generator.",
+        "Joint paths concatenate RP14 power with bound RPsignal10+DRV9; audit order matches path selectors and native source-repair evidence. Duplicate physical selectors reject through native binder/proof.",
+        "Clock0 and externalUSB1 precede joint2 in this snapshot. selectRpCriticalSignalNets now asserts no unowned remaining connected RP signal net rather than selecting another automatic early phase.",
+        "Native public default and auto mapping remains. Planning floors and final fabrication/physical gates unchanged.",
+        "Optional failure callback captures native phase/pointPairs/graphics; its exception is swallowed while original solver error is emitted. Cancellation guard now rechecks after awaited diagnostic I/O."
+      ],
+      "pureStopReproduction": "final-review-router-stop-repro.mts: lateErrorsAfterStop0; diagnostic error preserves original native error.",
+      "limits": [
+        "Upcoming USB-prefix all-joint integration is not covered by this source snapshot.",
+        "No new native route/compile performed; whole-board acceptance remains unresolved."
+      ]
+    },
+    "readOnlyPreloadAndVbusDiagnosis": {
+      "pairReceipt": "final-review-vbus-pair.json",
+      "mutationReceipt": "final-review-preload-mutations.json",
+      "reproducer": "final-review-preload-repro.py",
+      "verified": "Actual9fab30preloads remain byID,26route-record changes,and at least19definite centerline displacements. All-joint removes earlier automatic-route preload class; no pass or immutable-native claim."
+    },
+    "routerAdapterProtocolTests": {
+      "author": "/root/final_review",
+      "source": "Exact production router module transpiled asCommonJS with controlled fakeSOLVERS require,actual planning helper; no native package instantiated.",
+      "tests": {
+        "passed": 5,
+        "failed": 0,
+        "durationMs": 1528.311471
+      },
+      "strictTargetedTypecheck": "pass after final CommonJS fake-require harness and six handoff tests",
+      "coverage": [
+        "Shared pending run promise and single completion across start/run/repeated run.",
+        "Actual sync SRJ output boundary retained; no accidentally returned promise.",
+        "Original thrown/native-failed reason preserved even if diagnostic writer throws.",
+        "stop rejects a pending awaited native step and suppresses late completion.",
+        "stop during diagnostic I/O rejects pendingrun and suppresses late original error event."
+      ]
+    },
+    "independentUsbAnd42PrefixIntegration": {
+      "confirmedUnresolvedFindings": [],
+      "scope": "Independent new USB helper and root caller integration; excludes authored native-handoffs producer,independently reviewed by gnd_escape.",
+      "sourceSha256": "852dabbe596ee16d9d995595d57929987ea7874b010265cc0e71e0e42fdc50d0",
+      "pureFocusedTests": {
+        "matched": 4,
+        "passed": 4,
+        "failed": 0,
+        "durationMs": 2006.47375
+      },
+      "checks": [
+        "Known RP profile/SOT23-6 physical pin rows/dimensions/MPN/source aliases/net/source widths are verified. CC contacts prove actual connector/resistor/ground correspondence.",
+        "USB8prefixes preserve0.3mm actual power and0.15mm signal widths; all supplied clock/power/signal/DRV copper and actual foreign pads/drills/keepouts/edges/cutouts remain checked. Foreign ownership derives from graph/native source ports,not copied pad labels.",
+        "Caller supplies clock/RPpower/RPsignal/DRV prefix geometry to USB validation; all paths bind through native source identity.",
+        "Missing-core-net selection is data-driven and confined to known core instance; actual BOOTSEL handoff joins selected-net set. No guessed BOOTSEL name exists in producer.",
+        "Actual job134193af preflight artifacts contain42paths,42audits,42unique selectors in jointphase2. BOOTSEL handoff is R2pin2. Clock remainsphase0; usbPhase=null and ground split=null for knownRP.",
+        "All27nonclock named nets in the captured RPboard belong to dense joint2,includingUSB/CC/GND/internalBOOTSEL. Remaining RP signal and USB coverage assertions fail closed.",
+        "Non-RPground strategy remains gated separately; knownRP disables later GND split and early automaticUSB stage. Final native source/placement/copper/DRC rules remain hard."
+      ],
+      "limits": [
+        "Four pure focused USB regressions independently rerun; full cardinal2/4matrix is worker evidence,not rerun here.",
+        "Actual native routing/physical acceptance for job134193af remains unresolved and parent-owned.",
+        "Authored producer proof has its own independent reviewer; this reviewer does not approve own code."
+      ]
+    },
+    "nativeReuseAssessment": {
+      "scope": "Read installed public API/source only; no code/cache changes or native execution.",
+      "report": "final-review-native-reuse.md",
+      "conclusion": "Completed public autorouter callback can replay exact bound native output while preserving fresh native lifecycle/gates. Private cache keys must not be forged; current custom phases disable built-in whole-phase cache. Public autorouting:end.simpleRouteJson is proper future output capture.",
+      "metadataCaveat": "Official CJ\u2192SRJ converter rewrites connection_name and marker metadata; raw native trace identities must not be assumed unchanged.",
+      "acceptance": false
+    },
+    "independentSmtViaMaskAndHardWidthGate": {
+      "confirmedUnresolvedFindings": [],
+      "scope": "Independent root-authored no-via-in-pad helper and build integration plus other-worker native minimum-width gate. Authored robust-routing-checks/native-replay/native-handoffs/source-repair original implementation excluded from independent verdict.",
+      "sourceSha256": {
+        "eda/blocks/no-via-in-pad.ts": "52a922ab189963407fd1ad455107013dc62b76fdd7d71a43ab27de80e9f52a29",
+        "src/blocks/native-trace-width.ts": "488696d032eba153ffad75e9953ad894294888317831e6511d3ff191396a4847",
+        "tests/blocks-no-via-in-pad.test.ts": "56b8ec45a5592bb7832563e470ed5e19baa5028920e2a88764b0d68627732d7b",
+        "tests/blocks-native-trace-width.test.ts": "0b4b89e8a9df93a6a54807ed28145c97b600f0ba0675a5e609ee86a14d56aad0",
+        "eda/blocks/build.ts": "e0b4ebc0aac5131db3f7fa09dd94ac286a1db2062c74e0164c99151bf212881a"
+      },
+      "pureTests": {
+        "command": "node_modules/.bin/tsx --test tests/blocks-no-via-in-pad.test.ts tests/blocks-native-trace-width.test.ts",
+        "passed": 9,
+        "failed": 0,
+        "skipped": 0,
+        "durationMs": 662.128906
+      },
+      "independentProbe": "smt-mask-independent-probe.{mts,json}",
+      "checks": [
+        "All added mask fields are present in pinned public native Obstacle type. Actual183 SMT input lands are rect single-layer native geometry; native non-SMT and saved fixed-Cu records are not projected.",
+        "Projection uses geometry-only whitelist with connectedTo:[]; componentId,circuitJsonMetadata,netIsAssignable,offBoardConnectsTo,isCopperPour,zLayers/__zLayers are absent even when synthetic source has those hostile ownership aliases.",
+        "Each single-layer SMT projection covers every other physical layer. Every distinct two/four-layer via transition therefore intersects at least one foreign projection while the original land wire layer remains usable.",
+        "Independent actual302obstacle probe preserves every original obstacle and connections/traces references exactly. Native fixed47profile copper is unchanged; only SMT obstacles receive additional planning geometry.",
+        "Current private replay selects either exact original base SRJ or exact projected SRJ by manifest hash; loader still proves captured native input and all identity files. Fresh native always receives projected SRJ for supported RP profiles. Replay does not claim to have used newly introduced masks.",
+        "Actual PCB copper/rules/source graph remain unchanged. Final minwidth,source,placement,native/fabrication and physical GND gates remain hard.",
+        "Hard width gate inspects every physical trace independent of canonical source endpoint count, closes actual134 source83 one-port taper gap, checks both endpoints of nonzero tapered wire segments, and rejects invalid/nonfinite widths,wire layer jumps and via-only displacement.",
+        "Coincident <=1e-8mm native via contact width is ignored only as zero free-wire extent; any nonzero larger segment using that subminimum point still rejects. This is separate from physical barrel/layer/annulus guards."
+      ],
+      "limits": [
+        "No native router/compile/server run by reviewer. This is source and pure fixture acceptance only.",
+        "Conservative inner/bottom land columns can reduce routing space; a successful physical board is not inferred.",
+        "Full-stack via masking relies on the official native router respecting foreign obstacles; final native vias-in-pads remains authoritative."
+      ]
+    },
+    "independentAllNetAndExistingJoinDeferral": {
+      "confirmedUnresolvedFindings": [],
+      "independence": "Review of other-worker all-net extension and existing canonical-join deferral only; original source-completion implementation by this reviewer excluded.",
+      "sourceSha256": {
+        "eda/blocks/copper-netlist.ts": "c5cceef9251a9e0f654c7e920377778501db93ef8d414afdc58a2029ecdb7269",
+        "eda/blocks/repair-native-exits.ts": "319991ec787047a42af818ed650c268851511525100999b9b64ba968f15b1464",
+        "eda/blocks/build.ts": "3fa9b45baf15e2e95636056d49c7823d1b68cde14802f3b8469b7c0baee26882",
+        "tests/blocks-copper-all-nets.test.ts": "fd88773b7474e988a65c0f3ffba49634968245f8ba7c0c8265a60fa013f0585a"
+      },
+      "tests": {
+        "copperSuitePassed": 27,
+        "copperSuiteSkipped": 1,
+        "copperSuiteDurationMs": 8275.086688,
+        "legacyUnconditionalCapturedBoardOracleMs": 7706.803482,
+        "selectedDeferralPassed": 1,
+        "selectedDeferralDurationMs": 1214.899569
+      },
+      "integrationProbe": "all-net-gate-independent-probe.{mts,json}",
+      "geometryCounterexample": "all-net-bulge-independent-probe.{mts,json}",
+      "checks": [
+        "Existing deferral requires actual proven left/right prefixes, same native net/subcircuit and already-canonical source identity/key. It assigns no source/via metadata to deferred joins; blank joins and literal prefixes retain original strict proof.",
+        "Default ground scope/API and actual ground-role filtering are preserved. All scope examines every graph net with same positive/negative geometry DSUs and actual annular/drill subtraction; repeated pieces and foreign/NC contact remain checks.",
+        "Build passes deferral only under hasRpProfile and runs mandatory all scope for both2/4RP boards; exact expected-name set,checked:true,scope andok are required before successful receipt.",
+        "Exact production build-guard extraction rejects unchecked,wrong scope,missing/extra/missing-network results and false ok for both2/4layers; thrown oracle failures propagate.",
+        "API testBlock and board job DRC gates reject receipt errors before chip firmware compile. Independent all-trace absolute minimum-width/native clearances remain hard."
+      ],
+      "limits": [
+        "No new native route/compile/full actual all-net board oracle run.",
+        "Legacy copper test suite includes old captured ground-only oracle and was unintentionally included; it ran7.7s. New explicit actual all-net test remained skipped.",
+        "Current actual capture has no curved bulges. General unsupported curved input now fails closed; final actual all-net board acceptance remains parent-owned."
+      ],
+      "finalSourceSha256": {
+        "eda/blocks/copper-netlist.ts": "5f348ecd0fad2c3afed48acdf60e588e1441561509c5363cb6d2f77b5cb68af3",
+        "eda/blocks/repair-native-exits.ts": "319991ec787047a42af818ed650c268851511525100999b9b64ba968f15b1464",
+        "eda/blocks/build.ts": "57ef1866d25540384b5fba484f4b8602895fd30f7b17f18a765bc5f5f789167d",
+        "tests/blocks-copper-all-nets.test.ts": "68d94e98061de13918e17aa11bfa67793ba05da3dd8ce41edf0c41c2d8b90583"
+      },
+      "bulgeFixVerification": {
+        "status": "resolved",
+        "selectedTests": 2,
+        "failed": 0,
+        "durationMs": 653.289951,
+        "independentOriginalCounterexample": "Native curved region still excludes A; oracle now ok:false,copper-geometry-unverified; straight zero-bulge control still passes.",
+        "scope": "No arc implementation,net/source inference,geometry mutation or DRC relaxation added."
+      }
+    },
+    "independentOrientationAndNarrowWidth": {
+      "confirmedUnresolvedFindings": [],
+      "scope": "Root-authored current MCU aspect variant sorting and narrow native width stage. No source edits; optional RP application/USB-via profile changes excluded pending separate review.",
+      "sourceSha256": {
+        "eda/blocks/auto-placement.ts": "40bbbe1d623e5ee37406d0029f926401fe45b628ab9a9d783685d22ad367f371",
+        "eda/blocks/native-width.ts": "82e35629f96ff92ee9212afe8dc1ac3d2e589ac08ba307f94e6038120bac355a",
+        "tests/blocks-native-width.test.ts": "aeb9f95f27bcc1dab94fa459f33da8de971365b67796aed46975c4b786946beb"
+      },
+      "pureTests": {
+        "widthTestsPassed": 6,
+        "widthTestsDurationMs": 215.702614,
+        "selectedOrientationTestPassed": 1,
+        "orientationTestDurationMs": 363.011771
+      },
+      "packingProbe": "orientation-independent-probe.{mts,json}",
+      "actualWidthComparison": "native-width-independent-comparison.json",
+      "checks": [
+        "Only unanchored MCU allowed variants are sorted by section envelope/board aspect-fit; explicit groups are handled before missing loop, antenna restricted variant remains unchanged. No RP part ID/supplier-specific90preference.",
+        "A geometry heuristic is not electrical routing proof; actual pad-coordinate cross-section HPWL candidate380.0883572\u2192335.8999392mm,11.6%lower,while GND/VBUS estimates individually increase.",
+        "Meaningful future connectivity criterion is net-weighted cross-section HPWL/congestion score over complete candidate packings,using actual terminal transforms,while explicit anchors/keepouts/envelopes remain hard.",
+        "Native width stage receives only actual subminimum trace IDs as mutable; every other current trace is passed via documented fixedTraces,including conforming siblings on the same net. Native source creates fixed trace spatial entries without mutable traceIndex.",
+        "Two pass scopes independently recompute underfloor IDs. Second pass consumes only original planning reserve down to unchanged.127fabrication clearances; allowNewVias:false remains; native output IDs/coverage must match mutable input before original ordering is restored.",
+        "Actual8e46before-width/native phase2 has117sameIDs/order and exactly2changedroutes(source_net_0_mst14_0,mst16_0). Other115complete native records are deeply identical,including same-net sibling traces.",
+        "Actual minimum width.10606601717798213\u2192.15. Fresh Core materialization retains all117exact geometries,up to61route-list reversals for endpoint marker normalization; no unrelated copper movement after native width stage."
+      ],
+      "limits": [
+        "No native routing,compile or full-board physical oracle run in this review.",
+        "Actual8e46receipt still217native errors and22physical all-net issues; both remainFAIL.",
+        "Array reversal during Core endpoint annotation is distinguished from physical route displacement.",
+        "Changing board aspect is confounded by legalization/profile/mask/solver changes across prior runs; no90degree-routing-causality claim."
+      ]
+    },
+    "currentFailClosedBuildIntegration": {
+      "confirmedUnresolvedFindings": [],
+      "sourceSha256": {
+        "eda/blocks/build.ts": "d6a6db52f040fac4159ed33ec5b744953c1becad0c23d2d48e4a3a50cddc62ad",
+        "eda/blocks/router.ts": "be13a726365c39dca671a740dd9eb0983d72aa007e6699d8d7ea10b6fa3b1a2c"
+      },
+      "scope": "Root current build/router integration only; optional coupled RP profile separately reviewed by gnd_escape. Authored robust-routing/source originals/replay code excluded from own independent verdict.",
+      "errorCollectionProbe": "failure-gate-independent-probe.{mts,json}",
+      "physicalGuardProbe": "all-net-gate-independent-probe.{mts,json}",
+      "checks": [
+        "Exact error collection8synthetic cases preserves pcb_autorouting_error with and without fallback trace,async-only original errors,unknown runtime,real clearance,source mismatch,subfloor wire and placement failure. Error-bearing output cannot satisfy receipt DRC success.",
+        "Exact physical guard14result cases checks2/4RP and rejects unchecked,wrong scope,missing/extra/missing-results andfalseok; oracle throws propagate.",
+        "Source deferral onlyhasRpProfile implies unconditional all-net physical gate for both supported board layer counts. Actual graph-net name coverage,checked/scope/ok remain required.",
+        "Native failure evidence is saved before skipping source-completion; no incomplete source proof is reported as checked. Native source/runtime/error records stay acceptance blocking.",
+        "Public API checks receipt errors and stops at failed DRC before block/Verifier/firmware stages. Native testBlock additionally checks actual circuit errors and nonzero exit status. Failed Core artifacts may exist but are not accepted jobs.",
+        "Actual7c9capture contains original pcb_autorouting_error andasync native error with statusfailed; actual8e46has no routingengineerror but217native/physical errors andstatusfailed.",
+        "Current default/caller isPipeline9 and audit names match. Public auto+default wrappers remain mapped; fresh native receives SMT via exclusion geometry; private exact bound replay remains explicitly marked and allfresh hard checks run.",
+        "Narrow native width retains unrelated complete records; all-trace absolute board minimum remains separate from native source endpoint counts."
+      ],
+      "limits": [
+        "No route,compile or new full-board physical oracle executed.",
+        "Artifact generation prior to final DRC is diagnostic evidence and does not establish acceptance."
+      ]
+    },
+    "nativeEmptyPowerSelectionAssessment": {
+      "report": "native-power-empty-assessment.md",
+      "nativeBundleSha256": "9424629cc1f77f18fba24335effb5e5fc40da9a15e25aa97213b6c34af47f6fa",
+      "scope": "Installed public API/source only; no stage/router execution.",
+      "conclusion": "Both public pipelines retain explicit[] and native power-stage wrapper bypasses all expansion/cleanup steps,returning unchanged cloned initial traces. Earlier native solver stages remain active.",
+      "notYetImplementationApproval": false,
+      "implementationReview": "independentMinimumWidthsOnlyIntegration"
+    },
+    "independentMinimumWidthsOnlyIntegration": {
+      "confirmedUnresolvedFindings": [],
+      "scope": "New root-authored minimumWidthsOnly router flag,fresh routing audit and caller linkage. Optional coupled RP saved profiles separately reviewed by gnd_escape.",
+      "sourceSha256": {
+        "eda/blocks/router.ts": "4ca98258dd56ed2c2a8d661eed7149888c26112759aa866733ca41f563e09ca4",
+        "eda/blocks/build.ts": "d6a6db52f040fac4159ed33ec5b744953c1becad0c23d2d48e4a3a50cddc62ad",
+        "tests/blocks-router-adapter.test.ts": "7587a349f74872a9088ccc5818c2ccba86371f66c68a549c348a33d442eaa205",
+        "tests/blocks-native-power-bypass.test.ts": "4cc40864d93d5884f4baeecbffef5e6717923f3b0ac650ffdb1012311ce46e65"
+      },
+      "selectedFakeNativeRegression": {
+        "passed": 1,
+        "failed": 0,
+        "durationMs": 1420.247998
+      },
+      "targetedStrictTypecheck": {
+        "result": "pass",
+        "diagnosticCount": 0,
+        "command": "tsc --noEmit --strict --target es2022 --lib esnext,dom --module esnext --moduleResolution bundler --skipLibCheck --jsx react-jsx --allowSyntheticDefaultImports eda/blocks/router.ts eda/blocks/native-width.ts tests/blocks-router-adapter.test.ts tests/blocks-native-power-bypass.test.ts",
+        "configurationCorrection": "Initial ES2022-only standard library lacked imported dependency toSorted/findLastIndex; corrected ESNext library passes."
+      },
+      "checks": [
+        "Private diagnostics flag controls exact public powerTraceExpansion.onlyConnectionNames:[] on both available constructors; no guessed or unsupported solver option.",
+        "Undefined/false values retain previous native options. Exact fake-native production wrapper regression confirms allthree variants still invoke outer hard native width repair when widthRules are provided.",
+        "Production caller supplies hasRpProfile only and always supplies fabrication widthRules,existing immutable profile/mask/source/all-net and all-trace minimum checks.",
+        "Fresh routing audit captures the same bypass options actually used. Private captured-output branch replaces fresh options with explicit captured-output receipt rather than suggesting new native expansion policy executed.",
+        "Broad optional native power expansion is bypassed; earlier native routing/jointDRC and all downstream hard acceptance checks remain active.",
+        "New bypass regression targets actual pinned public native stage and compares exact .15signal/.3power records. Parent owns its final dynamicESMimport runtime rerun; reviewer did not rerun a native stage."
+      ],
+      "limits": [
+        "No native route/stage/compile or broader suite run by reviewer for this delta.",
+        "Root full application typecheck and final realSDK test rerun are separate parent evidence.",
+        "This does not establish native pass or nominal-current/ampacity qualification."
+      ]
+    },
+    "independentCircularViaCollar": {
+      "ok": true,
+      "reviewer": "/root/final_review",
+      "at": "2026-11-06T08:38:46.671627+00:00",
+      "scope": "Independent narrow circular-via remaining-collar certificate; no whole-board acceptance and no source/DRC changes.",
+      "sourceSha256": {
+        "eda/blocks/copper-netlist.ts": "0e3a9a72193d3a68e2f09b568501d0c0d8d3b962b077a37a24a7bf847f4c46d0",
+        "tests/blocks-copper-annulus.test.ts": "523c3dc151f6c3b0e73d71becf0327e8db008801c8a4f618ba292a6db2716922"
+      },
+      "findings": [],
+      "verification": {
+        "pureFocusedTests": {
+          "command": "node_modules/.bin/tsx --test tests/blocks-copper-annulus.test.ts",
+          "passed": 6,
+          "failed": 0,
+          "skipped": 0,
+          "durationMs": 774.726326
+        },
+        "primaryGeometryChecks": [
+          "Only centered circular actualpcb_via geometry is eligible. Off-centre/non-via plated pads retain previous fail-closed handling.",
+          "Own upper drill polygon is circumscribed; its circumradius bounds the entire drill. Actual outer lower Cu is inscribed; its inradius bounds a guaranteed interior disk.",
+          "Each foreign upper drill polygon is enclosed by its computed vertex-radius disk. Convex disk contains every straight polygon segment/interior; all physical-layer-reaching drills are included independently of net/source/key labels.",
+          "A candidate collar radius lies strictly between own drill upper bound and every foreign bounding-disk edge/outer-Cu inradius,with1e-6mm positive margin. Its inscribed polygon must itself enclose a full positive circular collar.",
+          "The collar must be contained in exactlyone positive remaining lower polygon after ALL foreign upper drills,on EVERY physical layer. Remaining split pieces/removed annuli cannot borrow a barrelkey to pass.",
+          "Certificate data is freshly computed from actual geometry,not consumed from claimed flags. Input coordinates/rules/source metadata stay unchanged. Foreign terminal contacts still produce net-short.",
+          "Area tolerance1e-12mm\u00b2 and coordinate margin1e-6mm remain explicit; upper/lower48gon bounds are conservative. Native manufacturing/clearance checks remain separate and unchanged."
+        ],
+        "mutants": [
+          "fully erased via",
+          "foreign drill reaching barrel wall",
+          "tangent circumscribed hole",
+          "damage onlyoninnerlayer",
+          "detached outer lower piece",
+          "off-centre via",
+          "non-via platedpad",
+          "foreign terminal connected despite false shared labels"
+        ]
+      },
+      "limits": [
+        "No native router,compile or whole-board physical oracle run by this reviewer.",
+        "Exact four retained actual via coordinates are exercised with explicitly synthetic terminal wrappers.",
+        "Certificate establishes physical connectivity,not minimum annularwidth at everypoint,impedance,thermal/manufacturing or hardware qualification.",
+        "Root must run fresh actual all-net oracle/native/fabrication checks before any whole-board acceptance."
+      ]
+    },
+    "nativeClearanceSemanticAssessment": {
+      "reviewer": "/root/final_review",
+      "at": "2026-11-06T08:48:17.174580+00:00",
+      "scope": "Read-only pinned native clearance semantics and completed-with-violations assessment; no SDK edits/solver/evaluator execution.",
+      "nativeVersion": "0.0.1037",
+      "nativeBundleSha256": "9424629cc1f77f18fba24335effb5e5fc40da9a15e25aa97213b6c34af47f6fa",
+      "nativeSourceMapSha256": "512aa13e0cf7fcb8106877d2d15732f41668fb7301683ab6109950ecd364590c",
+      "extractedPrimarySourcesSha256": {
+        "AutoroutingDrcEngine.ts": "52635d707105be831729234e8fecb6bdcb53fea6e00c2788b13fa045c7ffd41d",
+        "Pipeline9JointDrcRepairSolver.ts": "dcd2cc0b5a52f3d2244ddf874684cb884c12a5ab49bebb9590a57a1a9b8645e8",
+        "Pipeline9EffortCleanupSolver.ts": "9bdd884f3308b8d2d217f79e71972e0e978ab2f738a29b5b609c3ac2cf6eabf5",
+        "AutoroutingPipelineSolver9_PreloadedTraceGraph.ts": "ecb2d7e8606e7b7a50d01b3ad578e6dba4bb652ff5eec01267f5bfa69dfa10ae",
+        "createPipeline9AutoroutingDrcEvaluator.ts": "d3757b1f297c172d6ea78af4c46dff947e5d29f7fe9de2f4c99ea9808883f6d1",
+        "create-pipeline7-autorouting-drc-evaluator.ts": "1ae4abc3de335c1c3abcba8e5183276239cae6e3a40fe327f8943ffb6b391e92"
+      },
+      "hypothesis": "RELAXED_DRC_OPTIONS.viaClearance0.1 causes native to accept0.115mm via-trace gaps despite declared0.15.",
+      "conclusion": "Rejected. That option controls via-via copper pairs; trace-via compares declared traceClearance. No SDK patch justified without an actual scorer counterexample.",
+      "semantics": {
+        "traceClearance": "Trace-trace,trace-via,trace-obstacle copper-edge gap. Joint9 reads originalSRJ.minTraceToPadEdgeClearance then defaultObstacleMargin then relaxedfallback.",
+        "viaClearance": "Fastengine same/different-net via-via copper-edge gap only; separate from drill-hole spacing.",
+        "viaToPadClearance": "Separate via-pad copper-gap parameter.",
+        "viaHoleClearance": "Reference/projection via pair hole spacing supplied separately from SRJ.",
+        "pipeline7Caveat": "Pinned privateP7 fast evaluator hardcodes traceClearance0.1,unlike current defaultP9. This can explain its own relaxed search but doesnot change final hard gates."
+      },
+      "bestInvalidProof": [
+        "Joint9finishBoundedRegionalRepair adopts result.routes and records publishedDrcIssueCount without requiringzero.",
+        "finishWithTraceContactCheck sets solved when noNEWcontactpairs exist; this isnot a full clearancezero assertion.",
+        "getCombinedOutput mayreturn bounded/exact/input fallback routes.",
+        "EffortCleanup initializes bestRoutes from prior input,validates only proposed improvements; an unchanged invalidbaseline can survive. Its P9caller passes declaredtraceclearance to the reference callback."
+      ],
+      "actualPairReceipt": "native-clearance-pair-assessment.json",
+      "limits": [
+        "Actual0.114997mmVBUSvia-vsGNDtrace pair matchesfinalhardcheck and wouldfallbelow declared0.15native trace-via threshold.",
+        "Internal final fast/reference scoring counts were notcaptured; do not assert this exactpair wasmissed versusretained best-invalid.",
+        "No change to installeddependency,isolatedSDKcopy,router,DRC orproduction performed."
+      ]
+    },
+    "independentSignalRankingAndPrivateMinimumProfile": {
+      "confirmedUnresolvedFindings": [],
+      "sourceSha256": {
+        "eda/blocks/auto-placement.ts": "62b0b34e8d47995cae6e949bd0964bcd4eea37f26957228ddbed39d959c25658",
+        "tests/blocks-auto-placement.test.ts": "60c6f9b76ce3fcef5e668a8c331ef3132f631338b2afb72ce07b7ba8c7712a64",
+        "eda/blocks/build.ts": "bedcee17bd0641b1919fc1eaebef4e0bac8f4172d57d733e63d86efedb4dc69a"
+      },
+      "scope": "Independent other-worker automatic ranking and root private minimum-profile caller integration. Original/fine handoff producer authored by this reviewer and separately independently reviewed by rp_clock. Routing-frame helper separately reviewed byGND.",
+      "pureTests": {
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "durationMs": 1250.128637
+      },
+      "registrationProbe": "private-handoff-registration-independent-probe.{mts,json}",
+      "checks": [
+        "Signalnets derive canonical actualgraph part/logicalpin references,deduplicate partowners,andexclude nets containingpower/groundroles. Only cross-instance nets count; scoreuses authoredcomponentorigin centres,notunverifiedmoduleanchor distance.",
+        "Candidate axes include peer-signal alignment. Everycandidate stillpasses original actualfootprint/keepout/roundedboard/reservedgap checks before ranking. Explicitgroups stayfixed; antenna variants remainconstrained.",
+        "Ranking considers allgenerated feasiblevariants/candidates pergreedystep; MCUaspect remainsprimarypreference,signalHPWL ranks withinthatpreference. Only alreadyplacedpeercoordinates contribute; this isnotglobalroutingoptimization.",
+        "If signalgreedy fails latergroup,full legacyfirst-fit repacks atsameboard/reserve. Actual44x56regression preserves feasibilitywithoutchangingboard/electricalconstraints.",
+        "Actual65x55RPdriver gets90degree rightplacement; nonpowercomponentcentreHPWL70.75versus114.75retainedlegacygeometry. Sourcegraph/requirements/explicitboardunchanged.",
+        "Private CLI strategy restrictedknownRP; it keepsclock/DRVpaths,uses boundcontainedhandoffs foruncoveredcore nets,anddoesnotrun qualified extraRPpower/signal/USBescapeprofiles.",
+        "OnlyaddedSMTprojectionobstacles are omitted inprivatevariant. Originalnativeobstacles/sourcepads remain; SRJplanning marginsareincreased(.24obstacle/.2trace-pad/via-pad),actualfabricationminima/nativevia-in-padfalsepolicy remain.",
+        "AllknownRPmergedpaths are now registered for pre-pour/postsourcechecking evenwithoutdriver. Nativeallnetoracle mandatory2/4,alltracewidth/finalnativechecks andfreshfabricationgates remain.",
+        "PublicHTTP job parsercannotselectprivateCLIflag. Receipt routingStrategy explicitly private diagnostic; noacceptance/promotionfollowsfromdebugartifacts."
+      ],
+      "limits": [
+        "No native routing,compile orwholeboardphysicaloracle run for this review.",
+        "Newranking remainsheuristicanddoesnotpromise routability orpin-level/globalHPWL optimum.",
+        "Privateframegeometry andauthoredhandoffproducer areexcludedfromthisindependentverdict; theirseparateworkerreviewsapply."
+      ]
+    }
+  },
+  "knownPadOwnershipWork": {
+    "status": "authored helper; independent review delegated to gnd_escape, not self-approved",
+    "authorProof": "locked-pads-author-proof.json",
+    "converterProof": "assignable-native-converter-probe.json",
+    "scopeLimit": "False flags prevent foreign source union only when converter has physical port ownership; native zero-port inference is separate. No native route or acceptance claim."
+  },
+  "virtualPhysicalPortAssessment": {
+    "verdict": "reject proposed metadata reattachment",
+    "evidence": "virtual-exit-port-counterfactual.json",
+    "actualDerivedPortDisplacementMm": 0.1999999999999993,
+    "basis": "Complete unchanged pinned pure converter relocates actual R3.1 physical PCBport to virtual saved-exit coordinates. Sourcehelper independently requires absent pcb_port_id at virtual exits."
+  },
+  "nativeEndpointInferenceLimitation": {
+    "scope": "Pure complete pinned converter plus public native overlap checker; no solver",
+    "evidence": "native-endpoint-inference-probe.json",
+    "observed": "Guarded converter does not union foreign GND owner, but native overlap checker then adds foreign end_pcb_port_id and returns zero issues in both zero/one physical-port controls.",
+    "acceptance": "No overall native scoring fix claimed. Source plus mandatory all-net physical gates remain required."
+  },
+  "nativeOwnerGuardIndependentReview": {
+    "verdict": "pass within reviewed module scope; no actionable finding",
+    "receipt": "native-owner-guard-independent-review.json",
+    "files": {
+      "eda/blocks/native-owner-guard.ts": "0ddf702d95b325a85a41508ec8cf308025f6ee70ca7fc8fb5c178d920977af2b",
+      "tests/blocks-native-owner-guard.test.ts": "482439ae0f983492464d8e3c4f575a6c1271956b70e74665b9f7ec961a9ec1f5"
+    },
+    "checks": {
+      "focusedTests": {
+        "passed": 6,
+        "failed": 0,
+        "durationMs": 3193.198433
+      },
+      "targetedStrictTypecheck": "pass",
+      "solverInstantiated": false,
+      "heavyRoutingOrWholeBoardOracle": false
+    },
+    "callerIntegration": "not yet reviewed"
+  },
+  "nativeOwnerGuardV2IndependentReview": {
+    "verdict": "pass within reviewed private diagnostic scope; no actionable finding",
+    "receipt": "native-owner-guard-v2-independent-review.json",
+    "files": {
+      "eda/blocks/native-owner-guard.ts": "9ba6434f64f345a150dcbde0c2ef6b37cf2117bee055be10c9b1e56d70f761e2",
+      "tests/blocks-native-owner-guard.test.ts": "7f3782af407432ae3e12fa9ef00e3044ac4883354ffe4ea8f3c7a37f236f381a",
+      "eda/blocks/build.ts": "0ed4f227fdc19eb0a85fad68df1ce81e96fe886f8a39a0904bf9cafdc8486e1f",
+      "eda/blocks/router.ts": "460b7922ba1039f80a6123c4aebd56affbf8c447063bf9d29f26e7ef15aedd0e"
+    },
+    "checks": {
+      "focusedTests": {
+        "passed": 9,
+        "failed": 0,
+        "durationMs": 11470.049609
+      },
+      "targetedStrictTypecheck": "pass",
+      "nativeSolverIterations": 0,
+      "wholeBoardPhysicalOracleRun": false,
+      "routingJobRun": false
+    }
+  },
+  "immutablePreloadsIndependentReview": {
+    "verdict": "pass within final helper scope; initial P2 resolved",
+    "receipt": "immutable-preloads-independent-review.json",
+    "files": {
+      "eda/blocks/immutable-preloads.ts": "afde60c008104bb6e9c6f87495567b725989f3c408b4df91f8132d2dc7fce7df",
+      "tests/blocks-immutable-preloads.test.ts": "94acdaf66b747948596e42ea41c0efcebae094437ab634671abebd419dfa90cc"
+    },
+    "checks": {
+      "focusedTests": {
+        "passed": 8,
+        "failed": 0,
+        "durationMs": 679.331189
+      },
+      "targetedStrictTypecheck": "pass",
+      "originalIndependentMutationRepro": "both reject on final source",
+      "routingJobRun": false,
+      "nativeSolverIterations": 0,
+      "wholeBoardOracleRun": false
+    },
+    "findings": [
+      {
+        "id": "P2-unrelated-preload-output-mutation",
+        "severity": "P2",
+        "status": "resolved",
+        "originalSourceSha256": "218d5bcc8158b489c63e22f848bd050a35805a6029476eb15bd5d3ca348cc3d6",
+        "problem": "Updated-getter hashes covered all preloads, but output hash/replacement checks initially covered only five clock IDs. A preexisting unrelated preload could be returned changed or replaced while original getter records still certified immutability.",
+        "evidenceBefore": "immutable-preloads-independent-before-fix.json",
+        "evidenceAfter": "immutable-preloads-independent-repro.json",
+        "verification": "Final output hash checks cover every expected preload ID; replacement claims targeting any expected preload reject. Only five clock IDs are stripped. Both independent mutants now reject; focused regression retained."
+      }
+    ]
+  },
+  "clockPreloadCallerReviewPending": {
+    "status": "Binder fixed/tested and separately approved by root; new replay guard authored/tested for root approval",
+    "authorProof": "clock-preload-caller-author-proof.json",
+    "binderAstSha256": "703e5a06623d471259298e587e03c9e749f33cad77a9e866a73cfdcd9db23ade",
+    "checks": {
+      "newClockBindingTests": {
+        "passed": 6,
+        "failed": 0,
+        "durationMs": 2197.435951
+      },
+      "strictBuildAndNewTestTypecheck": "pass zero diagnostics",
+      "exactProductionAdapterMutationProbe": "pass; failures before capture/width/completion",
+      "widthFixedInputProbe": "pass; fiveclock preloads in fixedTraces only",
+      "nativeSolverIterations": 0,
+      "routingJobRun": false,
+      "wholeBoardOracleRun": false
+    },
+    "authoredFixes": [
+      {
+        "id": "P2-clock-profile-bijection",
+        "status": "fixed and tested; independent patch review pending",
+        "problem": "Different trace IDs could duplicate one profile branch and omit another same-net branch while preserving counts[1,2,2].",
+        "fix": "Require unique verified profile row per phase trace and full five-row coverage."
+      },
+      {
+        "id": "P2-clock-foreign-connectsto",
+        "status": "fixed and tested; independent patch review pending",
+        "problem": "Only first physical terminal was checked; a foreign GND port alias could be appended to connectsTo and reach native planning.",
+        "fix": "Every alias must resolve uniquely to real same-clock-net one-port source declaration with matching subcircuit, and complete actual net-port set must be represented. Original alias array unchanged."
+      }
+    ],
+    "acceptance": "No new native routing pass; authored binder fixes await independent patch review.",
+    "replayGuardAuthorProof": "ground-caller-and-replay-review.json"
+  },
+  "groundCallerReview": {
+    "receipt": "ground-caller-and-replay-review.json",
+    "verdict": "no actionable finding in narrow root-authored ground-caller flow; authored replay guard separately tested",
+    "checks": {
+      "focusedClockAndReplayTests": {
+        "passed": 7,
+        "failed": 0,
+        "durationMs": 1971.96547
+      },
+      "strictBuildAndTestTypecheck": "pass exit0/zero diagnostics",
+      "nativeSolverIterations": 0,
+      "routingJobRun": false,
+      "wholeBoardOracleRun": false
+    }
+  },
+  "clearanceCallerAndDiagnostics": {
+    "receipt": "clearance-caller-diagnostics-independent-review.json",
+    "verdict": "pass within private clearance caller and default immutable diagnostic scope; no actionable finding",
+    "checks": {
+      "newPureBoundaryTests": {
+        "passed": 4,
+        "failed": 0,
+        "durationMs": 1748.680811
+      },
+      "selectedRootNoPublishRegression": {
+        "passed": 1,
+        "failed": 0,
+        "durationMs": 1494.57319
+      },
+      "strictNewTestsTypecheck": "pass exit0 zero diagnostics",
+      "fullBuildRouterTypecheck": "deferred while root integrates separately scoped optional clock-refinement caller; transient field/type errors were reported, not treated as final",
+      "nativeSolverIterations": 0,
+      "routingJobRun": false,
+      "wholeBoardOracleRun": false
+    },
+    "nextScope": "Optional refined-clock caller awaiting freeze; helper reviewed separately by RP."
+  }
+}

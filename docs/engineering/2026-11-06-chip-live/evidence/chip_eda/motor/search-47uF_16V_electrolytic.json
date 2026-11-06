@@ -1,0 +1,81 @@
+[
+  {
+    "lcsc": "C165623",
+    "mpn": "MVK 16V47 M 6.3*5.2",
+    "manufacturer": "SamYoung Electronics",
+    "package": "SMD,D6.3xL5.2mm",
+    "description": "-40℃~+105℃ 1000hrs@105℃ 16V 47uF 48mA@120Hz 5.2mm 6.3mm ±20% SMD,D6.3xL5.2mm Aluminum Electrolytic Capacitors - SMD ROHS",
+    "stock": 508,
+    "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_SamYoung-Electronics-MVK-16V47-M-6-3-5-2_C165623.pdf",
+    "catalogReceipt": "sha256:75a81ded1c3f73032af6513d6808928595cbb00c33ced83d35cb012e74c431db"
+  },
+  {
+    "lcsc": "C346927",
+    "mpn": "MVK16V47M5*5 5.0TP",
+    "manufacturer": "SamYoung Electronics",
+    "package": "SMD,D5xL5mm",
+    "description": "-40℃~+105℃ 1000hrs@105℃ 16V 45mA@120Hz 47uF 5mm 5mm ±20% SMD,D5xL5mm Aluminum Electrolytic Capacitors - SMD ROHS",
+    "stock": 1366,
+    "datasheetUrl": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_SamYoung-Electronics-MVK16V47M5-5-5-0TP_C346927.pdf",
+    "catalogReceipt": "sha256:75a81ded1c3f73032af6513d6808928595cbb00c33ced83d35cb012e74c431db"
+  },
+  {
+    "lcsc": "C346928",
+    "mpn": "NXB16V47M5*11 2.5TP",
+    "manufacturer": "SamYoung Electronics",
+    "package": "Plugin,D5xL11mm",
+    "description": "-40℃~+105℃ 11mm 150mA@100kHz 16V 2000hrs@105℃ 2mm 350mΩ@100kHz 47uF 5mm ±20% 插件,D5xL11mm Aluminum Electrolytic Capacitors - Leaded ROHS",
+    "stock": 1353,
+    "catalogReceipt": "sha256:75a81ded1c3f73032af6513d6808928595cbb00c33ced83d35cb012e74c431db"
+  },
+  {
+    "lcsc": "C503214",
+    "mpn": "01EC1882SHG47uF16V",
+    "manufacturer": "KNSCHA",
+    "package": "Plugin,D5xL11mm",
+    "description": "-40℃~+105℃ 11mm 16V 2000hrs@105℃ 200mA@100kHz 2mm 47uF 570mΩ@100kHz 5mm ±20% 插件,D5xL11mm Aluminum Electrolytic Capacitors - Leaded ROHS",
+    "stock": 5063,
+    "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2003251514_KNSCHA-01EC1882SHG47uF16V_C503214.pdf",
+    "catalogReceipt": "sha256:75a81ded1c3f73032af6513d6808928595cbb00c33ced83d35cb012e74c431db"
+  },
+  {
+    "lcsc": "C970676",
+    "mpn": "RVT1C470M0505 47UF 16V",
+    "manufacturer": "DMBJ",
+    "package": "SMD,D5xL5.4mm",
+    "description": "-55℃~+105℃ 16V 2800hrs@105℃ 33mA@120Hz 47uF 5.4mm 5mm ±20% SMD,D5xL5.4mm Aluminum Electrolytic Capacitors - SMD ROHS",
+    "stock": 14582,
+    "datasheetUrl": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_DMBJ-RVT1C470M0505-47UF-16V_C970676.pdf",
+    "catalogReceipt": "sha256:75a81ded1c3f73032af6513d6808928595cbb00c33ced83d35cb012e74c431db"
+  },
+  {
+    "lcsc": "C2835642",
+    "mpn": "NXB16V47M5*11 LO",
+    "manufacturer": "SamYoung Electronics",
+    "package": "Plugin,D5xL11mm",
+    "description": "-40℃~+105℃ 11mm 150mA@100kHz 16V 2000hrs@105℃ 2mm 350mΩ@100kHz 47uF 5mm ±20% 插件,D5xL11mm Aluminum Electrolytic Capacitors - Leaded ROHS",
+    "stock": 7978,
+    "datasheetUrl": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_SamYoung-Electronics-NXB16V47M5-11-LO_C2835642.pdf",
+    "catalogReceipt": "sha256:75a81ded1c3f73032af6513d6808928595cbb00c33ced83d35cb012e74c431db"
+  },
+  {
+    "lcsc": "C2835656",
+    "mpn": "MVK16V47M6.3*5 6.3TP",
+    "manufacturer": "SamYoung Electronics",
+    "package": "SMD,D6.3xL5mm",
+    "description": "-40℃~+105℃ 1000hrs@105℃ 16V 47uF 48mA@120Hz 5mm 6.3mm ±20% SMD,D6.3xL5mm Aluminum Electrolytic Capacitors - SMD ROHS",
+    "stock": 661,
+    "datasheetUrl": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_SamYoung-Electronics-MVK16V47M6-3-5-6-3TP_C2835656.pdf",
+    "catalogReceipt": "sha256:75a81ded1c3f73032af6513d6808928595cbb00c33ced83d35cb012e74c431db"
+  },
+  {
+    "lcsc": "C2895272",
+    "mpn": "RVT47UF16V67RV0019",
+    "manufacturer": "KNSCHA",
+    "package": "SMD,D5xL5.4mm",
+    "description": "-55℃~+105℃ 16V 2000hrs@105℃ 33mA@120Hz 47uF 5.4mm 5mm ±20% SMD,D5xL5.4mm Aluminum Electrolytic Capacitors - SMD ROHS",
+    "stock": 5165,
+    "datasheetUrl": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2109132030_KNSCHA-RVT47UF16V67RV0019_C2895272.pdf",
+    "catalogReceipt": "sha256:75a81ded1c3f73032af6513d6808928595cbb00c33ced83d35cb012e74c431db"
+  }
+]

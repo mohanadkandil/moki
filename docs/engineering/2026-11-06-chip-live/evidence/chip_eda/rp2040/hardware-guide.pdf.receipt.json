@@ -1,0 +1,8 @@
+{
+  "url": "https://datasheets.raspberrypi.com/rp2040/hardware-design-with-rp2040.pdf",
+  "status": 200,
+  "method": "curl --http1.1 Mozilla/5.0",
+  "sha256": "51c4f430153fcdbf3209d9b3b41662c8527ff0150bc25777e3fcd6f5221a1c19",
+  "bytes": 8853773,
+  "pages": 35
+}

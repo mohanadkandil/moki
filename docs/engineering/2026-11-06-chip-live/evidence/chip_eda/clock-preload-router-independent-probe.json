@@ -1,0 +1,37 @@
+{
+  "scope": "Exact production router transpilation, fake solver protocol and real immutable helper; no native solver or routing.",
+  "routerSha256": "3635b67d1b03f84e2e225a7303349ee83c27168372055066e309c0f506fca7a5",
+  "cases": [
+    {
+      "mode": "valid",
+      "events": [
+        "preload-audit",
+        "capture",
+        "width",
+        "complete"
+      ],
+      "pass": true
+    },
+    {
+      "mode": "changed-getter",
+      "events": [],
+      "pass": true
+    },
+    {
+      "mode": "mutated-list",
+      "events": [],
+      "pass": true
+    },
+    {
+      "mode": "missing-getter",
+      "events": [],
+      "pass": true
+    },
+    {
+      "mode": "changed-returned-clock",
+      "events": [],
+      "pass": true
+    }
+  ],
+  "frameRejectedBeforeConstructor": true
+}

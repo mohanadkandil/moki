@@ -1,0 +1,72 @@
+{
+  "at": "2026-11-06T10:40:03.423280+00:00",
+  "reviewerAndBinderPatchAuthor": "/root/final_review",
+  "status": "Root adapter/width/event-capture source inspected; authored binder fixes tested and awaiting separate independent review",
+  "binderAstSha256": "703e5a06623d471259298e587e03c9e749f33cad77a9e866a73cfdcd9db23ade",
+  "files": {
+    "tests/blocks-clock-phase-binding.test.ts": "86b5427708ac2143a7de4ebab9abbc75ba73313377fa282c5bd2afc0a9bca3ac",
+    "eda/blocks/router.ts": "3635b67d1b03f84e2e225a7303349ee83c27168372055066e309c0f506fca7a5",
+    "eda/blocks/native-width.ts": "1187bf1c2f02a194457a57b3fcbabe46e0268b8b12ed1e5df1c781e3eb0b018a",
+    "eda/blocks/immutable-preloads.ts": "afde60c008104bb6e9c6f87495567b725989f3c408b4df91f8132d2dc7fce7df"
+  },
+  "fixture": "rp-routing-robust/clock-phase-binding-fixture.json",
+  "fixtureSha256": "8ec14747400864ac2bc2a9f397b5f8b82fd7fefbae6ee3746c05c066390851dd",
+  "checks": {
+    "newClockBindingTests": {
+      "passed": 7,
+      "failed": 0,
+      "durationMs": 1971.96547
+    },
+    "strictBuildAndNewTestTypecheck": "pass zero diagnostics",
+    "exactProductionAdapterMutationProbe": "pass; failures before capture/width/completion",
+    "widthFixedInputProbe": "pass; fiveclock preloads in fixedTraces only",
+    "nativeSolverIterations": 0,
+    "routingJobRun": false,
+    "wholeBoardOracleRun": false
+  },
+  "runtimeEvidence": {
+    "job": "97402c60-a8e0-4424-9395-7b2640f539a4",
+    "facts": [
+      "Captured public rp2040-clock-first stage0 event contains five literal traces without source_trace_id/subcircuit_id.",
+      "Actual circuit.json contains zero rendered PCBtraces, with source/net/port declarations available.",
+      "Initial caller selecting clock PCBtraces from current CJ is inapplicable to this callback; historical71e5 logic-only probe explicitly not runtime proof.",
+      "Corrected event callback clones phase output and binder copies actual canonical first-port source identity while preserving phase geometry/IDs/aliases. New actual native retry has not been evaluated by this author."
+    ]
+  },
+  "authoredFixes": [
+    {
+      "id": "P2-clock-profile-bijection",
+      "status": "fixed and tested; independent patch review pending",
+      "problem": "Different trace IDs could duplicate one profile branch and omit another same-net branch while preserving counts[1,2,2].",
+      "fix": "Require unique verified profile row per phase trace and full five-row coverage."
+    },
+    {
+      "id": "P2-clock-foreign-connectsto",
+      "status": "fixed and tested; independent patch review pending",
+      "problem": "Only first physical terminal was checked; a foreign GND port alias could be appended to connectsTo and reach native planning.",
+      "fix": "Every alias must resolve uniquely to real same-clock-net one-port source declaration with matching subcircuit, and complete actual net-port set must be represented. Original alias array unchanged."
+    }
+  ],
+  "sourceReadFindings": [
+    "Private clock flag requires owner guard/known-RP padescape/ownership locks and frame0. Public API has no field enabling it.",
+    "Native getters and returned copper verify before capture, width replay and completion; four mutation modes reject before all those callbacks.",
+    "Width repair indexes input clock preloads as static fixedTraces, never emits them as new copper, and retains all conforming traces fixed.",
+    "Final canonical-source, all-net actual copper, width and native/fabrication gates remain mandatory.",
+    "Private native-replay branch is explicit output reuse rather than fresh live getter verification; nativeClockPreloads:true alone must not be interpreted as a fresh verification receipt."
+  ],
+  "evidence": [
+    "clock-phase-binding-independent-before-fix.json",
+    "clock-phase-binding-independent-probe.json",
+    "clock-preload-router-independent-probe.json",
+    "clock-preload-width-independent-probe.json"
+  ],
+  "limits": [
+    "This is author evidence for the binder patch, not self-issued independent approval. GND notified for review.",
+    "No new native route, fabrication or hardware acceptance is claimed."
+  ],
+  "binderIndependentApproval": {
+    "by": "/root",
+    "provenance": "Root collaboration message: read corrected binder/tests; bijection and allalias proof valid, no additional confirmed finding."
+  },
+  "replayGuardAuthorProof": "ground-caller-and-replay-review.json"
+}

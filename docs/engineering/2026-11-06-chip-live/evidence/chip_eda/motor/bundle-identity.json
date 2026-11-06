@@ -1,0 +1,101 @@
+{
+  "schema": "moki.motor-evidence/1",
+  "drafts": [
+    {
+      "id": "dc-motor-drv8833",
+      "version": 1
+    }
+  ],
+  "parts": [
+    {
+      "lcsc": "C50506",
+      "mpn": "DRV8833PWPR",
+      "catalogReceipt": "sha256:97ac41a7820aed1847d21846d7f9e45b2a40210172175c1cbfd79305cfc9e2fd",
+      "rawSha256": "9772ba4c86cc4d123e32f610cb82c6fa0935054155e7875c9688fa466d6373a7",
+      "footprintSha256": "37ba40f242ddb6b69fcf2d41097da449a42287514f1514c6ec05f2b82630adc7"
+    },
+    {
+      "lcsc": "C1589",
+      "mpn": "CL10B103KB8NNNC",
+      "catalogReceipt": "sha256:e675c6e5bfc4330b0e0edb2e6b823abda5fbd739805555b3eec937e6caca8899",
+      "rawSha256": "1d208b5ef0fc2ce3ad07bf6469005d11c47839ef776418e8d913b2d1efd126d3",
+      "footprintSha256": "c6961a0f3ecb855bedad17ad6397d458e8feacb3ac83cd2b5e6b49c83a9c4338"
+    },
+    {
+      "lcsc": "C23630",
+      "mpn": "CL10A225KO8NNNC",
+      "catalogReceipt": "sha256:f5e770d84f293ef888153d2f244e502254016a50ddba9fa01ba929e1f41eb895",
+      "rawSha256": "f70ebbc79f4377787eea76532162a3527e5a1d7164e645a81eecf489f4996b9b",
+      "footprintSha256": "c6961a0f3ecb855bedad17ad6397d458e8feacb3ac83cd2b5e6b49c83a9c4338"
+    },
+    {
+      "lcsc": "C162430",
+      "mpn": "GRM21BZ71C106KE15L",
+      "catalogReceipt": "sha256:fac7c295d74c60b33cd57238b664281effc5d6bb3ffb9770380e74ceb2960ac8",
+      "rawSha256": "83f039e7094360f32028b210f7edd00b8856f7f457c17b9945cd8369e5a034ce",
+      "footprintSha256": "2fd4de27c5ec2503a3ea4fb5a77d71ae325918676f6b988d6012ce8d6cd83063"
+    },
+    {
+      "lcsc": "C134850",
+      "mpn": "OCR470M1CBK-0605",
+      "catalogReceipt": "sha256:49dd22cf2e6e63e6d256497ac3cfb345ebb67878c05abbd2584796310198fdd0",
+      "rawSha256": "227dbe38b61242e60a4952d256fd160147474d66cf3e779a6b27752dcdd41ed7",
+      "footprintSha256": "07a636fa31b3409c0c3c2e796b698a13fd5c129161a8a22d6057599613c06d2a"
+    },
+    {
+      "lcsc": "C25819",
+      "mpn": "0603WAF4702T5E",
+      "catalogReceipt": "sha256:cb122b1374fed324d4301e627feb178eb1d8d1b29663cd49ac6caf895b019194",
+      "rawSha256": "c2886ea6f57878a230c69a2e798b9204840f2931f9df5b8645e0806c40c6d548",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3"
+    },
+    {
+      "lcsc": "C34068",
+      "mpn": "1206W4F510LT5E",
+      "catalogReceipt": "sha256:3fe7f67489f93ccd76efe5a3cc390980bb3fe926aa669faacf548cbf9d55ff35",
+      "rawSha256": "a3edf892ab22828ffdb71b9cc3ed0289b2a5926fe10914efb4b813ec79982e1c",
+      "footprintSha256": "02e451dde6f3e233fd8584786a9a0c3aa13a8e41f970c2e31b3dc664b1da7f2b"
+    },
+    {
+      "lcsc": "C160352",
+      "mpn": "B2B-PH-SM4-TB(LF)(SN)",
+      "catalogReceipt": "sha256:8f6f0a40d950668003a77a3a54e9834d07dc6048f7e982e9e7212305bd815b91",
+      "rawSha256": "5cc1a5cc6ef30026dc91baf1be767bc6609276aab75180b6fed8e38cbb9eaf1f",
+      "footprintSha256": "5cb69d2acf92446cb5f54f2e90b5b389b22f8cd609ed6005251aa4054e430564"
+    }
+  ],
+  "gates": [
+    {
+      "id": "dc-motor-drv8833",
+      "results": [
+        {
+          "gate": "erc",
+          "ok": true,
+          "issues": [
+            {
+              "rule": "unreviewed",
+              "severity": "warning",
+              "where": "dc-motor-drv8833",
+              "message": "Agent/human draft cannot promote itself; independent review is separate"
+            }
+          ]
+        },
+        {
+          "gate": "power",
+          "ok": true,
+          "issues": []
+        },
+        {
+          "gate": "verify",
+          "ok": true,
+          "issues": []
+        }
+      ]
+    }
+  ],
+  "files": {
+    "eda/blocks/generate-motor.ts": "72b7b5e58a69e92919690ff44c2a4107d728a663c9bf9ad307c23eb4457099e2",
+    "src/blocks/data/motor-drafts.json": "84abb301f62b5d690ae2fca48969bb7ffc11755ca8cb58494b8b842f82e2875c",
+    "tests/blocks-motor.test.ts": "5fbfc6de85972a844050c00fef9508cb215b6d681f5a16841c0bbd3a2ca4af12"
+  }
+}

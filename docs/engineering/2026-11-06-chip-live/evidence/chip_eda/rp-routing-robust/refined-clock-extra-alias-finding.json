@@ -1,0 +1,11 @@
+{
+  "reviewer": "rp_clock",
+  "severity": "P2",
+  "status": "reported to author and coordinator; fix pending",
+  "helperSha256": "472df5bb8176d7684fe9dbde42f4da83aa889e020250bb144a99e58cb204d82d",
+  "finding": "Extra output clock copper can claim official connectsTo aliases while avoiding four named owner fields, and evade five-record length/via certificate",
+  "reproduction": "New20mm trace, unrelated connection_name/source_trace_id, connectsTo:[pcb_port_19] from actual fixed XIN endpoint, is accepted and omitted from certified XIN length9.848957209751461mm",
+  "publicSemantics": "SimplifiedPcbTrace.connectsTo is Array<TraceId|NetId|PointId>; fixed trace IDs also identify clock ownership references",
+  "correction": "Include original fixed IDs and connectsTo aliases in clock-reference set; reject additional records claiming any known clock reference; make unrelated positive controls disjoint",
+  "limits": "No source/SDK edit or native run. Final physical/source gates remain required; this finding concerns early certificate completeness."
+}

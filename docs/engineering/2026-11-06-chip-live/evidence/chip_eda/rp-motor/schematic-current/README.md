@@ -1,0 +1,1 @@
+Current renderer notes/reference wrapping of the exact acceptedRP4/motor2 plan. Pure schematic regeneration only: plan-graph.json deep-equals the accepted job graph, PCB circuit copied verbatim for paired capture, original job is untouched. New sheet is an offline visual update, not a new PCB or compile acceptance run.

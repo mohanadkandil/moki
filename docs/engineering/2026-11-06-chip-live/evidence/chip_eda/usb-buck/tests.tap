@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: USB-specific bundle deterministically reproduces pinned actual component data and generic gates
+ok 1 - USB-specific bundle deterministically reproduces pinned actual component data and generic gates
+  ---
+  duration_ms: 35.970603
+  type: 'test'
+  ...
+# Subtest: portable exact receipt replay preserves actual pad geometry and rejects tampering
+ok 2 - portable exact receipt replay preserves actual pad geometry and rejects tampering
+  ---
+  duration_ms: 36.003643
+  type: 'test'
+  ...
+# Subtest: retained old SYS identity and input domain remain immutable
+ok 3 - retained old SYS identity and input domain remain immutable
+  ---
+  duration_ms: 4.903615
+  type: 'test'
+  ...
+# Subtest: wrong actual identity, mismatched pins and missing capture fail closed
+ok 4 - wrong actual identity, mismatched pins and missing capture fail closed
+  ---
+  duration_ms: 0.90317
+  type: 'test'
+  ...
+# Subtest: FB, input grounds, switching nodes, actual parts and allocation regressions reject
+ok 5 - FB, input grounds, switching nodes, actual parts and allocation regressions reject
+  ---
+  duration_ms: 25.502286
+  type: 'test'
+  ...
+# Subtest: owner S3 air plan directly links USB VBUS, passes ERC/power, old SYS variant fails
+ok 6 - owner S3 air plan directly links USB VBUS, passes ERC/power, old SYS variant fails
+  ---
+  duration_ms: 91.856029
+  type: 'test'
+  ...
+# Subtest: continuous650mA and peak800mA are distinct authoritative power bounds
+ok 7 - continuous650mA and peak800mA are distinct authoritative power bounds
+  ---
+  duration_ms: 207.06732
+  type: 'test'
+  ...
+# Subtest: buck-only arithmetic preserves explicit unmeasured DC-bias and hardware qualifications
+ok 8 - buck-only arithmetic preserves explicit unmeasured DC-bias and hardware qualifications
+  ---
+  duration_ms: 0.412804
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 635.882005

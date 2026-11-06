@@ -1,0 +1,307 @@
+{
+  "schema": "moki.plan/1",
+  "title": "RP2040 single-button USB-C motor controller",
+  "layers": 2,
+  "board": {
+    "widthMm": 65,
+    "heightMm": 55
+  },
+  "sections": [
+    {
+      "id": "controller",
+      "title": "RP2040, USB-C input and logic power",
+      "purpose": "Receive USB-C power, generate logic supplies, run and flash firmware.",
+      "insts": [
+        "core"
+      ],
+      "notes": [
+        "Integrated core: separate 5.1k CC pull-downs, USB ESD and 27 ohm data resistors, AP2112K 3.3 V regulator, RP2040, 12 MHz crystal, 2 MB QSPI, BOOTSEL and RUN service switches. Label input, regulator and MCU subsections clearly.",
+        "Use 100 nF supply-pin decoupling, 1 uF internal-regulator input/output bypass, 15 pF crystal caps, and 1 uF AP2112 input/output capacitors.",
+        "Requires known 5 V USB-C supply advertising at least 1.5 A; no PD negotiation or current detection.",
+        "Logic peak 130.34 mA is below conservative 150 mA allocation and AP2112 600 mA rating. USB peak approximately 635.44 mA is below 1500 mA. Motor bypasses logic regulator.",
+        "Service buttons are not application controls; no expansion headers.",
+        "Unreviewed block: RP2040 bare-chip USB motor-controller core."
+      ],
+      "reference": {
+        "lcsc": "C2040",
+        "page": 14,
+        "figure": "Figure 11",
+        "quote": "Complete schematic of the minimal board",
+        "datasheetUrl": "https://datasheets.raspberrypi.com/rp2040/hardware-design-with-rp2040.pdf"
+      }
+    },
+    {
+      "id": "motor",
+      "title": "5 V brushed motor driver",
+      "purpose": "PWM-drive one small 5 V brushed motor from VBUS.",
+      "insts": [
+        "driver"
+      ],
+      "notes": [
+        "DRV8833 bridge A feeds two-pin motor connector; unused bridge B inputs and BISEN grounded, outputs unconnected.",
+        "10 nF VM-to-VCP, 2.2 uF VINT bypass, 2x10 uF VM ceramics and 47 uF bulk. 47k nSLEEP pull-up.",
+        "0.51 ohm sense resistor sets approximately 392 mA nominal chopping, not a hard stall-current limit. Actual motor startup/stall, thermal behavior, USB inrush and regeneration require qualification.",
+        "GP14 PWM drives IN1; GP15 holds IN2 low. Startup and stop both low/coast. Fixed forward direction.",
+        "Unreviewed block: DRV8833 single brushed DC motor, qualified5V USB supply."
+      ],
+      "reference": {
+        "lcsc": "C50506",
+        "page": 15,
+        "figure": "Figure 10",
+        "quote": "The VM pin should be bypassed to GND using low-ESR ceramic bypass capacitors",
+        "datasheetUrl": "https://www.ti.com/lit/ds/symlink/drv8833.pdf"
+      }
+    },
+    {
+      "id": "button",
+      "title": "Single user button",
+      "purpose": "Start, stop and select speed.",
+      "insts": [
+        "button"
+      ],
+      "notes": [
+        "Active-low GP0 input with 10k pull-up to 3.3 V. Debounce 30 ms.",
+        "Each press advances stopped, 40%, 70%, 100%, stopped. Always start stopped; no saved settings.",
+        "Unreviewed block: 3.3 V active-low application pushbutton."
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "inst": "core",
+      "block": "rp2040-minimal",
+      "version": 4,
+      "params": {}
+    },
+    {
+      "inst": "driver",
+      "block": "dc-motor-drv8833",
+      "version": 2,
+      "params": {}
+    },
+    {
+      "inst": "button",
+      "block": "application-pushbutton-fixed",
+      "version": 1,
+      "params": {}
+    }
+  ],
+  "links": [
+    {
+      "from": "core.VBUS",
+      "to": "core.VBUS_IN"
+    },
+    {
+      "from": "core.V3V3",
+      "to": "core.V3V3_IN"
+    },
+    {
+      "from": "core.VCORE",
+      "to": "core.VCORE_IN"
+    },
+    {
+      "from": "core.USB",
+      "to": "core.USB_HOST"
+    },
+    {
+      "from": "core.VBUS",
+      "to": "driver.VM"
+    },
+    {
+      "from": "core.GND",
+      "to": "driver.GND"
+    },
+    {
+      "from": "core.MOTOR_IN1",
+      "to": "driver.IN1"
+    },
+    {
+      "from": "core.MOTOR_IN2",
+      "to": "driver.IN2"
+    },
+    {
+      "from": "core.V3V3",
+      "to": "button.V3V3"
+    },
+    {
+      "from": "core.GND",
+      "to": "button.GND"
+    },
+    {
+      "from": "core.GP0",
+      "to": "button.BUTTON"
+    }
+  ],
+  "drafts": [
+    {
+      "schema": "moki.block/1",
+      "id": "application-pushbutton-fixed",
+      "version": 1,
+      "title": "3.3 V active-low application pushbutton",
+      "summary": "Single normally-open application button to ground with a 10k pull-up; BUTTON is high released and low pressed. No IC or service-function assignment.",
+      "class": "button",
+      "provenance": {
+        "author": "agent",
+        "authorId": "openai:gpt-6.1-sol:author"
+      },
+      "parts": [
+        {
+          "ref": "R1",
+          "lcsc": "C25804",
+          "mpn": "0603WAF1002T5E",
+          "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010045_UNI-ROYAL-Uniroyal-Elec-0603WAF1002T5E_C25804.pdf",
+            "pages": "1",
+            "note": "Catalog 10kΩ ±1% 0603 resistor."
+          },
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive",
+              "required": true
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive",
+              "required": true
+            }
+          },
+          "at": {
+            "x": 0,
+            "y": -3,
+            "rotation": 90
+          },
+          "value": "10k",
+          "valueWhy": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010045_UNI-ROYAL-Uniroyal-Elec-0603WAF1002T5E_C25804.pdf",
+            "pages": "1",
+            "note": "Maker specifies 10k pull-up; catalog identifies this part as 10k ±1%."
+          }
+        },
+        {
+          "ref": "SW1",
+          "lcsc": "C231329",
+          "mpn": "B3U-1000P",
+          "catalogReceipt": "sha256:a24e67ec11e21bf4a5e7763e4e5a4d01cd52d23e77d993e7decc0626fed3771c",
+          "datasheet": {
+            "url": "https://www.lcsc.com/product-detail/C231329.html",
+            "pages": "catalog",
+            "note": "Catalog SPST momentary tactile switch, SMD, 12 V 50 mA; two catalog pads."
+          },
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive",
+              "required": true
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive",
+              "required": true
+            }
+          },
+          "at": {
+            "x": 0,
+            "y": 3,
+            "rotation": 0
+          }
+        }
+      ],
+      "nets": [
+        {
+          "name": "V3V3",
+          "pins": [
+            "R1.1"
+          ]
+        },
+        {
+          "name": "BUTTON",
+          "pins": [
+            "R1.2",
+            "SW1.1"
+          ]
+        },
+        {
+          "name": "GND",
+          "pins": [
+            "SW1.2"
+          ]
+        }
+      ],
+      "params": [],
+      "ports": [
+        {
+          "id": "V3V3",
+          "label": "V3V3",
+          "kind": "power-in",
+          "terminal": "net:V3V3",
+          "volts": {
+            "min": 3.234,
+            "max": 3.366
+          }
+        },
+        {
+          "id": "GND",
+          "label": "GND",
+          "kind": "ground",
+          "terminal": "net:GND"
+        },
+        {
+          "id": "BUTTON",
+          "label": "BUTTON",
+          "kind": "gpio",
+          "terminal": "net:BUTTON"
+        }
+      ],
+      "power": {
+        "sources": [],
+        "sinks": [
+          {
+            "port": "V3V3",
+            "typicalMa": 0.33,
+            "peakMa": 0.34
+          }
+        ]
+      },
+      "constraints": []
+    }
+  ],
+  "app": {
+    "source": "#include <Arduino.h>\n#include \"pins.h\"\n\nconst uint8_t duties[] = {0, 102, 179, 255};\nconst uint8_t speeds[] = {0, 40, 70, 100};\nuint8_t stage = 0;\nbool rawPressed = false, stablePressed = false, armed = false;\nunsigned long changedAt = 0;\n\nvoid setup() {\n  digitalWrite(PIN_DRIVER_IN1, LOW);\n  digitalWrite(PIN_DRIVER_IN2, LOW);\n  pinMode(PIN_DRIVER_IN1, OUTPUT);\n  pinMode(PIN_DRIVER_IN2, OUTPUT);\n  delay(2);  // Driver wake time; motor remains coasting.\n  pinMode(PIN_BUTTON_BUTTON, INPUT_PULLUP);\n  rawPressed = stablePressed = (digitalRead(PIN_BUTTON_BUTTON) == LOW);\n  armed = !stablePressed;\n  changedAt = millis();\n  Serial.begin(115200);\n  Serial.println(\"Stopped/coast. Using core-default PWM; listed API has no 20 kHz frequency control.\");\n}\n\nvoid loop() {\n  unsigned long now = millis();\n  bool pressed = (digitalRead(PIN_BUTTON_BUTTON) == LOW);\n  if (pressed != rawPressed) {\n    rawPressed = pressed;\n    changedAt = now;\n  }\n  if (rawPressed != stablePressed && now - changedAt >= 30) {\n    stablePressed = rawPressed;\n    if (!stablePressed) {\n      armed = true;\n    } else if (armed) {\n      armed = false;\n      stage = (stage + 1) % 4;\n      digitalWrite(PIN_DRIVER_IN2, LOW);\n      analogWrite(PIN_DRIVER_IN1, duties[stage]);\n      Serial.print(\"Motor PWM: \");\n      Serial.print(speeds[stage]);\n      Serial.println(stage == 0 ? \"% (coast)\" : \"% forward\");\n    }\n  }\n}\n"
+  },
+  "requirements": [
+    {
+      "id": "rp2040",
+      "plain": "Uses an RP2040 microcontroller circuit.",
+      "metric": "interface_present",
+      "args": {
+        "kind": "rp2040-minimal"
+      },
+      "op": "present",
+      "source": "brief"
+    },
+    {
+      "id": "usb_c_power",
+      "plain": "Accepts power through USB-C.",
+      "metric": "interface_present",
+      "args": {
+        "kind": "usb_c_sink"
+      },
+      "op": "present",
+      "source": "brief"
+    },
+    {
+      "id": "motor_driver",
+      "plain": "Has a motor driver circuit.",
+      "metric": "interface_present",
+      "args": {
+        "kind": "motor_driver"
+      },
+      "op": "present",
+      "source": "inferred"
+    }
+  ]
+}

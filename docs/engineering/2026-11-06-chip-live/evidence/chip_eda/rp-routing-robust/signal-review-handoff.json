@@ -1,0 +1,44 @@
+{
+  "kind": "derived exact native prefix serialization/official native marker insertion, no native router",
+  "prefixes": 26,
+  "before": {
+    "repairs": 0
+  },
+  "after": {
+    "repairs": 0
+  },
+  "markers": [
+    {
+      "pad": "17",
+      "endpoint": {
+        "route_type": "wire",
+        "x": -18.050098,
+        "y": -6.375063,
+        "layer": "top",
+        "width": 0.15,
+        "end_pcb_port_id": "pcb_port_16"
+      },
+      "port": {
+        "id": "pcb_port_16",
+        "x": -18.050098,
+        "y": -6.175063
+      }
+    },
+    {
+      "pad": "18",
+      "endpoint": {
+        "route_type": "wire",
+        "x": -17.650047999999998,
+        "y": -6.375063,
+        "layer": "top",
+        "width": 0.15,
+        "end_pcb_port_id": "pcb_port_17"
+      },
+      "port": {
+        "id": "pcb_port_17",
+        "x": -17.650047999999998,
+        "y": -6.175063
+      }
+    }
+  ]
+}

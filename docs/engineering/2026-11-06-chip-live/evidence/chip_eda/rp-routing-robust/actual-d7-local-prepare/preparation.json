@@ -1,0 +1,420 @@
+{
+  "schema": "moki.public-native-local-reroute-preparation/1",
+  "source": "/home/sogo/design-skill-research/repos/moki/var/board-jobs-test-chip/d7bdf1b1-c49a-49db-94fd-a9c4236dc3c4",
+  "region": {
+    "shape": "rect",
+    "minX": -7.5,
+    "maxX": -2.5,
+    "minY": 2,
+    "maxY": 7
+  },
+  "capturedInputRawSha256": "7927746736bdab48f6f38ef3cce4b918f0d73d2f192f6298983571322b1c0113",
+  "capturedNativeRawSha256": "10c41be48f5a3e3fa45c6a28d39219b14f1bbd631d663fada8db270c6d5f120e",
+  "originalInputCanonicalSha256": "f82ac5912be2e7939ec0baf74a8c8b17dd23ddb458ce0341110e291040779ffc",
+  "originalWithNativeCopperCanonicalSha256": "5fccf94985f2f4c834e63c43fea637c49b08865afa7f0d3b429a40e344de7b79",
+  "localInputRawSha256": "1f92d91f4087e59e3b1b5764f1c6d061d4e7f9b6c84c0b388329f6f393ac56ea",
+  "localInputCanonicalSha256": "ab6194f6210d1974ffe9c8f0efcb95673890874aae2422996b4acd309799853a",
+  "reconnectProbeRawSha256": "9f71198e28362f2396b071ecacfd667806dfdd3c3176475ae702fd88134f4b9f",
+  "localConnections": 15,
+  "originalTraceCount": 117,
+  "keptPieceCount": 858,
+  "originalObstaclesRetained": true,
+  "sourceUnchanged": true,
+  "lostOutsideBarrels": [
+    {
+      "traceId": "source_net_16_mst2_0",
+      "net": "source_net_16",
+      "via": {
+        "route_type": "via",
+        "x": -0.371,
+        "y": 18.239,
+        "from_layer": "top",
+        "to_layer": "bottom",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_16_mst2_0",
+      "net": "source_net_16",
+      "via": {
+        "route_type": "via",
+        "x": -12.119757776520316,
+        "y": 6.677827370822411,
+        "from_layer": "bottom",
+        "to_layer": "top",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_15_0",
+      "net": "source_net_15",
+      "via": {
+        "route_type": "via",
+        "x": -3.613,
+        "y": 16.899,
+        "from_layer": "top",
+        "to_layer": "bottom",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_15_0",
+      "net": "source_net_15",
+      "via": {
+        "route_type": "via",
+        "x": -5.894969205473706,
+        "y": 15.090508267452956,
+        "from_layer": "bottom",
+        "to_layer": "top",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_15_0",
+      "net": "source_net_15",
+      "via": {
+        "route_type": "via",
+        "x": -11.81540057292748,
+        "y": 10.843799457797617,
+        "from_layer": "top",
+        "to_layer": "bottom",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_15_0",
+      "net": "source_net_15",
+      "via": {
+        "route_type": "via",
+        "x": -11.526778496455272,
+        "y": 9.417378454769283,
+        "from_layer": "bottom",
+        "to_layer": "top",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_15_0",
+      "net": "source_net_15",
+      "via": {
+        "route_type": "via",
+        "x": -9.403515698597078,
+        "y": 6.548709162302518,
+        "from_layer": "top",
+        "to_layer": "bottom",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_15_0",
+      "net": "source_net_15",
+      "via": {
+        "route_type": "via",
+        "x": -9.21031218234978,
+        "y": 4.460359245369572,
+        "from_layer": "bottom",
+        "to_layer": "top",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_14_0",
+      "net": "source_net_14",
+      "via": {
+        "route_type": "via",
+        "x": -0.24507122099999928,
+        "y": 19.537,
+        "from_layer": "top",
+        "to_layer": "bottom",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_14_0",
+      "net": "source_net_14",
+      "via": {
+        "route_type": "via",
+        "x": 5.029,
+        "y": -2.919,
+        "from_layer": "bottom",
+        "to_layer": "top",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_14_0",
+      "net": "source_net_14",
+      "via": {
+        "route_type": "via",
+        "x": 2.545755726258791,
+        "y": -0.7834958405029742,
+        "from_layer": "top",
+        "to_layer": "bottom",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_14_0",
+      "net": "source_net_14",
+      "via": {
+        "route_type": "via",
+        "x": 3.006619083581395,
+        "y": 0.7044538729483101,
+        "from_layer": "bottom",
+        "to_layer": "top",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_13_0",
+      "net": "source_net_13",
+      "via": {
+        "route_type": "via",
+        "x": -11.40141850150161,
+        "y": 12.792552384796355,
+        "from_layer": "bottom",
+        "to_layer": "top",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_13_0",
+      "net": "source_net_13",
+      "via": {
+        "route_type": "via",
+        "x": -10.892942227748497,
+        "y": 14.238180559438572,
+        "from_layer": "top",
+        "to_layer": "bottom",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_13_0",
+      "net": "source_net_13",
+      "via": {
+        "route_type": "via",
+        "x": -9.120150559655496,
+        "y": 23.94511139315666,
+        "from_layer": "bottom",
+        "to_layer": "top",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_12_0",
+      "net": "source_net_12",
+      "via": {
+        "route_type": "via",
+        "x": -14.550241713416655,
+        "y": 12.262310355447177,
+        "from_layer": "bottom",
+        "to_layer": "top",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_12_0",
+      "net": "source_net_12",
+      "via": {
+        "route_type": "via",
+        "x": -13.77962534627626,
+        "y": 12.820690341990284,
+        "from_layer": "top",
+        "to_layer": "bottom",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_12_0",
+      "net": "source_net_12",
+      "via": {
+        "route_type": "via",
+        "x": -8,
+        "y": 22,
+        "from_layer": "bottom",
+        "to_layer": "top",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_11_0",
+      "net": "source_net_11",
+      "via": {
+        "route_type": "via",
+        "x": -6.521993023217441,
+        "y": 17.148844348116555,
+        "from_layer": "top",
+        "to_layer": "bottom",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_11_0",
+      "net": "source_net_11",
+      "via": {
+        "route_type": "via",
+        "x": -6.778030006264374,
+        "y": 15.963762450170556,
+        "from_layer": "bottom",
+        "to_layer": "top",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_11_0",
+      "net": "source_net_11",
+      "via": {
+        "route_type": "via",
+        "x": -10.260957448307666,
+        "y": 13.987078877589147,
+        "from_layer": "top",
+        "to_layer": "bottom",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_11_0",
+      "net": "source_net_11",
+      "via": {
+        "route_type": "via",
+        "x": -11.825951989667569,
+        "y": 13.9640768987903,
+        "from_layer": "bottom",
+        "to_layer": "top",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_11_0",
+      "net": "source_net_11",
+      "via": {
+        "route_type": "via",
+        "x": -12.650675971801657,
+        "y": 10.76874956654281,
+        "from_layer": "top",
+        "to_layer": "bottom",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_11_0",
+      "net": "source_net_11",
+      "via": {
+        "route_type": "via",
+        "x": -11.601381156554197,
+        "y": 8.70628615321667,
+        "from_layer": "bottom",
+        "to_layer": "top",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_10_0",
+      "net": "source_net_10",
+      "via": {
+        "route_type": "via",
+        "x": -6.793397299999999,
+        "y": 15.27612234771241,
+        "from_layer": "top",
+        "to_layer": "bottom",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_7_mst0_0",
+      "net": "source_net_7",
+      "via": {
+        "route_type": "via",
+        "x": -11.146635725831544,
+        "y": 5.678662613273137,
+        "from_layer": "bottom",
+        "to_layer": "top",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_7_mst0_0",
+      "net": "source_net_7",
+      "via": {
+        "route_type": "via",
+        "x": -10.2500001,
+        "y": 10.335410067833584,
+        "from_layer": "top",
+        "to_layer": "bottom",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_7_mst4_0",
+      "net": "source_net_7",
+      "via": {
+        "route_type": "via",
+        "x": -8.698193204989575,
+        "y": 0.2191688833011075,
+        "from_layer": "bottom",
+        "to_layer": "top",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_0_mst2_0",
+      "net": "source_net_0",
+      "via": {
+        "route_type": "via",
+        "x": -6.198,
+        "y": 9.215,
+        "from_layer": "top",
+        "to_layer": "bottom",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    },
+    {
+      "traceId": "source_net_0_mst2_0",
+      "net": "source_net_0",
+      "via": {
+        "route_type": "via",
+        "x": -8.5000001,
+        "y": 8.300022,
+        "from_layer": "bottom",
+        "to_layer": "top",
+        "via_diameter": 0.6,
+        "via_hole_diameter": 0.3
+      }
+    }
+  ],
+  "supportedForCapturedGeometry": false,
+  "nativeRoutingExecuted": false,
+  "accepted": false,
+  "freshGatesMandatory": true,
+  "reason": "Public clipping API drops actual outside-region via records on affected multi-via traces. No native reroute executed or custom stitching attempted."
+}

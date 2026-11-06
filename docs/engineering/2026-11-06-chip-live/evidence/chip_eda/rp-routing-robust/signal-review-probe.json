@@ -1,0 +1,70 @@
+{
+  "combinedNativeErrors": [],
+  "actual": {
+    "driverPaths": 9,
+    "driverControls": [
+      {
+        "ref": "U5",
+        "pad": "15",
+        "net": "IN2",
+        "sourceTraceId": "source_trace_30",
+        "sourcePortId": "source_port_164",
+        "pcbPortId": "pcb_port_164",
+        "landId": "pcb_smtpad_155",
+        "widthMm": 0.15,
+        "lengthMm": 1.1499987,
+        "normal": {
+          "x": -1,
+          "y": 0
+        }
+      },
+      {
+        "ref": "U5",
+        "pad": "16",
+        "net": "IN1",
+        "sourceTraceId": "source_trace_28",
+        "sourcePortId": "source_port_165",
+        "pcbPortId": "pcb_port_165",
+        "landId": "pcb_smtpad_154",
+        "widthMm": 0.15,
+        "lengthMm": 1.1499987,
+        "normal": {
+          "x": -1,
+          "y": 0
+        }
+      }
+    ],
+    "signalPaths": 10,
+    "signalNetNames": [
+      "BUTTON",
+      "RUN",
+      "USB_DM",
+      "USB_DP",
+      "QSPI_SD3",
+      "QSPI_SCLK",
+      "QSPI_SD0",
+      "QSPI_SD2",
+      "QSPI_SD1",
+      "QSPI_SS"
+    ],
+    "powerPaths": 14,
+    "remaining": []
+  },
+  "derivedGpio": {
+    "signalPads": [
+      "2",
+      "3",
+      "4",
+      "26",
+      "46",
+      "47",
+      "51",
+      "52",
+      "53",
+      "54",
+      "55",
+      "56"
+    ],
+    "remaining": []
+  }
+}

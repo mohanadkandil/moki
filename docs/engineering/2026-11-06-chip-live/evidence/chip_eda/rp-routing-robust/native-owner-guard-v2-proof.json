@@ -1,0 +1,81 @@
+{
+  "schema": "moki.private-native-owner-guard/2",
+  "sdkVersion": "0.0.1037",
+  "upstreamBundleSha256": "9424629cc1f77f18fba24335effb5e5fc40da9a15e25aa97213b6c34af47f6fa",
+  "predicatePatchedSha256": "462d005c47d25106b9aa501e5c96f781f6bcf102f1c8586f44153e193b0486f6",
+  "loadedModuleSha256": "39612aed6191f175c95040888ed2976c8e02c7ac7eaac1a5bfbfc867728ff709",
+  "helperSha256": "9ba6434f64f345a150dcbde0c2ef6b37cf2117bee055be10c9b1e56d70f761e2",
+  "moduleUrl": "file:///tmp/moki-native-owner-guard-v2-proof/native-owner-guard/sdk-39612aed6191f175c95040888ed2976c8e02c7ac7eaac1a5bfbfc867728ff709.mjs",
+  "predicateReplacementCount": 1,
+  "markerReplacementCount": 2,
+  "markerHelperInjectionCount": 1,
+  "markerFunctionPaths": [
+    "@tscircuit/checks:addStartAndEndPortIdsIfMissing (inline iP)",
+    "lib/utils/autorouting-drc/annotateTraceEndpointPorts.ts (aR)"
+  ],
+  "utilityIsolation": {
+    "version": "0.0.23",
+    "sourceTreeSha256": "d8edf8bc02f636fc95ec86e393c95de92e671934abfc95b7c1262bfc30921367",
+    "copiedTreeSha256": "0992dd8a360874673f669382b78151e9601740e15db8c4f3073a34a9331b5b8d",
+    "directory": "/tmp/moki-native-owner-guard-v2-proof/native-owner-guard/solver-utils-cef8cf70e3a7cc672e7e98c84d7a900d6411179da6195cc3a2767e3232721a0f",
+    "files": [
+      {
+        "path": "index.js",
+        "sourceSha256": "8dccabc62b65504da61bd35f007565c1f8733310cae4c4bba3c025c53f094bb5",
+        "copiedSha256": "3bbc6d0f7327de6f62bc29bbb902dcfd7a5bb2aaa4090ab52640338da2a7338a"
+      },
+      {
+        "path": "chunk-FCNBEO2E.js",
+        "sourceSha256": "af1bc555661669f65a26d5973e1faf7de9688004843f4b3270c522c1f09f2de7",
+        "copiedSha256": "af1bc555661669f65a26d5973e1faf7de9688004843f4b3270c522c1f09f2de7"
+      }
+    ],
+    "sharedGraphicsDebugUrl": "file:///home/sogo/design-skill-research/repos/moki/eda/node_modules/graphics-debug/dist/lib/index.js",
+    "sharedGraphicsDebugSha256": "899147875ef2515ac7ff06c367350ad05a43569548f8225331ac48166dcfcf3b",
+    "graphicsManifestSha256": "b12d049aea7a67b80651c0a83015e89d9b5854b64ed906ef2f699508276740e5",
+    "manifestSha256": "b00be11b8b222fd311a6cec8e41c89490b30bef3faf98ed0788f379aa193f968"
+  },
+  "nativePathfindingChanged": false,
+  "clearanceRulesChanged": false,
+  "dependencyRelocations": [
+    {
+      "specifier": "./chunk-G3PMV62Z.js",
+      "replacements": 1,
+      "url": "file:///home/sogo/design-skill-research/repos/moki/eda/node_modules/@tscircuit/capacity-autorouter/dist/chunk-G3PMV62Z.js",
+      "sha256": "f56621bcf6948c31eebf5b9b9186b7bd4042af9895b947f0eaedfc40271421c4"
+    },
+    {
+      "specifier": "@tscircuit/solver-utils",
+      "replacements": 92,
+      "url": "file:///tmp/moki-native-owner-guard-v2-proof/native-owner-guard/solver-utils-cef8cf70e3a7cc672e7e98c84d7a900d6411179da6195cc3a2767e3232721a0f/index.js",
+      "sha256": "3bbc6d0f7327de6f62bc29bbb902dcfd7a5bb2aaa4090ab52640338da2a7338a",
+      "originalSha256": "8dccabc62b65504da61bd35f007565c1f8733310cae4c4bba3c025c53f094bb5",
+      "manifestSha256": "b00be11b8b222fd311a6cec8e41c89490b30bef3faf98ed0788f379aa193f968",
+      "version": "0.0.23"
+    },
+    {
+      "specifier": "object-hash",
+      "replacements": 3,
+      "url": "file:///home/sogo/design-skill-research/repos/moki/eda/node_modules/object-hash/index.js",
+      "sha256": "99af0590e6993552b8a3313cb40843cfa9ad5be62abd966340d394a2f732178d",
+      "manifestSha256": "f86b3a8a18078fbbf71ea1cf4468129e609566f860b9d93f99f63dc2543962eb",
+      "version": "3.0.0"
+    }
+  ],
+  "scope": "private-offline-declared-owner-inference",
+  "implementationSha256": "9ba6434f64f345a150dcbde0c2ef6b37cf2117bee055be10c9b1e56d70f761e2",
+  "testsSha256": "7f3782af407432ae3e12fa9ef00e3044ac4883354ffe4ea8f3c7a37f236f381a",
+  "tests": {
+    "passed": 9,
+    "failed": 0,
+    "tap": "native-owner-guard-v2-tests.tap",
+    "strictTypecheck": "native-owner-guard-v2-typecheck.log",
+    "solverIterations": 0
+  },
+  "limitations": [
+    "Private offline guard only; caller integration and full native routing not evaluated here",
+    "Existing endpoint markers preserved, including foreign markers",
+    "External root @tscircuit/checks remains unchanged",
+    "Mandatory all-net physical-copper oracle remains required"
+  ]
+}

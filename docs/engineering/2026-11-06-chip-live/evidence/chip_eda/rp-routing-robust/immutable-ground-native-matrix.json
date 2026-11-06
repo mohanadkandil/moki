@@ -1,0 +1,249 @@
+{
+  "modelCalls": 0,
+  "allRequestedPlansAccepted": false,
+  "trials": [
+    {
+      "jobId": "0ce3c0b1-1fc5-4c95-8ad7-0425dad42cc9",
+      "status": "failed",
+      "totalMs": 69288.199527,
+      "board": {
+        "widthMm": 65,
+        "heightMm": 55,
+        "layers": 2,
+        "traceCount": 149,
+        "viaCount": 107
+      },
+      "error": "drc: PCB trace .U1 > .pin56 to net.QSPI_SS is too close to .U1 > .pin53 to net.QSPI_SD0 (gap: 0.114mm); PCB trace .U1 > .pin55 to net.QSPI_SD1 is too close to .U1 > .pin1 to net.V3V3 (gap: 0.109mm); PCB trace .U1 > .pin54 to net.QSPI_SD2 overlaps with pcb_via \"unnamed via\" (accidental contact); PCB trace .U1 > .pin51 to net.QSPI_SD3 is too close to .U1 > .pin1 to net.V3V3 (gap: 0.062mm); 26 more issues in gates.json",
+      "gates": [
+        {
+          "gate": "erc",
+          "ok": true,
+          "issues": 4
+        },
+        {
+          "gate": "power",
+          "ok": true,
+          "issues": 1
+        },
+        {
+          "gate": "spice",
+          "ok": true,
+          "issues": 1
+        },
+        {
+          "gate": "verify",
+          "ok": true,
+          "issues": 0
+        },
+        {
+          "gate": "review",
+          "ok": true,
+          "issues": 0
+        },
+        {
+          "gate": "drc",
+          "ok": false,
+          "issues": 30
+        }
+      ],
+      "clockPreloadCheck": {
+        "schema": "moki.immutable-native-clock-preloads/1",
+        "fixedTraceIds": [
+          "saved_phase_null_0_0",
+          "saved_phase_null_0_1",
+          "saved_phase_null_0_2",
+          "saved_phase_null_0_3",
+          "saved_phase_null_0_4"
+        ],
+        "fixedConnectionNames": [
+          "source_net_5",
+          "source_net_6",
+          "source_net_17"
+        ],
+        "fixedTraceSha256": {
+          "saved_phase_null_0_0": "df472a813c4c3036f6aa3cfe3fd9faa0654d0520bf7b7056118314525cc121f2",
+          "saved_phase_null_0_1": "201b7b44471a8701700c46c7f5b43409442d66cb12d08bea2e45fbd9f3284ffc",
+          "saved_phase_null_0_2": "13722f1eac2f77e3fbe9b685494f710dfc72ac7d268f6d820b8b2421b96701a8",
+          "saved_phase_null_0_3": "23e752dd44d5c6ac4c431b207abd609a5d3e82ea2cac882b63d8d48f2b7b2890",
+          "saved_phase_null_0_4": "a2c9b2ed9b6b0286e763ced09969a99c474d55813254079eee7d817492eed852"
+        },
+        "inputBeforeSha256": "744039fa8212b6aa8e84cc5c030ee9f99f2f86747bd1f058e43f575c7122ca61",
+        "inputWithPreloadsSha256": "1301dbb8edd9f40433511b61fbbfced7415a6dfa9209eee3d049cc745bb2f099",
+        "allPreloadedTraceCount": 5,
+        "clockPreloadedTraceCount": 5,
+        "updatedTraceCount": 5,
+        "mutatedTraceCount": 0,
+        "removedReturnedFixedTraceIds": [
+          "saved_phase_null_0_0",
+          "saved_phase_null_0_1",
+          "saved_phase_null_0_2",
+          "saved_phase_null_0_3",
+          "saved_phase_null_0_4"
+        ],
+        "fixedTracesUnchanged": true
+      }
+    },
+    {
+      "jobId": "f144c48a-a5fe-434f-a1c1-d371c457d1cb",
+      "status": "failed",
+      "totalMs": 62066.420881,
+      "board": {
+        "widthMm": 65,
+        "heightMm": 55,
+        "layers": 2,
+        "traceCount": 150,
+        "viaCount": 93
+      },
+      "error": "drc: PCB trace .J1 > .pin8 to net.USB_DP_EXT is too close to .J1 > .pin16 to net.VBUS (gap: 0.120mm); PCB trace .J1 > .pin16 to net.VBUS is too close to .J1 > .pin13 to net.GND (gap: 0.105mm); PCB trace .U1 > .pin55 to net.QSPI_SD1 is too close to .C6 > .pin1 to net.V3V3 (gap: 0.096mm); PCB trace .U1 > .pin26 to net.RUN overlaps with pcb_via \"unnamed via\" (accidental contact); 31 more issues in gates.json",
+      "gates": [
+        {
+          "gate": "erc",
+          "ok": true,
+          "issues": 4
+        },
+        {
+          "gate": "power",
+          "ok": true,
+          "issues": 1
+        },
+        {
+          "gate": "spice",
+          "ok": true,
+          "issues": 1
+        },
+        {
+          "gate": "verify",
+          "ok": true,
+          "issues": 0
+        },
+        {
+          "gate": "review",
+          "ok": true,
+          "issues": 0
+        },
+        {
+          "gate": "drc",
+          "ok": false,
+          "issues": 35
+        }
+      ],
+      "clockPreloadCheck": {
+        "schema": "moki.immutable-native-clock-preloads/1",
+        "fixedTraceIds": [
+          "saved_phase_null_0_0",
+          "saved_phase_null_0_1",
+          "saved_phase_null_0_2",
+          "saved_phase_null_0_3",
+          "saved_phase_null_0_4"
+        ],
+        "fixedConnectionNames": [
+          "source_net_5",
+          "source_net_6",
+          "source_net_17"
+        ],
+        "fixedTraceSha256": {
+          "saved_phase_null_0_0": "df472a813c4c3036f6aa3cfe3fd9faa0654d0520bf7b7056118314525cc121f2",
+          "saved_phase_null_0_1": "201b7b44471a8701700c46c7f5b43409442d66cb12d08bea2e45fbd9f3284ffc",
+          "saved_phase_null_0_2": "13722f1eac2f77e3fbe9b685494f710dfc72ac7d268f6d820b8b2421b96701a8",
+          "saved_phase_null_0_3": "23e752dd44d5c6ac4c431b207abd609a5d3e82ea2cac882b63d8d48f2b7b2890",
+          "saved_phase_null_0_4": "a2c9b2ed9b6b0286e763ced09969a99c474d55813254079eee7d817492eed852"
+        },
+        "inputBeforeSha256": "cf6b9b96662e57811c1041f921fde7f4c568899f6f68a9b3b1f60aa978a16a0f",
+        "inputWithPreloadsSha256": "826eeb98b5cc8a76a40e4a2e42da952822966781cb868cdcd923cc6401a12503",
+        "allPreloadedTraceCount": 5,
+        "clockPreloadedTraceCount": 5,
+        "updatedTraceCount": 5,
+        "mutatedTraceCount": 0,
+        "removedReturnedFixedTraceIds": [
+          "saved_phase_null_0_0",
+          "saved_phase_null_0_1",
+          "saved_phase_null_0_2",
+          "saved_phase_null_0_3",
+          "saved_phase_null_0_4"
+        ],
+        "fixedTracesUnchanged": true
+      }
+    },
+    {
+      "jobId": "a0433147-0be0-4762-8768-0d0bb909032d",
+      "status": "failed",
+      "totalMs": 87277.500592,
+      "board": {
+        "widthMm": 65,
+        "heightMm": 55,
+        "layers": 2,
+        "traceCount": 149,
+        "viaCount": 107
+      },
+      "error": "drc: PCB trace .U1 > .pin56 to net.QSPI_SS is too close to .U1 > .pin53 to net.QSPI_SD0 (gap: 0.114mm); PCB trace .U1 > .pin55 to net.QSPI_SD1 is too close to .U1 > .pin1 to net.V3V3 (gap: 0.109mm); PCB trace .U1 > .pin54 to net.QSPI_SD2 overlaps with pcb_via \"unnamed via\" (accidental contact); PCB trace .U1 > .pin51 to net.QSPI_SD3 is too close to .U1 > .pin1 to net.V3V3 (gap: 0.062mm); 19 more issues in gates.json",
+      "gates": [
+        {
+          "gate": "erc",
+          "ok": true,
+          "issues": 4
+        },
+        {
+          "gate": "power",
+          "ok": true,
+          "issues": 1
+        },
+        {
+          "gate": "spice",
+          "ok": true,
+          "issues": 1
+        },
+        {
+          "gate": "verify",
+          "ok": true,
+          "issues": 0
+        },
+        {
+          "gate": "review",
+          "ok": true,
+          "issues": 0
+        },
+        {
+          "gate": "drc",
+          "ok": false,
+          "issues": 23
+        }
+      ],
+      "clockPreloadCheck": {
+        "schema": "moki.immutable-native-clock-preloads/1",
+        "fixedTraceIds": [
+          "saved_phase_null_0_0",
+          "saved_phase_null_0_1",
+          "saved_phase_null_0_2",
+          "saved_phase_null_0_3",
+          "saved_phase_null_0_4"
+        ],
+        "fixedConnectionNames": [
+          "source_net_5",
+          "source_net_6",
+          "source_net_17"
+        ],
+        "fixedTraceSha256": {
+          "saved_phase_null_0_0": "df472a813c4c3036f6aa3cfe3fd9faa0654d0520bf7b7056118314525cc121f2",
+          "saved_phase_null_0_1": "201b7b44471a8701700c46c7f5b43409442d66cb12d08bea2e45fbd9f3284ffc",
+          "saved_phase_null_0_2": "13722f1eac2f77e3fbe9b685494f710dfc72ac7d268f6d820b8b2421b96701a8",
+          "saved_phase_null_0_3": "23e752dd44d5c6ac4c431b207abd609a5d3e82ea2cac882b63d8d48f2b7b2890",
+          "saved_phase_null_0_4": "a2c9b2ed9b6b0286e763ced09969a99c474d55813254079eee7d817492eed852"
+        },
+        "inputBeforeSha256": "744039fa8212b6aa8e84cc5c030ee9f99f2f86747bd1f058e43f575c7122ca61",
+        "inputWithPreloadsSha256": "1301dbb8edd9f40433511b61fbbfced7415a6dfa9209eee3d049cc745bb2f099",
+        "allPreloadedTraceCount": 5,
+        "clockPreloadedTraceCount": 5,
+        "updatedTraceCount": 5,
+        "mutatedTraceCount": 0,
+        "removedReturnedFixedTraceIds": [
+          "saved_phase_null_0_0",
+          "saved_phase_null_0_1",
+          "saved_phase_null_0_2",
+          "saved_phase_null_0_3",
+          "saved_phase_null_0_4"
+        ],
+        "fixedTracesUnchanged": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "ok": true,
+  "reviewer": "/root/final_review",
+  "at": "2026-11-06T08:38:46.671627+00:00",
+  "scope": "Independent narrow circular-via remaining-collar certificate; no whole-board acceptance and no source/DRC changes.",
+  "sourceSha256": {
+    "eda/blocks/copper-netlist.ts": "0e3a9a72193d3a68e2f09b568501d0c0d8d3b962b077a37a24a7bf847f4c46d0",
+    "tests/blocks-copper-annulus.test.ts": "523c3dc151f6c3b0e73d71becf0327e8db008801c8a4f618ba292a6db2716922"
+  },
+  "findings": [],
+  "verification": {
+    "pureFocusedTests": {
+      "command": "node_modules/.bin/tsx --test tests/blocks-copper-annulus.test.ts",
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "durationMs": 774.726326
+    },
+    "primaryGeometryChecks": [
+      "Only centered circular actualpcb_via geometry is eligible. Off-centre/non-via plated pads retain previous fail-closed handling.",
+      "Own upper drill polygon is circumscribed; its circumradius bounds the entire drill. Actual outer lower Cu is inscribed; its inradius bounds a guaranteed interior disk.",
+      "Each foreign upper drill polygon is enclosed by its computed vertex-radius disk. Convex disk contains every straight polygon segment/interior; all physical-layer-reaching drills are included independently of net/source/key labels.",
+      "A candidate collar radius lies strictly between own drill upper bound and every foreign bounding-disk edge/outer-Cu inradius,with1e-6mm positive margin. Its inscribed polygon must itself enclose a full positive circular collar.",
+      "The collar must be contained in exactlyone positive remaining lower polygon after ALL foreign upper drills,on EVERY physical layer. Remaining split pieces/removed annuli cannot borrow a barrelkey to pass.",
+      "Certificate data is freshly computed from actual geometry,not consumed from claimed flags. Input coordinates/rules/source metadata stay unchanged. Foreign terminal contacts still produce net-short.",
+      "Area tolerance1e-12mm\u00b2 and coordinate margin1e-6mm remain explicit; upper/lower48gon bounds are conservative. Native manufacturing/clearance checks remain separate and unchanged."
+    ],
+    "mutants": [
+      "fully erased via",
+      "foreign drill reaching barrel wall",
+      "tangent circumscribed hole",
+      "damage onlyoninnerlayer",
+      "detached outer lower piece",
+      "off-centre via",
+      "non-via platedpad",
+      "foreign terminal connected despite false shared labels"
+    ]
+  },
+  "limits": [
+    "No native router,compile or whole-board physical oracle run by this reviewer.",
+    "Exact four retained actual via coordinates are exercised with explicitly synthetic terminal wrappers.",
+    "Certificate establishes physical connectivity,not minimum annularwidth at everypoint,impedance,thermal/manufacturing or hardware qualification.",
+    "Root must run fresh actual all-net oracle/native/fabrication checks before any whole-board acceptance."
+  ]
+}

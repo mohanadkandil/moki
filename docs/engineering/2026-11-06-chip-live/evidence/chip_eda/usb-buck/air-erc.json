@@ -1,0 +1,165 @@
+{
+  "kind": "pure-ERC-and-author-arithmetic-only",
+  "block": {
+    "id": "tps63001-usb-5v-3v3",
+    "version": 1,
+    "hash": "b57cf365a9e1166ecbf9fb51eddf68fd6b4c84ae833878387928b690a16103f8",
+    "status": "unreviewed"
+  },
+  "planSha256": "c7497d692aed02d418914a24bf77e2e575e2a63825d8b31c754506a759d4fb1b",
+  "changesFromOwnerPlan": [
+    "ldo.block=tps63001-usb-5v-3v3@1",
+    "ldo.SYS -> ldo.VBUS; all other links and all placement/board fields unchanged"
+  ],
+  "gates": [
+    {
+      "gate": "erc",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "esp32-s3-core",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "usb-c-sink",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "tps63001-usb-5v-3v3",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "boot-reset-buttons",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "ssd1306-i2c-header",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "usb-external-host",
+          "severity": "warning",
+          "where": "mcu.USB, usb.USB",
+          "message": "USB peripheral relies on an external host through the declared passive connector"
+        },
+        {
+          "rule": "layout-constraint-pending",
+          "severity": "warning",
+          "where": "esp32-s3-core",
+          "message": "Keepout realization must be checked against final imported PCB geometry"
+        },
+        {
+          "rule": "layout-constraint-pending",
+          "severity": "warning",
+          "where": "sht40-ad1b-3v3",
+          "message": "Keepout realization must be checked against final imported PCB geometry"
+        }
+      ]
+    },
+    {
+      "gate": "power",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "thermal-assumption",
+          "severity": "warning",
+          "where": "ldo.V3V3",
+          "message": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+        }
+      ]
+    }
+  ],
+  "loads": [
+    {
+      "block": "esp32-s3-core",
+      "port": "V3V3",
+      "typicalMa": 200,
+      "peakMa": 500
+    },
+    {
+      "block": "sht40-ad1b-3v3",
+      "port": "V3V3",
+      "typicalMa": 0.5,
+      "peakMa": 2
+    },
+    {
+      "block": "ssd1306-i2c-header",
+      "port": "V3V3",
+      "typicalMa": 50,
+      "peakMa": 50
+    }
+  ],
+  "authorArithmetic": {
+    "gate": "power",
+    "ok": true,
+    "measurements": [
+      {
+        "name": "CCM inductor peak plus20% margin",
+        "measured": 1.3044428571428572,
+        "target": 2.3,
+        "unit": "A",
+        "where": "tps63001-usb-5v-3v3",
+        "tolerance": 0,
+        "ok": true
+      },
+      {
+        "name": "CCM inductor RMS versus25C20C-rise reference",
+        "measured": 0.8169841902337137,
+        "target": 1.2,
+        "unit": "A",
+        "where": "tps63001-usb-5v-3v3",
+        "tolerance": 0,
+        "ok": true
+      },
+      {
+        "name": "Continuous modeled junction temperature",
+        "measured": 48.847352941176474,
+        "target": 110,
+        "unit": "C",
+        "where": "tps63001-usb-5v-3v3",
+        "tolerance": 0,
+        "ok": true
+      },
+      {
+        "name": "800mA rail input allocation plus quiescent",
+        "measured": 686.6634674922601,
+        "target": 1500,
+        "unit": "mA",
+        "where": "tps63001-usb-5v-3v3",
+        "tolerance": 0,
+        "ok": true
+      }
+    ],
+    "issues": [
+      {
+        "rule": "usb-buck-author-allocation",
+        "severity": "warning",
+        "message": "Buck-only screening at4.75–5.25V, Lmin1.76uH, fmin1.25MHz: ripple0.574071A, peak1.087036A. TI1.6A switch-limit minimum is tested at3.6V/25C, not a fullUSB/fulltemperature output guarantee;1.2A buck headline supports derating, not guaranteed hardware performance."
+      },
+      {
+        "rule": "effective-capacitance-unverified",
+        "severity": "warning",
+        "message": "Five actual10uF16V X7R capacitors give20uF input/30uF output nominal. Murata part sheet has no DC-bias curve; tolerance/bias/temperature effective capacitance, ESR and local loops require qualification. No guaranteed effective22uF claim."
+      },
+      {
+        "rule": "hardware-power-unverified",
+        "severity": "warning",
+        "message": "650mAcontinuous/800mApeak are declared engineering allocations at25C,85% assumed efficiency, thetaJA60C/W author model (TI reference table46.8C/W). Native DRC, independent schematic review, thermal copper/EP, startup/load-step/EMI and measured efficiency/current/temperature remain separate gates. No battery/1.8V boost guarantee."
+      }
+    ]
+  },
+  "limitations": [
+    "No placement/routing render or firmware compile performed by this worker.",
+    "No independent review, measured DC-bias/efficiency/thermal/transient or hardware acceptance."
+  ]
+}

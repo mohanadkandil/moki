@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: ground-only actual2/4layer cardinal profile emits exactlyTESTEN19 andEP57 with unchanged input and literal dimensions
+ok 1 - ground-only actual2/4layer cardinal profile emits exactlyTESTEN19 andEP57 with unchanged input and literal dimensions
+  ---
+  duration_ms: 1247.145785
+  type: 'test'
+  ...
+# Subtest: unused power barrel collision is excluded before preflight while actual obstacles remain checked
+ok 2 - unused power barrel collision is excluded before preflight while actual obstacles remain checked
+  ---
+  duration_ms: 356.979992
+  type: 'test'
+  ...
+# Subtest: ground-only requires actual ground flags,canonical net/role/source/map/pad identity and rejects collisions
+ok 3 - ground-only requires actual ground flags,canonical net/role/source/map/pad identity and rejects collisions
+  ---
+  duration_ms: 574.068388
+  type: 'test'
+  ...
+# Subtest: ground-only conflicts fail and all prior default/application/coupled counts and scope remain unchanged
+ok 4 - ground-only conflicts fail and all prior default/application/coupled counts and scope remain unchanged
+  ---
+  duration_ms: 426.706027
+  type: 'test'
+  ...
+# Subtest: saved foreign oscillator copper through a selected ground escape remains a hard native preflight failure
+ok 5 - saved foreign oscillator copper through a selected ground escape remains a hard native preflight failure
+  ---
+  duration_ms: 196.201878
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3637.687493

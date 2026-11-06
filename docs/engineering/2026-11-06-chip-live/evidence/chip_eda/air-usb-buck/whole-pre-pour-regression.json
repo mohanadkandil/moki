@@ -1,0 +1,27 @@
+{
+  "before": "53a0adba-0f2f-41d9-ac61-d43805a2e45e",
+  "after": "448386df-0901-4ccf-b75c-07e610c8027a",
+  "traceAndViaGeometryExactEqual": true,
+  "beforeNativeErrors": 17,
+  "afterNativeErrors": 12,
+  "beforePourForeignV3V3AttributionApplied": true,
+  "boardAccepted": false,
+  "comparison": "All geometric route fields and actual via positions/layers/outer+drill dimensions compared. Late port markers and native pour membership IDs/flags are metadata. Native pour geometry intentionally clears the proved V3V3 obstacle.",
+  "routeGeometryFields": [
+    "route_type",
+    "x",
+    "y",
+    "width",
+    "layer",
+    "from_layer",
+    "to_layer",
+    "hole_diameter",
+    "outer_diameter",
+    "via_diameter",
+    "via_hole_diameter",
+    "start",
+    "end",
+    "start_layer",
+    "end_layer"
+  ]
+}

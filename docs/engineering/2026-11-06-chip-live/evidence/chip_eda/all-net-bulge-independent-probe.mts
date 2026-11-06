@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import {writeFileSync} from 'node:fs';
+import {checkCopperNetlist} from '/home/sogo/design-skill-research/repos/moki/eda/blocks/copper-netlist.ts';
+import {checkCopperPourShorts} from '/home/sogo/design-skill-research/repos/moki/eda/node_modules/@tscircuit/checks/dist/index.js';
+const graph:any={parts:['A','B'].map(ref=>({ref,part:{pins:{p:{pad:'1',role:'passive'}}}})),nets:[{name:'SIGNAL',pins:['A','B'].map(ref=>({ref,logical:'p',pad:'1'}))}]};
+const mapping={A:{'1':'pin1'},B:{'1':'pin1'}};
+const c:any[]=[{type:'pcb_board',num_layers:2},{type:'source_net',source_net_id:'pour-net',name:'POUR'}, {type:'pcb_copper_pour',pcb_copper_pour_id:'arc-pour',shape:'brep',layer:'top',source_net_id:'pour-net',brep_shape:{outer_ring:{vertices:[{x:0,y:0,bulge:-1},{x:4,y:0},{x:4,y:4},{x:0,y:4}]},inner_rings:[]}}];
+for(const [ref,y]of[['A',.5],['B',3]]as const)c.push({type:'source_component',name:ref,source_component_id:ref},{type:'source_port',source_component_id:ref,source_port_id:ref+':source',name:'pin1',pin_number:1,port_hints:['pin1']},{type:'pcb_component',source_component_id:ref,pcb_component_id:ref},{type:'pcb_port',pcb_component_id:ref,pcb_port_id:ref+':port',source_port_id:ref+':source'},{type:'pcb_smtpad',pcb_smtpad_id:ref+':pad',pcb_component_id:ref,pcb_port_id:ref+':port',port_hints:['pin1'],shape:'rect',x:2,y,width:.4,height:.4,layer:'top'});
+const arc=checkCopperNetlist(graph,c,mapping,{policy:'physical-network',scope:'all'});
+const native=checkCopperPourShorts(c),straight=structuredClone(c);delete straight.find(e=>e.type==='pcb_copper_pour').brep_shape.outer_ring.vertices[0].bulge;
+const nativeStraight=checkCopperPourShorts(straight);
+assert.ok(native.some(e=>e.pcb_placement_error_id.includes('B:pad')));
+assert.ok(!native.some(e=>e.pcb_placement_error_id.includes('A:pad')),'native actual curved copper excludes A');
+assert.ok(nativeStraight.some(e=>e.pcb_placement_error_id.includes('A:pad')),'native straight chord incorrectly includes A');
+const result={scope:'Synthetic supported native BREP bulge; no routing',oracle:arc,nativeArcContactIds:native.map(e=>e.pcb_placement_error_id),nativeStraightContactIds:nativeStraight.map(e=>e.pcb_placement_error_id)};
+writeFileSync('/home/sogo/design-skill-research/repos/moki/docs/engineering/2026-11-06-chip-live/evidence/chip_eda/all-net-bulge-independent-probe.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));

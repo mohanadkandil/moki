@@ -1,0 +1,29 @@
+{
+  "lcsc": "C23630",
+  "mpn": "CL10A225KO8NNNC",
+  "manufacturer": "SAMSUNG(三星)",
+  "package": "C0603",
+  "description": "2.2uF (225) ±10% 16V",
+  "stock": 371100,
+  "catalogReceipt": "sha256:f5e770d84f293ef888153d2f244e502254016a50ddba9fa01ba929e1f41eb895",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "f70ebbc79f4377787eea76532162a3527e5a1d7164e645a81eecf489f4996b9b",
+  "footprintSha256": "c6961a0f3ecb855bedad17ad6397d458e8feacb3ac83cd2b5e6b49c83a9c4338",
+  "pins": [
+    {
+      "pad": "1",
+      "labels": [
+        "1"
+      ]
+    },
+    {
+      "pad": "2",
+      "labels": [
+        "2"
+      ]
+    }
+  ],
+  "models": [],
+  "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL10A225KO8NNNC_C23630.pdf",
+  "datasheetReceipt": "sha256:08954ae79e245937627068f9d25649c5ccda10654e2c8481d1ac63d5e3bc8494"
+}

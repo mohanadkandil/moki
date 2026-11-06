@@ -1,0 +1,15 @@
+{
+  "audit": [
+    {
+      "pcbTraceId": "source_net_7_mst3_0",
+      "ref": "U1",
+      "pad": "50",
+      "sourceTraceId": "source_trace_83",
+      "sourceNetId": "source_net_7",
+      "netName": "VCORE",
+      "kind": "saved-exit-join"
+    }
+  ],
+  "viaAudit": [],
+  "unrepairedTraceIds": []
+}

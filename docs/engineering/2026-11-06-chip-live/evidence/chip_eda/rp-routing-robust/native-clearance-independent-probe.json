@@ -1,0 +1,128 @@
+{
+  "scope": "Independent complete patched native indexed evaluator, no native route/solve or geometry movement",
+  "helperSha256": "7919738110c25ef3ca193b1cd5e2c77891a9b63ed000367634d1794dfb099fdb",
+  "moduleSha256": "c7f751d5be97bb4be14ef3a8dfccef688192f9231172f6e4ac3ed5efe320818a",
+  "indexedClass": "mb",
+  "tests": [
+    {
+      "referenceFactory": false,
+      "gap": 0.115,
+      "actualEngineTarget": 0.132000001,
+      "errors": [
+        "PCB trace trace-A is too close to PCB trace trace-B (gap: 0.115mm)"
+      ]
+    },
+    {
+      "referenceFactory": false,
+      "gap": 0.1269999,
+      "actualEngineTarget": 0.132000001,
+      "errors": [
+        "PCB trace trace-A is too close to PCB trace trace-B (gap: 0.127mm)"
+      ]
+    },
+    {
+      "referenceFactory": false,
+      "gap": 0.1270001,
+      "actualEngineTarget": 0.132000001,
+      "errors": []
+    },
+    {
+      "referenceFactory": false,
+      "gap": 0.13,
+      "actualEngineTarget": 0.132000001,
+      "errors": []
+    },
+    {
+      "referenceFactory": false,
+      "gap": 0.1499999,
+      "explicit": 0.15,
+      "actualEngineTarget": 0.155000001,
+      "errors": [
+        "PCB trace trace-A is too close to PCB trace trace-B (gap: 0.150mm)"
+      ]
+    },
+    {
+      "referenceFactory": false,
+      "gap": 0.1500001,
+      "explicit": 0.15,
+      "actualEngineTarget": 0.155000001,
+      "errors": []
+    },
+    {
+      "referenceFactory": false,
+      "gap": 0.1999999,
+      "explicit": 0.2,
+      "actualEngineTarget": 0.20500000100000002,
+      "errors": [
+        "PCB trace trace-A is too close to PCB trace trace-B (gap: 0.200mm)"
+      ]
+    },
+    {
+      "referenceFactory": false,
+      "gap": 0.2000001,
+      "explicit": 0.2,
+      "actualEngineTarget": 0.20500000100000002,
+      "errors": []
+    },
+    {
+      "referenceFactory": true,
+      "gap": 0.115,
+      "actualEngineTarget": 0.132000001,
+      "errors": [
+        "PCB trace unnamed trace is too close to unnamed trace (gap: 0.115mm)"
+      ]
+    },
+    {
+      "referenceFactory": true,
+      "gap": 0.1269999,
+      "actualEngineTarget": 0.132000001,
+      "errors": [
+        "PCB trace unnamed trace is too close to unnamed trace (gap: 0.127mm)"
+      ]
+    },
+    {
+      "referenceFactory": true,
+      "gap": 0.1270001,
+      "actualEngineTarget": 0.132000001,
+      "errors": []
+    },
+    {
+      "referenceFactory": true,
+      "gap": 0.13,
+      "actualEngineTarget": 0.132000001,
+      "errors": []
+    },
+    {
+      "referenceFactory": true,
+      "gap": 0.1499999,
+      "explicit": 0.15,
+      "actualEngineTarget": 0.155000001,
+      "errors": [
+        "PCB trace unnamed trace is too close to unnamed trace (gap: 0.150mm)"
+      ]
+    },
+    {
+      "referenceFactory": true,
+      "gap": 0.1500001,
+      "explicit": 0.15,
+      "actualEngineTarget": 0.155000001,
+      "errors": []
+    },
+    {
+      "referenceFactory": true,
+      "gap": 0.1999999,
+      "explicit": 0.2,
+      "actualEngineTarget": 0.20500000100000002,
+      "errors": [
+        "PCB trace unnamed trace is too close to unnamed trace (gap: 0.200mm)"
+      ]
+    },
+    {
+      "referenceFactory": true,
+      "gap": 0.2000001,
+      "explicit": 0.2,
+      "actualEngineTarget": 0.20500000100000002,
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema": "moki.all-net-copper-oracle-proof/1",
+  "author": "gnd_escape",
+  "at": "2026-11-06T07:06:38.288818+00:00",
+  "sourceHashes": {
+    "eda/blocks/copper-netlist.ts": "c5cceef9251a9e0f654c7e920377778501db93ef8d414afdc58a2029ecdb7269",
+    "tests/blocks-copper-all-nets.test.ts": "fd88773b7474e988a65c0f3ffba49634968245f8ba7c0c8265a60fa013f0585a"
+  },
+  "api": "checkCopperNetlist(graph,circuit,mapping,{policy:'physical-network',scope:'all'})",
+  "defaultPreserved": "scope:'ground' produces legacy ground-only-actual-copper; all adds all-nets-actual-copper and networks, with groundNets containing only actual ground-role nets",
+  "physicalRules": [
+    "Every actual physical terminal piece of each graph net must share exactly one lower-bound copper component",
+    "Every upper-bound component touching a net terminal must contain no foreign,NC or isolated terminal",
+    "No union by source IDs,stale connectsTo,net names,aliases or trace connectivity keys",
+    "Existing inscribed/circumscribed Cu/drill bounds,minimum/maximum width geometry,drill voids,annulus and plated layer DSUs unchanged",
+    "Ground-specific pour requirements retained; non-ground nets require no pour",
+    "Malformed scope,duplicate physical net ownership and unsupported actual geometry fail closed"
+  ],
+  "tests": {
+    "newPurePassed": 7,
+    "newPureFailed": 0,
+    "actualAllNetOptIn": "not run; awaiting coordinator CPU permission",
+    "legacyGroundPassed": 20,
+    "legacyGroundFailed": 0,
+    "legacyDurationMs": 8425.96697,
+    "legacyNote": "Attempted negative name filter did not exclude retained old actual-ground case; that case ran7.90s. No all-net whole-board or native route ran.",
+    "strictTypeScript": "pass"
+  },
+  "independentReview": "requested from final_review; pending",
+  "limits": [
+    "Synthetic regressions are not actual whole-board acceptance",
+    "Coordinator must run actual accepted42part board all-net gate and full fresh pipeline before acceptance"
+  ],
+  "bulgeFollowUp": {
+    "finding": "Independent review found unsupported native BREP bulge silently replaced by straight chord, inventing copper connectivity",
+    "resolution": "Every supplied vertex.bulge must be a finite numeric zero; undefined,0,-0 accepted. Nonzero/nonfinite/nonnumeric including null reject copper-geometry-unverified. Guard applies to all ring callers.",
+    "sourceHashes": {
+      "eda/blocks/copper-netlist.ts": "5f348ecd0fad2c3afed48acdf60e588e1441561509c5363cb6d2f77b5cb68af3",
+      "tests/blocks-copper-all-nets.test.ts": "68d94e98061de13918e17aa11bfa67793ba05da3dd8ce41edf0c41c2d8b90583"
+    },
+    "regressions": [
+      "Exact independently reported inward semicircle excludes A in native checker, chord includes A; oracle now rejects arc rather than certifying connection",
+      "Outer BREP,inner BREP and polygon-pad rings reject \u00b11,1e-15,NaN,\u00b1Infinity,string0,null",
+      "Undefined,0,-0 retain valid straight polygon geometry"
+    ],
+    "tests": {
+      "allNetPurePassed": 9,
+      "actualAllNet": "skipped",
+      "legacyGroundSyntheticPassed": 19,
+      "strictTypeScript": "pass"
+    },
+    "independentRereview": "requested final_review",
+    "actualOracleRuns": 0
+  }
+}

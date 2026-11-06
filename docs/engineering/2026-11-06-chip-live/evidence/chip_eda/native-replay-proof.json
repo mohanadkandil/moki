@@ -1,0 +1,44 @@
+{
+  "at": "2026-11-06T06:39:28.387106+00:00",
+  "author": "/root/final_review",
+  "scope": "Private exact-bound native output loader; independent review assigned to gnd_escape",
+  "sourceSha256": "e5174ea9a83095fcf791a76deeb6be3004ad147076e24ba698cae3d5112acc62",
+  "testsSha256": "0ce751e144493ab7d8bb7bf767b173a8a7556a652ee9c298090b43ebac5dbcc3",
+  "manifest": "sourceJobDir/outputPath,canonical inputSha256,raw outputSha256; paths relative to manifest unless absolute",
+  "identityInputs": [
+    "source router-input equals actual current planned SRJ canonically",
+    "plan.json",
+    "plan-graph.json",
+    "import-map.json",
+    "placement.json",
+    "clock-phase.json",
+    "native-exit-phase.json"
+  ],
+  "validation": [
+    "Source failed-job provenance and nonfatal pre-pour Cu capture required.",
+    "Every captured output record and order retained without normalization/converter.",
+    "Trace IDs unique,not saved_phase; names belong to exact phase input.",
+    "Only finite wire/via geometry on actual known2/4layers; minwidth boardfloor-1e-9; vias0.6/0.3; no nominal width maximum."
+  ],
+  "focusedTests": {
+    "passed": 9,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 783.465931,
+    "strictTypecheck": "pass"
+  },
+  "actualReadOnlyProbe": {
+    "traceCount": 117,
+    "minimumWireWidthMm": 0.15,
+    "inputSha256": "090e3cf70a5663bc6a9afd655f65f2d8b22736fc9855eb40ae651e59db6e5a7f",
+    "outputSha256": "54f88d66facc2c3f55ff51899242a84ce4e585b59e8c86336f3153312977f987",
+    "usesSourceAsCurrentForSmoke": true,
+    "freshNativeGatesRun": false
+  },
+  "limits": [
+    "Authored loader is not independently approved by its author.",
+    "Caller owns privateCLI-only integration. No new public HTTP option.",
+    "Receipt explicitly claims freshRouting:false,nativeOutputReuse:true and freshGatesMandatory:true. Prior gate results never loaded or inherited.",
+    "Fresh native materialization,source attribution,pours,DRC,physical/fabrication and compile gates remain mandatory."
+  ]
+}

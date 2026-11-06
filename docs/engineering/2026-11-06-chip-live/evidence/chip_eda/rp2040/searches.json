@@ -1,0 +1,181 @@
+[
+  {
+    "status": "fulfilled",
+    "value": [
+      {
+        "lcsc": "C2040",
+        "mpn": "RP2040",
+        "manufacturer": "Raspberry Pi",
+        "package": "LQFN-56(7x7)",
+        "description": "12bit 133MHz 30 LQFN-56(7x7) Microcontrollers (MCU/MPU/SOC) ROHS",
+        "stock": 57971,
+        "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2201101600_Raspberry-Pi-RP2040_C2040.pdf",
+        "catalogReceipt": "sha256:d4a506326e6c721b7f86d61e41c774ac50ee0296f4e8e739a2fa9dc6c66d04df"
+      },
+      {
+        "lcsc": "C5350143",
+        "mpn": "RP2040-Zero",
+        "manufacturer": "Waveshare",
+        "package": "-",
+        "description": "- Development Boards & Kits ROHS",
+        "stock": 5,
+        "datasheetUrl": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2303281130_Waveshare-RP2040-Zero_C5350143.pdf",
+        "catalogReceipt": "sha256:d4a506326e6c721b7f86d61e41c774ac50ee0296f4e8e739a2fa9dc6c66d04df"
+      },
+      {
+        "lcsc": "C5374683",
+        "mpn": "RP2040-LCD-1.28",
+        "manufacturer": "Waveshare",
+        "package": "-",
+        "description": "- Development Boards & Kits ROHS",
+        "stock": 6,
+        "datasheetUrl": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2303281130_Waveshare-RP2040-LCD-1-28_C5374683.pdf",
+        "catalogReceipt": "sha256:d4a506326e6c721b7f86d61e41c774ac50ee0296f4e8e739a2fa9dc6c66d04df"
+      },
+      {
+        "lcsc": "C2961140",
+        "mpn": "RP2040",
+        "manufacturer": "Raspberry Pi",
+        "package": "QFN-56-EP(7x7)",
+        "description": "QFN-56-EP(7x7) Microcontrollers (MCU/MPU/SOC) ROHS",
+        "stock": 0,
+        "datasheetUrl": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2202081030_Raspberry-Pi-RP2040_C2961140.pdf",
+        "catalogReceipt": "sha256:d4a506326e6c721b7f86d61e41c774ac50ee0296f4e8e739a2fa9dc6c66d04df"
+      },
+      {
+        "lcsc": "C7437606",
+        "mpn": "RP2040-Tiny",
+        "manufacturer": "Waveshare",
+        "package": "-",
+        "description": "- Development Boards & Kits ROHS",
+        "stock": 0,
+        "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121500_Waveshare-RP2040-Tiny_C7437606.pdf",
+        "catalogReceipt": "sha256:d4a506326e6c721b7f86d61e41c774ac50ee0296f4e8e739a2fa9dc6c66d04df"
+      },
+      {
+        "lcsc": "C2761095",
+        "mpn": "RP2040",
+        "manufacturer": "Raspberry Pi",
+        "package": "QFN-56",
+        "description": "LQFN-56-EP(7x7) New Arrivals ROHS",
+        "stock": 0,
+        "catalogReceipt": "sha256:d4a506326e6c721b7f86d61e41c774ac50ee0296f4e8e739a2fa9dc6c66d04df"
+      },
+      {
+        "lcsc": "C5157610",
+        "mpn": "RP2040CT",
+        "manufacturer": "Raspberry Pi",
+        "package": "QFN-56",
+        "description": "QFN-56 New Arrivals ROHS",
+        "stock": 0,
+        "catalogReceipt": "sha256:d4a506326e6c721b7f86d61e41c774ac50ee0296f4e8e739a2fa9dc6c66d04df"
+      },
+      {
+        "lcsc": "C6855416",
+        "mpn": "RP2040TR13",
+        "manufacturer": "Raspberry Pi",
+        "package": "QFN-56_7X7",
+        "description": "QFN-56_7X7 New Arrivals ROHS",
+        "stock": 0,
+        "catalogReceipt": "sha256:d4a506326e6c721b7f86d61e41c774ac50ee0296f4e8e739a2fa9dc6c66d04df"
+      }
+    ]
+  },
+  {
+    "status": "fulfilled",
+    "value": [
+      {
+        "lcsc": "C2843335",
+        "mpn": "W25Q16JVUXIQ",
+        "package": "USON-8-EP(2x3)",
+        "description": "-40℃~+85℃ 100,000 cycles 10uA 133MHz 16Mbit 2.7V~3.6V 20 Years 3ms SPI USON-8-EP(2x3) NOR FLASH ROHS",
+        "stock": 51,
+        "catalogReceipt": "sha256:aa24b3b877b08332ca03db7a385b3e3292ba203daf3fb918700a37025e2b9f88"
+      }
+    ]
+  },
+  {
+    "status": "fulfilled",
+    "value": [
+      {
+        "lcsc": "C90900",
+        "mpn": "7M12000039",
+        "manufacturer": "TXC Corp",
+        "package": "SMD3225-4P",
+        "description": "-10℃~+70℃ 100Ω 12MHz 18pF Crystal Oscillator ±20ppm ±20ppm SMD3225-4P Crystals ROHS",
+        "stock": 1331,
+        "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_TXC-Corp-7M12000039_C90900.pdf",
+        "catalogReceipt": "sha256:d80a93b0ed0e3d7ac2d8a371e6bf184594886dac3fb2f4233dbba1e16fe9cfa5"
+      },
+      {
+        "lcsc": "C91749",
+        "mpn": "Q22FA23V00418",
+        "manufacturer": "Seiko Epson",
+        "package": "SMD3225-4P",
+        "description": "-40℃~+85℃ 100Ω 12MHz 18pF Crystal Oscillator ±20ppm SMD3225-4P Crystals ROHS",
+        "stock": 4,
+        "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_1811051112_Seiko-Epson-Q22FA23V00418_C91749.pdf",
+        "catalogReceipt": "sha256:d80a93b0ed0e3d7ac2d8a371e6bf184594886dac3fb2f4233dbba1e16fe9cfa5"
+      },
+      {
+        "lcsc": "C148313",
+        "mpn": "ABM3-12.000MHZ-D2Y-T",
+        "manufacturer": "Abracon LLC",
+        "package": "SMD5032-2P",
+        "description": "-40℃~+85℃ 12MHz 18pF 60Ω Crystal Oscillator ±20ppm ±30ppm SMD5032-2P Crystals ROHS",
+        "stock": 1403,
+        "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_1810171118_Abracon-LLC-ABM3-12-000MHZ-D2Y-T_C148313.pdf",
+        "catalogReceipt": "sha256:d80a93b0ed0e3d7ac2d8a371e6bf184594886dac3fb2f4233dbba1e16fe9cfa5"
+      },
+      {
+        "lcsc": "C258978",
+        "mpn": "B12000I171",
+        "manufacturer": "ECEC(ZheJiang E ast Crystal Elec)",
+        "package": "HC-49S",
+        "description": "-20℃~+70℃ 12MHz 18pF Through Hole Crystal Oscillator ±20ppm HC-49S Crystals ROHS",
+        "stock": 862,
+        "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_ECEC-ZheJiang-E-ast-Crystal-Elec-B12000I171_C258978.pdf",
+        "catalogReceipt": "sha256:d80a93b0ed0e3d7ac2d8a371e6bf184594886dac3fb2f4233dbba1e16fe9cfa5"
+      },
+      {
+        "lcsc": "C312588",
+        "mpn": "ECS-120-18-5PX-TR",
+        "manufacturer": "ECS",
+        "package": "HC-49S-SMD",
+        "description": "-10℃~+70℃ 12MHz 18pF 50Ω ±30ppm ±50ppm HC-49S-SMD Crystals ROHS",
+        "stock": 193,
+        "catalogReceipt": "sha256:d80a93b0ed0e3d7ac2d8a371e6bf184594886dac3fb2f4233dbba1e16fe9cfa5"
+      },
+      {
+        "lcsc": "C313027",
+        "mpn": "ABM2-12.000MHZ-D4Y-T",
+        "manufacturer": "Abracon LLC",
+        "package": "SMD8045-2P",
+        "description": "-40℃~+85℃ 12MHz 18pF 60Ω ±30ppm ±30ppm SMD8045-2P Crystals ROHS",
+        "stock": 23,
+        "datasheetUrl": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Abracon-LLC-ABM2-12-000MHZ-D4Y-T_C313027.pdf",
+        "catalogReceipt": "sha256:d80a93b0ed0e3d7ac2d8a371e6bf184594886dac3fb2f4233dbba1e16fe9cfa5"
+      },
+      {
+        "lcsc": "C326537",
+        "mpn": "HC-49/U-S12000000ABJB",
+        "manufacturer": "CITIZEN",
+        "package": "HC-49S",
+        "description": "-10℃~+60℃ 12MHz 18pF 80Ω ±30ppm ±50ppm HC-49S Crystals ROHS",
+        "stock": 4905,
+        "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_1912111437_CITIZEN-HC-49-U-S12000000ABJB_C326537.pdf",
+        "catalogReceipt": "sha256:d80a93b0ed0e3d7ac2d8a371e6bf184594886dac3fb2f4233dbba1e16fe9cfa5"
+      },
+      {
+        "lcsc": "C326543",
+        "mpn": "HCM4912000000ABJT",
+        "manufacturer": "CITIZEN",
+        "package": "HC-49S-SMD",
+        "description": "-10℃~+60℃ 12MHz 18pF 80Ω ±30ppm ±50ppm HC-49S-SMD Crystals ROHS",
+        "stock": 742,
+        "datasheetUrl": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_CITIZEN-HCM4912000000ABJT_C326543.pdf",
+        "catalogReceipt": "sha256:d80a93b0ed0e3d7ac2d8a371e6bf184594886dac3fb2f4233dbba1e16fe9cfa5"
+      }
+    ]
+  }
+]

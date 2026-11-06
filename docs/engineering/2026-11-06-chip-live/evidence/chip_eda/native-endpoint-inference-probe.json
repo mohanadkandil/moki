@@ -1,0 +1,83 @@
+{
+  "scope": "Independent pure pinned-native converter plus native overlap checker; derived bad route in unchanged actual physical lands, no router.",
+  "cases": [
+    {
+      "bound": false,
+      "sourceContainsGroundBeforeCheck": false,
+      "wireRouteBefore": [
+        {
+          "route_type": "wire",
+          "x": -5.780091999999999,
+          "y": 21.905,
+          "width": 0.15,
+          "layer": "top"
+        },
+        {
+          "route_type": "wire",
+          "x": -1.950127,
+          "y": 6.2,
+          "width": 0.15,
+          "layer": "top"
+        }
+      ],
+      "wireRouteAfter": [
+        {
+          "route_type": "wire",
+          "x": -5.780091999999999,
+          "y": 21.905,
+          "width": 0.15,
+          "layer": "top"
+        },
+        {
+          "route_type": "wire",
+          "x": -1.950127,
+          "y": 6.2,
+          "width": 0.15,
+          "layer": "top",
+          "end_pcb_port_id": "pcb_port_56"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "bound": true,
+      "sourceContainsGroundBeforeCheck": false,
+      "wireRouteBefore": [
+        {
+          "route_type": "wire",
+          "x": -5.780091999999999,
+          "y": 21.905,
+          "width": 0.15,
+          "layer": "top"
+        },
+        {
+          "route_type": "wire",
+          "x": -1.950127,
+          "y": 6.2,
+          "width": 0.15,
+          "layer": "top"
+        }
+      ],
+      "wireRouteAfter": [
+        {
+          "route_type": "wire",
+          "x": -5.780091999999999,
+          "y": 21.905,
+          "width": 0.15,
+          "layer": "top",
+          "start_pcb_port_id": "pcb_port_61"
+        },
+        {
+          "route_type": "wire",
+          "x": -1.950127,
+          "y": 6.2,
+          "width": 0.15,
+          "layer": "top",
+          "end_pcb_port_id": "pcb_port_56"
+        }
+      ],
+      "issues": []
+    }
+  ],
+  "conclusion": "The owner predicate removes foreign GND source aliases, but the independent overlap checker can infer a foreign endpoint ID before building connectivity and consequently still hide that contact. It does not establish a route or fabrication pass; mandatory all-net physical/source hard gates remain necessary."
+}

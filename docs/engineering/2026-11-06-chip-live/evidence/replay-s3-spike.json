@@ -1,0 +1,27 @@
+{
+  "at": "2026-11-06T02:49:05.051Z",
+  "scripted": "Model calls scripted; every other stage real.",
+  "outcome": "built",
+  "wallMs": 38137,
+  "jobs": [
+    {
+      "type": "job",
+      "jobId": "dbcce417-cb32-4dee-9e97-dfe9a5f83085",
+      "attempt": 1,
+      "baseJobId": null,
+      "label": "ESP32-S3 USB-C control board"
+    },
+    {
+      "type": "job-result",
+      "jobId": "dbcce417-cb32-4dee-9e97-dfe9a5f83085",
+      "attempt": 1,
+      "status": "done",
+      "ok": true,
+      "drcErrors": 0,
+      "compile": "compiled",
+      "caseOk": false,
+      "pipelineMs": 31095,
+      "problems": []
+    }
+  ]
+}

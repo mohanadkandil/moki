@@ -1,0 +1,89 @@
+{
+  "sourceJobId": "13a6ffa2-7615-489c-bc97-5c081ba86530",
+  "sourceCircuitSha256": "5e372fc99bd4c65126fa053b6de16a578c938d0188555f687c2c5f2790876f8a",
+  "sourceBoardMinViaHoleEdgeClearanceMm": 0.1,
+  "pairs": [
+    {
+      "vias": [
+        {
+          "type": "pcb_via",
+          "pcb_via_id": "pcb_via_59",
+          "pcb_trace_id": "source_net_4_mst5_0",
+          "x": -4.05,
+          "y": -18.1,
+          "hole_diameter": 0.3,
+          "outer_diameter": 0.6,
+          "layers": [
+            "top",
+            "bottom"
+          ],
+          "from_layer": "bottom",
+          "to_layer": "top",
+          "subcircuit_id": "subcircuit_source_group_0",
+          "subcircuit_connectivity_map_key": "unnamedsubcircuitsubcircuit_source_group_0_connectivity_net4"
+        },
+        {
+          "type": "pcb_via",
+          "pcb_via_id": "pcb_via_60",
+          "pcb_trace_id": "source_net_4_mst13_0",
+          "x": -4.265217008482732,
+          "y": -18.48232180857965,
+          "hole_diameter": 0.3,
+          "outer_diameter": 0.6,
+          "layers": [
+            "top",
+            "bottom"
+          ],
+          "from_layer": "bottom",
+          "to_layer": "top",
+          "subcircuit_id": "subcircuit_source_group_0",
+          "subcircuit_connectivity_map_key": "unnamedsubcircuitsubcircuit_source_group_0_connectivity_net4"
+        }
+      ],
+      "centerDistanceMm": 0.4387349154738752,
+      "holeEdgeGapMm": 0.13873491547387523,
+      "nominalAnnulusMm": 0.15
+    },
+    {
+      "vias": [
+        {
+          "type": "pcb_via",
+          "pcb_via_id": "pcb_via_70",
+          "pcb_trace_id": "source_net_4_mst28_0",
+          "x": 5.45,
+          "y": 12.6,
+          "hole_diameter": 0.3,
+          "outer_diameter": 0.6,
+          "layers": [
+            "top",
+            "bottom"
+          ],
+          "from_layer": "bottom",
+          "to_layer": "top",
+          "subcircuit_id": "subcircuit_source_group_0",
+          "subcircuit_connectivity_map_key": "unnamedsubcircuitsubcircuit_source_group_0_connectivity_net4"
+        },
+        {
+          "type": "pcb_via",
+          "pcb_via_id": "pcb_via_84",
+          "pcb_trace_id": "source_net_4_mst38_0",
+          "x": 5.036977443372377,
+          "y": 12.5849005,
+          "hole_diameter": 0.3,
+          "outer_diameter": 0.6,
+          "layers": [
+            "top",
+            "bottom"
+          ],
+          "from_layer": "bottom",
+          "to_layer": "top",
+          "subcircuit_id": "subcircuit_source_group_0",
+          "subcircuit_connectivity_map_key": "unnamedsubcircuitsubcircuit_source_group_0_connectivity_net4"
+        }
+      ],
+      "centerDistanceMm": 0.4132984722733293,
+      "holeEdgeGapMm": 0.11329847227332929,
+      "nominalAnnulusMm": 0.15
+    }
+  ]
+}

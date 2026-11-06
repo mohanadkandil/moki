@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: finite connected GPIO17/18 inward vias pass actual native geometry on2/4layers and all cardinal orientations
+ok 1 - finite connected GPIO17/18 inward vias pass actual native geometry on2/4layers and all cardinal orientations
+  ---
+  duration_ms: 5476.205093
+  type: 'test'
+  ...
+# Subtest: default14prefix API remains unchanged and actual55x40 native90degree placement also validates16
+ok 2 - default14prefix API remains unchanged and actual55x40 native90degree placement also validates16
+  ---
+  duration_ms: 1009.207611
+  type: 'test'
+  ...
+# Subtest: only connected application pins receive vias; unsupported aliases, roles and counterfeit optional prefix ownership reject
+ok 3 - only connected application pins receive vias; unsupported aliases, roles and counterfeit optional prefix ownership reject
+  ---
+  duration_ms: 1887.645921
+  type: 'test'
+  ...
+# Subtest: foreign clock copper and same-net SMD copper at a proposed via remain hard geometry failures
+ok 4 - foreign clock copper and same-net SMD copper at a proposed via remain hard geometry failures
+  ---
+  duration_ms: 830.522745
+  type: 'test'
+  ...
+# Subtest: coupled USB/power profile validates18 escapes plus8 signals on actual2/4layer cardinal geometry
+ok 5 - coupled USB/power profile validates18 escapes plus8 signals on actual2/4layer cardinal geometry
+  ---
+  duration_ms: 4898.573788
+  type: 'test'
+  ...
+# Subtest: USB mode remains optional, only emits connected USB pins, and refuses forged USB ownership or aliases
+ok 6 - USB mode remains optional, only emits connected USB pins, and refuses forged USB ownership or aliases
+  ---
+  duration_ms: 2369.227587
+  type: 'test'
+  ...
+# Subtest: old outward power45 barrel physically collides with the new USB46 barrel, so USB and power relocation must stay coupled
+ok 7 - old outward power45 barrel physically collides with the new USB46 barrel, so USB and power relocation must stay coupled
+  ---
+  duration_ms: 1073.496804
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 18438.41588

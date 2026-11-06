@@ -1,0 +1,38 @@
+{
+  "lcsc": "C25190",
+  "mpn": "0603WAF270JT5E",
+  "manufacturer": "UNI-ROYAL(厚声)",
+  "package": "R0603",
+  "description": "27Ω (27R0) ±1%",
+  "stock": 270,
+  "catalogReceipt": "sha256:c6091783337d0b88327664b1c98d3d8d865920433c845476977520b092daeabd",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "cfdd40f49dadfa91f2d32619cdb223e4346bc64337d43797a005e9341c8a1e0e",
+  "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+  "pins": [
+    {
+      "pad": "2",
+      "labels": [
+        "2"
+      ]
+    },
+    {
+      "pad": "1",
+      "labels": [
+        "1"
+      ]
+    }
+  ],
+  "models": [
+    {
+      "format": "obj",
+      "url": "https://modules.easyeda.com/3dmodel/e06b23482b894f1ebafac2e1696a59f5"
+    },
+    {
+      "format": "step",
+      "url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/e06b23482b894f1ebafac2e1696a59f5"
+    }
+  ],
+  "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2205311845_UNI-ROYAL-Uniroyal-Elec-0603WAF270JT5E_C25190.pdf",
+  "datasheetReceipt": "sha256:fce36409919c0ec95881114fb6069352624eb37530ad3f6743f4567ff03c1d2b"
+}

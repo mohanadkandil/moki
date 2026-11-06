@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: captured 723 obstacles,144 terminals and117 raw native traces roundtrip all cardinal frames without input mutation
+ok 1 - captured 723 obstacles,144 terminals and117 raw native traces roundtrip all cardinal frames without input mutation
+  ---
+  duration_ms: 223.94996
+  type: 'test'
+  ...
+# Subtest: rotated intrinsic rect keeps dimensions while absent-angle rect and oval rotate world axes
+ok 2 - rotated intrinsic rect keeps dimensions while absent-angle rect and oval rotate world axes
+  ---
+  duration_ms: 6.944698
+  type: 'test'
+  ...
+# Subtest: four-layer terminals and full-span via inverse preserve all layer,source,width and marker identities
+ok 3 - four-layer terminals and full-span via inverse preserve all layer,source,width and marker identities
+  ---
+  duration_ms: 80.9996
+  type: 'test'
+  ...
+# Subtest: unknown geometry,constraints,noncardinal obstacles and ambiguous terminal geometry fail closed
+ok 4 - unknown geometry,constraints,noncardinal obstacles and ambiguous terminal geometry fail closed
+  ---
+  duration_ms: 83.37282
+  type: 'test'
+  ...
+# Subtest: inverse output rejects unknown path shapes and malformed dimensions instead of losing native geometry
+ok 5 - inverse output rejects unknown path shapes and malformed dimensions instead of losing native geometry
+  ---
+  duration_ms: 52.895684
+  type: 'test'
+  ...
+# Subtest: actual JS optional undefined fields are JSON-absent while defined unknown constraints still reject by field name
+ok 6 - actual JS optional undefined fields are JSON-absent while defined unknown constraints still reject by field name
+  ---
+  duration_ms: 164.783384
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 831.615865

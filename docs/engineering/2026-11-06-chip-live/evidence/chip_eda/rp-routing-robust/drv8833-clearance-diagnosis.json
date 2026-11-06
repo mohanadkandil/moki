@@ -1,0 +1,118 @@
+{
+  "job": "05e69207-83d3-45b6-a751-b657b2a2e3dc",
+  "scope": "Captured actual failed copper diagnosis; not a new routing/DRC pass",
+  "sourceInputWidths": [
+    {
+      "name": "source_net_18",
+      "width": 0.3,
+      "nominalTraceWidth": 0.3
+    },
+    {
+      "name": "source_net_28",
+      "width": 0.15,
+      "nominalTraceWidth": 0.15
+    }
+  ],
+  "planningRules": {
+    "defaultObstacleMargin": 0.18,
+    "minTraceToPadEdgeClearance": 0.15,
+    "minTraceWidth": 0.15
+  },
+  "error": {
+    "type": "pcb_trace_error",
+    "pcb_trace_error_id": "pcb_trace_error_0",
+    "error_type": "pcb_trace_error",
+    "message": "PCB trace .U5 > .pin11 to net.VCP_PUMP is too close to .U5 > .pin12 to net.VBUS (gap: 0.096mm)",
+    "pcb_trace_id": "source_net_28_0",
+    "source_trace_id": "",
+    "pcb_component_ids": [],
+    "center": {
+      "x": 10.946411029893127,
+      "y": 17.78502495712361
+    },
+    "pcb_port_ids": [
+      "pcb_port_160",
+      "pcb_port_167",
+      "pcb_port_161",
+      "pcb_port_171"
+    ]
+  },
+  "VCP": {
+    "pcbTraceId": "source_net_28_0",
+    "sourceTraceId": "source_trace_148",
+    "segmentIndex": 4,
+    "segment": [
+      {
+        "route_type": "wire",
+        "x": 10.821077436899868,
+        "y": 15.632482372098394,
+        "width": 0.15,
+        "layer": "top"
+      },
+      {
+        "route_type": "wire",
+        "x": 10.757657194686319,
+        "y": 19.535465424696888,
+        "width": 0.15,
+        "layer": "top"
+      }
+    ]
+  },
+  "VM": {
+    "pcbTraceId": "source_net_18_mst6_0",
+    "sourceTraceId": "source_trace_118",
+    "segmentIndex": 17,
+    "segment": [
+      {
+        "route_type": "wire",
+        "x": 11.106679340652894,
+        "y": 17.78762918444168,
+        "width": 0.15,
+        "layer": "top"
+      },
+      {
+        "route_type": "wire",
+        "x": 11.267509005489671,
+        "y": 17.96572188833126,
+        "width": 0.3,
+        "layer": "top"
+      }
+    ]
+  },
+  "geometry": {
+    "centerlineDistanceMm": 0.32057893526377135,
+    "nativeFinalMaxEndpointGapMm": 0.09557893526377137,
+    "leadingEndpointWidthGapMm": 0.17057893526377135,
+    "radiusMismatchMm": 0.075
+  },
+  "nativeCodeObservations": [
+    "Final @tscircuit/checks checkEachPcbTraceNonOverlapping uses max of the two wire endpoint widths per segment.",
+    "Native TraceWidthSolver.getClearanceForSegment subtracts a.traceThickness (leading endpoint), not max(a,b).",
+    "Pipeline9 traceWidthSolver obstacleMargin receives minTraceToPadEdgeClearance, not defaultObstacleMargin.",
+    "Pipeline9 also runs a power expander with conservative clearance repair; captured job has no stage output/statistics proving which stage emitted this transition. Exact responsible stage remains an inference."
+  ],
+  "interpretation": "Correct .3/.15 SRJ widths do not prevent a remote serialized width-transition mismatch. Stronger planning pad-clearance floor may buffer this; saved local outward stubs prevent inward pin exits but cannot prove global success.",
+  "sourceFileSha256": {
+    "circuit.json": "b950f1c2eb283b7170deaf4510cac0ec559866c138392526c691ceadafcb7c08",
+    "router-input.json": "20e4dfddbfcaa166f0889a3a3c0802f40df701aa5172d74c374566bb81660b4b"
+  },
+  "traceThicknessMode": {
+    "VM": null,
+    "VCP": null,
+    "installedSchemaDefault": "constant"
+  },
+  "gerberSemantics": {
+    "version": "0.0.122",
+    "source": "src/gerber/convert-soup-to-gerber-commands/index.ts:913-943",
+    "wirePairApertureWidth": "a.width (leading wire endpoint)",
+    "interpolationModeRead": false
+  },
+  "nativeOptionsObserved": {
+    "PowerTraceExpanderSolver": [
+      "onlyConnectionNames",
+      "allowNewVias",
+      "powerTraceToPadClearance"
+    ],
+    "SpatialObstacleIndexClearance": "max(input.defaultObstacleMargin,input.minTraceToPadEdgeClearance,0.1)"
+  }
+}

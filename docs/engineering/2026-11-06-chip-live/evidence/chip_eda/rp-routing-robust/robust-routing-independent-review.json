@@ -1,0 +1,57 @@
+{
+  "schema": "moki.independent-robust-routing-review/1",
+  "reviewer": "gnd_escape",
+  "at": "2026-11-06T07:09:40.151696+00:00",
+  "verdict": "no-actionable-findings-in-scoped-frozen-patch",
+  "reviewedSourceHashes": {
+    "eda/blocks/robust-routing-checks.ts": "e9f519ea8753d019a5d6bf9992ef7cfe943732b34c62949c0219c8b32c88375c",
+    "tests/blocks-robust-routing-checks.test.ts": "ed246fc3cf1bac940c4c50f2feee580065659eb22df7eceb7837f7e0c001b08d",
+    "eda/blocks/build.ts": "3fa9b45baf15e2e95636056d49c7823d1b68cde14802f3b8469b7c0baee26882",
+    "eda/node_modules/@tscircuit/checks/dist/index.js": "d82ed6386d5bfff98d156a03f24b53b10e4f84b85f80a9abdac3ed58682f9039"
+  },
+  "nativeCheckVersion": "0.0.269",
+  "nativeCheckCount": 22,
+  "validation": {
+    "focusedTests": {
+      "passed": 6,
+      "failed": 0,
+      "durationMs": 8463.460975
+    },
+    "strictTypeScript": "pass",
+    "independentRealNativeParityControls": [
+      "Actual plated barrel drill void remains no short",
+      "Positive contact with plated annulus remains a short",
+      "Rotated pill land remains a short",
+      "Rounded rotated rectangular land remains a short",
+      "Polygon copper pour remains a short",
+      "Through-pad trace remains a short"
+    ],
+    "independentExactBuildAstProbes": [
+      "Exact reproduced aborted-check runtime message removed only after completed original/fresh checker calls",
+      "Different engine runtime message retained",
+      "No-retry runtime message retained",
+      "Actual checker diagnostic retained in refreshed circuit",
+      "Unknown checker error propagates"
+    ],
+    "cloneImmutability": "Independent real native control inputs unchanged"
+  },
+  "reviewedInvariants": [
+    "Normal aggregate checker result returned directly without fallback",
+    "Only exact reproducible identical native copper-shorts boolean error enables fallback",
+    "Pinned22 public routing checks match installed aggregate order and cutout options",
+    "Only copper-shorts consumes length-scaled private PCB clone; all clearance/style/connectivity/island checks receive native millimetres",
+    "Native flatten converter length reads covered: coordinates,radii,pad/hole/via dimensions,offsets,wire/through-pad widths,polygon/BREP vertices",
+    "Angles,bulges,IDs,layers,layer counts and source metadata remain unchanged",
+    "Unknown aggregate/isolated/scaled/later checker failures propagate",
+    "Short-check output restricted to non-coordinate ID/message schema",
+    "Root refresh removes only type/message diagnostics reproduced by completed checks and exact retry error,then runs fresh checks"
+  ],
+  "findings": [],
+  "limits": [
+    "Scoped checker wrapper/integration review,not actual whole-board acceptance",
+    "No native solver,render,compile or server started",
+    "Unit scaling intentionally changes numerical precision; independent parity controls cover physical drill and short cases,not every possible shape",
+    "Current all-net oracle extension was authored by this reviewer and is separately assigned for independent review"
+  ],
+  "sourceEditsPerformed": false
+}

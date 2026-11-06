@@ -1,0 +1,21 @@
+[
+  {
+    "lcsc": "C23630",
+    "mpn": "CL10A225KO8NNNC",
+    "manufacturer": "Samsung Electro-Mechanics",
+    "package": "0603",
+    "description": "16V 2.2uF X5R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS",
+    "stock": 2394767,
+    "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL10A225KO8NNNC_C23630.pdf",
+    "catalogReceipt": "sha256:29643fe0c84414f4c66a6347501c5a0de083884bb0aa4a21d79025b0069b3c93"
+  },
+  {
+    "lcsc": "C3446179",
+    "mpn": "CL10A225KO8NNNC-YJLTY",
+    "manufacturer": "Samsung Electro-Mechanics",
+    "package": "0603",
+    "description": "0603 New Arrivals ROHS",
+    "stock": 0,
+    "catalogReceipt": "sha256:29643fe0c84414f4c66a6347501c5a0de083884bb0aa4a21d79025b0069b3c93"
+  }
+]

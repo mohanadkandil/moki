@@ -1,0 +1,9 @@
+Independent native owner-guard v2 review
+
+No actionable finding within the reviewed private diagnostic scope. Nine focused tests independently pass in11.470s; targeted strict TypeScript passes on source9ba6434f… and tests7f3782af…. Exact source/caller hashes and claims are recorded in the companion JSON. No routing job, solver iteration or whole-board physical oracle ran.
+
+Both actual pinned runtime arrows only annotate missing endpoint IDs through their local PCBtrace iteration. A unique structural source-owner Set filters that local list, preserving every CJ/source/trace/route record and all existing markers. Ambiguous/unknown/empty owners retain the original behavior. This is a source-structure guard rather than electrical certification. Complete copied-runtime controls demonstrate corrected derived foreign-pad contact detection while preserving own, unowned, free same-source T and legacy cases. The unchanged external checker retains its separately documented limitation.
+
+The official two-file utility implementation is hash-pinned. Its registry chunk is byte-identical in a private module namespace; only the original explicit graphics-debug ESM entry is rebased. Loading original tscircuit and SDK first, then guarded SDK, and constructing both Pipeline9 classes at zero iterations succeeds. Cache tampering and incompatible dependency entries fail closed; installed dependencies are untouched.
+
+The current caller requires explicit private owner-guard, known-RP pad-escape and ownership-lock flags, records full provenance and only supplies the constructor to Pipeline9. Canonical source, all-net actual copper, minimum-width, native DRC and fabrication gates remain mandatory and errors remain nonzero exits. No native trial improvement, routability or hardware/fabrication acceptance is claimed. This review excludes this reviewer's authored locked-pad producer, independently reviewed by gnd_escape.

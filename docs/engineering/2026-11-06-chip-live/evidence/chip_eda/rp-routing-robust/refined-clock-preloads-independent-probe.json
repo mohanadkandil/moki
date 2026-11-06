@@ -1,0 +1,42 @@
+{
+  "scope": "Independent pure controls on actual getter fixture; output intentionally derived because raw native return was not captured",
+  "results": [
+    {
+      "name": "foreign-source-net",
+      "rejected": true
+    },
+    {
+      "name": "same-point-foreign-marker",
+      "rejected": true
+    },
+    {
+      "name": "new-internal-own-marker",
+      "rejected": true
+    },
+    {
+      "name": "other-preload-replacement",
+      "rejected": true
+    },
+    {
+      "name": "foreign-output-replacement",
+      "rejected": true
+    },
+    {
+      "name": "output-disagreement",
+      "rejected": true
+    },
+    {
+      "name": "total-net-overlength-with-individual-under10",
+      "rejected": true,
+      "lengthControl": {
+        "singleTraceMm": 7.6425914568355395,
+        "totalNetMm": 10.142530217425687
+      }
+    },
+    {
+      "name": "literal-global-metadata-and-array-output-positive",
+      "passed": true,
+      "acceptedClockCount": 5
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+# Public Pipeline7 adapter and source-capture review
+
+Reviewed coordinator routing-engine choice (`pipeline7` for the selected RP profile, default/explicit `pipeline9` otherwise) against the pinned public native declarations/implementation. Both constructors expose the expected step lifecycle, synchronous `getOutputSimpleRouteJson`, pipeline definition and same native PowerTraceExpansionSolver constructor; no new private router/pathfinder is introduced.
+
+Source attribution now accepts exactly the official native names `AutoroutingPipelineSolver7_MultiGraph` and `AutoroutingPipelineSolver9_PreloadedTraceGraph` at its two captured-input filters. Replacing only those two revised filter expressions with their previous9-only expression reconstructs **exact** prior frozen source SHA `319991ec787047a42af818ed650c268851511525100999b9b64ba968f15b1464`. Current source SHA is `fbf4b6a60cbe4bb761ceaa96043e99ed17d13725d49ad5e6c290f4bfd715c753`: no physical/source/width/annular/capture ownership guard changed.
+
+Added regression22 to prove a descriptor-only derived7capture receives the same strict via/source proof, including the independent canonical-global-owner capture branch. Drilled-away annuli still reject; unsupported or near-match names remain unknown/unrepaired rather than authorizing attribution. Added adapter regression7 to select distinct fake7/9constructors for default9, explicit9 and explicit7 and to exercise pending-promise/raw-native-evidence/completion behavior. The fake harness never instantiates native routing. An unreachable duplicated dependency stub referencing undeclared `restoreStub` was removed.
+
+All29combined source/adapter tests pass (4.90s). Strict Bundler-resolution TypeScript including the actual router and public7types passes, matching Bun's EDA module environment. Direct NodeNext including the `tscircuit` export encounters15pre-existing vendor extensionless-.ts-import TS2835 diagnostics in fanout-solver/jscad, with no errors in the reviewed application files. No dependencies were altered. Source/profile tests that do not import that broad export retain their strict NodeNext checks separately.
+
+This review does not claim that either native engine routes the complete constrained board. The coordinator runs actual native jobs and unchanged final all-net copper/drill, width, DRC and shorts gates.

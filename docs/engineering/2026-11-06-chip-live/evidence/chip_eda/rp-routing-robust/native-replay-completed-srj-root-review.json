@@ -1,0 +1,16 @@
+{
+  "reviewer": "root",
+  "author": "final_review",
+  "sourceSha256": "16495a897b1bb1334de838e0cb0ab9c8be7659b9be42743c95d5c8e2ba5d8abf",
+  "scope": "Read-only independent review of completed-native-SRJ private replay admission. No whole-board acceptance.",
+  "checks": [
+    "Fallback only on missing pre-pour file; present malformed captures reject",
+    "Failed source job, router phase25 and sole native async error must agree on outer width floor failure",
+    "Completed SRJ equals source after replacing traces and deleting only exact physical z-layer caches",
+    "Original design/graph/import/placement/clock/exits/SRJ hashes remain exact",
+    "Candidate retains original trace identity/name/order coverage and every wire meets unchanged floor; via .6/.3 and known layers",
+    "Private CLI only; source capture kind explicit; fresh source/placement/native/physical/minimum-width gates always remain"
+  ],
+  "findings": [],
+  "acceptance": "scoped review only; current three native plans remain unaccepted"
+}

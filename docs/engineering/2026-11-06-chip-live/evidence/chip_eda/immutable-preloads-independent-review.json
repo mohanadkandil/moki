@@ -1,0 +1,47 @@
+{
+  "reviewer": "/root/final_review",
+  "at": "2026-11-06T10:18:04.293079+00:00",
+  "verdict": "pass within final helper scope; initial P2 resolved",
+  "scope": "Independent review of prepare/verify immutable native clock preloads, exact record preservation, public getter and returned-output boundaries. Parent integration not present in reviewed snapshot.",
+  "files": {
+    "eda/blocks/immutable-preloads.ts": "afde60c008104bb6e9c6f87495567b725989f3c408b4df91f8132d2dc7fce7df",
+    "tests/blocks-immutable-preloads.test.ts": "94acdaf66b747948596e42ea41c0efcebae094437ab634671abebd419dfa90cc"
+  },
+  "checks": {
+    "focusedTests": {
+      "passed": 8,
+      "failed": 0,
+      "durationMs": 679.331189
+    },
+    "targetedStrictTypecheck": "pass",
+    "originalIndependentMutationRepro": "both reject on final source",
+    "routingJobRun": false,
+    "nativeSolverIterations": 0,
+    "wholeBoardOracleRun": false
+  },
+  "findings": [
+    {
+      "id": "P2-unrelated-preload-output-mutation",
+      "severity": "P2",
+      "status": "resolved",
+      "originalSourceSha256": "218d5bcc8158b489c63e22f848bd050a35805a6029476eb15bd5d3ca348cc3d6",
+      "problem": "Updated-getter hashes covered all preloads, but output hash/replacement checks initially covered only five clock IDs. A preexisting unrelated preload could be returned changed or replaced while original getter records still certified immutability.",
+      "evidenceBefore": "immutable-preloads-independent-before-fix.json",
+      "evidenceAfter": "immutable-preloads-independent-repro.json",
+      "verification": "Final output hash checks cover every expected preload ID; replacement claims targeting any expected preload reject. Only five clock IDs are stripped. Both independent mutants now reject; focused regression retained."
+    }
+  ],
+  "verified": [
+    "Literal five passed traces remain cloned and every original obstacle/connection/metadata field remains unchanged; no generic clock rectangle removed. Expected snapshot is deep-frozen and separate from mutable native input.",
+    "Caller-proven clocks require finite supported records with source_trace/subcircuit identity, three distinct ownernames and counts[1,2,2]. No compiler net/ref/instance IDs are hardcoded. Active direct/net/root aliases conflicting with any preload owner reject.",
+    "Both public getters are mandatory; updated traces must exactly cover all expected IDs once with full canonical hash equality and mutated getter must be empty.",
+    "Returned expected IDs must have unchanged full hashes and may not be replaced; new unrelated output records and their metadata are preserved. Only exact duplicate five clock records are stripped.",
+    "Malformed/unknown fields, duplicate IDs, nonfinite geometry, unknown layers/route types, source/alias/route order/width/coordinate/via mutation and missing getters fail closed.",
+    "Renumbered compiler net/trace/source/subcircuit/root aliases pass on both2/4-layer inputs; active renamed-owner aliases still reject."
+  ],
+  "limits": [
+    "Caller must prove passed records are the actual known clock profile; this module proves structural completeness/immutability, not electrical semantics or physical legality.",
+    "Native mutation is rejected, not repaired; no copper or constraints are rewritten.",
+    "No public native solver run, routing acceptance, fabrication qualification or caller integration is established. Full physical/native/source/minimum-width gates remain mandatory."
+  ]
+}

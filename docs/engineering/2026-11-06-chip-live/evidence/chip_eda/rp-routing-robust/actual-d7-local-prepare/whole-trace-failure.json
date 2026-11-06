@@ -1,0 +1,18 @@
+{
+  "nativeRoutingExecuted": true,
+  "accepted": false,
+  "candidateMayNotBeUsed": true,
+  "workerPid": 2577330,
+  "termination": "Explicit SIGTERM by reviewer after observing native async-step overrun",
+  "approxObservedWallMs": 135000,
+  "lastObservedProgress": {
+    "phase": "preloadedTraceGraphSolver",
+    "phaseIndex": 10,
+    "ms": 50391.542135
+  },
+  "deadlineFailure": "Internal90second elapsed check cannot preempt a stalled awaited native step",
+  "correctiveAction": "Future whole-trace-run invocation now launches child under independent GNUtimeout TERM90s,KILLgrace5s; no rerun executed",
+  "outputsProduced": false,
+  "slotReleased": true,
+  "reviewer": "gnd_escape"
+}

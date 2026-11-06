@@ -1,0 +1,36 @@
+{
+  "kind": "actual failed native air job, no source or geometry changes",
+  "jobId": "53a0adba-0f2f-41d9-ac61-d43805a2e45e",
+  "files": [
+    {
+      "file": "circuit.json",
+      "source": "var/board-jobs-test-chip/53a0adba-0f2f-41d9-ac61-d43805a2e45e/circuit.json",
+      "sha256": "8cff119f26002c438cc18c46160b050a28bd8afe24bbe7fd4d80b2aaad3556d1",
+      "bytes": 1271798
+    },
+    {
+      "file": "plan-graph.json",
+      "source": "var/board-jobs-test-chip/53a0adba-0f2f-41d9-ac61-d43805a2e45e/plan-graph.json",
+      "sha256": "354d08c5f032b07e3de6c722a65db3bc67e61d402bd0369d400b472fa3372588",
+      "bytes": 790772
+    },
+    {
+      "file": "import-map.json",
+      "source": "var/board-jobs-test-chip/53a0adba-0f2f-41d9-ac61-d43805a2e45e/import-map.json",
+      "sha256": "aa53e58bfe6ea05c630f6936bb0c844536e240606f392afa5be859376b41562f",
+      "bytes": 18047
+    },
+    {
+      "file": "fanout-phase.json",
+      "source": "var/board-jobs-test-chip/53a0adba-0f2f-41d9-ac61-d43805a2e45e/fanout-phase.json",
+      "sha256": "f35fbf003b84e1e4926f0afabc8db671e8beb8d4267b2063463171ad4015a9f4",
+      "bytes": 13234
+    },
+    {
+      "file": "native-routing.json",
+      "source": "var/board-jobs-test-chip/53a0adba-0f2f-41d9-ac61-d43805a2e45e/native-routing.json",
+      "sha256": "5e8073b76e66a23b841d6d921cc885a95597ef5e2bf92bd41b35fc79e28b9ff0",
+      "bytes": 1441078
+    }
+  ]
+}

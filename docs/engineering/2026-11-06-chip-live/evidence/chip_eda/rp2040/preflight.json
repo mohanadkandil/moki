@@ -1,0 +1,26 @@
+[
+  {
+    "gate": "erc",
+    "ok": true,
+    "issues": [
+      {
+        "rule": "unreviewed",
+        "severity": "warning",
+        "where": "rp2040-minimal",
+        "message": "Agent/human draft cannot promote itself; independent review is separate"
+      }
+    ]
+  },
+  {
+    "gate": "power",
+    "ok": true,
+    "issues": [
+      {
+        "rule": "thermal-assumption",
+        "severity": "warning",
+        "where": "rp2040-minimal.V3V3",
+        "message": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+      }
+    ]
+  }
+]

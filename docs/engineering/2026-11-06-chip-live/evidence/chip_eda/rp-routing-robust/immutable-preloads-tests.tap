@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: actual five clock CJ records become literal cloned preloads without removing 111 existing clock rectangles
+ok 1 - actual five clock CJ records become literal cloned preloads without removing 111 existing clock rectangles
+  ---
+  duration_ms: 58.765551
+  type: 'test'
+  ...
+# Subtest: exact public getter records permit output without clocks or strip only exact duplicate fixed IDs
+ok 2 - exact public getter records permit output without clocks or strip only exact duplicate fixed IDs
+  ---
+  duration_ms: 63.290122
+  type: 'test'
+  ...
+# Subtest: any canonical geometry, width, source, alias, via, ID or route-order mutation fails before output
+ok 3 - any canonical geometry, width, source, alias, via, ID or route-order mutation fails before output
+  ---
+  duration_ms: 33.640584
+  type: 'test'
+  ...
+# Subtest: getter omission, duplicate, unknown, mutation-list entries and replacement claims fail closed
+ok 4 - getter omission, duplicate, unknown, mutation-list entries and replacement claims fail closed
+  ---
+  duration_ms: 31.005354
+  type: 'test'
+  ...
+# Subtest: unknown fixed data, duplicate IDs, nonfinite widths and active direct/root clock owners reject at preparation
+ok 5 - unknown fixed data, duplicate IDs, nonfinite widths and active direct/root clock owners reject at preparation
+  ---
+  duration_ms: 113.14461
+  type: 'test'
+  ...
+# Subtest: canonical optional undefined object fields match while alias and array ordering stays exact
+ok 6 - canonical optional undefined object fields match while alias and array ordering stays exact
+  ---
+  duration_ms: 22.199693
+  type: 'test'
+  ...
+# Subtest: preexisting unrelated preloads retain metadata and are also immutable but are never stripped
+ok 7 - preexisting unrelated preloads retain metadata and are also immutable but are never stripped
+  ---
+  duration_ms: 23.398947
+  type: 'test'
+  ...
+# Subtest: caller-proven clock ownership survives arbitrary compiler net/trace/source/subcircuit renumbering
+ok 8 - caller-proven clock ownership survives arbitrary compiler net/trace/source/subcircuit renumbering
+  ---
+  duration_ms: 64.013011
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 830.074628

@@ -1,0 +1,41 @@
+{
+  "scope": "Exact corrected production binder AST on actual974 phase event plus DERIVED source/PCB snapshot with rendered traces removed; proves pure binding, not new runtime availability.",
+  "sourceSha256": "84569404e6750c3d81efd72338ec2e5fb1075b48073a14595c60149cfe7891a4",
+  "sourceJobId": "97402c60-a8e0-4424-9395-7b2640f539a4",
+  "cases": [
+    {
+      "kind": "actual-baseline",
+      "accepted": true
+    },
+    {
+      "kind": "duplicate-profile-path",
+      "accepted": false,
+      "error": "Error: Clock event repeats a verified profile path"
+    },
+    {
+      "kind": "changed-copper",
+      "accepted": false,
+      "error": "Error: Clock event copper differs from the verified profile"
+    },
+    {
+      "kind": "foreign-owner",
+      "accepted": false,
+      "error": "Error: Clock event source identity differs from verified profile"
+    },
+    {
+      "kind": "conflicting-source",
+      "accepted": false,
+      "error": "Error: Clock event has conflicting source metadata"
+    },
+    {
+      "kind": "missing-source",
+      "accepted": false,
+      "error": "Error: Clock event alias is not a unique actual port-to-clock-net declaration"
+    },
+    {
+      "kind": "foreign-connectsto",
+      "accepted": false,
+      "error": "Error: Clock event alias is not a unique actual port-to-clock-net declaration"
+    }
+  ]
+}

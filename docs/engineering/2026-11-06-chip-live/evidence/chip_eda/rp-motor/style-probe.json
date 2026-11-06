@@ -1,0 +1,220 @@
+{
+  "scope": "bounded native P11 cleanup probe only; accepted job never modified",
+  "accepted": false,
+  "job": "/home/sogo/design-skill-research/repos/moki/var/board-jobs-test-chip/193f6a73-452d-4124-9785-0a14940322b0",
+  "options": {
+    "iterations": 2,
+    "enableVertexShortcuts": false,
+    "enableCrossingViaReduction": false
+  },
+  "startedAt": "2026-11-06T03:03:09.607Z",
+  "originalCircuitSha256": "e419f2fea37f1be9bcd3fca05bffa2fa920d4b88f89654f14a37751c8fd83782",
+  "baseline": {
+    "traces": 118,
+    "style": [
+      {
+        "type": "pcb_trace_style_warning",
+        "pcb_trace_style_warning_id": "pcb_trace_style_warning_source_net_10_0_4_5",
+        "warning_type": "pcb_trace_style_warning",
+        "styling_issue_type": "long_segment_at_odd_angle",
+        "pcb_trace_id": "source_net_10_0",
+        "source_trace_id": "source_trace_89",
+        "subcircuit_id": "subcircuit_source_group_0",
+        "layer": "bottom",
+        "start_route_index": 4,
+        "end_route_index": 5,
+        "segment_start": {
+          "x": -15.176367672777523,
+          "y": 4.57721613658197
+        },
+        "segment_end": {
+          "x": -6.326367672777523,
+          "y": 6.894865976978373
+        },
+        "center": {
+          "x": -10.751367672777523,
+          "y": 5.736041056780172
+        },
+        "segment_length": 9.148442533168666,
+        "minimum_segment_length": 5,
+        "angle_degrees": 14.675137184013579,
+        "nearest_allowed_angle_degrees": 0,
+        "angle_deviation_degrees": 14.675137184013579,
+        "angle_tolerance_degrees": 4,
+        "message": ".U1 > .pin51 to net.QSPI_SD3 has a 9.15 mm segment on bottom at 14.68\u00b0, 14.68\u00b0 from the nearest allowed direction (0\u00b0). Prefer a multiple of 45\u00b0 for segments longer than 5 mm (tolerance 4\u00b0)."
+      },
+      {
+        "type": "pcb_trace_style_warning",
+        "pcb_trace_style_warning_id": "pcb_trace_style_warning_source_net_15_mst2_0_11_42",
+        "warning_type": "pcb_trace_style_warning",
+        "styling_issue_type": "long_segment_at_odd_angle",
+        "pcb_trace_id": "source_net_15_mst2_0",
+        "source_trace_id": "source_trace_99",
+        "subcircuit_id": "subcircuit_source_group_0",
+        "layer": "bottom",
+        "start_route_index": 11,
+        "end_route_index": 42,
+        "segment_start": {
+          "x": -17.06078453571704,
+          "y": 1.5817370205797603
+        },
+        "segment_end": {
+          "x": -10.03922372038694,
+          "y": -1.6281340516272635
+        },
+        "center": {
+          "x": -13.55000412805199,
+          "y": -0.02319851552375163
+        },
+        "segment_length": 7.720465567799042,
+        "minimum_segment_length": 5,
+        "angle_degrees": 335.432729465671,
+        "nearest_allowed_angle_degrees": 315,
+        "angle_deviation_degrees": 20.432729465671002,
+        "angle_tolerance_degrees": 4,
+        "message": ".U1 > .pin56 to net.QSPI_SS has a 7.72 mm segment on bottom at 335.43\u00b0, 20.43\u00b0 from the nearest allowed direction (315\u00b0). Prefer a multiple of 45\u00b0 for segments longer than 5 mm (tolerance 4\u00b0)."
+      },
+      {
+        "type": "pcb_trace_style_warning",
+        "pcb_trace_style_warning_id": "pcb_trace_style_warning_source_net_14_0_10_42",
+        "warning_type": "pcb_trace_style_warning",
+        "styling_issue_type": "long_segment_at_odd_angle",
+        "pcb_trace_id": "source_net_14_0",
+        "source_trace_id": "source_trace_97",
+        "subcircuit_id": "subcircuit_source_group_0",
+        "layer": "bottom",
+        "start_route_index": 10,
+        "end_route_index": 42,
+        "segment_start": {
+          "x": -17.09398060230075,
+          "y": 3.944086219998043
+        },
+        "segment_end": {
+          "x": -8.504093008723066,
+          "y": -0.6275050379166971
+        },
+        "center": {
+          "x": -12.799036805511907,
+          "y": 1.658290591040673
+        },
+        "segment_length": 9.730653395314329,
+        "minimum_segment_length": 5,
+        "angle_degrees": 331.9778160451433,
+        "nearest_allowed_angle_degrees": 315,
+        "angle_deviation_degrees": 16.9778160451433,
+        "angle_tolerance_degrees": 4,
+        "message": ".U1 > .pin55 to net.QSPI_SD1 has a 9.73 mm segment on bottom at 331.98\u00b0, 16.98\u00b0 from the nearest allowed direction (315\u00b0). Prefer a multiple of 45\u00b0 for segments longer than 5 mm (tolerance 4\u00b0)."
+      },
+      {
+        "type": "pcb_trace_style_warning",
+        "pcb_trace_style_warning_id": "pcb_trace_style_warning_source_net_13_0_10_42",
+        "warning_type": "pcb_trace_style_warning",
+        "styling_issue_type": "long_segment_at_odd_angle",
+        "pcb_trace_id": "source_net_13_0",
+        "source_trace_id": "source_trace_95",
+        "subcircuit_id": "subcircuit_source_group_0",
+        "layer": "bottom",
+        "start_route_index": 10,
+        "end_route_index": 42,
+        "segment_start": {
+          "x": -16.076367672777522,
+          "y": 2.077216136581969
+        },
+        "segment_end": {
+          "x": -6.326367672777522,
+          "y": -2.684334468252062
+        },
+        "center": {
+          "x": -11.201367672777522,
+          "y": -0.3035591658350465
+        },
+        "segment_length": 10.850569762109053,
+        "minimum_segment_length": 5,
+        "angle_degrees": 333.97077459413595,
+        "nearest_allowed_angle_degrees": 315,
+        "angle_deviation_degrees": 18.970774594135946,
+        "angle_tolerance_degrees": 4,
+        "message": ".U1 > .pin54 to net.QSPI_SD2 has a 10.85 mm segment on bottom at 333.97\u00b0, 18.97\u00b0 from the nearest allowed direction (315\u00b0). Prefer a multiple of 45\u00b0 for segments longer than 5 mm (tolerance 4\u00b0)."
+      },
+      {
+        "type": "pcb_trace_style_warning",
+        "pcb_trace_style_warning_id": "pcb_trace_style_warning_source_net_12_0_16_44",
+        "warning_type": "pcb_trace_style_warning",
+        "styling_issue_type": "long_segment_at_odd_angle",
+        "pcb_trace_id": "source_net_12_0",
+        "source_trace_id": "source_trace_93",
+        "subcircuit_id": "subcircuit_source_group_0",
+        "layer": "bottom",
+        "start_route_index": 16,
+        "end_route_index": 44,
+        "segment_start": {
+          "x": -15.176367672777523,
+          "y": 3.9772161365819683
+        },
+        "segment_end": {
+          "x": -8.482085890184187,
+          "y": 5.603215152726487
+        },
+        "center": {
+          "x": -11.829226781480855,
+          "y": 4.790215644654228
+        },
+        "segment_length": 6.88892454489552,
+        "minimum_segment_length": 5,
+        "angle_degrees": 13.652398204578276,
+        "nearest_allowed_angle_degrees": 0,
+        "angle_deviation_degrees": 13.652398204578276,
+        "angle_tolerance_degrees": 4,
+        "message": ".U1 > .pin53 to net.QSPI_SD0 has a 6.89 mm segment on bottom at 13.65\u00b0, 13.65\u00b0 from the nearest allowed direction (0\u00b0). Prefer a multiple of 45\u00b0 for segments longer than 5 mm (tolerance 4\u00b0)."
+      },
+      {
+        "type": "pcb_trace_style_warning",
+        "pcb_trace_style_warning_id": "pcb_trace_style_warning_source_net_2_0_22_52",
+        "warning_type": "pcb_trace_style_warning",
+        "styling_issue_type": "long_segment_at_odd_angle",
+        "pcb_trace_id": "source_net_2_0",
+        "source_trace_id": "source_trace_25",
+        "subcircuit_id": "subcircuit_source_group_0",
+        "layer": "bottom",
+        "start_route_index": 22,
+        "end_route_index": 52,
+        "segment_start": {
+          "x": -13.24836498311796,
+          "y": -2.0396458747531234
+        },
+        "segment_end": {
+          "x": -6.326367672777523,
+          "y": -3.0166755788789534
+        },
+        "center": {
+          "x": -9.787366327947742,
+          "y": -2.528160726816038
+        },
+        "segment_length": 6.990610403040958,
+        "minimum_segment_length": 5,
+        "angle_degrees": 351.96585922192145,
+        "nearest_allowed_angle_degrees": 0,
+        "angle_deviation_degrees": 8.034140778078552,
+        "angle_tolerance_degrees": 4,
+        "message": ".U1 > .pin18 to net.IN2 has a 6.99 mm segment on bottom at 351.97\u00b0, 8.03\u00b0 from the nearest allowed direction (0\u00b0). Prefer a multiple of 45\u00b0 for segments longer than 5 mm (tolerance 4\u00b0)."
+      }
+    ]
+  },
+  "converted": {
+    "traces": 118,
+    "connections": 29,
+    "layerCount": 2
+  },
+  "error": "Error: Pipeline 11 simplification introduced DRC errors (pcb_trace_error: 0 -> 34)",
+  "observedProbeWallMs": 907.7379703521729,
+  "observedProbeWallMethod": "Original receipt write mtime minus startedAt before this annotation; coarse wall interval, not isolated solver time.",
+  "solver": {
+    "status": "rejected",
+    "error": "Error: Pipeline 11 simplification introduced DRC errors (pcb_trace_error: 0 -> 34)",
+    "ms": null,
+    "note": "Native exception occurred inside the cleanup step before isolated solver duration assignment; no output/candidate exists."
+  },
+  "candidate": null,
+  "originalJobUnchanged": true,
+  "note": "Native Pipeline11 validator rejected an increase in pcb_trace_error from0 to34. No candidate generated or integrated; accepted job retains6native style warnings."
+}

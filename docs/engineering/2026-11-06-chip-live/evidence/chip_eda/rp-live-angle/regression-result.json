@@ -1,0 +1,21 @@
+{
+  "sourceJobId": "c78fa2da-cfdc-487b-9b2f-9bf2b5044a6c",
+  "sourcePart": {
+    "ref": "SW3",
+    "instance": "button",
+    "lcsc": "C4944967",
+    "mpn": "TL6340AF160Q",
+    "catalogReceipt": "sha256:5cac0bf1c7ae18b6773c71e6fc1d2d0b52c276a0a869fce015d2e9c472db8b77"
+  },
+  "fixture": "tests/agent-fixtures/live-rp2040-angle-footprint.json",
+  "fixtureFileSha256": "053c0541ce90def1944843b4252ae5a343427f6ab7b936eda7a76f11b8b52e27",
+  "targetedTests": {
+    "tests": 18,
+    "pass": 18,
+    "fail": 0,
+    "durationMs": 1381.600644,
+    "newRegressionTests": 3,
+    "log": "targeted.tap"
+  },
+  "scope": "Actual captured importer footprint; separate degree parser, all imported rotation aliases and nested rotations; length-unit rejection unchanged."
+}

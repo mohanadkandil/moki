@@ -1,0 +1,33 @@
+{
+  "modelCalls": 0,
+  "allCompiled": true,
+  "cases": [
+    {
+      "sourceJobId": "05e69207-83d3-45b6-a751-b657b2a2e3dc",
+      "status": "done",
+      "compiled": true,
+      "ms": 2348,
+      "board": "pico",
+      "platform": "platformio/raspberrypi@1.20.0",
+      "separateCompileOnly": true
+    },
+    {
+      "sourceJobId": "1f1e315c-44e7-4fc4-af58-8dce62a7adad",
+      "status": "done",
+      "compiled": true,
+      "ms": 2775,
+      "board": "pico",
+      "platform": "platformio/raspberrypi@1.20.0",
+      "separateCompileOnly": true
+    },
+    {
+      "sourceJobId": "4e68bf02-2224-41fd-8269-1f2bcd422f95",
+      "status": "done",
+      "compiled": true,
+      "ms": 2351,
+      "board": "pico",
+      "platform": "platformio/raspberrypi@1.20.0",
+      "separateCompileOnly": true
+    }
+  ]
+}

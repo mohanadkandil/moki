@@ -1,0 +1,32 @@
+{
+  "ok": true,
+  "by": "independent engineering reviewer /root/review_models",
+  "inputHash": "a80a4ffc3c0218d32d59b81dd85f43bb29b95f7de9782b2307302b5b9d934aa1",
+  "findings": [
+    {
+      "status": "pass",
+      "scope": "pre-layout electrical review",
+      "message": "RP2040 supply/core-regulator, QSPI flash, 12MHz crystal, RUN/BOOTSEL, USB and physical pin mappings agree with the recorded manufacturer references. GP14/GP15 are PWM-capable physical pins17/18 and connect to DRV8833 AIN1/AIN2. Current exact plan ERC and power gates pass."
+    },
+    {
+      "status": "pass",
+      "scope": "single bridge A adaptation",
+      "message": "DRV8833PWPR physical pin map, exposed-ground pad, VCP-to-VM 10nF, VINT-to-ground 2.2uF, VM bypass/bulk, 47k sleep pull-up, 0.51ohm sense resistor and unused bridge-B terminations are consistent with TI pages3-11. The cited page15 Figure10 is explicitly a layout reference rather than a claim to reproduce the parallel-bridge application circuit."
+    },
+    {
+      "status": "condition",
+      "scope": "qualified supply and external motor",
+      "message": "Approval applies only to the declared known5V/1.5A USB-source state and bounded author load reservations. External motor startup/stall, regeneration/braking, effective capacitor values, thermal behavior and hardware performance remain unqualified. The current-limit tolerance and blanking interval are not a hard instantaneous motor-current guarantee."
+    },
+    {
+      "status": "condition",
+      "scope": "downstream gates",
+      "message": "This receipt permits layout evaluation only. It does not attest native placement/routing/DRC, copper continuity, USB impedance/return path, clock startup, manufacturing or hardware. Firmware compilation is a separate gate; schematicHash excludes app source and board dimensions."
+    },
+    {
+      "status": "pass",
+      "scope": "immutable revision2 amendment",
+      "message": "Exact v1-to-v2 comparison changes only version/hash, RP crystal loadCapacitancePf10 from actual Abracon specification, and motor omitImportedVias with TI correction citation. All electrical nets, values, part identities and pin maps are unchanged. Imported motor geometry contains17 SMT lands plus4 optional vias; nativePart removes only via elements, and supplied routing-disabled diagnostic retains all17 native lands including PowerPAD. This does not qualify the resulting thermal design or native routing."
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+TAP version 13
+# Subtest: actual six-block30-part device packs missing anchors inside explicit70x80 and80x90 before legalization
+ok 1 - actual six-block30-part device packs missing anchors inside explicit70x80 and80x90 before legalization
+  ---
+  duration_ms: 113.387955
+  type: 'test'
+  ...
+# Subtest: absent board produces a compact rounded board with unchanged input and deterministic anchors
+ok 2 - absent board produces a compact rounded board with unchanged input and deterministic anchors
+  ---
+  duration_ms: 288.479527
+  type: 'test'
+  ...
+# Subtest: explicit maker anchors and board radius remain exact while only missing anchors are packed
+ok 3 - explicit maker anchors and board radius remain exact while only missing anchors are packed
+  ---
+  duration_ms: 9.922759
+  type: 'test'
+  ...
+# Subtest: an impossible explicit board reports actual envelope sizes and never silently grows
+ok 4 - an impossible explicit board reports actual envelope sizes and never silently grows
+  ---
+  duration_ms: 4.24193
+  type: 'test'
+  ...
+# Subtest: confirmed board size limits constrain automatic packing without modifying requirements
+ok 5 - confirmed board size limits constrain automatic packing without modifying requirements
+  ---
+  duration_ms: 48.241897
+  type: 'test'
+  ...
+# Subtest: declared empty antenna space is reserved independently of physical footprints
+ok 6 - declared empty antenna space is reserved independently of physical footprints
+  ---
+  duration_ms: 4.300651
+  type: 'test'
+  ...
+# Subtest: actual live55x40RP plan rotates the MCU section and reduces only optional reserve, preserving board and electrical data
+ok 7 - actual live55x40RP plan rotates the MCU section and reduces only optional reserve, preserving board and electrical data
+  ---
+  duration_ms: 63.182435
+  type: 'test'
+  ...
+# Subtest: invalid actual geometry and off-board explicit anchors reject instead of guessing footprints or moving the anchor
+ok 8 - invalid actual geometry and off-board explicit anchors reject instead of guessing footprints or moving the anchor
+  ---
+  duration_ms: 9.015308
+  type: 'test'
+  ...
+# Subtest: live RP2040 SW3 uses the real TL6340AF160Q imported 180deg footprint
+ok 9 - live RP2040 SW3 uses the real TL6340AF160Q imported 180deg footprint
+  ---
+  duration_ms: 5.246183
+  type: 'test'
+  ...
+# Subtest: every imported rotation spelling accepts only finite numbers or degree-unit strings
+ok 10 - every imported rotation spelling accepts only finite numbers or degree-unit strings
+  ---
+  duration_ms: 4.602855
+  type: 'test'
+  ...
+# Subtest: nested footprint rotations compose in degrees while dimensions keep their strict length parser
+ok 11 - nested footprint rotations compose in degrees while dimensions keep their strict length parser
+  ---
+  duration_ms: 0.920731
+  type: 'test'
+  ...
+# Subtest: passive legalization is deterministic, preserves fixed anchors/object identities and never mutates author data
+ok 12 - passive legalization is deterministic, preserves fixed anchors/object identities and never mutates author data
+  ---
+  duration_ms: 13.253278
+  type: 'test'
+  ...
+# Subtest: all secondary ICs are placed before bypass, and distance uses their actual final world origin
+ok 13 - all secondary ICs are placed before bypass, and distance uses their actual final world origin
+  ---
+  duration_ms: 12.929635
+  type: 'test'
+  ...
+# Subtest: secondary connector orientation is preserved even when its designator begins with C
+ok 14 - secondary connector orientation is preserved even when its designator begins with C
+  ---
+  duration_ms: 1.724061
+  type: 'test'
+  ...
+# Subtest: transformed keepouts exclude only named parts in their own block
+ok 15 - transformed keepouts exclude only named parts in their own block
+  ---
+  duration_ms: 1.845382
+  type: 'test'
+  ...
+# Subtest: explicit rounded board bounds and impossible fixed-anchor packing fail without moving anchors
+ok 16 - explicit rounded board bounds and impossible fixed-anchor packing fail without moving anchors
+  ---
+  duration_ms: 35.746387
+  type: 'test'
+  ...
+# Subtest: strict decoupling rejects physically impossible courtyard-to-origin bound instead of relaxing it
+ok 17 - strict decoupling rejects physically impossible courtyard-to-origin bound instead of relaxing it
+  ---
+  duration_ms: 0.729009
+  type: 'test'
+  ...
+# Subtest: converted footprint data formats preserve off-center courtyard/pad bounds and units
+ok 18 - converted footprint data formats preserve off-center courtyard/pad bounds and units
+  ---
+  duration_ms: 2.202267
+  type: 'test'
+  ...
+# Subtest: captured failed 52-part native geometry exposes v1 impossible3mm policy and legalizes explicit4mm revision
+ok 19 - captured failed 52-part native geometry exposes v1 impossible3mm policy and legalizes explicit4mm revision
+  ---
+  duration_ms: 103.339315
+  type: 'test'
+  ...
+1..19
+# tests 19
+# suites 0
+# pass 19
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1484.366419

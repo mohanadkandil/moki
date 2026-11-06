@@ -1,0 +1,45 @@
+{
+  "reviewer": "/root/final_review",
+  "at": "2026-11-06T11:02:37.267262+00:00",
+  "verdict": "pass within private clearance caller and default immutable diagnostic scope; no actionable finding",
+  "scope": [
+    "Private clearance-floor dependency, explicit actual-board validation and fixed .127 loader option",
+    "Default immutable verification diagnostic failure/cancellation behavior"
+  ],
+  "filesAtReceipt": {
+    "eda/blocks/build.ts": "97ef6a3154c5206ea90d16cd9ebea044b64e835d6b471b69c0f289c421f35951",
+    "eda/blocks/router.ts": "da2184d0760737c41120ee084068458f7455cbe7c7fbb833639d47c58312b25b",
+    "tests/blocks-native-clearance-caller.test.ts": "776cdbb32137875a2b1bca6bdd1a44648769593659e9985dd9104d2b019b3565",
+    "tests/blocks-router-preload-diagnostics.test.ts": "b82d5d539e7b145888a439a4ecb1303da6c28bba53dbba69d1cd7365f7058385"
+  },
+  "checks": {
+    "newPureBoundaryTests": {
+      "passed": 4,
+      "failed": 0,
+      "durationMs": 1748.680811
+    },
+    "selectedRootNoPublishRegression": {
+      "passed": 1,
+      "failed": 0,
+      "durationMs": 1494.57319
+    },
+    "strictNewTestsTypecheck": "pass exit0 zero diagnostics",
+    "fullBuildRouterTypecheck": "deferred while root integrates separately scoped optional clock-refinement caller; transient field/type errors were reported, not treated as final",
+    "nativeSolverIterations": 0,
+    "routingJobRun": false,
+    "wholeBoardOracleRun": false
+  },
+  "verified": [
+    "Floor flag requires native owner guard and the existing known-RP private diagnostic dependency chain. Actual callback checks exactly one pcb_board and both numeric trace-pad and pad-pad values exactly0.127; absent, duplicate, malformed, lower or higher declared rules reject.",
+    "Actual guard precedes locking/planning/native construction. Default disabled flag does not introduce this assertion.",
+    "Exact loader call supplies clearanceFloorMm:0.127 only when the private flag is enabled; no owner guard means no loader invocation. Helper implementation itself remains under RP independent review.",
+    "Rejected native getters are captured best-effort before original verification error is rethrown. Writer failure does not replace the original error or run capture/width/completion.",
+    "Stop during rejected-evidence await rejects pending run and suppresses late original error/completion events.",
+    "New refined-helper controlledRequire dependency is included in this reviewer test harness; default immutable behavior remains covered."
+  ],
+  "limits": [
+    "Optional refined-clock helper/caller are a new separate in-progress scope, not approved by this receipt.",
+    "No native routing improvement or fabrication/hardware acceptance is claimed.",
+    "No build/router code was changed for this review; only focused test files added."
+  ]
+}

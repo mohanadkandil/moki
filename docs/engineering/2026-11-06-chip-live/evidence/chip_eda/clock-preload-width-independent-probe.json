@@ -1,0 +1,21 @@
+{
+  "scope": "Actual five clock records passed through production width wrapper with fake public native stage; no native solver or routing.",
+  "sourceSha256": "1187bf1c2f02a194457a57b3fcbabe46e0268b8b12ed1e5df1c781e3eb0b018a",
+  "fixedTraceIds": [
+    "DERIVED_CONFORMING",
+    "saved_phase_null_0_0",
+    "saved_phase_null_0_1",
+    "saved_phase_null_0_2",
+    "saved_phase_null_0_3",
+    "saved_phase_null_0_4"
+  ],
+  "mutableTraceIds": [
+    "DERIVED_THIN"
+  ],
+  "inputUnchanged": true,
+  "returnedOnlyNewTraces": true,
+  "primaryFixedTraceSemantics": {
+    "source": "@tscircuit/capacity-autorouter pinned source map, power-trace-expander/src/SpatialObstacleIndex.ts",
+    "behavior": "fixedTraces supplied to createTraceItems(...,true), indexedTraceIndex=undefined; fixed copper is indexed as static obstacles"
+  }
+}

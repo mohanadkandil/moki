@@ -1,0 +1,29 @@
+{
+  "lcsc": "C1589",
+  "mpn": "CL10B103KB8NNNC",
+  "manufacturer": "SAMSUNG(三星)",
+  "package": "C0603",
+  "description": "10nF (103) ±10% 50V",
+  "stock": 300,
+  "catalogReceipt": "sha256:e675c6e5bfc4330b0e0edb2e6b823abda5fbd739805555b3eec937e6caca8899",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "1d208b5ef0fc2ce3ad07bf6469005d11c47839ef776418e8d913b2d1efd126d3",
+  "footprintSha256": "c6961a0f3ecb855bedad17ad6397d458e8feacb3ac83cd2b5e6b49c83a9c4338",
+  "pins": [
+    {
+      "pad": "1",
+      "labels": [
+        "1"
+      ]
+    },
+    {
+      "pad": "2",
+      "labels": [
+        "2"
+      ]
+    }
+  ],
+  "models": [],
+  "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL10B103KB8NNNC_C1589.pdf",
+  "datasheetReceipt": "sha256:2df2c3dba0f57e42f130be4bf6eb4b0c964b15fefa8fd3b9e66c6ca92e4ccb00"
+}

@@ -1,0 +1,42 @@
+{
+  "kind": "verbatim fully routed native Circuit JSON captured before pour after409s native solver; source proof failed before original pour",
+  "jobId": "134193af-e7d3-4376-8a28-1979f18628bd",
+  "files": [
+    {
+      "file": "pre-pour-circuit.json",
+      "source": "var/board-jobs-test-chip/134193af-e7d3-4376-8a28-1979f18628bd/pre-pour-circuit.json",
+      "sha256": "378be249db8c7e96c53074fa0fbf8f2945019026698093941e4c831ed0cac483",
+      "bytes": 855288
+    },
+    {
+      "file": "plan-graph.json",
+      "source": "var/board-jobs-test-chip/134193af-e7d3-4376-8a28-1979f18628bd/plan-graph.json",
+      "sha256": "0bd92bb61371b0994ef9285be99ae6700d7165db37790dde1e5bef8edd2751a5",
+      "bytes": 4375775
+    },
+    {
+      "file": "import-map.json",
+      "source": "var/board-jobs-test-chip/134193af-e7d3-4376-8a28-1979f18628bd/import-map.json",
+      "sha256": "3a03e16607ff65a6fc8e87c08eec1e9700244e29618fadd33cbbc61d0c96c8e3",
+      "bytes": 26264
+    },
+    {
+      "file": "native-exit-phase.json",
+      "source": "var/board-jobs-test-chip/134193af-e7d3-4376-8a28-1979f18628bd/native-exit-phase.json",
+      "sha256": "39c95e6070df951020e1a8a210823ef7fc75722f558e04300224e81a424264fe",
+      "bytes": 63695
+    },
+    {
+      "file": "router-input.json",
+      "source": "var/board-jobs-test-chip/134193af-e7d3-4376-8a28-1979f18628bd/router-input.json",
+      "sha256": "b5957359e3854300b4950cd2caf0930f30474acdd13d7ae67eb4cdc2e3627db1",
+      "bytes": 556436
+    },
+    {
+      "file": "clock-phase.json",
+      "source": "var/board-jobs-test-chip/134193af-e7d3-4376-8a28-1979f18628bd/clock-phase.json",
+      "sha256": "4a6f57321452a628e83e84c1fc4d83608ce0567b7f86089b62b18c11c71d937d",
+      "bytes": 7182
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema": "moki.independent-routing-frame-review/1",
+  "reviewer": "gnd_escape",
+  "at": "2026-11-06T08:55:35.734799+00:00",
+  "verdict": "no-actionable-findings-in-scoped-frozen-helper-and-private-integration",
+  "reviewedSourceHashes": {
+    "eda/blocks/routing-frame.ts": "223194ea19366021490945764e0444a09b852b24f0ccd86e2d6da37c4c584966",
+    "eda/blocks/router.ts": "b9741935ee8276cbafdda380761d31efdd9050876ea5d2b92c43f3d5f855ecfe",
+    "eda/blocks/build.ts": "bedcee17bd0641b1919fc1eaebef4e0bac8f4172d57d733e63d86efedb4dc69a",
+    "tests/blocks-routing-frame.test.ts": "3cd9adc29527f0effab57938b8c755415acda16afaa689d8b30e2defe3651e01",
+    "tests/blocks-router-adapter.test.ts": "027f58439d0aa069eb11d0349b1530f191b2a2c7d13022f4da9ae4fa80a2ba2e",
+    "server/board-api.ts": "e9755b695c99db76338fd0b0f5b335c32f9d5550c729777eda5f2031e2b6a92d",
+    "src/board/process.ts": "321444cd7e529b5f9a6d1ddda724c0d8c373f8f0012d0998b7c08ff78a66cbe3"
+  },
+  "scope": [
+    "Exact-cardinal SRJ input frame transform and output inverse",
+    "Intrinsic-angle versus absent-angle obstacle dimensions",
+    "Undefined optional JS fields and defined unknown geometry rejection",
+    "Root private CLI and explicit native/physical frame evidence",
+    "Completion/stop/error protocol and inverse-before-width/materialization"
+  ],
+  "validation": {
+    "pureTests": {
+      "passed": 16,
+      "failed": 0,
+      "durationMs": 1451.295359
+    },
+    "strictTypeScript": "pass; strict+noUncheckedIndexedAccess,bundler module resolution",
+    "independentPhysicalCases": 2175,
+    "independentCliInvalidCases": 5,
+    "independentHttpFrameFieldsRejected": 5,
+    "workerFrameEnvInputsExcluded": true,
+    "independentProbe": "routing-frame-independent-probe.{mts,json}"
+  },
+  "reviewedInvariants": [
+    "Only exact cardinal x/y sign/swap operations; width,layer,source,net,via and marker identities preserved",
+    "Angle-present obstacles keep intrinsic dimensions and rotate angle; absent/undefined-angle obstacles swap world dimensions on odd quarters",
+    "Physical corner/ellipse sample sets for723actual obstacles plus asymmetric oval/undefined-angle derived controls match rigidly rotated original shapes",
+    "Unknown defined constraints/geometry reject; undefined optional JS values remain semantically JSON-absent and input unmutated",
+    "Root nonzero frame requires knownRP and private native-pad-escape CLI flag; malformed/duplicate frame values reject",
+    "No public HTTP field or worker environment option exposes frame selection; default quarter0 retains native default path",
+    "Actual native input is explicit router-native-frame.json artifact; physical router-input/routingAudit is marked normalized with coordinateFrame/nativeInputArtifact metadata",
+    "Raw native traces invert before native-before-width capture,hardwidth repair,completion event and Core materialization",
+    "Core actual source reads synchronous output only after completion; cancellation suppresses late completion/error; native/diagnostic failures retain original error",
+    "Full native DRC,source,all-net physical/fabrication/compile gates remain mandatory"
+  ],
+  "findings": [],
+  "limits": [
+    "Pure source/captured-data and mock adapter review only; no native routing,render,compile or server started",
+    "No routing success or full-board acceptance claim for currently running q3 job",
+    "Private native-pad-escape profile strategy itself is outside this coordinate-transform review"
+  ],
+  "sourceEditsPerformed": false
+}

@@ -1,0 +1,47 @@
+{
+  "schema": "moki.scoped-review/1",
+  "reviewer": "edit_geometry",
+  "authorReviewed": "root",
+  "scope": [
+    "C50506 exact display/reel MPN alias",
+    "S3v2 immutable application ports and tool projection",
+    "ADC/DAC peer direction and GPIO input-only guard"
+  ],
+  "baseline": "Untracked working-tree snapshots; immutable S3v1/v2 comparison",
+  "files": {
+    "src/blocks/catalog.ts": "432d72bbb90290eab4fde352acc100415dfd4859e88b099f2f2449bfc23f4de5",
+    "src/blocks/erc.ts": "684ef5e1f7276ee7bd295a23d65789e09514c2fa46a78c8a86751c2e2d994d5b",
+    "src/blocks/data/seed.json": "39068e0a51872546a36253b1c998572396c21e3aea0c9bf5a76994d15b7b51f4",
+    "src/agents/chip.ts": "a6727bda101335ddf11d77955b50c2e72dc65582f0d1bbabd0d9c508fb1c3a3a",
+    "src/blocks/library.ts": "fa84d2a1f7843c85d60d27e42fbbb7ebfd4dca00bd9546ffa324895924800360",
+    "eda/blocks/generate-mcu-ports.ts": "c4b0fa8474aac103e675a4c412d0e86a1faf02e8cf6882cc5d899168b6b856cc",
+    "tests/blocks-catalog.test.ts": "ae7f28844adae6567de3824c875dcdc5e36ba5cd0ede6118744a8255c91b3eec",
+    "tests/blocks-mcu-ports.test.ts": "830c1fca9b8c3c51c527135f80e87080fd999e95b68ec8fb6287ce6d3d44f641",
+    "tests/blocks-erc.test.ts": "2aeef8654a43af375b632e3d4b452e05c4a02ac058b581b081f040d229163c75",
+    "tests/blocks-analog-direction-review.test.ts": "e6e477911abe9449ebaa4f58e6f44ca089ebd5a38b91c66ad1c47dd6173b262c"
+  },
+  "findings": [
+    {
+      "priority": "P2",
+      "rule": "adc-cannot-drive-analog-consumer",
+      "status": "fixed-and-retested",
+      "test": "tests/blocks-analog-direction-review.test.ts",
+      "cases": 4
+    }
+  ],
+  "acceptance": {
+    "combinedTests": {
+      "pass": 73,
+      "fail": 0,
+      "skip": 0,
+      "durationMs": 650.541535
+    },
+    "targetedStrictTypeScript": "pass",
+    "nativeRun": false
+  },
+  "limits": [
+    "Not a review of self-authored motor block",
+    "No native layout, firmware or hardware proof",
+    "Scoped source reads, not a complete audit of agent/server/catalog"
+  ]
+}

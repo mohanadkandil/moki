@@ -1,0 +1,35 @@
+{
+  "provenance": "Verbatim actual fresh core materialization, native-width-refined cache replay, before pours; no native render run by reviewer.",
+  "artifacts": [
+    {
+      "source": "var/board-jobs-test-chip/a81367d2-ae01-4908-b81e-c52b4398c9d6/pre-pour-circuit.json",
+      "file": "pre-pour-circuit.json",
+      "bytes": 852607,
+      "sha256": "6b723deae5b0a7e4109c715e7cecb9d39bf30f218402664f7b8eb3a5269834a5"
+    },
+    {
+      "source": "var/board-jobs-test-chip/a81367d2-ae01-4908-b81e-c52b4398c9d6/plan-graph.json",
+      "file": "plan-graph.json",
+      "bytes": 4375775,
+      "sha256": "0bd92bb61371b0994ef9285be99ae6700d7165db37790dde1e5bef8edd2751a5"
+    },
+    {
+      "source": "var/board-jobs-test-chip/a81367d2-ae01-4908-b81e-c52b4398c9d6/import-map.json",
+      "file": "import-map.json",
+      "bytes": 26264,
+      "sha256": "3a03e16607ff65a6fc8e87c08eec1e9700244e29618fadd33cbbc61d0c96c8e3"
+    },
+    {
+      "source": "var/board-jobs-test-chip/a81367d2-ae01-4908-b81e-c52b4398c9d6/native-exit-phase.json",
+      "file": "native-exit-phase.json",
+      "bytes": 63695,
+      "sha256": "39c95e6070df951020e1a8a210823ef7fc75722f558e04300224e81a424264fe"
+    },
+    {
+      "source": "var/board-jobs-test-chip/a81367d2-ae01-4908-b81e-c52b4398c9d6/router-input.json",
+      "file": "router-input.json",
+      "bytes": 556436,
+      "sha256": "b5957359e3854300b4950cd2caf0930f30474acdd13d7ae67eb4cdc2e3627db1"
+    }
+  ]
+}

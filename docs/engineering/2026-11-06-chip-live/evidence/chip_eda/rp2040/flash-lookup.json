@@ -1,0 +1,49 @@
+[
+  {
+    "lcsc": "C131025",
+    "mpn": "W25Q16JVSSIQ",
+    "manufacturer": "Winbond Elec",
+    "package": "SOIC-8-208mil",
+    "description": "-40℃~+85℃ 100,000 cycles 10uA 133MHz 16Mbit 2.7V~3.6V 20 Years 3ms SPI SOIC-8-208mil NOR FLASH ROHS",
+    "stock": 25568,
+    "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2103181405_Winbond-Elec-W25Q16JVSSIQ_C131025.pdf",
+    "catalogReceipt": "sha256:33c3094350fa66c4f2ca7c364f01c3d82c97295918d2c45580b328ad60f208ea"
+  },
+  {
+    "lcsc": "C82317",
+    "mpn": "W25Q16JVSSIQ",
+    "manufacturer": "Winbond Elec",
+    "package": "SOIC-8-208mil",
+    "description": "-40℃~+85℃ 100,000 cycles 10uA 133MHz 16Mbit 2.7V~3.6V 20 Years 3ms SPI SOIC-8-208mil NOR FLASH ROHS",
+    "stock": 0,
+    "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121543_Winbond-Elec-W25Q16JVSSIQ_C82317.pdf",
+    "catalogReceipt": "sha256:33c3094350fa66c4f2ca7c364f01c3d82c97295918d2c45580b328ad60f208ea"
+  },
+  {
+    "lcsc": "C9900163778",
+    "mpn": "W25Q16JVSSIQT",
+    "manufacturer": "JLCPCB Assembly",
+    "package": "SOP-8",
+    "description": "SOP-8 SMT ROHS",
+    "stock": 0,
+    "catalogReceipt": "sha256:33c3094350fa66c4f2ca7c364f01c3d82c97295918d2c45580b328ad60f208ea"
+  },
+  {
+    "lcsc": "C131375",
+    "mpn": "W25Q16JVSSIQTR",
+    "manufacturer": "Winbond Elec",
+    "package": "SOIC-8-208MIL",
+    "description": "SOIC-8 New Arrivals ROHS",
+    "stock": 0,
+    "catalogReceipt": "sha256:33c3094350fa66c4f2ca7c364f01c3d82c97295918d2c45580b328ad60f208ea"
+  },
+  {
+    "lcsc": "C32841740",
+    "mpn": "W25Q16JVSSIQ/TUBE",
+    "manufacturer": "Winbond Elec",
+    "package": "-",
+    "description": "- Lack of specifications ROHS",
+    "stock": 0,
+    "catalogReceipt": "sha256:33c3094350fa66c4f2ca7c364f01c3d82c97295918d2c45580b328ad60f208ea"
+  }
+]

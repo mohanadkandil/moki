@@ -1,0 +1,114 @@
+{
+ "at": "2026-11-06T07:37:39.397Z",
+ "scripted": "Model calls scripted, firmware hand-written; every other stage real.",
+ "outcome": "built",
+ "wallMs": 36713,
+ "job": [
+  {
+   "type": "job-result",
+   "jobId": "23ff84d6-dc91-4923-bc6d-567ebcc234ff",
+   "attempt": 1,
+   "status": "done",
+   "ok": true,
+   "drcErrors": 0,
+   "compile": "compiled",
+   "caseOk": true,
+   "pipelineMs": 25282,
+   "problems": []
+  }
+ ],
+ "verify": [
+  {
+   "type": "verify",
+   "ok": true,
+   "results": [
+    {
+     "id": "led",
+     "status": "pass",
+     "measured": "led",
+     "target": "led",
+     "evidence": "Declared interface led is present",
+     "plain": "Has an LED"
+    },
+    {
+     "id": "knob",
+     "status": "pass",
+     "measured": "knob",
+     "target": "knob",
+     "evidence": "Declared interface knob is present",
+     "plain": "Has a knob"
+    },
+    {
+     "id": "button",
+     "status": "pass",
+     "measured": "button",
+     "target": "button",
+     "evidence": "Declared interface button is present",
+     "plain": "Has a push button"
+    },
+    {
+     "id": "display",
+     "status": "pass",
+     "measured": "display",
+     "target": "display",
+     "evidence": "Declared interface display is present",
+     "plain": "Has a screen"
+    },
+    {
+     "id": "buzzer",
+     "status": "pass",
+     "measured": "buzzer",
+     "target": "buzzer",
+     "evidence": "Declared interface buzzer is present",
+     "plain": "Has a buzzer"
+    }
+   ]
+  },
+  {
+   "type": "verify",
+   "ok": true,
+   "results": [
+    {
+     "id": "led",
+     "status": "pass",
+     "measured": "led",
+     "target": "led",
+     "evidence": "Declared interface led is present",
+     "plain": "Has an LED"
+    },
+    {
+     "id": "knob",
+     "status": "pass",
+     "measured": "knob",
+     "target": "knob",
+     "evidence": "Declared interface knob is present",
+     "plain": "Has a knob"
+    },
+    {
+     "id": "button",
+     "status": "pass",
+     "measured": "button",
+     "target": "button",
+     "evidence": "Declared interface button is present",
+     "plain": "Has a push button"
+    },
+    {
+     "id": "display",
+     "status": "pass",
+     "measured": "display",
+     "target": "display",
+     "evidence": "Declared interface display is present",
+     "plain": "Has a screen"
+    },
+    {
+     "id": "buzzer",
+     "status": "pass",
+     "measured": "buzzer",
+     "target": "buzzer",
+     "evidence": "Declared interface buzzer is present",
+     "plain": "Has a buzzer"
+    }
+   ]
+  }
+ ]
+}

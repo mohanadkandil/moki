@@ -1,0 +1,31 @@
+{
+  "name": "firmware-compile",
+  "status": "done",
+  "ms": 2348,
+  "note": "Compile checked for rp2040; no physical flash.",
+  "compiled": true,
+  "board": "pico",
+  "platform": "platformio/raspberrypi@1.20.0",
+  "host": "linux-arm64",
+  "toolVersions": {
+    "platformio": "PlatformIO Core, version 6.1.19",
+    "framework-arduino-mbed": "4.6.0",
+    "tool-rp2040tools": "1.0.2",
+    "toolchain-gccarmnoneeabi": "1.100301.220327 (10.3.1)"
+  },
+  "flash": {
+    "percent": 0.2,
+    "usedBytes": 4650,
+    "totalBytes": 2097152
+  },
+  "ram": {
+    "percent": 15.1,
+    "usedBytes": 40760,
+    "totalBytes": 270336
+  },
+  "exitCode": 0,
+  "logTail": "********************************************************************************\nIf you like PlatformIO, please:\n- star it on GitHub > https://github.com/platformio/platformio-core\n- follow us on LinkedIn to stay up-to-date on the latest project news > https://www.linkedin.com/company/platformio/\n- try PlatformIO IDE for embedded development > https://platformio.org/platformio-ide\n********************************************************************************\n\nProcessing rp2040 (platform: platformio/raspberrypi@1.20.0; board: pico; framework: arduino)\n--------------------------------------------------------------------------------\nVerbose mode can be enabled via `-v, --verbose` option\nCONFIGURATION: https://docs.platformio.org/page/boards/raspberrypi/pico.html\nPLATFORM: Raspberry Pi RP2040 (1.20.0) > Raspberry Pi Pico\nHARDWARE: RP2040 133MHz, 264KB RAM, 2MB Flash\nDEBUG: Current (cmsis-dap) External (cmsis-dap, jlink, raspberrypi-swd)\nPACKAGES: \n - framework-arduino-mbed @ 4.6.0 \n - tool-rp2040tools @ 1.0.2 \n - toolchain-gccarmnoneeabi @ 1.100301.220327 (10.3.1)\nLDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf\nLDF Modes: Finder ~ chain, Compatibility ~ soft\nFound 41 compatible libraries\nScanning dependencies...\nNo dependencies\nBuilding in release mode\nRetrieved `.pio/build/rp2040/src/main.cpp.o' from cache\nRetrieved `.pio/build/rp2040/cpp.linker_script.ld' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduinoVariant/double_tap_usb_boot.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduinoVariant/variant.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/Interrupts.cpp.o' from cache\nRetrieved `.pio/build/rp2040/libFrameworkArduinoVariant.a' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/Serial.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/Tone.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/USB/PluggableUSBDevice.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/USB/USBCDC.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/USB/USBSerial.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/WMath.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/abi.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/api/CanMsg.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/api/CanMsgRingbuffer.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/api/Common.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/api/IPAddress.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/api/PluggableUSB.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/api/Print.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/api/Stream.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/api/String.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/arm_hal_random.c.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/as_mbed_library/variant.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/itoa.c.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/main.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/mbed/platform/cxxsupport/mstd_mutex.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/pinToIndex.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/random_seed.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/timer.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/wiring.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/wiring_analog.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/wiring_digital.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/wiring_pulse.cpp.o' from cache\nRetrieved `.pio/build/rp2040/FrameworkArduino/wiring_shift.cpp.o' from cache\nRetrieved `.pio/build/rp2040/libFrameworkArduino.a' from cache\nLinking .pio/build/rp2040/firmware.elf\nGenerating UF2 image\nelf2uf2 \".pio/build/rp2040/firmware.elf\" \".pio/build/rp2040/firmware.uf2\"\nChecking size .pio/build/rp2040/firmware.elf\nAdvanced Memory Usage is available via \"PlatformIO Home > Project Inspect\"\nRAM:   [==        ]  15.1% (used 40760 bytes from 270336 bytes)\nFlash: [          ]   0.2% (used 4650 bytes from 2097152 bytes)\nRetrieved `.pio/build/rp2040/firmware.bin' from cache\n========================= [SUCCESS] Took 1.35 seconds =========================\n",
+  "physicalFlash": false,
+  "environment": "rp2040",
+  "framework": "arduino"
+}

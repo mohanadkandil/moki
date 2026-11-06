@@ -1,0 +1,49 @@
+{
+  "reviewer": "/root/final_review",
+  "at": "2026-11-06T09:57:57.126056+00:00",
+  "verdict": "pass within reviewed private diagnostic scope; no actionable finding",
+  "files": {
+    "eda/blocks/native-owner-guard.ts": "9ba6434f64f345a150dcbde0c2ef6b37cf2117bee055be10c9b1e56d70f761e2",
+    "tests/blocks-native-owner-guard.test.ts": "7f3782af407432ae3e12fa9ef00e3044ac4883354ffe4ea8f3c7a37f236f381a",
+    "eda/blocks/build.ts": "0ed4f227fdc19eb0a85fad68df1ce81e96fe886f8a39a0904bf9cafdc8486e1f",
+    "eda/blocks/router.ts": "460b7922ba1039f80a6123c4aebd56affbf8c447063bf9d29f26e7ef15aedd0e"
+  },
+  "scope": [
+    "Exact pinned SDK source predicate plus both actual runtime endpoint-marker arrows",
+    "Private solver-utils namespace, ESM dependency resolution, immutable cache and audit",
+    "Current private CLI caller/constructor linkage and retained hard gates"
+  ],
+  "checks": {
+    "focusedTests": {
+      "passed": 9,
+      "failed": 0,
+      "durationMs": 11470.049609
+    },
+    "targetedStrictTypecheck": "pass",
+    "nativeSolverIterations": 0,
+    "wholeBoardPhysicalOracleRun": false,
+    "routingJobRun": false
+  },
+  "verified": [
+    "Hash/version pinned official SDK changes exactly one owner predicate plus two counted marker prefixes and one injected structural-owner helper. All remaining SDK behavior bytes remain unchanged after reversing recorded import relocations.",
+    "Structural ownership is unique nonempty source_trace_id with nonempty string arrays for both connected source ports and nets. Duplicate IDs, unknown, malformed and empty owners retain legacy marker behavior; this is not an electrical-validity proof.",
+    "Both actual active marker arrow bodies only use their local PCBtrace list to annotate missing endpoint IDs. The guard filters that list; it does not remove or replace CJ/source/trace/route records or existing markers, including foreign markers.",
+    "Actual complete copied SDK runtime tests expose derived zero/one-physical-port foreign-pad contact while preserving own contacts, free-space same-source T junctions and ambiguous/legacy controls. External root checker remains unmodified and retains separately documented endpoint-inference limitation.",
+    "Official solver-utils two-file source hash pins preserve the registry chunk byte-for-byte in a behavior-keyed private module namespace. Only graphics-debug import is rebased to its explicit original ESM export. Original tscircuit/SDK load first and both original/guarded Pipeline9 constructors coexist at zero iterations.",
+    "Private immutable cache validates file type, symlink and exact prepared bytes; changed SDK version/bytes, dependency entry layout, utility corruption and installed-dependency cache target reject. Installed SDK files stay unchanged.",
+    "Current build requires --native-owner-guard together with known-RP --rp-native-pad-escape and --lock-native-pad-nets. Router rejects guardedPipeline9 with pipeline7 and otherwise selects the supplied constructor. Routing/receipt audit retains complete private provenance.",
+    "Current build retains canonical saved-source proof, all-graph-net physical copper checks on both RP layer counts, all-wire minimum width and native/fabrication checks. Errors still produce nonzero exit; guard flags do not remove checks."
+  ],
+  "limits": [
+    "No native routing trial or whole-board oracle ran for this review; no routability, hardware or fabrication acceptance is established.",
+    "The copy is a private modified native SDK, not unmodified upstream. Provenance must remain explicit.",
+    "Existing foreign markers are deliberately preserved; full actual all-net physical/source gates remain necessary.",
+    "This reviewer authored locked-pads.ts; its independent approval belongs to gnd_escape and is excluded from this verdict."
+  ],
+  "relatedEvidence": [
+    "rp-routing-robust/native-owner-guard-v2-proof.json",
+    "native-owner-guard-independent-review.json",
+    "native-endpoint-inference-probe.json",
+    "locked-pads-independent-review.json"
+  ]
+}

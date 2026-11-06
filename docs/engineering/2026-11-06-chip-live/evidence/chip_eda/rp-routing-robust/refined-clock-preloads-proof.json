@@ -1,0 +1,335 @@
+{
+  "sourceJobId": "0de7e399-e9d5-4a2f-a08d-bdc8e6e34ac7",
+  "helperSha256": "9bceb5e93a199a72ec6a9e9ecf73341a9559dd7d73db5ee39f6738b4d96815a7",
+  "testSha256": "7ec17c6763a6aaa7eebc2b0ef98e352653fa3d4c1f83bb5316e9e1a74d25838d",
+  "fixtureSha256": "f11a995c654ca9d522561f24880d13be2ece032ba1ffae4ffe8a5bcb0d79702a",
+  "coreBundleSha256": "84b771fc46c4cb6cadad3525559555f9d4feab8b2fb2d0a8e7b7fe9a39065b70",
+  "coreStageReplacementFunctionSha256": "f5ef5c04cfdc527c194ac8bf9a487fab52a611fa13a16988b95629650f3f127d",
+  "coreStageReplacementFunction": "function getAccumulatedPcbTracesWithStageOutputReplacements({\n  accumulatedPcbTraces,\n  stageOutputPcbTraces\n}) {\n  const replacedPcbTraceIds = new Set(\n    stageOutputPcbTraces.flatMap((trace) => [\n      trace.pcb_trace_id,\n      ...trace.__replaces_pcb_trace_id ? [trace.__replaces_pcb_trace_id] : []\n    ])\n  );\n  return [\n    ...accumulatedPcbTraces.filter(\n      (trace) => !replacedPcbTraceIds.has(trace.pcb_trace_id)\n    ),\n    ...stageOutputPcbTraces\n  ];\n}",
+  "audit": {
+    "schema": "moki.native-refined-clock-preloads/1",
+    "fixedTraceIds": [
+      "saved_phase_null_0_0",
+      "saved_phase_null_0_1",
+      "saved_phase_null_0_2",
+      "saved_phase_null_0_3",
+      "saved_phase_null_0_4"
+    ],
+    "fixedConnectionNames": [
+      "source_net_5",
+      "source_net_6",
+      "source_net_17"
+    ],
+    "fixedTraceSha256": {
+      "saved_phase_null_0_0": "df472a813c4c3036f6aa3cfe3fd9faa0654d0520bf7b7056118314525cc121f2",
+      "saved_phase_null_0_1": "201b7b44471a8701700c46c7f5b43409442d66cb12d08bea2e45fbd9f3284ffc",
+      "saved_phase_null_0_2": "13722f1eac2f77e3fbe9b685494f710dfc72ac7d268f6d820b8b2421b96701a8",
+      "saved_phase_null_0_3": "23e752dd44d5c6ac4c431b207abd609a5d3e82ea2cac882b63d8d48f2b7b2890",
+      "saved_phase_null_0_4": "a2c9b2ed9b6b0286e763ced09969a99c474d55813254079eee7d817492eed852"
+    },
+    "inputBeforeSha256": "3cfaeaef6b17719b2f56a50429dcbc9d6fa420496fe14aebb74b7d496e77d522",
+    "inputWithPreloadsSha256": "a7288a6af4ea7eea9bf1f5b217c5e8f905034cf19cadb8811caa8b674129e184",
+    "allPreloadedTraceCount": 5,
+    "clockPreloadedTraceCount": 5,
+    "updatedTraceCount": 5,
+    "mutatedTraceCount": 1,
+    "changedClockTraceIds": [
+      "saved_phase_null_0_0"
+    ],
+    "removedReturnedFixedTraceIds": [
+      "saved_phase_null_0_1",
+      "saved_phase_null_0_2",
+      "saved_phase_null_0_3",
+      "saved_phase_null_0_4"
+    ],
+    "acceptedTraceSha256": {
+      "saved_phase_null_0_0": "439f813b59e03d19d767e784fc3037328f796ec6b9064786c35b7807597facff",
+      "saved_phase_null_0_1": "201b7b44471a8701700c46c7f5b43409442d66cb12d08bea2e45fbd9f3284ffc",
+      "saved_phase_null_0_2": "13722f1eac2f77e3fbe9b685494f710dfc72ac7d268f6d820b8b2421b96701a8",
+      "saved_phase_null_0_3": "23e752dd44d5c6ac4c431b207abd609a5d3e82ea2cac882b63d8d48f2b7b2890",
+      "saved_phase_null_0_4": "a2c9b2ed9b6b0286e763ced09969a99c474d55813254079eee7d817492eed852"
+    },
+    "lengthByNetMm": {
+      "source_net_5": 9.848957209751461,
+      "source_net_6": 2.2717249999999996,
+      "source_net_17": 5.640193212182105
+    },
+    "widthMm": 0.15,
+    "layer": "top",
+    "viaCount": 0,
+    "sourceMetadataChanged": false,
+    "endpointsChanged": false,
+    "changes": [
+      {
+        "traceId": "saved_phase_null_0_0",
+        "connectionName": "source_net_5",
+        "beforeSha256": "df472a813c4c3036f6aa3cfe3fd9faa0654d0520bf7b7056118314525cc121f2",
+        "afterSha256": "439f813b59e03d19d767e784fc3037328f796ec6b9064786c35b7807597facff",
+        "beforeLengthMm": 7.394346843954347,
+        "afterLengthMm": 7.3490184491613135,
+        "geometryChanged": true
+      }
+    ]
+  },
+  "acceptedClockTraces": [
+    {
+      "type": "pcb_trace",
+      "pcb_trace_id": "saved_phase_null_0_0",
+      "connection_name": "source_net_5",
+      "connectsTo": [
+        "pcb_port_19",
+        "pcb_port_65",
+        "pcb_port_144"
+      ],
+      "route": [
+        {
+          "route_type": "wire",
+          "x": 1.1750630000000002,
+          "y": 5.400052,
+          "width": 0.15,
+          "layer": "top"
+        },
+        {
+          "route_type": "wire",
+          "x": 1.7999999999999998,
+          "y": 5.400052,
+          "width": 0.15,
+          "layer": "top"
+        },
+        {
+          "route_type": "wire",
+          "x": 1.8305981063290258,
+          "y": 4.8548864984499005,
+          "width": 0.15,
+          "layer": "top"
+        },
+        {
+          "route_type": "wire",
+          "x": 4.097452,
+          "y": 2.47,
+          "width": 0.15,
+          "layer": "top"
+        },
+        {
+          "route_type": "wire",
+          "x": 5.67,
+          "y": 2.47,
+          "width": 0.15,
+          "layer": "top"
+        },
+        {
+          "route_type": "wire",
+          "x": 6.600011,
+          "y": 3.399925999999999,
+          "width": 0.15,
+          "layer": "top"
+        }
+      ],
+      "source_trace_id": "source_trace_76",
+      "subcircuit_id": "subcircuit_source_group_0",
+      "__replaces_pcb_trace_id": "saved_phase_null_0_0"
+    },
+    {
+      "type": "pcb_trace",
+      "pcb_trace_id": "saved_phase_null_0_1",
+      "connection_name": "source_net_5",
+      "connectsTo": [
+        "pcb_port_19",
+        "pcb_port_65",
+        "pcb_port_144"
+      ],
+      "route": [
+        {
+          "route_type": "wire",
+          "x": 5.899975999999999,
+          "y": 0.9999999999999991,
+          "width": 0.15,
+          "layer": "top"
+        },
+        {
+          "route_type": "wire",
+          "x": 6.600011,
+          "y": 3.399925999999999,
+          "width": 0.15,
+          "layer": "top"
+        }
+      ],
+      "source_trace_id": "source_trace_78",
+      "subcircuit_id": "subcircuit_source_group_0"
+    },
+    {
+      "type": "pcb_trace",
+      "pcb_trace_id": "saved_phase_null_0_2",
+      "connection_name": "source_net_6",
+      "connectsTo": [
+        "pcb_port_20",
+        "pcb_port_100"
+      ],
+      "route": [
+        {
+          "route_type": "wire",
+          "x": 1.1750630000000002,
+          "y": 5.799848,
+          "width": 0.15,
+          "layer": "top"
+        },
+        {
+          "route_type": "wire",
+          "x": 1.8499999999999996,
+          "y": 5.799848,
+          "width": 0.15,
+          "layer": "top"
+        },
+        {
+          "route_type": "wire",
+          "x": 1.8499999999999996,
+          "y": 6.246636,
+          "width": 0.15,
+          "layer": "top"
+        },
+        {
+          "route_type": "wire",
+          "x": 3,
+          "y": 6.246636,
+          "width": 0.15,
+          "layer": "top"
+        }
+      ],
+      "source_trace_id": "source_trace_79",
+      "subcircuit_id": "subcircuit_source_group_0"
+    },
+    {
+      "type": "pcb_trace",
+      "pcb_trace_id": "saved_phase_null_0_3",
+      "connection_name": "source_net_17",
+      "connectsTo": [
+        "pcb_port_68",
+        "pcb_port_101",
+        "pcb_port_146"
+      ],
+      "route": [
+        {
+          "route_type": "wire",
+          "x": 3,
+          "y": 7.753364,
+          "width": 0.15,
+          "layer": "top"
+        },
+        {
+          "route_type": "wire",
+          "x": 3,
+          "y": 7.500062999999999,
+          "width": 0.15,
+          "layer": "top"
+        },
+        {
+          "route_type": "wire",
+          "x": 4.899989,
+          "y": 5.600073999999999,
+          "width": 0.15,
+          "layer": "top"
+        }
+      ],
+      "source_trace_id": "source_trace_109",
+      "subcircuit_id": "subcircuit_source_group_0"
+    },
+    {
+      "type": "pcb_trace",
+      "pcb_trace_id": "saved_phase_null_0_4",
+      "connection_name": "source_net_17",
+      "connectsTo": [
+        "pcb_port_68",
+        "pcb_port_101",
+        "pcb_port_146"
+      ],
+      "route": [
+        {
+          "route_type": "wire",
+          "x": 4.9,
+          "y": 8.299976000000001,
+          "width": 0.15,
+          "layer": "top"
+        },
+        {
+          "route_type": "wire",
+          "x": 4.899989,
+          "y": 5.600073999999999,
+          "width": 0.15,
+          "layer": "top"
+        }
+      ],
+      "source_trace_id": "source_trace_110",
+      "subcircuit_id": "subcircuit_source_group_0"
+    }
+  ],
+  "forwardedNativeReplacements": [
+    {
+      "type": "pcb_trace",
+      "pcb_trace_id": "saved_phase_null_0_0",
+      "connection_name": "source_net_5",
+      "connectsTo": [
+        "pcb_port_19",
+        "pcb_port_65",
+        "pcb_port_144"
+      ],
+      "route": [
+        {
+          "route_type": "wire",
+          "x": 1.1750630000000002,
+          "y": 5.400052,
+          "width": 0.15,
+          "layer": "top"
+        },
+        {
+          "route_type": "wire",
+          "x": 1.7999999999999998,
+          "y": 5.400052,
+          "width": 0.15,
+          "layer": "top"
+        },
+        {
+          "route_type": "wire",
+          "x": 1.8305981063290258,
+          "y": 4.8548864984499005,
+          "width": 0.15,
+          "layer": "top"
+        },
+        {
+          "route_type": "wire",
+          "x": 4.097452,
+          "y": 2.47,
+          "width": 0.15,
+          "layer": "top"
+        },
+        {
+          "route_type": "wire",
+          "x": 5.67,
+          "y": 2.47,
+          "width": 0.15,
+          "layer": "top"
+        },
+        {
+          "route_type": "wire",
+          "x": 6.600011,
+          "y": 3.399925999999999,
+          "width": 0.15,
+          "layer": "top"
+        }
+      ],
+      "source_trace_id": "source_trace_76",
+      "subcircuit_id": "subcircuit_source_group_0",
+      "__replaces_pcb_trace_id": "saved_phase_null_0_0"
+    }
+  ],
+  "positiveOutputControl": "Derived by returning literal captured updatedPreloadedTraces; original full native output was not persisted after rejection",
+  "measured": {
+    "focusedTestsPassed": 7,
+    "strictTypecheckPassed": true,
+    "solverIterations": 0
+  },
+  "limits": [
+    "Caller source-profile selection and actual full output forwarding must be reviewed separately",
+    "FinalCore materialization must match acceptedClockTraces by identity/source/literalwireCu",
+    "FullnativeDRC,all-netphysicaloracle,minwidth andallfreshgatesremainmandatory"
+  ]
+}

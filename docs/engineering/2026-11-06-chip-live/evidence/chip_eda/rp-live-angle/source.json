@@ -1,0 +1,9 @@
+{
+  "baseJobId": "c78fa2da-cfdc-487b-9b2f-9bf2b5044a6c",
+  "source": "/home/sogo/design-skill-research/repos/moki/var/board-jobs-app/c78fa2da-cfdc-487b-9b2f-9bf2b5044a6c",
+  "sourcePlanSha256": "3413f7f712488140415225a5fed4b6c5dc2283ca35d63e912f3bd7c7383e31f5",
+  "schematicHash": "e1ad268ce805fb603c88a787588b33c8971192df879998dd15e3a893d71ca78c",
+  "exactOriginalPlan": true,
+  "modelCalls": 0,
+  "timeoutMs": 600000
+}

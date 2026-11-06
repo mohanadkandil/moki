@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-06T02:55:57.543Z",
+  "scripted": "Model calls scripted; every other stage real.",
+  "outcome": "error",
+  "wallMs": 17867,
+  "jobs": [
+    {
+      "type": "job",
+      "jobId": "e0ad14a3-8a23-4ea6-bda7-6fbd16a4b592",
+      "attempt": 1,
+      "baseJobId": null,
+      "label": "ESP32-S3 desk monitor (replay)"
+    },
+    {
+      "type": "job-result",
+      "jobId": "e0ad14a3-8a23-4ea6-bda7-6fbd16a4b592",
+      "attempt": 1,
+      "status": "failed",
+      "ok": false,
+      "drcErrors": 0,
+      "compile": "not-compiled",
+      "caseOk": false,
+      "pipelineMs": 7306,
+      "problems": [
+        "The build failed: Chip EDA failed (exit 1): 20 |  * prove pour contact, thermal spokes, island continuity or plated barrel joins;\n21 |  * the caller must require the independent physical copper gate before acceptance.\n22 |  */\n23 | export function createNativeFanoutPhase(circuit: any[], proposals: readonly NativeFanoutProposal[], options: { topGroundPlane?: boolean; retainGroundExits?: boolean } = {}) {\n24 |   if (",
+        "Compile gate: the firmware wasn’t compiled on this build."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+TAP version 13
+# Subtest: actual six-block30-part device packs missing anchors inside explicit70x80 and80x90 before legalization
+ok 1 - actual six-block30-part device packs missing anchors inside explicit70x80 and80x90 before legalization
+  ---
+  duration_ms: 109.574515
+  type: 'test'
+  ...
+# Subtest: absent board produces a compact rounded board with unchanged input and deterministic anchors
+ok 2 - absent board produces a compact rounded board with unchanged input and deterministic anchors
+  ---
+  duration_ms: 285.949687
+  type: 'test'
+  ...
+# Subtest: explicit maker anchors and board radius remain exact while only missing anchors are packed
+ok 3 - explicit maker anchors and board radius remain exact while only missing anchors are packed
+  ---
+  duration_ms: 10.467521
+  type: 'test'
+  ...
+# Subtest: an impossible explicit board reports actual envelope sizes and never silently grows
+ok 4 - an impossible explicit board reports actual envelope sizes and never silently grows
+  ---
+  duration_ms: 4.315331
+  type: 'test'
+  ...
+# Subtest: confirmed board size limits constrain automatic packing without modifying requirements
+ok 5 - confirmed board size limits constrain automatic packing without modifying requirements
+  ---
+  duration_ms: 48.429483
+  type: 'test'
+  ...
+# Subtest: declared empty antenna space is reserved independently of physical footprints
+ok 6 - declared empty antenna space is reserved independently of physical footprints
+  ---
+  duration_ms: 4.30545
+  type: 'test'
+  ...
+# Subtest: invalid actual geometry and off-board explicit anchors reject instead of guessing footprints or moving the anchor
+ok 7 - invalid actual geometry and off-board explicit anchors reject instead of guessing footprints or moving the anchor
+  ---
+  duration_ms: 11.054849
+  type: 'test'
+  ...
+# Subtest: actual SHT native local paths pass narrow preflight without mutation; default rejects
+ok 8 - actual SHT native local paths pass narrow preflight without mutation; default rejects
+  ---
+  duration_ms: 72.575924
+  type: 'test'
+  ...
+# Subtest: incomplete, duplicate, extra routed and via paths fail closed
+ok 9 - incomplete, duplicate, extra routed and via paths fail closed
+  ---
+  duration_ms: 34.279159
+  type: 'test'
+  ...
+# Subtest: spoofed physical source, pad binding, net and local geometry cannot unlock preflight
+ok 10 - spoofed physical source, pad binding, net and local geometry cannot unlock preflight
+  ---
+  duration_ms: 45.749732
+  type: 'test'
+  ...
+# Subtest: native foreign copper, drills, board edge and keepouts still reject retained hints
+ok 11 - native foreign copper, drills, board edge and keepouts still reject retained hints
+  ---
+  duration_ms: 100.959014
+  type: 'test'
+  ...
+# Subtest: a new exit cannot cross a retained foreign-net footprint trace even when pads are clear
+ok 12 - a new exit cannot cross a retained foreign-net footprint trace even when pads are clear
+  ---
+  duration_ms: 31.126603
+  type: 'test'
+  ...
+# Subtest: actual SHT profile follows cardinal native component transforms
+ok 13 - actual SHT profile follows cardinal native component transforms
+  ---
+  duration_ms: 83.136648
+  type: 'test'
+  ...
+# Subtest: actual dense IC pads produce outward normal stubs, preserving graph widths and immutable inputs
+ok 14 - actual dense IC pads produce outward normal stubs, preserving graph widths and immutable inputs
+  ---
+  duration_ms: 121.22481
+  type: 'test'
+  ...
+# Subtest: central exposed pads, NC pads and unconnected optional pads emit no route but remain geometry
+ok 15 - central exposed pads, NC pads and unconnected optional pads emit no route but remain geometry
+  ---
+  duration_ms: 88.821513
+  type: 'test'
+  ...
+# Subtest: retained full placement obstructions are reported, rather than silently applying partial fanout
+ok 16 - retained full placement obstructions are reported, rather than silently applying partial fanout
+  ---
+  duration_ms: 84.587904
+  type: 'test'
+  ...
+# Subtest: cardinal component rotations are derived from actual pad geometry
+ok 17 - cardinal component rotations are derived from actual pad geometry
+  ---
+  duration_ms: 54.828478
+  type: 'test'
+  ...
+# Subtest: board boundary and same-layer keepouts reject a swept exit; opposite-layer keepout does not
+ok 18 - board boundary and same-layer keepouts reject a swept exit; opposite-layer keepout does not
+  ---
+  duration_ms: 149.964304
+  type: 'test'
+  ...
+# Subtest: individually clear component exits still reject crossings with other proposed stubs
+ok 19 - individually clear component exits still reject crossings with other proposed stubs
+  ---
+  duration_ms: 47.747036
+  type: 'test'
+  ...
+# Subtest: wrong physical mapping, arbitrary rotation and unsupported copper fail closed
+ok 20 - wrong physical mapping, arbitrary rotation and unsupported copper fail closed
+  ---
+  duration_ms: 74.119582
+  type: 'test'
+  ...
+# Subtest: missing, unknown and malformed keepout layer declarations reject the plan
+ok 21 - missing, unknown and malformed keepout layer declarations reject the plan
+  ---
+  duration_ms: 87.448378
+  type: 'test'
+  ...
+# Subtest: connected square or polygon perimeter pads cannot silently lose their required exits
+ok 22 - connected square or polygon perimeter pads cannot silently lose their required exits
+  ---
+  duration_ms: 58.718404
+  type: 'test'
+  ...
+# Subtest: foreign via copper and NPTH drills beneath an actual proposed stub are rejected
+ok 23 - foreign via copper and NPTH drills beneath an actual proposed stub are rejected
+  ---
+  duration_ms: 138.38113
+  type: 'test'
+  ...
+# Subtest: a drill void is excluded from via copper but cannot make a drilled-away stub valid
+ok 24 - a drill void is excluded from via copper but cannot make a drilled-away stub valid
+  ---
+  duration_ms: 74.76975
+  type: 'test'
+  ...
+# Subtest: NPTH clearance uses at least0.2mm from swept trace copper to drill edge
+ok 25 - NPTH clearance uses at least0.2mm from swept trace copper to drill edge
+  ---
+  duration_ms: 136.325506
+  type: 'test'
+  ...
+# Subtest: foreign pad layers must be present and belong to the actual board stack
+ok 26 - foreign pad layers must be present and belong to the actual board stack
+  ---
+  duration_ms: 86.498126
+  type: 'test'
+  ...
+# Subtest: malformed via annuli and unknown or contradictory via layer spans fail closed
+ok 27 - malformed via annuli and unknown or contradictory via layer spans fail closed
+  ---
+  duration_ms: 58.258798
+  type: 'test'
+  ...
+# Subtest: actual native air blank saved-exit join repairs only metadata; official14 errors become10 with .052 real clearance retained
+ok 28 - actual native air blank saved-exit join repairs only metadata; official14 errors become10 with .052 real clearance retained
+  ---
+  duration_ms: 397.88051
+  type: 'test'
+  ...
+# Subtest: lost saved-prefix sources bind uniquely to actual canonical physical pads and compiler sources
+ok 29 - lost saved-prefix sources bind uniquely to actual canonical physical pads and compiler sources
+  ---
+  duration_ms: 81.490828
+  type: 'test'
+  ...
+# Subtest: without native-input proof blank join stays unrepaired, and repeated repair is idempotent
+ok 30 - without native-input proof blank join stays unrepaired, and repeated repair is idempotent
+  ---
+  duration_ms: 176.483133
+  type: 'test'
+  ...
+# Subtest: shifted prefix, width, wrong pad/source identity and ambiguous compiler source reject
+ok 31 - shifted prefix, width, wrong pad/source identity and ambiguous compiler source reject
+  ---
+  duration_ms: 335.659985
+  type: 'test'
+  ...
+# Subtest: join native identity, net, audited endpoints, route envelope and capture mutants reject
+ok 32 - join native identity, net, audited endpoints, route envelope and capture mutants reject
+  ---
+  duration_ms: 500.173819
+  type: 'test'
+  ...
+# Subtest: pre-pour database attribution makes actual join a foreign GND obstacle and regenerated pour clears its copper
+ok 33 - pre-pour database attribution makes actual join a foreign GND obstacle and regenerated pour clears its copper
+  ---
+  duration_ms: 146.410464
+  type: 'test'
+  ...
+# Subtest: pre-pour prefixes without later DRC markers repair lost sources without inventing route markers
+ok 34 - pre-pour prefixes without later DRC markers repair lost sources without inventing route markers
+  ---
+  duration_ms: 212.069827
+  type: 'test'
+  ...
+# Subtest: actual RP/motor notes including clipped third DRV note remain complete and inside the computed section
+ok 35 - actual RP/motor notes including clipped third DRV note remain complete and inside the computed section
+  ---
+  duration_ms: 4.766656
+  type: 'test'
+  ...
+# Subtest: every note and entire long reference quote survive, and the section grows beyond its old fixed box
+ok 36 - every note and entire long reference quote survive, and the section grows beyond its old fixed box
+  ---
+  duration_ms: 8.523579
+  type: 'test'
+  ...
+# Subtest: wide unbroken tokens and Unicode split without losing characters or breaking surrogate pairs
+ok 37 - wide unbroken tokens and Unicode split without losing characters or breaking surrogate pairs
+  ---
+  duration_ms: 1.615699
+  type: 'test'
+  ...
+# Subtest: empty notes, explicit paragraph breaks and XML-sensitive content remain caller-owned text
+ok 38 - empty notes, explicit paragraph breaks and XML-sensitive content remain caller-owned text
+  ---
+  duration_ms: 0.505005
+  type: 'test'
+  ...
+# Subtest: narrow custom capacities wrap deterministically and invalid capacity fails explicitly
+ok 39 - narrow custom capacities wrap deterministically and invalid capacity fails explicitly
+  ---
+  duration_ms: 1.405737
+  type: 'test'
+  ...
+# Subtest: explicit routing phases may contain zero, one, two or all four sensor pins
+ok 40 - explicit routing phases may contain zero, one, two or all four sensor pins
+  ---
+  duration_ms: 3.4938
+  type: 'test'
+  ...
+# Subtest: cardinal section rotations transform only applicable sensor endpoints
+ok 41 - cardinal section rotations transform only applicable sensor endpoints
+  ---
+  duration_ms: 0.805889
+  type: 'test'
+  ...
+1..41
+# tests 41
+# suites 0
+# pass 41
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 6099.020242

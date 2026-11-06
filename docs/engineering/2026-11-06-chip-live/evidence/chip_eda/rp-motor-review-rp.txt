@@ -1,0 +1,620 @@
+PHYSICAL PDF PAGE 12
+Figure 3. RP2040
+Pinout for QFN-56
+7×7mm (reduced ePad
+size)
+1.4.2. Pin Descriptions
+Table 1. The function
+of each pin is briefly
+described here. Full
+electrical
+specifications can be
+found in Chapter 5.
+Name Description
+GPIOx General-purpose digital input and output. RP2040 can connect one of a number of internal
+peripherals to each GPIO, or control GPIOs directly from software.
+GPIOx/ADCy General-purpose digital input and output, with analogue-to-digital converter function. The RP2040
+ADC has an analogue multiplexer which can select any one of these pins, and sample the voltage.
+QSPIx Interface to a SPI, Dual-SPI or Quad-SPI flash device, with execute-in-place support. These pins can
+also be used as software-controlled GPIOs, if they are not required for flash access.
+USB_DM and
+USB_DP
+USB controller, supporting Full Speed device and Full/Low Speed host. A 27Ω series termination
+resistor is required on each pin, but bus pull-ups and pull-downs are provided internally.
+XIN and XOUT Connect a crystal to RP2040’s crystal oscillator. XIN can also be used as a single-ended CMOS
+clock input, with XOUT disconnected. The USB bootloader requires a 12MHz crystal or 12MHz
+clock input. For recommended crystals, see Crystal Oscillator (Section 2.16).
+RUN Global asynchronous reset pin. Reset when driven low, run when driven high. If no external reset is
+required, this pin can be tied directly to IOVDD.
+SWCLK and
+SWDIO
+Access to the internal Serial Wire Debug multi-drop bus. Provides debug access to both
+processors, and can be used to download code.
+TESTEN Factory test mode pin. Tie to GND.
+GND Single external ground connection, bonded to a number of internal ground pads on the RP2040 die.
+IOVDD Power supply for digital GPIOs, nominal voltage 1.8V to 3.3V
+RP2040 Datasheet
+1.4. Pinout Reference 11
+
+PHYSICAL PDF PAGE 13
+Name Description
+USB_VDD Power supply for internal USB Full Speed PHY, nominal voltage 3.3V
+ADC_AVDD Power supply for analogue-to-digital converter, nominal voltage 3.3V
+VREG_VIN Power input for the internal core voltage regulator, nominal voltage 1.8V to 3.3V
+VREG_VOUT Power output for the internal core voltage regulator, nominal voltage 1.1V, 100mA max current
+DVDD Digital core power supply, nominal voltage 1.1V. Can be connected to VREG_VOUT, or to some
+other board-level power supply.
+1.4.3. GPIO Functions
+Each individual GPIO pin can be connected to an internal peripheral via the GPIO functions defined below. Some internal
+peripheral connections appear in multiple places to allow some system level flexibility. SIO, PIO0 and PIO1 can connect
+to all GPIO pins and are controlled by software (or software controlled state machines) so can be used to implement
+many functions.
+Table 2. General
+Purpose Input/Output
+(GPIO) Bank 0
+Functions
+Function
+GPIO F1 F2 F3 F4 F5 F6 F7 F8 F9
+0 SPI0 RX UART0 TX I2C0 SDA PWM0 A SIO PIO0 PIO1 USB OVCUR DET
+1 SPI0 CSn UART0 RX I2C0 SCL PWM0 B SIO PIO0 PIO1 USB VBUS DET
+2 SPI0 SCK UART0 CTS I2C1 SDA PWM1 A SIO PIO0 PIO1 USB VBUS EN
+3 SPI0 TX UART0 RTS I2C1 SCL PWM1 B SIO PIO0 PIO1 USB OVCUR DET
+4 SPI0 RX UART1 TX I2C0 SDA PWM2 A SIO PIO0 PIO1 USB VBUS DET
+5 SPI0 CSn UART1 RX I2C0 SCL PWM2 B SIO PIO0 PIO1 USB VBUS EN
+6 SPI0 SCK UART1 CTS I2C1 SDA PWM3 A SIO PIO0 PIO1 USB OVCUR DET
+7 SPI0 TX UART1 RTS I2C1 SCL PWM3 B SIO PIO0 PIO1 USB VBUS DET
+8 SPI1 RX UART1 TX I2C0 SDA PWM4 A SIO PIO0 PIO1 USB VBUS EN
+9 SPI1 CSn UART1 RX I2C0 SCL PWM4 B SIO PIO0 PIO1 USB OVCUR DET
+10 SPI1 SCK UART1 CTS I2C1 SDA PWM5 A SIO PIO0 PIO1 USB VBUS DET
+11 SPI1 TX UART1 RTS I2C1 SCL PWM5 B SIO PIO0 PIO1 USB VBUS EN
+12 SPI1 RX UART0 TX I2C0 SDA PWM6 A SIO PIO0 PIO1 USB OVCUR DET
+13 SPI1 CSn UART0 RX I2C0 SCL PWM6 B SIO PIO0 PIO1 USB VBUS DET
+14 SPI1 SCK UART0 CTS I2C1 SDA PWM7 A SIO PIO0 PIO1 USB VBUS EN
+15 SPI1 TX UART0 RTS I2C1 SCL PWM7 B SIO PIO0 PIO1 USB OVCUR DET
+16 SPI0 RX UART0 TX I2C0 SDA PWM0 A SIO PIO0 PIO1 USB VBUS DET
+17 SPI0 CSn UART0 RX I2C0 SCL PWM0 B SIO PIO0 PIO1 USB VBUS EN
+18 SPI0 SCK UART0 CTS I2C1 SDA PWM1 A SIO PIO0 PIO1 USB OVCUR DET
+19 SPI0 TX UART0 RTS I2C1 SCL PWM1 B SIO PIO0 PIO1 USB VBUS DET
+20 SPI0 RX UART1 TX I2C0 SDA PWM2 A SIO PIO0 PIO1 CLOCK GPIN0 USB VBUS EN
+21 SPI0 CSn UART1 RX I2C0 SCL PWM2 B SIO PIO0 PIO1 CLOCK GPOUT0 USB OVCUR DET
+RP2040 Datasheet
+1.4. Pinout Reference 12
+
+PHYSICAL PDF PAGE 14
+Function
+22 SPI0 SCK UART1 CTS I2C1 SDA PWM3 A SIO PIO0 PIO1 CLOCK GPIN1 USB VBUS DET
+23 SPI0 TX UART1 RTS I2C1 SCL PWM3 B SIO PIO0 PIO1 CLOCK GPOUT1 USB VBUS EN
+24 SPI1 RX UART1 TX I2C0 SDA PWM4 A SIO PIO0 PIO1 CLOCK GPOUT2 USB OVCUR DET
+25 SPI1 CSn UART1 RX I2C0 SCL PWM4 B SIO PIO0 PIO1 CLOCK GPOUT3 USB VBUS DET
+26 SPI1 SCK UART1 CTS I2C1 SDA PWM5 A SIO PIO0 PIO1 USB VBUS EN
+27 SPI1 TX UART1 RTS I2C1 SCL PWM5 B SIO PIO0 PIO1 USB OVCUR DET
+28 SPI1 RX UART0 TX I2C0 SDA PWM6 A SIO PIO0 PIO1 USB VBUS DET
+29 SPI1 CSn UART0 RX I2C0 SCL PWM6 B SIO PIO0 PIO1 USB VBUS EN
+Table 3. GPIO bank 0
+function descriptions
+Function Name Description
+SPIx Connect one of the internal PL022 SPI peripherals to GPIO
+UARTx Connect one of the internal PL011 UART peripherals to GPIO
+I2Cx Connect one of the internal DW I2C peripherals to GPIO
+PWMx A/B Connect a PWM slice to GPIO. There are eight PWM slices, each with two output
+channels (A/B). The B pin can also be used as an input, for frequency and duty cycle
+measurement.
+SIO Software control of GPIO, from the single-cycle IO (SIO) block. The SIO function (F5)
+must be selected for the processors to drive a GPIO, but the input is always connected,
+so software can check the state of GPIOs at any time.
+PIOx Connect one of the programmable IO blocks (PIO) to GPIO. PIO can implement a wide
+variety of interfaces, and has its own internal pin mapping hardware, allowing flexible
+placement of digital interfaces on bank 0 GPIOs. The PIO function (F6, F7) must be
+selected for PIO to drive a GPIO, but the input is always connected, so the PIOs can
+always see the state of all pins.
+CLOCK GPINx General purpose clock inputs. Can be routed to a number of internal clock domains on
+RP2040, e.g. to provide a 1Hz clock for the RTC, or can be connected to an internal
+frequency counter.
+CLOCK GPOUTx General purpose clock outputs. Can drive a number of internal clocks (including PLL
+outputs) onto GPIOs, with optional integer divide.
+USB OVCUR DET/VBUS
+DET/VBUS EN
+USB power control signals to/from the internal USB controller
+RP2040 Datasheet
+1.4. Pinout Reference 13
+
+PHYSICAL PDF PAGE 152
+2.9.1. Digital IO Supply (IOVDD)
+IOVDD supplies the chip’s digital IO, and should be powered at a nominal voltage between 1.8V and 3.3V. The supply
+voltage sets the external signal level for the digital IO and should be chosen based on the signal level required. See
+Section 5.5.3, “Pin Specifications”  for details. All digital IOs share the same power supply and operate at the same
+signal level.
+IOVDD should be decoupled with a 100nF capacitor close to each of the chip’s IOVDD pins.
+CAUTION
+If the digital IO is powered at a nominal 1.8V, the IO input thresholds should be adjusted via the VOLTAGE_SELECT
+register. By default, the IO input thresholds are valid when the digital IO is powered at a nominal voltage between
+2.5V and 3.3V. See Section 2.19, “GPIO”  for details. Powering the IO at 1.8V with input thresholds set for a 2.5V to
+3.3V supply is a safe operating mode, but will result in input thresholds that do not meet specification. Powering the
+IO at voltages greater than a nominal 1.8V with input thresholds set for a 1.8V supply may result in damage to the
+chip.
+2.9.2. Digital Core Supply (DVDD)
+DVDD supplies the chip’s core digital logic, and should be powered at a nominal 1.1V. A dedicated on-chip voltage
+regulator is provided to allow DVDD to be generated from the digital IO supply (IOVDD) or another nominally 1.8V to
+3.3V supply. The connection between the output pin of the on-chip regulator (VREG_VOUT) and the DVDD supply pins is
+made off-chip, allowing DVDD to be powered from an off-chip power source if required.
+DVDD should be decoupled with a 100nF capacitor close to each of the chip’s DVDD pins.
+2.9.3. On-Chip Voltage Regulator Input Supply (VREG_VIN)
+VREG_VIN is the input supply for the on-chip voltage regulator. It should be powered at a nominal voltage between 1.8V
+and 3.3V. To reduce the number of external power supplies, VREG_VIN can use the same power source as the digital IO
+supply (IOVDD).
+A 1μF capacitor should be connected between VREG_VIN and ground close to the chip’s VREG_VIN pin.
+CAUTION
+VREG_VIN also powers the chip’s power-on reset and brown-out detection blocks, so it must be powered even if the
+on-chip voltage regulator is not used.
+For more details on the on-chip voltage regulator see Section 2.10, “Core Supply Regulator”.
+2.9.4. USB PHY Supply (USB_VDD)
+USB_VDD supplies the chip’s USB PHY, and should be powered at a nominal 3.3V. To reduce the number of external
+power supplies, USB_VDD can use the same power source as the digital IO supply (IOVDD), assuming IOVDD is also
+powered at 3.3V. If IOVDD is not powered at 3.3V, a separate 3.3V supply will be required for the USB PHY, see Section
+2.9.7.3, “1.8V Digital IO with Functional USB and ADC” . In applications where the USB PHY is never used, USB_VDD can
+be tied to any supply with a nominal voltage between 1.8V and 3.3V. See Section 2.9.7.4, “Single 1.8V Supply”  for an
+example. USB_VDD should not be left unconnected.
+USB_VDD should be decoupled with a 100nF capacitor close to the chip’s USB_VDD pin.
+RP2040 Datasheet
+2.9. Power Supplies 151
+
+PHYSICAL PDF PAGE 153
+2.9.5. ADC Supply (ADC_AVDD)
+ADC_AVDD supplies the chip’s Analogue to Digital Converter (ADC). It can be powered at a nominal voltage between
+1.8V and 3.3V, but the performance of the ADC will be compromised at voltages below 2.97V. To reduce the number of
+external power supplies, ADC_AVDD can use from the same power source as the digital IO supply (IOVDD).
+NOTE
+It is safe to supply ADC_AVDD at a higher or lower voltage than IOVDD, e.g. to power the ADC at 3.3V, for optimum
+performance, while supporting 1.8V signal levels on the digital IO. But the voltage on the ADC analogue inputs must
+not exceed IOVDD, e.g. if IOVDD is powered at 1.8V, the voltage on the ADC inputs should be limited to 1.8V.
+Voltages greater than IOVDD will result in leakage currents through the ESD protection diodes. See Section 5.5.3,
+“Pin Specifications” for details.
+ADC_AVDD should be decoupled with a 100nF capacitor close to the chip’s ADC_AVDD pin.
+2.9.6. Power Supply Sequencing
+RP2040’s power supplies may be powered up or down in any order. However, small transient currents may flow in the
+ADC supply (ADC_AVDD) if it is powered up before, or powered down after, the digital core supply (DVDD). This will not
+damage the chip, but can be avoided by powering up DVDD before or at the same time as ADC_AVDD, and powering
+down DVDD after or at the same time as ADC_AVDD. In the most common power supply scheme, where the chip is
+powered from a single 3.3V supply, DVDD will be powered up shortly after ADC_AVDD due to the startup time of the on-
+chip voltage regulator. This is acceptable behaviour. See Section 2.9.7.1, “Single 3.3V Supply”.
+2.9.7. Power Supply Schemes
+2.9.7.1. Single 3.3V Supply
+In most applications, RP2040 will be powered from a single 3.3V supply, as shown in Figure 16. The digital IO (IOVDD),
+USB PHY (USB_VDD) and ADC (ADC_AVDD) will be powered directly from the 3.3V supply, and the 1.1V digital core
+supply (DVDD) will be regulated from the 3.3V supply by the on-chip voltage regulator. Note that the regulator output pin
+(VREG_VOUT) must be connected to the chip’s DVDD pins off-chip.
+For more details on the on-chip voltage regulator see Section 2.10, “Core Supply Regulator”.
+RP2040 Datasheet
+2.9. Power Supplies 152
+
+PHYSICAL PDF PAGE 156
+Figure 19. powering
+the chip from a single
+1.8V supply
+2.10. Core Supply Regulator
+RP2040 includes an on-chip voltage regulator, allowing the digital core supply (DVDD) to be generated from an external,
+nominally 1.8V to 3.3V, power supply. In most cases, the regulator’s input supply will share an external power source
+with the chip’s digital IO supply IOVDD, simplifying the overall power supply requirements.
+To allow the chip to start up, the voltage regulator is enabled by default and will power-on as soon as its input supply is
+available. Once the chip is out of reset, the regulator can be disabled, placed into a high impedance state, or have its
+output voltage adjusted, under software control. The output voltage can be set in the range 0.80V to 1.30V in 50mV
+steps, but is set to a nominal 1.1V at initial power-on, or after a reset event. The voltage regulator can supply up to
+100mA.
+Although intended to provide the chip’s digital core supply (DVDD), the voltage regulator can be used for other purposes
+if DVDD is powered directly from an external power supply.
+2.10.1. Application Circuit
+RP2040 Datasheet
+2.10. Core Supply Regulator 155
+
+PHYSICAL PDF PAGE 157
+Figure 20. voltage
+regulator application
+circuit
+The regulator must have 1μF capacitors placed close to its input (VREG_VIN) and output (VREG_VOUT) pins.
+2.10.2. Operating Modes
+The voltage regulator operates in one of three modes. The mode to be used being selected by writing to the EN and HIZ
+fields in the VREG register, as shown in Table 187. At initial power-on, or following a reset event, the voltage regulator
+will be in Normal Operation mode.
+Table 187. Voltage
+Regulator Mode Select
+Mode EN HIZ
+Normal Operationa 1 0
+High Impedance 1 1
+Shutdown 0 X
+a the voltage regulator will be in normal mode at initial power-on or following a reset event
+2.10.2.1. Normal Operation Mode
+In Normal Operation mode, the voltage regulator’s output is in regulation at the selected voltage, and the regulator is
+able to supply power.
+2.10.2.2. High Impedance Mode
+In High Impedance mode, the voltage regulator is disabled and its output pin (VREG_VOUT) is set to a high impedance
+state. In this mode, the regulator’s power consumption is minimised. This mode allows a load connected to
+VREG_VOUT to be powered from a power source other than the on-chip regulator. This could allow, for example, the
+load to be initially powered from the on-chip voltage regulator, and then switched to an external regulator under
+software control. The external regulator would also need to support a high impedance mode, with only one regulator
+supplying the load at a time. The supply voltage is maintained by the regulator’s output capacitor during the brief period
+when both regulators are in high impedance mode.
+RP2040 Datasheet
+2.10. Core Supply Regulator 156
+
+PHYSICAL PDF PAGE 158
+2.10.2.3. Shutdown Mode
+In Shutdown mode, the voltage regulator is disabled, power consumption is minimized and the regulator’s output pin
+(VREG_VOUT) is pulled to 0V.
+Shutdown mode is only useful if the voltage regulator is not providing the RP2040’s digital core supply (DVDD). If the
+regulator is supplying DVDD, and brown-out detection is enabled, entering shutdown mode will cause a reset event and
+the voltage regulator will return to normal mode. If brown-out detection isn’t enabled, the voltage regulator will shut
+down and will remain in shutdown mode until its input supply (VREG_VIN) is power cycled.
+2.10.3. Output Voltage Select
+The required output voltage can be selected by writing to the VSEL field in the VREG register. The voltage regulator’s
+output voltage can be set in the range 0.80V to 1.30V in 50mV intervals. The regulator output voltage is set to 1.1V at
+initial power-on or following a reset event. For details, see the VREG register description.
+Note that RP2040 may not operate reliably with its digital core supply (DVDD) outside of operating conditions (see
+Section 5.6); it is recommended to set the regulator to 1.10V for most applications.
+2.10.4. Status
+The VREG register contains a single status field, ROK, which indicates whether the voltage regulator’s output is being
+correctly regulated.
+At power on, ROK remains low until the regulator has started up and the output voltage reaches the ROK assertion
+threshold ( ROKTH.ASSERT). It then remains high until the voltage drops below the ROK deassertion threshold ( ROKTH.DEASSERT),
+remaining low until the output voltage is above the assertion threshold again. ROKTH.ASSERT is nominally 90% of the selected
+output voltage, 0.99V if the selected output voltage is 1.1V, and ROKTH.DEASSERT is nominally 87% of the selected output
+voltage, 0.957V if the selected output voltage is 1.1V.
+Note that adjusting the output voltage to a higher voltage will cause ROK to go low until the assertion threshold for the
+higher voltage is reached. ROK will also go low if the regulator is placed in high impedance mode.
+2.10.5. Current Limit
+The voltage regulator includes a current limit to prevent the load current exceeding the maximum rated value. The
+output voltage will not be regulated and will drop below the selected value when the current limit is active.
+2.10.6. List of Registers
+The voltage regulator shares a register address space with the chip-level reset subsystem. The registers for both
+subsystems are listed here. Only, the VREG register is part of the voltage register subsystem. The BOD and CHIP_RESET
+registers are part of the chip-level reset subsystem. The shared address space is referred to as vreg_and_chip_reset
+elsewhere in this document.
+The VREG_AND_CHIP_RESET registers start at a base address of 0x40064000 (defined as VREG_AND_CHIP_RESET_BASE
+in SDK).
+Table 188. List of
+VREG_AND_CHIP_RES
+ET registers
+Offset Name Info
+0x0 VREG Voltage regulator control and status
+0x4 BOD brown-out detection control
+0x8 CHIP_RESET Chip reset control and status
+RP2040 Datasheet
+2.10. Core Supply Regulator 157
+
+PHYSICAL PDF PAGE 159
+VREG_AND_CHIP_RESET: VREG Register
+Offset: 0x0
+Description
+Voltage regulator control and status
+Table 189. VREG
+Register
+Bits Description Type Reset
+31:13 Reserved. - -
+12 ROK: regulation status
+0=not in regulation, 1=in regulation
+RO 0x0
+11:8 Reserved. - -
+7:4 VSEL: output voltage select
+0000 to 0101 - 0.80V
+0110 - 0.85V
+0111 - 0.90V
+1000 - 0.95V
+1001 - 1.00V
+1010 - 1.05V
+1011 - 1.10V (default)
+1100 - 1.15V
+1101 - 1.20V
+1110 - 1.25V
+1111 - 1.30V
+RW 0xb
+3:2 Reserved. - -
+1 HIZ: high impedance mode select
+0=not in high impedance mode, 1=in high impedance mode
+RW 0x0
+0 EN: enable
+0=not enabled, 1=enabled
+RW 0x1
+VREG_AND_CHIP_RESET: BOD Register
+Offset: 0x4
+Description
+brown-out detection control
+Table 190. BOD
+Register
+Bits Description Type Reset
+31:8 Reserved. - -
+RP2040 Datasheet
+2.10. Core Supply Regulator 158
+
+PHYSICAL PDF PAGE 160
+Bits Description Type Reset
+7:4 VSEL: threshold select
+0000 - 0.473V
+0001 - 0.516V
+0010 - 0.559V
+0011 - 0.602V
+0100 - 0.645V
+0101 - 0.688V
+0110 - 0.731V
+0111 - 0.774V
+1000 - 0.817V
+1001 - 0.860V (default)
+1010 - 0.903V
+1011 - 0.946V
+1100 - 0.989V
+1101 - 1.032V
+1110 - 1.075V
+1111 - 1.118V
+RW 0x9
+3:1 Reserved. - -
+0 EN: enable
+0=not enabled, 1=enabled
+RW 0x1
+VREG_AND_CHIP_RESET: CHIP_RESET Register
+Offset: 0x8
+Description
+Chip reset control and status
+Table 191.
+CHIP_RESET Register
+Bits Description Type Reset
+31:25 Reserved. - -
+24 PSM_RESTART_FLAG: This is set by psm_restart from the debugger.
+Its purpose is to branch bootcode to a safe mode when the debugger has
+issued a psm_restart in order to recover from a boot lock-up.
+In the safe mode the debugger can repair the boot code, clear this flag then
+reboot the processor.
+WC 0x0
+23:21 Reserved. - -
+20 HAD_PSM_RESTART: Last reset was from the debug port RO 0x0
+19:17 Reserved. - -
+16 HAD_RUN: Last reset was from the RUN pin RO 0x0
+15:9 Reserved. - -
+8 HAD_POR: Last reset was from the power-on reset or brown-out detection
+blocks
+RO 0x0
+7:0 Reserved. - -
+RP2040 Datasheet
+2.10. Core Supply Regulator 159
+
+PHYSICAL PDF PAGE 161
+2.10.7. Detailed Specifications
+Table 192. Voltage
+Regulator Detailed
+Specifications
+Parameter Description Min Typ Max Units
+VVREG_VIN input supply
+voltage
+1.63 1.8 - 3.3 3.63 V
+ΔVVREG_VOUT output voltage
+variation
+-3 +3 % of selected
+output voltage
+IMAX output current 100 mA
+ILIMIT current limit 150 350 450 mA
+ROKTH.ASSERT ROK assertion
+threshold
+87 90 93 % of selected
+output voltage
+ROKTH.DEASSERT ROK deassertion
+threshold
+84 87 90 % of selected
+output voltage
+tPOWER-ONa power-up time 275 350 μs
+a values will vary with load current and capacitance on VREG_VOUT. Conditions: EN = 1, load current = 0mA, VREG_VIN
+ramps up in 100μs
+2.11. Power Control
+RP2040 provides a range of options for reducing dynamic power:
+• Top-level clock gating of individual peripherals and functional blocks
+• Automatic control of top-level clock gates based on processor sleep state
+• On-the-fly changes to system clock frequency or system clock source (e.g. switch to internal ring oscillator, and
+disable PLLs and crystal oscillator)
+• Zero-dynamic-power DORMANT state, waking on GPIO event or RTC IRQ
+All digital logic on RP2040 is in a single core power domain. The following options are available for static power
+reduction:
+• Placing memories into state-retaining power down state
+• Power gating on peripherals that support this, e.g. ADC, temperature sensor
+2.11.1. Top-level Clock Gates
+Each clock domain (for example, the system clock) may drive a large number of distinct hardware blocks, not all of
+which may be required at once. To avoid unnecessary power dissipation, each individual endpoint of each clock (for
+example, the UART system clock input) may be disabled at any time.
+Enabling and disabling a clock gate is glitch-free. If a peripheral clock is temporarily disabled, and subsequently re-
+enabled, the peripheral will be in the same state as prior to the clock being disabled. No reset or reinitialisation should
+be required.
+Clock gates are controlled by two sets of registers: the WAKE_ENx registers (starting at WAKE_EN0) and SLEEP_ENx
+registers (starting at SLEEP_EN0). These two sets of registers are identical at the bit level, each possessing a flag to
+control each clock endpoint. The WAKE_EN registers specify which clocks are enabled whilst the system is awake, and
+the SLEEP_ENx registers select which clocks are enabled while the processor is in the SLEEP state (Section 2.11.2).
+The two Cortex-M0+ processors do not have externally-controllable clock gates. Instead, the processors gate the clocks
+of their subsystems autonomously, based on execution of WFI/WFE instructions, and external Event and IRQ signals.
+RP2040 Datasheet
+2.11. Power Control 160
+
+PHYSICAL PDF PAGE 615
+Name Number Type Power Domain Reset State Description
+TESTEN 19 Digital In IOVDD Pull-Down Test enable
+(connect to Gnd)
+Table 620. USB pins Name Number Type Power Domain Description
+USB_DP 47 USB IO USB_VDD USB Data +ve. 27Ω
+series resistor
+required for USB
+operation
+USB_DM 46 USB IO USB_VDD USB Data -ve. 27Ω
+series resistor
+required for USB
+operation
+Table 621. Power
+supply pins
+Name Number(s) Description
+IOVDD 1, 10, 22, 33, 42, 49 IO supply
+DVDD 23, 50 Core supply
+VREG_VIN 44 Voltage regulator input supply
+VREG_VOUT 45 Voltage regulator output
+USB_VDD 48 USB supply
+ADC_AVDD 43 ADC supply
+GND 57 Common ground connection via
+central pad
+5.5.3. Pin Specifications
+The following electrical specifications are obtained from characterisation over the specified temperature and voltage
+ranges, as well as process variation, unless the specification is marked as 'Simulated'. In this case, the data is for
+information purposes only, and is not guaranteed.
+5.5.3.1. Absolute Maximum Ratings
+Table 622. Absolute
+maximum ratings for
+digital IO (Standard
+and Fault Tolerant)
+Parameter Symbol Minimum Maximum Units Comment
+I/O Supply Voltage IOVDD -0.5 3.63 V
+Voltage at IO VPIN -0.5 IOVDD + 0.5 V
+5.5.3.2. ESD Performance
+Table 623. ESD
+performance for all
+pins, unless otherwise
+stated
+Parameter Symbol Maximum Units Comment
+Human Body Model HBM 2 kV Compliant with JEDEC
+specification JS-001-
+2012 (April 2012)
+RP2040 Datasheet
+5.5. Pinout 614
+
+PHYSICAL PDF PAGE 623
+5.6. Power Supplies
+Table 634. Power
+Supply Specifications
+Power Supply Supplies Min Typ Max Units
+IOVDDa Digital IO 1.62 1.8 / 3.3 3.63 V
+DVDDb Digital core 1.05 1.1 1.16 V
+VREG_VIN Voltage regulator 1.62 1.8 / 3.3 3.63 V
+USB_VDD USB PHY 3.135 3.3 3.63 V
+ADC_AVDDc ADC 1.62 3.3 3.63 V
+a If IOVDD <2.5V, GPIO VOLTAGE_SELECT registers should be adjusted accordingly. See Section 2.9 for details.
+b Short term transients should be within +/-100mV. If using 200MHz for clk_sys as described in Section 2.15.3, set DVDD
+to 1.15V.
+c ADC performance will be compromised at voltages below 2.97V
+5.7. Power Consumption
+5.7.1. Peripheral power consumption
+Baseline readings are taken with only clock sources and essential peripherals ( BUSCTRL, BUSFAB, VREG, Resets, ROM,
+SRAMs) active in the WAKE_EN0/WAKE_EN1 registers. Clocks are set to default clock settings. Each peripheral is activated in
+turn by enabling all clock sources for the peripheral in the WAKE_EN0/WAKE_EN1 registers. Current consumption is the
+increase in current when the peripheral clocks are enabled.
+Table 635. Baseline
+power consumption
+Peripheral Typical DVDD Current Consumption (μA/MHz)
+DMA 2.6
+I2C0 3.9
+I2C1 3.8
+IO + Pads 23.6
+PIO0 12.3
+PIO1 12.5
+PWM 5.0
+RTC 1.1
+SIO 1.9
+SPI0 1.7
+SPI1 1.8
+Timer 1.2
+UART0 3.5
+UART1 3.7
+Watchdog 1.0
+XIP 37.6
+RP2040 Datasheet
+5.6. Power Supplies 622
+
+PHYSICAL PDF PAGE 624
+Because of fixed external reference clocks of 48 MHz, as well as the variable system clock input, ADC and USBCTRL
+power consumption does not vary linearly with system clock (as it does for other peripherals which only have system
+and/or peripheral clock inputs). Absolute DVDD current consumption of the ADC and USBCTRL blocks at standard
+clocks (system clock of 125 MHz) is given below:
+Table 636. Baseline
+power consumption
+for ADC and USBCTRL
+Peripheral Typical DVDD Current Consumption (μA/MHz)
+ADC 0.1
+USBCTRL 1.3
+5.7.2. Power consumption for typical user cases
+The following data shows the current consumption of various power supplies on 3 each of typical (tt), fast (ff) and slow
+(ss) corner RP2040 devices, with four different software use-cases.
+NOTE
+For power consumption of the Raspberry Pi Pico, please see the Raspberry Pi Pico Datasheet.
+Firstly, 'Popcorn' (Media player demo) using the VGA, SD Card, and Audio board. This demo uses VGA video, I2S audio
+and 4-bit SD Card access, with a system clock frequency of 48MHz.
+NOTE
+For more details of the VGA board see the Hardware design with RP2040 book.
+Secondly, the BOOTSEL mode of RP2040. These measurements are made both with and without USB activity on the
+bus, using a Raspberry Pi 4 as a host.
+The third use-case uses the hello_dormant binary which puts RP2040 into a low power state, DORMANT mode.
+The final use-case uses the hello_sleep binary code which puts RP2040 into a low power state, SLEEP mode.
+Table 637 has two columns per power supply, 'Typical Average Current' and 'Maximum Average Current'. The former is
+the current averaged over several seconds that you might expect a typical RP2040 to consume at room temperature
+and nominal voltage (e.g., DVDD=1.1V, IOVDD=3.3V, etc). The 'Maximum Average Current' is the maximum current
+consumption (again averaged over several seconds) you might expect to see on a worst-case RP2040 device, across
+the temperature extremes, and maximum voltage (e.g., DVDD=1.21V, etc).
+NOTE
+The 'Popcorn' consumption measurements depend on the video being displayed at the time. The 'Typical' values are
+obtained over several seconds of video, with varied colour and intensity. The 'Maximum' values are measured during
+periods of white video, when the required current is at its highest.
+Table 637. Power
+Consumption
+Software Use-
+case
+Typical
+Average DVDD
+Current
+Max. Average
+DVDD current
+Typical
+Average
+IOVDD Current
+Max. Average
+IOVDD current
+Typical
+Average
+USB_VDD
+Current
+Max. Average
+USB_VDD
+current
+Units
+Popcorn 10.9 16.6 24.8 35.5 - - mA
+BOOTSEL
+mode - Active
+9.4 14.7 1.2 4.3 1.4 2.0 mA
+BOOTSEL
+mode - Idle
+9.0 14.3 1.2 4.3 0.2 0.6 mA
+Dormant 0.18 4.2 - - - - mA
+RP2040 Datasheet
+5.7. Power Consumption 623
+
+PHYSICAL PDF PAGE 625
+Software Use-
+case
+Typical
+Average DVDD
+Current
+Max. Average
+DVDD current
+Typical
+Average
+IOVDD Current
+Max. Average
+IOVDD current
+Typical
+Average
+USB_VDD
+Current
+Max. Average
+USB_VDD
+current
+Units
+Sleep 0.39 4.5 - - - - mA
+5.7.2.1. Power Consumption versus frequency
+To give an indication of the relationship between the core frequency that RP2040 is operating at, and the current
+consumed by the DVDD supply, Figure 172  shows the measured results of a typical RP2040 device, continuously
+running FFT calculations on both cores, at various core clock frequencies. Figure 172 also shows the effects of case
+temperature, and DVDD voltage upon the current consumption.
+Figure 172. DVDD
+Current vs Core
+Frequency of a typical
+RP2040 device, whilst
+running FFT
+calculations
+RP2040 Datasheet
+5.7. Power Consumption 624

@@ -1,0 +1,8 @@
+import {readFileSync,writeFileSync} from 'node:fs';
+import{createHash}from'node:crypto';
+import{prepareImmutablePreloads,verifyImmutablePreloads}from'/home/sogo/design-skill-research/repos/moki/eda/blocks/immutable-preloads.ts';
+const base='/home/sogo/design-skill-research/repos/moki/',dir=base+'docs/engineering/2026-11-06-chip-live/evidence/chip_eda/',f=JSON.parse(readFileSync(dir+'rp-routing-robust/immutable-preloads-fixture.json','utf8'));
+const extra={...structuredClone(f.fixedTraces[0]),pcb_trace_id:'DERIVED_prior_nonclock',connection_name:'inactive_aux_net',source_trace_id:'DERIVED_prior_source'};
+const p=prepareImmutablePreloads({...f.input,traces:[extra]},f.fixedTraces),solver={getUpdatedPreloadedTraces:()=>structuredClone(p.input.traces),getMutatedPreloadedTraces:()=>[]};
+const cases=[];for(const kind of['same-id-geometry-mutation','replacement-of-nonclock']){const bad=structuredClone(extra);if(kind==='same-id-geometry-mutation')bad.route[0].x+=1;else{bad.pcb_trace_id='DERIVED_replacement';bad.__replaces_pcb_trace_id=extra.pcb_trace_id;}let accepted=false,error;try{verifyImmutablePreloads(solver,{traces:[bad]},p.expected);accepted=true;}catch(e){error=String(e);}cases.push({kind,accepted,error});}
+const evidence={scope:'Pure derived contract mutant on actual immutable-clock fixture. No native solver or source edits.',sourceSha256:createHash('sha256').update(readFileSync(base+'eda/blocks/immutable-preloads.ts')).digest('hex'),cases};writeFileSync(dir+'immutable-preloads-independent-repro.json',JSON.stringify(evidence,null,2)+'\n');console.log(JSON.stringify(evidence));

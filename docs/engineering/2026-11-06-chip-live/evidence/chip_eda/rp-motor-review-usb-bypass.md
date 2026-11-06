@@ -1,0 +1,11 @@
+# Independent USB bypass revision review
+
+No confirmed electrical correctness finding in the narrow `usb-c-sink@1` → `usb-c-sink@2` delta. Reviewed current generator, actual runtime block diff, regression-test source, and immutable catalog response. Revision2 hash is `7cccd830c974e8e3dd142c3647b284ab0557a48715e54ceae82855eb4d2365d3`; status remains `unreviewed`. This review does not promote the block or modify the RP/motor plan receipt.
+
+The actual delta adds `C_BUS`100nF between VBUS and ground, changes USBLC6-2SC6 pin5 from passive to required power-in (4.75–5.25V), and declares pin5/pin2 bypass minimum0.1uF with maximum4mm part-origin distance. External ports, previous nets/parts and supplier identities are unchanged. The capacitor origin is3.5mm from the ESD IC origin before compiler placement.
+
+Loaded and hash-validated catalog receipt `sha256:fde5081a0b45324f436df1a456a1a4dd1608306b862e8a6f4c8187b9d69ac426`, then reparsed its actual importer response. It identifies C14663 as Yageo `CC0603KRX7R9BB104`,100nF±10%,50V,C0603, with two physical pads1/2. Raw response hash is `1ad4275ad69d3ef0a8e75bc120719319207d450579421ba624b88713554cff59`; footprint hash is `c6961a0f3ecb855bedad17ad6397d458e8feacb3ac83cd2b5e6b49c83a9c4338`. The supplier identifier and value were not invented. Recorded stock is historical metadata, not a current availability statement.
+
+Independently reopened the current official [ST USBLC6-2 datasheet](https://www.st.com/resource/en/datasheet/usblc6-2.pdf), DS4260Rev7, December2021. Physical page1 maps pin5 to VBUS and pin2 to ground. Physical page11 Figure17 shows CBUS100nF. Page6 explains that the relevant protection connections must be short because parasitic inductance affects system protection. The generator correctly labels its4mm limit as an author placement screen; it supplies no ESD compliance evidence.
+
+The focused regression source checks unchanged external ports, exact C14663/value, added net endpoints and unreviewed status. Missing VBUS attachment, wrong capacitor value and excessive capacitor distance must fail materialization. The coordinator reported these focused tests passing; this reviewer did not rerun them. Native post-placement distances, physical routing/DRC, copper continuity, USB signal integrity and system ESD qualification remain downstream gates.

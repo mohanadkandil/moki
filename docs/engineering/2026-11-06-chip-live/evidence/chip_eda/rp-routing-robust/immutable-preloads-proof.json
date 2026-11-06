@@ -1,0 +1,43 @@
+{
+  "sourceJobId": "71e5d163-a9c4-47f1-b00b-55896bb5af8d",
+  "helperSha256": "afde60c008104bb6e9c6f87495567b725989f3c408b4df91f8132d2dc7fce7df",
+  "testSha256": "94acdaf66b747948596e42ea41c0efcebae094437ab634671abebd419dfa90cc",
+  "fixtureSha256": "d5ab8d36ae1a6e45f79cf5fd6444a70f26e9cbcbd39d9b5df78b387297ce6aa7",
+  "schema": "moki.immutable-native-clock-preloads/1",
+  "fixedTraceIds": [
+    "saved_phase_null_0_0",
+    "saved_phase_null_0_1",
+    "saved_phase_null_0_2",
+    "saved_phase_null_0_3",
+    "saved_phase_null_0_4"
+  ],
+  "fixedConnectionNames": [
+    "source_net_5",
+    "source_net_6",
+    "source_net_17"
+  ],
+  "fixedTraceSha256": {
+    "saved_phase_null_0_0": "df472a813c4c3036f6aa3cfe3fd9faa0654d0520bf7b7056118314525cc121f2",
+    "saved_phase_null_0_1": "217b5c1ed359701a387c3949bf1573ae3a64b314e7edd194faadb116965acc96",
+    "saved_phase_null_0_2": "13722f1eac2f77e3fbe9b685494f710dfc72ac7d268f6d820b8b2421b96701a8",
+    "saved_phase_null_0_3": "52e1a7dfaa7a3c54f35669be6f9889cab0801a6f3afba327be2b06374930d5b5",
+    "saved_phase_null_0_4": "a519d9938c0fa1e7810ab8636b9258c0e1bf54cba84989693619b128c435987f"
+  },
+  "inputBeforeSha256": "f3913f46d580bf04f8ee555d9fee027b39fffbc92dc47823a58cff509a2240db",
+  "inputWithPreloadsSha256": "25d7fe655d843bf56ee4f58ddad509f15cc368f7009a7d9e5186d789067ea6b6",
+  "allPreloadedTraceCount": 5,
+  "clockPreloadedTraceCount": 5,
+  "measured": {
+    "pureTestsPassed": 8,
+    "strictTypecheckPassed": true,
+    "solverIterations": 0,
+    "nativeRouting": false
+  },
+  "limitations": [
+    "Getter equality is checked after the official solver finishes; no solution is claimed here",
+    "No changed clock record is accepted",
+    "Normal native checks, all-net physical oracle and fabrication gates remain mandatory"
+  ],
+  "callerResponsibility": "Select actual clock CJ records using existing clock-profile semantics; compiler-generated owner IDs are not hardcoded",
+  "reviewFix": "All expected preloads, including unrelated prior preloads, are immutable in getters and returned output; only selected five clocks are stripped"
+}

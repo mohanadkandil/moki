@@ -1,0 +1,72 @@
+[
+  {
+    "evidence": "replay-05e69207",
+    "jobId": "fc98c039-6a1f-4da0-9dbf-8f2297127eb3",
+    "status": "failed",
+    "error": "drc: Static reachability precheck failed: 1 route(s) have no legal path under the current reservation and start-region rules source_net_13 (pcb_port_52->pcb_port_61); Port [U1.IOVDD6] is not connected to net [V3V3] by a PCB trace.; Port [U1.IOVDD5] is not connected to net [V3V3] by a PCB trace.; Port [U1.IOVDD4] is not connected to net [V3V3] by a PCB trace.; 105 more issues in gates.json",
+    "totalMs": 60650.086827,
+    "board": {
+      "widthMm": 65,
+      "heightMm": 55,
+      "layers": 2,
+      "traceCount": 0,
+      "viaCount": 0
+    }
+  },
+  {
+    "evidence": "replay-05e69207-signals-first",
+    "jobId": "2a502937-77e4-4066-8bae-613f9cfec2c8",
+    "status": "failed",
+    "error": "drc: Pipeline9 primary high-density routing failed: B01 failed: No path found for source_net_0_mst9; regional fallback failed: Pipeline9 regional repair output failed its candidate validator; Port [U1.IOVDD6] is not connected to net [V3V3] by a PCB trace.; Port [U1.IOVDD5] is not connected to net [V3V3] by a PCB trace.; Port [U1.IOVDD4] is not connected to net [V3V3] by a PCB trace.; 105 more issues in gates.json",
+    "totalMs": 28192.444022,
+    "board": {
+      "widthMm": 65,
+      "heightMm": 55,
+      "layers": 2,
+      "traceCount": 0,
+      "viaCount": 0
+    }
+  },
+  {
+    "evidence": "replay-05e69207-signals-first-022",
+    "jobId": "6ce578e8-2bd0-4ce0-969b-63fa35c17c62",
+    "status": "failed",
+    "error": "drc: Pipeline9 primary high-density routing failed: B01 failed: No path found for source_net_0_mst9; regional fallback failed: Pipeline9 regional repair output failed its candidate validator; Port [U1.IOVDD6] is not connected to net [V3V3] by a PCB trace.; Port [U1.IOVDD5] is not connected to net [V3V3] by a PCB trace.; Port [U1.IOVDD4] is not connected to net [V3V3] by a PCB trace.; 105 more issues in gates.json",
+    "totalMs": 27726.821926999997,
+    "board": {
+      "widthMm": 65,
+      "heightMm": 55,
+      "layers": 2,
+      "traceCount": 0,
+      "viaCount": 0
+    }
+  },
+  {
+    "evidence": "replay-05e69207-two-layer",
+    "jobId": "9fabd4b4-aadb-40af-9ae5-176a0740f421",
+    "status": "failed",
+    "error": "drc: PCB trace .U1 > .pin21 to net.XOUT is too close to .U1 > .pin22 to net.V3V3 (gap: 0.100mm); PCB trace .J1 > .pin12 to net.CC2 overlaps with pcb_via \"unnamed via\" (accidental contact); PCB trace .J1 > .pin12 to net.CC2 overlaps with .J1 > .pin2 to net.GND (accidental contact); PCB trace .U4 > .pin3 to net.USB_DP_EXT is too close to .U4 > .pin5 to net.VBUS (gap: 0.088mm); 214 more issues in gates.json",
+    "totalMs": 399963.99721,
+    "board": {
+      "widthMm": 65,
+      "heightMm": 55,
+      "layers": 2,
+      "traceCount": 131,
+      "viaCount": 125
+    }
+  },
+  {
+    "evidence": "replay-4e68bf02-joint",
+    "jobId": "dad50cbf-26e5-4564-bef1-8161737012aa",
+    "status": "failed",
+    "error": "drc: Pipeline9 primary high-density routing failed: B01 failed: No path found for source_net_18_mst4; regional fallback failed: Failed to solve 1 nodes, cmn_23. err0: GrowShrinkHighDensityIntraNodeSolver failed after resizing to 8x. Last error: High-density scale solution rejected by validator.; Port [U1.IOVDD6] is not connected to net [V3V3] by a PCB trace.; Port [U1.IOVDD5] is not connected to net [V3V3] by a PCB trace.; Port [U1.IOVDD4] is not connected to net [V3V3] by a PCB trace.; 105 more issues in gates.json",
+    "totalMs": 36560.341917,
+    "board": {
+      "widthMm": 65,
+      "heightMm": 55,
+      "layers": 4,
+      "traceCount": 0,
+      "viaCount": 0
+    }
+  }
+]

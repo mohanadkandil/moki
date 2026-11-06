@@ -1,0 +1,23 @@
+{
+  "jobId": "2a502937-77e4-4066-8bae-613f9cfec2c8",
+  "actualFailure": "B01 No path found for source_net_0_mst9; regional fallback candidate validator failed",
+  "actualNet": "V3V3",
+  "netEndpointCount": 24,
+  "flashEndpoint": {
+    "pointId": "pcb_port_64",
+    "owner": "U2.VCC",
+    "x": -4.155,
+    "y": 0.7800919999999998,
+    "layer": "top"
+  },
+  "fixedEarlySignalTraces": 24,
+  "inputObstacleMarginMm": 0.25,
+  "nearestForeignPad": {
+    "owner": "U2 QSPI_SD3",
+    "x": -2.885,
+    "y": 0.7800919999999998,
+    "padEdgeDistanceFromVccCenterMm": 0.955
+  },
+  "mst9EndpointPair": "Not exposed in captured SRJ. No new native/pair solver executed; no specific collision claimed.",
+  "inference": "Changing only global net order has shifted the failure between signals and power. Finite physically validated outward escapes followed by joint native routing may address local launch constraints; any further flashVCC escape should be justified by actual geometry,not this unresolved MST index alone."
+}

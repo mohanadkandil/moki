@@ -1,0 +1,1313 @@
+{
+  "jobId": "cd4316e0-01a5-49dd-a970-24bd89fdf470",
+  "status": "failed",
+  "createdAt": "2026-11-06T03:44:33.043Z",
+  "input": {
+    "kind": "plan",
+    "sourceSha256": "6b839407c0954c3fdeb1874613b0390f13f9c25afe626e5ed4f3dd59fe4b01ec",
+    "plan": {
+      "schema": "moki.plan/1",
+      "title": "S3 air",
+      "layers": 2,
+      "blocks": [
+        {
+          "inst": "mcu",
+          "block": "esp32-s3-core",
+          "version": 2,
+          "params": {},
+          "at": {
+            "x": -2,
+            "y": 20.75
+          }
+        },
+        {
+          "inst": "usb",
+          "block": "usb-c-sink",
+          "version": 2,
+          "params": {},
+          "at": {
+            "x": -12,
+            "y": -28.15
+          }
+        },
+        {
+          "inst": "ldo",
+          "block": "tps63001-usb-5v-3v3",
+          "version": 1,
+          "params": {},
+          "at": {
+            "x": -22,
+            "y": -6
+          }
+        },
+        {
+          "inst": "buttons",
+          "block": "boot-reset-buttons",
+          "version": 1,
+          "params": {},
+          "at": {
+            "x": -0.5,
+            "y": 10.5
+          }
+        },
+        {
+          "inst": "air",
+          "block": "sht40-ad1b-3v3",
+          "version": 3,
+          "params": {},
+          "at": {
+            "x": 22,
+            "y": -6
+          }
+        },
+        {
+          "inst": "display",
+          "block": "ssd1306-i2c-header",
+          "version": 1,
+          "params": {},
+          "at": {
+            "x": 24,
+            "y": 24
+          }
+        }
+      ],
+      "links": [
+        {
+          "from": "mcu.GND",
+          "to": "usb.GND"
+        },
+        {
+          "from": "mcu.GND",
+          "to": "ldo.GND"
+        },
+        {
+          "from": "mcu.GND",
+          "to": "buttons.GND"
+        },
+        {
+          "from": "mcu.GND",
+          "to": "air.GND"
+        },
+        {
+          "from": "mcu.GND",
+          "to": "display.GND"
+        },
+        {
+          "from": "usb.VBUS",
+          "to": "ldo.VBUS"
+        },
+        {
+          "from": "ldo.V3V3",
+          "to": "mcu.V3V3"
+        },
+        {
+          "from": "ldo.V3V3",
+          "to": "air.V3V3"
+        },
+        {
+          "from": "ldo.V3V3",
+          "to": "display.V3V3"
+        },
+        {
+          "from": "mcu.EN",
+          "to": "buttons.EN"
+        },
+        {
+          "from": "mcu.BOOT",
+          "to": "buttons.BOOT"
+        },
+        {
+          "from": "mcu.USB",
+          "to": "usb.USB"
+        },
+        {
+          "from": "mcu.I2C",
+          "to": "air.I2C"
+        },
+        {
+          "from": "mcu.I2C",
+          "to": "display.I2C_DISPLAY"
+        }
+      ],
+      "sections": [
+        {
+          "id": "mcu",
+          "title": "ESP32-S3 core",
+          "purpose": "Real catalog-bound functional section",
+          "insts": [
+            "mcu"
+          ],
+          "notes": [
+            "Native layout, routing and physical gates remain mandatory."
+          ]
+        },
+        {
+          "id": "usb",
+          "title": "USB-C power and data",
+          "purpose": "Real catalog-bound functional section",
+          "insts": [
+            "usb"
+          ],
+          "notes": [
+            "Known5V1.5A external source; independentCC Rd, noPD/current-advertisement detection.",
+            "USBLC6 VBUS100nF C_BUS follows STp11Fig17."
+          ]
+        },
+        {
+          "id": "ldo",
+          "title": "USB5V to3.3V buck-boost",
+          "purpose": "Real catalog-bound functional section",
+          "insts": [
+            "ldo"
+          ],
+          "notes": [
+            "QualifiedUSB4.75–5.25V,650mAcontinuous/800mApeak author allocation;85%efficiency assumed.",
+            "No low-battery boost, MLCC DC-bias or hardware transient qualification claim."
+          ]
+        },
+        {
+          "id": "buttons",
+          "title": "BOOT and RESET",
+          "purpose": "Real catalog-bound functional section",
+          "insts": [
+            "buttons"
+          ],
+          "notes": [
+            "Native layout, routing and physical gates remain mandatory."
+          ]
+        },
+        {
+          "id": "air",
+          "title": "SHT40 ambient sensor",
+          "purpose": "Real catalog-bound functional section",
+          "insts": [
+            "air"
+          ],
+          "notes": [
+            "SHT40 address0x44,100kHz,heater disabled; no central Cu/paste."
+          ]
+        },
+        {
+          "id": "display",
+          "title": "SSD1306 display header",
+          "purpose": "Real catalog-bound functional section",
+          "insts": [
+            "display"
+          ],
+          "notes": [
+            "Externaldisplay, not an onboardOLED;50mA reserved,0x3C address."
+          ]
+        }
+      ],
+      "app": {
+        "source": "#include <Arduino.h>\n#include <Wire.h>\n#include \"pins.h\"\nvoid setup(){ Serial.begin(115200); Wire.begin(PIN_AIR_I2C_SDA,PIN_AIR_I2C_SCL); Wire.setClock(100000); }\nvoid loop(){ delay(1000); }\n"
+      },
+      "board": {
+        "widthMm": 70,
+        "heightMm": 80,
+        "cornerRadiusMm": 0
+      }
+    }
+  },
+  "cache": "miss",
+  "stages": [
+    {
+      "name": "codegen",
+      "status": "done",
+      "ms": 71.773761,
+      "note": "Validated JSON plan; no author TSX is executed"
+    },
+    {
+      "name": "erc",
+      "status": "done",
+      "ms": 0,
+      "note": "Block has not passed independent promotion review; Block has not passed independent promotion review; Block has not passed independent promotion review; Block has not passed independent promotion review; Block has not passed independent promotion review; USB peripheral relies on an external host through the declared passive connector; Keepout realization must be checked against final imported PCB geometry; Keepout realization must be checked against final imported PCB geometry"
+    },
+    {
+      "name": "power",
+      "status": "done",
+      "ms": 0,
+      "note": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+    },
+    {
+      "name": "spice",
+      "status": "done",
+      "ms": 1239.148725,
+      "note": "Explicit normally-open contacts held open: buttons.SW1; pressed/bounce behavior is not simulated; Only declared isolated profiles are simulated; this is not whole-board analog verification; Fixed netlists and raw engine results: /home/sogo/design-skill-research/repos/moki/var/board-jobs-test-chip/cd4316e0-01a5-49dd-a970-24bd89fdf470/spice/run-gaDn8Q/output.json"
+    },
+    {
+      "name": "verify",
+      "status": "done",
+      "ms": 0,
+      "note": ""
+    },
+    {
+      "name": "review",
+      "status": "done",
+      "ms": 0,
+      "note": ""
+    },
+    {
+      "name": "codegen",
+      "status": "done",
+      "ms": 1501.5905590000002
+    },
+    {
+      "name": "placement",
+      "status": "done",
+      "ms": 37.06271399999969
+    },
+    {
+      "name": "svg",
+      "status": "done",
+      "ms": 1208.756926
+    },
+    {
+      "name": "fanout",
+      "status": "done",
+      "ms": 1348.2291999999998
+    },
+    {
+      "name": "render",
+      "status": "done",
+      "ms": 432.2036250000001
+    },
+    {
+      "name": "route",
+      "status": "failed",
+      "ms": 28949.992742000002,
+      "note": "Error: Pipeline9 primary high-density routing failed: B01 failed: No path found for __tscircuit_preloaded_trace__:[\"source_net_0_mst19_0\",0]; regional fallback failed: Pipeline9 regional repair output failed its candidate validator"
+    },
+    {
+      "name": "gltf",
+      "status": "done",
+      "ms": 1726.8496220000015
+    },
+    {
+      "name": "fab",
+      "status": "done",
+      "ms": 398.2265439999974
+    },
+    {
+      "name": "drc",
+      "status": "failed",
+      "ms": 0,
+      "note": "Pipeline9 primary high-density routing failed: B01 failed: No path found for __tscircuit_preloaded_trace__:[\"source_net_0_mst19_0\",0]; regional fallback failed: Pipeline9 regional repair output failed its candidate validator; Port [U1.3V3] is not connected to net [V3V3] by a PCB trace.; Port [C3.pin1] is not connected to net [V3V3] by a PCB trace.; Port [C4.pin1] is not connected to net [V3V3] by a PCB trace.; Port [R1.pin1] is not connected to net [V3V3] by a PCB trace.; Port [R2.pin1] is not connected to net [V3V3] by a PCB trace.; Port [U2.VOUT] is not connected to net [V3V3] by a PCB trace.; Port [U2.FB] is not connected to net [V3V3] by a PCB trace.; Port [C7.pin1] is not connected to net [V3V3] by a PCB trace.; Port [C8.pin1] is not connected to net [V3V3] by a PCB trace.; Port [C9.pin1] is not connected to net [V3V3] by a PCB trace.; Port [U4.VDD] is not connected to net [V3V3] by a PCB trace.; Port [C10.pin1] is not connected to net [V3V3] by a PCB trace.; Port [J2.pin2] is not connected to net [V3V3] by a PCB trace.; Port [R7.pin1] is not connected to net [V3V3] by a PCB trace.; Port [R8.pin1] is not connected to net [V3V3] by a PCB trace.; Port [U1.EN] is not connected to net [EN] by a PCB trace.; Port [C5.pin1] is not connected to net [EN] by a PCB trace.; Port [R1.pin2] is not connected to net [EN] by a PCB trace.; Port [SW1.pin1] is not connected to net [EN] by a PCB trace.; Port [U1.IO8] is not connected to net [SDA] by a PCB trace.; Port [U4.SDA] is not connected to net [SDA] by a PCB trace.; Port [J2.pin4] is not connected to net [SDA] by a PCB trace.; Port [R8.pin2] is not connected to net [SDA] by a PCB trace.; Port [U1.IO19] is not connected to net [USB_DM_MCU] by a PCB trace.; Port [R6.pin2] is not connected to net [USB_DM_MCU] by a PCB trace.; Port [U1.IO20] is not connected to net [USB_DP_MCU] by a PCB trace.; Port [R5.pin2] is not connected to net [USB_DP_MCU] by a PCB trace.; Port [U1.IO46] is not connected to net [STRAP46] by a PCB trace.; Port [R10.pin1] is not connected to net [STRAP46] by a PCB trace.; Port [U1.IO9] is not connected to net [SCL] by a PCB trace.; Port [U4.SCL] is not connected to net [SCL] by a PCB trace.; Port [J2.pin3] is not connected to net [SCL] by a PCB trace.; Port [R7.pin2] is not connected to net [SCL] by a PCB trace.; Port [U1.IO45] is not connected to net [STRAP45] by a PCB trace.; Port [R9.pin1] is not connected to net [STRAP45] by a PCB trace.; Port [U1.IO0] is not connected to net [BOOT] by a PCB trace.; Port [R2.pin2] is not connected to net [BOOT] by a PCB trace.; Port [SW2.pin1] is not connected to net [BOOT] by a PCB trace.; Port [U3.pin1] is not connected to net [USB_DP] by a PCB trace.; Port [U3.pin6] is not connected to net [USB_DP] by a PCB trace.; Port [J1.DP1] is not connected to net [USB_DP] by a PCB trace.; Port [J1.DP2] is not connected to net [USB_DP] by a PCB trace.; Port [R5.pin1] is not connected to net [USB_DP] by a PCB trace.; Port [U3.pin3] is not connected to net [USB_DM] by a PCB trace.; Port [U3.pin4] is not connected to net [USB_DM] by a PCB trace.; Port [J1.DN2] is not connected to net [USB_DM] by a PCB trace.; Port [J1.DN1] is not connected to net [USB_DM] by a PCB trace.; Port [R6.pin1] is not connected to net [USB_DM] by a PCB trace.; Port [U3.pin5] is not connected to net [VBUS] by a PCB trace.; Port [J1.VBUS1] is not connected to net [VBUS] by a PCB trace.; Port [J1.VBUS2] is not connected to net [VBUS] by a PCB trace.; Port [C_BUS.pin1] is not connected to net [VBUS] by a PCB trace.; Port [U2.VIN] is not connected to net [VBUS] by a PCB trace.; Port [U2.EN] is not connected to net [VBUS] by a PCB trace.; Port [U2.VINA] is not connected to net [VBUS] by a PCB trace.; Port [C1.pin1] is not connected to net [VBUS] by a PCB trace.; Port [C2.pin1] is not connected to net [VBUS] by a PCB trace.; Port [C6.pin1] is not connected to net [VBUS] by a PCB trace.; Port [J1.CC1] is not connected to net [CC1] by a PCB trace.; Port [R3.pin1] is not connected to net [CC1] by a PCB trace.; Port [J1.CC2] is not connected to net [CC2] by a PCB trace.; Port [R4.pin1] is not connected to net [CC2] by a PCB trace.; Port [U2.L2] is not connected to net [SW_L2] by a PCB trace.; Port [L1.pin2] is not connected to net [SW_L2] by a PCB trace.; Port [U2.L1] is not connected to net [SW_L1] by a PCB trace.; Port [L1.pin1] is not connected to net [SW_L1] by a PCB trace.; Error: Pipeline9 primary high-density routing failed: B01 failed: No path found for __tscircuit_preloaded_trace__:[\"source_net_0_mst19_0\",0]; regional fallback failed: Pipeline9 regional repair output failed its candidate validator"
+    }
+  ],
+  "totalMs": 38935.222467,
+  "drc": {
+    "checked": true,
+    "errors": [
+      {
+        "type": "pcb_autorouting_error",
+        "message": "Pipeline9 primary high-density routing failed: B01 failed: No path found for __tscircuit_preloaded_trace__:[\"source_net_0_mst19_0\",0]; regional fallback failed: Pipeline9 regional repair output failed its candidate validator"
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [U1.3V3] is not connected to net [V3V3] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [C3.pin1] is not connected to net [V3V3] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [C4.pin1] is not connected to net [V3V3] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [R1.pin1] is not connected to net [V3V3] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [R2.pin1] is not connected to net [V3V3] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [U2.VOUT] is not connected to net [V3V3] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [U2.FB] is not connected to net [V3V3] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [C7.pin1] is not connected to net [V3V3] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [C8.pin1] is not connected to net [V3V3] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [C9.pin1] is not connected to net [V3V3] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [U4.VDD] is not connected to net [V3V3] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [C10.pin1] is not connected to net [V3V3] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [J2.pin2] is not connected to net [V3V3] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [R7.pin1] is not connected to net [V3V3] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [R8.pin1] is not connected to net [V3V3] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [U1.EN] is not connected to net [EN] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [C5.pin1] is not connected to net [EN] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [R1.pin2] is not connected to net [EN] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [SW1.pin1] is not connected to net [EN] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [U1.IO8] is not connected to net [SDA] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [U4.SDA] is not connected to net [SDA] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [J2.pin4] is not connected to net [SDA] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [R8.pin2] is not connected to net [SDA] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [U1.IO19] is not connected to net [USB_DM_MCU] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [R6.pin2] is not connected to net [USB_DM_MCU] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [U1.IO20] is not connected to net [USB_DP_MCU] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [R5.pin2] is not connected to net [USB_DP_MCU] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [U1.IO46] is not connected to net [STRAP46] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [R10.pin1] is not connected to net [STRAP46] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [U1.IO9] is not connected to net [SCL] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [U4.SCL] is not connected to net [SCL] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [J2.pin3] is not connected to net [SCL] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [R7.pin2] is not connected to net [SCL] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [U1.IO45] is not connected to net [STRAP45] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [R9.pin1] is not connected to net [STRAP45] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [U1.IO0] is not connected to net [BOOT] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [R2.pin2] is not connected to net [BOOT] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [SW2.pin1] is not connected to net [BOOT] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [U3.pin1] is not connected to net [USB_DP] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [U3.pin6] is not connected to net [USB_DP] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [J1.DP1] is not connected to net [USB_DP] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [J1.DP2] is not connected to net [USB_DP] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [R5.pin1] is not connected to net [USB_DP] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [U3.pin3] is not connected to net [USB_DM] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [U3.pin4] is not connected to net [USB_DM] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [J1.DN2] is not connected to net [USB_DM] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [J1.DN1] is not connected to net [USB_DM] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [R6.pin1] is not connected to net [USB_DM] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [U3.pin5] is not connected to net [VBUS] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [J1.VBUS1] is not connected to net [VBUS] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [J1.VBUS2] is not connected to net [VBUS] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [C_BUS.pin1] is not connected to net [VBUS] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [U2.VIN] is not connected to net [VBUS] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [U2.EN] is not connected to net [VBUS] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [U2.VINA] is not connected to net [VBUS] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [C1.pin1] is not connected to net [VBUS] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [C2.pin1] is not connected to net [VBUS] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [C6.pin1] is not connected to net [VBUS] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [J1.CC1] is not connected to net [CC1] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [R3.pin1] is not connected to net [CC1] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [J1.CC2] is not connected to net [CC2] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [R4.pin1] is not connected to net [CC2] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [U2.L2] is not connected to net [SW_L2] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [L1.pin2] is not connected to net [SW_L2] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [U2.L1] is not connected to net [SW_L1] by a PCB trace."
+      },
+      {
+        "type": "pcb_port_not_connected_error",
+        "message": "Port [L1.pin1] is not connected to net [SW_L1] by a PCB trace."
+      },
+      {
+        "type": "pcb_native_async_error",
+        "message": "Error: Pipeline9 primary high-density routing failed: B01 failed: No path found for __tscircuit_preloaded_trace__:[\"source_net_0_mst19_0\",0]; regional fallback failed: Pipeline9 regional repair output failed its candidate validator"
+      }
+    ],
+    "warnings": [
+      {
+        "type": "source_refdes_convention_warning",
+        "message": "The \"J\" prefix is being used with a <chip />, try using it with a <connector /> or <jumper />"
+      },
+      {
+        "type": "source_refdes_convention_warning",
+        "message": "The \"J\" prefix is being used with a <chip />, try using it with a <connector /> or <jumper />"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "U1 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "U3 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "U3 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on U3 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "J1 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "J1 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on J1 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "J2 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "J2 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on J2 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "pcb_connector_not_in_accessible_orientation_warning",
+        "message": "J2 is inferred to face y- from its cable insertion center because no explicit footprint insertionDirection is defined, but should face x+ so the connector is accessible from the board edge. Set insertionDirection on the <footprint> to specify the actual direction in the footprint's unrotated orientation; for example, <footprint insertionDirection=\"from_above\"> for a connector accessed from above the PCB (+Z)."
+      }
+    ]
+  },
+  "board": {
+    "widthMm": 70,
+    "heightMm": 80,
+    "layers": 2,
+    "traceCount": 0,
+    "viaCount": 0
+  },
+  "artifacts": {
+    "circuit.json": {
+      "url": "/api/board/jobs/cd4316e0-01a5-49dd-a970-24bd89fdf470/files/circuit.json",
+      "bytes": 655119,
+      "sha256": "7396f184db4be4d7dcd91d01102504758aa2d8f22179fa712b5b3c37ed52a998",
+      "kind": "json"
+    },
+    "schematic.svg": {
+      "url": "/api/board/jobs/cd4316e0-01a5-49dd-a970-24bd89fdf470/files/schematic.svg",
+      "bytes": 281249,
+      "sha256": "7d461f298b6c5321afa6febb4ae1bb08ca69037d7af0d7e7bf53a661a36db4af",
+      "kind": "svg"
+    },
+    "pcb.svg": {
+      "url": "/api/board/jobs/cd4316e0-01a5-49dd-a970-24bd89fdf470/files/pcb.svg",
+      "bytes": 239503,
+      "sha256": "45e5110033edb6bc17797f478e37ff1baafe9c1496342839259934a4049fd1f6",
+      "kind": "svg"
+    },
+    "board.glb": {
+      "url": "/api/board/jobs/cd4316e0-01a5-49dd-a970-24bd89fdf470/files/board.glb",
+      "bytes": 7086176,
+      "sha256": "d6c5607504629b03c8a473ca63854ee3ad56a7b11b9251d734dda9047f2b2032",
+      "kind": "glb"
+    },
+    "gerbers.zip": {
+      "url": "/api/board/jobs/cd4316e0-01a5-49dd-a970-24bd89fdf470/files/gerbers.zip",
+      "bytes": 40984,
+      "sha256": "952707b4f6b45349cb1f2b9864b424a189b887bc8014a64601d5c37edd9c9f3a",
+      "kind": "zip"
+    },
+    "kicad.zip": {
+      "url": "/api/board/jobs/cd4316e0-01a5-49dd-a970-24bd89fdf470/files/kicad.zip",
+      "bytes": 64884,
+      "sha256": "b98560675339e07950043426a1f121bf03546dabf6345470eb37c44d042712b3",
+      "kind": "zip"
+    },
+    "bom.csv": {
+      "url": "/api/board/jobs/cd4316e0-01a5-49dd-a970-24bd89fdf470/files/bom.csv",
+      "bytes": 1490,
+      "sha256": "b574c7aec6f2eb66c1d3d40f0aa001692a231dbba4429e8f18d0331928f6b422",
+      "kind": "csv"
+    },
+    "pnp.csv": {
+      "url": "/api/board/jobs/cd4316e0-01a5-49dd-a970-24bd89fdf470/files/pnp.csv",
+      "bytes": 1551,
+      "sha256": "3f1fa66c09aa49545f0f38fc4b76f274ec7bc4025c10390942067de4d86725c0",
+      "kind": "csv"
+    },
+    "receipt.json": {
+      "url": "/api/board/jobs/cd4316e0-01a5-49dd-a970-24bd89fdf470/files/receipt.json",
+      "bytes": 41333,
+      "sha256": "610418cb87e3ed1ba1e5920f2ac08d0f3fa2e849aedb8d0f29ac277cc82f589d",
+      "kind": "json"
+    },
+    "plan.json": {
+      "url": "/api/board/jobs/cd4316e0-01a5-49dd-a970-24bd89fdf470/files/plan.json",
+      "bytes": 4112,
+      "sha256": "1895a316b97c68a10c38971bbc65a7eae119e0df72018f96f7fe6a5f93c54cb6",
+      "kind": "json"
+    },
+    "plan-graph.json": {
+      "url": "/api/board/jobs/cd4316e0-01a5-49dd-a970-24bd89fdf470/files/plan-graph.json",
+      "bytes": 790606,
+      "sha256": "a3a3518eddc51af0166f5f3049dd78190b1c3ac93966cfe646dd14366fa58914",
+      "kind": "json"
+    },
+    "gates.json": {
+      "url": "/api/board/jobs/cd4316e0-01a5-49dd-a970-24bd89fdf470/files/gates.json",
+      "bytes": 15670,
+      "sha256": "d549f95f403b5217e33383754dd8cf43d050114c637a7759f4c6b9a76c318e04",
+      "kind": "json"
+    },
+    "spice.json": {
+      "url": "/api/board/jobs/cd4316e0-01a5-49dd-a970-24bd89fdf470/files/spice.json",
+      "bytes": 1051,
+      "sha256": "7444ad37403054f838428ae506b2fdf5aae0ea09aae224e7fe1e7472c3ae468c",
+      "kind": "json"
+    },
+    "verification.json": {
+      "url": "/api/board/jobs/cd4316e0-01a5-49dd-a970-24bd89fdf470/files/verification.json",
+      "bytes": 69,
+      "sha256": "f2d8714a7244d59bd5a4c986bbf75b38ebf4a37ede0fb9396861ac444e594bd6",
+      "kind": "json"
+    },
+    "schematic-circuit.json": {
+      "url": "/api/board/jobs/cd4316e0-01a5-49dd-a970-24bd89fdf470/files/schematic-circuit.json",
+      "bytes": 368574,
+      "sha256": "85de47f55cb0fddccc207e734e5c09d048cd25a4e366dd1bdabd3b523a64f094",
+      "kind": "json"
+    },
+    "import-map.json": {
+      "url": "/api/board/jobs/cd4316e0-01a5-49dd-a970-24bd89fdf470/files/import-map.json",
+      "bytes": 18047,
+      "sha256": "aa53e58bfe6ea05c630f6936bb0c844536e240606f392afa5be859376b41562f",
+      "kind": "json"
+    },
+    "sensor-copper-check.json": {
+      "url": "/api/board/jobs/cd4316e0-01a5-49dd-a970-24bd89fdf470/files/sensor-copper-check.json",
+      "bytes": 4306,
+      "sha256": "48997d314390a3d59328ac9b09f6649bbbc249b0367621cc89981773e3118eb3",
+      "kind": "json"
+    },
+    "netlist-check.json": {
+      "url": "/api/board/jobs/cd4316e0-01a5-49dd-a970-24bd89fdf470/files/netlist-check.json",
+      "bytes": 32,
+      "sha256": "1b237b6d36a5cf2f8b7272800f91f3e98f39caafdd95fc3bd739ecfb75b0d664",
+      "kind": "json"
+    },
+    "placement.json": {
+      "url": "/api/board/jobs/cd4316e0-01a5-49dd-a970-24bd89fdf470/files/placement.json",
+      "bytes": 10621,
+      "sha256": "ff25032f8a7828ac87c30fdece9c24aba9ba2649b3635b7eccc7360e641eb68f",
+      "kind": "json"
+    },
+    "placement-check.json": {
+      "url": "/api/board/jobs/cd4316e0-01a5-49dd-a970-24bd89fdf470/files/placement-check.json",
+      "bytes": 942,
+      "sha256": "7e8cbed5aab7bae3939d5f243b14a8851d05a630219afc4f2abb5447c6063e6c",
+      "kind": "json"
+    },
+    "fanout-check.json": {
+      "url": "/api/board/jobs/cd4316e0-01a5-49dd-a970-24bd89fdf470/files/fanout-check.json",
+      "bytes": 3979,
+      "sha256": "885999ae15613de0221355a3466db59d552c88fa1544d5eb2ae0d1733e949d8b",
+      "kind": "json"
+    },
+    "fanout-phase.json": {
+      "url": "/api/board/jobs/cd4316e0-01a5-49dd-a970-24bd89fdf470/files/fanout-phase.json",
+      "bytes": 13146,
+      "sha256": "eda62bb2dfa7acbf3d853895d7f9035d9c884e8a1ce46c22c4f8bdd8526a3adf",
+      "kind": "json"
+    },
+    "native-async-errors.json": {
+      "url": "/api/board/jobs/cd4316e0-01a5-49dd-a970-24bd89fdf470/files/native-async-errors.json",
+      "bytes": 276,
+      "sha256": "5c376c115207ee8b2e531987554ced24c9a38cc1e6ca4ba2dfe6ad60e995c3cc",
+      "kind": "json"
+    },
+    "native-routing.json": {
+      "url": "/api/board/jobs/cd4316e0-01a5-49dd-a970-24bd89fdf470/files/native-routing.json",
+      "bytes": 1196115,
+      "sha256": "956ccae56504716afd89bef9bbb4467055245dbbef1db4d0e55b1a630f4b6ba7",
+      "kind": "json"
+    },
+    "routing-plan.json": {
+      "url": "/api/board/jobs/cd4316e0-01a5-49dd-a970-24bd89fdf470/files/routing-plan.json",
+      "bytes": 265,
+      "sha256": "53d2a0b74a10464b48d11dc18f9501907fe814a67934c5c46506f6e9ab6d6fa3",
+      "kind": "json"
+    }
+  },
+  "toolVersions": {
+    "bun": "1.4.4",
+    "toolchainLockSha256": "03c17de90a541fb18d9c0551e9d48079d505c8da1b327b521149c39ce2bdfe92",
+    "mokiRendererSha256": "0241360186359759ab4eb49087dc2026f5d13d1b9279bc2a7a9c78b97e59ff2d",
+    "blocks/build.ts": "3394f96437b328a47fd7a73d26ca58d14a5a50bc8952ce236886d1803b074d49",
+    "blocks/auto-placement.ts": "318f1aac873bf211309414939c4f9dc66c5c3ab054590e17b1e58ac38304f5d5",
+    "blocks/sensor-exits.ts": "eacb59f86b9b0b2897957f30d068c4675be4ac316de87f55227027c3f13ef7e2",
+    "blocks/repair-saved-sources.ts": "aca88c219f1441cf7e3657beb2de582f88686eec1dbd20b51ec3e45d7b15be68",
+    "blocks/ground-plane.ts": "f13b221872ba7198c2f1604e52b3b786e5d81732a6b4d2fbb13517a741acab0a",
+    "blocks/rp-clock.ts": "2c44de68aff62c6835a288a4b0c14cb0a11b2616656c47a0be6eb887227eb04e",
+    "blocks/grouped-breakouts.ts": "60fa24703cb707b9deaacd3e059077977ac1e8cf470669276558831784bb2e9b",
+    "blocks/copper-netlist.ts": "47a5b43a503ed93d229e40e7a4c0dac68dd3483f874e6fe6ffa0fbf6cf335f3b",
+    "blocks/debug-source.ts": "f251852b6dc2a57dd45e104dbdf80a4a2d0c442cb190afc320272259f6d87e1a",
+    "blocks/stitch-ground.ts": "8ebe7d596838943857c6239ddbc0dfe49423d71a83950ed381bd663ba3f4d300",
+    "blocks/imported.ts": "b6e315d31e689feb5068656b7545a24de52a2389ffc91be44d4f6e543beb0919",
+    "blocks/legalize.ts": "b1d962b9cbbf6d79a3af2d5e2d1eff9da0ca4fcb5ce72d660b6d8d1ee424a2fa",
+    "blocks/schematic.ts": "b29cb6a4c2afa633408d08f4bad26d70c09a9ae5981042270fa3d36d8fcca9a7",
+    "../src/blocks/native-netlist.ts": "a83edcdcf74aca694dd340a73c87ff065bf22adefa7a76efc8d5d55364ea964d",
+    "../src/blocks/native-ports.ts": "4bc103d7c9bffdadb1f41aee033e3e697070f583265016f2df2d2c213a674a4f",
+    "../src/blocks/native-placement.ts": "785600eb36bf87b4ac249dbab1f3e15829807ea2b29dd8c304852949f662fcc8",
+    "../src/board/chip-firmware-worker.ts": "5045c7559571a07c8189f48cc4a0824c3bb62dd0e25427ff56471eb8fe18b21c",
+    "../src/board/bom.ts": "3eb90de40496ae439a9b4fdf8bd5816dc59e8b5d29d97b72740a446928335022",
+    "../src/circuit/catalog.ts": "f9a71d535ac1c39ece54337532e1662d3cdb95356134f548c1345c555ca1b51c",
+    "models/render-board.ts": "0ae3ad9913ed812f943bcb5e97f07de2dc39a5a8c9634bb8d175cf116a1e15b1",
+    "models/catalog-models.ts": "5bf9dba5c67d0e1239c33dc4874be44867226c08fb287dc21e63fb17895015bc",
+    "models/glb.ts": "ee795aaf36c5fa0f0bd94484c574f69cd14c308ee72d4e3fd0b6855dd4c14c80",
+    "models/compact-glb.ts": "76504398c0e871e0de9ab55d4e553a4401d7466b6c1750eca4cb856e212bbda4",
+    "apply-layout.ts": "5429544caab8d4ba86a0b4b269ce01c84aa47c0f0cc568fa6602dea23d40c6ff",
+    "edit-router.ts": "c607cef0777632dd2584a8132e684314e6452cc7195c2a93797d3abb9204a76c",
+    "blocks/router.ts": "fc1aa37b09865e2627b6fc40e8894aed6a301454341ff658050a1fc8f865ae74",
+    "blocks/fanout.ts": "83022aaaecc5be4e529398da0dbc241a5a0b9b39881f7baba18a0f02ee44b7df",
+    "blocks/schematic-notes.ts": "1cc5850e8cf97bbd24b7465b17bc31ba5153cf26d2d059c1844a5b3a9375e453",
+    "../src/blocks/fanout.ts": "f4b34d3e90ce124d2a4dcf1de44756958dc2d10f70be6e3200547c95e22221a1",
+    "../src/blocks/router-planning.ts": "ffba1d1a7440c7ff9c7a2a6cafaa0323632b3812ae3eb313313f6166f8cf06de",
+    "../src/board/router-planning.ts": "ffa9a86aded261477102d290e6f6faf3cad2a8c299e1990210027726b8d78504",
+    "../src/board/edits.ts": "ff1061d2213db22acacf7ac26c2d097c97a4be81ffe92d8eaedb262c7c6f2bf0",
+    "enclosure/module-preview.ts": "646bb819b10f708851a820b5159b977c67300cf34b0a3d3f4d84b9a5d7c65f19",
+    "enclosure/module-mech.ts": "8054af43a5ba30428ac832464b43cb90dab5392a6933368b7fe56cc38e1a8103",
+    "@jscad/modeling": "2.13.0",
+    "@tscircuit/capacity-autorouter": "0.0.1037",
+    "@tscircuit/checks": "0.0.269",
+    "@tscircuit/circuit-json-util": "0.0.131",
+    "@tscircuit/core": "0.0.2266",
+    "@tscircuit/create-fdm-enclosure": "0.0.7",
+    "@tscircuit/footprinter": "0.0.450",
+    "@tscircuit/math-utils": "0.0.38",
+    "@tscircuit/ngspice-spice-engine": "0.0.20",
+    "@tscircuit/props": "0.0.718",
+    "circuit-json": "0.0.543",
+    "circuit-json-to-bom-csv": "0.0.28",
+    "circuit-json-to-gerber": "0.0.122",
+    "circuit-json-to-gltf": "0.0.164",
+    "circuit-json-to-kicad": "0.0.267",
+    "circuit-json-to-pnp-csv": "0.0.21",
+    "circuit-to-svg": "0.0.455",
+    "easyeda": "0.0.391",
+    "fflate": "0.8.3",
+    "jscad-planner": "0.0.14",
+    "kicad-to-circuit-json": "0.0.142",
+    "polygon-clipping": "0.15.7",
+    "react": "19.3.1",
+    "schematic-symbols": "0.0.251",
+    "tscircuit": "0.0.3075"
+  },
+  "gates": [
+    {
+      "gate": "erc",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "esp32-s3-core",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "usb-c-sink",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "tps63001-usb-5v-3v3",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "boot-reset-buttons",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "ssd1306-i2c-header",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "usb-external-host",
+          "severity": "warning",
+          "where": "mcu.USB, usb.USB",
+          "message": "USB peripheral relies on an external host through the declared passive connector"
+        },
+        {
+          "rule": "layout-constraint-pending",
+          "severity": "warning",
+          "where": "esp32-s3-core",
+          "message": "Keepout realization must be checked against final imported PCB geometry"
+        },
+        {
+          "rule": "layout-constraint-pending",
+          "severity": "warning",
+          "where": "sht40-ad1b-3v3",
+          "message": "Keepout realization must be checked against final imported PCB geometry"
+        }
+      ]
+    },
+    {
+      "gate": "power",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "thermal-assumption",
+          "severity": "warning",
+          "where": "ldo.V3V3",
+          "message": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+        }
+      ]
+    },
+    {
+      "gate": "spice",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "spice-open-switch",
+          "severity": "warning",
+          "where": "mcu.EN reaches75% VDD",
+          "message": "Explicit normally-open contacts held open: buttons.SW1; pressed/bounce behavior is not simulated"
+        },
+        {
+          "rule": "spice-coverage",
+          "severity": "warning",
+          "message": "Only declared isolated profiles are simulated; this is not whole-board analog verification"
+        },
+        {
+          "rule": "spice-evidence",
+          "severity": "warning",
+          "message": "Fixed netlists and raw engine results: /home/sogo/design-skill-research/repos/moki/var/board-jobs-test-chip/cd4316e0-01a5-49dd-a970-24bd89fdf470/spice/run-gaDn8Q/output.json"
+        }
+      ],
+      "measurements": [
+        {
+          "where": "mcu.EN reaches75% VDD",
+          "name": "rc-reset",
+          "measured": 13.862942128297528,
+          "target": 13.8629436,
+          "tolerance": 0.25,
+          "unit": "ms",
+          "ok": true
+        }
+      ],
+      "inputHash": "a3ef7fdf2ea5a559ee76b8ecb7706f0357f782da5fc83f2c8e43f89de5ade96a"
+    },
+    {
+      "gate": "verify",
+      "ok": true,
+      "issues": [],
+      "results": []
+    },
+    {
+      "gate": "review",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "gate": "drc",
+      "ok": false,
+      "issues": [
+        {
+          "rule": "pcb_autorouting_error",
+          "severity": "error",
+          "message": "Pipeline9 primary high-density routing failed: B01 failed: No path found for __tscircuit_preloaded_trace__:[\"source_net_0_mst19_0\",0]; regional fallback failed: Pipeline9 regional repair output failed its candidate validator"
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [U1.3V3] is not connected to net [V3V3] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [C3.pin1] is not connected to net [V3V3] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [C4.pin1] is not connected to net [V3V3] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [R1.pin1] is not connected to net [V3V3] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [R2.pin1] is not connected to net [V3V3] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [U2.VOUT] is not connected to net [V3V3] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [U2.FB] is not connected to net [V3V3] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [C7.pin1] is not connected to net [V3V3] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [C8.pin1] is not connected to net [V3V3] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [C9.pin1] is not connected to net [V3V3] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [U4.VDD] is not connected to net [V3V3] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [C10.pin1] is not connected to net [V3V3] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [J2.pin2] is not connected to net [V3V3] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [R7.pin1] is not connected to net [V3V3] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [R8.pin1] is not connected to net [V3V3] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [U1.EN] is not connected to net [EN] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [C5.pin1] is not connected to net [EN] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [R1.pin2] is not connected to net [EN] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [SW1.pin1] is not connected to net [EN] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [U1.IO8] is not connected to net [SDA] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [U4.SDA] is not connected to net [SDA] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [J2.pin4] is not connected to net [SDA] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [R8.pin2] is not connected to net [SDA] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [U1.IO19] is not connected to net [USB_DM_MCU] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [R6.pin2] is not connected to net [USB_DM_MCU] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [U1.IO20] is not connected to net [USB_DP_MCU] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [R5.pin2] is not connected to net [USB_DP_MCU] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [U1.IO46] is not connected to net [STRAP46] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [R10.pin1] is not connected to net [STRAP46] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [U1.IO9] is not connected to net [SCL] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [U4.SCL] is not connected to net [SCL] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [J2.pin3] is not connected to net [SCL] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [R7.pin2] is not connected to net [SCL] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [U1.IO45] is not connected to net [STRAP45] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [R9.pin1] is not connected to net [STRAP45] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [U1.IO0] is not connected to net [BOOT] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [R2.pin2] is not connected to net [BOOT] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [SW2.pin1] is not connected to net [BOOT] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [U3.pin1] is not connected to net [USB_DP] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [U3.pin6] is not connected to net [USB_DP] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [J1.DP1] is not connected to net [USB_DP] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [J1.DP2] is not connected to net [USB_DP] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [R5.pin1] is not connected to net [USB_DP] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [U3.pin3] is not connected to net [USB_DM] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [U3.pin4] is not connected to net [USB_DM] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [J1.DN2] is not connected to net [USB_DM] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [J1.DN1] is not connected to net [USB_DM] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [R6.pin1] is not connected to net [USB_DM] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [U3.pin5] is not connected to net [VBUS] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [J1.VBUS1] is not connected to net [VBUS] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [J1.VBUS2] is not connected to net [VBUS] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [C_BUS.pin1] is not connected to net [VBUS] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [U2.VIN] is not connected to net [VBUS] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [U2.EN] is not connected to net [VBUS] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [U2.VINA] is not connected to net [VBUS] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [C1.pin1] is not connected to net [VBUS] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [C2.pin1] is not connected to net [VBUS] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [C6.pin1] is not connected to net [VBUS] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [J1.CC1] is not connected to net [CC1] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [R3.pin1] is not connected to net [CC1] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [J1.CC2] is not connected to net [CC2] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [R4.pin1] is not connected to net [CC2] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [U2.L2] is not connected to net [SW_L2] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [L1.pin2] is not connected to net [SW_L2] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [U2.L1] is not connected to net [SW_L1] by a PCB trace."
+        },
+        {
+          "rule": "pcb_port_not_connected_error",
+          "severity": "error",
+          "message": "Port [L1.pin1] is not connected to net [SW_L1] by a PCB trace."
+        },
+        {
+          "rule": "pcb_native_async_error",
+          "severity": "error",
+          "message": "Error: Pipeline9 primary high-density routing failed: B01 failed: No path found for __tscircuit_preloaded_trace__:[\"source_net_0_mst19_0\",0]; regional fallback failed: Pipeline9 regional repair output failed its candidate validator"
+        }
+      ]
+    }
+  ],
+  "error": "drc: Pipeline9 primary high-density routing failed: B01 failed: No path found for __tscircuit_preloaded_trace__:[\"source_net_0_mst19_0\",0]; regional fallback failed: Pipeline9 regional repair output failed its candidate validator; Port [U1.3V3] is not connected to net [V3V3] by a PCB trace.; Port [C3.pin1] is not connected to net [V3V3] by a PCB trace.; Port [C4.pin1] is not connected to net [V3V3] by a PCB trace.; 64 more issues in gates.json"
+}

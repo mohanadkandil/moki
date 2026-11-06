@@ -1,0 +1,64 @@
+{
+  "scope": "Exact production failure/error collection extracted; tiny synthetic marker inputs and stub independent checks, no native solve",
+  "buildSha256": "1c11a011fcc9b20ba6d7969a8179caea75779c517d6ba7e50e61d288cf7ff41e",
+  "guardSha256": "1e930bb623da90f95d58e55eecaab4b460c8979269a2361b7ac55239fea9e601",
+  "cases": [
+    {
+      "name": "native-failure",
+      "errorTypes": [
+        "pcb_autorouting_error"
+      ],
+      "routeStage": "failed"
+    },
+    {
+      "name": "native-failure-with-fallback-trace",
+      "errorTypes": [
+        "pcb_autorouting_error"
+      ],
+      "routeStage": "failed"
+    },
+    {
+      "name": "unknown-runtime-with-fallback-trace",
+      "errorTypes": [
+        "source_runtime_error"
+      ],
+      "routeStage": "done"
+    },
+    {
+      "name": "async-only-with-fallback-trace",
+      "errorTypes": [
+        "pcb_native_async_error"
+      ],
+      "routeStage": "failed"
+    },
+    {
+      "name": "native-real-clearance",
+      "errorTypes": [
+        "pcb_trace_error"
+      ],
+      "routeStage": "done"
+    },
+    {
+      "name": "wrong-source",
+      "errorTypes": [
+        "source_plan_netlist_mismatch"
+      ],
+      "routeStage": "done"
+    },
+    {
+      "name": "subminimum-width",
+      "errorTypes": [
+        "pcb_trace_width_error"
+      ],
+      "routeStage": "done"
+    },
+    {
+      "name": "physical-placement",
+      "errorTypes": [
+        "pcb_component_overlap_error"
+      ],
+      "routeStage": "done"
+    }
+  ],
+  "allRemainAcceptanceBlocking": true
+}

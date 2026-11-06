@@ -1,0 +1,34 @@
+{
+  "schema": "moki.public-native-whole-trace-reroute-preparation/1",
+  "source": "/home/sogo/design-skill-research/repos/moki/var/board-jobs-test-chip/d7bdf1b1-c49a-49db-94fd-a9c4236dc3c4",
+  "traceId": "source_net_13_0",
+  "originalInputRawSha256": "7927746736bdab48f6f38ef3cce4b918f0d73d2f192f6298983571322b1c0113",
+  "capturedNativeRawSha256": "10c41be48f5a3e3fa45c6a28d39219b14f1bbd631d663fada8db270c6d5f120e",
+  "originalInputCanonicalSha256": "f82ac5912be2e7939ec0baf74a8c8b17dd23ddb458ce0341110e291040779ffc",
+  "preparedInputRawSha256": "23a27aec3d9b95b21c25597768ba9896dff4a308bccb9fff9a513910c9247c6c",
+  "preparedInputCanonicalSha256": "f55962b64144e44fd9b19a3174f9df1254cb6c42618830196f1c846961f6069b",
+  "fixedRecordsRawSha256": "06c17f911a0c2ea75d4c7af9bc235423b318c66ffcd002024b623da747cc205d",
+  "fixedTraceCount": 116,
+  "fixedViaRecordCount": 114,
+  "convertedViaObstacleCount": 105,
+  "originalFixedObstacleCount": 723,
+  "preparedObstacleCount": 4350,
+  "sourceUnchanged": true,
+  "originalObstaclesRetained": true,
+  "converter": "Public Pipeline7 preprocessSimpleRouteJsonSolver; no custom geometry converter",
+  "futureNativeOptions": {
+    "cacheProvider": null,
+    "powerTraceExpansion": {
+      "onlyConnectionNames": [],
+      "allowNewVias": false
+    }
+  },
+  "futureOutputRequirements": [
+    "Exact source13 connection and trace ID; no other routed trace names",
+    "Reattach fixed-native-records.json verbatim, preserving every literal outside route and barrel",
+    "Native minimum-width restoration; fresh Core materialization/source/all-net physical/DRC/fabrication/compile gates"
+  ],
+  "nativeRoutingExecuted": false,
+  "accepted": false,
+  "freshGatesMandatory": true
+}

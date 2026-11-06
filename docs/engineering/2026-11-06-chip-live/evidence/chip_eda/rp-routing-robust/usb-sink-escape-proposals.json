@@ -1,0 +1,403 @@
+{
+  "scope": "Pure exact captured pad/prefix geometry validation; not complete native route or acceptance",
+  "job": "dad50cbf-26e5-4564-bef1-8161737012aa",
+  "sourceSha256": "852dabbe596ee16d9d995595d57929987ea7874b010265cc0e71e0e42fdc50d0",
+  "fixtureSha256": "6d5d312e2e6c6fb929888bb3a366abf68f4896079485e00099960a83608799f8",
+  "verifiedPrefixPaths": 38,
+  "proposals": [
+    {
+      "ref": "U4",
+      "pad": "1",
+      "route": [
+        {
+          "route_type": "wire",
+          "x": -9.19996,
+          "y": 11.100904,
+          "layer": "top",
+          "width": 0.15
+        },
+        {
+          "route_type": "wire",
+          "x": -9.19996,
+          "y": 10.0649005,
+          "layer": "top",
+          "width": 0.15
+        }
+      ]
+    },
+    {
+      "ref": "U4",
+      "pad": "2",
+      "route": [
+        {
+          "route_type": "wire",
+          "x": -8.25,
+          "y": 11.100904,
+          "layer": "top",
+          "width": 0.3
+        },
+        {
+          "route_type": "wire",
+          "x": -8.25,
+          "y": 10.0649005,
+          "layer": "top",
+          "width": 0.3
+        }
+      ]
+    },
+    {
+      "ref": "U4",
+      "pad": "3",
+      "route": [
+        {
+          "route_type": "wire",
+          "x": -7.30004,
+          "y": 11.100904,
+          "layer": "top",
+          "width": 0.15
+        },
+        {
+          "route_type": "wire",
+          "x": -7.30004,
+          "y": 10.0649005,
+          "layer": "top",
+          "width": 0.15
+        }
+      ]
+    },
+    {
+      "ref": "U4",
+      "pad": "4",
+      "route": [
+        {
+          "route_type": "wire",
+          "x": -7.30004,
+          "y": 13.399096,
+          "layer": "top",
+          "width": 0.15
+        },
+        {
+          "route_type": "wire",
+          "x": -7.30004,
+          "y": 14.4350995,
+          "layer": "top",
+          "width": 0.15
+        }
+      ]
+    },
+    {
+      "ref": "U4",
+      "pad": "5",
+      "route": [
+        {
+          "route_type": "wire",
+          "x": -8.25,
+          "y": 13.399096,
+          "layer": "top",
+          "width": 0.3
+        },
+        {
+          "route_type": "wire",
+          "x": -8.25,
+          "y": 14.4350995,
+          "layer": "top",
+          "width": 0.3
+        }
+      ]
+    },
+    {
+      "ref": "U4",
+      "pad": "6",
+      "route": [
+        {
+          "route_type": "wire",
+          "x": -9.19996,
+          "y": 13.399096,
+          "layer": "top",
+          "width": 0.15
+        },
+        {
+          "route_type": "wire",
+          "x": -9.19996,
+          "y": 14.4350995,
+          "layer": "top",
+          "width": 0.15
+        }
+      ]
+    },
+    {
+      "ref": "R7",
+      "pad": "1",
+      "route": [
+        {
+          "route_type": "wire",
+          "x": -22.5,
+          "y": 17.496636,
+          "layer": "top",
+          "width": 0.15
+        },
+        {
+          "route_type": "wire",
+          "x": -22.5,
+          "y": 16.593398299999997,
+          "layer": "top",
+          "width": 0.15
+        }
+      ]
+    },
+    {
+      "ref": "R8",
+      "pad": "1",
+      "route": [
+        {
+          "route_type": "wire",
+          "x": -10,
+          "y": 17.496636,
+          "layer": "top",
+          "width": 0.15
+        },
+        {
+          "route_type": "wire",
+          "x": -10,
+          "y": 16.593398299999997,
+          "layer": "top",
+          "width": 0.15
+        }
+      ]
+    }
+  ],
+  "audit": [
+    {
+      "ref": "U4",
+      "pad": "1",
+      "netName": "USB_DM_EXT",
+      "selector": ".U4 > .pin1",
+      "route": [
+        {
+          "route_type": "wire",
+          "x": -9.19996,
+          "y": 11.100904,
+          "layer": "top",
+          "width": 0.15
+        },
+        {
+          "route_type": "wire",
+          "x": -9.19996,
+          "y": 10.0649005,
+          "layer": "top",
+          "width": 0.15
+        }
+      ],
+      "diagnosticSourceTraceId": "source_trace_124",
+      "diagnosticSourcePortId": "source_port_74",
+      "diagnosticPcbPortId": "pcb_port_74",
+      "diagnosticSourceNetId": "source_net_19",
+      "lengthMm": 1.0360035,
+      "widthMm": 0.15
+    },
+    {
+      "ref": "U4",
+      "pad": "2",
+      "netName": "GND",
+      "selector": ".U4 > .pin2",
+      "route": [
+        {
+          "route_type": "wire",
+          "x": -8.25,
+          "y": 11.100904,
+          "layer": "top",
+          "width": 0.3
+        },
+        {
+          "route_type": "wire",
+          "x": -8.25,
+          "y": 10.0649005,
+          "layer": "top",
+          "width": 0.3
+        }
+      ],
+      "diagnosticSourceTraceId": "source_trace_37",
+      "diagnosticSourcePortId": "source_port_75",
+      "diagnosticPcbPortId": "pcb_port_75",
+      "diagnosticSourceNetId": "source_net_4",
+      "lengthMm": 1.0360035,
+      "widthMm": 0.3
+    },
+    {
+      "ref": "U4",
+      "pad": "3",
+      "netName": "USB_DP_EXT",
+      "selector": ".U4 > .pin3",
+      "route": [
+        {
+          "route_type": "wire",
+          "x": -7.30004,
+          "y": 11.100904,
+          "layer": "top",
+          "width": 0.15
+        },
+        {
+          "route_type": "wire",
+          "x": -7.30004,
+          "y": 10.0649005,
+          "layer": "top",
+          "width": 0.15
+        }
+      ],
+      "diagnosticSourceTraceId": "source_trace_129",
+      "diagnosticSourcePortId": "source_port_76",
+      "diagnosticPcbPortId": "pcb_port_76",
+      "diagnosticSourceNetId": "source_net_20",
+      "lengthMm": 1.0360035,
+      "widthMm": 0.15
+    },
+    {
+      "ref": "U4",
+      "pad": "4",
+      "netName": "USB_DP_EXT",
+      "selector": ".U4 > .pin4",
+      "route": [
+        {
+          "route_type": "wire",
+          "x": -7.30004,
+          "y": 13.399096,
+          "layer": "top",
+          "width": 0.15
+        },
+        {
+          "route_type": "wire",
+          "x": -7.30004,
+          "y": 14.4350995,
+          "layer": "top",
+          "width": 0.15
+        }
+      ],
+      "diagnosticSourceTraceId": "source_trace_130",
+      "diagnosticSourcePortId": "source_port_77",
+      "diagnosticPcbPortId": "pcb_port_77",
+      "diagnosticSourceNetId": "source_net_20",
+      "lengthMm": 1.0360035,
+      "widthMm": 0.15
+    },
+    {
+      "ref": "U4",
+      "pad": "5",
+      "netName": "VBUS",
+      "selector": ".U4 > .pin5",
+      "route": [
+        {
+          "route_type": "wire",
+          "x": -8.25,
+          "y": 13.399096,
+          "layer": "top",
+          "width": 0.3
+        },
+        {
+          "route_type": "wire",
+          "x": -8.25,
+          "y": 14.4350995,
+          "layer": "top",
+          "width": 0.3
+        }
+      ],
+      "diagnosticSourceTraceId": "source_trace_113",
+      "diagnosticSourcePortId": "source_port_78",
+      "diagnosticPcbPortId": "pcb_port_78",
+      "diagnosticSourceNetId": "source_net_18",
+      "lengthMm": 1.0360035,
+      "widthMm": 0.3
+    },
+    {
+      "ref": "U4",
+      "pad": "6",
+      "netName": "USB_DM_EXT",
+      "selector": ".U4 > .pin6",
+      "route": [
+        {
+          "route_type": "wire",
+          "x": -9.19996,
+          "y": 13.399096,
+          "layer": "top",
+          "width": 0.15
+        },
+        {
+          "route_type": "wire",
+          "x": -9.19996,
+          "y": 14.4350995,
+          "layer": "top",
+          "width": 0.15
+        }
+      ],
+      "diagnosticSourceTraceId": "source_trace_125",
+      "diagnosticSourcePortId": "source_port_79",
+      "diagnosticPcbPortId": "pcb_port_79",
+      "diagnosticSourceNetId": "source_net_19",
+      "lengthMm": 1.0360035,
+      "widthMm": 0.15
+    },
+    {
+      "ref": "R7",
+      "pad": "1",
+      "netName": "CC1",
+      "selector": ".R7 > .pin1",
+      "route": [
+        {
+          "route_type": "wire",
+          "x": -22.5,
+          "y": 17.496636,
+          "layer": "top",
+          "width": 0.15
+        },
+        {
+          "route_type": "wire",
+          "x": -22.5,
+          "y": 16.593398299999997,
+          "layer": "top",
+          "width": 0.15
+        }
+      ],
+      "diagnosticSourceTraceId": "source_trace_135",
+      "diagnosticSourcePortId": "source_port_112",
+      "diagnosticPcbPortId": "pcb_port_112",
+      "diagnosticSourceNetId": "source_net_21",
+      "lengthMm": 0.9032377,
+      "widthMm": 0.15
+    },
+    {
+      "ref": "R8",
+      "pad": "1",
+      "netName": "CC2",
+      "selector": ".R8 > .pin1",
+      "route": [
+        {
+          "route_type": "wire",
+          "x": -10,
+          "y": 17.496636,
+          "layer": "top",
+          "width": 0.15
+        },
+        {
+          "route_type": "wire",
+          "x": -10,
+          "y": 16.593398299999997,
+          "layer": "top",
+          "width": 0.15
+        }
+      ],
+      "diagnosticSourceTraceId": "source_trace_137",
+      "diagnosticSourcePortId": "source_port_114",
+      "diagnosticPcbPortId": "pcb_port_114",
+      "diagnosticSourceNetId": "source_net_22",
+      "lengthMm": 0.9032377,
+      "widthMm": 0.15
+    }
+  ],
+  "netNames": [
+    "USB_DM_EXT",
+    "GND",
+    "USB_DP_EXT",
+    "VBUS",
+    "CC1",
+    "CC2"
+  ]
+}

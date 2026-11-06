@@ -1,0 +1,49 @@
+{
+  "lcsc": "C160352",
+  "mpn": "B2B-PH-SM4-TB(LF)(SN)",
+  "manufacturer": "JST",
+  "package": "CONN-SMD_B2B-PH-SM4-TB-LF-SN",
+  "stock": 476,
+  "catalogReceipt": "sha256:8f6f0a40d950668003a77a3a54e9834d07dc6048f7e982e9e7212305bd815b91",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "5cc1a5cc6ef30026dc91baf1be767bc6609276aab75180b6fed8e38cbb9eaf1f",
+  "footprintSha256": "5cb69d2acf92446cb5f54f2e90b5b389b22f8cd609ed6005251aa4054e430564",
+  "pins": [
+    {
+      "pad": "1",
+      "labels": [
+        "1"
+      ]
+    },
+    {
+      "pad": "2",
+      "labels": [
+        "2"
+      ]
+    },
+    {
+      "pad": "3",
+      "labels": [
+        "3"
+      ]
+    },
+    {
+      "pad": "4",
+      "labels": [
+        "4"
+      ]
+    }
+  ],
+  "models": [
+    {
+      "format": "obj",
+      "url": "https://modules.easyeda.com/3dmodel/8d1513db651747eb8999d5542d1d8507"
+    },
+    {
+      "format": "step",
+      "url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/8d1513db651747eb8999d5542d1d8507"
+    }
+  ],
+  "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_JST-B2B-PH-SM4-TB-LF-SN_C160352.pdf",
+  "datasheetReceipt": "sha256:a5c403b7362f0ac6ff44c553b93b480b7dc5fccd3b3a51a83f86f16d05459472"
+}

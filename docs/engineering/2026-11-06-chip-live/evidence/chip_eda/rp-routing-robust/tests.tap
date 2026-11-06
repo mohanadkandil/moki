@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: actual failed4layer placement admits14 native off-pad power/ground escapes preserving every clock limit and immutable input
+ok 1 - actual failed4layer placement admits14 native off-pad power/ground escapes preserving every clock limit and immutable input
+  ---
+  duration_ms: 389.71546
+  type: 'test'
+  ...
+# Subtest: same actual profile validates on2/4layers with independently changed enclosing board sizes
+ok 2 - same actual profile validates on2/4layers with independently changed enclosing board sizes
+  ---
+  duration_ms: 1296.381219
+  type: 'test'
+  ...
+# Subtest: clock and escape profiles follow actual cardinal90degree placement on4layers
+ok 3 - clock and escape profiles follow actual cardinal90degree placement on4layers
+  ---
+  duration_ms: 352.303892
+  type: 'test'
+  ...
+# Subtest: foreign copper, clock encroachment, off-board vias and native mapping mutants reject
+ok 4 - foreign copper, clock encroachment, off-board vias and native mapping mutants reject
+  ---
+  duration_ms: 955.508704
+  type: 'test'
+  ...
+# Subtest: captured4layer failure is a later foreign supply route, while the new pin22 escape leaves away from saved XOUT
+ok 5 - captured4layer failure is a later foreign supply route, while the new pin22 escape leaves away from saved XOUT
+  ---
+  duration_ms: 336.654546
+  type: 'test'
+  ...
+# Subtest: clock and escape-only profiles fit centered55x40/40x55 boards with90degree and translated native frames
+ok 6 - clock and escape-only profiles fit centered55x40/40x55 boards with90degree and translated native frames
+  ---
+  duration_ms: 393.529945
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4818.857975

@@ -14,7 +14,7 @@ That writes three outputs from one source, and makes no model or network calls:
 
 | Output | Use |
 | --- | --- |
-| [`docs/media/architecture-2026-11.png`](../media/architecture.png) | The README image |
+| [`docs/media/architecture-2026-11.png`](../media/architecture-2026-11.png) | The README image |
 | [`moki-architecture.svg`](moki-architecture.svg) | Vector copy, with Manrope and the logos embedded |
 | [`web/public/architecture/index.html`](../../web/public/architecture/index.html) | Standalone page, at `/architecture/index.html` under `npm run dev` |
 

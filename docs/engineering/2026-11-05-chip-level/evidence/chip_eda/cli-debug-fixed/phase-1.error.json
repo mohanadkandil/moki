@@ -1,0 +1,22 @@
+{
+  "type": "autorouter_phase_error",
+  "subcircuit_id": "subcircuit_source_group_0",
+  "routingPhaseIndex": 1,
+  "phaseName": "compiler-pad-exits",
+  "phaseStageIndex": 1,
+  "phaseStageCount": 2,
+  "phaseOrdinal": 3,
+  "phaseCount": 4,
+  "elapsedMs": 29091,
+  "connectionCount": 14,
+  "obstacleCount": 343,
+  "previousTraceCount": 12,
+  "autorouterName": "tscircuit",
+  "solverName": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+  "effort": 2,
+  "cacheStatus": "miss",
+  "cacheKey": "routes:core@0.0.2265:solver:0f3db71771b19459:srj:c8826e76f621162e",
+  "error": {
+    "message": "CJ ran out of iterations (capacity-autorouter@0.0.1037) (capacity-autorouter@0.0.1037)"
+  }
+}

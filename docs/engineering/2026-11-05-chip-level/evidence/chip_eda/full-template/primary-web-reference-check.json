@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-11-06",
+  "method": "OpenAI web primary PDF reading; not a retained raw local PDF download",
+  "sources": [
+    {
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX98357A-MAX98357B.pdf",
+      "document": "MAX98357A/MAX98357B Rev16 February2026,38pages",
+      "page": 29,
+      "figure": "17",
+      "caption": "Left-Channel PCM Operation with 12dB Gain"
+    },
+    {
+      "url": "https://www.st.com/resource/en/datasheet/usblc6-2.pdf",
+      "document": "ST DS4260 Rev7 December2021,20pages",
+      "page": 9,
+      "figure": "13",
+      "caption": "USB 2.0 port application diagram using USBLC6-2"
+    }
+  ],
+  "localDownload": "curl HTTP2 failed; HTTP1 attempt recorded separately; no rawSHA claimed from web reading"
+}

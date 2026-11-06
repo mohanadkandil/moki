@@ -1,0 +1,88 @@
+{
+  "by": "chip_review",
+  "kind": "proposal only; not a new schematic review receipt",
+  "pageConvention": "1-based physical PDF page",
+  "references": {
+    "charger": {
+      "lcsc": "C2861252",
+      "datasheetUrl": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+      "page": 38,
+      "figure": "10-12",
+      "quote": "Using BQ24074 in a Standalone Charger Application"
+    },
+    "buck": {
+      "lcsc": "C28060",
+      "datasheetUrl": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+      "page": 6,
+      "figure": "4",
+      "quote": "PMP4778 Reference Design Schematic"
+    },
+    "mic": {
+      "lcsc": "C5656610",
+      "datasheetUrl": "https://d17t6iyxenbwp1.cloudfront.net/s3fs-public/2026-03/DS-000069-ICS-43434-v1.2.pdf?VersionId=W5u1f2s5LpMkDjoZSc3k7UxneMl9.WkV",
+      "page": 13,
+      "figure": "8",
+      "quote": "System Block Diagram"
+    },
+    "amp": {
+      "lcsc": "C910544",
+      "datasheetUrl": "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588886693293772800-C910544.pdf?response-content-disposition=attachment%3B%20filename%3DC910544.pdf%3B%20filename%2A%3DUTF-8%27%27C910544.pdf&x-oss-date=20261105T220812Z&x-oss-expires=1800&x-oss-security-token=CAISgAN1q6Ft5B2yfSjIr5ndP%2F7erJF0grOpZnH0jXIAbb54v5f9mjz2IHhMdHJsAOodtv0%2FmmhT6PkclqRLcbhpcmfjV%2BZHzLB8qbZMlBIz557b16cNrbH4M4H6aXeirtuwDsz9SNTCALjPD3nPii50x5bjaDymRCbLGJaViJlhHLN1Ow6jdmhpCctxLAlvo9NgFxm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmFy8yFTx0b0SvJ%2BjYMrmPctoN9JnSdC5mfdzau3a1TJ84gRD0a5wkaVA1zbDs5bfISEIuUzebreLqY03dV4mOvdqIcMe8qigz88fk%2FfIioH6xyxKOexoSCnFTOiiupCcQLPyao9jLu6iayqViY7QaIOTqQohZmkAMwVOasAsI3Ngh4zF97Qt0cVNkXO9gWfLI8DtuMleWkpmXcQbzJSgc5lCkRRYwGs1287ugXlSQzo890KPDAEovaKCnZ2ZSfh7Y4sNknI6i%2Bfc2Se2MIkIOF%2BIgqKWD5sagAGbeqfO9jxiibMXP2ZVIR9GIYCYzZ5bzsvDnWm%2FlRtQri6OdVPx6OTIVCjs29z0Ql2MDtNooMwyR75cQIv3U1JdBIDfPUHlUpGzJRgp9hNAjUIu6risSQQmZw%2F1ZOZBKco%2B9yjFZ3YYomOKBDAen2BYl7wzBjcK6aYvZzjD1WjypSAA&x-oss-signature-version=OSS4-HMAC-SHA256&x-oss-credential=STS.NZhtDjANU5qBdWEirUa1TPRVx%2F20261105%2Feu-central-1%2Foss%2Faliyun_v4_request&x-oss-signature=38543b0e1d1088e304b7d1210417185edfdf77198790005f46a3529823c7bc42",
+      "page": 29,
+      "figure": "16",
+      "quote": "Left-Channel PCM Operation with 12dB Gain"
+    },
+    "led": {
+      "lcsc": "C7484",
+      "datasheetUrl": "https://www.ti.com/lit/ds/symlink/sn74ahct1g125.pdf",
+      "page": 9,
+      "figure": "8-1",
+      "quote": "Typical Application Schematic"
+    },
+    "usb": {
+      "lcsc": "C7519",
+      "datasheetUrl": "https://www.st.com/resource/en/datasheet/usblc6-2.pdf",
+      "page": 9,
+      "figure": "13",
+      "quote": "USB 2.0 port application diagram using USBLC6-2"
+    }
+  },
+  "sources": {
+    "charger": {
+      "file": "../power-research/bq24074-manufacturer.pdf",
+      "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+      "verification": "chip_review direct physical-page text and figure inspection"
+    },
+    "buck": {
+      "file": "../power-research/ti-tps63001-reference-slva358a.pdf",
+      "sha256": "aaffb9d127ce4ed341773d5b64e6500d6870bb4066713f6cc04983ec3a0df681",
+      "verification": "chip_review direct physical-page text and figure inspection"
+    },
+    "mic": {
+      "file": "../audio-led-research/mic-primary.pdf",
+      "sha256": "6f87312bec5078aef44866f4e765137aad0a085b144f3a4f27d697f28f68b0c8",
+      "verification": "chip_review direct physical-page text and figure inspection"
+    },
+    "amp": {
+      "file": "../audio-led-research/amp-manufacturer-jlc-mirror.pdf",
+      "sha256": "1509d795a016246625d8614df332b18ad85943c9c6cd1bf009291220d4b0d5c3",
+      "verification": "chip_review direct physical-page text and figure inspection"
+    },
+    "led": {
+      "file": "../audio-led-research/ahct-datasheet.pdf",
+      "sha256": "564b239f73ff629f960832fa7e1c64f6a651eea28f64115ecefcdb7af22ca416",
+      "verification": "chip_review direct physical-page text and figure inspection"
+    },
+    "usb": {
+      "url": "https://www.st.com/resource/en/datasheet/usblc6-2.pdf",
+      "document": "ST DS4260 Rev7 December2021,20PDFpages",
+      "verification": "root primary web reading; raw local PDF not retained; C7519-catalog.pdf is not datasheet evidence"
+    }
+  },
+  "notes": {
+    "charger": "Figure10-12 includes external thermistor topology;190mA setpoint,default floating ITERM/TMR and chosen capacitances are deliberate datasheet-supported adaptations, not exact example values.",
+    "buck": "Use fixed TPS63001 reference document, not manufacturer adjustable-output figure2. Grounded PS/SYNC and chosen bypass/inductor ratings retain separate reviewed limits.",
+    "amp": "Exact retained manufacturer Rev11 mirror; WLP ball labels in figure16. Actual selected TQFN physical mapping verified separately page15. Signed supplier mirror URL is captured evidence and may expire; do not claim this page was verified in current Rev16 primary.",
+    "led": "AHCT translator application figure; actual WS2812 physicalDIN4 and author bypass choice have separate Worldsemi source. No fake display-header IC reference.",
+    "usb": "Reference covers USBLC6 protection topology only; separate CC Rd and native MCU USB guidance remain separate primary sources."
+  }
+}

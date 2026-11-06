@@ -1,0 +1,613 @@
+{
+  "scope": "Actual native imported pad-to-port evidence only. Routing disabled; authored placement still has known overlaps. Not a DRC pass.",
+  "gates": [
+    {
+      "inst": "mcu",
+      "gate": "block-test",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "block-pad-scope",
+          "severity": "warning",
+          "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+        }
+      ],
+      "measurements": [
+        {
+          "where": "mcu.U1",
+          "name": "native-physical-pads",
+          "measured": 41,
+          "target": 41,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "mcu.C3",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "mcu.C4",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "mcu.C5",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "mcu.R1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "mcu.R2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "mcu.R9",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "mcu.R10",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "inst": "usb",
+      "gate": "block-test",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "block-pad-scope",
+          "severity": "warning",
+          "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+        }
+      ],
+      "measurements": [
+        {
+          "where": "usb.U3",
+          "name": "native-physical-pads",
+          "measured": 6,
+          "target": 6,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "usb.J1",
+          "name": "native-physical-pads",
+          "measured": 16,
+          "target": 16,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "usb.R3",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "usb.R4",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "usb.R5",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "usb.R6",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "inst": "buttons",
+      "gate": "block-test",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "block-pad-scope",
+          "severity": "warning",
+          "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+        }
+      ],
+      "measurements": [
+        {
+          "where": "buttons.SW1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "buttons.SW2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "inst": "header",
+      "gate": "block-test",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "block-pad-scope",
+          "severity": "warning",
+          "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+        }
+      ],
+      "measurements": [
+        {
+          "where": "header.J2",
+          "name": "native-physical-pads",
+          "measured": 6,
+          "target": 6,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "header.R7",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "header.R8",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "inst": "charger",
+      "gate": "block-test",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "block-pad-scope",
+          "severity": "warning",
+          "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+        }
+      ],
+      "measurements": [
+        {
+          "where": "charger.U1",
+          "name": "native-physical-pads",
+          "measured": 17,
+          "target": 17,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "charger.J1",
+          "name": "native-physical-pads",
+          "measured": 4,
+          "target": 4,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "charger.R1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "charger.R2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "charger.C1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "charger.C2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "charger.C3",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "charger.C4",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "charger.C5",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "charger.C6",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "charger.J2",
+          "name": "native-physical-pads",
+          "measured": 4,
+          "target": 4,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "inst": "buck",
+      "gate": "block-test",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "block-pad-scope",
+          "severity": "warning",
+          "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+        }
+      ],
+      "measurements": [
+        {
+          "where": "buck.U1",
+          "name": "native-physical-pads",
+          "measured": 11,
+          "target": 11,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "buck.L1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "buck.C1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "buck.C2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "buck.C3",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "buck.C4",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "buck.C5",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "buck.C6",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "inst": "mic",
+      "gate": "block-test",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "block-pad-scope",
+          "severity": "warning",
+          "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+        }
+      ],
+      "measurements": [
+        {
+          "where": "mic.U1",
+          "name": "native-physical-pads",
+          "measured": 6,
+          "target": 6,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "mic.C1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "mic.R1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "inst": "amp",
+      "gate": "block-test",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "block-pad-scope",
+          "severity": "warning",
+          "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+        }
+      ],
+      "measurements": [
+        {
+          "where": "amp.U1",
+          "name": "native-physical-pads",
+          "measured": 17,
+          "target": 17,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "amp.C1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "amp.C2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "amp.J1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "inst": "display",
+      "gate": "block-test",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "block-pad-scope",
+          "severity": "warning",
+          "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+        }
+      ],
+      "measurements": [
+        {
+          "where": "display.J1",
+          "name": "native-physical-pads",
+          "measured": 6,
+          "target": 6,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "display.R1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "display.R2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "inst": "led",
+      "gate": "block-test",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "block-pad-scope",
+          "severity": "warning",
+          "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+        }
+      ],
+      "measurements": [
+        {
+          "where": "led.D1",
+          "name": "native-physical-pads",
+          "measured": 4,
+          "target": 4,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "led.U1",
+          "name": "native-physical-pads",
+          "measured": 5,
+          "target": 5,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "led.C1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "led.C2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        }
+      ]
+    }
+  ]
+}

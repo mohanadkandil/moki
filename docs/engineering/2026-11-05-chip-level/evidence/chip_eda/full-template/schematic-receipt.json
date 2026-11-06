@@ -1,0 +1,125 @@
+{
+  "stages": [
+    {
+      "name": "codegen",
+      "status": "done",
+      "ms": 2322.058911
+    },
+    {
+      "name": "placement",
+      "status": "done",
+      "ms": 49.14629700000023
+    },
+    {
+      "name": "svg",
+      "status": "done",
+      "ms": 1837.5625440000003
+    }
+  ],
+  "totalMs": 4377.847838,
+  "parts": 52,
+  "gates": [
+    {
+      "gate": "erc",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "esp32-s3-audio-core",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "usb-c-sink",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "boot-reset-buttons",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "i2c-header",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "bq24074-usb-190ma-ntc-required",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "tps63001-usb-sys-3v3",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "i2s-mic-ics43434",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "i2s-amp-max98357a",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "ssd1306-i2c-header",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "ws2812b-v5-levelshift",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "usb-external-host",
+          "severity": "warning",
+          "where": "mcu.USB, usb.USB",
+          "message": "USB peripheral relies on an external host through the declared passive connector"
+        },
+        {
+          "rule": "layout-constraint-pending",
+          "severity": "warning",
+          "where": "esp32-s3-audio-core",
+          "message": "Keepout realization must be checked against final imported PCB geometry"
+        }
+      ]
+    },
+    {
+      "gate": "power",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "thermal-assumption",
+          "severity": "warning",
+          "where": "charger.SYS",
+          "message": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+        },
+        {
+          "rule": "thermal-assumption",
+          "severity": "warning",
+          "where": "charger.BAT",
+          "message": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+        },
+        {
+          "rule": "thermal-assumption",
+          "severity": "warning",
+          "where": "buck.V3V3",
+          "message": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,955 @@
+{
+  "schema": "moki.import-map/1",
+  "inputHash": "71680ff02eeba7e0c62eb99fccb3ba53b2ed02411bea8d12ad26a7c95c3bcf36",
+  "parts": [
+    {
+      "ref": "U1",
+      "inst": "mcu",
+      "localRef": "U1",
+      "blockContentHash": "ef0b1c694e6c6fb2e1c1329221be9e468ac7d30e690a23c1d67b574f248eef54",
+      "lcsc": "C2913198",
+      "catalogReceipt": "sha256:be3d110031a2dca135e88aaa34364b114483a53f7b7afc6b289adfc8c2863064",
+      "footprintSha256": "9fee371f710f4d3ece1ec657dab465aafa8e1b23336ed3bd30288f61e0bf8720",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2",
+        "3": "pin3",
+        "4": "pin4",
+        "5": "pin5",
+        "6": "pin6",
+        "7": "pin7",
+        "8": "pin8",
+        "9": "pin9",
+        "10": "pin10",
+        "11": "pin11",
+        "12": "pin12",
+        "13": "pin13",
+        "14": "pin14",
+        "15": "pin15",
+        "16": "pin16",
+        "17": "pin17",
+        "18": "pin18",
+        "19": "pin19",
+        "20": "pin20",
+        "21": "pin21",
+        "22": "pin22",
+        "23": "pin23",
+        "24": "pin24",
+        "25": "pin25",
+        "26": "pin26",
+        "27": "pin27",
+        "28": "pin28",
+        "29": "pin29",
+        "30": "pin30",
+        "31": "pin31",
+        "32": "pin32",
+        "33": "pin33",
+        "34": "pin34",
+        "35": "pin35",
+        "36": "pin36",
+        "37": "pin37",
+        "38": "pin38",
+        "39": "pin39",
+        "40": "pin40",
+        "41": "pin41"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C2913198"
+    },
+    {
+      "ref": "C3",
+      "inst": "mcu",
+      "localRef": "C3",
+      "blockContentHash": "ef0b1c694e6c6fb2e1c1329221be9e468ac7d30e690a23c1d67b574f248eef54",
+      "lcsc": "C45783",
+      "catalogReceipt": "sha256:e7706c583e149436ae74afe897ff10c1072db3ad395f553f169cd5a8751d288e",
+      "footprintSha256": "2fb5b0d11c86569d2aa6b896edea815da6011d028e9e79f5d7db5693a9ffaf43",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C45783"
+    },
+    {
+      "ref": "C4",
+      "inst": "mcu",
+      "localRef": "C4",
+      "blockContentHash": "ef0b1c694e6c6fb2e1c1329221be9e468ac7d30e690a23c1d67b574f248eef54",
+      "lcsc": "C14663",
+      "catalogReceipt": "sha256:fde5081a0b45324f436df1a456a1a4dd1608306b862e8a6f4c8187b9d69ac426",
+      "footprintSha256": "c6961a0f3ecb855bedad17ad6397d458e8feacb3ac83cd2b5e6b49c83a9c4338",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C14663"
+    },
+    {
+      "ref": "C5",
+      "inst": "mcu",
+      "localRef": "C5",
+      "blockContentHash": "ef0b1c694e6c6fb2e1c1329221be9e468ac7d30e690a23c1d67b574f248eef54",
+      "lcsc": "C15849",
+      "catalogReceipt": "sha256:105c7d94f522ce1cbbbc5b1f309aaeb707bbeaa42bdecc861a0cb93b6624b303",
+      "footprintSha256": "c6961a0f3ecb855bedad17ad6397d458e8feacb3ac83cd2b5e6b49c83a9c4338",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C15849"
+    },
+    {
+      "ref": "R1",
+      "inst": "mcu",
+      "localRef": "R1",
+      "blockContentHash": "ef0b1c694e6c6fb2e1c1329221be9e468ac7d30e690a23c1d67b574f248eef54",
+      "lcsc": "C25804",
+      "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C25804"
+    },
+    {
+      "ref": "R2",
+      "inst": "mcu",
+      "localRef": "R2",
+      "blockContentHash": "ef0b1c694e6c6fb2e1c1329221be9e468ac7d30e690a23c1d67b574f248eef54",
+      "lcsc": "C25804",
+      "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C25804"
+    },
+    {
+      "ref": "R9",
+      "inst": "mcu",
+      "localRef": "R9",
+      "blockContentHash": "ef0b1c694e6c6fb2e1c1329221be9e468ac7d30e690a23c1d67b574f248eef54",
+      "lcsc": "C25804",
+      "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C25804"
+    },
+    {
+      "ref": "R10",
+      "inst": "mcu",
+      "localRef": "R10",
+      "blockContentHash": "ef0b1c694e6c6fb2e1c1329221be9e468ac7d30e690a23c1d67b574f248eef54",
+      "lcsc": "C25804",
+      "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C25804"
+    },
+    {
+      "ref": "U3",
+      "inst": "usb",
+      "localRef": "U3",
+      "blockContentHash": "cbc130903011c22d3bb2dd8f73e7a1dd56c73c4625e504e4570c2679cfa5e4eb",
+      "lcsc": "C7519",
+      "catalogReceipt": "sha256:69070d9186f3c69a08754cb65597878f3e7ff53eecfc148220b40aa5bd717527",
+      "footprintSha256": "bb87c706156520efefa787b1a2524ba3f142cd8eb0a6c03350046cae22d44c89",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2",
+        "3": "pin3",
+        "4": "pin4",
+        "5": "pin5",
+        "6": "pin6"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C7519"
+    },
+    {
+      "ref": "J1",
+      "inst": "usb",
+      "localRef": "J1",
+      "blockContentHash": "cbc130903011c22d3bb2dd8f73e7a1dd56c73c4625e504e4570c2679cfa5e4eb",
+      "lcsc": "C165948",
+      "catalogReceipt": "sha256:7bd08b687d8d0b901fb91b86a3c834972bd938733d5aa21c71da3e88ff3990ee",
+      "footprintSha256": "a776b0d3da5224266b3423589502a9656e8cf0432b7525f8e5a65d7959bd078a",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2",
+        "3": "pin3",
+        "4": "pin4",
+        "B8": "pin5",
+        "A5": "pin6",
+        "B7": "pin7",
+        "A6": "pin8",
+        "A7": "pin9",
+        "B6": "pin10",
+        "A8": "pin11",
+        "B5": "pin12",
+        "A1B12": "pin13",
+        "B1A12": "pin14",
+        "B4A9": "pin15",
+        "A4B9": "pin16"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C165948"
+    },
+    {
+      "ref": "R3",
+      "inst": "usb",
+      "localRef": "R3",
+      "blockContentHash": "cbc130903011c22d3bb2dd8f73e7a1dd56c73c4625e504e4570c2679cfa5e4eb",
+      "lcsc": "C23186",
+      "catalogReceipt": "sha256:4d6005af8e9f76cf0d52bc983a547a10aba5f3917460ac5483c3b3c2b333aa14",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C23186"
+    },
+    {
+      "ref": "R4",
+      "inst": "usb",
+      "localRef": "R4",
+      "blockContentHash": "cbc130903011c22d3bb2dd8f73e7a1dd56c73c4625e504e4570c2679cfa5e4eb",
+      "lcsc": "C23186",
+      "catalogReceipt": "sha256:4d6005af8e9f76cf0d52bc983a547a10aba5f3917460ac5483c3b3c2b333aa14",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C23186"
+    },
+    {
+      "ref": "R5",
+      "inst": "usb",
+      "localRef": "R5",
+      "blockContentHash": "cbc130903011c22d3bb2dd8f73e7a1dd56c73c4625e504e4570c2679cfa5e4eb",
+      "lcsc": "C23345",
+      "catalogReceipt": "sha256:442113217ccc4cd213f01b29707684061f0faf0c0d6c23685258899d08ab260f",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C23345"
+    },
+    {
+      "ref": "R6",
+      "inst": "usb",
+      "localRef": "R6",
+      "blockContentHash": "cbc130903011c22d3bb2dd8f73e7a1dd56c73c4625e504e4570c2679cfa5e4eb",
+      "lcsc": "C23345",
+      "catalogReceipt": "sha256:442113217ccc4cd213f01b29707684061f0faf0c0d6c23685258899d08ab260f",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C23345"
+    },
+    {
+      "ref": "SW1",
+      "inst": "buttons",
+      "localRef": "SW1",
+      "blockContentHash": "c701a9b3a791baf70b0767b7377e41728c976685e7d2176f5a23595f576b6320",
+      "lcsc": "C720477",
+      "catalogReceipt": "sha256:7652107e641606a4db7aec40192ee21fafd98db6a7b939da5245cdfd87287726",
+      "footprintSha256": "fb895bf94b06a01c3ebc51f062be157e5f1e991415b12d5d790b479377613be6",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C720477"
+    },
+    {
+      "ref": "SW2",
+      "inst": "buttons",
+      "localRef": "SW2",
+      "blockContentHash": "c701a9b3a791baf70b0767b7377e41728c976685e7d2176f5a23595f576b6320",
+      "lcsc": "C720477",
+      "catalogReceipt": "sha256:7652107e641606a4db7aec40192ee21fafd98db6a7b939da5245cdfd87287726",
+      "footprintSha256": "fb895bf94b06a01c3ebc51f062be157e5f1e991415b12d5d790b479377613be6",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C720477"
+    },
+    {
+      "ref": "J2",
+      "inst": "header",
+      "localRef": "J2",
+      "blockContentHash": "1a20d4a963be6b2b977ee5dac95bda8c8b20b2ec108ec6e83377cab0d7b08764",
+      "lcsc": "C160404",
+      "catalogReceipt": "sha256:1f6986d8e1e0029252480dcbb4fe6a48c8bc91b0331da16840616acfb26ffd35",
+      "footprintSha256": "665d4d032bcfa270559702e46b40292437e7584313bd86aeea6f2bec0a7c171e",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2",
+        "3": "pin3",
+        "4": "pin4",
+        "5": "pin5",
+        "6": "pin6"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C160404"
+    },
+    {
+      "ref": "R7",
+      "inst": "header",
+      "localRef": "R7",
+      "blockContentHash": "1a20d4a963be6b2b977ee5dac95bda8c8b20b2ec108ec6e83377cab0d7b08764",
+      "lcsc": "C25804",
+      "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C25804"
+    },
+    {
+      "ref": "R8",
+      "inst": "header",
+      "localRef": "R8",
+      "blockContentHash": "1a20d4a963be6b2b977ee5dac95bda8c8b20b2ec108ec6e83377cab0d7b08764",
+      "lcsc": "C25804",
+      "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C25804"
+    },
+    {
+      "ref": "U2",
+      "inst": "charger",
+      "localRef": "U1",
+      "blockContentHash": "2c54dd7c01e1f452ac63c8559f601c1d1e4cadd2045b499193724c720627c669",
+      "lcsc": "C2861252",
+      "catalogReceipt": "sha256:ed5bf73fd1d3f8fb66c47857bdcffe278b63d972b2f81d769d1c0a5a2a043b64",
+      "footprintSha256": "da6fe8744da8b8dbe5ba287da702e776e79ae0e1953cfa250f5cd75d59ffe12e",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2",
+        "3": "pin3",
+        "4": "pin4",
+        "5": "pin5",
+        "6": "pin6",
+        "7": "pin7",
+        "8": "pin8",
+        "9": "pin9",
+        "10": "pin10",
+        "11": "pin11",
+        "12": "pin12",
+        "13": "pin13",
+        "14": "pin14",
+        "15": "pin15",
+        "16": "pin16",
+        "17": "pin17"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C2861252"
+    },
+    {
+      "ref": "J3",
+      "inst": "charger",
+      "localRef": "J1",
+      "blockContentHash": "2c54dd7c01e1f452ac63c8559f601c1d1e4cadd2045b499193724c720627c669",
+      "lcsc": "C160352",
+      "catalogReceipt": "sha256:8f6f0a40d950668003a77a3a54e9834d07dc6048f7e982e9e7212305bd815b91",
+      "footprintSha256": "5cb69d2acf92446cb5f54f2e90b5b389b22f8cd609ed6005251aa4054e430564",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2",
+        "3": "pin3",
+        "4": "pin4"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C160352"
+    },
+    {
+      "ref": "R11",
+      "inst": "charger",
+      "localRef": "R1",
+      "blockContentHash": "2c54dd7c01e1f452ac63c8559f601c1d1e4cadd2045b499193724c720627c669",
+      "lcsc": "C22765",
+      "catalogReceipt": "sha256:a7829c34d6f9a961ee9e63bec6d7c01bb62dece66ecf3aae35aaf79e2fcf5b1d",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C22765"
+    },
+    {
+      "ref": "R12",
+      "inst": "charger",
+      "localRef": "R2",
+      "blockContentHash": "2c54dd7c01e1f452ac63c8559f601c1d1e4cadd2045b499193724c720627c669",
+      "lcsc": "C23162",
+      "catalogReceipt": "sha256:38d622617e531e2f84b7e66a6815a7cf2eec91f7a3cd8df13e4fcb35c0c858be",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C23162"
+    },
+    {
+      "ref": "C1",
+      "inst": "charger",
+      "localRef": "C1",
+      "blockContentHash": "2c54dd7c01e1f452ac63c8559f601c1d1e4cadd2045b499193724c720627c669",
+      "lcsc": "C15849",
+      "catalogReceipt": "sha256:105c7d94f522ce1cbbbc5b1f309aaeb707bbeaa42bdecc861a0cb93b6624b303",
+      "footprintSha256": "c6961a0f3ecb855bedad17ad6397d458e8feacb3ac83cd2b5e6b49c83a9c4338",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C15849"
+    },
+    {
+      "ref": "C2",
+      "inst": "charger",
+      "localRef": "C2",
+      "blockContentHash": "2c54dd7c01e1f452ac63c8559f601c1d1e4cadd2045b499193724c720627c669",
+      "lcsc": "C15849",
+      "catalogReceipt": "sha256:105c7d94f522ce1cbbbc5b1f309aaeb707bbeaa42bdecc861a0cb93b6624b303",
+      "footprintSha256": "c6961a0f3ecb855bedad17ad6397d458e8feacb3ac83cd2b5e6b49c83a9c4338",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C15849"
+    },
+    {
+      "ref": "C6",
+      "inst": "charger",
+      "localRef": "C3",
+      "blockContentHash": "2c54dd7c01e1f452ac63c8559f601c1d1e4cadd2045b499193724c720627c669",
+      "lcsc": "C15850",
+      "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+      "footprintSha256": "2fb5b0d11c86569d2aa6b896edea815da6011d028e9e79f5d7db5693a9ffaf43",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C15850"
+    },
+    {
+      "ref": "C7",
+      "inst": "charger",
+      "localRef": "C4",
+      "blockContentHash": "2c54dd7c01e1f452ac63c8559f601c1d1e4cadd2045b499193724c720627c669",
+      "lcsc": "C15850",
+      "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+      "footprintSha256": "2fb5b0d11c86569d2aa6b896edea815da6011d028e9e79f5d7db5693a9ffaf43",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C15850"
+    },
+    {
+      "ref": "C8",
+      "inst": "charger",
+      "localRef": "C5",
+      "blockContentHash": "2c54dd7c01e1f452ac63c8559f601c1d1e4cadd2045b499193724c720627c669",
+      "lcsc": "C15850",
+      "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+      "footprintSha256": "2fb5b0d11c86569d2aa6b896edea815da6011d028e9e79f5d7db5693a9ffaf43",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C15850"
+    },
+    {
+      "ref": "C9",
+      "inst": "charger",
+      "localRef": "C6",
+      "blockContentHash": "2c54dd7c01e1f452ac63c8559f601c1d1e4cadd2045b499193724c720627c669",
+      "lcsc": "C15850",
+      "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+      "footprintSha256": "2fb5b0d11c86569d2aa6b896edea815da6011d028e9e79f5d7db5693a9ffaf43",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C15850"
+    },
+    {
+      "ref": "J4",
+      "inst": "charger",
+      "localRef": "J2",
+      "blockContentHash": "2c54dd7c01e1f452ac63c8559f601c1d1e4cadd2045b499193724c720627c669",
+      "lcsc": "C160402",
+      "catalogReceipt": "sha256:d639ffd6304c5ee658a163d6292b9b637df2c6b632fc582c3fe306e9e5e0a4d3",
+      "footprintSha256": "6a33ea6bd7e443860e8634b3fadb95559f5c774c83cc0f0f886a0667cb719974",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2",
+        "3": "pin3",
+        "4": "pin4"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C160402"
+    },
+    {
+      "ref": "U4",
+      "inst": "buck",
+      "localRef": "U1",
+      "blockContentHash": "f6737dba04f161f87426c22a99896fbe7b1ad7f7e50818fb51a0b17d4c7e11dc",
+      "lcsc": "C28060",
+      "catalogReceipt": "sha256:c42a3e97120b05844f323a057f8afc81747b2065fec947a36290f7e7f12d7ed9",
+      "footprintSha256": "588d84b242a82cf26969673c48cffe334d483930c384bc7512a969afb1f7a3f0",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2",
+        "3": "pin3",
+        "4": "pin4",
+        "5": "pin5",
+        "6": "pin6",
+        "7": "pin7",
+        "8": "pin8",
+        "9": "pin9",
+        "10": "pin10",
+        "11": "pin11"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C28060"
+    },
+    {
+      "ref": "L1",
+      "inst": "buck",
+      "localRef": "L1",
+      "blockContentHash": "f6737dba04f161f87426c22a99896fbe7b1ad7f7e50818fb51a0b17d4c7e11dc",
+      "lcsc": "C20416998",
+      "catalogReceipt": "sha256:a723bd279a3338434b63e2a96371df67ebbfb98c3c426c052597508cad91fe2b",
+      "footprintSha256": "6c24f6d9bca7f376a76f06b8238ab17b8e44692621d914c64bf21cfdb79432b6",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C20416998"
+    },
+    {
+      "ref": "C10",
+      "inst": "buck",
+      "localRef": "C1",
+      "blockContentHash": "f6737dba04f161f87426c22a99896fbe7b1ad7f7e50818fb51a0b17d4c7e11dc",
+      "lcsc": "C15850",
+      "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+      "footprintSha256": "2fb5b0d11c86569d2aa6b896edea815da6011d028e9e79f5d7db5693a9ffaf43",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C15850"
+    },
+    {
+      "ref": "C11",
+      "inst": "buck",
+      "localRef": "C2",
+      "blockContentHash": "f6737dba04f161f87426c22a99896fbe7b1ad7f7e50818fb51a0b17d4c7e11dc",
+      "lcsc": "C15850",
+      "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+      "footprintSha256": "2fb5b0d11c86569d2aa6b896edea815da6011d028e9e79f5d7db5693a9ffaf43",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C15850"
+    },
+    {
+      "ref": "C12",
+      "inst": "buck",
+      "localRef": "C3",
+      "blockContentHash": "f6737dba04f161f87426c22a99896fbe7b1ad7f7e50818fb51a0b17d4c7e11dc",
+      "lcsc": "C15850",
+      "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+      "footprintSha256": "2fb5b0d11c86569d2aa6b896edea815da6011d028e9e79f5d7db5693a9ffaf43",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C15850"
+    },
+    {
+      "ref": "C13",
+      "inst": "buck",
+      "localRef": "C4",
+      "blockContentHash": "f6737dba04f161f87426c22a99896fbe7b1ad7f7e50818fb51a0b17d4c7e11dc",
+      "lcsc": "C15850",
+      "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+      "footprintSha256": "2fb5b0d11c86569d2aa6b896edea815da6011d028e9e79f5d7db5693a9ffaf43",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C15850"
+    },
+    {
+      "ref": "C14",
+      "inst": "buck",
+      "localRef": "C5",
+      "blockContentHash": "f6737dba04f161f87426c22a99896fbe7b1ad7f7e50818fb51a0b17d4c7e11dc",
+      "lcsc": "C15850",
+      "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+      "footprintSha256": "2fb5b0d11c86569d2aa6b896edea815da6011d028e9e79f5d7db5693a9ffaf43",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C15850"
+    },
+    {
+      "ref": "C15",
+      "inst": "buck",
+      "localRef": "C6",
+      "blockContentHash": "f6737dba04f161f87426c22a99896fbe7b1ad7f7e50818fb51a0b17d4c7e11dc",
+      "lcsc": "C14663",
+      "catalogReceipt": "sha256:fde5081a0b45324f436df1a456a1a4dd1608306b862e8a6f4c8187b9d69ac426",
+      "footprintSha256": "c6961a0f3ecb855bedad17ad6397d458e8feacb3ac83cd2b5e6b49c83a9c4338",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C14663"
+    },
+    {
+      "ref": "U5",
+      "inst": "mic",
+      "localRef": "U1",
+      "blockContentHash": "f774e600ec807df798d608fa72eadf1b25291e02bdaeae91698b5169db0a60b0",
+      "lcsc": "C5656610",
+      "catalogReceipt": "sha256:23f238031ea120ee5a6df6526204845acfbcac6c2b013d8d9914d474a26b0a8b",
+      "footprintSha256": "9dbf6b6d3fe223bb80519b9c87a4df512a4b0331267c4f5b39e452bb27abdca6",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2",
+        "3": "pin3",
+        "4": "pin4",
+        "5": "pin5",
+        "6": "pin6"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C5656610"
+    },
+    {
+      "ref": "C16",
+      "inst": "mic",
+      "localRef": "C1",
+      "blockContentHash": "f774e600ec807df798d608fa72eadf1b25291e02bdaeae91698b5169db0a60b0",
+      "lcsc": "C14663",
+      "catalogReceipt": "sha256:fde5081a0b45324f436df1a456a1a4dd1608306b862e8a6f4c8187b9d69ac426",
+      "footprintSha256": "c6961a0f3ecb855bedad17ad6397d458e8feacb3ac83cd2b5e6b49c83a9c4338",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C14663"
+    },
+    {
+      "ref": "R13",
+      "inst": "mic",
+      "localRef": "R1",
+      "blockContentHash": "f774e600ec807df798d608fa72eadf1b25291e02bdaeae91698b5169db0a60b0",
+      "lcsc": "C25803",
+      "catalogReceipt": "sha256:492631a1c5290df166fc2c8e36384868fef36a4a5d1e643e31cdd8070017c851",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C25803"
+    },
+    {
+      "ref": "U6",
+      "inst": "amp",
+      "localRef": "U1",
+      "blockContentHash": "dd1c485e1003739e576cbd90f078940f34a98fcec8b8c8b38ca42195899fd5f6",
+      "lcsc": "C910544",
+      "catalogReceipt": "sha256:e47725cb406035893b95653c680b7a718d133ca4d3ac20aae05436637c8f0cc0",
+      "footprintSha256": "1520bf1577c3f680e98e9a5e9ce9e4c09f25466d87a9475b3cf48a2fbad25233",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2",
+        "3": "pin3",
+        "4": "pin4",
+        "5": "pin5",
+        "6": "pin6",
+        "7": "pin7",
+        "8": "pin8",
+        "9": "pin9",
+        "10": "pin10",
+        "11": "pin11",
+        "12": "pin12",
+        "13": "pin13",
+        "14": "pin14",
+        "15": "pin15",
+        "16": "pin16",
+        "17": "pin17"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C910544"
+    },
+    {
+      "ref": "C17",
+      "inst": "amp",
+      "localRef": "C1",
+      "blockContentHash": "dd1c485e1003739e576cbd90f078940f34a98fcec8b8c8b38ca42195899fd5f6",
+      "lcsc": "C14663",
+      "catalogReceipt": "sha256:fde5081a0b45324f436df1a456a1a4dd1608306b862e8a6f4c8187b9d69ac426",
+      "footprintSha256": "c6961a0f3ecb855bedad17ad6397d458e8feacb3ac83cd2b5e6b49c83a9c4338",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C14663"
+    },
+    {
+      "ref": "C18",
+      "inst": "amp",
+      "localRef": "C2",
+      "blockContentHash": "dd1c485e1003739e576cbd90f078940f34a98fcec8b8c8b38ca42195899fd5f6",
+      "lcsc": "C162430",
+      "catalogReceipt": "sha256:fac7c295d74c60b33cd57238b664281effc5d6bb3ffb9770380e74ceb2960ac8",
+      "footprintSha256": "2fd4de27c5ec2503a3ea4fb5a77d71ae325918676f6b988d6012ce8d6cd83063",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C162430"
+    },
+    {
+      "ref": "J5",
+      "inst": "amp",
+      "localRef": "J1",
+      "blockContentHash": "dd1c485e1003739e576cbd90f078940f34a98fcec8b8c8b38ca42195899fd5f6",
+      "lcsc": "C131337",
+      "catalogReceipt": "sha256:82df65b5140c39651869327c52e90049bc0af93621410addb7e5807cf2823460",
+      "footprintSha256": "26ca85a9c64a95bdaee9797aa55b4866338b740659190f7b26facfb881189aea",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C131337"
+    },
+    {
+      "ref": "J6",
+      "inst": "display",
+      "localRef": "J1",
+      "blockContentHash": "400f2f82bc887a5bb52068a8c30ef147ce0121e77f79b8b014c348b3d2451902",
+      "lcsc": "C160404",
+      "catalogReceipt": "sha256:1f6986d8e1e0029252480dcbb4fe6a48c8bc91b0331da16840616acfb26ffd35",
+      "footprintSha256": "665d4d032bcfa270559702e46b40292437e7584313bd86aeea6f2bec0a7c171e",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2",
+        "3": "pin3",
+        "4": "pin4",
+        "5": "pin5",
+        "6": "pin6"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C160404"
+    },
+    {
+      "ref": "R14",
+      "inst": "display",
+      "localRef": "R1",
+      "blockContentHash": "400f2f82bc887a5bb52068a8c30ef147ce0121e77f79b8b014c348b3d2451902",
+      "lcsc": "C25804",
+      "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C25804"
+    },
+    {
+      "ref": "R15",
+      "inst": "display",
+      "localRef": "R2",
+      "blockContentHash": "400f2f82bc887a5bb52068a8c30ef147ce0121e77f79b8b014c348b3d2451902",
+      "lcsc": "C25804",
+      "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+      "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C25804"
+    },
+    {
+      "ref": "D1",
+      "inst": "led",
+      "localRef": "D1",
+      "blockContentHash": "8795574bf0c9ca544759b29ee3c48b59638fe846324a4ff4b64b8a356081b47a",
+      "lcsc": "C2874885",
+      "catalogReceipt": "sha256:2c684f2a0db40cd55dd6e030a164e710c2c021aff7cb7f7ccf4526306d3fd1b7",
+      "footprintSha256": "eb66d5e1c4dde91c23512961651133aaf96aa588f3ca996a19e06fa33f28fead",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2",
+        "3": "pin3",
+        "4": "pin4"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C2874885"
+    },
+    {
+      "ref": "U7",
+      "inst": "led",
+      "localRef": "U1",
+      "blockContentHash": "8795574bf0c9ca544759b29ee3c48b59638fe846324a4ff4b64b8a356081b47a",
+      "lcsc": "C7484",
+      "catalogReceipt": "sha256:3c8a910a151bda15a17e9af793dde68adf2930a08ba986b6d027f04a8cedafe5",
+      "footprintSha256": "105e4117e42664a42555d8ca83c3fbe1249df35c852fe62d078533818259562b",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2",
+        "3": "pin3",
+        "4": "pin4",
+        "5": "pin5"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C7484"
+    },
+    {
+      "ref": "C19",
+      "inst": "led",
+      "localRef": "C1",
+      "blockContentHash": "8795574bf0c9ca544759b29ee3c48b59638fe846324a4ff4b64b8a356081b47a",
+      "lcsc": "C14663",
+      "catalogReceipt": "sha256:fde5081a0b45324f436df1a456a1a4dd1608306b862e8a6f4c8187b9d69ac426",
+      "footprintSha256": "c6961a0f3ecb855bedad17ad6397d458e8feacb3ac83cd2b5e6b49c83a9c4338",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C14663"
+    },
+    {
+      "ref": "C20",
+      "inst": "led",
+      "localRef": "C2",
+      "blockContentHash": "8795574bf0c9ca544759b29ee3c48b59638fe846324a4ff4b64b8a356081b47a",
+      "lcsc": "C14663",
+      "catalogReceipt": "sha256:fde5081a0b45324f436df1a456a1a4dd1608306b862e8a6f4c8187b9d69ac426",
+      "footprintSha256": "c6961a0f3ecb855bedad17ad6397d458e8feacb3ac83cd2b5e6b49c83a9c4338",
+      "pins": {
+        "1": "pin1",
+        "2": "pin2"
+      },
+      "omitPads": [],
+      "footprintSource": "jlcpcb",
+      "footprintId": "C14663"
+    }
+  ]
+}

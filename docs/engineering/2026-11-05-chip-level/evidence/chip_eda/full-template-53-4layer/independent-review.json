@@ -1,0 +1,72 @@
+{
+  "ok": true,
+  "by": "independent engineering reviewer /root/final_review",
+  "at": "2026-11-06T02:21:23.604869+00:00",
+  "inputHash": "3d7de0c74bf8abb016e0bc1cd480ab9c92f947d2c54dfc98a668eeed6215d224",
+  "scope": "Conditional pre-layout electrical delta review for qualified known5V/1.5A USB operation only; not native acceptance or block promotion",
+  "inheritedReview": {
+    "path": "../full-template-4layer/independent-review.json",
+    "schematicHash": "687abbf8e2e8beae9372d16665a95999c252ec8fae377e0b57bf491f71d1c679",
+    "limitsUnchanged": true
+  },
+  "findings": [
+    {
+      "status": "pass",
+      "scope": "complete plan delta",
+      "message": "Independently compared full old/new BoardPlan JSON. Only usb instance revision1\u21922 and an added USBLC6 bypass note differ. All other blocks,values,nets,physical pins,placements,source references,requirements and firmware bytes remain unchanged. Resolved graph contains53 actual parts."
+    },
+    {
+      "status": "pass",
+      "scope": "actual supplier identity",
+      "message": "Loaded and SHA-validated immutable receipt sha256:fde5081a0b45324f436df1a456a1a4dd1608306b862e8a6f4c8187b9d69ac426. Actual importer c_para identifies C14663,Yageo CC0603KRX7R9BB104,Value100nF; decoded physical pads1/2 match the new two-terminal passive capacitor."
+    },
+    {
+      "status": "pass",
+      "scope": "bypass topology and external compatibility",
+      "message": "usb-c-sink@2 adds C_BUS100nF directly to USBLC6 pin5 VBUS and pin2/GND, plus minimum0.1uF nominal and4mm part-origin screen. Pin5 becomes required power-in on the existing VBUS source. Existing external ports are identical; other values,nets,pin mappings and supplier identities are preserved."
+    },
+    {
+      "status": "pass",
+      "scope": "manufacturer reference",
+      "message": "Reopened official ST USBLC6-2 DS4260 Rev7 PDF. Physical page11 Figure17 identifies C_BUS100nF; physical pin map identifies VBUS5/GND2. Added citation agrees. Four millimetres remains an author placement screen, not proof of short transient return/ESD protection."
+    },
+    {
+      "status": "pass",
+      "scope": "fresh static gates",
+      "message": "Current public checkPlan independently rerun on the exact resolved plan: ERC and power both pass with no error issues; schematicHash matches this receipt."
+    },
+    {
+      "status": "condition",
+      "scope": "qualified USB operating state",
+      "message": "Inherited known5V1.5A USB supply,declared load envelopes,charger programmed-current arithmetic and USB-state regulator assumptions remain mandatory. No battery/supplement/fallback mode,qualified protected pack,thermistor/temperature window,current/thermal transient,audio/LED/display behavior or physical-hardware qualification is established."
+    },
+    {
+      "status": "condition",
+      "scope": "downstream acceptance",
+      "message": "This receipt permits pre-layout evaluation only. Fresh exact-identity SPICE,native placement/routing/DRC,physical copper/pad/annulus checks,firmware compile and official shorts/pcb-style checks remain separate. No fabrication order,manufacturing/ESD/EMC/impedance or hardware approval; new USB block remains unreviewed."
+    }
+  ],
+  "preflight": [
+    {
+      "gate": "erc",
+      "ok": true
+    },
+    {
+      "gate": "power",
+      "ok": true
+    }
+  ],
+  "artifacts": {
+    "plan.json": "8ad6f7f432daf8a5f842c08d9ff25d4e22717c09bfe0445f401947550d529215"
+  },
+  "catalogEvidence": {
+    "receipt": "sha256:fde5081a0b45324f436df1a456a1a4dd1608306b862e8a6f4c8187b9d69ac426",
+    "rawSha256": "1ad4275ad69d3ef0a8e75bc120719319207d450579421ba624b88713554cff59",
+    "footprintSha256": "c6961a0f3ecb855bedad17ad6397d458e8feacb3ac83cd2b5e6b49c83a9c4338"
+  },
+  "blockIdentity": {
+    "id": "usb-c-sink",
+    "version": 2,
+    "hash": "7cccd830c974e8e3dd142c3647b284ab0557a48715e54ceae82855eb4d2365d3"
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "by": "chip_review",
+  "ok": true,
+  "scope": "conditional pre-layout schematic review for qualified USB-powered state only",
+  "schematicHash": "71680ff02eeba7e0c62eb99fccb3ba53b2ed02411bea8d12ad26a7c95c3bcf36",
+  "findings": [
+    {
+      "section": "scope",
+      "status": "conditional",
+      "claim": "Pre-layout electrical mapping review passes only for the declared known 5V/1.5A USB source and selected NTC-required charger / USB-state regulator. This is not battery-mode, external-pack, thermal, firmware-behavior or physical-hardware qualification."
+    },
+    {
+      "section": "MCU and USB",
+      "status": "match",
+      "claim": "Retained base MCU, reset/boot, native USB GPIO19/20, independent CC 5.1k terminations, USBLC6 channel/GND/VBUS mapping and 22Ohm series links match the previously inspected primary pin/reference documents. Selected audio buses use distinct GPIO4/5/6 and GPIO7/15/16; LED uses GPIO17; GPIO8/9 remain shared I2C."
+    },
+    {
+      "section": "charger",
+      "status": "match",
+      "claim": "BQ24074 pads 1 TS,2/3 BAT,4 CE low,5 EN2 high,6 EN1 low,8 VSS,10/11 SYS OUT,12 ILIM,13 IN,16 ISET,17 EP ground match TI pin functions. TMR/ITERM float for defaults. Separate real J2 NTC sense/return connector reaches TS/GND; old fixed-TS-bypass block is not selected.",
+      "sources": [
+        {
+          "file": "../power-research/bq24074-manufacturer.pdf",
+          "pages": "8-9"
+        }
+      ]
+    },
+    {
+      "section": "charger limits",
+      "status": "conditional",
+      "claim": "4.7k ISET yields about189.4mA nominal /209.7mA worst high; 1.2k ILIM low corner about1237.6mA leaves only17.6mA over declared1000mA SYS +210mA charge +10mA own maximum. This arithmetic relies on the stated operating assumptions, source voltage at the board, thermal layout and load envelopes; no measured headroom or simultaneous transient guarantee."
+    },
+    {
+      "section": "external battery and NTC",
+      "status": "conditional",
+      "claim": "Protected pack, safe cell charge specification, correct keyed harness and thermally coupled qualified 10k NTC remain external requirements. Declared SEMITEC103AT-2 tolerance corners can allow hot trip approximately46.1–55.9C and cold trip−1.8–2.9C, so this circuit does not establish a common0–45C pack charging requirement. No battery/supplement/fallback mode approval and no charger block promotion."
+    },
+    {
+      "section": "regulator",
+      "status": "match",
+      "claim": "TPS63001 pads 4/2 connect2.2uH inductor; VIN5,VINA8,EN6 reach SYS; PS7 is low; PGND3,GND9,EP11 ground; fixed-output FB10 returns VOUT1. Input/output bypass follows the inspected TI reference topology.",
+      "sources": [
+        {
+          "file": "../power-research/tps63001-manufacturer.pdf",
+          "pages": "3"
+        },
+        {
+          "file": "../power-research/ti-tps63001-reference-slva358a.pdf",
+          "pages": "6"
+        }
+      ]
+    },
+    {
+      "section": "regulator limits",
+      "status": "conditional",
+      "claim": "Selected input range4.2–4.5V describes USB-powered charger SYS regulation only. 650mA continuous,800mA peak,85% efficiency and declared thermal model are estimates. Effective ceramic capacitance with DC bias, inductor/transient/thermal layout and battery-low behavior remain unqualified."
+    },
+    {
+      "section": "microphone",
+      "status": "match",
+      "claim": "ICS-43434 pin1 WS,2 LR grounded for left channel,3 GND,4 SCK,5 VDD,6 SD match manufacturer application;100nF bypass and100k SD pulldown present. 48kHz,64 clocks per stereo frame and24-bit data in32-bit slots match the intended interface.",
+      "sources": [
+        {
+          "file": "../audio-led-research/mic-primary.pdf",
+          "pages": "13"
+        }
+      ]
+    },
+    {
+      "section": "amplifier",
+      "status": "match",
+      "claim": "MAX98357A TQFN DIN1,GAIN2 ground(12dB),GND3/11/15/EP17,SD_MODE4 VDD(left always on),VDD7/8,OUTP9/OUTN10,LRCLK14,BCLK16 and NC5/6/12/13 match manufacturer pin table. Differential speaker connector returns neither output to ground;100nF+10uF bypass present.",
+      "sources": [
+        {
+          "file": "../audio-led-research/amp-manufacturer-jlc-mirror.pdf",
+          "pages": "15,33"
+        }
+      ]
+    },
+    {
+      "section": "audio hardware",
+      "status": "conditional",
+      "claim": "Amplifier380/500mA declared loads require qualified8Ohm inductive speaker (>10uH), bounded gain/volume and transient measurement. Speaker is an external connector contract. Microphone bottom acoustic opening, speaker harness, sequencing/back-power injection and audio performance remain physical/hardware work."
+    },
+    {
+      "section": "LED",
+      "status": "match",
+      "claim": "Worldsemi physical DIN is pad4,VDD1,GND3,DOUT2 unused. TI AHCT OE1 low,A2 from3.3V MCU,Y4 to DIN,VCC5 at5V,GND3 provides valid TTL input threshold and5V output. Both bypass capacitors and corrected TI title citation agree with actual sources.",
+      "sources": [
+        {
+          "file": "../audio-led-research/led-primary.pdf",
+          "pages": "2"
+        },
+        {
+          "file": "../audio-led-research/ahct-datasheet.pdf",
+          "pages": "3"
+        }
+      ]
+    },
+    {
+      "section": "LED limits",
+      "status": "conditional",
+      "claim": "39/63mA are author-supplied operating budgets, not measured waveforms; full-brightness/transient and power-sequence validation remain required. Reset/latch duration must exceed the selected LED revision requirement."
+    },
+    {
+      "section": "display and I2C",
+      "status": "conditional",
+      "claim": "SSD1306 board is an external0x3C/3.3V/50mA module contract, not a selected verified bare OLED IC. Display connector1GND2VDD3SCL4SDA differs from carrier header3SDA4SCL intentionally; harness must match. Parallel10k pullups produce5k. Total capacitance/rise time and actual module power/address remain unverified."
+    },
+    {
+      "section": "whole plan",
+      "status": "match",
+      "claim": "Fresh resolution of current52-part10-section plan passes pure ERC and power gates. Declared known-source demand is877.26mA typical /1366.04mA peak versus1500mA source; these are modeled demand bounds, not measurements. Rendered schematic and actual net/pin declarations were inspected."
+    },
+    {
+      "section": "placement policy revision",
+      "status": "conditional",
+      "claim": "Amplifier and LED revision2 change only decoupling origin-distance policy3→4mm and explicit explanatory notes; complete other declarations including all physical identities,nets,values,pins and poses compare equal.4mm is author placement policy, not a manufacturer maximum. Actual imported courtyards made original3mm origin limit infeasible (amplifier bulk cap>=3.125mm,LED bypass>=3.6mm). Final placement, shortest power/ground pad routing, distances, DRC and analog behavior still require actual verification; this prelayout pass does not certify decoupling quality."
+    },
+    {
+      "section": "reference circuit metadata correction",
+      "status": "match",
+      "claim": "All six IC sections now cite short literal circuit-figure captions with1-based physical PDF pages instead of generic page1part titles. Independent local source inspection verifies BQ24074p38Fig10-12, fixed TPS63001SLVA358Ap6Fig4, ICS43434p13Fig8, AHCTp9Fig8-1. Root retained primary web reading identifies ADIRev16p29Fig17 and STDS4260Rev7p9Fig13; it explicitly claims no local rawPDFhash. Amp figure number differs from retainedRev11Fig16, so stable primaryURL is now bound to the separately checkedRev16 figure. External display/header contracts carry no fabricated IC reference.",
+      "sources": [
+        {
+          "file": "reference-proposals.json"
+        },
+        {
+          "file": "primary-web-reference-check.json"
+        },
+        {
+          "file": "../../../../../../src/blocks/data/full-template-references.json"
+        }
+      ]
+    },
+    {
+      "section": "unchanged electrical graph",
+      "status": "match",
+      "claim": "Compared current plan to retained native-port-plan.json: complete materialized part declarations, exact block content hashes, every net and all global part poses are identical. Only citation metadata/adaptation notes changed. Fresh ERC and power pass. Charger notes distinguish190mA/default timer/termination choices from reference example; amplifier notes distinguish WLP illustration labels from selected TQFN mapping."
+    },
+    {
+      "section": "retained render metadata",
+      "status": "match",
+      "claim": "Regenerated SVG/PNG now show all six corrected physical page/figure/caption references and primary URLs, including TPS fixed-reference p6, BQp38, ADIRev16Fig17 and STp9Fig13. Actual PNG inspected: white background, reference text outside transparent link-hitbox anchors, readable source metadata without prior black fill artifacts. Updated artifact hashes identify current renders. This presentation acceptance does not approve full-board routing/DRC or hardware behavior."
+    }
+  ],
+  "artifacts": {
+    "plan.json": "e66c8ac83c6c9cafdcd0ad4533f0de60b1316755efc0fff49d5b24aa4e1c62bb",
+    "schematic.svg": "42a9de9696fe8577205dd59ac777ec973416d81d51e94962f9e19dfdede8bfa0",
+    "schematic.png": "73db78e8fcff1ce29e5723214c3de7a51b0d23ef999fbdc49f20dc24b2a2b996",
+    "primary-web-reference-check.json": "ceaa21c4e6c8a06e850644edb678b01ff205b341aca1b058a88e9da8a0ae0d6f",
+    "src/blocks/data/full-template-references.json": "29b464c5c63752d78c20af50154a79884f23da7f6efd76130e9442f29afc62e1"
+  },
+  "preflight": [
+    {
+      "gate": "erc",
+      "ok": true
+    },
+    {
+      "gate": "power",
+      "ok": true
+    }
+  ],
+  "limits": [
+    "Power blocks remain unreviewed; no battery or external thermistor/pack qualification",
+    "Fresh matching-hash SPICE, native DRC/copper/paste/geometry and firmware compile remain separate required gates",
+    "No physical build, thermal transient, EMC/ESD, bus waveform, runtime audio/LED/display behavior, acoustic or manufacturability approval"
+  ],
+  "previousSchematicHash": "8ffb8adc9f36f87f764b043664d9582835f3562aacca14601d124a0058abaa55",
+  "metadataReviewAt": "2026-11-06T00:25:35.343Z",
+  "artifactScope": {
+    "plan.json": "current corrected source reference metadata",
+    "schematic.svg": "current corrected circuit-reference labels/links; independently inspected SVG source and regenerated PNG",
+    "schematic.png": "current portable render; independently viewed"
+  },
+  "renderReviewAt": "2026-11-06T00:39:26.177Z"
+}

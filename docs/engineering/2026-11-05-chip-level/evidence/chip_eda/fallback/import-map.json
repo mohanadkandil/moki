@@ -1,0 +1,56 @@
+{
+  "parts": [
+    {
+      "ref": "R1",
+      "lcsc": "C25804",
+      "mpn": "0603WAF1002T5E",
+      "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+      "footprintSource": "footprinter",
+      "footprintId": "0603",
+      "resolvedFootprintSha256": "d78690d9160da514668e4100caa9874309c2ec2bcec7563d3ec3947749f78190",
+      "sourceSha256": null,
+      "sourceUrl": null,
+      "sourceCacheMode": null,
+      "modelsProvided": false,
+      "footprintAuditPath": "footprints/dacb1618ef894e766c8b47a5d85b28d6df338eb54efb2abe474e037c2fe69803.json",
+      "requestedMapping": {
+        "1": "pin1",
+        "2": "pin2"
+      }
+    },
+    {
+      "ref": "R2",
+      "lcsc": "C25804",
+      "mpn": "0603WAF1002T5E",
+      "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+      "footprintSource": "kicad",
+      "footprintId": "kicad:Resistor_SMD/R_0603_1608Metric",
+      "resolvedFootprintSha256": "cd0cb94ad44dbecdedc3cc1bf66c4db26d4448ce9d84c8fa759f6d37f0bf7218",
+      "sourceSha256": "effcae403a15810b3a1947b8664576270d6781e7cd525e97c47d48be0fdae8ce",
+      "sourceUrl": "https://raw.githubusercontent.com/KiCad/kicad-footprints/master/Resistor_SMD.pretty/R_0603_1608Metric.kicad_mod",
+      "sourceCacheMode": "audit-cache",
+      "modelsProvided": false,
+      "footprintAuditPath": "footprints/7df0d38288a54aab9df89650ca7dbfe49d297189cadeebdccff5ef2c0dfade58.json",
+      "requestedMapping": {
+        "1": "pin1",
+        "2": "pin2"
+      }
+    },
+    {
+      "ref": "J1",
+      "lcsc": "C160404",
+      "mpn": "SM04B-SRSS-TB(LF)(SN)",
+      "catalogReceipt": "sha256:1f6986d8e1e0029252480dcbb4fe6a48c8bc91b0331da16840616acfb26ffd35",
+      "footprintSource": "jlcpcb",
+      "footprintSha256": "665d4d032bcfa270559702e46b40292437e7584313bd86aeea6f2bec0a7c171e",
+      "requestedMapping": {
+        "1": "pin1",
+        "2": "pin2",
+        "3": "pin3",
+        "4": "pin4",
+        "5": "pin5",
+        "6": "pin6"
+      }
+    }
+  ]
+}

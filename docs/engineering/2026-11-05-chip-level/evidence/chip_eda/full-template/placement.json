@@ -1,0 +1,858 @@
+{
+  "schema": "moki.compiler-placement/1",
+  "inputHash": "71680ff02eeba7e0c62eb99fccb3ba53b2ed02411bea8d12ad26a7c95c3bcf36",
+  "changes": [
+    {
+      "ref": "J5",
+      "inst": "amp",
+      "localRef": "J1",
+      "from": {
+        "x": 33,
+        "y": -12,
+        "rotation": 0
+      },
+      "to": {
+        "x": 33.5,
+        "y": -12,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "L1",
+      "inst": "buck",
+      "localRef": "L1",
+      "from": {
+        "x": -24,
+        "y": 4,
+        "rotation": 0
+      },
+      "to": {
+        "x": -24,
+        "y": 3.5,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "U7",
+      "inst": "led",
+      "localRef": "U1",
+      "from": {
+        "x": -34,
+        "y": -14,
+        "rotation": 0
+      },
+      "to": {
+        "x": -36,
+        "y": -14,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "C16",
+      "inst": "mic",
+      "localRef": "C1",
+      "from": {
+        "x": 32,
+        "y": 16,
+        "rotation": 0
+      },
+      "to": {
+        "x": 33,
+        "y": 16,
+        "rotation": 90
+      }
+    },
+    {
+      "ref": "C18",
+      "inst": "amp",
+      "localRef": "C2",
+      "from": {
+        "x": 28,
+        "y": -14,
+        "rotation": 0
+      },
+      "to": {
+        "x": 28,
+        "y": -15.25,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "C17",
+      "inst": "amp",
+      "localRef": "C1",
+      "from": {
+        "x": 30,
+        "y": -12,
+        "rotation": 0
+      },
+      "to": {
+        "x": 28.5,
+        "y": -9,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "C19",
+      "inst": "led",
+      "localRef": "C1",
+      "from": {
+        "x": -28,
+        "y": -14,
+        "rotation": 0
+      },
+      "to": {
+        "x": -28.75,
+        "y": -17.75,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "C20",
+      "inst": "led",
+      "localRef": "C2",
+      "from": {
+        "x": -34,
+        "y": -16,
+        "rotation": 0
+      },
+      "to": {
+        "x": -34.5,
+        "y": -17.25,
+        "rotation": 90
+      }
+    },
+    {
+      "ref": "C10",
+      "inst": "buck",
+      "localRef": "C1",
+      "from": {
+        "x": -28,
+        "y": 8,
+        "rotation": 0
+      },
+      "to": {
+        "x": -28,
+        "y": 8,
+        "rotation": 90
+      }
+    },
+    {
+      "ref": "C11",
+      "inst": "buck",
+      "localRef": "C2",
+      "from": {
+        "x": -28,
+        "y": 11,
+        "rotation": 0
+      },
+      "to": {
+        "x": -28,
+        "y": 11.25,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "C12",
+      "inst": "buck",
+      "localRef": "C3",
+      "from": {
+        "x": -20,
+        "y": 5,
+        "rotation": 0
+      },
+      "to": {
+        "x": -20,
+        "y": 5,
+        "rotation": 90
+      }
+    },
+    {
+      "ref": "C13",
+      "inst": "buck",
+      "localRef": "C4",
+      "from": {
+        "x": -20,
+        "y": 8,
+        "rotation": 0
+      },
+      "to": {
+        "x": -19.5,
+        "y": 8.25,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "C14",
+      "inst": "buck",
+      "localRef": "C5",
+      "from": {
+        "x": -20,
+        "y": 11,
+        "rotation": 0
+      },
+      "to": {
+        "x": -20,
+        "y": 11.25,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "C6",
+      "inst": "charger",
+      "localRef": "C3",
+      "from": {
+        "x": 3,
+        "y": -3,
+        "rotation": 0
+      },
+      "to": {
+        "x": 3.25,
+        "y": -3,
+        "rotation": 90
+      }
+    },
+    {
+      "ref": "C7",
+      "inst": "charger",
+      "localRef": "C4",
+      "from": {
+        "x": 3,
+        "y": 0,
+        "rotation": 0
+      },
+      "to": {
+        "x": 3,
+        "y": 0.25,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "C8",
+      "inst": "charger",
+      "localRef": "C5",
+      "from": {
+        "x": -3,
+        "y": -6,
+        "rotation": 0
+      },
+      "to": {
+        "x": -3.25,
+        "y": -6,
+        "rotation": 90
+      }
+    },
+    {
+      "ref": "C9",
+      "inst": "charger",
+      "localRef": "C6",
+      "from": {
+        "x": -3,
+        "y": -9,
+        "rotation": 0
+      },
+      "to": {
+        "x": 0,
+        "y": -9,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "C1",
+      "inst": "charger",
+      "localRef": "C1",
+      "from": {
+        "x": -3,
+        "y": -3,
+        "rotation": 0
+      },
+      "to": {
+        "x": -3,
+        "y": -2.5,
+        "rotation": 90
+      }
+    },
+    {
+      "ref": "C15",
+      "inst": "buck",
+      "localRef": "C6",
+      "from": {
+        "x": -26,
+        "y": 11,
+        "rotation": 0
+      },
+      "to": {
+        "x": -25,
+        "y": 11.5,
+        "rotation": 90
+      }
+    },
+    {
+      "ref": "R13",
+      "inst": "mic",
+      "localRef": "R1",
+      "from": {
+        "x": 30,
+        "y": 18,
+        "rotation": 0
+      },
+      "to": {
+        "x": 30,
+        "y": 18.5,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "R14",
+      "inst": "display",
+      "localRef": "R1",
+      "from": {
+        "x": 32,
+        "y": -42,
+        "rotation": 0
+      },
+      "to": {
+        "x": 34.5,
+        "y": -42,
+        "rotation": 90
+      }
+    },
+    {
+      "ref": "R15",
+      "inst": "display",
+      "localRef": "R2",
+      "from": {
+        "x": 32,
+        "y": -40,
+        "rotation": 0
+      },
+      "to": {
+        "x": 32,
+        "y": -38,
+        "rotation": 0
+      }
+    }
+  ],
+  "parts": [
+    {
+      "ref": "U1",
+      "inst": "mcu",
+      "localRef": "U1",
+      "at": {
+        "x": 2,
+        "y": 34.25,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "C3",
+      "inst": "mcu",
+      "localRef": "C3",
+      "at": {
+        "x": -16,
+        "y": 44.75,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "C4",
+      "inst": "mcu",
+      "localRef": "C4",
+      "at": {
+        "x": -9,
+        "y": 42.25,
+        "rotation": 90
+      }
+    },
+    {
+      "ref": "C5",
+      "inst": "mcu",
+      "localRef": "C5",
+      "at": {
+        "x": -9,
+        "y": 38.75,
+        "rotation": 90
+      }
+    },
+    {
+      "ref": "R1",
+      "inst": "mcu",
+      "localRef": "R1",
+      "at": {
+        "x": -12,
+        "y": 38.75,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "R2",
+      "inst": "mcu",
+      "localRef": "R2",
+      "at": {
+        "x": 16,
+        "y": 24.25,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "R9",
+      "inst": "mcu",
+      "localRef": "R9",
+      "at": {
+        "x": 14,
+        "y": 19.25,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "R10",
+      "inst": "mcu",
+      "localRef": "R10",
+      "at": {
+        "x": 10,
+        "y": 19.25,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "U3",
+      "inst": "usb",
+      "localRef": "U3",
+      "at": {
+        "x": -25,
+        "y": -40.85,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "J1",
+      "inst": "usb",
+      "localRef": "J1",
+      "at": {
+        "x": -25,
+        "y": -48.150000000000006,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "R3",
+      "inst": "usb",
+      "localRef": "R3",
+      "at": {
+        "x": -31,
+        "y": -40.85,
+        "rotation": 90
+      }
+    },
+    {
+      "ref": "R4",
+      "inst": "usb",
+      "localRef": "R4",
+      "at": {
+        "x": -19,
+        "y": -40.85,
+        "rotation": 90
+      }
+    },
+    {
+      "ref": "R5",
+      "inst": "usb",
+      "localRef": "R5",
+      "at": {
+        "x": -27,
+        "y": -35.85,
+        "rotation": 90
+      }
+    },
+    {
+      "ref": "R6",
+      "inst": "usb",
+      "localRef": "R6",
+      "at": {
+        "x": -23,
+        "y": -35.85,
+        "rotation": 90
+      }
+    },
+    {
+      "ref": "SW1",
+      "inst": "buttons",
+      "localRef": "SW1",
+      "at": {
+        "x": -20.5,
+        "y": -26.5,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "SW2",
+      "inst": "buttons",
+      "localRef": "SW2",
+      "at": {
+        "x": 20.5,
+        "y": -27.5,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "J2",
+      "inst": "header",
+      "localRef": "J2",
+      "at": {
+        "x": 33,
+        "y": 42,
+        "rotation": 180
+      }
+    },
+    {
+      "ref": "R7",
+      "inst": "header",
+      "localRef": "R7",
+      "at": {
+        "x": 27,
+        "y": 41,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "R8",
+      "inst": "header",
+      "localRef": "R8",
+      "at": {
+        "x": 27,
+        "y": 38,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "U2",
+      "inst": "charger",
+      "localRef": "U1",
+      "at": {
+        "x": 0,
+        "y": -4,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "J3",
+      "inst": "charger",
+      "localRef": "J1",
+      "at": {
+        "x": 0,
+        "y": -14,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "R11",
+      "inst": "charger",
+      "localRef": "R1",
+      "at": {
+        "x": -6,
+        "y": -4,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "R12",
+      "inst": "charger",
+      "localRef": "R2",
+      "at": {
+        "x": 6,
+        "y": -4,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "C1",
+      "inst": "charger",
+      "localRef": "C1",
+      "at": {
+        "x": -3,
+        "y": -2.5,
+        "rotation": 90
+      }
+    },
+    {
+      "ref": "C2",
+      "inst": "charger",
+      "localRef": "C2",
+      "at": {
+        "x": -3,
+        "y": 0,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "C6",
+      "inst": "charger",
+      "localRef": "C3",
+      "at": {
+        "x": 3.25,
+        "y": -3,
+        "rotation": 90
+      }
+    },
+    {
+      "ref": "C7",
+      "inst": "charger",
+      "localRef": "C4",
+      "at": {
+        "x": 3,
+        "y": 0.25,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "C8",
+      "inst": "charger",
+      "localRef": "C5",
+      "at": {
+        "x": -3.25,
+        "y": -6,
+        "rotation": 90
+      }
+    },
+    {
+      "ref": "C9",
+      "inst": "charger",
+      "localRef": "C6",
+      "at": {
+        "x": 0,
+        "y": -9,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "J4",
+      "inst": "charger",
+      "localRef": "J2",
+      "at": {
+        "x": 8,
+        "y": -12,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "U4",
+      "inst": "buck",
+      "localRef": "U1",
+      "at": {
+        "x": -24,
+        "y": 8,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "L1",
+      "inst": "buck",
+      "localRef": "L1",
+      "at": {
+        "x": -24,
+        "y": 3.5,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "C10",
+      "inst": "buck",
+      "localRef": "C1",
+      "at": {
+        "x": -28,
+        "y": 8,
+        "rotation": 90
+      }
+    },
+    {
+      "ref": "C11",
+      "inst": "buck",
+      "localRef": "C2",
+      "at": {
+        "x": -28,
+        "y": 11.25,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "C12",
+      "inst": "buck",
+      "localRef": "C3",
+      "at": {
+        "x": -20,
+        "y": 5,
+        "rotation": 90
+      }
+    },
+    {
+      "ref": "C13",
+      "inst": "buck",
+      "localRef": "C4",
+      "at": {
+        "x": -19.5,
+        "y": 8.25,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "C14",
+      "inst": "buck",
+      "localRef": "C5",
+      "at": {
+        "x": -20,
+        "y": 11.25,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "C15",
+      "inst": "buck",
+      "localRef": "C6",
+      "at": {
+        "x": -25,
+        "y": 11.5,
+        "rotation": 90
+      }
+    },
+    {
+      "ref": "U5",
+      "inst": "mic",
+      "localRef": "U1",
+      "at": {
+        "x": 30,
+        "y": 16,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "C16",
+      "inst": "mic",
+      "localRef": "C1",
+      "at": {
+        "x": 33,
+        "y": 16,
+        "rotation": 90
+      }
+    },
+    {
+      "ref": "R13",
+      "inst": "mic",
+      "localRef": "R1",
+      "at": {
+        "x": 30,
+        "y": 18.5,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "U6",
+      "inst": "amp",
+      "localRef": "U1",
+      "at": {
+        "x": 28,
+        "y": -12,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "C17",
+      "inst": "amp",
+      "localRef": "C1",
+      "at": {
+        "x": 28.5,
+        "y": -9,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "C18",
+      "inst": "amp",
+      "localRef": "C2",
+      "at": {
+        "x": 28,
+        "y": -15.25,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "J5",
+      "inst": "amp",
+      "localRef": "J1",
+      "at": {
+        "x": 33.5,
+        "y": -12,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "J6",
+      "inst": "display",
+      "localRef": "J1",
+      "at": {
+        "x": 30,
+        "y": -42,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "R14",
+      "inst": "display",
+      "localRef": "R1",
+      "at": {
+        "x": 34.5,
+        "y": -42,
+        "rotation": 90
+      }
+    },
+    {
+      "ref": "R15",
+      "inst": "display",
+      "localRef": "R2",
+      "at": {
+        "x": 32,
+        "y": -38,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "D1",
+      "inst": "led",
+      "localRef": "D1",
+      "at": {
+        "x": -30,
+        "y": -14,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "U7",
+      "inst": "led",
+      "localRef": "U1",
+      "at": {
+        "x": -36,
+        "y": -14,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "C19",
+      "inst": "led",
+      "localRef": "C1",
+      "at": {
+        "x": -28.75,
+        "y": -17.75,
+        "rotation": 0
+      }
+    },
+    {
+      "ref": "C20",
+      "inst": "led",
+      "localRef": "C2",
+      "at": {
+        "x": -34.5,
+        "y": -17.25,
+        "rotation": 90
+      }
+    }
+  ]
+}

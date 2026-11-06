@@ -1,0 +1,98 @@
+{
+  "by": "chip_review",
+  "at": "2026-11-06T00:41:57.480Z",
+  "ok": true,
+  "scope": "conditional pre-layout schematic review for qualified USB-powered four-layer routing variant only",
+  "schematicHash": "687abbf8e2e8beae9372d16665a95999c252ec8fae377e0b57bf491f71d1c679",
+  "inheritedReview": {
+    "path": "../full-template/independent-review.json",
+    "schematicHash": "71680ff02eeba7e0c62eb99fccb3ba53b2ed02411bea8d12ad26a7c95c3bcf36",
+    "claim": "Same full electrical declarations and source-circuit references independently reviewed; only board layer count and title differ."
+  },
+  "findings": [
+    {
+      "section": "four-layer variant comparison",
+      "status": "match",
+      "claim": "Complete BoardPlan JSON excluding only title and layers compares exactly equal to independently reviewed two-layer plan. All actual parts,block revisions,values,nets,pins,poses,source references,requirements and application bytes are unchanged."
+    },
+    {
+      "section": "layer declaration",
+      "status": "conditional",
+      "claim": "Board layer count changes2\u21924. Compiler expands all-layer keepouts to top/inner1/inner2/bottom and native checks must retain actual via spans, pad mapping, layer/board clearance and connectivity. No copper stackup, impedance, current capacity, actual route completion, fabrication or hardware qualification is established by the layer count."
+    },
+    {
+      "section": "scope",
+      "status": "conditional",
+      "claim": "Pre-layout electrical mapping review passes only for the declared known 5V/1.5A USB source and selected NTC-required charger / USB-state regulator. This is not battery-mode, external-pack, thermal, firmware-behavior or physical-hardware qualification."
+    },
+    {
+      "section": "charger limits",
+      "status": "conditional",
+      "claim": "4.7k ISET yields about189.4mA nominal /209.7mA worst high; 1.2k ILIM low corner about1237.6mA leaves only17.6mA over declared1000mA SYS +210mA charge +10mA own maximum. This arithmetic relies on the stated operating assumptions, source voltage at the board, thermal layout and load envelopes; no measured headroom or simultaneous transient guarantee."
+    },
+    {
+      "section": "external battery and NTC",
+      "status": "conditional",
+      "claim": "Protected pack, safe cell charge specification, correct keyed harness and thermally coupled qualified 10k NTC remain external requirements. Declared SEMITEC103AT-2 tolerance corners can allow hot trip approximately46.1\u201355.9C and cold trip\u22121.8\u20132.9C, so this circuit does not establish a common0\u201345C pack charging requirement. No battery/supplement/fallback mode approval and no charger block promotion."
+    },
+    {
+      "section": "regulator limits",
+      "status": "conditional",
+      "claim": "Selected input range4.2\u20134.5V describes USB-powered charger SYS regulation only. 650mA continuous,800mA peak,85% efficiency and declared thermal model are estimates. Effective ceramic capacitance with DC bias, inductor/transient/thermal layout and battery-low behavior remain unqualified."
+    },
+    {
+      "section": "audio hardware",
+      "status": "conditional",
+      "claim": "Amplifier380/500mA declared loads require qualified8Ohm inductive speaker (>10uH), bounded gain/volume and transient measurement. Speaker is an external connector contract. Microphone bottom acoustic opening, speaker harness, sequencing/back-power injection and audio performance remain physical/hardware work."
+    },
+    {
+      "section": "LED limits",
+      "status": "conditional",
+      "claim": "39/63mA are author-supplied operating budgets, not measured waveforms; full-brightness/transient and power-sequence validation remain required. Reset/latch duration must exceed the selected LED revision requirement."
+    },
+    {
+      "section": "display and I2C",
+      "status": "conditional",
+      "claim": "SSD1306 board is an external0x3C/3.3V/50mA module contract, not a selected verified bare OLED IC. Display connector1GND2VDD3SCL4SDA differs from carrier header3SDA4SCL intentionally; harness must match. Parallel10k pullups produce5k. Total capacitance/rise time and actual module power/address remain unverified."
+    },
+    {
+      "section": "placement policy revision",
+      "status": "conditional",
+      "claim": "Amplifier and LED revision2 change only decoupling origin-distance policy3\u21924mm and explicit explanatory notes; complete other declarations including all physical identities,nets,values,pins and poses compare equal.4mm is author placement policy, not a manufacturer maximum. Actual imported courtyards made original3mm origin limit infeasible (amplifier bulk cap>=3.125mm,LED bypass>=3.6mm). Final placement, shortest power/ground pad routing, distances, DRC and analog behavior still require actual verification; this prelayout pass does not certify decoupling quality."
+    },
+    {
+      "section": "static gate check",
+      "status": "match",
+      "claim": "Fresh reviewer pure resolution passes current ERC and power gates with no error issues. This is prelayout electrical acceptance only and does not reinterpret any failed two-layer route as passing."
+    },
+    {
+      "section": "native scope",
+      "status": "conditional",
+      "claim": "New exact-identity SPICE/review/native routing/DRC/physical-pad and compile gates remain separate. Dense-pad planner via/NPTH/unsupported-layer correction passed independent source reread and14/14focused reviewer regressions; this is proposal-validation evidence, not a full native pass."
+    },
+    {
+      "section": "dense-pad obstacle guard",
+      "status": "match",
+      "claim": "Independent reread and targeted14/14pure test run verify explicit native via copper annuli, inscribed drill voids, separate>=0.2mm swept-copper-to-drill clearance, NPTH/PTH drills, strict native2/4-layer sets/spans and actual failed proposal mutants. Baseline34proposals and same-width policy remain unchanged. No full native routing/DRC or ampacity result is inferred."
+    }
+  ],
+  "preflight": [
+    {
+      "gate": "erc",
+      "ok": true
+    },
+    {
+      "gate": "power",
+      "ok": true
+    }
+  ],
+  "artifacts": {
+    "plan.json": "f39b6cc3a51c11065763a61ff92988d348cb12abd3f4f747ebae78bc16e0bff7",
+    "preflight.json": "f11f159e7dfe9f879c400c8fd859d5a0a2984f01bc094156ff693c0dda847214"
+  },
+  "limits": [
+    "Power blocks remain unreviewed; no battery or external thermistor/pack qualification",
+    "Fresh matching-hash SPICE, native DRC/copper/paste/geometry and firmware compile remain separate required gates",
+    "No physical build, thermal transient, EMC/ESD, bus waveform, runtime audio/LED/display behavior, acoustic or manufacturability approval"
+  ]
+}

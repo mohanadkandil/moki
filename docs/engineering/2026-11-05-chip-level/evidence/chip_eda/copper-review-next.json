@@ -1,0 +1,50 @@
+{
+  "by": "chip_review",
+  "scope": "Independent source review of physical-network GND policy extension; previous top-plane baseline retained",
+  "baseline": "Shared uncommitted files, full contents read; no checkout/reset/commit",
+  "files": [
+    {
+      "path": "eda/blocks/copper-netlist.ts",
+      "sha256": "47a5b43a503ed93d229e40e7a4c0dac68dd3483f874e6fe6ffa0fbf6cf335f3b"
+    },
+    {
+      "path": "tests/blocks-copper-netlist.test.ts",
+      "sha256": "6a71965e32628cdf2cd5f7d72c306a2176a26de0644cbd33b8ab29aa17d40a76"
+    }
+  ],
+  "findings": [],
+  "sourceReview": "pass-scoped",
+  "tests": {
+    "command": "node --import tsx --test tests/blocks-copper-netlist.test.ts",
+    "passed": 20,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 8189.456709,
+    "actualRetainedBoard": "365a210f native copper still correctly rejected for islands; this is negative evidence, not new native acceptance"
+  },
+  "independentMutants": {
+    "command": "node --import tsx docs/engineering/2026-11-05-chip-level/evidence/chip_eda/copper-review-next.mjs",
+    "passed": 5,
+    "cases": [
+      "actual trace/barrel/bottom-pour positive",
+      "disconnected repeated pad piece rejects ground-open",
+      "foreign drill barrel cut rejects annulus-drilled-away",
+      "NC contact to bottom pour rejects ground-short",
+      "same fake net key cannot replace missing physical via"
+    ]
+  },
+  "reviewedRelationships": [
+    "physical-network is explicit validated opt-in; default remains top-plane",
+    "positive graph uses lower copper and upper drill bounds; shorts reverse bounds",
+    "every repeated pad piece contributes its own physical component, no terminal-name union",
+    "cross-layer joins use physical plated barrels, not trace source IDs or connectivity keys",
+    "physical-network requires the ground component to contain an actual copper pour",
+    "root build wrapper invokes physical-network only for native-breakout mode and appends hard error on false result"
+  ],
+  "remainingLimits": [
+    "GND continuity/isolation only; other-net continuity, impedance, current/thermal/ESD and manufacturing are not established",
+    "Synthetic policy positives do not prove an accepted full-board native job",
+    "No native build or hardware inspection performed in this review",
+    "Source-port/native-import identities are subject to separate earlier attestation gates; this delta did not alter that interface"
+  ]
+}

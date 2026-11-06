@@ -1,0 +1,55 @@
+{
+  "checked": true,
+  "engine": "native RootCircuit renderUntilSettled",
+  "errors": [],
+  "warnings": [
+    {
+      "type": "source_refdes_convention_warning",
+      "message": "The \"R\" prefix is being used with a <chip />, try using it with a <resistor />"
+    },
+    {
+      "type": "source_refdes_convention_warning",
+      "message": "The \"R\" prefix is being used with a <chip />, try using it with a <resistor />"
+    },
+    {
+      "type": "source_refdes_convention_warning",
+      "message": "The \"J\" prefix is being used with a <chip />, try using it with a <connector /> or <jumper />"
+    },
+    {
+      "type": "source_no_power_pin_defined_warning",
+      "message": "R1 has no pin with requires_power=true"
+    },
+    {
+      "type": "source_no_ground_pin_defined_warning",
+      "message": "R1 has no pin with requires_ground=true"
+    },
+    {
+      "type": "source_component_pins_underspecified_warning",
+      "message": "All pins on R1 are underspecified (no pinAttributes set)"
+    },
+    {
+      "type": "source_no_power_pin_defined_warning",
+      "message": "R2 has no pin with requires_power=true"
+    },
+    {
+      "type": "source_no_ground_pin_defined_warning",
+      "message": "R2 has no pin with requires_ground=true"
+    },
+    {
+      "type": "source_component_pins_underspecified_warning",
+      "message": "All pins on R2 are underspecified (no pinAttributes set)"
+    },
+    {
+      "type": "source_no_power_pin_defined_warning",
+      "message": "J1 has no pin with requires_power=true"
+    },
+    {
+      "type": "source_no_ground_pin_defined_warning",
+      "message": "J1 has no pin with requires_ground=true"
+    },
+    {
+      "type": "source_component_pins_underspecified_warning",
+      "message": "All pins on J1 are underspecified (no pinAttributes set)"
+    }
+  ]
+}

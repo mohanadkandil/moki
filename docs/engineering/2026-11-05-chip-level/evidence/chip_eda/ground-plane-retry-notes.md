@@ -1,0 +1,11 @@
+# Bounded native plane-direction retries
+
+The53-part power-first board exposed a second routing context: with native critical-power copper already fixed, baseline outward GND escapes can stop at60/62 connections. The previous61/61 measurement concerns the earlier unoccupied input and is not reused as a success claim for this case.
+
+`groundPlaneDirectionRetries` reads solved connection identities from the installed native solver's `bestAttempt.plans`, checks uniqueness and its routed-count summary, and subtracts them from actual input connection names. Only one or two unresolved singleton bottom-plane buses permit retries. It enumerates the remaining native cardinal directions for those buses only: three alternatives for one failure, at most15 alternatives for two, plus the already attempted baseline. Summary failed-bus labels are not used as a substitute for actual solved-plan identities.
+
+Every attempt starts a fresh public `SOLVERS.FanoutSolver` with a clone of the same prepared routing input and baseline options. Only those failed bus-direction hints change. Geometry, fixed traces, source graph, widths, vias, clearances and foreign bus directions remain unchanged. The adapter allows at most16 attempts and60s of stepping; it cooperatively checks the deadline between native solver steps. No custom pathfinding or partial copper output is introduced.
+
+Completion still requires native validation `valid:true`, checked and broken-out counts equal all phase connections, and zero remaining plane connections. The optional audit callback records small per-attempt status/count/direction/error summaries after failures or success, without exporting partial routed copper. Stop cancels further attempts.
+
+Validation so far: **7/7 focused pure tests pass** (3.009s); strict TypeScript with `noUncheckedIndexedAccess` passes. New tests cover all15 two-bus combinations, three single-bus alternatives, actual bus-ID mapping distinct from connection IDs, input/foreign-option immutability and rejection of malformed, duplicate, contradictory, broad or ambiguous native failure plans. **No new native replay was run while the parent held the heavy slot.** Root owns native/full-board DRC/physical copper acceptance for the power-first context.

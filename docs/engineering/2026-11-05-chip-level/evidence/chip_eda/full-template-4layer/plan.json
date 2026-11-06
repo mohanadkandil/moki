@@ -1,0 +1,4393 @@
+{
+  "schema": "moki.plan/1",
+  "title": "ESP32-S3 audio display control board \u00b7 qualified USB operation \u00b7 four-layer routing variant",
+  "layers": 4,
+  "board": {
+    "widthMm": 100,
+    "heightMm": 120,
+    "cornerRadiusMm": 3
+  },
+  "blocks": [
+    {
+      "inst": "mcu",
+      "block": "esp32-s3-audio-core",
+      "version": 1,
+      "params": {},
+      "at": {
+        "x": 0,
+        "y": 32
+      }
+    },
+    {
+      "inst": "usb",
+      "block": "usb-c-sink",
+      "version": 1,
+      "params": {},
+      "at": {
+        "x": -25,
+        "y": -42
+      }
+    },
+    {
+      "inst": "buttons",
+      "block": "boot-reset-buttons",
+      "version": 1,
+      "params": {},
+      "at": {
+        "x": 0,
+        "y": -27
+      }
+    },
+    {
+      "inst": "header",
+      "block": "i2c-header",
+      "version": 1,
+      "params": {},
+      "at": {
+        "x": 30,
+        "y": 40
+      }
+    },
+    {
+      "inst": "charger",
+      "block": "bq24074-usb-190ma-ntc-required",
+      "version": 1,
+      "params": {},
+      "at": {
+        "x": 0,
+        "y": -4
+      }
+    },
+    {
+      "inst": "buck",
+      "block": "tps63001-usb-sys-3v3",
+      "version": 1,
+      "params": {},
+      "at": {
+        "x": -24,
+        "y": 8
+      }
+    },
+    {
+      "inst": "mic",
+      "block": "i2s-mic-ics43434",
+      "version": 1,
+      "params": {},
+      "at": {
+        "x": 30,
+        "y": 16
+      }
+    },
+    {
+      "inst": "amp",
+      "block": "i2s-amp-max98357a",
+      "version": 2,
+      "params": {},
+      "at": {
+        "x": 28,
+        "y": -12
+      }
+    },
+    {
+      "inst": "display",
+      "block": "ssd1306-i2c-header",
+      "version": 1,
+      "params": {},
+      "at": {
+        "x": 30,
+        "y": -42
+      }
+    },
+    {
+      "inst": "led",
+      "block": "ws2812b-v5-levelshift",
+      "version": 2,
+      "params": {},
+      "at": {
+        "x": -30,
+        "y": -14
+      }
+    }
+  ],
+  "links": [
+    {
+      "from": "mcu.GND",
+      "to": "usb.GND"
+    },
+    {
+      "from": "mcu.GND",
+      "to": "buttons.GND"
+    },
+    {
+      "from": "mcu.GND",
+      "to": "header.GND"
+    },
+    {
+      "from": "mcu.GND",
+      "to": "charger.GND"
+    },
+    {
+      "from": "mcu.GND",
+      "to": "buck.GND"
+    },
+    {
+      "from": "mcu.GND",
+      "to": "mic.GND"
+    },
+    {
+      "from": "mcu.GND",
+      "to": "amp.GND"
+    },
+    {
+      "from": "mcu.GND",
+      "to": "display.GND"
+    },
+    {
+      "from": "mcu.GND",
+      "to": "led.GND"
+    },
+    {
+      "from": "usb.VBUS",
+      "to": "charger.VBUS"
+    },
+    {
+      "from": "usb.VBUS",
+      "to": "amp.V5"
+    },
+    {
+      "from": "usb.VBUS",
+      "to": "led.V5"
+    },
+    {
+      "from": "charger.SYS",
+      "to": "buck.SYS"
+    },
+    {
+      "from": "buck.V3V3",
+      "to": "mcu.V3V3"
+    },
+    {
+      "from": "buck.V3V3",
+      "to": "header.V3V3"
+    },
+    {
+      "from": "buck.V3V3",
+      "to": "mic.V3V3"
+    },
+    {
+      "from": "buck.V3V3",
+      "to": "display.V3V3"
+    },
+    {
+      "from": "mcu.EN",
+      "to": "buttons.EN"
+    },
+    {
+      "from": "mcu.BOOT",
+      "to": "buttons.BOOT"
+    },
+    {
+      "from": "mcu.USB",
+      "to": "usb.USB"
+    },
+    {
+      "from": "mcu.I2C",
+      "to": "header.I2C"
+    },
+    {
+      "from": "mcu.I2C",
+      "to": "display.I2C_DISPLAY"
+    },
+    {
+      "from": "mcu.I2S_MIC",
+      "to": "mic.I2S_MIC"
+    },
+    {
+      "from": "mcu.I2S_AMP",
+      "to": "amp.I2S_AMP"
+    },
+    {
+      "from": "mcu.LED_DATA",
+      "to": "led.LED_DATA"
+    }
+  ],
+  "sections": [
+    {
+      "id": "mcu",
+      "title": "ESP32-S3 \u00b7 I2S capture and playback",
+      "purpose": "ESP32-S3 + reset and boot bias",
+      "insts": [
+        "mcu"
+      ],
+      "notes": [
+        "Actual imported parts; electrical and thermal budgets are assumptions pending hardware tests."
+      ],
+      "reference": {
+        "lcsc": "C2913198",
+        "datasheetUrl": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+        "page": 41,
+        "quote": "This is the typical application circuit of the module"
+      }
+    },
+    {
+      "id": "usb",
+      "title": "USB-C sink + ESD",
+      "purpose": "USB-C Rd sink with native data ESD. Requires a known 5V supply advertising at least1.5A; no PD negotiation/current-detection claim.",
+      "insts": [
+        "usb"
+      ],
+      "notes": [
+        "Source ratings apply only to the declared USB operating condition."
+      ],
+      "reference": {
+        "lcsc": "C7519",
+        "datasheetUrl": "https://www.st.com/resource/en/datasheet/usblc6-2.pdf",
+        "page": 9,
+        "figure": "13",
+        "quote": "USB 2.0 port application diagram using USBLC6-2"
+      }
+    },
+    {
+      "id": "buttons",
+      "title": "BOOT / RESET buttons",
+      "purpose": "BOOT / RESET buttons",
+      "insts": [
+        "buttons"
+      ],
+      "notes": [
+        "Actual imported parts; electrical and thermal budgets are assumptions pending hardware tests."
+      ]
+    },
+    {
+      "id": "header",
+      "title": "I2C expansion header",
+      "purpose": "I2C expansion header",
+      "insts": [
+        "header"
+      ],
+      "notes": [
+        "Actual imported parts; electrical and thermal budgets are assumptions pending hardware tests."
+      ]
+    },
+    {
+      "id": "charger",
+      "title": "BQ24074 power path, 190mA charging, external pack NTC required",
+      "purpose": "USB-present state: qualified4.75\u20135.25V/1.5A input. Separate PH battery and SH external10kNTC connectors; no fixedTS bypass. Actual pack/NTC/harness thermal qualification remains blocked, not a claim of installed temperature supervision.",
+      "insts": [
+        "charger"
+      ],
+      "notes": [
+        "Source ratings apply only to the declared USB operating condition.",
+        "External qualified10k NTC and protected cell required; battery mode not validated by this USB-state template.",
+        "Reference adapts example charging current to190mA; ITERM/TMR use datasheet defaults."
+      ],
+      "reference": {
+        "lcsc": "C2861252",
+        "datasheetUrl": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+        "page": 38,
+        "figure": "10-12",
+        "quote": "Using BQ24074 in a Standalone Charger Application"
+      }
+    },
+    {
+      "id": "buck",
+      "title": "TPS63001 3.3V from USB-present SYS",
+      "purpose": "USB-present4.2\u20134.5V SYS input; fixed3.3V,800mA peak/650mA continuous author budget at25C/85% assumed efficiency. Battery-input operating envelope remains unverified. 1.8A switch rating is not output capacity.",
+      "insts": [
+        "buck"
+      ],
+      "notes": [
+        "Source ratings apply only to the declared USB operating condition."
+      ],
+      "reference": {
+        "lcsc": "C28060",
+        "datasheetUrl": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+        "page": 6,
+        "figure": "4",
+        "quote": "PMP4778 Reference Design Schematic"
+      }
+    },
+    {
+      "id": "mic",
+      "title": "ICS-43434 I2S microphone (EOL)",
+      "purpose": "3.3V left-slot I2S microphone; EOL lifecycle warning. Bottom acoustic PCB hole/clearance and enclosure opening still need geometry review. 48kHz/64BCLK, no MCLK. Reserved0.53/0.60mA estimates the1.8V manufacturer0.49/0.55mA table plus SD100k loading; worst-case3.3V current is not independently verified.",
+      "insts": [
+        "mic"
+      ],
+      "notes": [
+        "Actual imported parts; electrical and thermal budgets are assumptions pending hardware tests."
+      ],
+      "reference": {
+        "lcsc": "C5656610",
+        "datasheetUrl": "https://d17t6iyxenbwp1.cloudfront.net/s3fs-public/2026-03/DS-000069-ICS-43434-v1.2.pdf?VersionId=W5u1f2s5LpMkDjoZSc3k7UxneMl9.WkV",
+        "page": 13,
+        "figure": "8",
+        "quote": "System Block Diagram"
+      }
+    },
+    {
+      "id": "amp",
+      "title": "MAX98357A + differential speaker header",
+      "purpose": "Always-enabled LEFT I2S channel,12dB gain,5V rail,8ohm speaker only (>10uH). Audio operating budget380mA/500mA is an author assumption for1.4W continuous/1.8W distortion-limited peaks at80% assumed efficiency and4.75V minimum input, not an IC current rating or measurement. Speaker/thermal/EMI must be reviewed.",
+      "insts": [
+        "amp"
+      ],
+      "notes": [
+        "Actual imported parts; electrical and thermal budgets are assumptions pending hardware tests.",
+        "Reference Rev16 Fig17 uses WLP names; selected TQFN mapping is checked separately."
+      ],
+      "reference": {
+        "lcsc": "C910544",
+        "datasheetUrl": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX98357A-MAX98357B.pdf",
+        "page": 29,
+        "figure": "17",
+        "quote": "Left-Channel PCM Operation with 12dB Gain"
+      }
+    },
+    {
+      "id": "display",
+      "title": "3.3V SSD1306 module cable header",
+      "purpose": "Connector contract only: JST SH1mm1GND2+3.3V3SCL4SDA, external3.3V SSD1306 I2C0x3C module. No bare OLED IC or selected module is claimed. External device must stay within50mA reserve; actual module consumption/polarity/address must be verified.",
+      "insts": [
+        "display"
+      ],
+      "notes": [
+        "Actual imported parts; electrical and thermal budgets are assumptions pending hardware tests."
+      ]
+    },
+    {
+      "id": "led",
+      "title": "WS2812B-V5/W + AHCT level translator",
+      "purpose": "Single5V WS2812B-V5/W with explicit3.3V-to5V AHCT buffer. Budget39mA/63mA is a conservative author reservation (60mA LED+3mA buffer), not guaranteed LED max or measured consumption. V5 absolute/operating-range ambiguity and firmware timing still need review.",
+      "insts": [
+        "led"
+      ],
+      "notes": [
+        "Actual imported parts; electrical and thermal budgets are assumptions pending hardware tests."
+      ],
+      "reference": {
+        "lcsc": "C7484",
+        "datasheetUrl": "https://www.ti.com/lit/ds/symlink/sn74ahct1g125.pdf",
+        "page": 9,
+        "figure": "8-1",
+        "quote": "Typical Application Schematic"
+      }
+    }
+  ],
+  "drafts": [
+    {
+      "schema": "moki.block/1",
+      "id": "i2s-mic-ics43434",
+      "version": 1,
+      "title": "ICS-43434 I2S microphone (EOL)",
+      "class": "i2s_mic",
+      "summary": "3.3V left-slot I2S microphone; EOL lifecycle warning. Bottom acoustic PCB hole/clearance and enclosure opening still need geometry review. 48kHz/64BCLK, no MCLK. Reserved0.53/0.60mA estimates the1.8V manufacturer0.49/0.55mA table plus SD100k loading; worst-case3.3V current is not independently verified.",
+      "provenance": {
+        "author": "agent",
+        "authorId": "chip_eda-peripherals"
+      },
+      "parts": [
+        {
+          "ref": "U1",
+          "lcsc": "C5656610",
+          "mpn": "ICS-43434",
+          "catalogReceipt": "sha256:23f238031ea120ee5a6df6526204845acfbcac6c2b013d8d9914d474a26b0a8b",
+          "datasheet": {
+            "url": "https://d17t6iyxenbwp1.cloudfront.net/s3fs-public/2026-03/DS-000069-ICS-43434-v1.2.pdf?VersionId=W5u1f2s5LpMkDjoZSc3k7UxneMl9.WkV",
+            "sha256": "6f87312bec5078aef44866f4e765137aad0a085b144f3a4f27d697f28f68b0c8",
+            "pages": "4\u20136, 10, 12\u201315",
+            "note": "TDK DS-000069 v1.2: pins, 100nF X7R bypass, LR low for left slot, SD100k to GND. 48kHz/64BCLK per frame. Current0.49/0.55mA table is specified at1.8V,no load; selected3.3V budget remains an estimate. Official product marks EOL."
+          },
+          "pinout": "verified",
+          "pins": {
+            "WS": {
+              "pad": "1",
+              "role": "input",
+              "required": true,
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "LR": {
+              "pad": "2",
+              "role": "input",
+              "required": true,
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "GND": {
+              "pad": "3",
+              "role": "ground",
+              "required": true
+            },
+            "SCK": {
+              "pad": "4",
+              "role": "input",
+              "required": true,
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "VDD": {
+              "pad": "5",
+              "role": "power-in",
+              "required": true,
+              "volts": {
+                "min": 1.65,
+                "max": 3.63
+              }
+            },
+            "SD": {
+              "pad": "6",
+              "role": "output",
+              "required": true,
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            }
+          },
+          "at": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "ref": "C1",
+          "lcsc": "C14663",
+          "mpn": "CC0603KRX7R9BB104",
+          "catalogReceipt": "sha256:fde5081a0b45324f436df1a456a1a4dd1608306b862e8a6f4c8187b9d69ac426",
+          "datasheet": {
+            "url": "https://d17t6iyxenbwp1.cloudfront.net/s3fs-public/2026-03/DS-000069-ICS-43434-v1.2.pdf?VersionId=W5u1f2s5LpMkDjoZSc3k7UxneMl9.WkV",
+            "sha256": "6f87312bec5078aef44866f4e765137aad0a085b144f3a4f27d697f28f68b0c8",
+            "pages": "4\u20136, 10, 12\u201315",
+            "note": "TDK DS-000069 v1.2: pins, 100nF X7R bypass, LR low for left slot, SD100k to GND. 48kHz/64BCLK per frame. Current0.49/0.55mA table is specified at1.8V,no load; selected3.3V budget remains an estimate. Official product marks EOL."
+          },
+          "pinout": "verified",
+          "pins": {
+            "A": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "B": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 2,
+            "y": 0
+          },
+          "value": "100nF",
+          "valueWhy": {
+            "url": "https://d17t6iyxenbwp1.cloudfront.net/s3fs-public/2026-03/DS-000069-ICS-43434-v1.2.pdf?VersionId=W5u1f2s5LpMkDjoZSc3k7UxneMl9.WkV",
+            "sha256": "6f87312bec5078aef44866f4e765137aad0a085b144f3a4f27d697f28f68b0c8",
+            "pages": "4\u20136, 10, 12\u201315",
+            "note": "TDK DS-000069 v1.2: pins, 100nF X7R bypass, LR low for left slot, SD100k to GND. 48kHz/64BCLK per frame. Current0.49/0.55mA table is specified at1.8V,no load; selected3.3V budget remains an estimate. Official product marks EOL."
+          }
+        },
+        {
+          "ref": "R1",
+          "lcsc": "C25803",
+          "mpn": "0603WAF1003T5E",
+          "catalogReceipt": "sha256:492631a1c5290df166fc2c8e36384868fef36a4a5d1e643e31cdd8070017c851",
+          "datasheet": {
+            "url": "https://d17t6iyxenbwp1.cloudfront.net/s3fs-public/2026-03/DS-000069-ICS-43434-v1.2.pdf?VersionId=W5u1f2s5LpMkDjoZSc3k7UxneMl9.WkV",
+            "sha256": "6f87312bec5078aef44866f4e765137aad0a085b144f3a4f27d697f28f68b0c8",
+            "pages": "4\u20136, 10, 12\u201315",
+            "note": "TDK DS-000069 v1.2: pins, 100nF X7R bypass, LR low for left slot, SD100k to GND. 48kHz/64BCLK per frame. Current0.49/0.55mA table is specified at1.8V,no load; selected3.3V budget remains an estimate. Official product marks EOL."
+          },
+          "pinout": "verified",
+          "pins": {
+            "A": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "B": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 0,
+            "y": 2
+          },
+          "value": "100kOhm",
+          "valueWhy": {
+            "url": "https://d17t6iyxenbwp1.cloudfront.net/s3fs-public/2026-03/DS-000069-ICS-43434-v1.2.pdf?VersionId=W5u1f2s5LpMkDjoZSc3k7UxneMl9.WkV",
+            "sha256": "6f87312bec5078aef44866f4e765137aad0a085b144f3a4f27d697f28f68b0c8",
+            "pages": "4\u20136, 10, 12\u201315",
+            "note": "TDK DS-000069 v1.2: pins, 100nF X7R bypass, LR low for left slot, SD100k to GND. 48kHz/64BCLK per frame. Current0.49/0.55mA table is specified at1.8V,no load; selected3.3V budget remains an estimate. Official product marks EOL."
+          }
+        }
+      ],
+      "nets": [
+        {
+          "name": "V3V3",
+          "pins": [
+            "U1.VDD",
+            "C1.A"
+          ]
+        },
+        {
+          "name": "GND",
+          "pins": [
+            "U1.GND",
+            "U1.LR",
+            "C1.B",
+            "R1.B"
+          ]
+        },
+        {
+          "name": "BCLK",
+          "pins": [
+            "U1.SCK"
+          ]
+        },
+        {
+          "name": "WS",
+          "pins": [
+            "U1.WS"
+          ]
+        },
+        {
+          "name": "SD",
+          "pins": [
+            "U1.SD",
+            "R1.A"
+          ]
+        }
+      ],
+      "params": [],
+      "ports": [
+        {
+          "id": "V3V3",
+          "label": "3.3V",
+          "kind": "power-in",
+          "terminal": "net:V3V3",
+          "volts": {
+            "min": 3,
+            "max": 3.6
+          }
+        },
+        {
+          "id": "GND",
+          "label": "Ground",
+          "kind": "ground",
+          "terminal": "net:GND"
+        },
+        {
+          "id": "I2S_MIC",
+          "label": "I2S microphone",
+          "kind": "bus",
+          "bus": {
+            "protocol": "i2s",
+            "role": "peripheral",
+            "signals": {
+              "BCLK": "net:BCLK",
+              "WS": "net:WS",
+              "SD": "net:SD"
+            }
+          }
+        }
+      ],
+      "power": {
+        "sources": [],
+        "sinks": [
+          {
+            "port": "V3V3",
+            "typicalMa": 0.53,
+            "peakMa": 0.6
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "VDD",
+          "groundPin": "GND",
+          "caps": [
+            "C1"
+          ],
+          "minUf": 0.1,
+          "maxDistanceMm": 3,
+          "citation": {
+            "url": "https://d17t6iyxenbwp1.cloudfront.net/s3fs-public/2026-03/DS-000069-ICS-43434-v1.2.pdf?VersionId=W5u1f2s5LpMkDjoZSc3k7UxneMl9.WkV",
+            "sha256": "6f87312bec5078aef44866f4e765137aad0a085b144f3a4f27d697f28f68b0c8",
+            "pages": "4\u20136, 10, 12\u201315",
+            "note": "TDK DS-000069 v1.2: pins, 100nF X7R bypass, LR low for left slot, SD100k to GND. 48kHz/64BCLK per frame. Current0.49/0.55mA table is specified at1.8V,no load; selected3.3V budget remains an estimate. Official product marks EOL."
+          }
+        },
+        {
+          "kind": "ground",
+          "pin": "U1.GND",
+          "citation": {
+            "url": "https://d17t6iyxenbwp1.cloudfront.net/s3fs-public/2026-03/DS-000069-ICS-43434-v1.2.pdf?VersionId=W5u1f2s5LpMkDjoZSc3k7UxneMl9.WkV",
+            "sha256": "6f87312bec5078aef44866f4e765137aad0a085b144f3a4f27d697f28f68b0c8",
+            "pages": "4\u20136, 10, 12\u201315",
+            "note": "TDK DS-000069 v1.2: pins, 100nF X7R bypass, LR low for left slot, SD100k to GND. 48kHz/64BCLK per frame. Current0.49/0.55mA table is specified at1.8V,no load; selected3.3V budget remains an estimate. Official product marks EOL."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.LR",
+          "safe": "low",
+          "to": "net:GND",
+          "citation": {
+            "url": "https://d17t6iyxenbwp1.cloudfront.net/s3fs-public/2026-03/DS-000069-ICS-43434-v1.2.pdf?VersionId=W5u1f2s5LpMkDjoZSc3k7UxneMl9.WkV",
+            "sha256": "6f87312bec5078aef44866f4e765137aad0a085b144f3a4f27d697f28f68b0c8",
+            "pages": "4\u20136, 10, 12\u201315",
+            "note": "TDK DS-000069 v1.2: pins, 100nF X7R bypass, LR low for left slot, SD100k to GND. 48kHz/64BCLK per frame. Current0.49/0.55mA table is specified at1.8V,no load; selected3.3V budget remains an estimate. Official product marks EOL."
+          }
+        }
+      ],
+      "firmware": {
+        "libs": [],
+        "includes": [
+          "Arduino.h",
+          "driver/i2s.h"
+        ],
+        "usage": "ESP32 Arduino core I2S driver,48kHz stereo with64BCLK/frame (3.072MHz),24-bit left-slot SD in32-bit slots; LR is fixedGND. MCU provides BCLK/WS and reads SD; no MCLK. Other MCU families need their own core driver. SD100k-to-GND discharges tri-state bus; bottom acoustic opening and EOL sourcing remain unreviewed."
+      }
+    },
+    {
+      "schema": "moki.block/1",
+      "id": "i2s-amp-max98357a",
+      "version": 2,
+      "title": "MAX98357A + differential speaker header",
+      "class": "i2s_amp",
+      "summary": "Always-enabled LEFT I2S channel,12dB gain,5V rail,8ohm speaker only (>10uH). Audio operating budget380mA/500mA is an author assumption for1.4W continuous/1.8W distortion-limited peaks at80% assumed efficiency and4.75V minimum input, not an IC current rating or measurement. Speaker/thermal/EMI must be reviewed.",
+      "provenance": {
+        "author": "agent",
+        "authorId": "chip_eda-peripherals"
+      },
+      "parts": [
+        {
+          "ref": "U1",
+          "lcsc": "C910544",
+          "mpn": "MAX98357AETE+T",
+          "catalogReceipt": "sha256:e47725cb406035893b95653c680b7a718d133ca4d3ac20aae05436637c8f0cc0",
+          "datasheet": {
+            "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX98357A-MAX98357B.pdf",
+            "pages": "1, 4, 6, 15, 17, 28\u201329, 33",
+            "note": "MAX98357A TQFN I2S, 100nF+10uF bypass; GAIN=GND gives12dB; SD_MODE=VDD enables left channel. Retained manufacturer Rev11 mirror compared with Rev16 primary. 8ohm speaker >10uH; output neither grounded."
+          },
+          "pinout": "verified",
+          "pins": {
+            "DIN": {
+              "pad": "1",
+              "role": "input",
+              "required": true,
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "GAIN": {
+              "pad": "2",
+              "role": "input",
+              "required": true,
+              "volts": {
+                "min": 0,
+                "max": 5.5
+              }
+            },
+            "GND3": {
+              "pad": "3",
+              "role": "ground",
+              "required": true
+            },
+            "SD_MODE": {
+              "pad": "4",
+              "role": "input",
+              "required": true,
+              "volts": {
+                "min": 0,
+                "max": 5.5
+              }
+            },
+            "NC5": {
+              "pad": "5",
+              "role": "nc"
+            },
+            "NC6": {
+              "pad": "6",
+              "role": "nc"
+            },
+            "VDD7": {
+              "pad": "7",
+              "role": "power-in",
+              "required": true,
+              "volts": {
+                "min": 2.5,
+                "max": 5.5
+              }
+            },
+            "VDD8": {
+              "pad": "8",
+              "role": "power-in",
+              "required": true,
+              "volts": {
+                "min": 2.5,
+                "max": 5.5
+              }
+            },
+            "OUTP": {
+              "pad": "9",
+              "role": "output",
+              "required": true
+            },
+            "OUTN": {
+              "pad": "10",
+              "role": "output",
+              "required": true
+            },
+            "GND11": {
+              "pad": "11",
+              "role": "ground",
+              "required": true
+            },
+            "NC12": {
+              "pad": "12",
+              "role": "nc"
+            },
+            "NC13": {
+              "pad": "13",
+              "role": "nc"
+            },
+            "WS": {
+              "pad": "14",
+              "role": "input",
+              "required": true,
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "GND15": {
+              "pad": "15",
+              "role": "ground",
+              "required": true
+            },
+            "BCLK": {
+              "pad": "16",
+              "role": "input",
+              "required": true,
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "EP": {
+              "pad": "17",
+              "role": "ground",
+              "required": true
+            }
+          },
+          "at": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "ref": "C1",
+          "lcsc": "C14663",
+          "mpn": "CC0603KRX7R9BB104",
+          "catalogReceipt": "sha256:fde5081a0b45324f436df1a456a1a4dd1608306b862e8a6f4c8187b9d69ac426",
+          "datasheet": {
+            "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX98357A-MAX98357B.pdf",
+            "pages": "1, 4, 6, 15, 17, 28\u201329, 33",
+            "note": "MAX98357A TQFN I2S, 100nF+10uF bypass; GAIN=GND gives12dB; SD_MODE=VDD enables left channel. Retained manufacturer Rev11 mirror compared with Rev16 primary. 8ohm speaker >10uH; output neither grounded."
+          },
+          "pinout": "verified",
+          "pins": {
+            "A": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "B": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 2,
+            "y": 0
+          },
+          "value": "100nF",
+          "valueWhy": {
+            "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX98357A-MAX98357B.pdf",
+            "pages": "1, 4, 6, 15, 17, 28\u201329, 33",
+            "note": "MAX98357A TQFN I2S, 100nF+10uF bypass; GAIN=GND gives12dB; SD_MODE=VDD enables left channel. Retained manufacturer Rev11 mirror compared with Rev16 primary. 8ohm speaker >10uH; output neither grounded."
+          }
+        },
+        {
+          "ref": "C2",
+          "lcsc": "C162430",
+          "mpn": "GRM21BZ71C106KE15L",
+          "catalogReceipt": "sha256:fac7c295d74c60b33cd57238b664281effc5d6bb3ffb9770380e74ceb2960ac8",
+          "datasheet": {
+            "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX98357A-MAX98357B.pdf",
+            "pages": "1, 4, 6, 15, 17, 28\u201329, 33",
+            "note": "MAX98357A TQFN I2S, 100nF+10uF bypass; GAIN=GND gives12dB; SD_MODE=VDD enables left channel. Retained manufacturer Rev11 mirror compared with Rev16 primary. 8ohm speaker >10uH; output neither grounded."
+          },
+          "pinout": "verified",
+          "pins": {
+            "A": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "B": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 0,
+            "y": -2
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX98357A-MAX98357B.pdf",
+            "pages": "1, 4, 6, 15, 17, 28\u201329, 33",
+            "note": "Manufacturer reference10uF; actual catalog Murata10uF16VX7R0805 nominal. Verify effective capacitance after DC bias; nominal-only ERC is not physical validation."
+          }
+        },
+        {
+          "ref": "J1",
+          "lcsc": "C131337",
+          "mpn": "B2B-PH-K-S(LF)(SN)",
+          "catalogReceipt": "sha256:82df65b5140c39651869327c52e90049bc0af93621410addb7e5807cf2823460",
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_JST-B2B-PH-K-S-LF-SN_C131337.pdf",
+            "pages": "1",
+            "note": "Actual JST PH2mm2pin B2B-PH-K-S header, catalog2A contact rating; contract1OUTP2OUTN, neither ground. External8ohm speaker and cable must match; no speaker driver/transducer selected."
+          },
+          "pinout": "verified",
+          "pins": {
+            "P": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "N": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 5,
+            "y": 0
+          }
+        }
+      ],
+      "nets": [
+        {
+          "name": "V5",
+          "pins": [
+            "U1.VDD7",
+            "U1.VDD8",
+            "U1.SD_MODE",
+            "C1.A",
+            "C2.A"
+          ]
+        },
+        {
+          "name": "GND",
+          "pins": [
+            "U1.GND3",
+            "U1.GND11",
+            "U1.GND15",
+            "U1.EP",
+            "U1.GAIN",
+            "C1.B",
+            "C2.B"
+          ]
+        },
+        {
+          "name": "BCLK",
+          "pins": [
+            "U1.BCLK"
+          ]
+        },
+        {
+          "name": "WS",
+          "pins": [
+            "U1.WS"
+          ]
+        },
+        {
+          "name": "DIN",
+          "pins": [
+            "U1.DIN"
+          ]
+        },
+        {
+          "name": "SPK_P",
+          "pins": [
+            "U1.OUTP",
+            "J1.P"
+          ]
+        },
+        {
+          "name": "SPK_N",
+          "pins": [
+            "U1.OUTN",
+            "J1.N"
+          ]
+        }
+      ],
+      "params": [],
+      "ports": [
+        {
+          "id": "V5",
+          "label": "5V speaker supply",
+          "kind": "power-in",
+          "terminal": "net:V5",
+          "volts": {
+            "min": 4.75,
+            "max": 5.25
+          }
+        },
+        {
+          "id": "GND",
+          "label": "Ground",
+          "kind": "ground",
+          "terminal": "net:GND"
+        },
+        {
+          "id": "I2S_AMP",
+          "label": "I2S speaker input",
+          "kind": "bus",
+          "bus": {
+            "protocol": "i2s",
+            "role": "peripheral",
+            "signals": {
+              "BCLK": "net:BCLK",
+              "WS": "net:WS",
+              "SD": "net:DIN"
+            }
+          }
+        }
+      ],
+      "power": {
+        "sources": [],
+        "sinks": [
+          {
+            "port": "V5",
+            "typicalMa": 380,
+            "peakMa": 500
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "VDD7",
+          "groundPin": "GND3",
+          "caps": [
+            "C1",
+            "C2"
+          ],
+          "minUf": 10.1,
+          "maxDistanceMm": 4,
+          "citation": {
+            "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX98357A-MAX98357B.pdf",
+            "pages": "1, 4, 6, 15, 17, 28\u201329, 33",
+            "note": "MAX98357A TQFN I2S, 100nF+10uF bypass; GAIN=GND gives12dB; SD_MODE=VDD enables left channel. Retained manufacturer Rev11 mirror compared with Rev16 primary. 8ohm speaker >10uH; output neither grounded. Author origin-distance policy4mm: actual imported courtyards require at least3.125mm for the amplifier bulk capacitor and3.6mm for LED bypass. Manufacturer asks close bypassing;4mm is not a quoted manufacturer maximum. Final native distance and short pad-to-pad routing remain checked."
+          }
+        },
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "VDD8",
+          "groundPin": "GND3",
+          "caps": [
+            "C1",
+            "C2"
+          ],
+          "minUf": 10.1,
+          "maxDistanceMm": 4,
+          "citation": {
+            "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX98357A-MAX98357B.pdf",
+            "pages": "1, 4, 6, 15, 17, 28\u201329, 33",
+            "note": "MAX98357A TQFN I2S, 100nF+10uF bypass; GAIN=GND gives12dB; SD_MODE=VDD enables left channel. Retained manufacturer Rev11 mirror compared with Rev16 primary. 8ohm speaker >10uH; output neither grounded. Author origin-distance policy4mm: actual imported courtyards require at least3.125mm for the amplifier bulk capacitor and3.6mm for LED bypass. Manufacturer asks close bypassing;4mm is not a quoted manufacturer maximum. Final native distance and short pad-to-pad routing remain checked."
+          }
+        },
+        {
+          "kind": "ground",
+          "pin": "U1.GND3",
+          "citation": {
+            "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX98357A-MAX98357B.pdf",
+            "pages": "1, 4, 6, 15, 17, 28\u201329, 33",
+            "note": "MAX98357A TQFN I2S, 100nF+10uF bypass; GAIN=GND gives12dB; SD_MODE=VDD enables left channel. Retained manufacturer Rev11 mirror compared with Rev16 primary. 8ohm speaker >10uH; output neither grounded."
+          }
+        },
+        {
+          "kind": "ground",
+          "pin": "U1.GND11",
+          "citation": {
+            "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX98357A-MAX98357B.pdf",
+            "pages": "1, 4, 6, 15, 17, 28\u201329, 33",
+            "note": "MAX98357A TQFN I2S, 100nF+10uF bypass; GAIN=GND gives12dB; SD_MODE=VDD enables left channel. Retained manufacturer Rev11 mirror compared with Rev16 primary. 8ohm speaker >10uH; output neither grounded."
+          }
+        },
+        {
+          "kind": "ground",
+          "pin": "U1.GND15",
+          "citation": {
+            "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX98357A-MAX98357B.pdf",
+            "pages": "1, 4, 6, 15, 17, 28\u201329, 33",
+            "note": "MAX98357A TQFN I2S, 100nF+10uF bypass; GAIN=GND gives12dB; SD_MODE=VDD enables left channel. Retained manufacturer Rev11 mirror compared with Rev16 primary. 8ohm speaker >10uH; output neither grounded."
+          }
+        },
+        {
+          "kind": "ground",
+          "pin": "U1.EP",
+          "citation": {
+            "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX98357A-MAX98357B.pdf",
+            "pages": "1, 4, 6, 15, 17, 28\u201329, 33",
+            "note": "MAX98357A TQFN I2S, 100nF+10uF bypass; GAIN=GND gives12dB; SD_MODE=VDD enables left channel. Retained manufacturer Rev11 mirror compared with Rev16 primary. 8ohm speaker >10uH; output neither grounded."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.GAIN",
+          "safe": "low",
+          "to": "net:GND",
+          "citation": {
+            "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX98357A-MAX98357B.pdf",
+            "pages": "1, 4, 6, 15, 17, 28\u201329, 33",
+            "note": "MAX98357A TQFN I2S, 100nF+10uF bypass; GAIN=GND gives12dB; SD_MODE=VDD enables left channel. Retained manufacturer Rev11 mirror compared with Rev16 primary. 8ohm speaker >10uH; output neither grounded."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.SD_MODE",
+          "safe": "high",
+          "to": "net:V5",
+          "citation": {
+            "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX98357A-MAX98357B.pdf",
+            "pages": "1, 4, 6, 15, 17, 28\u201329, 33",
+            "note": "MAX98357A TQFN I2S, 100nF+10uF bypass; GAIN=GND gives12dB; SD_MODE=VDD enables left channel. Retained manufacturer Rev11 mirror compared with Rev16 primary. 8ohm speaker >10uH; output neither grounded."
+          }
+        }
+      ],
+      "firmware": {
+        "libs": [],
+        "includes": [
+          "Arduino.h",
+          "driver/i2s.h"
+        ],
+        "usage": "ESP32 Arduino core I2S driver,48kHz64BCLK/frame. MCU drives BCLK/WS/SD; MAX98357A consumes standardI2S (not B variant left-justified). SD_MODE is physically VDD:LEFT and always enabled; no shutdown GPIO. GAIN is GND:12dB. Output silence with zero samples; no software shutdown claim. External8ohm speaker connects only J1P/J1N, neverGND; keep rail/load within conditional audio budget and independently verify thermal/EMI/rail sequencing."
+      }
+    },
+    {
+      "schema": "moki.block/1",
+      "id": "ws2812b-v5-levelshift",
+      "version": 2,
+      "title": "WS2812B-V5/W + AHCT level translator",
+      "class": "addressable_led",
+      "summary": "Single5V WS2812B-V5/W with explicit3.3V-to5V AHCT buffer. Budget39mA/63mA is a conservative author reservation (60mA LED+3mA buffer), not guaranteed LED max or measured consumption. V5 absolute/operating-range ambiguity and firmware timing still need review.",
+      "provenance": {
+        "author": "agent",
+        "authorId": "chip_eda-peripherals"
+      },
+      "parts": [
+        {
+          "ref": "D1",
+          "lcsc": "C2874885",
+          "mpn": "WS2812B-V5/W",
+          "catalogReceipt": "sha256:2c684f2a0db40cd55dd6e030a164e710c2c021aff7cb7f7ccf4526306d3fd1b7",
+          "datasheet": {
+            "url": "https://world-semi.com/web/userfiles/productfile/WS2812B_V5WDatasheet_V6.1_EN.pdf",
+            "sha256": "652e7bc44abd2d4ba24991a403f48bbc64593ea3af7fc92e153b215c50a511af",
+            "pages": "1\u20133",
+            "note": "Worldsemi V5/W: pins1VDD2DOUT3VSS4DIN, VIH=.63VDD, reset>280us, 12mA/channel characterization. 3.7\u20135.3V is labeled absolute ratings; operating-range ambiguity requires review."
+          },
+          "pinout": "verified",
+          "pins": {
+            "VDD": {
+              "pad": "1",
+              "role": "power-in",
+              "required": true,
+              "volts": {
+                "min": 4.5,
+                "max": 5.3
+              }
+            },
+            "DOUT": {
+              "pad": "2",
+              "role": "output",
+              "volts": {
+                "min": 0,
+                "max": 5.3
+              }
+            },
+            "GND": {
+              "pad": "3",
+              "role": "ground",
+              "required": true
+            },
+            "DIN": {
+              "pad": "4",
+              "role": "input",
+              "required": true,
+              "volts": {
+                "min": 0,
+                "max": 5.3
+              }
+            }
+          },
+          "at": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "ref": "U1",
+          "lcsc": "C7484",
+          "mpn": "SN74AHCT1G125DBVR",
+          "catalogReceipt": "sha256:3c8a910a151bda15a17e9af793dde68adf2930a08ba986b6d027f04a8cedafe5",
+          "datasheet": {
+            "url": "https://www.ti.com/lit/ds/symlink/sn74ahct1g125.pdf",
+            "pages": "3\u20135, 10",
+            "note": "TI RevP: /OE1,A2,GND3,Y4,VCC5. Supply4.5\u20135.5V, VIH2V, VOH>=3.8V at specified4.5V/8mA test; 100nF bypass. DeltaICC1.5mA max at3.4V input/5.5V rail plus dynamic Cpd14pF is why the author reserves3mA buffer draw rather than1mA."
+          },
+          "pinout": "verified",
+          "pins": {
+            "OE_N": {
+              "pad": "1",
+              "role": "input",
+              "required": true,
+              "volts": {
+                "min": 0,
+                "max": 5.5
+              }
+            },
+            "A": {
+              "pad": "2",
+              "role": "input",
+              "required": true,
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "GND": {
+              "pad": "3",
+              "role": "ground",
+              "required": true
+            },
+            "Y": {
+              "pad": "4",
+              "role": "output",
+              "required": true,
+              "volts": {
+                "min": 0,
+                "max": 5.25
+              }
+            },
+            "VCC": {
+              "pad": "5",
+              "role": "power-in",
+              "required": true,
+              "volts": {
+                "min": 4.5,
+                "max": 5.5
+              }
+            }
+          },
+          "at": {
+            "x": -4,
+            "y": 0
+          }
+        },
+        {
+          "ref": "C1",
+          "lcsc": "C14663",
+          "mpn": "CC0603KRX7R9BB104",
+          "catalogReceipt": "sha256:fde5081a0b45324f436df1a456a1a4dd1608306b862e8a6f4c8187b9d69ac426",
+          "datasheet": {
+            "url": "https://world-semi.com/web/userfiles/productfile/WS2812B_V5WDatasheet_V6.1_EN.pdf",
+            "sha256": "652e7bc44abd2d4ba24991a403f48bbc64593ea3af7fc92e153b215c50a511af",
+            "pages": "1\u20133",
+            "note": "Author policy100nF local bypass despite V5/W advertising no external capacitor required; not a manufacturer-mandated reference value."
+          },
+          "pinout": "verified",
+          "pins": {
+            "A": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "B": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 2,
+            "y": 0
+          },
+          "value": "100nF",
+          "valueWhy": {
+            "url": "https://world-semi.com/web/userfiles/productfile/WS2812B_V5WDatasheet_V6.1_EN.pdf",
+            "sha256": "652e7bc44abd2d4ba24991a403f48bbc64593ea3af7fc92e153b215c50a511af",
+            "pages": "1\u20133",
+            "note": "Author policy100nF local bypass despite V5/W advertising no external capacitor required; not a manufacturer-mandated reference value."
+          }
+        },
+        {
+          "ref": "C2",
+          "lcsc": "C14663",
+          "mpn": "CC0603KRX7R9BB104",
+          "catalogReceipt": "sha256:fde5081a0b45324f436df1a456a1a4dd1608306b862e8a6f4c8187b9d69ac426",
+          "datasheet": {
+            "url": "https://www.ti.com/lit/ds/symlink/sn74ahct1g125.pdf",
+            "pages": "3\u20135, 10",
+            "note": "TI RevP: /OE1,A2,GND3,Y4,VCC5. Supply4.5\u20135.5V, VIH2V, VOH>=3.8V at specified4.5V/8mA test; 100nF bypass. DeltaICC1.5mA max at3.4V input/5.5V rail plus dynamic Cpd14pF is why the author reserves3mA buffer draw rather than1mA."
+          },
+          "pinout": "verified",
+          "pins": {
+            "A": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "B": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -4,
+            "y": -2
+          },
+          "value": "100nF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/sn74ahct1g125.pdf",
+            "pages": "3\u20135, 10",
+            "note": "TI RevP: /OE1,A2,GND3,Y4,VCC5. Supply4.5\u20135.5V, VIH2V, VOH>=3.8V at specified4.5V/8mA test; 100nF bypass. DeltaICC1.5mA max at3.4V input/5.5V rail plus dynamic Cpd14pF is why the author reserves3mA buffer draw rather than1mA."
+          }
+        }
+      ],
+      "nets": [
+        {
+          "name": "V5",
+          "pins": [
+            "D1.VDD",
+            "U1.VCC",
+            "C1.A",
+            "C2.A"
+          ]
+        },
+        {
+          "name": "GND",
+          "pins": [
+            "D1.GND",
+            "U1.GND",
+            "U1.OE_N",
+            "C1.B",
+            "C2.B"
+          ]
+        },
+        {
+          "name": "DATA_3V3",
+          "pins": [
+            "U1.A"
+          ]
+        },
+        {
+          "name": "DATA_5V",
+          "pins": [
+            "U1.Y",
+            "D1.DIN"
+          ]
+        }
+      ],
+      "params": [],
+      "ports": [
+        {
+          "id": "V5",
+          "label": "5V",
+          "kind": "power-in",
+          "terminal": "net:V5",
+          "volts": {
+            "min": 4.75,
+            "max": 5.25
+          }
+        },
+        {
+          "id": "GND",
+          "label": "Ground",
+          "kind": "ground",
+          "terminal": "net:GND"
+        },
+        {
+          "id": "LED_DATA",
+          "label": "3.3V input",
+          "kind": "gpio",
+          "terminal": "net:DATA_3V3",
+          "volts": {
+            "min": 0,
+            "max": 3.6
+          }
+        }
+      ],
+      "power": {
+        "sources": [],
+        "sinks": [
+          {
+            "port": "V5",
+            "typicalMa": 39,
+            "peakMa": 63
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "kind": "decoupling",
+          "ic": "D1",
+          "powerPin": "VDD",
+          "groundPin": "GND",
+          "caps": [
+            "C1"
+          ],
+          "minUf": 0.1,
+          "maxDistanceMm": 4,
+          "citation": {
+            "url": "https://world-semi.com/web/userfiles/productfile/WS2812B_V5WDatasheet_V6.1_EN.pdf",
+            "sha256": "652e7bc44abd2d4ba24991a403f48bbc64593ea3af7fc92e153b215c50a511af",
+            "pages": "1\u20133",
+            "note": "Worldsemi V5/W: pins1VDD2DOUT3VSS4DIN, VIH=.63VDD, reset>280us, 12mA/channel characterization. 3.7\u20135.3V is labeled absolute ratings; operating-range ambiguity requires review. Author origin-distance policy4mm: actual imported courtyards require at least3.125mm for the amplifier bulk capacitor and3.6mm for LED bypass. Manufacturer asks close bypassing;4mm is not a quoted manufacturer maximum. Final native distance and short pad-to-pad routing remain checked."
+          }
+        },
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "VCC",
+          "groundPin": "GND",
+          "caps": [
+            "C2"
+          ],
+          "minUf": 0.1,
+          "maxDistanceMm": 4,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/sn74ahct1g125.pdf",
+            "pages": "3\u20135, 10",
+            "note": "TI RevP: /OE1,A2,GND3,Y4,VCC5. Supply4.5\u20135.5V, VIH2V, VOH>=3.8V at specified4.5V/8mA test; 100nF bypass. DeltaICC1.5mA max at3.4V input/5.5V rail plus dynamic Cpd14pF is why the author reserves3mA buffer draw rather than1mA. Author origin-distance policy4mm: actual imported courtyards require at least3.125mm for the amplifier bulk capacitor and3.6mm for LED bypass. Manufacturer asks close bypassing;4mm is not a quoted manufacturer maximum. Final native distance and short pad-to-pad routing remain checked."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.OE_N",
+          "safe": "low",
+          "to": "net:GND",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/sn74ahct1g125.pdf",
+            "pages": "3\u20135, 10",
+            "note": "TI RevP: /OE1,A2,GND3,Y4,VCC5. Supply4.5\u20135.5V, VIH2V, VOH>=3.8V at specified4.5V/8mA test; 100nF bypass. DeltaICC1.5mA max at3.4V input/5.5V rail plus dynamic Cpd14pF is why the author reserves3mA buffer draw rather than1mA."
+          }
+        },
+        {
+          "kind": "ground",
+          "pin": "D1.GND",
+          "citation": {
+            "url": "https://world-semi.com/web/userfiles/productfile/WS2812B_V5WDatasheet_V6.1_EN.pdf",
+            "sha256": "652e7bc44abd2d4ba24991a403f48bbc64593ea3af7fc92e153b215c50a511af",
+            "pages": "1\u20133",
+            "note": "Worldsemi V5/W: pins1VDD2DOUT3VSS4DIN, VIH=.63VDD, reset>280us, 12mA/channel characterization. 3.7\u20135.3V is labeled absolute ratings; operating-range ambiguity requires review."
+          }
+        },
+        {
+          "kind": "ground",
+          "pin": "U1.GND",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/sn74ahct1g125.pdf",
+            "pages": "3\u20135, 10",
+            "note": "TI RevP: /OE1,A2,GND3,Y4,VCC5. Supply4.5\u20135.5V, VIH2V, VOH>=3.8V at specified4.5V/8mA test; 100nF bypass. DeltaICC1.5mA max at3.4V input/5.5V rail plus dynamic Cpd14pF is why the author reserves3mA buffer draw rather than1mA."
+          }
+        }
+      ],
+      "firmware": {
+        "libs": [],
+        "includes": [
+          "Arduino.h"
+        ],
+        "usage": "Requires an independently qualified800kbps WS2812 timing implementation with resetLOW>280us. No firmware library/version is approved here and digitalWrite loops are not guaranteed. Do not claim firmware/physical done until target-specific timing is compiled and reviewed. MCU data enters only AHCT A; /OE is GND, Y drives physical LED DINpad4. Raw header SPICEpin3 is stale and must never override physicalpad4. Ensure MCU-off/buffer-on input is not floating and verify rail sequencing."
+      }
+    },
+    {
+      "schema": "moki.block/1",
+      "id": "ssd1306-i2c-header",
+      "version": 1,
+      "title": "3.3V SSD1306 module cable header",
+      "class": "display",
+      "summary": "Connector contract only: JST SH1mm1GND2+3.3V3SCL4SDA, external3.3V SSD1306 I2C0x3C module. No bare OLED IC or selected module is claimed. External device must stay within50mA reserve; actual module consumption/polarity/address must be verified.",
+      "provenance": {
+        "author": "agent",
+        "authorId": "chip_eda-peripherals"
+      },
+      "parts": [
+        {
+          "ref": "J1",
+          "lcsc": "C160404",
+          "mpn": "SM04B-SRSS-TB(LF)(SN)",
+          "catalogReceipt": "sha256:1f6986d8e1e0029252480dcbb4fe6a48c8bc91b0331da16840616acfb26ffd35",
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_JST-SM04B-SRSS-TB-LF-SN_C160404.pdf",
+            "pages": "1\u20132",
+            "note": "Actual JST SH1mm4pin connector; physicalcontacts1\u20134 and mechanicaltabs5/6. Our authored cable contract1GND2+3.3V3SCL4SDA is not a universal SSD1306 module pinout. 10k I2C pulls and50mA reserve are author contract assumptions; verify module and total bus capacitance/parallel pulls."
+          },
+          "pinout": "verified",
+          "pins": {
+            "GND": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "VCC": {
+              "pad": "2",
+              "role": "passive"
+            },
+            "SCL": {
+              "pad": "3",
+              "role": "passive"
+            },
+            "SDA": {
+              "pad": "4",
+              "role": "passive"
+            },
+            "MOUNT5": {
+              "pad": "5",
+              "role": "nc"
+            },
+            "MOUNT6": {
+              "pad": "6",
+              "role": "nc"
+            }
+          },
+          "at": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "ref": "R1",
+          "lcsc": "C25804",
+          "mpn": "0603WAF1002T5E",
+          "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_JST-SM04B-SRSS-TB-LF-SN_C160404.pdf",
+            "pages": "1\u20132",
+            "note": "Actual JST SH1mm4pin connector; physicalcontacts1\u20134 and mechanicaltabs5/6. Our authored cable contract1GND2+3.3V3SCL4SDA is not a universal SSD1306 module pinout. 10k I2C pulls and50mA reserve are author contract assumptions; verify module and total bus capacitance/parallel pulls."
+          },
+          "pinout": "verified",
+          "pins": {
+            "A": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "B": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 2,
+            "y": 0
+          },
+          "value": "10kOhm",
+          "valueWhy": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_JST-SM04B-SRSS-TB-LF-SN_C160404.pdf",
+            "pages": "1\u20132",
+            "note": "Actual JST SH1mm4pin connector; physicalcontacts1\u20134 and mechanicaltabs5/6. Our authored cable contract1GND2+3.3V3SCL4SDA is not a universal SSD1306 module pinout. 10k I2C pulls and50mA reserve are author contract assumptions; verify module and total bus capacitance/parallel pulls."
+          }
+        },
+        {
+          "ref": "R2",
+          "lcsc": "C25804",
+          "mpn": "0603WAF1002T5E",
+          "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_JST-SM04B-SRSS-TB-LF-SN_C160404.pdf",
+            "pages": "1\u20132",
+            "note": "Actual JST SH1mm4pin connector; physicalcontacts1\u20134 and mechanicaltabs5/6. Our authored cable contract1GND2+3.3V3SCL4SDA is not a universal SSD1306 module pinout. 10k I2C pulls and50mA reserve are author contract assumptions; verify module and total bus capacitance/parallel pulls."
+          },
+          "pinout": "verified",
+          "pins": {
+            "A": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "B": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 2,
+            "y": 2
+          },
+          "value": "10kOhm",
+          "valueWhy": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_JST-SM04B-SRSS-TB-LF-SN_C160404.pdf",
+            "pages": "1\u20132",
+            "note": "Actual JST SH1mm4pin connector; physicalcontacts1\u20134 and mechanicaltabs5/6. Our authored cable contract1GND2+3.3V3SCL4SDA is not a universal SSD1306 module pinout. 10k I2C pulls and50mA reserve are author contract assumptions; verify module and total bus capacitance/parallel pulls."
+          }
+        }
+      ],
+      "nets": [
+        {
+          "name": "V3V3",
+          "pins": [
+            "J1.VCC",
+            "R1.A",
+            "R2.A"
+          ]
+        },
+        {
+          "name": "GND",
+          "pins": [
+            "J1.GND"
+          ]
+        },
+        {
+          "name": "SCL",
+          "pins": [
+            "J1.SCL",
+            "R1.B"
+          ]
+        },
+        {
+          "name": "SDA",
+          "pins": [
+            "J1.SDA",
+            "R2.B"
+          ]
+        }
+      ],
+      "params": [],
+      "ports": [
+        {
+          "id": "V3V3",
+          "label": "3.3V module supply",
+          "kind": "power-in",
+          "terminal": "net:V3V3",
+          "volts": {
+            "min": 3,
+            "max": 3.6
+          }
+        },
+        {
+          "id": "GND",
+          "label": "Ground",
+          "kind": "ground",
+          "terminal": "net:GND"
+        },
+        {
+          "id": "I2C_DISPLAY",
+          "label": "I2C display",
+          "kind": "bus",
+          "bus": {
+            "protocol": "i2c",
+            "role": "peripheral",
+            "signals": {
+              "SCL": "net:SCL",
+              "SDA": "net:SDA"
+            },
+            "i2cAddresses": [
+              60
+            ]
+          }
+        }
+      ],
+      "power": {
+        "sources": [],
+        "sinks": [
+          {
+            "port": "V3V3",
+            "typicalMa": 50,
+            "peakMa": 50
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "kind": "pullup",
+          "pin": "net:SCL",
+          "to": "net:V3V3",
+          "resistor": "R1",
+          "ohms": 10000,
+          "citation": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_JST-SM04B-SRSS-TB-LF-SN_C160404.pdf",
+            "pages": "1\u20132",
+            "note": "Actual JST SH1mm4pin connector; physicalcontacts1\u20134 and mechanicaltabs5/6. Our authored cable contract1GND2+3.3V3SCL4SDA is not a universal SSD1306 module pinout. 10k I2C pulls and50mA reserve are author contract assumptions; verify module and total bus capacitance/parallel pulls."
+          }
+        },
+        {
+          "kind": "pullup",
+          "pin": "net:SDA",
+          "to": "net:V3V3",
+          "resistor": "R2",
+          "ohms": 10000,
+          "citation": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_JST-SM04B-SRSS-TB-LF-SN_C160404.pdf",
+            "pages": "1\u20132",
+            "note": "Actual JST SH1mm4pin connector; physicalcontacts1\u20134 and mechanicaltabs5/6. Our authored cable contract1GND2+3.3V3SCL4SDA is not a universal SSD1306 module pinout. 10k I2C pulls and50mA reserve are author contract assumptions; verify module and total bus capacitance/parallel pulls."
+          }
+        }
+      ],
+      "firmware": {
+        "libs": [
+          "adafruit/Adafruit SSD1306@2.5.13",
+          "adafruit/Adafruit GFX Library@1.11.11",
+          "adafruit/Adafruit BusIO@1.17.0"
+        ],
+        "includes": [
+          "Arduino.h",
+          "Wire.h",
+          "Adafruit_GFX.h",
+          "Adafruit_SSD1306.h"
+        ],
+        "usage": "Conditional external128x64 SSD1306 I2C module at0x3C: Wire.begin(SDA,SCL), Adafruit_SSD1306(128,64,&Wire,-1), begin(SSD1306_SWITCHCAPVCC,0x3C); handle false result. This is a cable/module contract, not a bare controller circuit. Select/verify3.3V-compatible module,cablepolarity,pullups,address,50mA maximumdraw and matingSH1mmconnector. FiftymA typical/peak is a conservative reserved budget, not an observed or manufacturer module consumption."
+      }
+    },
+    {
+      "schema": "moki.block/1",
+      "id": "tps63001-usb-sys-3v3",
+      "version": 1,
+      "title": "TPS63001 3.3V from USB-present SYS",
+      "class": "power",
+      "summary": "USB-present4.2\u20134.5V SYS input; fixed3.3V,800mA peak/650mA continuous author budget at25C/85% assumed efficiency. Battery-input operating envelope remains unverified. 1.8A switch rating is not output capacity.",
+      "provenance": {
+        "author": "agent",
+        "authorId": "chip_eda"
+      },
+      "parts": [
+        {
+          "ref": "U1",
+          "lcsc": "C28060",
+          "mpn": "TPS63001DRCR",
+          "catalogReceipt": "sha256:c42a3e97120b05844f323a057f8afc81747b2065fec947a36290f7e7f12d7ed9",
+          "pinout": "verified",
+          "pins": {
+            "VOUT": {
+              "pad": "1",
+              "role": "power-out",
+              "required": true
+            },
+            "L2": {
+              "pad": "2",
+              "role": "bidirectional",
+              "required": true
+            },
+            "PGND": {
+              "pad": "3",
+              "role": "ground",
+              "required": true
+            },
+            "L1": {
+              "pad": "4",
+              "role": "bidirectional",
+              "required": true
+            },
+            "VIN": {
+              "pad": "5",
+              "role": "power-in",
+              "required": true,
+              "volts": {
+                "min": 4.2,
+                "max": 4.5
+              }
+            },
+            "EN": {
+              "pad": "6",
+              "role": "input",
+              "required": true
+            },
+            "PS": {
+              "pad": "7",
+              "role": "input",
+              "required": true
+            },
+            "VINA": {
+              "pad": "8",
+              "role": "power-in",
+              "required": true,
+              "volts": {
+                "min": 4.2,
+                "max": 4.5
+              }
+            },
+            "GND": {
+              "pad": "9",
+              "role": "ground",
+              "required": true
+            },
+            "FB": {
+              "pad": "10",
+              "role": "input",
+              "required": true
+            },
+            "EP": {
+              "pad": "11",
+              "role": "ground",
+              "required": true
+            }
+          },
+          "at": {
+            "x": 0,
+            "y": 0
+          },
+          "datasheet": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3\u20136, 10\u201313, 16",
+            "note": "TPS63001 fixed3.3V; FB tied directly to VOUT. LPS4012 is a recommended inductor series. 1.8A is switch current, not output. USB-state author output budget800mA peak/650mA continuous atSYS4.2\u20134.5V, ambient25C and assumed85% efficiency; native layout/transients and actual efficiency remain unverified."
+          }
+        },
+        {
+          "ref": "L1",
+          "lcsc": "C20416998",
+          "mpn": "LPS4012-222MRC",
+          "catalogReceipt": "sha256:a723bd279a3338434b63e2a96371df67ebbfb98c3c426c052597508cad91fe2b",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 0,
+            "y": -4
+          },
+          "datasheet": {
+            "url": "https://www.coilcraft.com/getmedia/a31b0140-5adf-4f7e-b7bf-5e9d605a87b9/LPS4012.pdf",
+            "note": "Actual LPS4012-222MRC / C20416998 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "2.2uH",
+          "valueWhy": {
+            "url": "https://www.coilcraft.com/getmedia/a31b0140-5adf-4f7e-b7bf-5e9d605a87b9/LPS4012.pdf",
+            "pages": "1\u20132",
+            "note": "LPS4012-222MRC2.2uH +/-20%, DCRmax0.100Ohm; at25C Isat2.3A at10% inductance drop, Irms1.2A for20C rise/1.75A for40C rise. Temperature-rise currents are reference, not absolute maximum guarantees. USB-state bounded steady-state inductor current is below these reference values; switching/core loss and temperature remain unmeasured."
+          }
+        },
+        {
+          "ref": "C1",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -4,
+            "y": 0
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+            "pages": "6\u20137",
+            "note": "Complete TPS63001 reference ties VIN/VINA supply directly; no mixed partial100Ohm filter topology. Fixed FB returns to VOUT. Author uses additional nominal capacitance; effective DC-biased capacitance still requires verification."
+          }
+        },
+        {
+          "ref": "C2",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -4,
+            "y": 3
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+            "pages": "6\u20137",
+            "note": "Complete TPS63001 reference ties VIN/VINA supply directly; no mixed partial100Ohm filter topology. Fixed FB returns to VOUT. Author uses additional nominal capacitance; effective DC-biased capacitance still requires verification."
+          }
+        },
+        {
+          "ref": "C3",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 4,
+            "y": -3
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+            "pages": "6\u20137",
+            "note": "Complete TPS63001 reference ties VIN/VINA supply directly; no mixed partial100Ohm filter topology. Fixed FB returns to VOUT. Author uses additional nominal capacitance; effective DC-biased capacitance still requires verification."
+          }
+        },
+        {
+          "ref": "C4",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 4,
+            "y": 0
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+            "pages": "6\u20137",
+            "note": "Complete TPS63001 reference ties VIN/VINA supply directly; no mixed partial100Ohm filter topology. Fixed FB returns to VOUT. Author uses additional nominal capacitance; effective DC-biased capacitance still requires verification."
+          }
+        },
+        {
+          "ref": "C5",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 4,
+            "y": 3
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+            "pages": "6\u20137",
+            "note": "Complete TPS63001 reference ties VIN/VINA supply directly; no mixed partial100Ohm filter topology. Fixed FB returns to VOUT. Author uses additional nominal capacitance; effective DC-biased capacitance still requires verification."
+          }
+        },
+        {
+          "ref": "C6",
+          "lcsc": "C14663",
+          "mpn": "CC0603KRX7R9BB104",
+          "catalogReceipt": "sha256:fde5081a0b45324f436df1a456a1a4dd1608306b862e8a6f4c8187b9d69ac426",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -2,
+            "y": 3
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2211101700_YAGEO-CC0603KRX7R9BB104_C14663.pdf",
+            "note": "Actual CC0603KRX7R9BB104 / C14663 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "100nF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+            "pages": "6\u20137",
+            "note": "Complete TPS63001 reference ties VIN/VINA supply directly; no mixed partial100Ohm filter topology. Fixed FB returns to VOUT. Author uses additional nominal capacitance; effective DC-biased capacitance still requires verification."
+          }
+        }
+      ],
+      "nets": [
+        {
+          "name": "SYS",
+          "pins": [
+            "U1.VIN",
+            "U1.VINA",
+            "U1.EN",
+            "C1.1",
+            "C2.1",
+            "C6.1"
+          ]
+        },
+        {
+          "name": "V3V3",
+          "pins": [
+            "U1.VOUT",
+            "U1.FB",
+            "C3.1",
+            "C4.1",
+            "C5.1"
+          ]
+        },
+        {
+          "name": "GND",
+          "pins": [
+            "U1.PGND",
+            "U1.GND",
+            "U1.EP",
+            "U1.PS",
+            "C1.2",
+            "C2.2",
+            "C3.2",
+            "C4.2",
+            "C5.2",
+            "C6.2"
+          ]
+        },
+        {
+          "name": "SW_L1",
+          "pins": [
+            "U1.L1",
+            "L1.1"
+          ]
+        },
+        {
+          "name": "SW_L2",
+          "pins": [
+            "U1.L2",
+            "L1.2"
+          ]
+        }
+      ],
+      "params": [
+        {
+          "id": "operatingState",
+          "type": "enum",
+          "options": [
+            "usb-present-sys"
+          ],
+          "default": "usb-present-sys",
+          "why": "Input range4.2\u20134.5V USB-present only. Datasheet p1buck headline1.2A at3.6\u20135.5V and p6Fig1typical maximum-current envelope support a derated800mA author peak budget; not a guaranteed800mA boost/battery rating. P12inductor calculation must use actual minimum input for any future boost variant."
+        },
+        {
+          "id": "outputVoltageBudget",
+          "type": "number",
+          "min": 3.3,
+          "max": 3.3,
+          "default": 3.3,
+          "unit": "V",
+          "why": "Fixed3.3V silicon with FB directly atVOUT. Port3.135\u20133.465V is an author +/-5% design envelope, not a claimed datasheet fixed-output tolerance; verify loaded ripple/tolerance/transients before promotion."
+        }
+      ],
+      "ports": [
+        {
+          "id": "SYS",
+          "label": "USB-present SYS",
+          "kind": "power-in",
+          "terminal": "net:SYS",
+          "volts": {
+            "min": 4.2,
+            "max": 4.5
+          }
+        },
+        {
+          "id": "V3V3",
+          "label": "3.3V output",
+          "kind": "power-out",
+          "terminal": "net:V3V3",
+          "volts": {
+            "min": 3.135,
+            "max": 3.465
+          }
+        },
+        {
+          "id": "GND",
+          "label": "Ground",
+          "kind": "ground",
+          "terminal": "net:GND"
+        }
+      ],
+      "power": {
+        "sources": [
+          {
+            "port": "V3V3",
+            "volts": 3.3,
+            "maxMa": 800,
+            "continuousMa": 650,
+            "inputPort": "SYS",
+            "mode": "regulated",
+            "conversion": "switching",
+            "efficiency": 0.85,
+            "thermal": {
+              "thetaJa": 48.7,
+              "maxJunctionC": 110,
+              "ambientC": 25
+            }
+          }
+        ],
+        "sinks": [
+          {
+            "port": "SYS",
+            "typicalMa": 0.1,
+            "peakMa": 0.1
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "VIN",
+          "groundPin": "PGND",
+          "caps": [
+            "C1",
+            "C2"
+          ],
+          "minUf": 4.7,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3\u20136, 10\u201313, 16",
+            "note": "TPS63001 fixed3.3V; FB tied directly to VOUT. LPS4012 is a recommended inductor series. 1.8A is switch current, not output. USB-state author output budget800mA peak/650mA continuous atSYS4.2\u20134.5V, ambient25C and assumed85% efficiency; native layout/transients and actual efficiency remain unverified. Six mm centre distance is an author screening policy; short local power loops and effective capacitance require native/hardware verification."
+          }
+        },
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "VINA",
+          "groundPin": "GND",
+          "caps": [
+            "C6"
+          ],
+          "minUf": 0.1,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+            "pages": "6\u20137",
+            "note": "Complete TPS63001 reference ties VIN/VINA supply directly; no mixed partial100Ohm filter topology. Fixed FB returns to VOUT. Author uses additional nominal capacitance; effective DC-biased capacitance still requires verification. Six mm centre distance is an author screening policy; short local power loops and effective capacitance require native/hardware verification."
+          }
+        },
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "VOUT",
+          "groundPin": "PGND",
+          "caps": [
+            "C3",
+            "C4",
+            "C5"
+          ],
+          "minUf": 15,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3\u20136, 10\u201313, 16",
+            "note": "TPS63001 fixed3.3V; FB tied directly to VOUT. LPS4012 is a recommended inductor series. 1.8A is switch current, not output. USB-state author output budget800mA peak/650mA continuous atSYS4.2\u20134.5V, ambient25C and assumed85% efficiency; native layout/transients and actual efficiency remain unverified. Six mm centre distance is an author screening policy; short local power loops and effective capacitance require native/hardware verification."
+          }
+        },
+        {
+          "kind": "ground",
+          "pin": "U1.PGND",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3\u20136, 10\u201313, 16",
+            "note": "TPS63001 fixed3.3V; FB tied directly to VOUT. LPS4012 is a recommended inductor series. 1.8A is switch current, not output. USB-state author output budget800mA peak/650mA continuous atSYS4.2\u20134.5V, ambient25C and assumed85% efficiency; native layout/transients and actual efficiency remain unverified."
+          }
+        },
+        {
+          "kind": "ground",
+          "pin": "U1.GND",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3\u20136, 10\u201313, 16",
+            "note": "TPS63001 fixed3.3V; FB tied directly to VOUT. LPS4012 is a recommended inductor series. 1.8A is switch current, not output. USB-state author output budget800mA peak/650mA continuous atSYS4.2\u20134.5V, ambient25C and assumed85% efficiency; native layout/transients and actual efficiency remain unverified."
+          }
+        },
+        {
+          "kind": "ground",
+          "pin": "U1.EP",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3\u20136, 10\u201313, 16",
+            "note": "TPS63001 fixed3.3V; FB tied directly to VOUT. LPS4012 is a recommended inductor series. 1.8A is switch current, not output. USB-state author output budget800mA peak/650mA continuous atSYS4.2\u20134.5V, ambient25C and assumed85% efficiency; native layout/transients and actual efficiency remain unverified."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.EN",
+          "safe": "high",
+          "to": "net:SYS",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3\u20136, 10\u201313, 16",
+            "note": "TPS63001 fixed3.3V; FB tied directly to VOUT. LPS4012 is a recommended inductor series. 1.8A is switch current, not output. USB-state author output budget800mA peak/650mA continuous atSYS4.2\u20134.5V, ambient25C and assumed85% efficiency; native layout/transients and actual efficiency remain unverified."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.PS",
+          "safe": "low",
+          "to": "net:GND",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3\u20136, 10\u201313, 16",
+            "note": "TPS63001 fixed3.3V; FB tied directly to VOUT. LPS4012 is a recommended inductor series. 1.8A is switch current, not output. USB-state author output budget800mA peak/650mA continuous atSYS4.2\u20134.5V, ambient25C and assumed85% efficiency; native layout/transients and actual efficiency remain unverified."
+          }
+        }
+      ],
+      "firmware": {
+        "libs": [],
+        "includes": [],
+        "usage": "Always on, PS/SYNC low for power-save; no MCU-controlled power sequencing. Fixed FB tied toVOUT; VIN/VINA directly shareSYS per complete TIreference. L1/L2 are bidirectional switching nodes joined only through2.2uH inductor, not GPIO. EP11/PGND3/GND9 must retain local quiet/power-ground layout fromTI. Output800mA peak/650mAcontinuous is a USB-state author allocation below1.2A buck headline, not derived from1.8A switchlimit. Efficiency85%, thetaJA48.7C/W, ambient25C and +/-5% output voltage are screening assumptions; no guaranteed all-temperature output envelope. Coilcraft2.3A10%-dropIsat and1.2A20C-riseIrms are25C reference values; native/core-loss/transient/EMI/thermal/effectiveC remain unverified. Re-author/review input range and inductor peak calculation before claiming battery fallback. Audio/LED current5V variants must remain on qualifiedUSB5V, not this3.3V rail."
+      }
+    },
+    {
+      "schema": "moki.block/1",
+      "id": "bq24074-usb-190ma-ntc-required",
+      "version": 1,
+      "title": "BQ24074 power path, 190mA charging, external pack NTC required",
+      "class": "power",
+      "summary": "USB-present state: qualified4.75\u20135.25V/1.5A input. Separate PH battery and SH external10kNTC connectors; no fixedTS bypass. Actual pack/NTC/harness thermal qualification remains blocked, not a claim of installed temperature supervision.",
+      "provenance": {
+        "author": "agent",
+        "authorId": "chip_eda"
+      },
+      "parts": [
+        {
+          "ref": "U1",
+          "lcsc": "C2861252",
+          "mpn": "BQ24074RGTT",
+          "catalogReceipt": "sha256:ed5bf73fd1d3f8fb66c47857bdcffe278b63d972b2f81d769d1c0a5a2a043b64",
+          "pinout": "verified",
+          "pins": {
+            "TS": {
+              "pad": "1",
+              "role": "input",
+              "required": true
+            },
+            "BAT2": {
+              "pad": "2",
+              "role": "power-out",
+              "required": true,
+              "volts": {
+                "min": 3,
+                "max": 4.242
+              }
+            },
+            "BAT3": {
+              "pad": "3",
+              "role": "power-out",
+              "required": true,
+              "volts": {
+                "min": 3,
+                "max": 4.242
+              }
+            },
+            "CE": {
+              "pad": "4",
+              "role": "input",
+              "required": true
+            },
+            "EN2": {
+              "pad": "5",
+              "role": "input",
+              "required": true,
+              "volts": {
+                "min": 0,
+                "max": 7
+              }
+            },
+            "EN1": {
+              "pad": "6",
+              "role": "input",
+              "required": true
+            },
+            "PGOOD": {
+              "pad": "7",
+              "role": "open-drain"
+            },
+            "VSS": {
+              "pad": "8",
+              "role": "ground",
+              "required": true
+            },
+            "CHG": {
+              "pad": "9",
+              "role": "open-drain"
+            },
+            "OUT10": {
+              "pad": "10",
+              "role": "power-out",
+              "required": true
+            },
+            "OUT11": {
+              "pad": "11",
+              "role": "power-out",
+              "required": true
+            },
+            "ILIM": {
+              "pad": "12",
+              "role": "input",
+              "required": true
+            },
+            "IN": {
+              "pad": "13",
+              "role": "power-in",
+              "required": true,
+              "volts": {
+                "min": 4.75,
+                "max": 5.25
+              }
+            },
+            "TMR": {
+              "pad": "14",
+              "role": "input"
+            },
+            "ITERM": {
+              "pad": "15",
+              "role": "input"
+            },
+            "ISET": {
+              "pad": "16",
+              "role": "input",
+              "required": true
+            },
+            "EP": {
+              "pad": "17",
+              "role": "ground",
+              "required": true
+            }
+          },
+          "at": {
+            "x": 0,
+            "y": 0
+          },
+          "datasheet": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7\u201313, 21\u201323, 28\u201329, 34\u201335, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "ref": "J1",
+          "lcsc": "C160352",
+          "mpn": "B2B-PH-SM4-TB(LF)(SN)",
+          "catalogReceipt": "sha256:8f6f0a40d950668003a77a3a54e9834d07dc6048f7e982e9e7212305bd815b91",
+          "pinout": "verified",
+          "pins": {
+            "NEG": {
+              "pad": "1",
+              "role": "ground",
+              "required": true
+            },
+            "POS": {
+              "pad": "2",
+              "role": "passive",
+              "required": true
+            },
+            "TAB3": {
+              "pad": "3",
+              "role": "nc"
+            },
+            "TAB4": {
+              "pad": "4",
+              "role": "nc"
+            }
+          },
+          "at": {
+            "x": 0,
+            "y": -10
+          },
+          "datasheet": {
+            "url": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+            "pages": "1\u20134",
+            "note": "Exact SMT PH connector: two electrical contacts and two mounting tabs. This design assigns1=GND and2=BAT+; confirm actual protected-cell harness polarity. This is not a universal PH battery polarity convention."
+          }
+        },
+        {
+          "ref": "R1",
+          "lcsc": "C22765",
+          "mpn": "0603WAF1201T5E",
+          "catalogReceipt": "sha256:a7829c34d6f9a961ee9e63bec6d7c01bb62dece66ecf3aae35aaf79e2fcf5b1d",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -6,
+            "y": 0
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010130_UNI-ROYAL-Uniroyal-Elec-0603WAF1201T5E_C22765.pdf",
+            "note": "Actual 0603WAF1201T5E / C22765 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "1.2kOhm",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "12, 34",
+            "note": "ILIM1.2k +/-1%: guaranteed-low1500/(1200*1.01)=1237.62mA, typical1610/1200=1341.67mA, high1720/(1200*.99)=1447.81mA. The worked example uses a different typical constant; electrical-table bounds govern screening."
+          }
+        },
+        {
+          "ref": "R2",
+          "lcsc": "C23162",
+          "mpn": "0603WAF4701T5E",
+          "catalogReceipt": "sha256:38d622617e531e2f84b7e66a6815a7cf2eec91f7a3cd8df13e4fcb35c0c858be",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 6,
+            "y": 0
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010116_UNI-ROYAL-Uniroyal-Elec-0603WAF4701T5E_C23162.pdf",
+            "note": "Actual 0603WAF4701T5E / C23162 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "4.7kOhm",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "12, 34",
+            "note": "Actual4.7kOhm +/-1% ISET:890/4700=189.36mA typical, maximum975/(4700*.99)=209.54mA. Reserve210mA continuously, not a claim that DPPM always reduces charging."
+          }
+        },
+        {
+          "ref": "C1",
+          "lcsc": "C15849",
+          "mpn": "CL10A105KB8NNNC",
+          "catalogReceipt": "sha256:105c7d94f522ce1cbbbc5b1f309aaeb707bbeaa42bdecc861a0cb93b6624b303",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -3,
+            "y": 1
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL10A105KB8NNNC_C15849.pdf",
+            "note": "Actual CL10A105KB8NNNC / C15849 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "1uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7\u201313, 21\u201323, 28\u201329, 34\u201335, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "ref": "C2",
+          "lcsc": "C15849",
+          "mpn": "CL10A105KB8NNNC",
+          "catalogReceipt": "sha256:105c7d94f522ce1cbbbc5b1f309aaeb707bbeaa42bdecc861a0cb93b6624b303",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -3,
+            "y": 4
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL10A105KB8NNNC_C15849.pdf",
+            "note": "Actual CL10A105KB8NNNC / C15849 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "1uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7\u201313, 21\u201323, 28\u201329, 34\u201335, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "ref": "C3",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 3,
+            "y": 1
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7\u201313, 21\u201323, 28\u201329, 34\u201335, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "ref": "C4",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 3,
+            "y": 4
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7\u201313, 21\u201323, 28\u201329, 34\u201335, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "ref": "C5",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -3,
+            "y": -2
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7\u201313, 21\u201323, 28\u201329, 34\u201335, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "ref": "C6",
+          "lcsc": "C15850",
+          "mpn": "CL21A106KAYNNNE",
+          "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -3,
+            "y": -5
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+            "note": "Actual CL21A106KAYNNNE / C15850 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7\u201313, 21\u201323, 28\u201329, 34\u201335, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "ref": "J2",
+          "lcsc": "C160402",
+          "mpn": "SM02B-SRSS-TB(LF)(SN)",
+          "catalogReceipt": "sha256:d639ffd6304c5ee658a163d6292b9b637df2c6b632fc582c3fe306e9e5e0a4d3",
+          "pinout": "verified",
+          "pins": {
+            "RET": {
+              "pad": "1",
+              "role": "ground",
+              "required": true
+            },
+            "SENSE": {
+              "pad": "2",
+              "role": "passive",
+              "required": true
+            },
+            "TAB3": {
+              "pad": "3",
+              "role": "nc"
+            },
+            "TAB4": {
+              "pad": "4",
+              "role": "nc"
+            }
+          },
+          "at": {
+            "x": 8,
+            "y": -8
+          },
+          "datasheet": {
+            "url": "https://www.jst-mfg.com/product/pdf/eng/eSH.pdf",
+            "pages": "1, 3",
+            "note": "Actual2-contact SH side-entry header; pads3/4 are mechanical tabs. This design assigns1=VSS and2=TS. Required external thermally coupled NTC plugs here, not an on-board ambient thermistor."
+          }
+        }
+      ],
+      "nets": [
+        {
+          "name": "VBUS",
+          "pins": [
+            "U1.IN",
+            "U1.EN2",
+            "C1.1",
+            "C2.1"
+          ]
+        },
+        {
+          "name": "SYS",
+          "pins": [
+            "U1.OUT10",
+            "U1.OUT11",
+            "C3.1",
+            "C4.1"
+          ]
+        },
+        {
+          "name": "BAT",
+          "pins": [
+            "U1.BAT2",
+            "U1.BAT3",
+            "J1.POS",
+            "C5.1",
+            "C6.1"
+          ]
+        },
+        {
+          "name": "GND",
+          "pins": [
+            "U1.VSS",
+            "U1.EP",
+            "U1.CE",
+            "U1.EN1",
+            "J1.NEG",
+            "R1.2",
+            "R2.2",
+            "C1.2",
+            "C2.2",
+            "C3.2",
+            "C4.2",
+            "C5.2",
+            "C6.2",
+            "J2.RET"
+          ]
+        },
+        {
+          "name": "ILIM",
+          "pins": [
+            "U1.ILIM",
+            "R1.1"
+          ]
+        },
+        {
+          "name": "ISET",
+          "pins": [
+            "U1.ISET",
+            "R2.1"
+          ]
+        },
+        {
+          "name": "TS_PACK",
+          "pins": [
+            "U1.TS",
+            "J2.SENSE"
+          ]
+        }
+      ],
+      "params": [
+        {
+          "id": "operatingState",
+          "type": "enum",
+          "options": [
+            "usb-present"
+          ],
+          "default": "usb-present",
+          "why": "This graph models qualifiedUSB present and charging only. Source must guarantee4.75\u20135.25V at board under the total board1.5A budget. Battery absent/fallback/DPPM/supplement need separate validated states."
+        },
+        {
+          "id": "temperatureMonitoring",
+          "type": "enum",
+          "options": [
+            "external-pack-ntc-required-unqualified"
+          ],
+          "default": "external-pack-ntc-required-unqualified",
+          "why": "Required external SEMITEC103AT-2 C5346323 atSHJ2:10kOhmR25+/-1%,B25/85=3435K+/-1%, physically bonded to the protected pack with qualified insulated harness. SEMITECprimarycatalogpp12\u201313: https://www.semitec-global.com/uploads/2022/01/NTC_thermistors_Circuit_129M.pdf . Manufacturer TIpp13,29\u201330 describes nominal0\u201350C charge window and fault suspension; threshold/NTC tolerances, thermal coupling and response must be qualified. Unqualifiedbeta corners estimate hot46.13\u201355.89C/cold-1.81\u20132.90C, so this does not guarantee a common0\u201345C pack charging window. NTC catalog evidence exists; no thermistor is falsely placed on this PCB and no stock/installed-part claim is made."
+        }
+      ],
+      "ports": [
+        {
+          "id": "VBUS",
+          "label": "Qualified USB5V input",
+          "kind": "power-in",
+          "terminal": "net:VBUS",
+          "volts": {
+            "min": 4.75,
+            "max": 5.25
+          }
+        },
+        {
+          "id": "SYS",
+          "label": "USB-present system power",
+          "kind": "power-out",
+          "terminal": "net:SYS",
+          "volts": {
+            "min": 4.2,
+            "max": 4.5
+          }
+        },
+        {
+          "id": "BAT",
+          "label": "Protected1-cell charge terminal",
+          "kind": "power-out",
+          "terminal": "net:BAT",
+          "volts": {
+            "min": 3,
+            "max": 4.242
+          }
+        },
+        {
+          "id": "GND",
+          "label": "Ground",
+          "kind": "ground",
+          "terminal": "net:GND"
+        },
+        {
+          "id": "PACK_NTC",
+          "label": "Required external pack NTC",
+          "kind": "analog",
+          "terminal": "net:TS_PACK"
+        }
+      ],
+      "power": {
+        "sources": [
+          {
+            "port": "SYS",
+            "volts": 4.4,
+            "maxMa": 1000,
+            "continuousMa": 800,
+            "inputPort": "VBUS",
+            "mode": "regulated",
+            "conversion": "linear",
+            "dropoutV": 0.475,
+            "thermal": {
+              "thetaJa": 44.5,
+              "maxJunctionC": 110,
+              "ambientC": 25
+            }
+          },
+          {
+            "port": "BAT",
+            "volts": 4.2,
+            "maxMa": 210,
+            "continuousMa": 210,
+            "inputPort": "VBUS",
+            "mode": "charger",
+            "conversion": "linear",
+            "dropoutV": 0.3,
+            "thermal": {
+              "thetaJa": 44.5,
+              "maxJunctionC": 110,
+              "ambientC": 25
+            }
+          }
+        ],
+        "sinks": [
+          {
+            "port": "VBUS",
+            "typicalMa": 5,
+            "peakMa": 10
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "IN",
+          "groundPin": "VSS",
+          "caps": [
+            "C1",
+            "C2"
+          ],
+          "minUf": 1,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7\u201313, 21\u201323, 28\u201329, 34\u201335, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC. Six mm centre distance is an author screening policy; short local power loops and effective capacitance require native/hardware verification."
+          }
+        },
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "OUT10",
+          "groundPin": "VSS",
+          "caps": [
+            "C3",
+            "C4"
+          ],
+          "minUf": 4.7,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7\u201313, 21\u201323, 28\u201329, 34\u201335, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC. Six mm centre distance is an author screening policy; short local power loops and effective capacitance require native/hardware verification."
+          }
+        },
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "OUT11",
+          "groundPin": "VSS",
+          "caps": [
+            "C3",
+            "C4"
+          ],
+          "minUf": 4.7,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7\u201313, 21\u201323, 28\u201329, 34\u201335, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC. Six mm centre distance is an author screening policy; short local power loops and effective capacitance require native/hardware verification."
+          }
+        },
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "BAT2",
+          "groundPin": "VSS",
+          "caps": [
+            "C5",
+            "C6"
+          ],
+          "minUf": 4.7,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7\u201313, 21\u201323, 28\u201329, 34\u201335, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC. Six mm centre distance is an author screening policy; short local power loops and effective capacitance require native/hardware verification."
+          }
+        },
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "BAT3",
+          "groundPin": "VSS",
+          "caps": [
+            "C5",
+            "C6"
+          ],
+          "minUf": 4.7,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7\u201313, 21\u201323, 28\u201329, 34\u201335, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC. Six mm centre distance is an author screening policy; short local power loops and effective capacitance require native/hardware verification."
+          }
+        },
+        {
+          "kind": "battery-path",
+          "charger": "U1",
+          "batteryPort": "BAT",
+          "systemPort": "SYS",
+          "powerPath": "integrated",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7\u201313, 21\u201323, 28\u201329, 34\u201335, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "kind": "ground",
+          "pin": "U1.VSS",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7\u201313, 21\u201323, 28\u201329, 34\u201335, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "kind": "ground",
+          "pin": "U1.EP",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7\u201313, 21\u201323, 28\u201329, 34\u201335, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.CE",
+          "safe": "low",
+          "to": "net:GND",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7\u201313, 21\u201323, 28\u201329, 34\u201335, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.EN1",
+          "safe": "low",
+          "to": "net:GND",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7\u201313, 21\u201323, 28\u201329, 34\u201335, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.EN2",
+          "safe": "high",
+          "to": "net:VBUS",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "7\u201313, 21\u201323, 28\u201329, 34\u201335, 42",
+            "note": "Exact BQ24074: pin15 ITERM. EN2 high/EN1 low selects resistor input limit. Separate OUT system and BAT charging nodes; sum their losses on the same physical IC."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.TMR",
+          "safe": "floating",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "12\u201313, 35",
+            "note": "OpenTMR retains nominal30min precharge/5h fast-charge timers; do not ground/disablesafety timers."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.ITERM",
+          "safe": "floating",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "8, 12\u201313",
+            "note": "BQ24074-specific ITERM open selects nominal10% termination; notTD/SYSOFF fromanother variant."
+          }
+        }
+      ],
+      "spiceChecks": [
+        {
+          "name": "BQ24074 nominal190mA charge programming",
+          "kind": "charge-current",
+          "resistor": "R2",
+          "coefficient": 890,
+          "target": 189.3617021,
+          "tolerance": 0.1,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+            "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1",
+            "pages": "12, 34",
+            "note": "Ideal nominal890 AOhm/R law only, excluding tolerance/battery/thermal/termination dynamics."
+          }
+        }
+      ],
+      "firmware": {
+        "libs": [],
+        "includes": [],
+        "usage": "USB-present state only; actual4.7kOhmISET reserves210mA charging, SYS1Apeak/800mAcontinuous plus10mAoverhead yields1220mA below guaranteed-lowILIM1237.62mA. No static double counting/waiver for DPPM: reserve full210mA while charging. Pack connectorPHJ1:1=ground/2=BAT+. Separate SHJ2:1=ground/2=TS; connect actual externalSEMITEC103AT-2 C5346323,10kOhmR25+/-1%,B25/85=3435K+/-1%, thermally coupled to that same protected1-cell4.2V pack. NTC is external procurement evidence, not a fake on-board sensor or supplied harness. TIpp13,29\u201330 nominal0\u201350C TS window is not a guaranteed exact pack-temperature limit; qualify threshold/NTC tolerances, coupling, wiring fault response and temperature transient. Protected pack must permit210mAcharge and the selected discharge state, with correct polarity and cutoff. Current schema has no typed external-device binding/qualification or pass-through battery-state model: variant remains blocked/unreviewed. Do not claim battery-runtime or all-functions-on-battery proof."
+      }
+    },
+    {
+      "schema": "moki.block/1",
+      "id": "esp32-s3-audio-core",
+      "version": 1,
+      "title": "ESP32-S3 \u00b7 I2S capture and playback",
+      "summary": "ESP32-S3 + reset and boot bias",
+      "class": "mcu",
+      "parts": [
+        {
+          "ref": "U1",
+          "lcsc": "C2913198",
+          "mpn": "ESP32-S3-WROOM-1-N8",
+          "catalogReceipt": "sha256:be3d110031a2dca135e88aaa34364b114483a53f7b7afc6b289adfc8c2863064",
+          "datasheet": {
+            "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+            "pages": "11\u201316, 41, 45\u201346",
+            "note": "Reference pin map, 10k/1uF EN reset, 22uF+100nF supply bypass; see retained manufacturer PDF."
+          },
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "ground",
+              "required": true
+            },
+            "2": {
+              "pad": "2",
+              "role": "power-in",
+              "required": true,
+              "volts": {
+                "min": 3,
+                "max": 3.6
+              }
+            },
+            "3": {
+              "pad": "3",
+              "role": "input",
+              "required": true,
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "4": {
+              "pad": "4",
+              "role": "output",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "5": {
+              "pad": "5",
+              "role": "output",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "6": {
+              "pad": "6",
+              "role": "input",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "7": {
+              "pad": "7",
+              "role": "output",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "8": {
+              "pad": "8",
+              "role": "output",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "9": {
+              "pad": "9",
+              "role": "output",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "10": {
+              "pad": "10",
+              "role": "output",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "11": {
+              "pad": "11",
+              "role": "bidirectional",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "12": {
+              "pad": "12",
+              "role": "open-drain",
+              "required": true,
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "13": {
+              "pad": "13",
+              "role": "bidirectional",
+              "required": true,
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "14": {
+              "pad": "14",
+              "role": "bidirectional",
+              "required": true,
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "15": {
+              "pad": "15",
+              "role": "input",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "16": {
+              "pad": "16",
+              "role": "input",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "17": {
+              "pad": "17",
+              "role": "open-drain",
+              "required": true,
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "18": {
+              "pad": "18",
+              "role": "bidirectional",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "19": {
+              "pad": "19",
+              "role": "bidirectional",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "20": {
+              "pad": "20",
+              "role": "bidirectional",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "21": {
+              "pad": "21",
+              "role": "bidirectional",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "22": {
+              "pad": "22",
+              "role": "bidirectional",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "23": {
+              "pad": "23",
+              "role": "bidirectional",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "24": {
+              "pad": "24",
+              "role": "bidirectional",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "25": {
+              "pad": "25",
+              "role": "bidirectional",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "26": {
+              "pad": "26",
+              "role": "input",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "27": {
+              "pad": "27",
+              "role": "input",
+              "required": true,
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "28": {
+              "pad": "28",
+              "role": "bidirectional",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "29": {
+              "pad": "29",
+              "role": "bidirectional",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "30": {
+              "pad": "30",
+              "role": "bidirectional",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "31": {
+              "pad": "31",
+              "role": "bidirectional",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "32": {
+              "pad": "32",
+              "role": "bidirectional",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "33": {
+              "pad": "33",
+              "role": "bidirectional",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "34": {
+              "pad": "34",
+              "role": "bidirectional",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "35": {
+              "pad": "35",
+              "role": "bidirectional",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "36": {
+              "pad": "36",
+              "role": "bidirectional",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "37": {
+              "pad": "37",
+              "role": "bidirectional",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "38": {
+              "pad": "38",
+              "role": "bidirectional",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "39": {
+              "pad": "39",
+              "role": "bidirectional",
+              "volts": {
+                "min": 0,
+                "max": 3.6
+              }
+            },
+            "40": {
+              "pad": "40",
+              "role": "ground",
+              "required": true
+            },
+            "41": {
+              "pad": "41",
+              "role": "ground",
+              "required": true
+            }
+          },
+          "at": {
+            "x": 2,
+            "y": 2.25,
+            "rotation": 0
+          },
+          "correction": {
+            "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+            "pages": "11\u201316, 41, 45\u201346",
+            "note": "Omit 12 unassigned 0.25/0.4mm imported thermal vias; retain every electrical pad. EP solder/thermal vias optional."
+          }
+        },
+        {
+          "ref": "C3",
+          "lcsc": "C45783",
+          "mpn": "CL21A226MAQNNNE",
+          "catalogReceipt": "sha256:e7706c583e149436ae74afe897ff10c1072db3ad395f553f169cd5a8751d288e",
+          "datasheet": {
+            "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+            "pages": "11\u201316, 41, 45\u201346",
+            "note": "Reference pin map, 10k/1uF EN reset, 22uF+100nF supply bypass; see retained manufacturer PDF."
+          },
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -16,
+            "y": 12.75,
+            "rotation": 0
+          },
+          "value": "22uF",
+          "valueWhy": {
+            "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+            "pages": "11\u201316, 41, 45\u201346",
+            "note": "Reference pin map, 10k/1uF EN reset, 22uF+100nF supply bypass; see retained manufacturer PDF."
+          }
+        },
+        {
+          "ref": "C4",
+          "lcsc": "C14663",
+          "mpn": "CC0603KRX7R9BB104",
+          "catalogReceipt": "sha256:fde5081a0b45324f436df1a456a1a4dd1608306b862e8a6f4c8187b9d69ac426",
+          "datasheet": {
+            "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+            "pages": "11\u201316, 41, 45\u201346",
+            "note": "Reference pin map, 10k/1uF EN reset, 22uF+100nF supply bypass; see retained manufacturer PDF."
+          },
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -9,
+            "y": 10.25,
+            "rotation": 90
+          },
+          "value": "100nF",
+          "valueWhy": {
+            "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+            "pages": "11\u201316, 41, 45\u201346",
+            "note": "Reference pin map, 10k/1uF EN reset, 22uF+100nF supply bypass; see retained manufacturer PDF."
+          }
+        },
+        {
+          "ref": "C5",
+          "lcsc": "C15849",
+          "mpn": "CL10A105KB8NNNC",
+          "catalogReceipt": "sha256:105c7d94f522ce1cbbbc5b1f309aaeb707bbeaa42bdecc861a0cb93b6624b303",
+          "datasheet": {
+            "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+            "pages": "11\u201316, 41, 45\u201346",
+            "note": "Reference pin map, 10k/1uF EN reset, 22uF+100nF supply bypass; see retained manufacturer PDF."
+          },
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -9,
+            "y": 6.75,
+            "rotation": 90
+          },
+          "value": "1uF",
+          "valueWhy": {
+            "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+            "pages": "11\u201316, 41, 45\u201346",
+            "note": "Reference pin map, 10k/1uF EN reset, 22uF+100nF supply bypass; see retained manufacturer PDF."
+          }
+        },
+        {
+          "ref": "R1",
+          "lcsc": "C25804",
+          "mpn": "0603WAF1002T5E",
+          "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+          "datasheet": {
+            "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+            "pages": "11\u201316, 41, 45\u201346",
+            "note": "Reference pin map, 10k/1uF EN reset, 22uF+100nF supply bypass; see retained manufacturer PDF."
+          },
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -12,
+            "y": 6.75,
+            "rotation": 0
+          },
+          "value": "10kOhm",
+          "valueWhy": {
+            "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+            "pages": "11\u201316, 41, 45\u201346",
+            "note": "Reference pin map, 10k/1uF EN reset, 22uF+100nF supply bypass; see retained manufacturer PDF."
+          }
+        },
+        {
+          "ref": "R2",
+          "lcsc": "C25804",
+          "mpn": "0603WAF1002T5E",
+          "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+          "datasheet": {
+            "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+            "pages": "11\u201316, 41, 45\u201346",
+            "note": "Reference pin map, 10k/1uF EN reset, 22uF+100nF supply bypass; see retained manufacturer PDF."
+          },
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 16,
+            "y": -7.75,
+            "rotation": 0
+          },
+          "value": "10kOhm",
+          "valueWhy": {
+            "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+            "pages": "11\u201316, 41, 45\u201346",
+            "note": "Reference pin map, 10k/1uF EN reset, 22uF+100nF supply bypass; see retained manufacturer PDF."
+          }
+        },
+        {
+          "ref": "R9",
+          "lcsc": "C25804",
+          "mpn": "0603WAF1002T5E",
+          "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+          "datasheet": {
+            "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+            "pages": "11\u201316, 41, 45\u201346",
+            "note": "Reference pin map, 10k/1uF EN reset, 22uF+100nF supply bypass; see retained manufacturer PDF."
+          },
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 14,
+            "y": -12.75,
+            "rotation": 0
+          },
+          "value": "10kOhm",
+          "valueWhy": {
+            "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+            "pages": "11\u201316, 41, 45\u201346",
+            "note": "Reference pin map, 10k/1uF EN reset, 22uF+100nF supply bypass; see retained manufacturer PDF."
+          }
+        },
+        {
+          "ref": "R10",
+          "lcsc": "C25804",
+          "mpn": "0603WAF1002T5E",
+          "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+          "datasheet": {
+            "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+            "pages": "11\u201316, 41, 45\u201346",
+            "note": "Reference pin map, 10k/1uF EN reset, 22uF+100nF supply bypass; see retained manufacturer PDF."
+          },
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 10,
+            "y": -12.75,
+            "rotation": 0
+          },
+          "value": "10kOhm",
+          "valueWhy": {
+            "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+            "pages": "11\u201316, 41, 45\u201346",
+            "note": "Reference pin map, 10k/1uF EN reset, 22uF+100nF supply bypass; see retained manufacturer PDF."
+          }
+        }
+      ],
+      "nets": [
+        {
+          "name": "GND",
+          "pins": [
+            "U1.1",
+            "U1.40",
+            "U1.41",
+            "C3.2",
+            "C4.2",
+            "C5.2",
+            "R9.2",
+            "R10.2"
+          ]
+        },
+        {
+          "name": "V3V3",
+          "pins": [
+            "U1.2",
+            "C3.1",
+            "C4.1",
+            "R1.1",
+            "R2.1"
+          ]
+        },
+        {
+          "name": "EN",
+          "pins": [
+            "U1.3",
+            "R1.2",
+            "C5.1"
+          ]
+        },
+        {
+          "name": "BOOT",
+          "pins": [
+            "U1.27",
+            "R2.2"
+          ]
+        },
+        {
+          "name": "USB_DP_MCU",
+          "pins": [
+            "U1.14"
+          ]
+        },
+        {
+          "name": "USB_DM_MCU",
+          "pins": [
+            "U1.13"
+          ]
+        },
+        {
+          "name": "SDA",
+          "pins": [
+            "U1.12"
+          ]
+        },
+        {
+          "name": "SCL",
+          "pins": [
+            "U1.17"
+          ]
+        },
+        {
+          "name": "STRAP45",
+          "pins": [
+            "U1.26",
+            "R9.1"
+          ]
+        },
+        {
+          "name": "STRAP46",
+          "pins": [
+            "U1.16",
+            "R10.1"
+          ]
+        }
+      ],
+      "params": [],
+      "ports": [
+        {
+          "id": "GND",
+          "label": "GND",
+          "kind": "ground",
+          "terminal": "net:GND"
+        },
+        {
+          "id": "V3V3",
+          "label": "V3V3",
+          "kind": "power-in",
+          "terminal": "net:V3V3",
+          "volts": {
+            "min": 3,
+            "max": 3.6
+          }
+        },
+        {
+          "id": "EN",
+          "label": "EN",
+          "kind": "gpio",
+          "terminal": "net:EN",
+          "fixedFunction": "reset"
+        },
+        {
+          "id": "BOOT",
+          "label": "BOOT",
+          "kind": "gpio",
+          "terminal": "net:BOOT",
+          "fixedFunction": "boot"
+        },
+        {
+          "id": "I2C",
+          "label": "I2C",
+          "kind": "bus",
+          "bus": {
+            "protocol": "i2c",
+            "role": "controller",
+            "signals": {
+              "SDA": "net:SDA",
+              "SCL": "net:SCL"
+            }
+          }
+        },
+        {
+          "id": "USB",
+          "label": "Native USB",
+          "kind": "bus",
+          "bus": {
+            "protocol": "usb2",
+            "role": "peripheral",
+            "signals": {
+              "DP": "net:USB_DP_MCU",
+              "DM": "net:USB_DM_MCU"
+            }
+          }
+        },
+        {
+          "id": "I2S_MIC",
+          "label": "I2S microphone RX",
+          "kind": "bus",
+          "bus": {
+            "protocol": "i2s",
+            "role": "controller",
+            "signals": {
+              "BCLK": "U1.4",
+              "WS": "U1.5",
+              "SD": "U1.6"
+            }
+          }
+        },
+        {
+          "id": "I2S_AMP",
+          "label": "I2S speaker TX",
+          "kind": "bus",
+          "bus": {
+            "protocol": "i2s",
+            "role": "controller",
+            "signals": {
+              "BCLK": "U1.7",
+              "WS": "U1.8",
+              "SD": "U1.9"
+            }
+          }
+        },
+        {
+          "id": "LED_DATA",
+          "label": "Level-shifted WS2812 data",
+          "kind": "gpio",
+          "terminal": "U1.10"
+        }
+      ],
+      "power": {
+        "sources": [],
+        "sinks": [
+          {
+            "port": "V3V3",
+            "typicalMa": 200,
+            "peakMa": 500
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "2",
+          "groundPin": "1",
+          "caps": [
+            "C3",
+            "C4"
+          ],
+          "minUf": 22.1,
+          "maxDistanceMm": 25,
+          "citation": {
+            "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+            "pages": "11\u201316, 41, 45\u201346",
+            "note": "Reference pin map, 10k/1uF EN reset, 22uF+100nF supply bypass; see retained manufacturer PDF."
+          }
+        },
+        {
+          "kind": "pullup",
+          "pin": "U1.3",
+          "to": "net:V3V3",
+          "resistor": "R1",
+          "ohms": 10000,
+          "citation": {
+            "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+            "pages": "11\u201316, 41, 45\u201346",
+            "note": "Reference pin map, 10k/1uF EN reset, 22uF+100nF supply bypass; see retained manufacturer PDF."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.27",
+          "safe": "high",
+          "resistor": "R2",
+          "to": "net:V3V3",
+          "citation": {
+            "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+            "pages": "11\u201316, 41, 45\u201346",
+            "note": "Reference pin map, 10k/1uF EN reset, 22uF+100nF supply bypass; see retained manufacturer PDF."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.26",
+          "safe": "low",
+          "resistor": "R9",
+          "to": "net:GND",
+          "citation": {
+            "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+            "pages": "11\u201316, 41, 45\u201346",
+            "note": "Reference pin map, 10k/1uF EN reset, 22uF+100nF supply bypass; see retained manufacturer PDF."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.16",
+          "safe": "low",
+          "resistor": "R10",
+          "to": "net:GND",
+          "citation": {
+            "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+            "pages": "11\u201316, 41, 45\u201346",
+            "note": "Reference pin map, 10k/1uF EN reset, 22uF+100nF supply bypass; see retained manufacturer PDF."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.15",
+          "safe": "floating",
+          "citation": {
+            "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+            "pages": "11\u201316, 41, 45\u201346",
+            "note": "Reference pin map, 10k/1uF EN reset, 22uF+100nF supply bypass; see retained manufacturer PDF."
+          }
+        },
+        {
+          "kind": "keepout",
+          "x": 2,
+          "y": 15.649999999999999,
+          "width": 29,
+          "height": 7.2,
+          "layers": [
+            "top",
+            "bottom"
+          ],
+          "excludeParts": [
+            "U1"
+          ],
+          "purpose": "ESP32-S3 antenna: no copper or other components; exclude only its own module courtyard",
+          "citation": {
+            "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+            "pages": "11\u201316, 41, 45\u201346",
+            "note": "Reference pin map, 10k/1uF EN reset, 22uF+100nF supply bypass; see retained manufacturer PDF."
+          }
+        }
+      ],
+      "firmware": {
+        "libs": [],
+        "includes": [
+          "Arduino.h",
+          "pins.h",
+          "driver/i2s.h"
+        ],
+        "usage": "Fixed native USB and BOOT/RESET are not application GPIOs. I2S0 RX: GPIO4 BCLK,5 WS,6 data-in. I2S1 TX: GPIO7 BCLK,15 WS,16 data-out. GPIO17 goes only to AHCT LED input. Native USB and boot pins remain fixed."
+      },
+      "mcu": {
+        "family": "esp32s3",
+        "pio": {
+          "platform": "platformio/espressif32@6.10.0",
+          "board": "esp32-s3-devkitc-1",
+          "framework": "arduino",
+          "environment": "esp32s3"
+        },
+        "pins": [
+          {
+            "id": "U1.3",
+            "gpio": "EN",
+            "caps": [
+              "input",
+              "reset"
+            ],
+            "fixedFunction": "reset",
+            "reserved": "Dedicated enable/reset input"
+          },
+          {
+            "id": "U1.27",
+            "gpio": 0,
+            "caps": [
+              "input",
+              "boot"
+            ],
+            "fixedFunction": "boot",
+            "reserved": "Boot strap control"
+          },
+          {
+            "id": "U1.13",
+            "gpio": 19,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "usb2"
+            ],
+            "fixedFunction": "usb2",
+            "reserved": "Native USB D-"
+          },
+          {
+            "id": "U1.14",
+            "gpio": 20,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "usb2"
+            ],
+            "fixedFunction": "usb2",
+            "reserved": "Native USB D+"
+          },
+          {
+            "id": "U1.4",
+            "gpio": 4,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "open-drain",
+              "i2c",
+              "spi",
+              "i2s",
+              "uart",
+              "pwm",
+              "adc"
+            ]
+          },
+          {
+            "id": "U1.5",
+            "gpio": 5,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "open-drain",
+              "i2c",
+              "spi",
+              "i2s",
+              "uart",
+              "pwm",
+              "adc"
+            ]
+          },
+          {
+            "id": "U1.6",
+            "gpio": 6,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "open-drain",
+              "i2c",
+              "spi",
+              "i2s",
+              "uart",
+              "pwm",
+              "adc"
+            ]
+          },
+          {
+            "id": "U1.7",
+            "gpio": 7,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "open-drain",
+              "i2c",
+              "spi",
+              "i2s",
+              "uart",
+              "pwm",
+              "adc"
+            ]
+          },
+          {
+            "id": "U1.8",
+            "gpio": 15,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "open-drain",
+              "i2c",
+              "spi",
+              "i2s",
+              "uart",
+              "pwm",
+              "adc"
+            ]
+          },
+          {
+            "id": "U1.9",
+            "gpio": 16,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "open-drain",
+              "i2c",
+              "spi",
+              "i2s",
+              "uart",
+              "pwm",
+              "adc"
+            ]
+          },
+          {
+            "id": "U1.10",
+            "gpio": 17,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "open-drain",
+              "i2c",
+              "spi",
+              "i2s",
+              "uart",
+              "pwm",
+              "adc"
+            ]
+          },
+          {
+            "id": "U1.11",
+            "gpio": 18,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "open-drain",
+              "i2c",
+              "spi",
+              "i2s",
+              "uart",
+              "pwm",
+              "adc"
+            ]
+          },
+          {
+            "id": "U1.12",
+            "gpio": 8,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "open-drain",
+              "i2c",
+              "spi",
+              "i2s",
+              "uart",
+              "pwm",
+              "adc"
+            ]
+          },
+          {
+            "id": "U1.17",
+            "gpio": 9,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "open-drain",
+              "i2c",
+              "spi",
+              "i2s",
+              "uart",
+              "pwm",
+              "adc"
+            ]
+          },
+          {
+            "id": "U1.18",
+            "gpio": 10,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "open-drain",
+              "i2c",
+              "spi",
+              "i2s",
+              "uart",
+              "pwm",
+              "adc"
+            ]
+          },
+          {
+            "id": "U1.19",
+            "gpio": 11,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "open-drain",
+              "i2c",
+              "spi",
+              "i2s",
+              "uart",
+              "pwm",
+              "adc"
+            ]
+          },
+          {
+            "id": "U1.20",
+            "gpio": 12,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "open-drain",
+              "i2c",
+              "spi",
+              "i2s",
+              "uart",
+              "pwm",
+              "adc"
+            ]
+          },
+          {
+            "id": "U1.21",
+            "gpio": 13,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "open-drain",
+              "i2c",
+              "spi",
+              "i2s",
+              "uart",
+              "pwm",
+              "adc"
+            ]
+          },
+          {
+            "id": "U1.22",
+            "gpio": 14,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "open-drain",
+              "i2c",
+              "spi",
+              "i2s",
+              "uart",
+              "pwm",
+              "adc"
+            ]
+          },
+          {
+            "id": "U1.23",
+            "gpio": 21,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "open-drain",
+              "i2c",
+              "spi",
+              "i2s",
+              "uart",
+              "pwm"
+            ]
+          },
+          {
+            "id": "U1.24",
+            "gpio": 47,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "open-drain",
+              "i2c",
+              "spi",
+              "i2s",
+              "uart",
+              "pwm"
+            ]
+          },
+          {
+            "id": "U1.25",
+            "gpio": 48,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "open-drain",
+              "i2c",
+              "spi",
+              "i2s",
+              "uart",
+              "pwm"
+            ]
+          },
+          {
+            "id": "U1.31",
+            "gpio": 38,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "open-drain",
+              "i2c",
+              "spi",
+              "i2s",
+              "uart",
+              "pwm"
+            ]
+          },
+          {
+            "id": "U1.32",
+            "gpio": 39,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "open-drain",
+              "i2c",
+              "spi",
+              "i2s",
+              "uart",
+              "pwm"
+            ]
+          },
+          {
+            "id": "U1.33",
+            "gpio": 40,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "open-drain",
+              "i2c",
+              "spi",
+              "i2s",
+              "uart",
+              "pwm"
+            ]
+          },
+          {
+            "id": "U1.34",
+            "gpio": 41,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "open-drain",
+              "i2c",
+              "spi",
+              "i2s",
+              "uart",
+              "pwm"
+            ]
+          },
+          {
+            "id": "U1.35",
+            "gpio": 42,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "open-drain",
+              "i2c",
+              "spi",
+              "i2s",
+              "uart",
+              "pwm"
+            ]
+          },
+          {
+            "id": "U1.38",
+            "gpio": 2,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "open-drain",
+              "i2c",
+              "spi",
+              "i2s",
+              "uart",
+              "pwm",
+              "adc"
+            ]
+          },
+          {
+            "id": "U1.39",
+            "gpio": 1,
+            "caps": [
+              "input",
+              "output",
+              "bidirectional",
+              "open-drain",
+              "i2c",
+              "spi",
+              "i2s",
+              "uart",
+              "pwm",
+              "adc"
+            ]
+          }
+        ],
+        "flashKb": 8192,
+        "ramKb": 512
+      },
+      "spiceChecks": [
+        {
+          "kind": "rc-reset",
+          "name": "EN reaches75% VDD",
+          "resistor": "R1",
+          "capacitor": "C5",
+          "supplyV": 3.3,
+          "thresholdRatio": 0.75,
+          "target": 13.8629436,
+          "tolerance": 0.25,
+          "citation": {
+            "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+            "pages": "11\u201316, 41, 45\u201346",
+            "note": "Reference pin map, 10k/1uF EN reset, 22uF+100nF supply bypass; see retained manufacturer PDF."
+          }
+        }
+      ],
+      "provenance": {
+        "author": "agent",
+        "authorId": "chip_eda"
+      }
+    }
+  ],
+  "app": {
+    "source": "#include <Arduino.h>\n#include <Wire.h>\n#include <Adafruit_GFX.h>\n#include <Adafruit_SSD1306.h>\n#include <driver/i2s.h>\n#include \"pins.h\"\n// Compile-validation demo: microphone samples attenuated 18dB to speaker; OLED reports activity.\n// Native USB serial, acoustics, I2S clocks, and external modules still require hardware verification.\nAdafruit_SSD1306 screen(128,64,&Wire,-1);\nstatic bool audioReady=false, displayReady=false;\nstatic bool startAudio(i2s_port_t port, bool receive){\n i2s_config_t cfg={};cfg.mode=i2s_mode_t(I2S_MODE_MASTER|(receive?I2S_MODE_RX:I2S_MODE_TX));\n cfg.sample_rate=48000;cfg.bits_per_sample=I2S_BITS_PER_SAMPLE_32BIT;cfg.channel_format=I2S_CHANNEL_FMT_ONLY_LEFT;\n cfg.communication_format=I2S_COMM_FORMAT_STAND_I2S;cfg.dma_buf_count=4;cfg.dma_buf_len=64;cfg.use_apll=false;cfg.tx_desc_auto_clear=true;\n if(i2s_driver_install(port,&cfg,0,nullptr)!=ESP_OK)return false;\n i2s_pin_config_t pins={};pins.mck_io_num=I2S_PIN_NO_CHANGE;\n pins.bck_io_num=receive?PIN_MIC_I2S_MIC_BCLK:PIN_AMP_I2S_AMP_BCLK;\n pins.ws_io_num=receive?PIN_MIC_I2S_MIC_WS:PIN_AMP_I2S_AMP_WS;\n pins.data_out_num=receive?I2S_PIN_NO_CHANGE:PIN_AMP_I2S_AMP_SD;\n pins.data_in_num=receive?PIN_MIC_I2S_MIC_SD:I2S_PIN_NO_CHANGE;\n return i2s_set_pin(port,&pins)==ESP_OK;\n}\nvoid setup(){\n Serial.begin(115200);pinMode(PIN_LED_LED_DATA,OUTPUT);digitalWrite(PIN_LED_LED_DATA,LOW);\n Wire.begin(PIN_DISPLAY_I2C_DISPLAY_SDA,PIN_DISPLAY_I2C_DISPLAY_SCL);Wire.setClock(100000);\n displayReady=screen.begin(SSD1306_SWITCHCAPVCC,0x3c);\n audioReady=startAudio(I2S_NUM_0,true)&&startAudio(I2S_NUM_1,false);\n if(displayReady){screen.clearDisplay();screen.setTextSize(1);screen.setTextColor(SSD1306_WHITE);screen.setCursor(0,0);screen.println(\"Moki audio demo\");screen.println(audioReady?\"Audio initialized\":\"Audio init failed\");screen.display();}\n}\nvoid loop(){\n static uint32_t lastDisplay=0;static int32_t samples[128];size_t count=0,sent=0;uint32_t level=0;\n if(audioReady&&i2s_read(I2S_NUM_0,samples,sizeof(samples),&count,20/portTICK_PERIOD_MS)==ESP_OK){\n  for(size_t i=0;i<count/sizeof(int32_t);i++){samples[i]/=8;const uint32_t magnitude=samples[i]<0?uint32_t(-int64_t(samples[i])):uint32_t(samples[i]);if(magnitude>level)level=magnitude;}\n  if(i2s_write(I2S_NUM_1,samples,count,&sent,20/portTICK_PERIOD_MS)!=ESP_OK||sent!=count)Serial.println(\"Audio write incomplete\");\n }\n if(displayReady&&millis()-lastDisplay>250){lastDisplay=millis();screen.fillRect(0,32,128,32,SSD1306_BLACK);screen.setCursor(0,32);screen.print(\"Level: \");screen.println(level>>20);screen.display();}\n delay(1);\n}\n"
+  }
+}

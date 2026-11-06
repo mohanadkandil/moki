@@ -1,0 +1,1914 @@
+{
+  "schema": "moki.official-copper-diagnostic/1",
+  "inputPath": "var/board-jobs-test-chip/365a210f-a69f-4526-a8e4-57abf5ad397d/circuit.json",
+  "inputSha256": "e9a5461d4d069e5a657bc0679430fb66acac3d116117862c8021960fa02fe3e9",
+  "package": "@tscircuit/checks@0.0.269",
+  "helperSource": "../lib/copper-pour-connectivity/get-copper-pour-connectivity.ts",
+  "helperSourceSha256": "0504af3e9f46ef55582e3a68f0e630e855523f6bd744845edfb60e4d2bfa31df",
+  "instrumentation": "Unchanged official connectivity algorithm copied from installed sourcemap into temporary module; added diagnostics() returning existing conductors, roots and port metadata. No geometry/net modifications.",
+  "ms": 292.018283,
+  "groundNetId": "connectivity_net132",
+  "groundPorts": 72,
+  "officialConnectedPorts": 0,
+  "groups": [
+    {
+      "root": 29,
+      "pourIds": [
+        "pcb_copper_pour_0",
+        "pcb_copper_pour_29"
+      ],
+      "layers": [
+        "top",
+        "bottom",
+        "inner1",
+        "inner2"
+      ],
+      "conductorCount": 62,
+      "ports": [
+        "U1.GND1",
+        "U1.GND2",
+        "U1.EP",
+        "U1.pin41_internal_1",
+        "U1.pin41_internal_2",
+        "U1.pin41_internal_3",
+        "U1.pin41_internal_4",
+        "U1.pin41_internal_5",
+        "U1.pin41_internal_6",
+        "U1.pin41_internal_7",
+        "U1.pin41_internal_8",
+        "C3.pin2",
+        "C4.pin2",
+        "C5.pin2",
+        "R9.pin2",
+        "R10.pin2",
+        "U3.pin2",
+        "J1.EH2",
+        "J1.EH1",
+        "J1.EH4",
+        "J1.EH3",
+        "J1.GND1",
+        "J1.GND2",
+        "R3.pin2",
+        "R4.pin2",
+        "SW1.pin2",
+        "SW2.pin2",
+        "J2.pin1",
+        "U2.VSS",
+        "J3.pin1",
+        "R11.pin2",
+        "R12.pin2",
+        "C2.pin2",
+        "C8.pin2",
+        "C9.pin2",
+        "J4.pin1",
+        "C10.pin2",
+        "C11.pin2",
+        "C13.pin2",
+        "C14.pin2",
+        "U5.LR",
+        "U5.GND",
+        "U5.pin3_internal_1",
+        "U5.pin3_internal_2",
+        "U5.pin3_internal_3",
+        "C16.pin2",
+        "R13.pin2",
+        "U6.GAIN_SLOT",
+        "U6.GND1",
+        "U6.GND2",
+        "U6.GND3",
+        "U6.EP",
+        "C17.pin2",
+        "C18.pin2",
+        "J6.pin1",
+        "D1.VSS",
+        "U7.N_OE",
+        "U7.GND",
+        "C19.pin2",
+        "C20.pin2"
+      ],
+      "box": {
+        "xmin": -49.7,
+        "xmax": 49.7,
+        "ymin": -59.7,
+        "ymax": 59.7
+      }
+    },
+    {
+      "root": 28,
+      "pourIds": [
+        "pcb_copper_pour_28"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 4,
+      "ports": [
+        "U4.PGND",
+        "U4.PAD",
+        "C15.pin2"
+      ],
+      "box": {
+        "xmin": -26.244663,
+        "xmax": -21.937659,
+        "ymin": 6.2899958,
+        "ymax": 12.351244
+      }
+    },
+    {
+      "root": 12,
+      "pourIds": [
+        "pcb_copper_pour_12"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 3,
+      "ports": [
+        "U2.EN1",
+        "U2.EP"
+      ],
+      "box": {
+        "xmin": -1.01124,
+        "xmax": 1.01124,
+        "ymin": -6.049996,
+        "ymax": -2.988744
+      }
+    },
+    {
+      "root": 16,
+      "pourIds": [
+        "pcb_copper_pour_16"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 3,
+      "ports": [
+        "C6.pin2",
+        "C7.pin2"
+      ],
+      "box": {
+        "xmin": 2.945041,
+        "xmax": 4.7050004,
+        "ymin": -3.066541,
+        "ymax": 1.0866
+      }
+    },
+    {
+      "root": 11,
+      "pourIds": [
+        "pcb_copper_pour_11"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 2,
+      "ports": [
+        "U2.N_CE"
+      ],
+      "box": {
+        "xmin": -2.074993,
+        "xmax": -1.031884,
+        "ymin": -6.089476,
+        "ymax": -4.589992
+      }
+    },
+    {
+      "root": 65,
+      "pourIds": [
+        "pcb_copper_pour_15"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 2,
+      "ports": [
+        "C1.pin2"
+      ],
+      "box": {
+        "xmin": -4.1999991,
+        "xmax": 0.016182,
+        "ymin": -2.975014,
+        "ymax": -1.035094
+      }
+    },
+    {
+      "root": 78,
+      "pourIds": [
+        "pcb_copper_pour_21"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 2,
+      "ports": [
+        "C12.pin2"
+      ],
+      "box": {
+        "xmin": -20.675005,
+        "xmax": -18.702467,
+        "ymin": 5.2949956,
+        "ymax": 6.864242
+      }
+    },
+    {
+      "root": 24,
+      "pourIds": [
+        "pcb_copper_pour_24"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 2,
+      "ports": [
+        "U4.PS"
+      ],
+      "box": {
+        "xmin": -23.027561,
+        "xmax": -21.937659,
+        "ymin": 7.314975,
+        "ymax": 7.684976
+      }
+    },
+    {
+      "root": 26,
+      "pourIds": [
+        "pcb_copper_pour_26"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 2,
+      "ports": [
+        "U4.GND"
+      ],
+      "box": {
+        "xmin": -23.027561,
+        "xmax": -19.594952,
+        "ymin": 7.349977,
+        "ymax": 8.684974
+      }
+    },
+    {
+      "root": 1,
+      "pourIds": [
+        "pcb_copper_pour_1"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 1,
+      "ports": [],
+      "box": {
+        "xmin": 30.582313,
+        "xmax": 31.4335,
+        "ymin": -39.024986,
+        "ymax": -38.972907
+      }
+    },
+    {
+      "root": 2,
+      "pourIds": [
+        "pcb_copper_pour_2"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 1,
+      "ports": [],
+      "box": {
+        "xmin": 31.849874,
+        "xmax": 32.150126,
+        "ymin": -38.63061,
+        "ymax": -37.591532
+      }
+    },
+    {
+      "root": 3,
+      "pourIds": [
+        "pcb_copper_pour_3"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 1,
+      "ports": [],
+      "box": {
+        "xmin": 29.076465,
+        "xmax": 29.483116,
+        "ymin": -13.458639,
+        "ymax": -13.072909
+      }
+    },
+    {
+      "root": 4,
+      "pourIds": [
+        "pcb_copper_pour_4"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 1,
+      "ports": [],
+      "box": {
+        "xmin": 29.074941,
+        "xmax": 29.459054,
+        "ymin": -10.923027,
+        "ymax": -10.337115
+      }
+    },
+    {
+      "root": 5,
+      "pourIds": [
+        "pcb_copper_pour_5"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 1,
+      "ports": [],
+      "box": {
+        "xmin": 28.700455,
+        "xmax": 28.749962,
+        "ymin": -9.311122,
+        "ymax": -9.149999
+      }
+    },
+    {
+      "root": 6,
+      "pourIds": [
+        "pcb_copper_pour_6"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 1,
+      "ports": [],
+      "box": {
+        "xmin": 20.862421,
+        "xmax": 26.926583,
+        "ymin": -13.898587,
+        "ymax": -8.903334
+      }
+    },
+    {
+      "root": 7,
+      "pourIds": [
+        "pcb_copper_pour_7"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 1,
+      "ports": [],
+      "box": {
+        "xmin": -26.532605,
+        "xmax": -23.397461,
+        "ymin": -47.313536,
+        "ymax": -46.825956
+      }
+    },
+    {
+      "root": 8,
+      "pourIds": [
+        "pcb_copper_pour_8"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 1,
+      "ports": [],
+      "box": {
+        "xmin": -22.469412,
+        "xmax": -22.372522,
+        "ymin": -46.910104,
+        "ymax": -46.825841
+      }
+    },
+    {
+      "root": 9,
+      "pourIds": [
+        "pcb_copper_pour_9"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 1,
+      "ports": [],
+      "box": {
+        "xmin": -0.308455,
+        "xmax": 0.187535,
+        "ymin": -6.935539,
+        "ymax": -6.749996
+      }
+    },
+    {
+      "root": 10,
+      "pourIds": [
+        "pcb_copper_pour_10"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 1,
+      "ports": [],
+      "box": {
+        "xmin": -0.074749,
+        "xmax": 0.074775,
+        "ymin": -6.049996,
+        "ymax": -5.988738
+      }
+    },
+    {
+      "root": 13,
+      "pourIds": [
+        "pcb_copper_pour_13"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 1,
+      "ports": [],
+      "box": {
+        "xmin": 0.399564,
+        "xmax": 0.400011,
+        "ymin": -1.936514,
+        "ymax": -1.935439
+      }
+    },
+    {
+      "root": 14,
+      "pourIds": [
+        "pcb_copper_pour_14"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 1,
+      "ports": [],
+      "box": {
+        "xmin": -0.474986,
+        "xmax": -0.437584,
+        "ymin": -1.986934,
+        "ymax": -1.904916
+      }
+    },
+    {
+      "root": 17,
+      "pourIds": [
+        "pcb_copper_pour_17"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 1,
+      "ports": [],
+      "box": {
+        "xmin": 3.551219,
+        "xmax": 3.67822,
+        "ymin": 1.125005,
+        "ymax": 1.181313
+      }
+    },
+    {
+      "root": 18,
+      "pourIds": [
+        "pcb_copper_pour_18"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 1,
+      "ports": [],
+      "box": {
+        "xmin": 4.22185,
+        "xmax": 4.615884,
+        "ymin": 1.125005,
+        "ymax": 1.369106
+      }
+    },
+    {
+      "root": 19,
+      "pourIds": [
+        "pcb_copper_pour_19"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 1,
+      "ports": [],
+      "box": {
+        "xmin": -26.30051,
+        "xmax": -25.362201,
+        "ymin": 5.149996,
+        "ymax": 5.756203
+      }
+    },
+    {
+      "root": 20,
+      "pourIds": [
+        "pcb_copper_pour_20"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 1,
+      "ports": [],
+      "box": {
+        "xmin": -24.62394,
+        "xmax": -21.345075,
+        "ymin": 2.983035,
+        "ymax": 6.649977
+      }
+    },
+    {
+      "root": 22,
+      "pourIds": [
+        "pcb_copper_pour_22"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 1,
+      "ports": [],
+      "box": {
+        "xmin": -25.91234,
+        "xmax": -24.657556,
+        "ymin": 6.368703,
+        "ymax": 6.94683
+      }
+    },
+    {
+      "root": 23,
+      "pourIds": [
+        "pcb_copper_pour_23"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 1,
+      "ports": [],
+      "box": {
+        "xmin": -23.317552,
+        "xmax": -22.432633,
+        "ymin": 6.408027,
+        "ymax": 6.967342
+      }
+    },
+    {
+      "root": 25,
+      "pourIds": [
+        "pcb_copper_pour_25"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 1,
+      "ports": [],
+      "box": {
+        "xmin": -27.124995,
+        "xmax": -26.893258,
+        "ymin": 6.593499,
+        "ymax": 7.7576
+      }
+    },
+    {
+      "root": 27,
+      "pourIds": [
+        "pcb_copper_pour_27"
+      ],
+      "layers": [
+        "top"
+      ],
+      "conductorCount": 1,
+      "ports": [],
+      "box": {
+        "xmin": -25.167377,
+        "xmax": -25.054253,
+        "ymin": 12.149999,
+        "ymax": 12.206029
+      }
+    }
+  ],
+  "ports": [
+    {
+      "id": "pcb_port_0",
+      "ref": "U1",
+      "pin": "GND1",
+      "pinNumber": 1,
+      "x": -6.8997790000000006,
+      "y": 43.3546427,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_39",
+      "ref": "U1",
+      "pin": "GND2",
+      "pinNumber": 40,
+      "x": 10.899779,
+      "y": 43.3546427,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_40",
+      "ref": "U1",
+      "pin": "EP",
+      "pinNumber": 41,
+      "x": 0.5005109999999999,
+      "y": 35.6350747,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_41",
+      "ref": "U1",
+      "pin": "pin41_internal_1",
+      "x": -0.899537,
+      "y": 35.6350747,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_42",
+      "ref": "U1",
+      "pin": "pin41_internal_2",
+      "x": 1.9005589999999999,
+      "y": 35.6350747,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_43",
+      "ref": "U1",
+      "pin": "pin41_internal_3",
+      "x": 1.9005589999999999,
+      "y": 37.0351227,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_44",
+      "ref": "U1",
+      "pin": "pin41_internal_4",
+      "x": 0.5005109999999999,
+      "y": 37.0351227,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_45",
+      "ref": "U1",
+      "pin": "pin41_internal_5",
+      "x": -0.899537,
+      "y": 37.0351227,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_46",
+      "ref": "U1",
+      "pin": "pin41_internal_6",
+      "x": -0.899537,
+      "y": 34.2350267,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_47",
+      "ref": "U1",
+      "pin": "pin41_internal_7",
+      "x": 0.5005109999999999,
+      "y": 34.2350267,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_48",
+      "ref": "U1",
+      "pin": "pin41_internal_8",
+      "x": 1.9005589999999999,
+      "y": 34.2350267,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_50",
+      "ref": "C3",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": -15.000002,
+      "y": 44.75,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_52",
+      "ref": "C4",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": -9,
+      "y": 42.950024,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_54",
+      "ref": "C5",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": -9,
+      "y": 39.450024,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_60",
+      "ref": "R9",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": 14.753364,
+      "y": 19.25,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_62",
+      "ref": "R10",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": 10.753364,
+      "y": 19.25,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_64",
+      "ref": "U3",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": -25,
+      "y": -41.999096,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_69",
+      "ref": "J1",
+      "pin": "EH2",
+      "pinNumber": 1,
+      "x": -20.674888,
+      "y": -46.744306800000004,
+      "layers": [
+        "top",
+        "bottom",
+        "inner1",
+        "inner2"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_70",
+      "ref": "J1",
+      "pin": "EH1",
+      "pinNumber": 2,
+      "x": -20.674888,
+      "y": -50.92413080000001,
+      "layers": [
+        "top",
+        "bottom",
+        "inner1",
+        "inner2"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_71",
+      "ref": "J1",
+      "pin": "EH4",
+      "pinNumber": 3,
+      "x": -29.325112,
+      "y": -50.92413080000001,
+      "layers": [
+        "top",
+        "bottom",
+        "inner1",
+        "inner2"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_72",
+      "ref": "J1",
+      "pin": "EH3",
+      "pinNumber": 4,
+      "x": -29.325112,
+      "y": -46.744306800000004,
+      "layers": [
+        "top",
+        "bottom",
+        "inner1",
+        "inner2"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_81",
+      "ref": "J1",
+      "pin": "GND1",
+      "pinNumber": 13,
+      "x": -28.1999555,
+      "y": -45.975956800000006,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_82",
+      "ref": "J1",
+      "pin": "GND2",
+      "pinNumber": 14,
+      "x": -21.799993699999998,
+      "y": -45.975855200000005,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_86",
+      "ref": "R3",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": -31,
+      "y": -40.096636000000004,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_88",
+      "ref": "R4",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": -19,
+      "y": -40.096636000000004,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_94",
+      "ref": "SW1",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": -18.315092,
+      "y": -26.5,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_96",
+      "ref": "SW2",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": 22.684908,
+      "y": -27.5,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_97",
+      "ref": "J2",
+      "pin": "pin1",
+      "pinNumber": 1,
+      "x": 34.49987,
+      "y": 39.9994833,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_110",
+      "ref": "U2",
+      "pin": "N_CE",
+      "pinNumber": 4,
+      "x": -1.499997,
+      "y": -4.7499858,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        11
+      ],
+      "allCopperRoots": [
+        11
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_112",
+      "ref": "U2",
+      "pin": "EN1",
+      "pinNumber": 6,
+      "x": -0.2499868,
+      "y": -5.4999970000000005,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        12
+      ],
+      "allCopperRoots": [
+        12
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_114",
+      "ref": "U2",
+      "pin": "VSS",
+      "pinNumber": 8,
+      "x": 0.7500112,
+      "y": -5.4999970000000005,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_123",
+      "ref": "U2",
+      "pin": "EP",
+      "pinNumber": 17,
+      "x": 0.000127,
+      "y": -4.000127,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        12
+      ],
+      "allCopperRoots": [
+        12
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_124",
+      "ref": "J3",
+      "pin": "pin1",
+      "pinNumber": 1,
+      "x": 1.00203,
+      "y": -13.4935367,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_129",
+      "ref": "R11",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": -6,
+      "y": -3.246636,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_131",
+      "ref": "R12",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": 6,
+      "y": -3.246636,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_133",
+      "ref": "C1",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": -3.75,
+      "y": -1.799976,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        65
+      ],
+      "allCopperRoots": [
+        65
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_135",
+      "ref": "C2",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": -2.299976,
+      "y": 0,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_137",
+      "ref": "C6",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": 4,
+      "y": -2.000002,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        16
+      ],
+      "allCopperRoots": [
+        16
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_139",
+      "ref": "C7",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": 3.999998,
+      "y": 0.25,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        16
+      ],
+      "allCopperRoots": [
+        16
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_141",
+      "ref": "C8",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": -4,
+      "y": -5.000002,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_143",
+      "ref": "C9",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": 0.24999800000000005,
+      "y": -9,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_144",
+      "ref": "J4",
+      "pin": "pin1",
+      "pinNumber": 1,
+      "x": 7.500001,
+      "y": -9.9999913,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_150",
+      "ref": "U4",
+      "pin": "PGND",
+      "pinNumber": 3,
+      "x": -25.4873986,
+      "y": 7.9999746,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        28
+      ],
+      "allCopperRoots": [
+        28
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_154",
+      "ref": "U4",
+      "pin": "PS",
+      "pinNumber": 7,
+      "x": -22.4876586,
+      "y": 7.5001026,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        24
+      ],
+      "allCopperRoots": [
+        24
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_156",
+      "ref": "U4",
+      "pin": "GND",
+      "pinNumber": 9,
+      "x": -22.4876586,
+      "y": 8.5001006,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        26
+      ],
+      "allCopperRoots": [
+        26
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_158",
+      "ref": "U4",
+      "pin": "PAD",
+      "pinNumber": 11,
+      "x": -23.987554,
+      "y": 8,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        28
+      ],
+      "allCopperRoots": [
+        28
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_162",
+      "ref": "C10",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": -28,
+      "y": 8.999998,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_164",
+      "ref": "C11",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": -27.000002,
+      "y": 11.75,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_166",
+      "ref": "C12",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": -20,
+      "y": 5.999998,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        78
+      ],
+      "allCopperRoots": [
+        78
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_168",
+      "ref": "C13",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": -18.000002,
+      "y": 8.25,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_170",
+      "ref": "C14",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": -20,
+      "y": 12.499998,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_172",
+      "ref": "C15",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": -23.799976,
+      "y": 11.5,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        28
+      ],
+      "allCopperRoots": [
+        28
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_174",
+      "ref": "U5",
+      "pin": "LR",
+      "pinNumber": 2,
+      "x": 29.5147584,
+      "y": 15.099951,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_175",
+      "ref": "U5",
+      "pin": "GND",
+      "pinNumber": 3,
+      "x": 30.3079623,
+      "y": 16.4522597,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_179",
+      "ref": "U5",
+      "pin": "pin3_internal_1",
+      "x": 30.308038500000002,
+      "y": 15.547714899999999,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_180",
+      "ref": "U5",
+      "pin": "pin3_internal_2",
+      "x": 31.2125579,
+      "y": 15.5477022,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_181",
+      "ref": "U5",
+      "pin": "pin3_internal_3",
+      "x": 31.2125452,
+      "y": 16.452247,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_183",
+      "ref": "C16",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": 33,
+      "y": 16.700024,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_185",
+      "ref": "R13",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": 30.753364,
+      "y": 18.5,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_187",
+      "ref": "U6",
+      "pin": "GAIN_SLOT",
+      "pinNumber": 2,
+      "x": 27.751461,
+      "y": -13.499997,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_188",
+      "ref": "U6",
+      "pin": "GND1",
+      "pinNumber": 3,
+      "x": 28.251587,
+      "y": -13.499997,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_196",
+      "ref": "U6",
+      "pin": "GND2",
+      "pinNumber": 11,
+      "x": 27.749937,
+      "y": -10.500003,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_200",
+      "ref": "U6",
+      "pin": "GND3",
+      "pinNumber": 15,
+      "x": 26.500003,
+      "y": -12.248031,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_202",
+      "ref": "U6",
+      "pin": "EP",
+      "pinNumber": 17,
+      "x": 28.000127,
+      "y": -12.000127,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_204",
+      "ref": "C17",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": 30.450024,
+      "y": -8.5,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_206",
+      "ref": "C18",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": 28.999998,
+      "y": -15.75,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_209",
+      "ref": "J6",
+      "pin": "pin1",
+      "pinNumber": 1,
+      "x": 28.50013,
+      "y": -39.9994833,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_221",
+      "ref": "D1",
+      "pin": "VSS",
+      "pinNumber": 3,
+      "x": -27.500005,
+      "y": -15.599946,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_223",
+      "ref": "U7",
+      "pin": "N_OE",
+      "pinNumber": 1,
+      "x": -34.699901,
+      "y": -14.94996,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_225",
+      "ref": "U7",
+      "pin": "GND",
+      "pinNumber": 3,
+      "x": -34.699901,
+      "y": -13.05004,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_229",
+      "ref": "C19",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": -28.049976,
+      "y": -17.75,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    },
+    {
+      "id": "pcb_port_231",
+      "ref": "C20",
+      "pin": "pin2",
+      "pinNumber": 2,
+      "x": -34.5,
+      "y": -16.549976,
+      "layers": [
+        "top"
+      ],
+      "pourRoots": [
+        29
+      ],
+      "allCopperRoots": [
+        29
+      ],
+      "officialConnected": false
+    }
+  ],
+  "isolatedPourIds": [
+    "pcb_copper_pour_1",
+    "pcb_copper_pour_2",
+    "pcb_copper_pour_3",
+    "pcb_copper_pour_4",
+    "pcb_copper_pour_5",
+    "pcb_copper_pour_6",
+    "pcb_copper_pour_7",
+    "pcb_copper_pour_8",
+    "pcb_copper_pour_9",
+    "pcb_copper_pour_10",
+    "pcb_copper_pour_13",
+    "pcb_copper_pour_14",
+    "pcb_copper_pour_17",
+    "pcb_copper_pour_18",
+    "pcb_copper_pour_19",
+    "pcb_copper_pour_20",
+    "pcb_copper_pour_22",
+    "pcb_copper_pour_23",
+    "pcb_copper_pour_25",
+    "pcb_copper_pour_27"
+  ]
+}

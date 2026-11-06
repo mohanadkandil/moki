@@ -1,0 +1,1292 @@
+{
+  "jobId": "8b5225bc-4a2e-4cb6-beeb-c7b80efec6a9",
+  "status": "done",
+  "createdAt": "2026-11-06T00:25:19.227Z",
+  "input": {
+    "kind": "plan",
+    "sourceSha256": "95928acadd9499ad7de08354586c4761e9e9bcf8eb39c40833df0ae97eb77926",
+    "plan": {
+      "schema": "moki.plan/1",
+      "title": "ESP32-S3 SHT40 temperature and humidity board",
+      "layers": 2,
+      "board": {
+        "widthMm": 60,
+        "heightMm": 70,
+        "cornerRadiusMm": 0
+      },
+      "blocks": [
+        {
+          "inst": "esp32-s3-core",
+          "block": "esp32-s3-core",
+          "version": 1,
+          "params": {},
+          "at": {
+            "x": -2,
+            "y": 15.75
+          }
+        },
+        {
+          "inst": "usb-c-sink",
+          "block": "usb-c-sink",
+          "version": 1,
+          "params": {},
+          "at": {
+            "x": -12,
+            "y": -23.15
+          }
+        },
+        {
+          "inst": "ldo-ap2112-3v3",
+          "block": "ldo-ap2112-3v3",
+          "version": 2,
+          "params": {},
+          "at": {
+            "x": -20.5,
+            "y": 22.5
+          }
+        },
+        {
+          "inst": "boot-reset-buttons",
+          "block": "boot-reset-buttons",
+          "version": 1,
+          "params": {},
+          "at": {
+            "x": -0.5,
+            "y": 8.5
+          }
+        },
+        {
+          "inst": "i2c-header",
+          "block": "i2c-header",
+          "version": 1,
+          "params": {},
+          "at": {
+            "x": 17,
+            "y": 19
+          }
+        },
+        {
+          "inst": "sht40",
+          "block": "sht40-ad1b-3v3",
+          "version": 3,
+          "params": {},
+          "at": {
+            "x": 20,
+            "y": -2
+          }
+        }
+      ],
+      "links": [
+        {
+          "from": "esp32-s3-core.GND",
+          "to": "usb-c-sink.GND"
+        },
+        {
+          "from": "esp32-s3-core.GND",
+          "to": "ldo-ap2112-3v3.GND"
+        },
+        {
+          "from": "esp32-s3-core.GND",
+          "to": "boot-reset-buttons.GND"
+        },
+        {
+          "from": "esp32-s3-core.GND",
+          "to": "i2c-header.GND"
+        },
+        {
+          "from": "usb-c-sink.VBUS",
+          "to": "ldo-ap2112-3v3.VBUS"
+        },
+        {
+          "from": "esp32-s3-core.V3V3",
+          "to": "ldo-ap2112-3v3.V3V3"
+        },
+        {
+          "from": "esp32-s3-core.V3V3",
+          "to": "i2c-header.V3V3"
+        },
+        {
+          "from": "esp32-s3-core.EN",
+          "to": "boot-reset-buttons.EN"
+        },
+        {
+          "from": "esp32-s3-core.BOOT",
+          "to": "boot-reset-buttons.BOOT"
+        },
+        {
+          "from": "esp32-s3-core.I2C",
+          "to": "i2c-header.I2C"
+        },
+        {
+          "from": "esp32-s3-core.USB",
+          "to": "usb-c-sink.USB"
+        },
+        {
+          "from": "ldo-ap2112-3v3.V3V3",
+          "to": "sht40.V3V3"
+        },
+        {
+          "from": "esp32-s3-core.GND",
+          "to": "sht40.GND"
+        },
+        {
+          "from": "esp32-s3-core.I2C",
+          "to": "sht40.I2C"
+        }
+      ],
+      "sections": [
+        {
+          "id": "esp32-s3-core",
+          "title": "ESP32-S3 + reset and boot bias",
+          "purpose": "ESP32-S3 + reset and boot bias",
+          "insts": [
+            "esp32-s3-core"
+          ],
+          "notes": [
+            "EN:10k/1uF reset delay; GPIO0 pull-up with BOOT switch.",
+            "GPIO45/46 pull-downs; antenna no-copper keepout."
+          ],
+          "reference": {
+            "lcsc": "C2913198",
+            "datasheetUrl": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+            "page": 41,
+            "quote": "This is the typical application circuit of the module"
+          }
+        },
+        {
+          "id": "usb-c-sink",
+          "title": "USB-C sink + ESD",
+          "purpose": "USB-C Rd sink with native data ESD. Requires a known 5V supply advertising at least1.5A; no PD negotiation/current-detection claim.",
+          "insts": [
+            "usb-c-sink"
+          ],
+          "notes": [
+            "CC1/CC2: independent5.1k pull-downs; sink only.",
+            "Supply contract: known5V/1.5A Type-C source; no PD negotiation."
+          ],
+          "reference": {
+            "lcsc": "C7519",
+            "datasheetUrl": "https://www.st.com/resource/en/datasheet/usblc6-2.pdf",
+            "page": 1,
+            "quote": "Very low capacitance ESD protection"
+          }
+        },
+        {
+          "id": "ldo-ap2112-3v3",
+          "title": "3.3 V regulator",
+          "purpose": "3.3 V regulator",
+          "insts": [
+            "ldo-ap2112-3v3"
+          ],
+          "notes": [
+            "AP2112:600mA IC rating,250mA continuous board budget at25°C.",
+            "1uF input/output bypass; no thermal-transient proof."
+          ],
+          "reference": {
+            "lcsc": "C51118",
+            "datasheetUrl": "https://www.diodes.com/datasheet/download/AP2112.pdf",
+            "page": 2,
+            "quote": "Typical Applications Circuit"
+          }
+        },
+        {
+          "id": "boot-reset-buttons",
+          "title": "BOOT / RESET buttons",
+          "purpose": "BOOT / RESET buttons",
+          "insts": [
+            "boot-reset-buttons"
+          ],
+          "notes": [
+            "Real imported parts and named nets; see block reference."
+          ]
+        },
+        {
+          "id": "i2c-header",
+          "title": "I2C expansion header",
+          "purpose": "I2C expansion header",
+          "insts": [
+            "i2c-header"
+          ],
+          "notes": [
+            "Real imported parts and named nets; see block reference."
+          ]
+        },
+        {
+          "id": "sensor",
+          "title": "SHT40 · temperature and humidity",
+          "purpose": "3.3 V SHT40 at fixed I2C address 0x44, 100 nF bypass; uses existing carrier 10kOhm bus pull-ups at 100 kHz. Imported central copper pad explicitly omitted; physical realization pending.",
+          "insts": [
+            "sht40"
+          ],
+          "notes": [
+            "0x44, 100kHz; heater disabled; CRC-8 checked by firmware.",
+            "100nF local bypass; shared10k pull-ups; no central copper/paste."
+          ],
+          "reference": {
+            "lcsc": "C2909890",
+            "datasheetUrl": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
+            "page": 16,
+            "quote": "There shall be no copper under the sensor other than at the pin pads."
+          }
+        }
+      ],
+      "drafts": [
+        {
+          "schema": "moki.block/1",
+          "id": "sht40-ad1b-3v3",
+          "version": 3,
+          "title": "SHT40 temperature and humidity, heater disabled",
+          "class": "sensor",
+          "summary": "3.3 V SHT40 at fixed I2C address 0x44, 100 nF bypass; uses existing carrier 10kOhm bus pull-ups at 100 kHz. Imported central copper pad explicitly omitted; physical realization pending.",
+          "provenance": {
+            "author": "agent",
+            "authorId": "chip_eda"
+          },
+          "parts": [
+            {
+              "ref": "U1",
+              "lcsc": "C2909890",
+              "mpn": "SHT40-AD1B-R2",
+              "catalogReceipt": "sha256:aba07424974690c4010ed155f58bcd30cf5bf49657ea4ef20d11953344ca6c0b",
+              "datasheet": {
+                "url": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
+                "sha256": "8db4a43f17149b76811cfb504caaeca4ef844ddc710cb9b45905c51c7ddfe3c2",
+                "pages": "9–17",
+                "note": "SHT40-AD1B: address 0x44; VDD <=3.6 V; measurement <=500 uA; no clock stretching; heater excluded from this block."
+              },
+              "pinout": "verified",
+              "at": {
+                "x": 0,
+                "y": 0,
+                "rotation": 0
+              },
+              "pins": {
+                "SDA": {
+                  "pad": "1",
+                  "role": "open-drain",
+                  "required": true,
+                  "volts": {
+                    "min": 0,
+                    "max": 3.6
+                  }
+                },
+                "SCL": {
+                  "pad": "2",
+                  "role": "input",
+                  "required": true,
+                  "volts": {
+                    "min": 0,
+                    "max": 3.6
+                  }
+                },
+                "VDD": {
+                  "pad": "3",
+                  "role": "power-in",
+                  "required": true,
+                  "volts": {
+                    "min": 3,
+                    "max": 3.6
+                  }
+                },
+                "VSS": {
+                  "pad": "4",
+                  "role": "ground",
+                  "required": true
+                }
+              },
+              "omitPads": [
+                "5"
+              ],
+              "correction": {
+                "url": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
+                "sha256": "8db4a43f17149b76811cfb504caaeca4ef844ddc710cb9b45905c51c7ddfe3c2",
+                "pages": "16–17",
+                "note": "Remove imported PAD5 central copper and paste; do not ground it. Manufacturer forbids exposed central copper/solder; die pad is not connected to any pin. Retain functional pads 1–4; final pad geometry/orientation and all exported copper/paste require native review."
+              }
+            },
+            {
+              "ref": "C1",
+              "lcsc": "C14663",
+              "mpn": "CC0603KRX7R9BB104",
+              "catalogReceipt": "sha256:fde5081a0b45324f436df1a456a1a4dd1608306b862e8a6f4c8187b9d69ac426",
+              "datasheet": {
+                "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2211101700_YAGEO-CC0603KRX7R9BB104_C14663.pdf",
+                "note": "Actual YAGEO 100nF +/-10% 50V X7R C0603 catalog component; retained importer receipt identifies pads 1/2."
+              },
+              "pinout": "verified",
+              "pins": {
+                "1": {
+                  "pad": "1",
+                  "role": "passive"
+                },
+                "2": {
+                  "pad": "2",
+                  "role": "passive"
+                }
+              },
+              "at": {
+                "x": 2,
+                "y": 0,
+                "rotation": 90
+              },
+              "value": "100nF",
+              "valueWhy": {
+                "url": "https://sensirion.com/media/documents/93E06008/640B25FB/SENSEVAL_SHT4XV1_technical_description.pdf",
+                "sha256": "9b4ca39c5ffe2e36aaa1a04f011ddbd9de3de86896f6e430c3bd8691376cc7d3",
+                "pages": "2, 8",
+                "note": "Manufacturer reference uses 100 nF X7R and two 10 kOhm pull-ups to sensor VDD. Pull-ups are supplied by the existing carrier I2C header, not duplicated here."
+              }
+            }
+          ],
+          "nets": [
+            {
+              "name": "V3V3",
+              "pins": [
+                "U1.VDD",
+                "C1.1"
+              ]
+            },
+            {
+              "name": "GND",
+              "pins": [
+                "U1.VSS",
+                "C1.2"
+              ]
+            },
+            {
+              "name": "SDA",
+              "pins": [
+                "U1.SDA"
+              ]
+            },
+            {
+              "name": "SCL",
+              "pins": [
+                "U1.SCL"
+              ]
+            }
+          ],
+          "params": [
+            {
+              "id": "heater",
+              "type": "enum",
+              "options": [
+                "disabled"
+              ],
+              "default": "disabled",
+              "why": "Heater commands are forbidden in this 2mA variant. A heater variant needs a different power budget, duty-cycle/ambient constraints and independent review (datasheet pp9,13–14)."
+            },
+            {
+              "id": "i2cFrequencyHz",
+              "type": "number",
+              "min": 100000,
+              "max": 100000,
+              "default": 100000,
+              "unit": "Hz",
+              "why": "Author default 100kHz; existing carrier has one 10kOhm +/-1% pull-up pair. Cb < tr/(0.8473 Rp), Sensirion p9; Standard-mode tr<=1000ns, NXP UM10204 Rev7 p44, https://www.nxp.com/docs/en/user-guide/UM10204.pdf . No faster-mode timing claim."
+            }
+          ],
+          "ports": [
+            {
+              "id": "V3V3",
+              "label": "Sensor supply",
+              "kind": "power-in",
+              "terminal": "net:V3V3",
+              "volts": {
+                "min": 3,
+                "max": 3.6
+              }
+            },
+            {
+              "id": "GND",
+              "label": "Ground",
+              "kind": "ground",
+              "terminal": "net:GND"
+            },
+            {
+              "id": "I2C",
+              "label": "SHT40 I2C",
+              "kind": "bus",
+              "bus": {
+                "protocol": "i2c",
+                "role": "peripheral",
+                "signals": {
+                  "SDA": "net:SDA",
+                  "SCL": "net:SCL"
+                },
+                "i2cAddresses": [
+                  68
+                ]
+              }
+            }
+          ],
+          "power": {
+            "sources": [],
+            "sinks": [
+              {
+                "port": "V3V3",
+                "typicalMa": 0.5,
+                "peakMa": 2
+              }
+            ]
+          },
+          "constraints": [
+            {
+              "kind": "decoupling",
+              "ic": "U1",
+              "powerPin": "VDD",
+              "groundPin": "VSS",
+              "caps": [
+                "C1"
+              ],
+              "minUf": 0.1,
+              "maxDistanceMm": 2,
+              "citation": {
+                "url": "https://sensirion.com/media/documents/93E06008/640B25FB/SENSEVAL_SHT4XV1_technical_description.pdf",
+                "sha256": "9b4ca39c5ffe2e36aaa1a04f011ddbd9de3de86896f6e430c3bd8691376cc7d3",
+                "pages": "2, 8",
+                "note": "Manufacturer reference uses 100 nF X7R and two 10 kOhm pull-ups to sensor VDD. Pull-ups are supplied by the existing carrier I2C header, not duplicated here. The <=2mm centre-distance limit is an author placement policy, not a manufacturer dimension."
+              }
+            },
+            {
+              "kind": "ground",
+              "pin": "U1.VSS",
+              "citation": {
+                "url": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
+                "sha256": "8db4a43f17149b76811cfb504caaeca4ef844ddc710cb9b45905c51c7ddfe3c2",
+                "pages": "17",
+                "note": "SHT40-AD1B: address 0x44; VDD <=3.6 V; measurement <=500 uA; no clock stretching; heater excluded from this block."
+              }
+            },
+            {
+              "kind": "keepout",
+              "x": 0,
+              "y": 0,
+              "width": 1.6,
+              "height": 1.6,
+              "layers": [
+                "all"
+              ],
+              "excludeParts": [
+                "U1"
+              ],
+              "purpose": "No copper beneath sensor except functional contact pads 1–4; no central copper/paste PAD5. Exclude only sensor U1, not bypass C1. Native pad-aware exception, footprint dimensions/orientation and pours/paste remain unverified. Keep sensing opening exposed and away from heat sources.",
+              "citation": {
+                "url": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
+                "sha256": "8db4a43f17149b76811cfb504caaeca4ef844ddc710cb9b45905c51c7ddfe3c2",
+                "pages": "16–17",
+                "note": "Remove imported PAD5 central copper and paste; do not ground it. Manufacturer forbids exposed central copper/solder; die pad is not connected to any pin. Retain functional pads 1–4; final pad geometry/orientation and all exported copper/paste require native review."
+              }
+            }
+          ],
+          "firmware": {
+            "libs": [],
+            "includes": [
+              "Wire.h"
+            ],
+            "usage": "Fixed address 0x44. Use Wire at 100000 Hz with shared 3.3V supply/pull-ups; do not duplicate carrier 10kOhm pull-ups. Never issue heater commands. Wait >=1ms after power-up and >=8.3ms for high-repeatability measurement (10ms policy); busy reads NACK, no clock stretching. Validate 6-byte measurement CRC-8 (polynomial 0x31, initial 0xFF). Measurement <=0.5mA plus both 10kOhm +/-1% pull-ups at 3.6V is <1.23mA; 2mA peak is author margin, not heater capacity. Actual total bus capacitance/waveforms remain unverified unless supplied and measured; 100kHz alone does not prove timing. No powered bus driving an unpowered sensor, no 5V interface. Preserve airflow, avoid warm MCU/regulator placement; no final thermal/accuracy/manufacturing claim."
+          }
+        }
+      ],
+      "requirements": [
+        {
+          "id": "usb",
+          "plain": "Has a USB-C sink interface",
+          "metric": "interface_present",
+          "args": {
+            "kind": "usb_c_sink"
+          },
+          "op": "present",
+          "source": "maker"
+        },
+        {
+          "id": "size",
+          "plain": "Fits a60by70mm board",
+          "metric": "board_size_mm",
+          "op": "<=",
+          "value": [
+            60,
+            70
+          ],
+          "source": "maker"
+        },
+        {
+          "id": "count",
+          "plain": "No more than24 placed parts",
+          "metric": "part_count",
+          "op": "<=",
+          "value": 24,
+          "source": "maker"
+        }
+      ],
+      "app": {
+        "source": "#include <Arduino.h>\n#include <Wire.h>\n#include \"pins.h\"\nstatic uint8_t crc8(const uint8_t *p) {uint8_t c=0xff;for(int i=0;i<2;i++){c^=p[i];for(int j=0;j<8;j++)c=(c&0x80)?uint8_t((c<<1)^0x31):uint8_t(c<<1);}return c;}\nvoid setup(){Serial.begin(115200);Wire.begin(PIN_SHT40_I2C_SDA,PIN_SHT40_I2C_SCL);Wire.setClock(100000);delay(10);}\nvoid loop(){Wire.beginTransmission(0x44);Wire.write(0xFD);if(Wire.endTransmission()!=0){Serial.println(\"Sensor unavailable\");delay(1000);return;}delay(10);if(Wire.requestFrom(uint8_t(0x44),uint8_t(6))!=6){Serial.println(\"Sensor read failed\");delay(1000);return;}uint8_t b[6];for(int i=0;i<6;i++)b[i]=Wire.read();if(crc8(b)!=b[2]||crc8(b+3)!=b[5]){Serial.println(\"Sensor CRC failed\");delay(1000);return;}float t=-45.0f+175.0f*((uint16_t(b[0])<<8)|b[1])/65535.0f;float h=-6.0f+125.0f*((uint16_t(b[3])<<8)|b[4])/65535.0f;h=constrain(h,0.0f,100.0f);Serial.print(t,2);Serial.print(\" C, \");Serial.print(h,2);Serial.println(\" %RH\");delay(1000);}\n"
+      }
+    }
+  },
+  "cache": "miss",
+  "stages": [
+    {
+      "name": "codegen",
+      "status": "done",
+      "ms": 43.946077,
+      "note": "Validated JSON plan; no author TSX is executed"
+    },
+    {
+      "name": "erc",
+      "status": "done",
+      "ms": 0,
+      "note": "Block has not passed independent promotion review; Block has not passed independent promotion review; Block has not passed independent promotion review; Block has not passed independent promotion review; Block has not passed independent promotion review; Block has not passed independent promotion review; USB peripheral relies on an external host through the declared passive connector; Keepout realization must be checked against final imported PCB geometry; Keepout realization must be checked against final imported PCB geometry"
+    },
+    {
+      "name": "power",
+      "status": "done",
+      "ms": 0,
+      "note": "Peak current exceeds the continuous thermal budget; burst duration/decoupling require transient verification; Thermal model is a declared board/ambient assumption, not measured hardware performance"
+    },
+    {
+      "name": "spice",
+      "status": "done",
+      "ms": 1103.629254,
+      "note": "Explicit normally-open contacts held open: boot-reset-buttons.SW1; pressed/bounce behavior is not simulated; Only declared isolated profiles are simulated; this is not whole-board analog verification; Fixed netlists and raw engine results: /home/sogo/design-skill-research/repos/moki/var/board-jobs-test-chip/8b5225bc-4a2e-4cb6-beeb-c7b80efec6a9/spice/run-7HcLlu/output.json"
+    },
+    {
+      "name": "review",
+      "status": "done",
+      "ms": 0,
+      "note": ""
+    },
+    {
+      "name": "codegen",
+      "status": "done",
+      "ms": 1342.0761250000003
+    },
+    {
+      "name": "placement",
+      "status": "done",
+      "ms": 21.564554000000044
+    },
+    {
+      "name": "svg",
+      "status": "done",
+      "ms": 1065.7915270000003
+    },
+    {
+      "name": "render",
+      "status": "done",
+      "ms": 486.24087700000064
+    },
+    {
+      "name": "route",
+      "status": "done",
+      "ms": 21730.60292
+    },
+    {
+      "name": "gltf",
+      "status": "done",
+      "ms": 2181.4184749999986
+    },
+    {
+      "name": "fab",
+      "status": "done",
+      "ms": 763.1188970000003
+    },
+    {
+      "name": "drc",
+      "status": "done",
+      "ms": 0,
+      "note": ""
+    },
+    {
+      "name": "block-test",
+      "status": "done",
+      "ms": 0,
+      "note": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates; Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates; Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates; Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates; Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates; Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+    },
+    {
+      "name": "verify",
+      "status": "done",
+      "ms": 0,
+      "note": ""
+    },
+    {
+      "name": "firmware",
+      "status": "done",
+      "ms": 77.04971800000001
+    },
+    {
+      "name": "firmware-compile",
+      "status": "done",
+      "ms": 5640,
+      "note": "Compile checked for esp32s3; no physical flash."
+    },
+    {
+      "name": "compile",
+      "status": "done",
+      "ms": 0,
+      "note": ""
+    },
+    {
+      "name": "enclosure",
+      "status": "skipped",
+      "ms": 0,
+      "note": "Chip-level enclosure handoff is not implemented"
+    }
+  ],
+  "totalMs": 37390.598799,
+  "drc": {
+    "checked": true,
+    "errors": [],
+    "warnings": [
+      {
+        "type": "source_refdes_convention_warning",
+        "message": "The \"J\" prefix is being used with a <chip />, try using it with a <connector /> or <jumper />"
+      },
+      {
+        "type": "source_refdes_convention_warning",
+        "message": "The \"J\" prefix is being used with a <chip />, try using it with a <connector /> or <jumper />"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "U1 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "U3 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "U3 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on U3 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "J1 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "J1 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on J1 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "source_no_power_pin_defined_warning",
+        "message": "J2 has no pin with requires_power=true"
+      },
+      {
+        "type": "source_no_ground_pin_defined_warning",
+        "message": "J2 has no pin with requires_ground=true"
+      },
+      {
+        "type": "source_component_pins_underspecified_warning",
+        "message": "All pins on J2 are underspecified (no pinAttributes set)"
+      },
+      {
+        "type": "pcb_connector_not_in_accessible_orientation_warning",
+        "message": "J2 is inferred to face y+ from its cable insertion center because no explicit footprint insertionDirection is defined, but should face x+ so the connector is accessible from the board edge. Set insertionDirection on the <footprint> to specify the actual direction in the footprint's unrotated orientation; for example, <footprint insertionDirection=\"from_above\"> for a connector accessed from above the PCB (+Z)."
+      }
+    ]
+  },
+  "board": {
+    "widthMm": 60,
+    "heightMm": 70,
+    "layers": 2,
+    "traceCount": 69,
+    "viaCount": 46
+  },
+  "artifacts": {
+    "circuit.json": {
+      "url": "/api/board/jobs/8b5225bc-4a2e-4cb6-beeb-c7b80efec6a9/files/circuit.json",
+      "bytes": 1058961,
+      "sha256": "b3c9853d331aa3062e4e44004ff8814d9dc24ea74c1c9ded453e6cffd1ed1de5",
+      "kind": "json"
+    },
+    "schematic.svg": {
+      "url": "/api/board/jobs/8b5225bc-4a2e-4cb6-beeb-c7b80efec6a9/files/schematic.svg",
+      "bytes": 221329,
+      "sha256": "fd03f2be5715900f4177f2e67fe39d711511119fc3dc47808a84ca5cc705cc18",
+      "kind": "svg"
+    },
+    "pcb.svg": {
+      "url": "/api/board/jobs/8b5225bc-4a2e-4cb6-beeb-c7b80efec6a9/files/pcb.svg",
+      "bytes": 561465,
+      "sha256": "1152f358d4b9be902fe1e49348936849260cd2ebaf06736194b0859303c43d83",
+      "kind": "svg"
+    },
+    "board.glb": {
+      "url": "/api/board/jobs/8b5225bc-4a2e-4cb6-beeb-c7b80efec6a9/files/board.glb",
+      "bytes": 6398032,
+      "sha256": "29e4338114062b81a310c670b693595d0e332b9bda23c12380d04be89bac0ddc",
+      "kind": "glb"
+    },
+    "gerbers.zip": {
+      "url": "/api/board/jobs/8b5225bc-4a2e-4cb6-beeb-c7b80efec6a9/files/gerbers.zip",
+      "bytes": 74146,
+      "sha256": "f063c3039900969201463469d9b45c70a31dccdb9ca3c9cba3a816532e89f443",
+      "kind": "zip"
+    },
+    "kicad.zip": {
+      "url": "/api/board/jobs/8b5225bc-4a2e-4cb6-beeb-c7b80efec6a9/files/kicad.zip",
+      "bytes": 185713,
+      "sha256": "77612a882003240feb27e5e64443f382517619fc368309584b1d306e9075df14",
+      "kind": "zip"
+    },
+    "bom.csv": {
+      "url": "/api/board/jobs/8b5225bc-4a2e-4cb6-beeb-c7b80efec6a9/files/bom.csv",
+      "bytes": 1214,
+      "sha256": "9e036ad388585e4c3c5bdcb5ee915a3402ba7d792ee9c9d0d3be293060dcb8f8",
+      "kind": "csv"
+    },
+    "pnp.csv": {
+      "url": "/api/board/jobs/8b5225bc-4a2e-4cb6-beeb-c7b80efec6a9/files/pnp.csv",
+      "bytes": 1237,
+      "sha256": "a01ba18a7d262a5dddf005a3dc3f28162a858da2ce9ba66153d38a8407239d10",
+      "kind": "csv"
+    },
+    "firmware.zip": {
+      "url": "/api/board/jobs/8b5225bc-4a2e-4cb6-beeb-c7b80efec6a9/files/firmware.zip",
+      "bytes": 2180,
+      "sha256": "79c0bab1ea996219d7da562bef7704f1f9b5943c9be99f02be27599bb0af1e6f",
+      "kind": "zip"
+    },
+    "firmware-build.json": {
+      "url": "/api/board/jobs/8b5225bc-4a2e-4cb6-beeb-c7b80efec6a9/files/firmware-build.json",
+      "bytes": 6356,
+      "sha256": "7fde69925def2174ef90fa9cf74c0f28210332b4c70d7a0e698cfd4431bf67c0",
+      "kind": "json"
+    },
+    "receipt.json": {
+      "url": "/api/board/jobs/8b5225bc-4a2e-4cb6-beeb-c7b80efec6a9/files/receipt.json",
+      "bytes": 20737,
+      "sha256": "38de9d1f3b6d053a27de24451d25d6b9fa7cbad835df0eec3667fb9bda38957d",
+      "kind": "json"
+    },
+    "plan.json": {
+      "url": "/api/board/jobs/8b5225bc-4a2e-4cb6-beeb-c7b80efec6a9/files/plan.json",
+      "bytes": 16636,
+      "sha256": "01f20c44ef62f6580ad6ecbe4c95e03a858214d3eae17b98ffdcba0230802e94",
+      "kind": "json"
+    },
+    "gates.json": {
+      "url": "/api/board/jobs/8b5225bc-4a2e-4cb6-beeb-c7b80efec6a9/files/gates.json",
+      "bytes": 10974,
+      "sha256": "98775656a3bb8c4107d62c9498037dacbecae4779a187f4f2f9f76baed6cda03",
+      "kind": "json"
+    },
+    "spice.json": {
+      "url": "/api/board/jobs/8b5225bc-4a2e-4cb6-beeb-c7b80efec6a9/files/spice.json",
+      "bytes": 1082,
+      "sha256": "d65ca488c95f2be648da523e24c197502a6e7ad63357263368339fb3222f1fec",
+      "kind": "json"
+    },
+    "verification.json": {
+      "url": "/api/board/jobs/8b5225bc-4a2e-4cb6-beeb-c7b80efec6a9/files/verification.json",
+      "bytes": 709,
+      "sha256": "1594e513cdba4bb028c83f9885d79c8c46e599806d15cd64fcdae7f35130609a",
+      "kind": "json"
+    },
+    "schematic-circuit.json": {
+      "url": "/api/board/jobs/8b5225bc-4a2e-4cb6-beeb-c7b80efec6a9/files/schematic-circuit.json",
+      "bytes": 311786,
+      "sha256": "a2167ce6674b30ece20bc4bce4ed9f62a0f7d4c5e5e9d5f761e43cdf93a4e7c1",
+      "kind": "json"
+    },
+    "import-map.json": {
+      "url": "/api/board/jobs/8b5225bc-4a2e-4cb6-beeb-c7b80efec6a9/files/import-map.json",
+      "bytes": 14844,
+      "sha256": "6eb8d5f520a96a5b403ca4b6ceb16ebbb7995e7b3e709cbce19d8364478a82e1",
+      "kind": "json"
+    },
+    "sensor-copper-check.json": {
+      "url": "/api/board/jobs/8b5225bc-4a2e-4cb6-beeb-c7b80efec6a9/files/sensor-copper-check.json",
+      "bytes": 4350,
+      "sha256": "f199c56cf33e0726eebd384bebc027498701791efd9417988c34617e7ad4b9e9",
+      "kind": "json"
+    },
+    "netlist-check.json": {
+      "url": "/api/board/jobs/8b5225bc-4a2e-4cb6-beeb-c7b80efec6a9/files/netlist-check.json",
+      "bytes": 32,
+      "sha256": "1b237b6d36a5cf2f8b7272800f91f3e98f39caafdd95fc3bd739ecfb75b0d664",
+      "kind": "json"
+    },
+    "placement.json": {
+      "url": "/api/board/jobs/8b5225bc-4a2e-4cb6-beeb-c7b80efec6a9/files/placement.json",
+      "bytes": 4626,
+      "sha256": "14fa77d08984b783084bd9a9ac1fe06f3f0d0849b945bf909c737c2bd73b6ac5",
+      "kind": "json"
+    },
+    "placement-check.json": {
+      "url": "/api/board/jobs/8b5225bc-4a2e-4cb6-beeb-c7b80efec6a9/files/placement-check.json",
+      "bytes": 558,
+      "sha256": "4d869e6ac8f769594684fbc5975e939f1fc351466ba6215fbfc47e609564820d",
+      "kind": "json"
+    }
+  },
+  "toolVersions": {
+    "bun": "1.4.4",
+    "toolchainLockSha256": "03c17de90a541fb18d9c0551e9d48079d505c8da1b327b521149c39ce2bdfe92",
+    "mokiRendererSha256": "0241360186359759ab4eb49087dc2026f5d13d1b9279bc2a7a9c78b97e59ff2d",
+    "../src/board/bom.ts": "3eb90de40496ae439a9b4fdf8bd5816dc59e8b5d29d97b72740a446928335022",
+    "../src/circuit/catalog.ts": "f9a71d535ac1c39ece54337532e1662d3cdb95356134f548c1345c555ca1b51c",
+    "models/render-board.ts": "0ae3ad9913ed812f943bcb5e97f07de2dc39a5a8c9634bb8d175cf116a1e15b1",
+    "models/catalog-models.ts": "5bf9dba5c67d0e1239c33dc4874be44867226c08fb287dc21e63fb17895015bc",
+    "models/glb.ts": "ee795aaf36c5fa0f0bd94484c574f69cd14c308ee72d4e3fd0b6855dd4c14c80",
+    "models/compact-glb.ts": "76504398c0e871e0de9ab55d4e553a4401d7466b6c1750eca4cb856e212bbda4",
+    "apply-layout.ts": "5429544caab8d4ba86a0b4b269ce01c84aa47c0f0cc568fa6602dea23d40c6ff",
+    "edit-router.ts": "c607cef0777632dd2584a8132e684314e6452cc7195c2a93797d3abb9204a76c",
+    "blocks/router.ts": "fc1aa37b09865e2627b6fc40e8894aed6a301454341ff658050a1fc8f865ae74",
+    "../src/blocks/router-planning.ts": "ffba1d1a7440c7ff9c7a2a6cafaa0323632b3812ae3eb313313f6166f8cf06de",
+    "../src/board/router-planning.ts": "ffa9a86aded261477102d290e6f6faf3cad2a8c299e1990210027726b8d78504",
+    "../src/board/edits.ts": "ff1061d2213db22acacf7ac26c2d097c97a4be81ffe92d8eaedb262c7c6f2bf0",
+    "enclosure/module-preview.ts": "646bb819b10f708851a820b5159b977c67300cf34b0a3d3f4d84b9a5d7c65f19",
+    "enclosure/module-mech.ts": "8054af43a5ba30428ac832464b43cb90dab5392a6933368b7fe56cc38e1a8103",
+    "@jscad/modeling": "2.13.0",
+    "@tscircuit/capacity-autorouter": "0.0.1037",
+    "@tscircuit/checks": "0.0.269",
+    "@tscircuit/circuit-json-util": "0.0.131",
+    "@tscircuit/core": "0.0.2266",
+    "@tscircuit/create-fdm-enclosure": "0.0.7",
+    "@tscircuit/footprinter": "0.0.450",
+    "@tscircuit/math-utils": "0.0.38",
+    "@tscircuit/ngspice-spice-engine": "0.0.20",
+    "@tscircuit/props": "0.0.718",
+    "circuit-json": "0.0.543",
+    "circuit-json-to-bom-csv": "0.0.28",
+    "circuit-json-to-gerber": "0.0.122",
+    "circuit-json-to-gltf": "0.0.164",
+    "circuit-json-to-kicad": "0.0.267",
+    "circuit-json-to-pnp-csv": "0.0.21",
+    "circuit-to-svg": "0.0.455",
+    "easyeda": "0.0.391",
+    "fflate": "0.8.3",
+    "jscad-planner": "0.0.14",
+    "kicad-to-circuit-json": "0.0.142",
+    "polygon-clipping": "0.15.7",
+    "react": "19.3.1",
+    "schematic-symbols": "0.0.251",
+    "tscircuit": "0.0.3075"
+  },
+  "gates": [
+    {
+      "gate": "erc",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "esp32-s3-core",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "usb-c-sink",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "ldo-ap2112-3v3",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "boot-reset-buttons",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "i2c-header",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "sht40-ad1b-3v3",
+          "message": "Block has not passed independent promotion review"
+        },
+        {
+          "rule": "usb-external-host",
+          "severity": "warning",
+          "where": "esp32-s3-core.USB, usb-c-sink.USB",
+          "message": "USB peripheral relies on an external host through the declared passive connector"
+        },
+        {
+          "rule": "layout-constraint-pending",
+          "severity": "warning",
+          "where": "esp32-s3-core",
+          "message": "Keepout realization must be checked against final imported PCB geometry"
+        },
+        {
+          "rule": "layout-constraint-pending",
+          "severity": "warning",
+          "where": "sht40-ad1b-3v3",
+          "message": "Keepout realization must be checked against final imported PCB geometry"
+        }
+      ]
+    },
+    {
+      "gate": "power",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "transient-unverified",
+          "severity": "warning",
+          "where": "ldo-ap2112-3v3.V3V3",
+          "message": "Peak current exceeds the continuous thermal budget; burst duration/decoupling require transient verification"
+        },
+        {
+          "rule": "thermal-assumption",
+          "severity": "warning",
+          "where": "ldo-ap2112-3v3.V3V3",
+          "message": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+        }
+      ]
+    },
+    {
+      "gate": "spice",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "spice-open-switch",
+          "severity": "warning",
+          "where": "esp32-s3-core.EN reaches75% VDD",
+          "message": "Explicit normally-open contacts held open: boot-reset-buttons.SW1; pressed/bounce behavior is not simulated"
+        },
+        {
+          "rule": "spice-coverage",
+          "severity": "warning",
+          "message": "Only declared isolated profiles are simulated; this is not whole-board analog verification"
+        },
+        {
+          "rule": "spice-evidence",
+          "severity": "warning",
+          "message": "Fixed netlists and raw engine results: /home/sogo/design-skill-research/repos/moki/var/board-jobs-test-chip/8b5225bc-4a2e-4cb6-beeb-c7b80efec6a9/spice/run-7HcLlu/output.json"
+        }
+      ],
+      "measurements": [
+        {
+          "where": "esp32-s3-core.EN reaches75% VDD",
+          "name": "rc-reset",
+          "measured": 13.862942128297528,
+          "target": 13.8629436,
+          "tolerance": 0.25,
+          "unit": "ms",
+          "ok": true
+        }
+      ],
+      "inputHash": "3ba357092793c5587b4e384927edff3937126d82b0889024c75cd09a03600c87"
+    },
+    {
+      "gate": "review",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "gate": "drc",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "gate": "block-test",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "block-pad-scope",
+          "severity": "warning",
+          "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+        },
+        {
+          "rule": "block-pad-scope",
+          "severity": "warning",
+          "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+        },
+        {
+          "rule": "block-pad-scope",
+          "severity": "warning",
+          "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+        },
+        {
+          "rule": "block-pad-scope",
+          "severity": "warning",
+          "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+        },
+        {
+          "rule": "block-pad-scope",
+          "severity": "warning",
+          "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+        },
+        {
+          "rule": "block-pad-scope",
+          "severity": "warning",
+          "message": "Actual physical pad presence/omission and native import correspondence checked; independent circuit review and DRC remain separate gates"
+        }
+      ],
+      "measurements": [
+        {
+          "where": "boot-reset-buttons.SW1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "boot-reset-buttons.SW2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "esp32-s3-core.U1",
+          "name": "native-physical-pads",
+          "measured": 41,
+          "target": 41,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "esp32-s3-core.C3",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "esp32-s3-core.C4",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "esp32-s3-core.C5",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "esp32-s3-core.R1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "esp32-s3-core.R2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "esp32-s3-core.R9",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "esp32-s3-core.R10",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "i2c-header.J2",
+          "name": "native-physical-pads",
+          "measured": 6,
+          "target": 6,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "i2c-header.R7",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "i2c-header.R8",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "ldo-ap2112-3v3.U2",
+          "name": "native-physical-pads",
+          "measured": 5,
+          "target": 5,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "ldo-ap2112-3v3.C1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "ldo-ap2112-3v3.C2",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "sht40.U1",
+          "name": "native-physical-pads",
+          "measured": 4,
+          "target": 4,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "sht40.C1",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "usb-c-sink.U3",
+          "name": "native-physical-pads",
+          "measured": 6,
+          "target": 6,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "usb-c-sink.J1",
+          "name": "native-physical-pads",
+          "measured": 16,
+          "target": 16,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "usb-c-sink.R3",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "usb-c-sink.R4",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "usb-c-sink.R5",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        },
+        {
+          "where": "usb-c-sink.R6",
+          "name": "native-physical-pads",
+          "measured": 2,
+          "target": 2,
+          "tolerance": 0,
+          "unit": "pads",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "gate": "verify",
+      "ok": true,
+      "issues": [],
+      "results": [
+        {
+          "id": "usb",
+          "status": "pass",
+          "measured": "usb_c_sink",
+          "target": "usb_c_sink",
+          "evidence": "Declared interface usb_c_sink is present"
+        },
+        {
+          "id": "size",
+          "target": [
+            60,
+            70
+          ],
+          "unit": "mm",
+          "status": "pass",
+          "measured": [
+            60,
+            70
+          ],
+          "evidence": "Board [width,height] 60 × 70 mm compared coordinatewise to 60 × 70 mm; no implicit rotation"
+        },
+        {
+          "id": "count",
+          "target": 24,
+          "status": "pass",
+          "measured": 24,
+          "evidence": "Count of declared parts across plan instances"
+        }
+      ]
+    },
+    {
+      "gate": "compile",
+      "ok": true,
+      "issues": []
+    }
+  ]
+}

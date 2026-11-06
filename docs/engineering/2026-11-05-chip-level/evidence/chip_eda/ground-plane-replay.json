@@ -1,0 +1,643 @@
+{
+  "scope": "native fanout replay only, not accepted PCB",
+  "durationMs": 2787.7466040000004,
+  "status": "solved",
+  "traceCount": 61,
+  "connections": 0,
+  "audit": {
+    "scope": "native-ground-plane-routing-input-only",
+    "connections": 61,
+    "aliases": [
+      {
+        "connection": "source_trace_2",
+        "ref": "U1",
+        "pad": "41",
+        "canonicalSourcePort": "source_port_40",
+        "aliasSourcePort": "source_port_41",
+        "pcbPort": "pcb_port_41",
+        "obstaclePad": "pcb_smtpad_41"
+      },
+      {
+        "connection": "source_trace_2",
+        "ref": "U1",
+        "pad": "41",
+        "canonicalSourcePort": "source_port_40",
+        "aliasSourcePort": "source_port_42",
+        "pcbPort": "pcb_port_42",
+        "obstaclePad": "pcb_smtpad_42"
+      },
+      {
+        "connection": "source_trace_2",
+        "ref": "U1",
+        "pad": "41",
+        "canonicalSourcePort": "source_port_40",
+        "aliasSourcePort": "source_port_43",
+        "pcbPort": "pcb_port_43",
+        "obstaclePad": "pcb_smtpad_43"
+      },
+      {
+        "connection": "source_trace_2",
+        "ref": "U1",
+        "pad": "41",
+        "canonicalSourcePort": "source_port_40",
+        "aliasSourcePort": "source_port_44",
+        "pcbPort": "pcb_port_44",
+        "obstaclePad": "pcb_smtpad_44"
+      },
+      {
+        "connection": "source_trace_2",
+        "ref": "U1",
+        "pad": "41",
+        "canonicalSourcePort": "source_port_40",
+        "aliasSourcePort": "source_port_45",
+        "pcbPort": "pcb_port_45",
+        "obstaclePad": "pcb_smtpad_45"
+      },
+      {
+        "connection": "source_trace_2",
+        "ref": "U1",
+        "pad": "41",
+        "canonicalSourcePort": "source_port_40",
+        "aliasSourcePort": "source_port_46",
+        "pcbPort": "pcb_port_46",
+        "obstaclePad": "pcb_smtpad_46"
+      },
+      {
+        "connection": "source_trace_2",
+        "ref": "U1",
+        "pad": "41",
+        "canonicalSourcePort": "source_port_40",
+        "aliasSourcePort": "source_port_47",
+        "pcbPort": "pcb_port_47",
+        "obstaclePad": "pcb_smtpad_47"
+      },
+      {
+        "connection": "source_trace_2",
+        "ref": "U1",
+        "pad": "41",
+        "canonicalSourcePort": "source_port_40",
+        "aliasSourcePort": "source_port_48",
+        "pcbPort": "pcb_port_48",
+        "obstaclePad": "pcb_smtpad_48"
+      },
+      {
+        "connection": "source_trace_45",
+        "ref": "U5",
+        "pad": "3",
+        "canonicalSourcePort": "source_port_175",
+        "aliasSourcePort": "source_port_179",
+        "pcbPort": "pcb_port_179",
+        "obstaclePad": "pcb_smtpad_175"
+      },
+      {
+        "connection": "source_trace_45",
+        "ref": "U5",
+        "pad": "3",
+        "canonicalSourcePort": "source_port_175",
+        "aliasSourcePort": "source_port_179",
+        "pcbPort": "pcb_port_179",
+        "obstaclePad": "pcb_smtpad_175"
+      },
+      {
+        "connection": "source_trace_45",
+        "ref": "U5",
+        "pad": "3",
+        "canonicalSourcePort": "source_port_175",
+        "aliasSourcePort": "source_port_179",
+        "pcbPort": "pcb_port_179",
+        "obstaclePad": "pcb_smtpad_175"
+      },
+      {
+        "connection": "source_trace_45",
+        "ref": "U5",
+        "pad": "3",
+        "canonicalSourcePort": "source_port_175",
+        "aliasSourcePort": "source_port_179",
+        "pcbPort": "pcb_port_179",
+        "obstaclePad": "pcb_smtpad_175"
+      },
+      {
+        "connection": "source_trace_45",
+        "ref": "U5",
+        "pad": "3",
+        "canonicalSourcePort": "source_port_175",
+        "aliasSourcePort": "source_port_179",
+        "pcbPort": "pcb_port_179",
+        "obstaclePad": "pcb_smtpad_175"
+      },
+      {
+        "connection": "source_trace_45",
+        "ref": "U5",
+        "pad": "3",
+        "canonicalSourcePort": "source_port_175",
+        "aliasSourcePort": "source_port_179",
+        "pcbPort": "pcb_port_179",
+        "obstaclePad": "pcb_smtpad_175"
+      },
+      {
+        "connection": "source_trace_45",
+        "ref": "U5",
+        "pad": "3",
+        "canonicalSourcePort": "source_port_175",
+        "aliasSourcePort": "source_port_179",
+        "pcbPort": "pcb_port_179",
+        "obstaclePad": "pcb_smtpad_175"
+      },
+      {
+        "connection": "source_trace_45",
+        "ref": "U5",
+        "pad": "3",
+        "canonicalSourcePort": "source_port_175",
+        "aliasSourcePort": "source_port_180",
+        "pcbPort": "pcb_port_180",
+        "obstaclePad": "pcb_smtpad_176"
+      },
+      {
+        "connection": "source_trace_45",
+        "ref": "U5",
+        "pad": "3",
+        "canonicalSourcePort": "source_port_175",
+        "aliasSourcePort": "source_port_180",
+        "pcbPort": "pcb_port_180",
+        "obstaclePad": "pcb_smtpad_176"
+      },
+      {
+        "connection": "source_trace_45",
+        "ref": "U5",
+        "pad": "3",
+        "canonicalSourcePort": "source_port_175",
+        "aliasSourcePort": "source_port_180",
+        "pcbPort": "pcb_port_180",
+        "obstaclePad": "pcb_smtpad_176"
+      },
+      {
+        "connection": "source_trace_45",
+        "ref": "U5",
+        "pad": "3",
+        "canonicalSourcePort": "source_port_175",
+        "aliasSourcePort": "source_port_180",
+        "pcbPort": "pcb_port_180",
+        "obstaclePad": "pcb_smtpad_176"
+      },
+      {
+        "connection": "source_trace_45",
+        "ref": "U5",
+        "pad": "3",
+        "canonicalSourcePort": "source_port_175",
+        "aliasSourcePort": "source_port_180",
+        "pcbPort": "pcb_port_180",
+        "obstaclePad": "pcb_smtpad_176"
+      },
+      {
+        "connection": "source_trace_45",
+        "ref": "U5",
+        "pad": "3",
+        "canonicalSourcePort": "source_port_175",
+        "aliasSourcePort": "source_port_180",
+        "pcbPort": "pcb_port_180",
+        "obstaclePad": "pcb_smtpad_176"
+      },
+      {
+        "connection": "source_trace_45",
+        "ref": "U5",
+        "pad": "3",
+        "canonicalSourcePort": "source_port_175",
+        "aliasSourcePort": "source_port_180",
+        "pcbPort": "pcb_port_180",
+        "obstaclePad": "pcb_smtpad_176"
+      },
+      {
+        "connection": "source_trace_45",
+        "ref": "U5",
+        "pad": "3",
+        "canonicalSourcePort": "source_port_175",
+        "aliasSourcePort": "source_port_181",
+        "pcbPort": "pcb_port_181",
+        "obstaclePad": "pcb_smtpad_177"
+      },
+      {
+        "connection": "source_trace_45",
+        "ref": "U5",
+        "pad": "3",
+        "canonicalSourcePort": "source_port_175",
+        "aliasSourcePort": "source_port_181",
+        "pcbPort": "pcb_port_181",
+        "obstaclePad": "pcb_smtpad_177"
+      },
+      {
+        "connection": "source_trace_45",
+        "ref": "U5",
+        "pad": "3",
+        "canonicalSourcePort": "source_port_175",
+        "aliasSourcePort": "source_port_181",
+        "pcbPort": "pcb_port_181",
+        "obstaclePad": "pcb_smtpad_177"
+      },
+      {
+        "connection": "source_trace_45",
+        "ref": "U5",
+        "pad": "3",
+        "canonicalSourcePort": "source_port_175",
+        "aliasSourcePort": "source_port_181",
+        "pcbPort": "pcb_port_181",
+        "obstaclePad": "pcb_smtpad_177"
+      },
+      {
+        "connection": "source_trace_45",
+        "ref": "U5",
+        "pad": "3",
+        "canonicalSourcePort": "source_port_175",
+        "aliasSourcePort": "source_port_181",
+        "pcbPort": "pcb_port_181",
+        "obstaclePad": "pcb_smtpad_177"
+      },
+      {
+        "connection": "source_trace_45",
+        "ref": "U5",
+        "pad": "3",
+        "canonicalSourcePort": "source_port_175",
+        "aliasSourcePort": "source_port_181",
+        "pcbPort": "pcb_port_181",
+        "obstaclePad": "pcb_smtpad_177"
+      },
+      {
+        "connection": "source_trace_45",
+        "ref": "U5",
+        "pad": "3",
+        "canonicalSourcePort": "source_port_175",
+        "aliasSourcePort": "source_port_181",
+        "pcbPort": "pcb_port_181",
+        "obstaclePad": "pcb_smtpad_177"
+      }
+    ],
+    "directions": [
+      {
+        "connection": "source_trace_0",
+        "ref": "U1",
+        "pad": "1",
+        "direction": "left"
+      },
+      {
+        "connection": "source_trace_1",
+        "ref": "U1",
+        "pad": "40",
+        "direction": "right"
+      },
+      {
+        "connection": "source_trace_2",
+        "ref": "U1",
+        "pad": "41",
+        "direction": "left"
+      },
+      {
+        "connection": "source_trace_3",
+        "ref": "C3",
+        "pad": "2",
+        "direction": "right"
+      },
+      {
+        "connection": "source_trace_4",
+        "ref": "C4",
+        "pad": "2",
+        "direction": "up"
+      },
+      {
+        "connection": "source_trace_5",
+        "ref": "C5",
+        "pad": "2",
+        "direction": "up"
+      },
+      {
+        "connection": "source_trace_6",
+        "ref": "R9",
+        "pad": "2",
+        "direction": "right"
+      },
+      {
+        "connection": "source_trace_7",
+        "ref": "R10",
+        "pad": "2",
+        "direction": "right"
+      },
+      {
+        "connection": "source_trace_8",
+        "ref": "U3",
+        "pad": "2",
+        "direction": "down"
+      },
+      {
+        "connection": "source_trace_9",
+        "ref": "J1",
+        "pad": "1",
+        "direction": "up"
+      },
+      {
+        "connection": "source_trace_10",
+        "ref": "J1",
+        "pad": "2",
+        "direction": "down"
+      },
+      {
+        "connection": "source_trace_11",
+        "ref": "J1",
+        "pad": "3",
+        "direction": "down"
+      },
+      {
+        "connection": "source_trace_12",
+        "ref": "J1",
+        "pad": "4",
+        "direction": "up"
+      },
+      {
+        "connection": "source_trace_13",
+        "ref": "J1",
+        "pad": "A1B12",
+        "direction": "up"
+      },
+      {
+        "connection": "source_trace_14",
+        "ref": "J1",
+        "pad": "B1A12",
+        "direction": "up"
+      },
+      {
+        "connection": "source_trace_15",
+        "ref": "R3",
+        "pad": "2",
+        "direction": "up"
+      },
+      {
+        "connection": "source_trace_16",
+        "ref": "R4",
+        "pad": "2",
+        "direction": "up"
+      },
+      {
+        "connection": "source_trace_17",
+        "ref": "SW1",
+        "pad": "2",
+        "direction": "right"
+      },
+      {
+        "connection": "source_trace_18",
+        "ref": "SW2",
+        "pad": "2",
+        "direction": "right"
+      },
+      {
+        "connection": "source_trace_19",
+        "ref": "J2",
+        "pad": "1",
+        "direction": "down"
+      },
+      {
+        "connection": "source_trace_20",
+        "ref": "U2",
+        "pad": "4",
+        "direction": "left"
+      },
+      {
+        "connection": "source_trace_21",
+        "ref": "U2",
+        "pad": "6",
+        "direction": "down"
+      },
+      {
+        "connection": "source_trace_22",
+        "ref": "U2",
+        "pad": "8",
+        "direction": "down"
+      },
+      {
+        "connection": "source_trace_23",
+        "ref": "U2",
+        "pad": "17",
+        "direction": "right"
+      },
+      {
+        "connection": "source_trace_24",
+        "ref": "J3",
+        "pad": "1",
+        "direction": "up"
+      },
+      {
+        "connection": "source_trace_25",
+        "ref": "R11",
+        "pad": "2",
+        "direction": "up"
+      },
+      {
+        "connection": "source_trace_26",
+        "ref": "R12",
+        "pad": "2",
+        "direction": "up"
+      },
+      {
+        "connection": "source_trace_27",
+        "ref": "C1",
+        "pad": "2",
+        "direction": "up"
+      },
+      {
+        "connection": "source_trace_28",
+        "ref": "C2",
+        "pad": "2",
+        "direction": "right"
+      },
+      {
+        "connection": "source_trace_29",
+        "ref": "C6",
+        "pad": "2",
+        "direction": "up"
+      },
+      {
+        "connection": "source_trace_30",
+        "ref": "C7",
+        "pad": "2",
+        "direction": "right"
+      },
+      {
+        "connection": "source_trace_31",
+        "ref": "C8",
+        "pad": "2",
+        "direction": "up"
+      },
+      {
+        "connection": "source_trace_32",
+        "ref": "C9",
+        "pad": "2",
+        "direction": "right"
+      },
+      {
+        "connection": "source_trace_33",
+        "ref": "J4",
+        "pad": "1",
+        "direction": "up"
+      },
+      {
+        "connection": "source_trace_34",
+        "ref": "U4",
+        "pad": "3",
+        "direction": "left"
+      },
+      {
+        "connection": "source_trace_35",
+        "ref": "U4",
+        "pad": "7",
+        "direction": "right"
+      },
+      {
+        "connection": "source_trace_36",
+        "ref": "U4",
+        "pad": "9",
+        "direction": "right"
+      },
+      {
+        "connection": "source_trace_37",
+        "ref": "U4",
+        "pad": "11",
+        "direction": "right"
+      },
+      {
+        "connection": "source_trace_38",
+        "ref": "C10",
+        "pad": "2",
+        "direction": "up"
+      },
+      {
+        "connection": "source_trace_39",
+        "ref": "C11",
+        "pad": "2",
+        "direction": "right"
+      },
+      {
+        "connection": "source_trace_40",
+        "ref": "C12",
+        "pad": "2",
+        "direction": "up"
+      },
+      {
+        "connection": "source_trace_41",
+        "ref": "C13",
+        "pad": "2",
+        "direction": "right"
+      },
+      {
+        "connection": "source_trace_42",
+        "ref": "C14",
+        "pad": "2",
+        "direction": "up"
+      },
+      {
+        "connection": "source_trace_43",
+        "ref": "C15",
+        "pad": "2",
+        "direction": "right"
+      },
+      {
+        "connection": "source_trace_44",
+        "ref": "U5",
+        "pad": "2",
+        "direction": "down"
+      },
+      {
+        "connection": "source_trace_45",
+        "ref": "U5",
+        "pad": "3",
+        "direction": "right"
+      },
+      {
+        "connection": "source_trace_46",
+        "ref": "C16",
+        "pad": "2",
+        "direction": "up"
+      },
+      {
+        "connection": "source_trace_47",
+        "ref": "R13",
+        "pad": "2",
+        "direction": "right"
+      },
+      {
+        "connection": "source_trace_48",
+        "ref": "U6",
+        "pad": "2",
+        "direction": "down"
+      },
+      {
+        "connection": "source_trace_49",
+        "ref": "U6",
+        "pad": "3",
+        "direction": "down"
+      },
+      {
+        "connection": "source_trace_50",
+        "ref": "U6",
+        "pad": "11",
+        "direction": "up"
+      },
+      {
+        "connection": "source_trace_51",
+        "ref": "U6",
+        "pad": "15",
+        "direction": "left"
+      },
+      {
+        "connection": "source_trace_52",
+        "ref": "U6",
+        "pad": "17",
+        "direction": "down"
+      },
+      {
+        "connection": "source_trace_53",
+        "ref": "C17",
+        "pad": "2",
+        "direction": "right"
+      },
+      {
+        "connection": "source_trace_54",
+        "ref": "C18",
+        "pad": "2",
+        "direction": "right"
+      },
+      {
+        "connection": "source_trace_55",
+        "ref": "J6",
+        "pad": "1",
+        "direction": "up"
+      },
+      {
+        "connection": "source_trace_56",
+        "ref": "D1",
+        "pad": "3",
+        "direction": "right"
+      },
+      {
+        "connection": "source_trace_57",
+        "ref": "U7",
+        "pad": "1",
+        "direction": "right"
+      },
+      {
+        "connection": "source_trace_58",
+        "ref": "U7",
+        "pad": "3",
+        "direction": "right"
+      },
+      {
+        "connection": "source_trace_59",
+        "ref": "C19",
+        "pad": "2",
+        "direction": "right"
+      },
+      {
+        "connection": "source_trace_60",
+        "ref": "C20",
+        "pad": "2",
+        "direction": "up"
+      }
+    ],
+    "requiresNativeDrcAndPhysicalCopperGate": true
+  }
+}

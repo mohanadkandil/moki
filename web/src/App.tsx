@@ -3,7 +3,12 @@ import Workspace from "./Workspace";
 import GalleryPreview from "./GalleryPreview";
 import RecentProjects from './RecentProjects';
 import type { Project as WorkshopProject } from '../../server/project-store';
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { atBase } from './board/base';
+import ProjectPage from './landing/ProjectPage';
+import { navigate, parseRoute, useLocationKey } from './landing/routes';
+import { beginProject, takeFailure, useStarting } from './landing/startProject';
+import { StudioShell } from './landing/StudioShell';
+import { lazy, Suspense, useEffect, useRef, useState, type FormEvent } from "react";
 import {
   ArrowUpRight,
   ArrowUp,
@@ -20,6 +25,9 @@ import {
   Image as ImageIcon,
   FileText,
 } from "lucide-react";
+const CircuitLab = lazy(() => import("./circuit/CircuitLab"));
+const Studio = lazy(() => import("./studio/Studio"));
+const ComposerEffort = lazy(() => import("./ComposerEffort"));
 
 type Project = {
   concept: "timer" | "synth" | "lamp";
@@ -36,7 +44,7 @@ const projects: Project[] = [
     concept: "timer",
     name: "A little more focus.",
     category: "Electronics",
-    image: "/images/pebble.webp",
+    image: atBase("/images/pebble.webp"),
     description:
       "A tactile desk timer that makes room for one thing at a time.",
     prompt:
@@ -48,7 +56,7 @@ const projects: Project[] = [
     concept: "synth",
     name: "Good things make noise.",
     category: "Electronics",
-    image: "/images/pocket-synth.webp",
+    image: atBase("/images/pocket-synth.webp"),
     description:
       "A pocket-sized synthesizer for happy accidents and tiny concerts.",
     prompt:
@@ -60,7 +68,7 @@ const projects: Project[] = [
     concept: "lamp",
     name: "Your own little sun.",
     category: "Everyday objects",
-    image: "/images/little-sun.webp",
+    image: atBase("/images/little-sun.webp"),
     description:
       "A warm, adjustable desk light with a quietly cheerful personality.",
     prompt:
@@ -70,18 +78,40 @@ const projects: Project[] = [
   },
 ];
 
+// The circuit preview lives at <base>/lab. Relative links keep it working under a path prefix.
+
+const Opening = ({ what }: { what: string }) => <div className="studio-opening" role="status">Opening {what}…</div>;
+
 export default function App() {
+  useLocationKey();
+  const starting = useStarting();
+  const route = parseRoute(window.location.pathname, window.location.search, import.meta.env.BASE_URL);
+  const redirected = route.kind === 'landing' && /\/studio\/?$/.test(window.location.pathname);
+  // Plain /studio has no project to show, so the address changes to match the landing it now shows.
+  useEffect(() => { if (redirected) navigate(import.meta.env.BASE_URL, { replace: true }); }, [redirected]);
+  if (starting) return <StudioShell hint={starting} />;
+  switch (route.kind) {
+    case 'project': return <ProjectPage key={route.projectId} projectId={route.projectId} />;
+    case 'studio': return <Suspense fallback={<Opening what="the studio" />}><Studio /></Suspense>;
+    case 'lab': return <Suspense fallback={<Opening what="the circuit preview" />}><CircuitLab /></Suspense>;
+    // The landing, and old /workshop/<id> links, which it opens itself.
+    default: return <LandingApp />;
+  }
+}
+
+function LandingApp() {
   const initialId = window.location.pathname.match(/^\/workshop\/([a-f0-9-]{36})$/)?.[1];
-  const [idea, setIdea] = useState('');
+  // A start that failed comes back here, with what the maker wrote and why it didn't work.
+  const [failure] = useState(takeFailure);
+  const [idea, setIdea] = useState(failure?.brief ?? '');
   const [paused, setPaused] = useState(false);
   const [filter, setFilter] = useState("All ideas");
   const [selected, setSelected] = useState<Project | null>(null);
   const [project, setProject] = useState<WorkshopProject | null>(null);
   const [opening, setOpening] = useState(Boolean(initialId));
-  const [starting, setStarting] = useState(false);
   const draft = project?.brief ?? null;
   const [reference, setReference] = useState<File | null>(null);
-  const [fileError, setFileError] = useState("");
+  const [fileError, setFileError] = useState(failure?.error ?? "");
   const input = useRef<HTMLTextAreaElement>(null);
   const fileInput = useRef<HTMLInputElement>(null);
   const dialog = useRef<HTMLDialogElement>(null);
@@ -134,6 +164,11 @@ export default function App() {
   useEffect(() => {
     if (draft === null) document.title = "Moki — little ideas, real things.";
   }, [draft]);
+  // The studio is the next thing anyone here wants, so have it ready before they send a brief.
+  useEffect(() => {
+    const timer = window.setTimeout(() => { void import("./studio/Studio"); }, 1200);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   function focusComposer() {
     document.getElementById("make")?.scrollIntoView({
@@ -145,20 +180,13 @@ export default function App() {
     input.current?.focus({ preventScroll: true });
   }
   function useProject(project: Project) {
-    setIdea(project.prompt);
     setSelected(null);
-    requestAnimationFrame(focusComposer);
+    void beginProject(project.prompt);
   }
   async function submit(event?: FormEvent) {
     event?.preventDefault();
-    if (!idea.trim() || starting) return;
-    setStarting(true); setFileError('');
-    try {
-      const response = await fetch('/api/projects', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ brief: idea.trim() }) });
-      const value = await response.json(); if (!response.ok) throw new Error(value.error || 'Could not create your workshop');
-      setProject(value); window.history.pushState({}, '', `/workshop/${value.id}`); window.scrollTo(0, 0);
-    } catch (error) { setFileError(error instanceof Error ? error.message : 'Could not create your workshop'); }
-    finally { setStarting(false); }
+    if (!idea.trim()) return;
+    await beginProject(idea.trim());
   }
 
   if (opening) return <div className="studio-opening" role="status">Opening your workshop…</div>;
@@ -244,15 +272,14 @@ export default function App() {
                   <Plus size={19} />
                 </button>
                 <span className="tools-divider" />
-                <Ink className="composer-ink" />
-                <span className="composer-hint">
-                  Your little invention workshop
-                </span>
+                <Suspense fallback={<><Ink className="composer-ink" /><span className="composer-hint">Your little invention workshop</span></>}>
+                  <ComposerEffort mark={<Ink className="composer-ink" />} />
+                </Suspense>
               </div>
               <button
                 className="send-button"
                 type="submit"
-                disabled={!idea.trim() || starting}
+                disabled={!idea.trim()}
                 aria-label="Start your project"
               >
                 <ArrowUp size={21} />
@@ -271,7 +298,8 @@ export default function App() {
                   e.target.value = "";
                   return;
                 }
-                setFileError("");
+                // The studio can't use one yet, so say so here rather than quietly dropping it at submit.
+                setFileError(file ? "The studio can’t use reference images yet, so this one won’t be part of the build." : "");
                 setReference(file || null);
               }}
             />

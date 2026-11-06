@@ -1,0 +1,260 @@
+/* The Schematic tab is one sheet of paper, edge to edge. Everything on it floats, and it all belongs to the same paper as the chat. */
+.sc-canvas {
+  --sc-paper: #f6f2e9;
+  --sc-dot: rgb(88 74 50 / 0.26);
+  --sc-ink: #2b2720;
+  --sc-ink-2: #5c564a;
+  --sc-ink-3: #7c7567;
+  --sc-rule: #b4ab97;
+  --sc-frame: #8a8272;
+  --sc-wire: #1f6b5a;
+  --sc-power: #27598a;
+  --sc-ground: #3e3a32;
+  --sc-body: #fffdf6;
+  --sc-pick: var(--accent);
+  --sc-add: #1c7248;
+  --sc-remove: #b3261e;
+  position: absolute; inset: 0; overflow: hidden; outline: 0; touch-action: none; user-select: none;
+  background-color: var(--sc-paper);
+  background-image: radial-gradient(circle, var(--sc-dot) 0.8px, transparent 1.1px);
+  cursor: default;
+}
+.sc-canvas.no-grid { background-image: none; }
+.sc-canvas[data-tool="hand"] { cursor: grab; }
+.sc-canvas[data-tool="hand"]:active { cursor: grabbing; }
+.sc-canvas[data-tool="wire"], .sc-canvas[data-tool="measure"], .sc-canvas[data-tool="text"] { cursor: crosshair; }
+.sc-canvas[data-tool="text"] { cursor: text; }
+.sc-svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; overflow: visible; }
+
+/* The drawing. Sizes are sheet millimetres. */
+.sc-sheet text { font-family: var(--font-mono); fill: var(--sc-ink-2); text-rendering: geometricPrecision; pointer-events: none; }
+.sc-frame, .sc-frame-outer { fill: none; stroke: var(--sc-frame); stroke-width: 0.26px; }
+.sc-frame-outer { stroke-width: 0.18px; }
+.sc-frame-tick { stroke: var(--sc-frame); stroke-width: 0.18px; }
+.sc-sheet text.sc-zone { font-size: 2.1px; fill: var(--sc-ink-3); }
+.sc-section-box { fill: rgb(255 253 246 / 0.42); stroke: var(--sc-rule); stroke-width: 0.26px; stroke-dasharray: 1.6 1; }
+.sc-section.is-added .sc-section-box { stroke: var(--sc-add); stroke-width: 0.36px; fill: color-mix(in srgb, var(--sc-add) 6%, transparent); }
+.sc-section.is-added text.sc-section-title { fill: var(--sc-add); }
+.sc-sheet text.sc-section-title { font-family: var(--font-ui); font-size: 3.2px; font-weight: 600; fill: var(--sc-ink); }
+.sc-sheet text.sc-note { font-family: var(--font-ui); font-size: 2.05px; fill: var(--sc-ink-2); }
+.sc-sheet text.sc-reference { font-size: 1.8px; fill: var(--sc-power); }
+.sc-sheet text.sc-tb-key { font-family: var(--font-ui); font-size: 1.7px; fill: var(--sc-ink-3); }
+.sc-sheet text.sc-tb-value { font-family: var(--font-ui); font-size: 2.4px; font-weight: 600; fill: var(--sc-ink); }
+.sc-body { fill: var(--sc-body); stroke: var(--sc-ink); stroke-width: 0.28px; stroke-linejoin: round; }
+.sc-lead { fill: none; stroke: var(--sc-ink); stroke-width: 0.28px; stroke-linecap: round; }
+.sc-dot { fill: var(--sc-ink); }
+.sc-wire { fill: none; stroke: var(--sc-wire); stroke-width: 0.26px; stroke-linecap: round; }
+.sc-junction { fill: var(--sc-wire); }
+.sc-sheet text.sc-ref { font-family: var(--font-ui); font-size: 2.3px; font-weight: 700; fill: var(--sc-ink); }
+.sc-sheet text.sc-name { font-family: var(--font-ui); font-size: 1.9px; fill: var(--sc-ink-2); }
+.sc-sheet text.sc-value { font-size: 1.85px; fill: var(--sc-ink-2); }
+.sc-sheet text.sc-pin-label { font-size: 1.85px; fill: var(--sc-ink); }
+.sc-sheet text.sc-pin-number { font-size: 1.35px; fill: var(--sc-ink-3); }
+.sc-sheet text.sc-tag-text { font-size: 1.85px; font-weight: 500; }
+.sc-flag.is-label .sc-tag { fill: rgb(31 107 90 / 0.07); stroke: var(--sc-wire); stroke-width: 0.2px; stroke-linejoin: round; }
+.sc-flag.is-label text.sc-tag-text { fill: var(--sc-wire); }
+.sc-flag.is-power path { fill: none; stroke: var(--sc-power); stroke-width: 0.42px; stroke-linecap: round; }
+.sc-flag.is-power text.sc-tag-text { fill: var(--sc-power); font-weight: 600; }
+.sc-flag.is-ground path { fill: none; stroke: var(--sc-ground); stroke-width: 0.32px; stroke-linecap: round; }
+.sc-flag.is-ground text.sc-tag-text { fill: var(--sc-ground); }
+.sc-nc { fill: none; stroke: var(--sc-ink-3); stroke-width: 0.24px; stroke-linecap: round; }
+.sc-missing { fill: var(--sc-paper); stroke: var(--sc-pick); stroke-width: 0.3px; }
+.sc-pin.is-missing .sc-wire { stroke: var(--sc-pick); stroke-dasharray: .7 .5; }
+.sc-sheet.is-small text.sc-pin-label, .sc-sheet.is-small text.sc-tag-text, .sc-sheet.is-small text.sc-value { font-size: 1.4px; }
+.sc-sheet.is-small text.sc-pin-number { font-size: 1px; }
+.sc-sheet.is-small text.sc-note, .sc-sheet.is-small text.sc-name { font-size: 1.55px; }
+.sc-sheet.is-small text.sc-ref { font-size: 1.8px; }
+.sc-sheet.is-small text.sc-section-title { font-size: 2.5px; }
+
+/* A chip board's ports, under each section's title: the only place its blocks join. */
+.sc-port rect { fill: var(--sc-body); stroke: var(--sc-rule); stroke-width: 0.2px; }
+.sc-sheet .sc-port text { font-size: 1.7px; fill: var(--sc-ink-3); }
+.sc-port.is-linked rect { stroke: var(--sc-wire); }
+.sc-sheet .sc-port.is-linked text { fill: var(--sc-wire); }
+.sc-port.is-linked.is-power rect { stroke: var(--sc-power); }
+.sc-sheet .sc-port.is-linked.is-power text { fill: var(--sc-power); }
+.sc-port.is-linked.is-ground rect { stroke: var(--sc-ground); }
+.sc-sheet .sc-port.is-linked.is-ground text { fill: var(--sc-ground); }
+.sc-canvas[data-tool="wire"] .sc-port, .sc-canvas[data-tool="delete"] .sc-port { cursor: pointer; }
+.sc-canvas[data-tool="wire"] .sc-port rect { stroke-width: 0.3px; }
+.sc-canvas[data-tool="wire"] .sc-port:hover rect, .sc-canvas[data-tool="delete"] .sc-port:hover rect { fill: color-mix(in srgb, var(--sc-pick) 14%, var(--sc-body)); stroke: var(--sc-pick); }
+.sc-port.is-from rect { fill: var(--sc-pick); stroke: var(--sc-pick); }
+.sc-sheet .sc-port.is-from text { fill: var(--accent-ink); font-weight: 600; }
+.sc-port.is-dim { opacity: 0.32; }
+.sc-port.is-added rect { stroke: var(--sc-add); stroke-width: 0.36px; fill: color-mix(in srgb, var(--sc-add) 10%, var(--sc-body)); }
+.sc-sheet .sc-port.is-added text { fill: var(--sc-add); }
+.sc-port.is-removed rect { stroke: var(--sc-remove); stroke-dasharray: .7 .5; }
+.sc-sheet .sc-port.is-removed text { fill: var(--sc-remove); }
+
+/* Hit areas, drawn in nothing. */
+.sc-part-hit, .sc-pin-hit { fill: transparent; }
+.sc-wire-hit { fill: none; stroke: transparent; stroke-width: 1.8px; pointer-events: stroke; }
+.sc-canvas[data-tool="hand"] .sc-part-hit, .sc-canvas[data-tool="hand"] .sc-pin-hit { pointer-events: none; }
+.sc-canvas[data-tool="select"] .sc-part-hit, .sc-canvas[data-tool="select"] .sc-pin-hit, .sc-canvas[data-tool="select"] .sc-wire-hit { cursor: pointer; }
+.sc-canvas[data-tool="delete"] .sc-part-hit, .sc-canvas[data-tool="delete"] .sc-pin-hit, .sc-canvas[data-tool="delete"] .sc-wire-hit { cursor: not-allowed; }
+.sc-canvas[data-tool="wire"] .sc-pin-hit, .sc-canvas[data-tool="power"] .sc-pin-hit, .sc-canvas[data-tool="label"] .sc-pin-hit { cursor: cell; }
+.sc-canvas[data-tool="wire"] .sc-pin-hit:hover, .sc-canvas[data-tool="label"] .sc-pin-hit:hover, .sc-canvas[data-tool="power"] .sc-pin-hit:hover, .sc-canvas[data-tool="delete"] .sc-pin-hit:hover { fill: color-mix(in srgb, var(--sc-pick) 28%, transparent); }
+.sc-part:hover .sc-part-hit { fill: rgb(184 76 21 / 0.05); }
+.sc-canvas[data-tool="wire"] .sc-part:hover .sc-part-hit, .sc-canvas[data-tool="hand"] .sc-part:hover .sc-part-hit { fill: transparent; }
+.sc-pick { fill: color-mix(in srgb, var(--sc-pick) 7%, transparent); stroke: var(--sc-pick); stroke-width: 0.34px; pointer-events: none; }
+
+/* A net in hand: everything else steps back. */
+.sc-sheet.has-net .sc-pin, .sc-sheet.has-net .sc-trunk { opacity: 0.3; }
+.sc-sheet.has-net .sc-pin[data-net], .sc-sheet.has-net .sc-trunk[data-net] { transition: opacity 120ms; }
+
+/* The draft. New is green, gone is struck through and pale. */
+.sc-part.is-added .sc-body, .sc-part.is-added .sc-lead { stroke: var(--sc-add); stroke-width: 0.36px; }
+.sc-part.is-added .sc-chip { fill: color-mix(in srgb, var(--sc-add) 7%, var(--sc-body)); stroke-dasharray: 1 .6; }
+.sc-part.is-added text.sc-ref { fill: var(--sc-add); }
+.sc-part.is-removed { opacity: 0.42; }
+.sc-part.is-removed .sc-body, .sc-part.is-removed .sc-lead { stroke: var(--sc-remove); stroke-dasharray: .8 .6; }
+.sc-part.is-removed text.sc-ref { fill: var(--sc-remove); text-decoration: line-through; }
+.sc-pin.is-added .sc-wire { stroke: var(--sc-add); stroke-width: 0.42px; }
+.sc-pin.is-added .sc-flag.is-label .sc-tag { stroke: var(--sc-add); fill: rgb(28 114 72 / 0.12); }
+.sc-pin.is-added .sc-flag text.sc-tag-text { fill: var(--sc-add); }
+.sc-pin.is-added .sc-flag path { stroke: var(--sc-add); }
+.sc-pin.is-removed .sc-wire { stroke: var(--sc-remove); stroke-dasharray: .8 .6; }
+.sc-sheet text.sc-was { font-size: 1.6px; fill: var(--sc-remove); text-decoration: line-through; }
+
+.sc-rubber { fill: none; stroke: var(--sc-pick); stroke-width: 0.32px; stroke-dasharray: 1 .7; pointer-events: none; }
+.sc-measure { stroke: var(--sc-pick); stroke-width: 0.3px; pointer-events: none; }
+.sc-measure-end { fill: var(--sc-pick); pointer-events: none; }
+
+/* Live: a new part fades up where it lands, and the rest slide to make room. */
+.sc-sheet.is-live .sc-part, .sc-sheet.is-live .sc-section, .sc-sheet.is-live .sc-trunk { animation: sc-land 340ms var(--ease) both; }
+@keyframes sc-land { from { opacity: 0; } to { opacity: 1; } }
+
+/* Everything that floats. */
+.sc-rail { position: absolute; top: 50%; transform: translateY(-50%); z-index: 80; display: flex; flex-direction: column; align-items: stretch; gap: 1px; padding: 4px; background: var(--paper-raised); border-radius: 12px; box-shadow: 0 0 0 1px rgb(60 50 30 / 0.14), 0 8px 22px -14px rgb(60 50 30 / 0.45); max-height: calc(100% - 104px); overflow-y: auto; scrollbar-width: none; }
+.sc-rail::-webkit-scrollbar { display: none; }
+.sc-rail-view { left: 12px; }
+.sc-rail-tools { right: 12px; }
+.sc-tool { position: relative; flex: none; width: 54px; padding: 6px 0 5px; display: flex; flex-direction: column; align-items: center; gap: 3px; border-radius: 8px; color: var(--ink-2); font-size: 10.5px; font-weight: 500; line-height: 1.1; }
+.sc-tool span { white-space: nowrap; }
+.sc-tool:hover:not(:disabled) { background: var(--paper-sunk); color: var(--ink); }
+.sc-tool:disabled { opacity: 0.38; }
+.sc-tool[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.sc-rail-view .sc-tool[aria-pressed="true"] { background: var(--paper-sunk); color: var(--ink); box-shadow: inset 0 0 0 1px var(--rule); }
+.sc-tool:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.sc-rail-split { flex: none; height: 1px; margin: 4px 8px; background: var(--rule); }
+.sc-tool-slot { display: block; flex: none; }
+.sc-tip { position: absolute; z-index: 96; transform: translateY(-50%); max-width: 280px; padding: 4px 9px; border-radius: 7px; background: var(--ink); color: var(--paper); font-size: 12px; font-weight: 500; white-space: pre-wrap; pointer-events: none; animation: sc-tip 90ms linear 300ms both; }
+@keyframes sc-tip { from { opacity: 0; } to { opacity: 1; } }
+@media (hover: none) { .sc-tip { display: none; } }
+
+.sc-zoom { bottom: 42px; }
+
+.sc-live { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); z-index: 85; display: flex; align-items: center; gap: 7px; max-width: calc(100% - 200px); padding: 6px 13px; border-radius: 999px; background: var(--paper-raised); box-shadow: 0 0 0 1px rgb(60 50 30 / 0.14), 0 8px 22px -14px rgb(60 50 30 / 0.45); font-size: 13px; color: var(--ink-2); white-space: nowrap; overflow: hidden; }
+.sc-live strong { font-weight: 600; color: var(--ink); }
+.sc-live span:last-child { overflow: hidden; text-overflow: ellipsis; }
+.sc-live-dot { flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: sc-pulse 1.4s ease-in-out infinite; }
+@keyframes sc-pulse { 50% { opacity: 0.35; } }
+
+.sc-hint { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); z-index: 84; max-width: calc(100% - 200px); margin: 0; padding: 6px 12px; border-radius: 9px; background: var(--ink); color: var(--paper); font-size: 12.5px; text-align: center; pointer-events: none; }
+.sc-hint strong { font-weight: 600; }
+
+.sc-draft { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); z-index: 90; width: min(600px, calc(100% - 180px)); display: grid; gap: 6px; padding: 7px 8px; border-radius: 12px; background: var(--paper-raised); box-shadow: 0 0 0 1px rgb(60 50 30 / 0.16), 0 12px 28px -16px rgb(60 50 30 / 0.55); font-size: 13px; color: var(--ink); }
+.sc-draft-row { display: flex; align-items: center; gap: 4px; min-width: 0; }
+.sc-draft-text { flex: 1; min-width: 0; display: flex; align-items: baseline; gap: 8px; padding-left: 6px; }
+.sc-draft-text strong { flex: none; font-weight: 600; }
+.sc-draft-text span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--ink-2); }
+.sc-refused { margin: 0; padding: 2px 6px 3px; color: var(--error); font-size: 13px; line-height: 1.35; }
+.sc-draft-note { margin: 0; padding: 2px 6px 3px; color: var(--ink-2); font-size: 13px; line-height: 1.35; }
+/* A long reason stays a reason. The whole text is on hover. */
+.sc-refused, .sc-draft-note { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+.sc-params { display: grid; gap: 1px; margin: 4px -6px 2px; }
+.sc-param { display: flex; justify-content: space-between; gap: 10px; padding: 5px 6px; border-radius: 7px; font-size: 12.5px; color: var(--ink); }
+.sc-param:hover:not(:disabled) { background: var(--paper-sunk); }
+.sc-param em { font-style: normal; font-family: var(--font-mono); font-size: 12px; color: var(--ink-2); }
+.sc-draft:not(:has(.sc-draft-row)) { width: auto; max-width: min(520px, calc(100% - 180px)); }
+
+.sc-icon-button { flex: none; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 8px; color: var(--ink-2); }
+.sc-icon-button:hover:not(:disabled) { background: var(--paper-sunk); color: var(--ink); }
+.sc-icon-button:disabled { opacity: 0.35; }
+.sc-text-button { flex: none; height: 30px; padding: 0 10px; border-radius: 8px; font-size: 13px; font-weight: 500; color: var(--ink-2); }
+.sc-text-button:hover:not(:disabled) { background: var(--paper-sunk); color: var(--ink); }
+.sc-text-button:disabled { opacity: 0.4; }
+.sc-solid-button { flex: none; height: 30px; padding: 0 13px; border-radius: 8px; background: var(--accent); color: var(--accent-ink); font-size: 13px; font-weight: 600; }
+.sc-solid-button:hover:not(:disabled) { background: var(--accent-hover); }
+.sc-solid-button:disabled { opacity: 0.5; }
+.sc-draft :focus-visible, .sc-prompt :focus-visible, .sc-inspector :focus-visible, .sc-library :focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+.sc-prompt { position: absolute; z-index: 95; width: 240px; display: grid; gap: 8px; padding: 10px; border-radius: 12px; background: var(--paper-raised); box-shadow: 0 0 0 1px rgb(60 50 30 / 0.16), 0 14px 30px -16px rgb(60 50 30 / 0.6); font-size: 13px; color: var(--ink); }
+.sc-prompt label { display: grid; gap: 5px; }
+.sc-prompt label span, .sc-prompt-title { font-size: 12.5px; font-weight: 500; color: var(--ink-2); }
+.sc-prompt input { height: 32px; padding: 0 9px; border-radius: 8px; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); font: inherit; user-select: text; }
+.sc-prompt input:focus { outline: 2px solid var(--accent); outline-offset: -1px; border-color: transparent; }
+.sc-prompt-actions { display: flex; justify-content: flex-end; gap: 4px; }
+.sc-prompt-option { height: 30px; padding: 0 9px; border-radius: 8px; text-align: left; font-family: var(--font-mono); font-size: 12.5px; color: var(--ink); }
+.sc-prompt-option:hover { background: var(--paper-sunk); }
+
+.sc-inspector { position: absolute; left: 80px; bottom: 42px; z-index: 82; width: 240px; display: grid; gap: 3px; padding: 10px 12px 8px; border-radius: 12px; background: var(--paper-raised); box-shadow: 0 0 0 1px rgb(60 50 30 / 0.14), 0 10px 24px -14px rgb(60 50 30 / 0.5); font-size: 13px; color: var(--ink); }
+.sc-inspector.is-right { left: auto; right: 86px; }
+.sc-inspector strong { font-weight: 700; font-size: 14px; }
+.sc-inspector span { color: var(--ink-2); overflow-wrap: anywhere; }
+.sc-inspector p { margin: 4px 0 2px; color: var(--ink-2); line-height: 1.35; }
+.sc-inspector .sc-prompt-actions { margin: 3px -6px 0 0; }
+
+.sc-library { position: absolute; top: 0; right: 0; bottom: 30px; z-index: 92; width: 300px; display: flex; flex-direction: column; background: var(--paper); box-shadow: -1px 0 0 rgb(60 50 30 / 0.16), -18px 0 40px -28px rgb(60 50 30 / 0.5); color: var(--ink); animation: sc-drawer 180ms var(--ease) both; }
+@keyframes sc-drawer { from { transform: translateX(18px); opacity: 0; } to { transform: none; opacity: 1; } }
+.sc-library-head { display: flex; align-items: center; justify-content: space-between; padding: 12px 10px 6px 16px; }
+.sc-library-head h2 { margin: 0; font-size: 15px; font-weight: 600; }
+.sc-library-search { display: flex; align-items: center; gap: 8px; margin: 2px 12px 10px; padding: 0 10px; height: 36px; border-radius: 10px; background: var(--paper-raised); box-shadow: inset 0 0 0 1px var(--rule); color: var(--ink-3); }
+.sc-library-search:focus-within { box-shadow: inset 0 0 0 2px var(--accent); }
+.sc-library-search input { flex: 1; min-width: 0; height: 100%; border: 0; background: none; outline: 0; font: inherit; font-size: 13.5px; color: var(--ink); user-select: text; }
+.sc-library-search input:focus-visible { outline: 0; }
+.sc-library-list { flex: 1; min-height: 0; overflow-y: auto; padding: 0 8px 12px; }
+.sc-library-list h3 { margin: 12px 8px 4px; font-size: 12px; font-weight: 600; color: var(--ink-3); }
+.sc-library-item { width: 100%; display: flex; align-items: flex-start; gap: 10px; padding: 8px; border-radius: 9px; text-align: left; color: var(--ink-2); }
+.sc-library-item svg { flex: none; margin-top: 2px; }
+.sc-library-item:hover:not(:disabled) { background: var(--paper-sunk); color: var(--ink); }
+.sc-library-item:disabled { opacity: 0.5; }
+.sc-library-item span { min-width: 0; display: grid; gap: 1px; }
+.sc-library-item strong { font-size: 13px; font-weight: 500; color: var(--ink); }
+.sc-library-item em { font-style: normal; font-size: 12px; color: var(--ink-3); }
+.sc-library-note { margin: 4px 8px; font-size: 12.5px; color: var(--ink-3); }
+
+.sc-status { position: absolute; left: 0; right: 0; bottom: 0; z-index: 88; height: 30px; display: flex; align-items: stretch; background: var(--paper); border-top: 1px solid rgb(60 50 30 / 0.16); font-size: 12px; color: var(--ink); white-space: nowrap; overflow-x: auto; scrollbar-width: none; font-variant-numeric: tabular-nums; }
+.sc-status::-webkit-scrollbar { display: none; }
+.sc-read { display: inline-flex; align-items: center; gap: 5px; padding: 0 10px; border-right: 1px solid rgb(60 50 30 / 0.1); }
+.sc-read:first-child { padding-left: 14px; }
+.sc-read.is-wide { min-width: 76px; }
+.sc-read em { font-style: normal; color: var(--ink-3); }
+.sc-read span { font-weight: 500; }
+.sc-status-grow { flex: 1; }
+.sc-status-note { display: inline-flex; align-items: center; padding: 0 12px; color: var(--ink-3); }
+.sc-status-agent { display: inline-flex; align-items: center; gap: 5px; padding: 0 14px; color: var(--ink-2); font-weight: 500; }
+.sc-status-agent.is-live { color: var(--accent); }
+
+@media (max-width: 720px) {
+  .sc-rail { top: auto; transform: none; flex-direction: row; max-height: none; overflow-x: auto; }
+  .sc-rail-tools { top: 8px; left: 8px; right: 8px; bottom: auto; }
+  /* The view toggles and the zoom share one row at the foot, so the sheet keeps the middle. */
+  .sc-rail-view { top: auto; bottom: 38px; left: 8px; right: auto; padding: 3px; }
+  .sc-rail-view .sc-tool { width: 36px; padding: 8px 0; }
+  .sc-rail-view .sc-tool span { display: none; }
+  .sc-tool { width: 50px; }
+  .sc-rail-split { width: 1px; height: auto; margin: 6px 3px; }
+  .sc-zoom.st-dock { bottom: 38px; left: auto; right: 8px; transform: none; flex-wrap: nowrap; justify-content: flex-end; padding: 3px; }
+  .sc-zoom .st-tool { width: 32px; height: 36px; }
+  .sc-zoom .st-dock-zoom { min-width: 34px; }
+  .sc-zoom .st-tool-gap { display: none; }
+  .sc-live, .sc-hint { top: 70px; max-width: calc(100% - 16px); }
+  .sc-draft { top: 66px; left: 8px; right: 8px; transform: none; width: auto; max-width: none; }
+  .sc-draft:not(:has(.sc-draft-row)) { max-width: none; }
+  .sc-draft-text span { display: none; }
+  .sc-inspector, .sc-inspector.is-right { left: 8px; right: 8px; width: auto; bottom: 92px; }
+  .sc-library { left: 0; top: auto; width: auto; height: 74%; border-radius: 14px 14px 0 0; box-shadow: 0 -1px 0 rgb(60 50 30 / 0.16), 0 -18px 40px -24px rgb(60 50 30 / 0.5); }
+  .sc-read.is-cursor { display: none; }
+  .sc-read:nth-child(3) { padding-left: 14px; }
+  .sc-tool, .sc-text-button, .sc-solid-button, .sc-icon-button { min-height: 40px; }
+}
+@media (max-height: 640px) and (min-width: 721px) {
+  .sc-tool span { display: none; }
+  .sc-tool { width: 36px; padding: 8px 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sc-sheet.is-live .sc-part, .sc-sheet.is-live .sc-section, .sc-sheet.is-live .sc-trunk, .sc-library, .sc-live-dot, .sc-tip { animation: none; }
+  .sc-svg g { transition: none !important; }
+  .sc-canvas { transition: none !important; }
+}

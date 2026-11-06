@@ -1,0 +1,84 @@
+{
+ "schema": "moki.plan/1",
+ "title": "Dark-activated night light",
+ "layers": 2,
+ "blocks": [
+  {
+   "inst": "usb",
+   "block": "usb-c-power-only",
+   "version": 1,
+   "params": {}
+  },
+  {
+   "inst": "dark",
+   "block": "ldr-dark-detector",
+   "version": 1,
+   "params": {}
+  },
+  {
+   "inst": "light",
+   "block": "led-switch",
+   "version": 1,
+   "params": {}
+  }
+ ],
+ "links": [
+  {
+   "from": "usb.V5",
+   "to": "dark.V5"
+  },
+  {
+   "from": "usb.V5",
+   "to": "light.V5"
+  },
+  {
+   "from": "usb.GND",
+   "to": "dark.GND"
+  },
+  {
+   "from": "usb.GND",
+   "to": "light.GND"
+  },
+  {
+   "from": "dark.DARK",
+   "to": "light.IN"
+  }
+ ],
+ "sections": [
+  {
+   "id": "power",
+   "title": "USB-C power",
+   "purpose": "5 V from a USB-C cable.",
+   "insts": [
+    "usb"
+   ],
+   "notes": [
+    "Power only: nothing on this board uses USB data."
+   ]
+  },
+  {
+   "id": "sensor",
+   "title": "Dark detector",
+   "purpose": "Rises when the light falls.",
+   "insts": [
+    "dark"
+   ],
+   "notes": [
+    "The sensor pulls this low in room light and lets it rise in the dark.",
+    "The switch point is around 1 to 3 lux, so it comes on gradually at dusk."
+   ]
+  },
+  {
+   "id": "lamp",
+   "title": "Warm white LED",
+   "purpose": "The light itself.",
+   "insts": [
+    "light"
+   ],
+   "notes": [
+    "The transistor turns on as the detector rises, and 150 ohm sets about 13 mA.",
+    "Keep this LED’s light off the sensor, or it can turn itself off and flicker. No check here covers that."
+   ]
+  }
+ ]
+}

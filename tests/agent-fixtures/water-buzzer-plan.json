@@ -1,0 +1,84 @@
+{
+ "schema": "moki.plan/1",
+ "title": "Water-leak buzzer",
+ "layers": 2,
+ "blocks": [
+  {
+   "inst": "usb",
+   "block": "usb-c-power-only",
+   "version": 1,
+   "params": {}
+  },
+  {
+   "inst": "probe",
+   "block": "two-wire-probe",
+   "version": 1,
+   "params": {}
+  },
+  {
+   "inst": "alarm",
+   "block": "buzzer-switch",
+   "version": 1,
+   "params": {}
+  }
+ ],
+ "links": [
+  {
+   "from": "usb.V5",
+   "to": "probe.V5"
+  },
+  {
+   "from": "usb.V5",
+   "to": "alarm.V5"
+  },
+  {
+   "from": "usb.GND",
+   "to": "probe.GND"
+  },
+  {
+   "from": "usb.GND",
+   "to": "alarm.GND"
+  },
+  {
+   "from": "probe.OUT",
+   "to": "alarm.IN"
+  }
+ ],
+ "sections": [
+  {
+   "id": "power",
+   "title": "USB-C power",
+   "purpose": "5 V from a USB-C cable.",
+   "insts": [
+    "usb"
+   ],
+   "notes": [
+    "Power only: nothing on this board uses USB data."
+   ]
+  },
+  {
+   "id": "probe",
+   "title": "Two-wire probe",
+   "purpose": "Goes high when water bridges the wires.",
+   "insts": [
+    "probe"
+   ],
+   "notes": [
+    "1 Mohm holds it low when dry, and 10 kohm protects the transistor from static on the wires.",
+    "The 200 kohm wet resistance is an assumption about the water and the wire spacing, not a measurement."
+   ]
+  },
+  {
+   "id": "alarm",
+   "title": "Buzzer",
+   "purpose": "Sounds while the wires are wet.",
+   "insts": [
+    "alarm"
+   ],
+   "notes": [
+    "The buzzer has its own oscillator, so it only needs switching on.",
+    "The diode takes the coil’s kick when the transistor turns off."
+   ]
+  }
+ ]
+}

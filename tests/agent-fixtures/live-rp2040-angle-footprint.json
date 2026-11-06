@@ -1,0 +1,352 @@
+{
+  "sourceJobId": "c78fa2da-cfdc-487b-9b2f-9bf2b5044a6c",
+  "ref": "SW3",
+  "inst": "button",
+  "localRef": "SW1",
+  "part": {
+    "ref": "SW1",
+    "lcsc": "C4944967",
+    "mpn": "TL6340AF160Q",
+    "catalogReceipt": "sha256:5cac0bf1c7ae18b6773c71e6fc1d2d0b52c276a0a869fce015d2e9c472db8b77",
+    "datasheet": {
+      "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2409302230_E-Switch-TL6340AF160Q_C4944967.pdf",
+      "pages": "1–2",
+      "note": "SPST-NO; schematic contacts 1 and 2. Extra catalog pad 3 treated as non-signal mechanical pad; verify footprint."
+    },
+    "pinout": "verified",
+    "pins": {
+      "1": {
+        "pad": "1",
+        "role": "passive",
+        "required": true
+      },
+      "2": {
+        "pad": "2",
+        "role": "passive",
+        "required": true
+      },
+      "3": {
+        "pad": "3",
+        "role": "nc",
+        "required": false
+      }
+    },
+    "at": {
+      "x": 0,
+      "y": 0,
+      "rotation": 0
+    }
+  },
+  "catalog": {
+    "lcsc": "C4944967",
+    "mpn": "TL6340AF160Q",
+    "manufacturer": "E-Switch",
+    "package": "SW-SMD_TL6340AF160Q",
+    "catalogReceipt": "sha256:5cac0bf1c7ae18b6773c71e6fc1d2d0b52c276a0a869fce015d2e9c472db8b77",
+    "importer": "tscircuit-jlcsearch-easyeda-cache",
+    "rawSha256": "8af882bb6b3dfbebda516ac9600fee8d12489bd76be84b9ec1e273de28d6e8f2",
+    "footprintSha256": "c3de8951297136c9767d2e989bd176dc49546a46d212565e2e4f55ed3ac0b2b7",
+    "pins": [
+      {
+        "pad": "1",
+        "labels": [
+          "1"
+        ]
+      },
+      {
+        "pad": "2",
+        "labels": [
+          "2"
+        ]
+      },
+      {
+        "pad": "3",
+        "labels": [
+          "3"
+        ]
+      }
+    ],
+    "models": [
+      {
+        "format": "obj",
+        "url": "https://modules.easyeda.com/3dmodel/18049247e8ba4bfdb72d5c3abf426377"
+      },
+      {
+        "format": "step",
+        "url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/18049247e8ba4bfdb72d5c3abf426377"
+      }
+    ],
+    "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2409302230_E-Switch-TL6340AF160Q_C4944967.pdf",
+    "datasheetReceipt": "sha256:8f19822fab92b1fd94cc109d8fe58766034a1cae3c22331ea5f846738cba90b9"
+  },
+  "pins": {
+    "1": "pin1",
+    "2": "pin2",
+    "3": "pin3"
+  },
+  "footprint": {
+    "type": "footprint",
+    "props": {
+      "children": [
+        {
+          "type": "platedhole",
+          "props": {
+            "portHints": [
+              "pin3"
+            ],
+            "pcbX": "1.82499mm",
+            "pcbY": "-1.13747545mm",
+            "holeWidth": "0.7999984mm",
+            "holeHeight": "0.839978mm",
+            "outerWidth": "1.1999976mm",
+            "outerHeight": "1.35001mm",
+            "pcbRotation": "180deg",
+            "shape": "pill"
+          }
+        },
+        {
+          "type": "platedhole",
+          "props": {
+            "portHints": [
+              "pin3"
+            ],
+            "pcbX": "-1.82499mm",
+            "pcbY": "-1.13747545mm",
+            "holeWidth": "0.7999984mm",
+            "holeHeight": "0.8400034mm",
+            "outerWidth": "1.1999976mm",
+            "outerHeight": "1.35001mm",
+            "pcbRotation": "180deg",
+            "shape": "pill"
+          }
+        },
+        {
+          "type": "smtpad",
+          "props": {
+            "portHints": [
+              "pin1"
+            ],
+            "pcbX": "1.394968mm",
+            "pcbY": "0.48761655mm",
+            "width": "0.6999986mm",
+            "height": "1.0999978mm",
+            "shape": "rect"
+          }
+        },
+        {
+          "type": "smtpad",
+          "props": {
+            "portHints": [
+              "pin2"
+            ],
+            "pcbX": "-1.445006mm",
+            "pcbY": "0.48761655mm",
+            "width": "0.6999986mm",
+            "height": "1.0999978mm",
+            "shape": "rect"
+          }
+        },
+        {
+          "type": "smtpad",
+          "props": {
+            "portHints": [
+              "pin3"
+            ],
+            "pcbX": "-0.025146mm",
+            "pcbY": "0.63747655mm",
+            "width": "1.4400022mm",
+            "height": "1.0999978mm",
+            "shape": "rect"
+          }
+        },
+        {
+          "type": "silkscreenpath",
+          "props": {
+            "route": [
+              {
+                "x": -2.0262596000001167,
+                "y": 0.2595499500000642
+              },
+              {
+                "x": -2.0790408000001435,
+                "y": 0.2595499500000642
+              }
+            ]
+          }
+        },
+        {
+          "type": "silkscreenpath",
+          "props": {
+            "route": [
+              {
+                "x": -0.7000748000001522,
+                "y": -2.722613249999995
+              },
+              {
+                "x": -0.7000748000001522,
+                "y": -1.6454500499999085
+              }
+            ]
+          }
+        },
+        {
+          "type": "silkscreenpath",
+          "props": {
+            "route": [
+              {
+                "x": 0.7294117999999798,
+                "y": -2.722613249999995
+              },
+              {
+                "x": 0.7294117999999798,
+                "y": -1.6454500499999085
+              }
+            ]
+          }
+        },
+        {
+          "type": "silkscreenpath",
+          "props": {
+            "route": [
+              {
+                "x": 0.7294117999999798,
+                "y": -2.722613249999995
+              },
+              {
+                "x": -0.7000748000001522,
+                "y": -2.722613249999995
+              }
+            ]
+          }
+        },
+        {
+          "type": "silkscreenpath",
+          "props": {
+            "route": [
+              {
+                "x": -2.0790408000001435,
+                "y": 0.2595499500000642
+              },
+              {
+                "x": -2.0790408000001435,
+                "y": -0.27120845000001736
+              }
+            ]
+          }
+        },
+        {
+          "type": "silkscreenpath",
+          "props": {
+            "route": [
+              {
+                "x": -1.1160505999999941,
+                "y": -1.6454500499999085
+              },
+              {
+                "x": 1.11592359999986,
+                "y": -1.6454500499999085
+              }
+            ]
+          }
+        },
+        {
+          "type": "silkscreenpath",
+          "props": {
+            "route": [
+              {
+                "x": 1.9849591999999348,
+                "y": 0.2595499500000642
+              },
+              {
+                "x": 1.9849591999999348,
+                "y": -0.24690065000004324
+              }
+            ]
+          }
+        },
+        {
+          "type": "silkscreenpath",
+          "props": {
+            "route": [
+              {
+                "x": 1.9849591999999348,
+                "y": 0.2595499500000642
+              },
+              {
+                "x": 1.9760183999998162,
+                "y": 0.2595499500000642
+              }
+            ]
+          }
+        },
+        {
+          "type": "silkscreentext",
+          "props": {
+            "text": "{NAME}",
+            "pcbX": "-0.003048mm",
+            "pcbY": "2.18814855mm",
+            "anchorAlignment": "center",
+            "fontSize": "1mm"
+          }
+        },
+        {
+          "type": "fabricationnotepath",
+          "props": {
+            "route": [
+              {
+                "x": -0.635076200000185,
+                "y": -1.646948650000013
+              },
+              {
+                "x": 0.6349237999999104,
+                "y": -1.646948650000013
+              },
+              {
+                "x": 0.6349237999999104,
+                "y": -2.6629486499999757
+              },
+              {
+                "x": -0.635076200000185,
+                "y": -2.6629486499999757
+              },
+              {
+                "x": -0.635076200000185,
+                "y": -1.646948650000013
+              }
+            ],
+            "strokeWidth": "0mm",
+            "isFilled": true,
+            "hasStroke": false
+          }
+        },
+        {
+          "type": "courtyardoutline",
+          "props": {
+            "outline": [
+              {
+                "x": -2.6749887999999373,
+                "y": 1.4374754499999653
+              },
+              {
+                "x": 2.6749887999999373,
+                "y": 1.4374754499999653
+              },
+              {
+                "x": 2.6749887999999373,
+                "y": -2.939999650000118
+              },
+              {
+                "x": -2.6749887999999373,
+                "y": -2.939999650000118
+              },
+              {
+                "x": -2.6749887999999373,
+                "y": 1.4374754499999653
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

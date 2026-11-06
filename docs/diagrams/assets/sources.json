@@ -6,12 +6,45 @@
     "bytes": 1707,
     "sha256": "f356fc1ec5659e73e9b1e881ef2785a4fc4e0e3d82b446e6484f55303546dc6d"
   },
-  "fly": {
-    "file": "fly.svg",
-    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/flydotio.svg",
-    "publisher": "Simple Icons 16.36.0",
-    "bytes": 828,
-    "sha256": "8497d184fd8ad4cb6a9faf1961f95b60905d529088099d4c3467b1fed2bdc55f"
+  "evidence-board": {
+    "file": "evidence/board.jpg",
+    "source": "board.glb of the fresh temp-monitor build, job 12f5dcf5-a58d-4d2d-9a5e-711e68c47983, 6 Nov 2026 (a scratch job folder, not in this repository)",
+    "publisher": "Moki, generated output",
+    "note": "Real board model drawn by server/thumbnail.ts, cropped x150 y40 w980 h668 of 1280x800",
+    "bytes": 12112,
+    "sha256": "b9af17c4b79769a36bfe4cd4683e1954d02c9009218171c9d3df2ce5eadb5359"
+  },
+  "evidence-case": {
+    "file": "evidence/case.jpg",
+    "source": "docs/design/2026-11-06-gallery/evidence/30-thumb-from-fresh-real-build.png, the thumb.png of the fresh temp-monitor build, job 12f5dcf5-a58d-4d2d-9a5e-711e68c47983, 6 Nov 2026 (a scratch job folder, not in this repository)",
+    "publisher": "Moki, generated output",
+    "note": "Real assembly model with the lid hidden, drawn by server/thumbnail.ts, cropped x215 y40 w860 h720 of 1280x800",
+    "bytes": 12907,
+    "sha256": "e4393975fd20bc3b8e48b900e4812b1e51fb0db45a9e8509141982ec459f9202"
+  },
+  "evidence-landing": {
+    "file": "evidence/landing.jpg",
+    "source": "docs/media/landing.png",
+    "publisher": "Moki, generated output",
+    "note": "Real product screenshot, cropped x260 y0 w1230 h578 of 2350x880",
+    "bytes": 10135,
+    "sha256": "8c0cde1cee00be8dac98887ef7268b7d36f2bf5654757d755541ea3702f81d49"
+  },
+  "evidence-schematic": {
+    "file": "evidence/schematic.jpg",
+    "source": "schematic.svg of the fresh temp-monitor build, job 12f5dcf5-a58d-4d2d-9a5e-711e68c47983, 6 Nov 2026 (a scratch job folder, not in this repository)",
+    "publisher": "Moki, generated output",
+    "note": "Real tscircuit output, drawn at 1600 wide, cropped x442 y376 w300 h205",
+    "bytes": 26036,
+    "sha256": "9de82c8d312cfc286e0a383cda574676c460d6ab0f5de8191df65e39bf640576"
+  },
+  "evidence-studio": {
+    "file": "evidence/studio.jpg",
+    "source": "docs/engineering/2026-11-06-photo-ref/evidence/photo_ref/shots/studio-chip-1440.png",
+    "publisher": "Moki, generated output",
+    "note": "Real product screenshot, cropped x400 y0 w1040 h489 of 1440x900",
+    "bytes": 23504,
+    "sha256": "6674a8c1ce234919a662ea01a6d3d6f94f66dbf866dbce3d5a7e68dfd8818d92"
   },
   "modal": {
     "file": "modal.svg",

@@ -1,6 +1,6 @@
 # Moki architecture diagram
 
-**Status:** implemented, read from the code on 6 Nov 2026. The two dashed boxes are proposed and not built.
+**Status:** implemented, read from the code on 6 Nov 2026.
 
 The drawing answers one question: what runs where when a maker's idea becomes a board?
 
@@ -38,8 +38,7 @@ Edit `scripts/render-architecture.py`, not the outputs. The PNG needs Chromium: 
 | ngspice | `eda/blocks/spice-runner.ts`, started from `src/blocks/spice.ts` |
 | Catalog, block library | `src/blocks/catalog.ts`, `src/blocks/library.ts`, `src/blocks/review.ts` |
 | Datasheets | `src/agents/datasheet.ts` |
-| Nemotron 3.5 Parse (proposed) | [ADR 0003](../adr/0003-datasheet-layout-parsing-nemotron-parse.md). `infra/modal/parse_app.py` exists, but nothing in `server/` or `src/` calls it. |
-| Fly.io micro-VMs (proposed) | [ADR 0001](../adr/0001-code-first-eda-over-computer-use.md). No code exists. |
+| Nemotron 3.5 Parse | `src/agents/datasheet-parse.ts`, called from `src/agents/datasheet.ts`; `infra/modal/parse_app.py`; [ADR 0003](../adr/0003-datasheet-layout-parsing-nemotron-parse.md). It only runs when `MOKI_PARSE_URL` and `MOKI_PARSE_TOKEN` are set. Otherwise agents read pdf.js text. |
 
 ## Where each arrow comes from
 
@@ -51,6 +50,7 @@ Edit `scripts/render-architecture.py`, not the outputs. The PNG needs Chromium: 
 | board-api to workers | Spawned builds | `worker(...)` in `server/board-api.ts` |
 | Agents to workers | SPICE and firmware compile, as gates before a build | `src/agents/chip-library.ts`, `src/agents/firmware.ts` |
 | Agents to parts and evidence | Part search, blocks, datasheet reads | `src/agents/chip-library.ts` |
+| Nemotron to Datasheets | Parsed pages. pdf.js text stays the authority for citations. | `src/agents/datasheet-parse.ts` |
 
 ## What the drawing simplifies
 
@@ -60,8 +60,12 @@ Edit `scripts/render-architecture.py`, not the outputs. The PNG needs Chromium: 
 - **The sandbox covers model-written firmware.** Fixed kit firmware templates compile without it.
 - **Left out on purpose:** ports, routes, tokens, the private link, `/lab`, and the older prototype code that remains under `npm run dev`.
 
+## The pictures
+
+Every picture is a crop of real output, never stock art or a mock-up. The schematic, board and case all come from one fresh temp-monitor build, and the two screens are real product screenshots. Sources, crops and hashes are in [assets/sources.json](assets/sources.json). Change a crop by replacing its file in `assets/evidence/`.
+
 ## Checks
 
-A browser check of the SVG measures the 78 text elements, 29 cards and zones, and 13 arrows. It found no text overlaps, no text within 4 units of an edge, no arrow through a card or a label, and no arrows touching. The smallest text is 16 units, which is 11 px at GitHub's 830 px width. The PNG was also inspected by eye at that width.
+A browser check of the SVG measures the 87 text elements, 30 cards and zones, and 12 arrows. It found no text overlaps, no text within 4 units of an edge, no arrow through a card or a label, and no arrows touching. Readable text is at least 16 units, which is 11 px at GitHub's 830 px width. The small-caps labels are 13.5 units, about 9.3 px. The PNG was also inspected by eye at 830 px on GitHub's light and dark page colours, and at 1x and 2x.
 
-Logo sources and hashes are in [assets/sources.json](assets/sources.json), and the visual rules are in [style-guide.md](style-guide.md). Marks identify their tools and belong to their owners.
+The visual rules are in [style-guide.md](style-guide.md). Marks identify their tools and belong to their owners.

@@ -23,11 +23,11 @@ Moki turns a description of a device into a schematic, a routed PCB, a printable
 
 ## Architecture
 
-![Moki architecture: a browser reaches the server through a private gateway; agents share one plan with code gates; subprocess workers produce the board, case and firmware; datasheet parsing on Modal is being integrated and micro-VMs on Fly.io are proposed](docs/media/architecture-2026-11.png)
+![Moki architecture: a browser reaches the server through a private gateway; agents share one plan with code gates; subprocess workers produce the schematic, PCB, case and firmware; Nemotron 3.5 Parse on Modal reads datasheet tables and layout](docs/media/architecture-2026-11.png)
 
 Models decide; code builds and checks. The agents share one plan instead of talking to each other, and the PCB, case and firmware are all regenerated from it. Code owns everything measurable, including board size, placement legality, prices and the gates, and each turn has a $2 budget cap. Every model call crosses one seam, `src/agents/model.ts`. OpenAI `gpt-6.1-sol` is the provider in use, and an Anthropic adapter and a replay adapter for tests sit at the same seam.
 
-Agents build through the same job interface the studio uses, so a model can't do anything a maker's browser couldn't. One queue owns every build: one at a time, with up to 5 waiting. Workers are subprocesses with timeouts and an environment allowlist, which keeps model keys away from them, but this isn't a sandbox: generated board code runs on the host. Only model-written firmware compiles in a sandbox with no network, and it is never run. The dashed boxes aren't built yet.
+Agents build through the same job interface the studio uses, so a model can't do anything a maker's browser couldn't. One queue owns every build: one at a time, with up to 5 waiting. Workers are subprocesses with timeouts and an environment allowlist, which keeps model keys away from them, but this isn't a sandbox: generated board code runs on the host. Only model-written firmware compiles in a sandbox with no network, and it is never run.
 
 [SVG](docs/diagrams/moki-architecture.svg) · [How the diagram is built, and the code behind each node](docs/diagrams/README.md)
 
@@ -41,7 +41,7 @@ Agents build through the same job interface the studio uses, so a model can't do
 | Firmware | PlatformIO 6.1, compiled under bubblewrap |
 | Simulation | ngspice, through `@tscircuit/ngspice-spice-engine` |
 | Parts | JLCPCB and LCSC catalog via jlcsearch, EasyEDA importer |
-| Datasheets | pdf.js, with citations checked by code |
+| Datasheets | pdf.js, with citations checked by code; Nemotron 3.5 Parse on Modal for tables and layout |
 | Saved work | JSON and generated files under `var/`, with no database |
 
 ## What works
@@ -58,7 +58,7 @@ Agents build through the same job interface the studio uses, so a model can't do
 
 **Chip-level boards build when the plan is replayed.** Replays script the model calls and run everything else for real. A night light (20 × 42 mm) and a water-leak buzzer (28 × 56 mm) built with no firmware stage, and no-MCU boards take about 15 s. One exact RP2040 plan from a live run passes every gate, with 0 DRC errors and compiled firmware.
 
-__TESTS__
+**Tests.** `npm test` runs about 1,320 tests, most of them added after a real failure.
 
 ## What isn't proven
 
@@ -67,7 +67,7 @@ __TESTS__
 - **Dense routing.** This is the weak spot. An RP2040 with a DRV8833 takes 160 to 389 s, and some plans fail DRC or hit the 10-minute timeout.
 - **Isolation.** Generated board code runs on the host, so per-build micro-VMs are needed before more than one person uses it.
 - **Reviewed blocks.** A new block stays labelled unreviewed until an independent review promotes it.
-- **Datasheet tables.** pdf.js flattens tables and can't see figures. Nemotron 3.5 Parse on Modal is being integrated. On 5 datasheets it read 81 of 81 pin-table rows and 48 of 50 electrical values, at about 6.7 s per page on an L4 GPU.
+- **Datasheet tables.** pdf.js flattens tables and can't see figures. Nemotron 3.5 Parse on Modal reads them for the agents. On 5 datasheets it read 81 of 81 pin-table rows and 48 of 50 electrical values, at about 6.7 s per page on an L4 GPU. In that first test it didn't beat a pdfplumber baseline on tables, and its clear gain was text on image-only pages.
 
 ## Run locally
 
@@ -93,6 +93,7 @@ Compiling model-written firmware also needs `bwrap`, and `src/agents/pio-sandbox
 | `MOKI_AGENT_PROVIDER` | Set to `openai` if an Anthropic key is also in your environment. That key wins otherwise. |
 | `MOKI_AGENTS=off`, `MOKI_CHIP=off` | Turn off the agents, or just chip-level boards. |
 | `MOKI_BUN`, `MOKI_BUILD123D_PYTHON`, `MOKI_PLATFORMIO` | Point at tools installed somewhere else. |
+| `MOKI_PARSE_URL`, `MOKI_PARSE_TOKEN` | Connect the Nemotron parse service. Without them, agents read pdf.js text. |
 | `MOKI_CHIP_TIMEOUT_MS` | Chip-level build limit, 10 minutes by default. |
 | `MOKI_PROJECTS_DIR`, `MOKI_BOARD_JOBS_DIR` | Move saved projects and build jobs out of `var/`. |
 | `MOKI_BASE_PATH`, `MOKI_PUBLIC_HOST`, `MOKI_BOARD_API_TOKEN` | For hosting. On a public host with no token, the agents stay off. |

@@ -1,42 +1,93 @@
 {
-  "react": {
-    "source": "https://cdn.simpleicons.org/react",
-    "bytes": 2941
+  "bun": {
+    "file": "bun.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/bun.svg",
+    "publisher": "Simple Icons 16.36.0",
+    "bytes": 1707,
+    "sha256": "f356fc1ec5659e73e9b1e881ef2785a4fc4e0e3d82b446e6484f55303546dc6d"
   },
-  "vite": {
-    "source": "https://cdn.simpleicons.org/vite",
-    "bytes": 462
+  "fly": {
+    "file": "fly.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/flydotio.svg",
+    "publisher": "Simple Icons 16.36.0",
+    "bytes": 828,
+    "sha256": "8497d184fd8ad4cb6a9faf1961f95b60905d529088099d4c3467b1fed2bdc55f"
+  },
+  "modal": {
+    "file": "modal.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/modal.svg",
+    "publisher": "Simple Icons 16.36.0",
+    "bytes": 482,
+    "sha256": "7759009735dbb2407c9ccc29a4fac0243a4bd545c65a8c39aaa7e56e357cd670"
   },
   "nodejs": {
-    "source": "https://cdn.simpleicons.org/nodedotjs",
-    "bytes": 1623
+    "file": "nodejs.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/nodedotjs.svg",
+    "publisher": "Simple Icons 16.36.0",
+    "bytes": 1608,
+    "sha256": "021851b758cde7d3e04819c3ac02047d0ff281c712e8387afa0c76a6dac6db6c"
   },
-  "typescript": {
-    "source": "https://cdn.simpleicons.org/typescript",
-    "bytes": 1309
-  },
-  "kicad": {
-    "source": "https://cdn.simpleicons.org/kicad",
-    "bytes": 3265
-  },
-  "freecad": {
-    "source": "https://cdn.simpleicons.org/freecad",
-    "bytes": 525
-  },
-  "threejs": {
-    "source": "https://cdn.simpleicons.org/threedotjs",
-    "bytes": 912
+  "nvidia": {
+    "file": "nvidia.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/nvidia.svg",
+    "publisher": "Simple Icons 16.36.0",
+    "bytes": 881,
+    "sha256": "b0e4cfc12712c840d4d630c9a717200fbd09aeeadbd3faeac13bda2e2ed050b0"
   },
   "openai": {
+    "file": "openai.svg",
     "source": "https://raw.githubusercontent.com/lobehub/lobe-icons/master/packages/static-svg/icons/openai.svg",
-    "bytes": 1687
+    "publisher": "Lobe Icons",
+    "bytes": 1687,
+    "sha256": "a595df6b423920c67a7f8f73c063e4bfb72d415948097b6cac063a2366bb5186"
   },
-  "daytona": {
-    "source": "https://framerusercontent.com/images/Sg9zE3EMDPr8DFon0ERhWoHkso.svg",
-    "bytes": 12124
+  "platformio": {
+    "file": "platformio.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/platformio.svg",
+    "publisher": "Simple Icons 16.36.0",
+    "bytes": 1209,
+    "sha256": "793505bad61acb61eb2d66891abf48ab74a6d4d5b78cd99da41eca3a87fcbed1"
   },
-  "bfl": {
-    "source": "https://bfl.ai/",
-    "bytes": 7220
+  "python": {
+    "file": "python.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/python.svg",
+    "publisher": "Simple Icons 16.36.0",
+    "bytes": 1518,
+    "sha256": "ad9468e1c4903f73ae7eebfbe980f0f727a10db695be3d914e7d8bd25356a862"
+  },
+  "react": {
+    "file": "react.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/react.svg",
+    "publisher": "Simple Icons 16.36.0",
+    "bytes": 2926,
+    "sha256": "ab9136a1a4a8be72ac6743e1bdd1912d878bd68d57787ea7a6c6838e3b23c01c"
+  },
+  "threejs": {
+    "file": "threejs.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/threedotjs.svg",
+    "publisher": "Simple Icons 16.36.0",
+    "bytes": 897,
+    "sha256": "813981f4cc6a24d82d9aba0af0ac5f3678b249dc035b519d8dc3759fa5b360ec"
+  },
+  "tscircuit": {
+    "file": "tscircuit.png",
+    "source": "https://tscircuit.com/tscircuit-logo.png",
+    "publisher": "tscircuit, official site icon, unmodified",
+    "bytes": 11920,
+    "sha256": "2b8b39ce9f7a91beaed73069aafb879281cb30ea9c80a97cc30c6f97e27f43f8"
+  },
+  "typescript": {
+    "file": "typescript.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/typescript.svg",
+    "publisher": "Simple Icons 16.36.0",
+    "bytes": 1294,
+    "sha256": "7f023e8d1e767370306ec9437d2de5d5af97491d6208dd7799a3808a7c10a36a"
+  },
+  "vite": {
+    "file": "vite.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/vite.svg",
+    "publisher": "Simple Icons 16.36.0",
+    "bytes": 447,
+    "sha256": "642bb261d6476ddf326b8ed7757543b3443a93a77fef1e434021fc201defa21c"
   }
 }

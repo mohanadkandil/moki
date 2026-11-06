@@ -1,23 +1,67 @@
-# Moki technical architecture
+# Moki architecture diagram
 
-Open http://127.0.0.1:5173/architecture/index.html while `npm run dev` is running.
+**Status:** implemented, read from the code on 6 Nov 2026. The two dashed boxes are proposed and not built.
 
-The canonical standalone diagram is [`web/public/architecture/index.html`](../../web/public/architecture/index.html). It also ships unchanged in the Vite production build. Rebuild it from repository-local assets:
+The drawing answers one question: what runs where when a maker's idea becomes a board?
+
+Rebuild it from repository-local files:
 
 ```sh
 python3 scripts/render-architecture.py
 ```
 
-The renderer makes no model or network calls. Logos are embedded inline; Manrope loads from Google Fonts. Brand/style provenance is in [style-guide.md](style-guide.md), and technology-logo sources are recorded in [assets/sources.json](assets/sources.json). BFL and Daytona marks come from their official sites; the OpenAI mark is the Lobe Icons rendition; the remaining technology marks come from Simple Icons. Marks identify their respective tools and belong to their owners.
+That writes three outputs from one source, and makes no model or network calls:
 
-This is the **current implementation**, read from `server/workshop-api.ts`, `scripts/design-run.ts`, and the project/inspiration stores. The coordinator uses direct OpenAI Responses calls. Model calls happen through the local server; Daytona executes engineering tools in two isolated workspaces. The deterministic validation worker reopens actual STEP geometry. The separate Agents SDK scaffold is not drawn as the live executor.
+| Output | Use |
+| --- | --- |
+| [`docs/media/architecture.png`](../media/architecture.png) | The README image |
+| [`moki-architecture.svg`](moki-architecture.svg) | Vector copy, with Manrope and the logos embedded |
+| [`web/public/architecture/index.html`](../../web/public/architecture/index.html) | Standalone page, at `/architecture/index.html` under `npm run dev` |
 
-Seven nodes keep the main flow readable. Merged project/run state and generated files into the shared-artifact card; grouped React/Vite/Three.js under the workspace and Node.js/TypeScript/OpenAI under orchestration. Low-level ports, CLI flags, individual API routes and the standalone SDK scaffold are omitted. The BFL node covers both the initial four image directions and final concept film; the film is based on the selected image, not the exported CAD.
+Edit `scripts/render-architecture.py`, not the outputs. The PNG needs Chromium: set `MOKI_CHROME`, or have one on your `PATH` or in the Playwright cache. Vite copies the HTML into the production build, but the production server doesn't serve that path.
 
-The footer explicitly marks the unimplemented schematic, electrical-check, routing and populated-board-fit stages. The current PCB is an outline with mounting holes. No manufacturing readiness is asserted.
+## Where each node comes from
 
-Verified: diagram-design single-file/accessibility self-check passes; actual browser loads Manrope, all ten brand symbols have nonzero geometry, all text stays within the viewBox, and the diagram has no crossing or overlapping connector routes. The local scroll container preserves readable width on smaller displays; print scales the whole figure.
+| Node | Source |
+| --- | --- |
+| Web | `web/src/App.tsx`, `web/src/landing/routes.ts`, `web/src/RecentProjects.tsx`, tabs in `web/src/studio/Canvas.tsx` |
+| Gateway | `MOKI_BOARD_API_TOKEN` in `server/agent-api.ts` and `server/board-api.ts`. The gateway itself lives outside this repository. |
+| project-api, agent-api, board-api | `server/*-api.ts`, loaded as plugins in `vite.config.ts`. SSE is in `server/agent-api.ts`. The queue is in `server/board-api.ts`, which refuses a sixth waiting job. |
+| Thumbnails | `server/thumbnail.ts`, run by `server/board-api.ts` |
+| Agents | Roles in `src/agents/protocol.ts`, flow in `src/agents/turn.ts` and `src/agents/chip.ts` |
+| Model seam, budget | `createProvider` and `JOB_CAP_USD` in `src/agents/model.ts` |
+| Gates | `src/agents/turn.ts`, `src/agents/chip.ts`, `src/blocks/erc.ts`, `src/blocks/spice.ts`, `src/blocks/review.ts`, `src/blocks/verify.ts` |
+| Build workers | `runWorker` and its allowlist in `src/board/process.ts` |
+| tscircuit | `eda/render.ts`, `eda/blocks/build.ts`, `eda/package.json` |
+| build123d | `mech/enclosure.py`, `mech/requirements.txt`, `eda/enclosure.ts` |
+| PlatformIO | `src/firmware/index.ts`, `src/agents/firmware.ts`, `src/agents/pio-sandbox.sh` |
+| ngspice | `eda/blocks/spice-runner.ts`, started from `src/blocks/spice.ts` |
+| Catalog, block library | `src/blocks/catalog.ts`, `src/blocks/library.ts`, `src/blocks/review.ts` |
+| Datasheets | `src/agents/datasheet.ts` |
+| Nemotron 3.5 Parse (proposed) | [ADR 0003](../adr/0003-datasheet-layout-parsing-nemotron-parse.md). `infra/modal/parse_app.py` exists, but nothing in `server/` or `src/` calls it. |
+| Fly.io micro-VMs (proposed) | [ADR 0001](../adr/0001-code-first-eda-over-computer-use.md). No code exists. |
 
-## Repository preview
+## Where each arrow comes from
 
-The root README embeds [a PNG preview](../media/architecture.png). The [SVG export](moki-architecture.svg) preserves editable vector geometry; SVG viewers that cannot load the external Manrope font may substitute another typeface. Use the PNG for a consistent preview.
+| Arrow | Carries | Source |
+| --- | --- | --- |
+| Web to server, through the gateway | JSON, build files, SSE events | `web/src/landing/projectsApi.ts`, `web/src/board/api.ts` |
+| agent-api to Agents | A turn | `runTurn` in `server/agent-api.ts` |
+| Agents to board-api | Job requests over HTTP | `src/agents/board-client.ts` |
+| board-api to workers | Spawned builds | `worker(...)` in `server/board-api.ts` |
+| Agents to workers | SPICE and firmware compile, as gates before a build | `src/agents/chip-library.ts`, `src/agents/firmware.ts` |
+| Agents to parts and evidence | Part search, blocks, datasheet reads | `src/agents/chip-library.ts` |
+
+## What the drawing simplifies
+
+- **The agents row shows a chip-level turn.** A kit turn has no Block Author or Reviewer, and the Editor runs instead of the Designer when a change is requested. Canvas edits skip the models and go straight to the gates.
+- **The Explainer is left out.** It only answers questions and never changes the plan.
+- **The gateway only applies when hosted.** Under `npm run dev` the browser talks to the server directly.
+- **The sandbox covers model-written firmware.** Fixed kit firmware templates compile without it.
+- **Left out on purpose:** ports, routes, tokens, the private link, `/lab`, and the older prototype code that remains under `npm run dev`.
+
+## Checks
+
+A browser check of the SVG measures the 78 text elements, 29 cards and zones, and 13 arrows. It found no text overlaps, no text within 4 units of an edge, no arrow through a card or a label, and no arrows touching. The smallest text is 16 units, which is 11 px at GitHub's 830 px width. The PNG was also inspected by eye at that width.
+
+Logo sources and hashes are in [assets/sources.json](assets/sources.json), and the visual rules are in [style-guide.md](style-guide.md). Marks identify their tools and belong to their owners.

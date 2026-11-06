@@ -1,0 +1,44 @@
+{
+  "charger": {
+    "lcsc": "C2861252",
+    "datasheetUrl": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+    "page": 38,
+    "figure": "10-12",
+    "quote": "Using BQ24074 in a Standalone Charger Application"
+  },
+  "buck": {
+    "lcsc": "C28060",
+    "datasheetUrl": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+    "page": 6,
+    "figure": "4",
+    "quote": "PMP4778 Reference Design Schematic"
+  },
+  "mic": {
+    "lcsc": "C5656610",
+    "datasheetUrl": "https://d17t6iyxenbwp1.cloudfront.net/s3fs-public/2026-03/DS-000069-ICS-43434-v1.2.pdf?VersionId=W5u1f2s5LpMkDjoZSc3k7UxneMl9.WkV",
+    "page": 13,
+    "figure": "8",
+    "quote": "System Block Diagram"
+  },
+  "amp": {
+    "lcsc": "C910544",
+    "datasheetUrl": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX98357A-MAX98357B.pdf",
+    "page": 29,
+    "figure": "17",
+    "quote": "Left-Channel PCM Operation with 12dB Gain"
+  },
+  "led": {
+    "lcsc": "C7484",
+    "datasheetUrl": "https://www.ti.com/lit/ds/symlink/sn74ahct1g125.pdf",
+    "page": 9,
+    "figure": "8-1",
+    "quote": "Typical Application Schematic"
+  },
+  "usb": {
+    "lcsc": "C7519",
+    "datasheetUrl": "https://www.st.com/resource/en/datasheet/usblc6-2.pdf",
+    "page": 9,
+    "figure": "13",
+    "quote": "USB 2.0 port application diagram using USBLC6-2"
+  }
+}

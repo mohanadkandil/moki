@@ -1,0 +1,543 @@
+[
+ {
+  "lcsc": "C10081",
+  "mpn": "GL5528(10-20)",
+  "manufacturer": "JCHL(晶创和立)",
+  "package": "RES-TH_L5.1-W4.3-P3.40-D0.5",
+  "description": "GL5528(10-20)",
+  "stock": 514,
+  "catalogReceipt": "sha256:c3556981fc141b74fcadac7ff83352d691456192e4e4efc07861cf57f370b071",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "6e06bca9ee7cce8c7b909647b40f2a6a26354918e9b0d8c558ef4fdc3cf045a7",
+  "footprintSha256": "573177298cf6bce1b3b3b41c7d5af7d4dade16e2c748c989b59fc2875262e1ac",
+  "pins": [
+   {
+    "pad": "2",
+    "labels": [
+     "2"
+    ]
+   },
+   {
+    "pad": "1",
+    "labels": [
+     "1"
+    ]
+   }
+  ],
+  "models": [],
+  "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_JCHL-Shenzhen-Jing-Chuang-He-Li-Tech-GL5528-10-20_C10081.pdf",
+  "datasheetReceipt": "sha256:de1f6c5a8858d9847b54c1a9da473eb97a2a5c376a0d1f9cd7ddf901d535927a"
+ },
+ {
+  "lcsc": "C8545",
+  "mpn": "2N7002",
+  "manufacturer": "CJ(江苏长电/长晶)",
+  "package": "SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR",
+  "description": "2N7002 7002",
+  "stock": 26980,
+  "catalogReceipt": "sha256:d6803ca592ee2b0964252a891d2802dbc0b07e9312e771f313b4ae706a2889e7",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "9524eab2a2c8895048491448e3707780fdf1fb40d578e698771e05f17e531572",
+  "footprintSha256": "4425bd0c6c0d75c79d8dd7d57ba8521cf638f79a11ed0611c03de5606a6c77d4",
+  "pins": [
+   {
+    "pad": "3",
+    "labels": [
+     "D"
+    ]
+   },
+   {
+    "pad": "1",
+    "labels": [
+     "G"
+    ]
+   },
+   {
+    "pad": "2",
+    "labels": [
+     "S"
+    ]
+   }
+  ],
+  "models": [],
+  "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Jiangsu-Changjing-Electronics-Technology-Co---Ltd--2N7002_C8545.pdf",
+  "datasheetReceipt": "sha256:e9de35be662bb81ba05ede14bc9256c7a4260849a01ea5e8cd6eea3ad709f939"
+ },
+ {
+  "lcsc": "C5440667",
+  "mpn": "XL-4008WWC",
+  "manufacturer": "XINGLIGHT(成兴光)",
+  "package": "LED-SMD_L2.9-W1.4_XL-4008WWC",
+  "catalogReceipt": "sha256:499b8e7e4a8bc4a195f6762ae1409c7bd1f8aeaed429891dc7dfad309c9fbb55",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "adb9ad4ebdac0ddfe74d9f6b2c801751ec97bdf65c0349e4de9f1ac25de3a843",
+  "footprintSha256": "7b356d1c2dd31bc686d8a5dccc34faad2298e3f14977281f50fba0d7b073620b",
+  "pins": [
+   {
+    "pad": "2",
+    "labels": [
+     "K"
+    ]
+   },
+   {
+    "pad": "1",
+    "labels": [
+     "A"
+    ]
+   }
+  ],
+  "models": [
+   {
+    "format": "obj",
+    "url": "https://modules.easyeda.com/3dmodel/599fd244671a4170abc1a633737060d5"
+   },
+   {
+    "format": "step",
+    "url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/599fd244671a4170abc1a633737060d5"
+   }
+  ],
+  "datasheetUrl": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2402181501_XINGLIGHT-XL-4008WWC_C5440667.pdf",
+  "datasheetReceipt": "sha256:0168aa17ce942645ebabb7ae9a05e4d8682deed0ea029423c5475df5203a2a27"
+ },
+ {
+  "lcsc": "C96093",
+  "mpn": "TMB12A05",
+  "manufacturer": "华能",
+  "package": "BUZ-TH_BD12.0-P7.60-D0.6-FD",
+  "stock": 12748,
+  "catalogReceipt": "sha256:1360a6fb4e6174d7f5c739e2212a0eee23f9161e117047af0ce2dae4c8f29e43",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "4961fa2061b37f4a72a64b64c1375edf5650df67aa4ed3c75d6f36136e340af5",
+  "footprintSha256": "24fde011d27b441aad0942b5cd84e141bfb4a4c9218b85e91753e721bf0d287c",
+  "pins": [
+   {
+    "pad": "1",
+    "labels": [
+     "+"
+    ]
+   },
+   {
+    "pad": "2",
+    "labels": [
+     "2"
+    ]
+   }
+  ],
+  "models": [],
+  "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2405280932_Jiangsu-Huaneng-Elec-TMB12A05_C96093.pdf",
+  "datasheetReceipt": "sha256:fb2dad9a1a378a1912b23b6f58678f85758316aa0b92c53084736de4bec5d5a9"
+ },
+ {
+  "lcsc": "C81598",
+  "mpn": "1N4148W",
+  "manufacturer": "ST(先科)",
+  "package": "SOD-123F_L2.7-W1.6-LS3.8-RD",
+  "description": "1N4148W",
+  "stock": 28950,
+  "catalogReceipt": "sha256:97fe39354e7db0512046b29366013710aad702dd3e7ac7890d4dcd1f0e50ba2d",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "f4f6b14feb9c5082fb9914d29523fb9b4fe03688bebf60bd5915ff7151c87dd0",
+  "footprintSha256": "ee38c76b23ffcea79dbfeeb81a97924a79b59703695863eb02723ad1eaa48151",
+  "pins": [
+   {
+    "pad": "2",
+    "labels": [
+     "A"
+    ]
+   },
+   {
+    "pad": "1",
+    "labels": [
+     "K"
+    ]
+   }
+  ],
+  "models": [
+   {
+    "format": "obj",
+    "url": "https://modules.easyeda.com/3dmodel/c41947f3912d451fb219389717f8bd2a"
+   },
+   {
+    "format": "step",
+    "url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/c41947f3912d451fb219389717f8bd2a"
+   }
+  ],
+  "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_1811061725_ST-Semtech-1N4148W_C81598.pdf",
+  "datasheetReceipt": "sha256:bb987acc5a809e50487ac3c4e03419c5e212f6e0907649f567239a11de55624a"
+ },
+ {
+  "lcsc": "C2974924",
+  "mpn": "KF127S-5.08-2P",
+  "manufacturer": "KEFA(科发)",
+  "package": "CONN-TH_KF127S-5.08-2P",
+  "catalogReceipt": "sha256:f728be64e91eaecbf9bd07edd129ef6ab400b1887f2af7971f26aabaa2f64f1a",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "9d30a14ab3136767ad1de58cb9612cece23c0fac439b8f214e1fd933947c2c26",
+  "footprintSha256": "a4fcea530f0a4117a2a94db1373ff23f1e6da57e4c80af00f6d583f0690a8b96",
+  "pins": [
+   {
+    "pad": "1",
+    "labels": [
+     "1"
+    ]
+   },
+   {
+    "pad": "2",
+    "labels": [
+     "2"
+    ]
+   }
+  ],
+  "models": [
+   {
+    "format": "obj",
+    "url": "https://modules.easyeda.com/3dmodel/10aba48363b64b40acbdd0289e898fbd"
+   },
+   {
+    "format": "step",
+    "url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/10aba48363b64b40acbdd0289e898fbd"
+   }
+  ],
+  "datasheetUrl": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2203031730_Cixi-Kefa-Elec-KF127S-5-08-2P_C2974924.pdf",
+  "datasheetReceipt": "sha256:e6ac04be9a58e63a719a5dde886a4868f2e403a740c70154d1a117d0a571a060"
+ },
+ {
+  "lcsc": "C165948",
+  "mpn": "TYPE-C-31-M-12",
+  "manufacturer": "韩国韩荣",
+  "package": "USB-C_SMD-TYPE-C-31-M-12_1",
+  "stock": 3121,
+  "catalogReceipt": "sha256:7bd08b687d8d0b901fb91b86a3c834972bd938733d5aa21c71da3e88ff3990ee",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "b47fbe00779c8c81e807e53fb9459a021208f9b17c1fb986fb9e6a9102350cf1",
+  "footprintSha256": "a776b0d3da5224266b3423589502a9656e8cf0432b7525f8e5a65d7959bd078a",
+  "pins": [
+   {
+    "pad": "A1B12",
+    "labels": [
+     "GND"
+    ]
+   },
+   {
+    "pad": "A4B9",
+    "labels": [
+     "VBUS"
+    ]
+   },
+   {
+    "pad": "B8",
+    "labels": [
+     "SBU2"
+    ]
+   },
+   {
+    "pad": "A5",
+    "labels": [
+     "CC1"
+    ]
+   },
+   {
+    "pad": "B7",
+    "labels": [
+     "DN2"
+    ]
+   },
+   {
+    "pad": "A6",
+    "labels": [
+     "DP1"
+    ]
+   },
+   {
+    "pad": "A7",
+    "labels": [
+     "DN1"
+    ]
+   },
+   {
+    "pad": "B6",
+    "labels": [
+     "DP2"
+    ]
+   },
+   {
+    "pad": "A8",
+    "labels": [
+     "SBU1"
+    ]
+   },
+   {
+    "pad": "B5",
+    "labels": [
+     "CC2"
+    ]
+   },
+   {
+    "pad": "B4A9",
+    "labels": [
+     "VBUS"
+    ]
+   },
+   {
+    "pad": "B1A12",
+    "labels": [
+     "GND"
+    ]
+   },
+   {
+    "pad": "4",
+    "labels": [
+     "EH"
+    ]
+   },
+   {
+    "pad": "3",
+    "labels": [
+     "EH"
+    ]
+   },
+   {
+    "pad": "2",
+    "labels": [
+     "EH"
+    ]
+   },
+   {
+    "pad": "1",
+    "labels": [
+     "EH"
+    ]
+   }
+  ],
+  "models": [
+   {
+    "format": "obj",
+    "url": "https://modules.easyeda.com/3dmodel/094a54ae6cb7435299943839d9642aa1"
+   },
+   {
+    "format": "step",
+    "url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/094a54ae6cb7435299943839d9642aa1"
+   }
+  ],
+  "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2205251630_Korean-Hroparts-Elec-TYPE-C-31-M-12_C165948.pdf",
+  "datasheetReceipt": "sha256:5a71588dd7b27dba8c18850f0d271b98507bb5d96ec48fe9eecd30f23925c4cd"
+ },
+ {
+  "lcsc": "C23186",
+  "mpn": "0603WAF5101T5E",
+  "manufacturer": "UNI-ROYAL(厚声)",
+  "package": "R0603",
+  "stock": 897098,
+  "catalogReceipt": "sha256:4d6005af8e9f76cf0d52bc983a547a10aba5f3917460ac5483c3b3c2b333aa14",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "f43a1670109f2e2d19300d16b2edf68268143b87b49961657250f5d8618eb847",
+  "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+  "pins": [
+   {
+    "pad": "2",
+    "labels": [
+     "2"
+    ]
+   },
+   {
+    "pad": "1",
+    "labels": [
+     "1"
+    ]
+   }
+  ],
+  "models": [
+   {
+    "format": "obj",
+    "url": "https://modules.easyeda.com/3dmodel/e06b23482b894f1ebafac2e1696a59f5"
+   },
+   {
+    "format": "step",
+    "url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/e06b23482b894f1ebafac2e1696a59f5"
+   }
+  ],
+  "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010116_UNI-ROYAL-Uniroyal-Elec-0603WAF5101T5E_C23186.pdf",
+  "datasheetReceipt": "sha256:589ee16bf2c90b4c469331a5b3f3c97d9f2a2114e98dcae89a6b1111c4273850"
+ },
+ {
+  "lcsc": "C25803",
+  "mpn": "0603WAF1003T5E",
+  "manufacturer": "UNI-ROYAL(厚声)",
+  "package": "R0603",
+  "description": "100KΩ (1003) ±1%",
+  "stock": 1342,
+  "catalogReceipt": "sha256:492631a1c5290df166fc2c8e36384868fef36a4a5d1e643e31cdd8070017c851",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "27edbf1a1cf1c82c4aed14608448ce2b92342e5128edaaf344be8c946f9ff464",
+  "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+  "pins": [
+   {
+    "pad": "2",
+    "labels": [
+     "2"
+    ]
+   },
+   {
+    "pad": "1",
+    "labels": [
+     "1"
+    ]
+   }
+  ],
+  "models": [
+   {
+    "format": "obj",
+    "url": "https://modules.easyeda.com/3dmodel/e06b23482b894f1ebafac2e1696a59f5"
+   },
+   {
+    "format": "step",
+    "url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/e06b23482b894f1ebafac2e1696a59f5"
+   }
+  ],
+  "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010045_UNI-ROYAL-Uniroyal-Elec-0603WAF1003T5E_C25803.pdf",
+  "datasheetReceipt": "sha256:62f4689a9e9b33e715cc87b95bf96c649236f53d2baddc1ca58bdfae42bd72f3"
+ },
+ {
+  "lcsc": "C22935",
+  "mpn": "0603WAF1004T5E",
+  "manufacturer": "UNI-ROYAL(厚声)",
+  "package": "R0603",
+  "description": "1MΩ (1004) ±1%",
+  "stock": 2251400,
+  "catalogReceipt": "sha256:4dd763fd292efab458397edc77122e8731cef906365e4ac5e3c880bd7812085c",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "0dca4d63591ccc4feddaf1fe55a6776723a70470e0b339edcd81367e1f4d77a8",
+  "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+  "pins": [
+   {
+    "pad": "2",
+    "labels": [
+     "2"
+    ]
+   },
+   {
+    "pad": "1",
+    "labels": [
+     "1"
+    ]
+   }
+  ],
+  "models": [
+   {
+    "format": "obj",
+    "url": "https://modules.easyeda.com/3dmodel/e06b23482b894f1ebafac2e1696a59f5"
+   },
+   {
+    "format": "step",
+    "url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/e06b23482b894f1ebafac2e1696a59f5"
+   }
+  ],
+  "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010130_UNI-ROYAL-Uniroyal-Elec-0603WAF1004T5E_C22935.pdf",
+  "datasheetReceipt": "sha256:23bd7c878ce81d4ec81ef1dbf4ec42da8fdd4762a61cab154f96a9de3e1e35fe"
+ },
+ {
+  "lcsc": "C25804",
+  "mpn": "0603WAF1002T5E",
+  "manufacturer": "UNI-ROYAL(厚声)",
+  "package": "R0603",
+  "description": "10KΩ (1002) ±1%",
+  "stock": 8999650,
+  "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "8b15f24a2e21602b38bf11802c42f2702fbd4034045270c0315f2b5cec9d334d",
+  "footprintSha256": "329449fca85237ee332499613d5d8afa528f365653ed6c0c76195a5a572965f3",
+  "pins": [
+   {
+    "pad": "2",
+    "labels": [
+     "2"
+    ]
+   },
+   {
+    "pad": "1",
+    "labels": [
+     "1"
+    ]
+   }
+  ],
+  "models": [
+   {
+    "format": "obj",
+    "url": "https://modules.easyeda.com/3dmodel/e06b23482b894f1ebafac2e1696a59f5"
+   },
+   {
+    "format": "step",
+    "url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/e06b23482b894f1ebafac2e1696a59f5"
+   }
+  ],
+  "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010045_UNI-ROYAL-Uniroyal-Elec-0603WAF1002T5E_C25804.pdf",
+  "datasheetReceipt": "sha256:1e1daa725daabb6c32b25d469ee2c7373bd2b86b732f84982d5266e1f7ae4ee8"
+ },
+ {
+  "lcsc": "C22808",
+  "mpn": "0603WAF1500T5E",
+  "manufacturer": "UNI-ROYAL(厚声)",
+  "package": "R0603",
+  "description": "150Ω (1500) ±1%",
+  "stock": 600,
+  "catalogReceipt": "sha256:6c40ebd097f7e0b047cd2e352d7a1b7062883bc1fb758f618292527541441ced",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "a7bccb1f6dc91fe9e65e15f9c159d61e0116f32c679e6cda15fbcd7af6e8e8c2",
+  "footprintSha256": "eb310ebd3c0f109464688fe31d701be0dbbfce6c3d570d9dce286e522d47a988",
+  "pins": [
+   {
+    "pad": "2",
+    "labels": [
+     "2"
+    ]
+   },
+   {
+    "pad": "1",
+    "labels": [
+     "1"
+    ]
+   }
+  ],
+  "models": [
+   {
+    "format": "obj",
+    "url": "https://modules.easyeda.com/3dmodel/e06b23482b894f1ebafac2e1696a59f5"
+   },
+   {
+    "format": "step",
+    "url": "https://modules.easyeda.com/qAxj6KHrDKw4blvCG8QJPs7Y/e06b23482b894f1ebafac2e1696a59f5"
+   }
+  ],
+  "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010130_UNI-ROYAL-Uniroyal-Elec-0603WAF1500T5E_C22808.pdf",
+  "datasheetReceipt": "sha256:fc8ad6bc901220b241bb465a67875560321b5e64918775b3e77f52c98aec47b1"
+ },
+ {
+  "lcsc": "C15850",
+  "mpn": "CL21A106KAYNNNE",
+  "manufacturer": "SAMSUNG(三星)",
+  "package": "C0805",
+  "description": "10uF (106) ±10% 25V",
+  "stock": 66260,
+  "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+  "importer": "tscircuit-jlcsearch-easyeda-cache",
+  "rawSha256": "641fa0749e47b3ab2151841638949595eae2f99c4754cf6b2c5f21ec37868147",
+  "footprintSha256": "2fb5b0d11c86569d2aa6b896edea815da6011d028e9e79f5d7db5693a9ffaf43",
+  "pins": [
+   {
+    "pad": "2",
+    "labels": [
+     "2"
+    ]
+   },
+   {
+    "pad": "1",
+    "labels": [
+     "1"
+    ]
+   }
+  ],
+  "models": [],
+  "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+  "datasheetReceipt": "sha256:f5ada9aa1edb5338dfb620daa013302ffceb7f574aa5a14f43a2db119ded9500"
+ }
+]

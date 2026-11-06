@@ -1,0 +1,897 @@
+{
+  "schema": "moki.usb-buck-drafts/1",
+  "drafts": [
+    {
+      "schema": "moki.block/1",
+      "id": "tps63001-usb-5v-3v3",
+      "version": 1,
+      "title": "TPS63001 USB5V to3.3V,650mA continuous allocation",
+      "class": "power",
+      "summary": "USB4.75–5.25V input only, fixed3.3V output; author allocation650mA continuous/800mA peak at25C and85% assumed efficiency. Actual TPS63001+LPS4012 and16V X7R bulk caps; unreviewed, not a hardware or battery-boost guarantee.",
+      "provenance": {
+        "author": "agent",
+        "authorId": "chip_eda"
+      },
+      "parts": [
+        {
+          "ref": "U1",
+          "lcsc": "C28060",
+          "mpn": "TPS63001DRCR",
+          "catalogReceipt": "sha256:c42a3e97120b05844f323a057f8afc81747b2065fec947a36290f7e7f12d7ed9",
+          "pinout": "verified",
+          "pins": {
+            "VOUT": {
+              "pad": "1",
+              "role": "power-out",
+              "required": true
+            },
+            "L2": {
+              "pad": "2",
+              "role": "bidirectional",
+              "required": true
+            },
+            "PGND": {
+              "pad": "3",
+              "role": "ground",
+              "required": true
+            },
+            "L1": {
+              "pad": "4",
+              "role": "bidirectional",
+              "required": true
+            },
+            "VIN": {
+              "pad": "5",
+              "role": "power-in",
+              "required": true,
+              "volts": {
+                "min": 4.75,
+                "max": 5.25
+              }
+            },
+            "EN": {
+              "pad": "6",
+              "role": "input",
+              "required": true
+            },
+            "PS": {
+              "pad": "7",
+              "role": "input",
+              "required": true
+            },
+            "VINA": {
+              "pad": "8",
+              "role": "power-in",
+              "required": true,
+              "volts": {
+                "min": 4.75,
+                "max": 5.25
+              }
+            },
+            "GND": {
+              "pad": "9",
+              "role": "ground",
+              "required": true
+            },
+            "FB": {
+              "pad": "10",
+              "role": "input",
+              "required": true
+            },
+            "EP": {
+              "pad": "11",
+              "role": "ground",
+              "required": true
+            }
+          },
+          "at": {
+            "x": 0,
+            "y": 0
+          },
+          "datasheet": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3–6, 11–13, 16",
+            "note": "TI SLVS520C fixed TPS63001: FB directly to VOUT; 1.2A buck headline at VIN3.6–5.5V supports this derated author allocation of650mA continuous/800mA peak at USB4.75–5.25V only. Not a1.8V boost or all-temperature guarantee. Efficiency85%, output+/-5%, ambient25C and thetaJA60C/W are conservative screening assumptions, not measured performance. Native loops/EP thermal copper, DC-biased effective capacitance and hardware startup/load/temperature require qualification."
+          }
+        },
+        {
+          "ref": "L1",
+          "lcsc": "C20416998",
+          "mpn": "LPS4012-222MRC",
+          "catalogReceipt": "sha256:a723bd279a3338434b63e2a96371df67ebbfb98c3c426c052597508cad91fe2b",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 0,
+            "y": -4
+          },
+          "datasheet": {
+            "url": "https://www.coilcraft.com/getmedia/a31b0140-5adf-4f7e-b7bf-5e9d605a87b9/LPS4012.pdf",
+            "pages": "1–2",
+            "note": "Exact LPS4012-222MRC2.2uH+/-20%, DCRmax0.100ohm. At25C: Isat2.3A for10% inductance drop; Irms1.2A for20C rise. Temperature-rise currents are reference values. Buck CCM corner screen uses Lmin1.76uH and fmin1.25MHz, not a boost-current inference. Core loss, switching current and thermal behavior remain unmeasured."
+          },
+          "value": "2.2uH",
+          "valueWhy": {
+            "url": "https://www.coilcraft.com/getmedia/a31b0140-5adf-4f7e-b7bf-5e9d605a87b9/LPS4012.pdf",
+            "pages": "1–2",
+            "note": "Exact LPS4012-222MRC2.2uH+/-20%, DCRmax0.100ohm. At25C: Isat2.3A for10% inductance drop; Irms1.2A for20C rise. Temperature-rise currents are reference values. Buck CCM corner screen uses Lmin1.76uH and fmin1.25MHz, not a boost-current inference. Core loss, switching current and thermal behavior remain unmeasured."
+          }
+        },
+        {
+          "ref": "C1",
+          "lcsc": "C162430",
+          "mpn": "GRM21BZ71C106KE15L",
+          "catalogReceipt": "sha256:fac7c295d74c60b33cd57238b664281effc5d6bb3ffb9770380e74ceb2960ac8",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -4,
+            "y": 0
+          },
+          "datasheet": {
+            "url": "https://datasheet.lcsc.com/datasheet/pdf/aafbc71d90a9d89f42f5e94d0f700539.pdf?productCode=C162430",
+            "sha256": "591dd237e95ddb3fdd1faf87f2f1dcdc05738c086937e9622fa76a86c7307246",
+            "pages": "1",
+            "note": "Manufacturer Murata part sheet, retained via supplier: GRM21BZ71C106KE15L10uF+/-10%,16Vdc,X7R0805. Higher voltage rating replaces old6.3V capacitors in this separate USB variant. Sheet does not supply a DC-bias curve/minimum effective capacitance; nominal20/30uF is not an effective-capacitance guarantee."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://datasheet.lcsc.com/datasheet/pdf/aafbc71d90a9d89f42f5e94d0f700539.pdf?productCode=C162430",
+            "sha256": "591dd237e95ddb3fdd1faf87f2f1dcdc05738c086937e9622fa76a86c7307246",
+            "pages": "1",
+            "note": "Manufacturer Murata part sheet, retained via supplier: GRM21BZ71C106KE15L10uF+/-10%,16Vdc,X7R0805. Higher voltage rating replaces old6.3V capacitors in this separate USB variant. Sheet does not supply a DC-bias curve/minimum effective capacitance; nominal20/30uF is not an effective-capacitance guarantee."
+          }
+        },
+        {
+          "ref": "C2",
+          "lcsc": "C162430",
+          "mpn": "GRM21BZ71C106KE15L",
+          "catalogReceipt": "sha256:fac7c295d74c60b33cd57238b664281effc5d6bb3ffb9770380e74ceb2960ac8",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -4,
+            "y": 3
+          },
+          "datasheet": {
+            "url": "https://datasheet.lcsc.com/datasheet/pdf/aafbc71d90a9d89f42f5e94d0f700539.pdf?productCode=C162430",
+            "sha256": "591dd237e95ddb3fdd1faf87f2f1dcdc05738c086937e9622fa76a86c7307246",
+            "pages": "1",
+            "note": "Manufacturer Murata part sheet, retained via supplier: GRM21BZ71C106KE15L10uF+/-10%,16Vdc,X7R0805. Higher voltage rating replaces old6.3V capacitors in this separate USB variant. Sheet does not supply a DC-bias curve/minimum effective capacitance; nominal20/30uF is not an effective-capacitance guarantee."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://datasheet.lcsc.com/datasheet/pdf/aafbc71d90a9d89f42f5e94d0f700539.pdf?productCode=C162430",
+            "sha256": "591dd237e95ddb3fdd1faf87f2f1dcdc05738c086937e9622fa76a86c7307246",
+            "pages": "1",
+            "note": "Manufacturer Murata part sheet, retained via supplier: GRM21BZ71C106KE15L10uF+/-10%,16Vdc,X7R0805. Higher voltage rating replaces old6.3V capacitors in this separate USB variant. Sheet does not supply a DC-bias curve/minimum effective capacitance; nominal20/30uF is not an effective-capacitance guarantee."
+          }
+        },
+        {
+          "ref": "C3",
+          "lcsc": "C162430",
+          "mpn": "GRM21BZ71C106KE15L",
+          "catalogReceipt": "sha256:fac7c295d74c60b33cd57238b664281effc5d6bb3ffb9770380e74ceb2960ac8",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 4,
+            "y": -3
+          },
+          "datasheet": {
+            "url": "https://datasheet.lcsc.com/datasheet/pdf/aafbc71d90a9d89f42f5e94d0f700539.pdf?productCode=C162430",
+            "sha256": "591dd237e95ddb3fdd1faf87f2f1dcdc05738c086937e9622fa76a86c7307246",
+            "pages": "1",
+            "note": "Manufacturer Murata part sheet, retained via supplier: GRM21BZ71C106KE15L10uF+/-10%,16Vdc,X7R0805. Higher voltage rating replaces old6.3V capacitors in this separate USB variant. Sheet does not supply a DC-bias curve/minimum effective capacitance; nominal20/30uF is not an effective-capacitance guarantee."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://datasheet.lcsc.com/datasheet/pdf/aafbc71d90a9d89f42f5e94d0f700539.pdf?productCode=C162430",
+            "sha256": "591dd237e95ddb3fdd1faf87f2f1dcdc05738c086937e9622fa76a86c7307246",
+            "pages": "1",
+            "note": "Manufacturer Murata part sheet, retained via supplier: GRM21BZ71C106KE15L10uF+/-10%,16Vdc,X7R0805. Higher voltage rating replaces old6.3V capacitors in this separate USB variant. Sheet does not supply a DC-bias curve/minimum effective capacitance; nominal20/30uF is not an effective-capacitance guarantee."
+          }
+        },
+        {
+          "ref": "C4",
+          "lcsc": "C162430",
+          "mpn": "GRM21BZ71C106KE15L",
+          "catalogReceipt": "sha256:fac7c295d74c60b33cd57238b664281effc5d6bb3ffb9770380e74ceb2960ac8",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 4,
+            "y": 0
+          },
+          "datasheet": {
+            "url": "https://datasheet.lcsc.com/datasheet/pdf/aafbc71d90a9d89f42f5e94d0f700539.pdf?productCode=C162430",
+            "sha256": "591dd237e95ddb3fdd1faf87f2f1dcdc05738c086937e9622fa76a86c7307246",
+            "pages": "1",
+            "note": "Manufacturer Murata part sheet, retained via supplier: GRM21BZ71C106KE15L10uF+/-10%,16Vdc,X7R0805. Higher voltage rating replaces old6.3V capacitors in this separate USB variant. Sheet does not supply a DC-bias curve/minimum effective capacitance; nominal20/30uF is not an effective-capacitance guarantee."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://datasheet.lcsc.com/datasheet/pdf/aafbc71d90a9d89f42f5e94d0f700539.pdf?productCode=C162430",
+            "sha256": "591dd237e95ddb3fdd1faf87f2f1dcdc05738c086937e9622fa76a86c7307246",
+            "pages": "1",
+            "note": "Manufacturer Murata part sheet, retained via supplier: GRM21BZ71C106KE15L10uF+/-10%,16Vdc,X7R0805. Higher voltage rating replaces old6.3V capacitors in this separate USB variant. Sheet does not supply a DC-bias curve/minimum effective capacitance; nominal20/30uF is not an effective-capacitance guarantee."
+          }
+        },
+        {
+          "ref": "C5",
+          "lcsc": "C162430",
+          "mpn": "GRM21BZ71C106KE15L",
+          "catalogReceipt": "sha256:fac7c295d74c60b33cd57238b664281effc5d6bb3ffb9770380e74ceb2960ac8",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": 4,
+            "y": 3
+          },
+          "datasheet": {
+            "url": "https://datasheet.lcsc.com/datasheet/pdf/aafbc71d90a9d89f42f5e94d0f700539.pdf?productCode=C162430",
+            "sha256": "591dd237e95ddb3fdd1faf87f2f1dcdc05738c086937e9622fa76a86c7307246",
+            "pages": "1",
+            "note": "Manufacturer Murata part sheet, retained via supplier: GRM21BZ71C106KE15L10uF+/-10%,16Vdc,X7R0805. Higher voltage rating replaces old6.3V capacitors in this separate USB variant. Sheet does not supply a DC-bias curve/minimum effective capacitance; nominal20/30uF is not an effective-capacitance guarantee."
+          },
+          "value": "10uF",
+          "valueWhy": {
+            "url": "https://datasheet.lcsc.com/datasheet/pdf/aafbc71d90a9d89f42f5e94d0f700539.pdf?productCode=C162430",
+            "sha256": "591dd237e95ddb3fdd1faf87f2f1dcdc05738c086937e9622fa76a86c7307246",
+            "pages": "1",
+            "note": "Manufacturer Murata part sheet, retained via supplier: GRM21BZ71C106KE15L10uF+/-10%,16Vdc,X7R0805. Higher voltage rating replaces old6.3V capacitors in this separate USB variant. Sheet does not supply a DC-bias curve/minimum effective capacitance; nominal20/30uF is not an effective-capacitance guarantee."
+          }
+        },
+        {
+          "ref": "C6",
+          "lcsc": "C14663",
+          "mpn": "CC0603KRX7R9BB104",
+          "catalogReceipt": "sha256:fde5081a0b45324f436df1a456a1a4dd1608306b862e8a6f4c8187b9d69ac426",
+          "pinout": "verified",
+          "pins": {
+            "1": {
+              "pad": "1",
+              "role": "passive"
+            },
+            "2": {
+              "pad": "2",
+              "role": "passive"
+            }
+          },
+          "at": {
+            "x": -2,
+            "y": 3
+          },
+          "datasheet": {
+            "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2211101700_YAGEO-CC0603KRX7R9BB104_C14663.pdf",
+            "note": "Actual CC0603KRX7R9BB104 / C14663 component identity/value; manufacturer reference determines circuit selection."
+          },
+          "value": "100nF",
+          "valueWhy": {
+            "url": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+            "pages": "6–7",
+            "note": "Complete TPS63001 reference ties VIN/VINA supply directly; no mixed partial100Ohm filter topology. Fixed FB returns to VOUT. Author uses additional nominal capacitance; effective DC-biased capacitance still requires verification."
+          }
+        }
+      ],
+      "nets": [
+        {
+          "name": "VBUS",
+          "pins": [
+            "U1.VIN",
+            "U1.VINA",
+            "U1.EN",
+            "C1.1",
+            "C2.1",
+            "C6.1"
+          ]
+        },
+        {
+          "name": "V3V3",
+          "pins": [
+            "U1.VOUT",
+            "U1.FB",
+            "C3.1",
+            "C4.1",
+            "C5.1"
+          ]
+        },
+        {
+          "name": "GND",
+          "pins": [
+            "U1.PGND",
+            "U1.GND",
+            "U1.EP",
+            "U1.PS",
+            "C1.2",
+            "C2.2",
+            "C3.2",
+            "C4.2",
+            "C5.2",
+            "C6.2"
+          ]
+        },
+        {
+          "name": "SW_L1",
+          "pins": [
+            "U1.L1",
+            "L1.1"
+          ]
+        },
+        {
+          "name": "SW_L2",
+          "pins": [
+            "U1.L2",
+            "L1.2"
+          ]
+        }
+      ],
+      "params": [
+        {
+          "id": "operatingState",
+          "type": "enum",
+          "options": [
+            "qualified-usb-4.75-to-5.25"
+          ],
+          "default": "qualified-usb-4.75-to-5.25",
+          "why": "TI SLVS520C fixed TPS63001: FB directly to VOUT; 1.2A buck headline at VIN3.6–5.5V supports this derated author allocation of650mA continuous/800mA peak at USB4.75–5.25V only. Not a1.8V boost or all-temperature guarantee. Efficiency85%, output+/-5%, ambient25C and thetaJA60C/W are conservative screening assumptions, not measured performance. Native loops/EP thermal copper, DC-biased effective capacitance and hardware startup/load/temperature require qualification."
+        },
+        {
+          "id": "outputVoltageBudget",
+          "type": "number",
+          "min": 3.3,
+          "max": 3.3,
+          "default": 3.3,
+          "unit": "V",
+          "why": "Fixed3.3V silicon with FB directly atVOUT. Port3.135–3.465V is an author +/-5% design envelope, not a claimed datasheet fixed-output tolerance; verify loaded ripple/tolerance/transients before promotion."
+        }
+      ],
+      "ports": [
+        {
+          "id": "VBUS",
+          "label": "Qualified USB5V input",
+          "kind": "power-in",
+          "terminal": "net:VBUS",
+          "volts": {
+            "min": 4.75,
+            "max": 5.25
+          }
+        },
+        {
+          "id": "V3V3",
+          "label": "3.3V output",
+          "kind": "power-out",
+          "terminal": "net:V3V3",
+          "volts": {
+            "min": 3.135,
+            "max": 3.465
+          }
+        },
+        {
+          "id": "GND",
+          "label": "Ground",
+          "kind": "ground",
+          "terminal": "net:GND"
+        }
+      ],
+      "power": {
+        "sources": [
+          {
+            "port": "V3V3",
+            "volts": 3.3,
+            "maxMa": 800,
+            "continuousMa": 650,
+            "inputPort": "VBUS",
+            "mode": "regulated",
+            "conversion": "switching",
+            "efficiency": 0.85,
+            "thermal": {
+              "thetaJa": 60,
+              "maxJunctionC": 110,
+              "ambientC": 25
+            }
+          }
+        ],
+        "sinks": [
+          {
+            "port": "VBUS",
+            "typicalMa": 0.1,
+            "peakMa": 0.1
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "VIN",
+          "groundPin": "PGND",
+          "caps": [
+            "C1",
+            "C2"
+          ],
+          "minUf": 4.7,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3–6, 11–13, 16",
+            "note": "TI SLVS520C fixed TPS63001: FB directly to VOUT; 1.2A buck headline at VIN3.6–5.5V supports this derated author allocation of650mA continuous/800mA peak at USB4.75–5.25V only. Not a1.8V boost or all-temperature guarantee. Efficiency85%, output+/-5%, ambient25C and thetaJA60C/W are conservative screening assumptions, not measured performance. Native loops/EP thermal copper, DC-biased effective capacitance and hardware startup/load/temperature require qualification."
+          }
+        },
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "VINA",
+          "groundPin": "GND",
+          "caps": [
+            "C6"
+          ],
+          "minUf": 0.1,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/an/slva358a/slva358a.pdf",
+            "sha256": "aaffb9d127ce4ed341773d5b64e6500d6870bb4066713f6cc04983ec3a0df681",
+            "pages": "6–7",
+            "note": "Complete fixed-output reference: VIN/VINA share input directly, EN high, PS low, FB directly VOUT; no mixed partial filtered-VINA reference. Additional parallel actual10uF capacitors provide nominal20uF input/30uF output. Effective capacitance remains a qualification item."
+          }
+        },
+        {
+          "kind": "decoupling",
+          "ic": "U1",
+          "powerPin": "VOUT",
+          "groundPin": "PGND",
+          "caps": [
+            "C3",
+            "C4",
+            "C5"
+          ],
+          "minUf": 15,
+          "maxDistanceMm": 6,
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3–6, 11–13, 16",
+            "note": "TI SLVS520C fixed TPS63001: FB directly to VOUT; 1.2A buck headline at VIN3.6–5.5V supports this derated author allocation of650mA continuous/800mA peak at USB4.75–5.25V only. Not a1.8V boost or all-temperature guarantee. Efficiency85%, output+/-5%, ambient25C and thetaJA60C/W are conservative screening assumptions, not measured performance. Native loops/EP thermal copper, DC-biased effective capacitance and hardware startup/load/temperature require qualification."
+          }
+        },
+        {
+          "kind": "ground",
+          "pin": "U1.PGND",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3–6, 11–13, 16",
+            "note": "TI SLVS520C fixed TPS63001: FB directly to VOUT; 1.2A buck headline at VIN3.6–5.5V supports this derated author allocation of650mA continuous/800mA peak at USB4.75–5.25V only. Not a1.8V boost or all-temperature guarantee. Efficiency85%, output+/-5%, ambient25C and thetaJA60C/W are conservative screening assumptions, not measured performance. Native loops/EP thermal copper, DC-biased effective capacitance and hardware startup/load/temperature require qualification."
+          }
+        },
+        {
+          "kind": "ground",
+          "pin": "U1.GND",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3–6, 11–13, 16",
+            "note": "TI SLVS520C fixed TPS63001: FB directly to VOUT; 1.2A buck headline at VIN3.6–5.5V supports this derated author allocation of650mA continuous/800mA peak at USB4.75–5.25V only. Not a1.8V boost or all-temperature guarantee. Efficiency85%, output+/-5%, ambient25C and thetaJA60C/W are conservative screening assumptions, not measured performance. Native loops/EP thermal copper, DC-biased effective capacitance and hardware startup/load/temperature require qualification."
+          }
+        },
+        {
+          "kind": "ground",
+          "pin": "U1.EP",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3–6, 11–13, 16",
+            "note": "TI SLVS520C fixed TPS63001: FB directly to VOUT; 1.2A buck headline at VIN3.6–5.5V supports this derated author allocation of650mA continuous/800mA peak at USB4.75–5.25V only. Not a1.8V boost or all-temperature guarantee. Efficiency85%, output+/-5%, ambient25C and thetaJA60C/W are conservative screening assumptions, not measured performance. Native loops/EP thermal copper, DC-biased effective capacitance and hardware startup/load/temperature require qualification."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.EN",
+          "safe": "high",
+          "to": "net:VBUS",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3–6, 11–13, 16",
+            "note": "TI SLVS520C fixed TPS63001: FB directly to VOUT; 1.2A buck headline at VIN3.6–5.5V supports this derated author allocation of650mA continuous/800mA peak at USB4.75–5.25V only. Not a1.8V boost or all-temperature guarantee. Efficiency85%, output+/-5%, ambient25C and thetaJA60C/W are conservative screening assumptions, not measured performance. Native loops/EP thermal copper, DC-biased effective capacitance and hardware startup/load/temperature require qualification."
+          }
+        },
+        {
+          "kind": "strap",
+          "pin": "U1.PS",
+          "safe": "low",
+          "to": "net:GND",
+          "citation": {
+            "url": "https://www.ti.com/lit/ds/symlink/tps63001.pdf",
+            "pages": "1, 3–6, 11–13, 16",
+            "note": "TI SLVS520C fixed TPS63001: FB directly to VOUT; 1.2A buck headline at VIN3.6–5.5V supports this derated author allocation of650mA continuous/800mA peak at USB4.75–5.25V only. Not a1.8V boost or all-temperature guarantee. Efficiency85%, output+/-5%, ambient25C and thetaJA60C/W are conservative screening assumptions, not measured performance. Native loops/EP thermal copper, DC-biased effective capacitance and hardware startup/load/temperature require qualification."
+          }
+        }
+      ],
+      "firmware": {
+        "libs": [],
+        "includes": [],
+        "usage": "Always on, EN=VBUS, PS/SYNC=GND; fixed FB=VOUT. TI SLVS520C fixed TPS63001: FB directly to VOUT; 1.2A buck headline at VIN3.6–5.5V supports this derated author allocation of650mA continuous/800mA peak at USB4.75–5.25V only. Not a1.8V boost or all-temperature guarantee. Efficiency85%, output+/-5%, ambient25C and thetaJA60C/W are conservative screening assumptions, not measured performance. Native loops/EP thermal copper, DC-biased effective capacitance and hardware startup/load/temperature require qualification. Complete fixed-output reference: VIN/VINA share input directly, EN high, PS low, FB directly VOUT; no mixed partial filtered-VINA reference. Additional parallel actual10uF capacitors provide nominal20uF input/30uF output. Effective capacitance remains a qualification item. Exact LPS4012-222MRC2.2uH+/-20%, DCRmax0.100ohm. At25C: Isat2.3A for10% inductance drop; Irms1.2A for20C rise. Temperature-rise currents are reference values. Buck CCM corner screen uses Lmin1.76uH and fmin1.25MHz, not a boost-current inference. Core loss, switching current and thermal behavior remain unmeasured. Manufacturer Murata part sheet, retained via supplier: GRM21BZ71C106KE15L10uF+/-10%,16Vdc,X7R0805. Higher voltage rating replaces old6.3V capacitors in this separate USB variant. Sheet does not supply a DC-bias curve/minimum effective capacitance; nominal20/30uF is not an effective-capacitance guarantee."
+      }
+    }
+  ],
+  "catalog": [
+    {
+      "lcsc": "C28060",
+      "mpn": "TPS63001DRCR",
+      "manufacturer": "TI(德州仪器)",
+      "package": "VSON-10_L3.0-W3.0-P0.50-TL-EP_TPS62410DRCR",
+      "stock": 2,
+      "catalogReceipt": "sha256:c42a3e97120b05844f323a057f8afc81747b2065fec947a36290f7e7f12d7ed9",
+      "importer": "tscircuit-jlcsearch-easyeda-cache",
+      "rawSha256": "a385d3dc43416394d5260c2086538d4377452d51c9e0bbcef1b7efd0d7cbe274",
+      "footprintSha256": "588d84b242a82cf26969673c48cffe334d483930c384bc7512a969afb1f7a3f0",
+      "pins": [
+        {
+          "pad": "1",
+          "labels": [
+            "VOUT"
+          ]
+        },
+        {
+          "pad": "2",
+          "labels": [
+            "L2"
+          ]
+        },
+        {
+          "pad": "3",
+          "labels": [
+            "PGND"
+          ]
+        },
+        {
+          "pad": "4",
+          "labels": [
+            "L1"
+          ]
+        },
+        {
+          "pad": "5",
+          "labels": [
+            "VIN"
+          ]
+        },
+        {
+          "pad": "6",
+          "labels": [
+            "EN"
+          ]
+        },
+        {
+          "pad": "7",
+          "labels": [
+            "PS/SYNC"
+          ]
+        },
+        {
+          "pad": "8",
+          "labels": [
+            "VINA"
+          ]
+        },
+        {
+          "pad": "9",
+          "labels": [
+            "GND"
+          ]
+        },
+        {
+          "pad": "10",
+          "labels": [
+            "FB"
+          ]
+        },
+        {
+          "pad": "11",
+          "labels": [
+            "PAD"
+          ]
+        }
+      ],
+      "models": [],
+      "datasheetUrl": "https://www.ti.com/cn/lit/gpn/tps63001",
+      "datasheetReceipt": "sha256:8078e4e46516d0d91fce5bf3383164930f47614f251b9892c628085188a6c37b"
+    },
+    {
+      "lcsc": "C20416998",
+      "mpn": "LPS4012-222MRC",
+      "manufacturer": "Coilcraft(线艺)",
+      "package": "IND-SMD_L3.9-W3.9",
+      "catalogReceipt": "sha256:a723bd279a3338434b63e2a96371df67ebbfb98c3c426c052597508cad91fe2b",
+      "importer": "tscircuit-jlcsearch-easyeda-cache",
+      "rawSha256": "23cc1be19e7e9e56033d2a2139d62ccc11b5a132d312dd283a4b33e6b2ed0fad",
+      "footprintSha256": "6c24f6d9bca7f376a76f06b8238ab17b8e44692621d914c64bf21cfdb79432b6",
+      "pins": [
+        {
+          "pad": "2",
+          "labels": [
+            "2"
+          ]
+        },
+        {
+          "pad": "1",
+          "labels": [
+            "1"
+          ]
+        }
+      ],
+      "models": [],
+      "datasheetUrl": "https://www.coilcraft.com/getmedia/a31b0140-5adf-4f7e-b7bf-5e9d605a87b9/LPS4012.pdf",
+      "datasheetReceipt": "sha256:f6d506ee72f15456f944cde8f6890ac9f9482d94f1c28d9a425ddca67fc5dfb2"
+    },
+    {
+      "lcsc": "C14663",
+      "mpn": "CC0603KRX7R9BB104",
+      "manufacturer": "YAGEO(国巨)",
+      "package": "C0603",
+      "description": "100nF (104) ±10% 50V",
+      "stock": 0,
+      "catalogReceipt": "sha256:fde5081a0b45324f436df1a456a1a4dd1608306b862e8a6f4c8187b9d69ac426",
+      "importer": "tscircuit-jlcsearch-easyeda-cache",
+      "rawSha256": "1ad4275ad69d3ef0a8e75bc120719319207d450579421ba624b88713554cff59",
+      "footprintSha256": "c6961a0f3ecb855bedad17ad6397d458e8feacb3ac83cd2b5e6b49c83a9c4338",
+      "pins": [
+        {
+          "pad": "1",
+          "labels": [
+            "1"
+          ]
+        },
+        {
+          "pad": "2",
+          "labels": [
+            "2"
+          ]
+        }
+      ],
+      "models": [],
+      "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2211101700_YAGEO-CC0603KRX7R9BB104_C14663.pdf",
+      "datasheetReceipt": "sha256:748d25b0ada0f3b6656975e224b1d93a7d97da0114beb48e25c276f7e0411b16"
+    },
+    {
+      "lcsc": "C162430",
+      "mpn": "GRM21BZ71C106KE15L",
+      "manufacturer": "muRata(村田)",
+      "package": "C0805",
+      "stock": 0,
+      "catalogReceipt": "sha256:fac7c295d74c60b33cd57238b664281effc5d6bb3ffb9770380e74ceb2960ac8",
+      "importer": "tscircuit-jlcsearch-easyeda-cache",
+      "rawSha256": "83f039e7094360f32028b210f7edd00b8856f7f457c17b9945cd8369e5a034ce",
+      "footprintSha256": "2fd4de27c5ec2503a3ea4fb5a77d71ae325918676f6b988d6012ce8d6cd83063",
+      "pins": [
+        {
+          "pad": "1",
+          "labels": [
+            "1"
+          ]
+        },
+        {
+          "pad": "2",
+          "labels": [
+            "2"
+          ]
+        }
+      ],
+      "models": [],
+      "datasheetUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_1912111437_Murata-Electronics-GRM21BZ71C106KE15L_C162430.pdf",
+      "datasheetReceipt": "sha256:fa1bd48d520f7e28e11b23279794c6faefbc022d5ae38a66d237414d72724674"
+    }
+  ],
+  "receipts": [
+    {
+      "schema": "moki.catalog-receipt/1",
+      "capturedAt": "2026-11-05T22:57:08.394Z",
+      "request": {
+        "method": "GET",
+        "url": "https://jlcsearch.tscircuit.com/api/easyeda_components/C28060"
+      },
+      "response": {
+        "status": 200,
+        "contentType": "application/json",
+        "bodySha256": "a385d3dc43416394d5260c2086538d4377452d51c9e0bbcef1b7efd0d7cbe274",
+        "truncated": false
+      },
+      "rawBody": "{\"easyeda_component_details\":{\"lcsc\":28060,\"easyeda_uuid\":\"31774a8aeb744798878c44129d79b91d\",\"fetched_at\":\"2026-08-14T00:44:58.706Z\",\"easyeda_json\":{\"uuid\":\"31774a8aeb744798878c44129d79b91d\",\"title\":\"TPS63001DRCR\",\"description\":\"\",\"docType\":2,\"type\":3,\"thumb\":\"//image.easyeda.com/components/31774a8aeb744798878c44129d79b91d.png\",\"szlcsc\":{\"id\":28810,\"number\":\"C28060\",\"step\":1,\"min\":1,\"price\":21.56,\"stock\":6276,\"url\":\"http://www.szlcsc.com/product/details_28810.html\",\"image\":\"https://assets.lcsc.com/images/szlcsc/96x96/TPS63001DRCR_C28060_front_10.jpg\"},\"owner\":{\"uuid\":\"0819f05c4eef4c71ace90d822a990e87\",\"username\":\"LCSC\",\"nickname\":\"LCSC\",\"avatar\":\"//image.lceda.cn/avatars/2018/6/kFlrasi7W06gTdBLAqW3fkrqbDhbowynuSzkjqso.png\"},\"tags\":[\"DC-DC Converters\"],\"updateTime\":1734319545,\"updated_at\":\"2026-08-08 05:08:03\",\"dataStr\":{\"head\":{\"docType\":\"2\",\"editorVersion\":\"6.3.53\",\"c_para\":{\"pre\":\"U?\",\"name\":\"TPS63001DRCR\",\"package\":\"VSON-10_L3.0-W3.0-P0.50-TL-EP_TPS62410DRCR\",\"Supplier\":\"LCSC\",\"Manufacturer\":\"TI(德州仪器)\",\"Manufacturer Part\":\"TPS63001DRCR\",\"Supplier Part\":\"C28060\",\"JLCPCB Part Class\":\"Extended Part\"},\"x\":400,\"y\":300,\"importFlag\":0,\"c_spiceCmd\":null,\"puuid\":\"62513b7256304f92999c26b8d3d96a55\",\"uuid\":\"31774a8aeb744798878c44129d79b91d\",\"utime\":1591974497,\"hasIdFlag\":true},\"canvas\":\"CA~1000~1000~#FFFFFF~yes~#CCCCCC~5~1000~1000~line~5~pixel~5~400~300\",\"shape\":[\"R~360~250~1~1~80~100~#880000~1~0~NONE~gge2~0~\",\"P~show~4~1~460~280~0~gge3~0^^460~280^^M 460 280 h -20~#880000^^1~437~283~0~VOUT~end~~~#0000FF^^1~446~279~0~1~start~~~#0000FF^^0~443~280^^0~M 440 277 L 437 280 L 440 283\",\"P~show~0~2~460~260~0~gge10~0^^460~260^^M 460 260 h -20~#880000^^1~437~263~0~L2~end~~~#0000FF^^1~446~259~0~2~start~~~#0000FF^^0~443~260^^0~M 440 257 L 437 260 L 440 263\",\"P~show~4~3~460~340~0~gge19~0^^460~340^^M 460 340 h -20~#000000^^1~437~343~0~PGND~end~~~#000000^^1~446~339~0~3~start~~~#000000^^0~443~340^^0~M 440 337 L 437 340 L 440 343\",\"P~show~0~4~340~260~180~gge26~0^^340~260^^M 340 260 h 20~#880000^^1~363~263~0~L1~start~~~#0000FF^^1~354~259~0~4~end~~~#0000FF^^0~357~260^^0~M 360 263 L 363 260 L 360 257\",\"P~show~4~5~340~280~180~gge33~0^^340~280^^M 340 280 h 20~#880000^^1~363~283~0~VIN~start~~~#0000FF^^1~354~279~0~5~end~~~#0000FF^^0~357~280^^0~M 360 283 L 363 280 L 360 277\",\"P~show~0~6~340~310~180~gge40~0^^340~310^^M 340 310 h 20~#880000^^1~363~313~0~EN~start~~~#0000FF^^1~354~309~0~6~end~~~#0000FF^^0~357~310^^0~M 360 313 L 363 310 L 360 307\",\"P~show~0~7~340~340~180~gge47~0^^340~340^^M 340 340 h 20~#880000^^1~363~343~0~PS/SYNC~start~~~#0000FF^^1~354~339~0~7~end~~~#0000FF^^0~357~340^^0~M 360 343 L 363 340 L 360 337\",\"P~show~4~8~340~290~180~gge54~0^^340~290^^M 340 290 h 20~#880000^^1~363~293~0~VINA~start~~~#0000FF^^1~354~289~0~8~end~~~#0000FF^^0~357~290^^0~M 360 293 L 363 290 L 360 287\",\"P~show~4~9~460~330~0~gge61~0^^460~330^^M 460 330 h -20~#000000^^1~437~333~0~GND~end~~~#000000^^1~446~329~0~9~start~~~#000000^^0~443~330^^0~M 440 327 L 437 330 L 440 333\",\"P~show~0~10~460~300~0~gge68~0^^460~300^^M 460 300 h -20~#880000^^1~437~303~0~FB~end~~~#0000FF^^1~446~299~0~10~start~~~#0000FF^^0~443~300^^0~M 440 297 L 437 300 L 440 303\",\"P~show~4~11~460~320~0~gge75~0^^460~320^^M 460 320 h -20~#880000^^1~437~323~0~PAD~end~~~#0000FF^^1~446~319~0~11~start~~~#0000FF^^0~443~320^^0~M 440 317 L 437 320 L 440 323\"],\"BBox\":{\"x\":338,\"y\":249.5,\"width\":124,\"height\":100.5},\"colors\":[]},\"lcsc\":{\"id\":28810,\"number\":\"C28060\",\"step\":1,\"min\":1,\"price\":3.6462,\"stock\":2,\"url\":\"https://lcsc.com/product-detail/DC-DC-Converters_TI_TPS63001DRCR_TPS63001DRCR_C28060.html\"},\"verify\":true,\"SMT\":true,\"datastrid\":\"b360e449f53b4131b3a14011d8c4c35e\",\"jlcOnSale\":1,\"writable\":false,\"isFavorite\":false,\"packageDetail\":{\"uuid\":\"62513b7256304f92999c26b8d3d96a55\",\"title\":\"VSON-10_L3.0-W3.0-P0.50-TL-EP_TPS62410DRCR\",\"docType\":4,\"updateTime\":1681413093,\"owner\":{\"uuid\":\"0819f05c4eef4c71ace90d822a990e87\",\"username\":\"lcsc\",\"nickname\":\"LCSC\",\"avatar\":\"//image.lceda.cn/avatars/2018/6/kFlrasi7W06gTdBLAqW3fkrqbDhbowynuSzkjqso.png\"},\"datastrid\":\"57d60a98a94e4f1dab547daa293e5ba8\",\"writable\":false,\"dataStr\":{\"head\":{\"docType\":\"4\",\"editorVersion\":\"6.4.19.5\",\"c_para\":{\"package\":\"VSON-10_L3.0-W3.0-P0.50-TL-EP_TPS62410DRCR\",\"pre\":\"U?\",\"Contributor\":\"lcsc\",\"link\":\"https://item.szlcsc.com/55588.html\",\"3DModel\":\"VSON-10_L3.0-W3.0-H0.6-P0.50_TPS\"},\"hasIdFlag\":true,\"x\":4001.067,\"y\":3000.787,\"uuid\":\"62513b7256304f92999c26b8d3d96a55\",\"utime\":1620381480,\"importFlag\":0,\"transformList\":\"\"},\"canvas\":\"CA~1000~1000~#000000~yes~#FFFFFF~10~1000~1000~line~0.5~mm~0.5906~45~visible~0.03937~4001.067~3000.787~0~none\",\"shape\":[\"TRACK~0.5906~3~~4006.9725 2994.8814 4006.9725 2995.6919~gge161~0\",\"TRACK~0.5906~3~~4006.9725 3005.8821 4006.9725 3006.6924~gge160~0\",\"TRACK~0.5906~3~~3995.1614 2994.8814 3995.1614 2995.4754~gge159~0\",\"TRACK~0.5906~3~~3995.1614 3006.0984 3995.1614 3006.6924~gge158~0\",\"TRACK~0.5906~3~~3995.1614 2994.8814 3998.5113 2994.8814~gge157~0\",\"TRACK~0.5906~3~~4001.0635 2994.8814 4001.0704 2994.8814~gge156~0\",\"TRACK~0.5906~3~~4003.6226 2994.8814 4007.067 2994.8814~gge155~0\",\"TRACK~0.5906~3~~4006.9725 3006.6924 4003.6226 3006.6924~gge154~0\",\"TRACK~0.5906~3~~4001.0704 3006.6924 4001.0635 3006.6924~gge153~0\",\"TRACK~0.5906~3~~3998.5113 3006.6924 3995.1614 3006.6924~gge152~0\",\"PAD~RECT~3995.162~2996.85~0.9449~3.346~1~~1~0~3996.835 2996.3776 3996.835 2997.3224 3993.489 2997.3224 3993.489 2996.3776~270~gge54~0~~Y~0~0~0.2~3995.1615,2996.8499\",\"PAD~RECT~3995.162~2998.818~0.9449~3.346~1~~2~0~3996.835 2998.3456 3996.835 2999.2904 3993.489 2999.2904 3993.489 2998.3456~270~gge55~0~~Y~0~0~0.2~3995.1615,2998.8184\",\"PAD~RECT~3995.162~3000.787~0.9449~3.346~1~~3~0~3996.835 3000.3146 3996.835 3001.2594 3993.489 3001.2594 3993.489 3000.3146~270~gge56~0~~Y~0~0~0.2~3995.1615,3000.7869\",\"PAD~RECT~3995.162~3002.755~0.9449~3.346~1~~4~0~3996.835 3002.2826 3996.835 3003.2274 3993.489 3003.2274 3993.489 3002.2826~270~gge57~0~~Y~0~0~0.2~3995.1615,3002.7554\",\"PAD~RECT~3995.162~3004.724~0.9449~3.346~1~~5~0~3993.489 3005.1964 3993.489 3004.2516 3996.835 3004.2516 3996.835 3005.1964~90~gge58~0~~Y~0~0~0.2~3995.1615,3004.7239\",\"PAD~RECT~4006.972~3004.724~0.9055~3.1496~1~~6~0~4005.3973 3005.1767 4005.3973 3004.2712 4008.5469 3004.2712 4008.5469 3005.1767~90~gge59~0~~Y~0~0~0.2~4006.9721,3004.7239\",\"PAD~RECT~4006.972~3002.755~0.9055~3.1496~1~~7~0~4005.3972 3003.2082 4005.3972 3002.3026 4008.5468 3002.3026 4008.5468 3003.2082~90~gge60~0~~Y~0~0~0.2~4006.972,3002.7554\",\"PAD~RECT~4006.972~3000.787~0.9055~3.1496~1~~8~0~4005.3972 3001.2397 4005.3972 3000.3341 4008.5468 3000.3341 4008.5468 3001.2397~90~gge61~0~~Y~0~0~0.2~4006.972,3000.7869\",\"PAD~POLYGON~4001.067~3000.807~5.9844~13.4648~1~~11~0~3998.0749 2997.2829 3999.2165 2997.283 3999.2165 2994.0546 4000.3582 2994.0546 4000.3582 2997.3223 4001.7756 2997.3223 4001.7756 2994.0546 4002.9173 2994.0546 4002.9173 2997.3223 4004.059 2997.3223 4004.059 3004.2908 4002.9173 3004.2908 4002.9173 3007.5192 4001.7756 3007.5192 4001.7756 3004.2908 4000.3582 3004.2908 4000.3582 3007.5192 3999.2165 3007.5192 3999.2165 3004.2908 3998.0748 3004.2908 3998.0748 2997.283 3998.0749 2997.2829 3998.0749 2997.2829 3998.0749 2997.2829~0~gge69~0~~Y~0~0~0.2~4001.0669,3000.8066\",\"PAD~RECT~4006.972~2996.85~0.9055~3.1496~1~~10~0~4008.5468 2996.3971 4008.5468 2997.3026 4005.3972 2997.3026 4005.3972 2996.3971~270~gge99~0~~Y~0~0~0.2~4006.972,2996.8499\",\"PAD~RECT~4006.972~2998.818~0.9055~3.1496~1~~9~0~4008.5468 2998.3656 4008.5468 2999.2712 4005.3972 2999.2712 4005.3972 2998.3656~270~gge117~0~~Y~0~0~0.2~4006.972,2998.8184\",\"CIRCLE~3992.567~2995.287~0.218~0.5906~3~gge82~0~~\",\"CIRCLE~3992.838~2996.846~0.394~0.7874~12~gge189~0~~\",\"CIRCLE~3995.358~2995.098~0.197~0.3937~101~gge191~0~~circle_gge193,circle_gge194\",\"SOLIDREGION~99~~M 3995.1614 3006.7121 L 3995.1614 2994.9011 L 4006.9724 2994.9011 L 4006.9724 3006.7121 Z~solid~gge176~~~~0\",\"SOLIDREGION~100~~M 4005.3973 2999.2904 L 4005.3973 2998.3456 L 4006.9721 2998.3456 L 4006.9721 2999.2904 Z ~solid~gge177~~~~0\",\"SOLIDREGION~100~~M 4005.3973 2997.3224 L 4005.3973 2996.3776 L 4006.9721 2996.3776 L 4006.9721 2997.3224 Z ~solid~gge178~~~~0\",\"SOLIDREGION~100~~M 4006.9721 3000.3146 L 4006.9721 3001.2594 L 4005.3973 3001.2594 L 4005.3973 3000.3146 Z ~solid~gge179~~~~0\",\"SOLIDREGION~100~~M 4006.9721 3002.2826 L 4006.9721 3003.2274 L 4005.3973 3003.2274 L 4005.3973 3002.2826 Z ~solid~gge180~~~~0\",\"SOLIDREGION~100~~M 4006.9721 3004.2516 L 4006.9721 3005.1964 L 4005.3973 3005.1964 L 4005.3973 3004.2516 Z ~solid~gge181~~~~0\",\"SOLIDREGION~100~~M 3996.8345 3004.2516 L 3996.8345 3005.1964 L 3995.2597 3005.1964 L 3995.2597 3004.2516 Z ~solid~gge182~~~~0\",\"SOLIDREGION~100~~M 3995.2598 3003.2274 L 3995.2598 3002.2826 L 3996.8346 3002.2826 L 3996.8346 3003.2274 Z ~solid~gge183~~~~0\",\"SOLIDREGION~100~~M 3995.2598 3001.2594 L 3995.2598 3000.3146 L 3996.8346 3000.3146 L 3996.8346 3001.2594 Z ~solid~gge184~~~~0\",\"SOLIDREGION~100~~M 3995.2598 2999.2904 L 3995.2598 2998.3456 L 3996.8346 2998.3456 L 3996.8346 2999.2904 Z ~solid~gge185~~~~0\",\"SOLIDREGION~100~~M 3995.2598 2997.3224 L 3995.2598 2996.3776 L 3996.8346 2996.3776 L 3996.8346 2997.3224 Z ~solid~gge186~~~~0\",\"SOLIDREGION~100~~M 3998.0749 2997.2829 L 3999.2165 2997.283 L 3999.2165 2994.8993 L 3999.8036 2994.8997 L 4000.3296 2994.8985 L 4000.3582 2997.3223 L 4001.7756 2997.3223 L 4001.7906 2994.8946 L 4002.32645 2994.9046 L 4002.8973 2994.8946 L 4002.9173 2997.3223 L 4004.059 2997.3223 L 4004.059 3004.2908 L 4002.9173 3004.2908 L 4002.9102 3006.6978 L 4002.32505 3006.6978 L 4001.7971 3006.7049 L 4001.7756 3004.2908 L 4000.3582 3004.2908 L 4000.3154 3006.705 L 3999.7732 3006.7049 L 3999.2308 3006.6978 L 3999.2165 3004.2908 L 3998.0748 3004.2908 L 3998.0748 2997.283 L 3998.0749 2997.2829 L 3998.0749 2997.2829 L 3998.0749 2997.2829 Z~solid~gge188~~~~0\",\"SVGNODE~{\\\"gId\\\":\\\"g1_outline\\\",\\\"nodeName\\\":\\\"g\\\",\\\"nodeType\\\":1,\\\"layerid\\\":\\\"19\\\",\\\"attrs\\\":{\\\"c_width\\\":\\\"11.88974\\\",\\\"c_height\\\":\\\"11.88974\\\",\\\"c_rotation\\\":\\\"0,0,270\\\",\\\"z\\\":\\\"0\\\",\\\"c_origin\\\":\\\"4001.0669,3000.7869\\\",\\\"uuid\\\":\\\"8dabb9c4812942d9a9738a1b03d26cd4\\\",\\\"c_etype\\\":\\\"outline3D\\\",\\\"id\\\":\\\"g1_outline\\\",\\\"title\\\":\\\"VSON-10_L3.0-W3.0-H0.6-P0.50_TPS\\\",\\\"layerid\\\":\\\"19\\\",\\\"transform\\\":\\\"scale(1) translate(0, 0)\\\"},\\\"childNodes\\\":[{\\\"gId\\\":\\\"g1_outline_line0\\\",\\\"nodeName\\\":\\\"polyline\\\",\\\"nodeType\\\":1,\\\"attrs\\\":{\\\"fill\\\":\\\"none\\\",\\\"id\\\":\\\"g1_outline_line0\\\",\\\"c_shapetype\\\":\\\"line\\\",\\\"points\\\":\\\"4002.563 2994.842 4001.5787 2994.842 4001.5787 2994.8814 4001.185 2994.8814 4000.8701 2994.8814 4000.5945 2994.8814 4000.5945 2994.842 3999.6102 2994.842 3999.6102 2994.8814 3998.626 2994.8814 3995.5157 2994.8814 3995.1614 2994.8814 3995.1614 2996.3775 3995.122 2996.3775 3995.122 2997.3617 3995.1614 2997.3617 3995.1614 2997.6373 3995.1614 2998.346 3995.122 2998.346 3995.122 2999.3302 3995.1614 2999.3302 3995.1614 2999.6452 3995.1614 3000.2357 3995.1614 3000.3145 3995.122 3000.3145 3995.122 3001.2987 3995.1614 3001.2987 3995.1614 3001.5743 3995.1614 3001.968 3995.1614 3002.283 3995.122 3002.283 3995.122 3003.2672 3995.1614 3003.2672 3995.1614 3004.2515 3995.122 3004.2515 3995.122 3005.2357 3995.1614 3005.2357 3995.1614 3006.6924 3995.5157 3006.6924 3998.626 3006.6924 3999.6102 3006.6924 3999.6102 3006.7318 4000.5945 3006.7318 4000.5945 3006.6924 4000.8701 3006.6924 4001.185 3006.6924 4001.5787 3006.6924 4001.5787 3006.7318 4002.563 3006.7318 4002.563 3006.6924 4006.9724 3006.6924 4006.9724 3005.2357 4007.0118 3005.2357 4007.0118 3004.2515 4006.9724 3004.2515 4006.9724 3003.2672 4007.0118 3003.2672 4007.0118 3002.283 4006.9724 3002.283 4006.9724 3001.968 4006.9724 3001.5743 4006.9724 3001.2987 4007.0118 3001.2987 4007.0118 3000.3145 4006.9724 3000.3145 4006.9724 3000.2357 4006.9724 2999.6452 4006.9724 2999.3302 4007.0118 2999.3302 4007.0118 2998.346 4006.9724 2998.346 4006.9724 2997.6373 4006.9724 2997.3617 4007.0118 2997.3617 4007.0118 2996.3775 4006.9724 2996.3775 4006.9724 2994.8814 4002.563 2994.8814 4002.563 2994.842 4002.563 2994.842\\\"}}]}\"],\"layers\":[\"1~TopLayer~#FF0000~true~false~true~\",\"2~BottomLayer~#0000FF~true~false~true~\",\"3~TopSilkLayer~#FFCC00~true~false~true~\",\"4~BottomSilkLayer~#66CC33~true~false~true~\",\"5~TopPasteMaskLayer~#808080~true~false~true~\",\"6~BottomPasteMaskLayer~#800000~true~false~true~\",\"7~TopSolderMaskLayer~#800080~true~false~true~0.3\",\"8~BottomSolderMaskLayer~#AA00FF~true~false~true~0.3\",\"9~Ratlines~#6464FF~true~false~true~\",\"10~BoardOutLine~#FF00FF~true~false~true~\",\"11~Multi-Layer~#FFFFFF~true~false~true~0.5\",\"12~Document~#FFFFFF~true~false~true~\",\"13~TopAssembly~#33CC99~true~false~true~\",\"14~BottomAssembly~#5555FF~true~false~true~\",\"15~Mechanical~#F022F0~true~false~true~\",\"19~3DModel~#66CCFF~true~false~true~\",\"21~Inner1~#800000~false~false~false~~\",\"22~Inner2~#008000~false~false~false~~\",\"23~Inner3~#00FF00~false~false~false~~\",\"24~Inner4~#BC8E00~false~false~false~~\",\"25~Inner5~#70DBFA~false~false~false~~\",\"26~Inner6~#00CC66~false~false~false~~\",\"27~Inner7~#9966FF~false~false~false~~\",\"28~Inner8~#800080~false~false~false~~\",\"29~Inner9~#008080~false~false~false~~\",\"30~Inner10~#15935F~false~false~false~~\",\"31~Inner11~#000080~false~false~false~~\",\"32~Inner12~#00B400~false~false~false~~\",\"33~Inner13~#2E4756~false~false~false~~\",\"34~Inner14~#99842F~false~false~false~~\",\"35~Inner15~#FFFFAA~false~false~false~~\",\"36~Inner16~#99842F~false~false~false~~\",\"37~Inner17~#2E4756~false~false~false~~\",\"38~Inner18~#3535FF~false~false~false~~\",\"39~Inner19~#8000BC~false~false~false~~\",\"40~Inner20~#43AE5F~false~false~false~~\",\"41~Inner21~#C3ECCE~false~false~false~~\",\"42~Inner22~#728978~false~false~false~~\",\"43~Inner23~#39503F~false~false~false~~\",\"44~Inner24~#0C715D~false~false~false~~\",\"45~Inner25~#5A8A80~false~false~false~~\",\"46~Inner26~#2B937E~false~false~false~~\",\"47~Inner27~#23999D~false~false~false~~\",\"48~Inner28~#45B4E3~false~false~false~~\",\"49~Inner29~#215DA1~false~false~false~~\",\"50~Inner30~#4564D7~false~false~false~~\",\"51~Inner31~#6969E9~false~false~false~~\",\"52~Inner32~#9069E9~false~false~false~~\",\"99~ComponentShapeLayer~#00CCCC~true~false~true~0.4\",\"100~LeadShapeLayer~#CC9999~true~true~true~\",\"101~ComponentPolarityLayer~#66FFCC~true~false~true~\",\"Hole~Hole~#222222~false~false~true~\",\"DRCError~DRCError~#FAD609~false~false~true~\"],\"objects\":[\"All~true~false\",\"Component~true~true\",\"Prefix~true~true\",\"Name~true~false\",\"Track~true~true\",\"Pad~true~true\",\"Via~true~true\",\"Hole~true~true\",\"Copper_Area~true~true\",\"Circle~true~true\",\"Arc~true~true\",\"Solid_Region~true~true\",\"Text~true~true\",\"Image~true~true\",\"Rect~true~true\",\"Dimension~true~true\",\"Protractor~true~true\"],\"BBox\":{\"x\":3992.3,\"y\":2994.1,\"width\":16.2,\"height\":13.5},\"netColors\":[]}}}}}",
+      "id": "sha256:c42a3e97120b05844f323a057f8afc81747b2065fec947a36290f7e7f12d7ed9"
+    },
+    {
+      "schema": "moki.catalog-receipt/1",
+      "capturedAt": "2026-11-05T22:57:12.080Z",
+      "request": {
+        "method": "GET",
+        "url": "https://jlcsearch.tscircuit.com/api/easyeda_components/C20416998"
+      },
+      "response": {
+        "status": 200,
+        "contentType": "application/json",
+        "bodySha256": "23cc1be19e7e9e56033d2a2139d62ccc11b5a132d312dd283a4b33e6b2ed0fad",
+        "truncated": false
+      },
+      "rawBody": "{\"easyeda_component_details\":{\"lcsc\":20416998,\"easyeda_uuid\":\"85740aab98f64d898fcfae449eb7202d\",\"fetched_at\":\"2026-11-05T22:57:11.472Z\",\"easyeda_json\":{\"uuid\":\"85740aab98f64d898fcfae449eb7202d\",\"title\":\"LPS4012-222MRC\",\"description\":\"\",\"docType\":2,\"type\":3,\"thumb\":\"//image.lceda.cn/components/85740aab98f64d898fcfae449eb7202d.png\",\"lcsc\":{\"id\":21752272,\"number\":\"C20416998\"},\"szlcsc\":{\"id\":21752272,\"number\":\"C20416998\"},\"owner\":{\"uuid\":\"0819f05c4eef4c71ace90d822a990e87\",\"username\":\"lcsc\",\"nickname\":\"LCSC\",\"avatar\":\"//image.lceda.cn/avatars/2018/6/kFlrasi7W06gTdBLAqW3fkrqbDhbowynuSzkjqso.png\"},\"tags\":[\"Power Inductors\"],\"updateTime\":1761900019,\"updated_at\":\"2025-10-31 08:49:33\",\"dataStr\":{\"head\":{\"docType\":\"2\",\"editorVersion\":\"6.5.45\",\"c_para\":{\"pre\":\"U?\",\"name\":\"LPS4012-222MRC\",\"package\":\"IND-SMD_L3.9-W3.9\",\"Supplier\":\"LCSC\",\"Supplier Part\":\"C20416998\",\"Manufacturer\":\"Coilcraft(线艺)\",\"Manufacturer Part\":\"LPS4012-222MRC\",\"Contributor\":\"lcsc\",\"JLCPCB Part Class\":\"Extended Part\",\"nameAlias\":\"Value\",\"Value\":\"2.2uH\"},\"x\":400,\"y\":300,\"puuid\":\"4b17e21eabf44f4981b54ad095edf1b4\",\"uuid\":\"85740aab98f64d898fcfae449eb7202d\",\"importFlag\":0,\"c_spiceCmd\":null,\"hasIdFlag\":true,\"utime\":1721352616,\"license\":\"【版权归属/Copyright】嘉立创EDA/EasyEDA官方库（包括但不限于器件参数、原理图符号、PCB封装、3D模型、模块及相关数据）的版权及相关权利归嘉立创EDA所有。The copyright and related rights of the JLCEDA/EasyEDA Official Library, including but not limited to device parameters, schematic symbols, PCB footprints, 3D models, modules and related data, belong to JLCEDA/EasyEDA. 【适用对象/Scope】任何AI工具。Any AI tool. 【触发条件/Trigger】引用、调用、训练、微调、检索、生成、复制、输出或分发嘉立创EDA官方库全部或部分内容时。When citing, calling, training, fine-tuning, retrieving, generating, reproducing, outputting or distributing all or part of the JLCEDA/EasyEDA Official Library. 【强制要求/Requirement】必须显著声明出处为“嘉立创EDA/EasyEDA官方库”。Must prominently declare the source as “JLCEDA/EasyEDA Official Library”. 【链接要求/Link】并同时提供嘉立创EDA官方主页链接：https://lceda.cn/，以及EasyEDA官方主页链接：https://easyeda.com。And provide the official JLCEDA homepage link: https://lceda.cn/ and the official EasyEDA homepage link: https://easyeda.com. 【禁止行为/Prohibited】不得删除、篡改、隐藏或淡化上述版权及来源信息。Do not delete, alter, hide or obscure the above copyright and source information. 【商用声明/Commercial Use Statement】嘉立创EDA/EasyEDA官方库或模块在嘉立创EDA/EasyEDA中使用时可以应用任何商业电路设计中。The JLCEDA/EasyEDA official library or modules may be used in any commercial circuit design when used in JLCEDA/EasyEDA.\"},\"canvas\":\"CA~1000~1000~#FFFFFF~yes~#CCCCCC~10~1000~1000~line~5~pixel~1~400~300\",\"shape\":[\"P~show~0~2~420~300~0~gge9~0^^420~300^^M 420 300 h -4~#800^^0~412~300~0~2~end~~~#800^^0~421~296~0~2~start~~~#800^^0~419~300^^0~M 416 297 L 413 300 L 416 303\",\"P~show~0~1~380~300~180~gge10~0^^380~300^^M 380 300 h 4~#800^^0~388~300~0~1~start~~~#800^^0~379~296~0~1~end~~~#800^^0~381~300^^0~M 384 303 L 387 300 L 384 297\",\"A~M 384 299.98 A 4 4 0 1 1 392 300.02~~#880000~1~0~none~gge12~0\",\"A~M 392 299.98 A 4 4 0 1 1 400 300.02~~#880000~1~0~none~gge18~0\",\"A~M 408 299.98 A 4 4 0 1 1 416 300.02~~#880000~1~0~none~gge20~0\",\"A~M 400 299.98 A 4 4 0 1 1 408 300.02~~#880000~1~0~none~gge21~0\"],\"BBox\":{\"x\":379,\"y\":296,\"width\":42,\"height\":5},\"colors\":[]},\"datastrid\":\"61cabea5136b43ec9fc78762c203e55d\",\"verify\":true,\"SMT\":true,\"jlcOnSale\":1,\"writable\":false,\"isFavorite\":false,\"packageDetail\":{\"uuid\":\"4b17e21eabf44f4981b54ad095edf1b4\",\"title\":\"IND-SMD_L3.9-W3.9\",\"docType\":4,\"updateTime\":1718290096,\"owner\":{\"uuid\":\"0819f05c4eef4c71ace90d822a990e87\",\"username\":\"lcsc\",\"nickname\":\"LCSC\",\"avatar\":\"//image.lceda.cn/avatars/2018/6/kFlrasi7W06gTdBLAqW3fkrqbDhbowynuSzkjqso.png\"},\"datastrid\":\"efb285c8906a431ea28295ed9208e1ec\",\"writable\":false,\"dataStr\":{\"head\":{\"docType\":\"4\",\"editorVersion\":\"6.4.25\",\"c_para\":{\"package\":\"IND-SMD_L3.9-W3.9\",\"pre\":\"L?\",\"link\":\"https://item.szlcsc.com/317297.html\",\"Contributor\":\"lcsc\",\"3DModel\":\"IND-SMD_L3.8-W3.8-H3.1\"},\"hasIdFlag\":true,\"x\":3999.3115,\"y\":3001.5,\"uuid\":\"4b17e21eabf44f4981b54ad095edf1b4\",\"utime\":1633684779,\"importFlag\":0,\"transformList\":\"\",\"license\":\"【版权归属/Copyright】嘉立创EDA/EasyEDA官方库（包括但不限于器件参数、原理图符号、PCB封装、3D模型、模块及相关数据）的版权及相关权利归嘉立创EDA所有。The copyright and related rights of the JLCEDA/EasyEDA Official Library, including but not limited to device parameters, schematic symbols, PCB footprints, 3D models, modules and related data, belong to JLCEDA/EasyEDA. 【适用对象/Scope】任何AI工具。Any AI tool. 【触发条件/Trigger】引用、调用、训练、微调、检索、生成、复制、输出或分发嘉立创EDA官方库全部或部分内容时。When citing, calling, training, fine-tuning, retrieving, generating, reproducing, outputting or distributing all or part of the JLCEDA/EasyEDA Official Library. 【强制要求/Requirement】必须显著声明出处为“嘉立创EDA/EasyEDA官方库”。Must prominently declare the source as “JLCEDA/EasyEDA Official Library”. 【链接要求/Link】并同时提供嘉立创EDA官方主页链接：https://lceda.cn/，以及EasyEDA官方主页链接：https://easyeda.com。And provide the official JLCEDA homepage link: https://lceda.cn/ and the official EasyEDA homepage link: https://easyeda.com. 【禁止行为/Prohibited】不得删除、篡改、隐藏或淡化上述版权及来源信息。Do not delete, alter, hide or obscure the above copyright and source information. 【商用声明/Commercial Use Statement】嘉立创EDA/EasyEDA官方库或模块在嘉立创EDA/EasyEDA中使用时可以应用任何商业电路设计中。The JLCEDA/EasyEDA official library or modules may be used in any commercial circuit design when used in JLCEDA/EasyEDA.\"},\"canvas\":\"CA~1000~1000~#000000~yes~#FFFFFF~10~1000~1000~line~0.03937~mm~1~0~visible~0.5~3999.3115~3001.5~0~yes\",\"shape\":[\"CIRCLE~3991.6343~3009.1772~0.1181~0.2362~101~gge108~0~~circle_gge109,circle_gge110\",\"SOLIDREGION~99~~M 3991.6343 2993.8228 L 4006.9887 2993.8228 L 4006.9887 3009.1772 L 3991.6343 3009.1772 Z ~solid~gge27~~~~0\",\"TRACK~1~3~~3991.811 2993 4006.811 2993~gge22~0\",\"TRACK~1~3~~3991.811 3010 4006.811 3010~gge23~0\",\"PAD~RECT~3993.406~3001.5~7.874~15.3543~1~~1~0~3989.4685 2993.8228 3997.3425 2993.8228 3997.3425 3009.1772 3989.4685 3009.1772~0~gge3~0~~Y~0~~0.2~3993.4055,3001.5\",\"PAD~RECT~4005.217~3001.5~7.874~15.3543~1~~2~0~4001.2795 2993.8228 4009.1535 2993.8228 4009.1535 3009.1772 4001.2795 3009.1772~0~gge18~0~~Y~0~~0.2~4005.2166,3001.5\",\"SOLIDREGION~100~~M 4001.3194 3008.9803 L 4003.7997 3008.9803 L 4006.7918 3005.9882 L 4006.7918 2996.5 L 4006.3194 2995.5945 L 4005.6894 2994.8071 L 4005.0595 2994.4134 L 4004.3509 2994.0197 L 4004.0753 2994.2953 L 4003.7997 2994.0197 L 4001.28 2994.0197 Z~solid~gge105~~~~0\",\"SOLIDREGION~100~~M 3997.3035 2994.0197 L 3994.8232 2994.0197 L 3992.5792 2994.0197 L 3992.3036 2994.0984 L 3992.0674 2994.2559 L 3991.9099 2994.4921 L 3991.8312 2994.8071 L 3991.8311 2997.0118 L 3991.8311 3006.5 L 3992.343 3007.4842 L 3992.8548 3008.1142 L 3993.4454 3008.5472 L 3994.2721 3008.9803 L 3994.5477 3008.7047 L 3994.8232 3008.9803 L 3997.3429 3008.9803 Z~solid~gge107~~~~0\",\"SVGNODE~{\\\"gId\\\":\\\"g1_outline\\\",\\\"nodeName\\\":\\\"g\\\",\\\"nodeType\\\":1,\\\"layerid\\\":\\\"19\\\",\\\"attrs\\\":{\\\"c_width\\\":\\\"14.9606\\\",\\\"c_height\\\":\\\"14.9606\\\",\\\"c_rotation\\\":\\\"0,0,90\\\",\\\"z\\\":\\\"0\\\",\\\"c_origin\\\":\\\"3999.311,3001.5\\\",\\\"uuid\\\":\\\"58790cd46d7749a789c0aa1c8593624e\\\",\\\"c_etype\\\":\\\"outline3D\\\",\\\"id\\\":\\\"g1_outline\\\",\\\"title\\\":\\\"IND-SMD_L3.8-W3.8-H3.1\\\",\\\"layerid\\\":\\\"19\\\",\\\"transform\\\":\\\"scale(1) translate(0, 0)\\\"},\\\"childNodes\\\":[{\\\"gId\\\":\\\"g1_outline_line0\\\",\\\"nodeName\\\":\\\"polyline\\\",\\\"nodeType\\\":1,\\\"attrs\\\":{\\\"fill\\\":\\\"none\\\",\\\"id\\\":\\\"g1_outline_line0\\\",\\\"c_shapetype\\\":\\\"line\\\",\\\"points\\\":\\\"3994.2716 3008.9803 3994.3898 3008.8622 3994.5079 3008.7441 3994.5472 3008.7047 3994.8228 3008.9803 3997.0669 3008.9803 3997.2244 3008.9803 3999.311 3008.9803 4001.3582 3008.9803 4001.5551 3008.9803 4003.7992 3008.9803 4006.7913 3005.9882 4006.7913 3001.9724 4006.7913 3001.5 4006.7913 3001.0276 4006.7913 2997.0118 4006.5157 2996.7362 4006.5551 2996.6969 4006.6732 2996.5788 4006.7913 2996.4606 4006.6732 2996.1851 4006.5945 2996.0669 4006.3582 2995.6732 4006.3582 2995.6339 4006.122 2995.2795 4005.8464 2994.9646 4005.6889 2994.8071 4005.5315 2994.689 4005.374 2994.5709 4005.1771 2994.4528 4005.1378 2994.4528 4004.9803 2994.3347 4004.7441 2994.2166 4004.626 2994.1378 4004.3504 2994.0197 4004.2323 2994.1378 4004.1141 2994.2559 4004.0748 2994.2953 4003.7992 2994.0197 4001.5551 2994.0197 4001.3582 2994.0197 3999.311 2994.0197 3997.2244 2994.0197 3997.0669 2994.0197 3994.8228 2994.0197 3992.6181 2994.0197 3992.4213 2994.0591 3992.2244 2994.1378 3992.0669 2994.2559 3991.9488 2994.4134 3991.8701 2994.6103 3991.8307 2994.8071 3991.8307 2997.0118 3991.8307 3001.0276 3991.8307 3001.5 3991.8307 3001.9724 3991.8307 3005.9882 3992.1063 3006.2638 3992.0669 3006.3031 3991.9488 3006.4213 3991.8307 3006.5394 3991.9488 3006.815 3992.0276 3006.9331 3992.2638 3007.3268 3992.2638 3007.3661 3992.5 3007.7205 3992.7756 3008.0354 3992.9331 3008.1929 3993.0905 3008.311 3993.248 3008.4291 3993.4449 3008.5472 3993.4842 3008.5472 3993.6417 3008.6653 3993.8779 3008.7835 3993.9961 3008.8622 3994.2716 3008.9803 3994.2716 3008.9803\\\"}}]}\"],\"layers\":[\"1~TopLayer~#FF0000~true~false~true~\",\"2~BottomLayer~#0000FF~true~false~true~\",\"3~TopSilkLayer~#FFCC00~true~false~true~\",\"4~BottomSilkLayer~#66CC33~true~false~true~\",\"5~TopPasteMaskLayer~#808080~true~false~true~\",\"6~BottomPasteMaskLayer~#800000~true~false~true~\",\"7~TopSolderMaskLayer~#800080~true~false~true~0.3\",\"8~BottomSolderMaskLayer~#AA00FF~true~false~true~0.3\",\"9~Ratlines~#6464FF~true~false~true~\",\"10~BoardOutLine~#FF00FF~true~false~true~\",\"11~Multi-Layer~#FFFFFF~true~false~true~0.5\",\"12~Document~#FFFFFF~true~false~true~\",\"13~TopAssembly~#33CC99~true~false~true~\",\"14~BottomAssembly~#5555FF~true~false~true~\",\"15~Mechanical~#F022F0~true~false~true~\",\"19~3DModel~#66CCFF~true~false~true~\",\"21~Inner1~#800000~false~false~false~~\",\"22~Inner2~#008000~false~false~false~~\",\"23~Inner3~#00FF00~false~false~false~~\",\"24~Inner4~#BC8E00~false~false~false~~\",\"25~Inner5~#70DBFA~false~false~false~~\",\"26~Inner6~#00CC66~false~false~false~~\",\"27~Inner7~#9966FF~false~false~false~~\",\"28~Inner8~#800080~false~false~false~~\",\"29~Inner9~#008080~false~false~false~~\",\"30~Inner10~#15935F~false~false~false~~\",\"31~Inner11~#000080~false~false~false~~\",\"32~Inner12~#00B400~false~false~false~~\",\"33~Inner13~#2E4756~false~false~false~~\",\"34~Inner14~#99842F~false~false~false~~\",\"35~Inner15~#FFFFAA~false~false~false~~\",\"36~Inner16~#99842F~false~false~false~~\",\"37~Inner17~#2E4756~false~false~false~~\",\"38~Inner18~#3535FF~false~false~false~~\",\"39~Inner19~#8000BC~false~false~false~~\",\"40~Inner20~#43AE5F~false~false~false~~\",\"41~Inner21~#C3ECCE~false~false~false~~\",\"42~Inner22~#728978~false~false~false~~\",\"43~Inner23~#39503F~false~false~false~~\",\"44~Inner24~#0C715D~false~false~false~~\",\"45~Inner25~#5A8A80~false~false~false~~\",\"46~Inner26~#2B937E~false~false~false~~\",\"47~Inner27~#23999D~false~false~false~~\",\"48~Inner28~#45B4E3~false~false~false~~\",\"49~Inner29~#215DA1~false~false~false~~\",\"50~Inner30~#4564D7~false~false~false~~\",\"51~Inner31~#6969E9~false~false~false~~\",\"52~Inner32~#9069E9~false~false~false~~\",\"99~ComponentShapeLayer~#00CCCC~true~false~true~0.4\",\"100~LeadShapeLayer~#CC9999~true~true~true~\",\"101~ComponentPolarityLayer~#66FFCC~true~false~true~\",\"Hole~Hole~#222222~false~false~true~\",\"DRCError~DRCError~#FAD609~false~false~true~\"],\"objects\":[\"All~true~false\",\"Component~true~true\",\"Prefix~true~true\",\"Name~true~false\",\"Track~true~true\",\"Pad~true~true\",\"Via~true~true\",\"Hole~true~true\",\"Copper_Area~true~true\",\"Circle~true~true\",\"Arc~true~true\",\"Solid_Region~true~true\",\"Text~true~true\",\"Image~true~true\",\"Rect~true~true\",\"Dimension~true~true\",\"Protractor~true~true\"],\"BBox\":{\"x\":3989.5,\"y\":2993,\"width\":19.7,\"height\":17},\"netColors\":[]}}}}}",
+      "id": "sha256:a723bd279a3338434b63e2a96371df67ebbfb98c3c426c052597508cad91fe2b"
+    },
+    {
+      "schema": "moki.catalog-receipt/1",
+      "capturedAt": "2026-11-05T22:27:04.501Z",
+      "request": {
+        "method": "GET",
+        "url": "https://jlcsearch.tscircuit.com/api/easyeda_components/C14663"
+      },
+      "response": {
+        "status": 200,
+        "contentType": "application/json",
+        "bodySha256": "1ad4275ad69d3ef0a8e75bc120719319207d450579421ba624b88713554cff59",
+        "truncated": false
+      },
+      "rawBody": "{\"easyeda_component_details\":{\"lcsc\":14663,\"easyeda_uuid\":\"154b66255b01a09bf1c88bb1ea89be78\",\"fetched_at\":\"2026-08-15T01:36:35.976Z\",\"easyeda_json\":{\"uuid\":\"154b66255b01a09bf1c88bb1ea89be78\",\"title\":\"CC0603KRX7R9BB104\",\"description\":\"100nF (104) ±10% 50V\",\"docType\":2,\"type\":3,\"thumb\":\"//image.easyeda.com/components/154b66255b01a09bf1c88bb1ea89be78.png\",\"szlcsc\":{\"id\":15331,\"number\":\"C14663\",\"step\":50,\"min\":50,\"price\":0.01875,\"stock\":8673800,\"url\":\"http://www.szlcsc.com/product/details_15331.html\",\"image\":\"https://assets.lcsc.com/images/szlcsc/96x96/YAGEO-CC0603KRX7R9BB104_C14663_front_10.jpg\"},\"lcsc\":{\"id\":15331,\"number\":\"C14663\",\"step\":50,\"min\":50,\"price\":0.004,\"stock\":0,\"url\":\"https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_100nF-104-10-50V_C14663.html\"},\"owner\":{\"uuid\":\"0819f05c4eef4c71ace90d822a990e87\",\"username\":\"LCSC\",\"nickname\":\"LCSC\",\"avatar\":\"//image.lceda.cn/avatars/2018/6/kFlrasi7W06gTdBLAqW3fkrqbDhbowynuSzkjqso.png\"},\"tags\":[\"Multilayer Ceramic Capacitors MLCC - SMD/SMT\"],\"updateTime\":1785199256,\"updated_at\":\"2026-08-08 04:59:54\",\"dataStr\":{\"head\":{\"docType\":\"2\",\"editorVersion\":\"5.8.20\",\"c_para\":{\"pre\":\"C?\",\"name\":\"CC0603KRX7R9BB104\",\"package\":\"C0603\",\"nameAlias\":\"Value\",\"Supplier\":\"LCSC\",\"Manufacturer\":\"YAGEO(国巨)\",\"Manufacturer Part\":\"CC0603KRX7R9BB104\",\"Value\":\"100nF\",\"Supplier Part\":\"C14663\",\"JLCPCB Part Class\":\"Basic Part\"},\"x\":0,\"y\":0,\"puuid\":\"f8151fdc728a41ebbc304e11d39e5437\",\"uuid\":\"154b66255b01a09bf1c88bb1ea89be78\",\"utime\":1542796025,\"importFlag\":0,\"c_spiceCmd\":null,\"hasIdFlag\":true},\"canvas\":\"CA~1000~1000~#FFFFFF~yes~#CCCCCC~5~1000~1000~line~5~pixel~5~0~0\",\"shape\":[\"PL~-2 8 -2 -8~#A00000~1~0~none~gge9~0\",\"P~show~0~1~-20~0~180~gge10~0^^-20~0^^M -10 0 h -10~#800^^0~-6~0~0~1~start~~~#800^^0~-14~-4~0~1~end~~~#800^^0~-33~0^^0~M -30 3 L -27 0 L -30 -3\",\"PL~10 0 2 0~#A00000~1~0~none~gge19~0\",\"PL~2 -8 2 8~#A00000~1~0~none~gge20~0\",\"P~show~0~2~20~0~0~gge21~0^^20~0^^M 10 0 h 10~#800^^0~6~0~0~2~end~~~#800^^0~14~-4~0~2~start~~~#800^^0~33~0^^0~M 30 -3 L 27 0 L 30 3\",\"PL~-2 0 -10 0~#A00000~1~0~none~gge28~0\"],\"BBox\":{\"x\":-24,\"y\":-8,\"width\":48,\"height\":16},\"colors\":[]},\"verify\":true,\"SMT\":true,\"datastrid\":\"482ded5a30dc4a2daf6432cdb52d7e55\",\"jlcOnSale\":1,\"writable\":false,\"isFavorite\":false,\"packageDetail\":{\"uuid\":\"f8151fdc728a41ebbc304e11d39e5437\",\"title\":\"C0603\",\"docType\":4,\"updateTime\":1734501471,\"owner\":{\"uuid\":\"0819f05c4eef4c71ace90d822a990e87\",\"username\":\"lcsc\",\"nickname\":\"LCSC\",\"avatar\":\"//image.lceda.cn/avatars/2018/6/kFlrasi7W06gTdBLAqW3fkrqbDhbowynuSzkjqso.png\"},\"datastrid\":\"1449526df05643fb96b2ab466dc2cd52\",\"writable\":false,\"dataStr\":{\"head\":{\"docType\":\"4\",\"editorVersion\":\"6.5.47\",\"c_para\":{\"package\":\"C0603\",\"pre\":\"C?\",\"Contributor\":\"lcsc\",\"link\":\"https://item.szlcsc.com/362304.html\",\"3DModel\":\"C0603_L1.6-W0.8-H0.8\"},\"hasIdFlag\":true,\"x\":4000,\"y\":3000,\"utime\":1734501466,\"uuid\":\"f8151fdc728a41ebbc304e11d39e5437\",\"importFlag\":0,\"transformList\":\"\",\"newgId\":true},\"canvas\":\"CA~1000~1000~#000000~yes~#FFFFFF~10~1000~1000~line~0.03937~mm~1~45~visible~0.5~4000~3000~0~none\",\"shape\":[\"SOLIDREGION~100~~M 3996.8504 3001.5748 L 3996.8504 2998.4252 L 3998.0315 2998.4252 L 3998.0315 3001.5748 Z ~solid~gge1000~~~~0\",\"SOLIDREGION~100~~M 4003.1496 3001.5748 L 4003.1496 2998.4252 L 4001.9685 2998.4252 L 4001.9685 3001.5748 Z ~solid~gge1001~~~~0\",\"SOLIDREGION~99~~M 3996.8504 3001.5748 L 3996.8504 2998.4252 L 4003.1496 2998.4252 L 4003.1496 3001.5748 Z ~solid~gge999~~~~0\",\"TRACK~1~3~~3998.8969 3002.7936 3995.7474 3002.7936~gge1131~0\",\"TRACK~1~3~~4001.1034 3002.7954 4004.2529 3002.7954~gge1106~0\",\"TRACK~1~3~~3998.8969 2997.2043 3995.7474 2997.2043~gge1143~0\",\"TRACK~1~3~~4001.1034 2997.2062 4004.2529 2997.2062~gge1107~0\",\"TRACK~1~3~~3994.5279 3001.5738 3994.5279 2998.424~gge1137~0\",\"TRACK~1~3~~4005.4725 2998.4261 4005.4725 3001.5758~gge1108~0\",\"ARC~1~3~~M 4004.2527 2997.2062 A 1.2198 1.2198 0 0 1 4005.4725 2998.4261~~gge1101~0\",\"ARC~1~3~~M 4005.4725 3001.5756 A 1.2198 1.2198 0 0 1 4004.2527 3002.7954~~gge1102~0\",\"ARC~1~3~~M 3995.7476 3002.7936 A 1.2198 1.2198 0 0 1 3994.5279 3001.5738~~gge1134~0\",\"ARC~1~3~~M 3994.5279 2998.4243 A 1.2198 1.2198 0 0 1 3995.7476 2997.2043~~gge1140~0\",\"PAD~RECT~4002.756~3000~3.1496~3.5433~1~~2~0~4001.1811 2998.2283 4004.3307 2998.2283 4004.3307 3001.7717 4001.1811 3001.7717~0~gge1002~0~~Y~0~0.0000~0.2000~4002.7555,3000\",\"PAD~RECT~3997.244~3000~3.1496~3.5433~1~~1~0~3995.6693 2998.2283 3998.8189 2998.2283 3998.8189 3001.7717 3995.6693 3001.7717~0~gge1004~0~~Y~0~0.0000~0.2000~3997.2445,3000\",\"CIRCLE~3996.85~3001.575~0.118~0.2362~101~gge1112~0~~\",\"SVGNODE~{\\\"gId\\\":\\\"g1_outline\\\",\\\"nodeName\\\":\\\"g\\\",\\\"nodeType\\\":1,\\\"layerid\\\":\\\"19\\\",\\\"attrs\\\":{\\\"c_width\\\":\\\"6.2992\\\",\\\"c_height\\\":\\\"3.1496\\\",\\\"c_rotation\\\":\\\"0,0,0\\\",\\\"z\\\":\\\"0\\\",\\\"c_origin\\\":\\\"3998.0435,3000.5\\\",\\\"uuid\\\":\\\"ac9b32e974bc448eab36b1293f859dcb\\\",\\\"c_etype\\\":\\\"outline3D\\\",\\\"id\\\":\\\"g1_outline\\\",\\\"title\\\":\\\"C0603_L1.6-W0.8-H0.8\\\",\\\"layerid\\\":\\\"19\\\",\\\"transform\\\":\\\"scale(1) translate(0, 0)\\\"},\\\"childNodes\\\":[{\\\"gId\\\":\\\"g1_outline_line0\\\",\\\"nodeName\\\":\\\"polyline\\\",\\\"nodeType\\\":1,\\\"attrs\\\":{\\\"fill\\\":\\\"none\\\",\\\"id\\\":\\\"g1_outline_line0\\\",\\\"c_shapetype\\\":\\\"line\\\",\\\"points\\\":\\\"3996.8504 2998.4646 3996.8504 2998.504 3996.8504 3001.4961 3996.8504 3001.5355 3996.8897 3001.5355 3996.8897 3001.5748 3996.9291 3001.5748 3997.8346 3001.5748 3997.9134 3001.5748 3997.9921 3001.5748 3998.0315 3001.5748 3998.0315 3001.5355 4001.9685 3001.5355 4001.9685 3001.5748 4002.0078 3001.5748 4002.0866 3001.5748 4002.1653 3001.5748 4003.0708 3001.5748 4003.1102 3001.5748 4003.1102 3001.5355 4003.1496 3001.5355 4003.1496 3001.4961 4003.1496 2998.504 4003.1496 2998.4646 4003.1102 2998.4646 4003.1102 2998.4252 4003.0708 2998.4252 4002.1653 2998.4252 4002.126 2998.4252 4002.0866 2998.4252 4002.0472 2998.4252 4002.0078 2998.4252 4001.9685 2998.4252 4001.9685 2998.4646 3998.0315 2998.4646 3998.0315 2998.4252 3997.9921 2998.4252 3997.9527 2998.4252 3997.9134 2998.4252 3997.874 2998.4252 3997.8346 2998.4252 3996.9291 2998.4252 3996.8897 2998.4252 3996.8897 2998.4646 3996.8504 2998.4646 3996.8504 2998.4646\\\"}}]}\"],\"layers\":[\"1~TopLayer~#FF0000~true~false~true~\",\"2~BottomLayer~#0000FF~true~false~true~\",\"3~TopSilkLayer~#FFCC00~true~false~true~\",\"4~BottomSilkLayer~#66CC33~true~false~true~\",\"5~TopPasteMaskLayer~#808080~true~false~true~\",\"6~BottomPasteMaskLayer~#800000~true~false~true~\",\"7~TopSolderMaskLayer~#800080~true~false~true~0.3\",\"8~BottomSolderMaskLayer~#AA00FF~true~false~true~0.3\",\"9~Ratlines~#6464FF~true~false~true~\",\"10~BoardOutLine~#FF00FF~true~false~true~\",\"11~Multi-Layer~#FFFFFF~true~false~true~0.5\",\"12~Document~#FFFFFF~true~false~true~\",\"13~TopAssembly~#33CC99~true~false~true~\",\"14~BottomAssembly~#5555FF~true~false~true~\",\"15~Mechanical~#F022F0~true~false~true~\",\"19~3DModel~#66CCFF~true~false~true~\",\"21~Inner1~#999966~false~false~false~~\",\"22~Inner2~#008000~false~false~false~~\",\"23~Inner3~#00FF00~false~false~false~~\",\"24~Inner4~#BC8E00~false~false~false~~\",\"25~Inner5~#70DBFA~false~false~false~~\",\"26~Inner6~#00CC66~false~false~false~~\",\"27~Inner7~#9966FF~false~false~false~~\",\"28~Inner8~#800080~false~false~false~~\",\"29~Inner9~#008080~false~false~false~~\",\"30~Inner10~#15935F~false~false~false~~\",\"31~Inner11~#000080~false~false~false~~\",\"32~Inner12~#00B400~false~false~false~~\",\"33~Inner13~#2E4756~false~false~false~~\",\"34~Inner14~#99842F~false~false~false~~\",\"35~Inner15~#FFFFAA~false~false~false~~\",\"36~Inner16~#99842F~false~false~false~~\",\"37~Inner17~#2E4756~false~false~false~~\",\"38~Inner18~#3535FF~false~false~false~~\",\"39~Inner19~#8000BC~false~false~false~~\",\"40~Inner20~#43AE5F~false~false~false~~\",\"41~Inner21~#C3ECCE~false~false~false~~\",\"42~Inner22~#728978~false~false~false~~\",\"43~Inner23~#39503F~false~false~false~~\",\"44~Inner24~#0C715D~false~false~false~~\",\"45~Inner25~#5A8A80~false~false~false~~\",\"46~Inner26~#2B937E~false~false~false~~\",\"47~Inner27~#23999D~false~false~false~~\",\"48~Inner28~#45B4E3~false~false~false~~\",\"49~Inner29~#215DA1~false~false~false~~\",\"50~Inner30~#4564D7~false~false~false~~\",\"51~Inner31~#6969E9~false~false~false~~\",\"52~Inner32~#9069E9~false~false~false~~\",\"99~ComponentShapeLayer~#00CCCC~true~false~true~0.4\",\"100~LeadShapeLayer~#CC9999~true~false~true~\",\"101~ComponentPolarityLayer~#66FFCC~true~true~true~\",\"Hole~Hole~#222222~false~false~true~\",\"DRCError~DRCError~#FAD609~false~false~true~\"],\"objects\":[\"All~true~false\",\"Component~true~true\",\"Prefix~true~true\",\"Name~true~false\",\"Track~true~true\",\"Pad~true~true\",\"Via~true~true\",\"Hole~true~true\",\"Copper_Area~true~true\",\"Circle~true~true\",\"Arc~true~true\",\"Solid_Region~true~true\",\"Text~true~true\",\"Image~true~true\",\"Rect~true~true\",\"Dimension~true~true\",\"Protractor~true~true\"],\"BBox\":{\"x\":3994.5,\"y\":2997.2,\"width\":10.9,\"height\":5.6},\"netColors\":[]}}}}}",
+      "id": "sha256:fde5081a0b45324f436df1a456a1a4dd1608306b862e8a6f4c8187b9d69ac426"
+    },
+    {
+      "schema": "moki.catalog-receipt/1",
+      "capturedAt": "2026-11-05T22:52:39.334Z",
+      "request": {
+        "method": "GET",
+        "url": "https://jlcsearch.tscircuit.com/api/easyeda_components/C162430"
+      },
+      "response": {
+        "status": 200,
+        "contentType": "application/json",
+        "bodySha256": "83f039e7094360f32028b210f7edd00b8856f7f457c17b9945cd8369e5a034ce",
+        "truncated": false
+      },
+      "rawBody": "{\"easyeda_component_details\":{\"lcsc\":162430,\"easyeda_uuid\":\"82bcc8e11ae4459d92ff0453e07ef8b4\",\"fetched_at\":\"2026-11-05T22:52:38.742Z\",\"easyeda_json\":{\"uuid\":\"82bcc8e11ae4459d92ff0453e07ef8b4\",\"title\":\"GRM21BZ71C106KE15L\",\"description\":\"\",\"docType\":2,\"type\":3,\"thumb\":\"//image.lceda.cn/components/82bcc8e11ae4459d92ff0453e07ef8b4.png\",\"lcsc\":{\"id\":173811,\"number\":\"C162430\",\"step\":5,\"min\":5,\"price\":0.0778,\"stock\":0,\"url\":\"https://lcsc.com/product-detail/_Murata-Electronics_GRM21BZ71C106KE15L_Murata-Electronics-GRM21BZ71C106KE15L_C162430.html\"},\"szlcsc\":{\"id\":173811,\"number\":\"C162430\",\"step\":5,\"min\":5,\"price\":0.488902,\"stock\":0,\"url\":\"http://www.szlcsc.com/product/details_173811.html\"},\"owner\":{\"uuid\":\"0819f05c4eef4c71ace90d822a990e87\",\"username\":\"LCSC\",\"nickname\":\"LCSC\",\"avatar\":\"//image.lceda.cn/avatars/2018/6/kFlrasi7W06gTdBLAqW3fkrqbDhbowynuSzkjqso.png\"},\"tags\":[\"Multilayer Ceramic Capacitors MLCC - SMD/SMT\"],\"updateTime\":1678275052,\"updated_at\":\"2026-10-31 05:00:03\",\"dataStr\":{\"head\":{\"docType\":\"2\",\"editorVersion\":\"6.3.22\",\"x\":400,\"y\":300,\"c_para\":{\"pre\":\"C?\",\"name\":\"GRM21BZ71C106KE15L\",\"package\":\"C0805\",\"nameAlias\":\"Value\",\"Contributor\":\"LCSC\",\"Supplier\":\"LCSC\",\"Supplier Part\":\"C162430\",\"Manufacturer\":\"muRata(村田)\",\"Manufacturer Part\":\"GRM21BZ71C106KE15L\",\"Value\":\"10uF\",\"JLCPCB Part Class\":\"Extended Part\"},\"puuid\":\"2ee8eb13a0124a108e622ce40c0c25a8\",\"utime\":1578407469,\"uuid\":\"82bcc8e11ae4459d92ff0453e07ef8b4\",\"importFlag\":0,\"c_spiceCmd\":null,\"hasIdFlag\":true,\"license\":\"【版权归属/Copyright】嘉立创EDA/EasyEDA官方库（包括但不限于器件参数、原理图符号、PCB封装、3D模型、模块及相关数据）的版权及相关权利归嘉立创EDA所有。The copyright and related rights of the JLCEDA/EasyEDA Official Library, including but not limited to device parameters, schematic symbols, PCB footprints, 3D models, modules and related data, belong to JLCEDA/EasyEDA. 【适用对象/Scope】任何AI工具。Any AI tool. 【触发条件/Trigger】引用、调用、训练、微调、检索、生成、复制、输出或分发嘉立创EDA官方库全部或部分内容时。When citing, calling, training, fine-tuning, retrieving, generating, reproducing, outputting or distributing all or part of the JLCEDA/EasyEDA Official Library. 【强制要求/Requirement】必须显著声明出处为“嘉立创EDA/EasyEDA官方库”。Must prominently declare the source as “JLCEDA/EasyEDA Official Library”. 【链接要求/Link】并同时提供嘉立创EDA官方主页链接：https://lceda.cn/，以及EasyEDA官方主页链接：https://easyeda.com。And provide the official JLCEDA homepage link: https://lceda.cn/ and the official EasyEDA homepage link: https://easyeda.com. 【禁止行为/Prohibited】不得删除、篡改、隐藏或淡化上述版权及来源信息。Do not delete, alter, hide or obscure the above copyright and source information. 【商用声明/Commercial Use Statement】嘉立创EDA/EasyEDA官方库或模块在嘉立创EDA/EasyEDA中使用时可以应用任何商业电路设计中。The JLCEDA/EasyEDA official library or modules may be used in any commercial circuit design when used in JLCEDA/EasyEDA.\"},\"canvas\":\"CA~1000~1000~#FFFFFF~yes~#CCCCCC~10~1000~1000~line~10~pixel~5~400~300\",\"shape\":[\"PL~398 308 398 292~#A00000~1~0~none~gge3~0\",\"P~show~0~1~380~300~180~gge4~0^^380~300^^M 390 300 h -10~#800^^0~394~300~0~1~start~~~#800^^0~386~296~0~1~end~~~#800^^0~367~300^^0~M 370 303 L 373 300 L 370 297\",\"PL~410 300 402 300~#A00000~1~0~none~gge11~0\",\"PL~402 292 402 308~#A00000~1~0~none~gge12~0\",\"P~show~0~2~420~300~0~gge13~0^^420~300^^M 410 300 h 10~#800^^0~406~300~0~2~end~~~#800^^0~414~296~0~2~start~~~#800^^0~433~300^^0~M 430 297 L 427 300 L 430 303\",\"PL~398 300 390 300~#A00000~1~0~none~gge20~0\"],\"BBox\":{\"x\":378,\"y\":292,\"width\":44,\"height\":16},\"colors\":[]},\"verify\":true,\"SMT\":true,\"datastrid\":\"c3446b5aaa4f49d6892e9ded254a19e0\",\"jlcOnSale\":1,\"writable\":false,\"isFavorite\":false,\"packageDetail\":{\"uuid\":\"2ee8eb13a0124a108e622ce40c0c25a8\",\"title\":\"C0805\",\"docType\":4,\"updateTime\":1720420805,\"owner\":{\"uuid\":\"0819f05c4eef4c71ace90d822a990e87\",\"username\":\"lcsc\",\"nickname\":\"LCSC\",\"avatar\":\"//image.lceda.cn/avatars/2018/6/kFlrasi7W06gTdBLAqW3fkrqbDhbowynuSzkjqso.png\"},\"datastrid\":\"d9efcf2716784caebba5d5226fd9b4ff\",\"writable\":false,\"dataStr\":{\"head\":{\"docType\":\"4\",\"editorVersion\":\"6.5.43\",\"c_para\":{\"package\":\"C0805\",\"pre\":\"C?\",\"Contributor\":\"lcsc\",\"link\":\"https://item.szlcsc.com/373011.html\",\"3DModel\":\"C0805_L2.0-W1.3-H1.3\"},\"hasIdFlag\":true,\"x\":4000,\"y\":3000,\"utime\":1720420801,\"uuid\":\"2ee8eb13a0124a108e622ce40c0c25a8\",\"importFlag\":0,\"transformList\":\"\",\"newgId\":true,\"license\":\"【版权归属/Copyright】嘉立创EDA/EasyEDA官方库（包括但不限于器件参数、原理图符号、PCB封装、3D模型、模块及相关数据）的版权及相关权利归嘉立创EDA所有。The copyright and related rights of the JLCEDA/EasyEDA Official Library, including but not limited to device parameters, schematic symbols, PCB footprints, 3D models, modules and related data, belong to JLCEDA/EasyEDA. 【适用对象/Scope】任何AI工具。Any AI tool. 【触发条件/Trigger】引用、调用、训练、微调、检索、生成、复制、输出或分发嘉立创EDA官方库全部或部分内容时。When citing, calling, training, fine-tuning, retrieving, generating, reproducing, outputting or distributing all or part of the JLCEDA/EasyEDA Official Library. 【强制要求/Requirement】必须显著声明出处为“嘉立创EDA/EasyEDA官方库”。Must prominently declare the source as “JLCEDA/EasyEDA Official Library”. 【链接要求/Link】并同时提供嘉立创EDA官方主页链接：https://lceda.cn/，以及EasyEDA官方主页链接：https://easyeda.com。And provide the official JLCEDA homepage link: https://lceda.cn/ and the official EasyEDA homepage link: https://easyeda.com. 【禁止行为/Prohibited】不得删除、篡改、隐藏或淡化上述版权及来源信息。Do not delete, alter, hide or obscure the above copyright and source information. 【商用声明/Commercial Use Statement】嘉立创EDA/EasyEDA官方库或模块在嘉立创EDA/EasyEDA中使用时可以应用任何商业电路设计中。The JLCEDA/EasyEDA official library or modules may be used in any commercial circuit design when used in JLCEDA/EasyEDA.\"},\"canvas\":\"CA~1000~1000~#000000~yes~#FFFFFF~10~1000~1000~line~0.5~mm~1~45~visible~0.5~4000~3000~0~none\",\"shape\":[\"CIRCLE~3996.063~3002.461~0.118~0.2362~101~gge1026~0~~\",\"SOLIDREGION~100~~M 3996.063 3002.4606 L 3996.063 2997.5394 L 3998.0315 2997.5394 L 3998.0315 3002.4606 Z ~solid~gge1000~~~~0\",\"SOLIDREGION~100~~M 4003.937 2997.5394 L 4003.937 3002.4606 L 4001.9685 3002.4606 L 4001.9685 2997.5394 Z~solid~gge1019~~~~0\",\"SOLIDREGION~99~~M 3996.0630 3002.4606 L 3996.0630 2997.5394 L 4003.9370 2997.5394 L 4003.9370 3002.4606 Z ~solid~gge999~~~~0\",\"TRACK~0.6~3~~4007.1307 2996.4425 4001.5795 2996.4425~gge1006~0\",\"TRACK~0.6~3~~4001.5795 3003.5575 4007.1307 3003.5575~gge1007~0\",\"TRACK~0.6~3~~4007.7307 3002.9575 4007.7307 2997.0425~gge1008~0\",\"TRACK~0.6~3~~3992.8693 2996.4425 3998.4205 2996.4425~gge1011~0\",\"TRACK~0.6~3~~3998.4205 3003.5575 3992.8693 3003.5575~gge1012~0\",\"TRACK~0.6~3~~3992.2693 3002.9575 3992.2693 2997.0425~gge1013~0\",\"ARC~0.6~3~~M4007.1307 3003.5575 A0.6000 0.6000 0.0000 0 0 4007.7307 3002.9575 ~ ~gge1010~0\",\"ARC~0.6~3~~M4007.7307 2997.0425 A0.6000 0.6000 0.0000 0 0 4007.1307 2996.4425 ~ ~gge1009~0\",\"ARC~0.6~3~~M3992.8693 3003.5575 A0.6000 0.6000 0.0000 0 1 3992.2693 3002.9575 ~ ~gge1015~0\",\"ARC~0.6~3~~M3992.2693 2997.0425 A0.6000 0.6000 0.0000 0 1 3992.8693 2996.4425 ~ ~gge1014~0\",\"PAD~RECT~4003.937~3000~5.5512~5.315~1~~2~0~4001.1615 3002.6575 4001.1615 2997.3425 4006.7127 2997.3425 4006.7127 3002.6575~0~gge1002~0~~Y~0~-393.7008~0.2000~4003.9371,3000\",\"PAD~RECT~3996.063~3000~5.5512~5.315~1~~1~0~3998.8385 3002.6575 3998.8385 2997.3425 3993.2873 2997.3425 3993.2873 3002.6575~0~gge1004~0~~Y~0~-393.7008~0.2000~3996.0629,3000\",\"SOLIDREGION~5~~M 3993.2875 3002.5197 L 3993.2875 2997.4804 L 3993.4844 2997.2835 L 3998.012 2997.2835 L 3998.2088 2997.4804 L 3998.2286 2999.0947 L 3996.4569 2999.0947 L 3996.4569 3000.8663 L 3998.1892 3000.8663 L 3998.2088 3002.5197 L 3998.012 3002.7166 L 3993.4844 3002.7166 Z ~solid~gge1021~~~~0\",\"SOLIDREGION~5~~M 4006.7125 2997.4803 L 4006.7125 3002.5196 L 4006.5156 3002.7165 L 4001.988 3002.7165 L 4001.7912 3002.5196 L 4001.7714 3000.9053 L 4003.5431 3000.9053 L 4003.5431 2999.1337 L 4001.8108 2999.1337 L 4001.7912 2997.4803 L 4001.988 2997.2834 L 4006.5156 2997.2834 Z~solid~gge1033~~~~0\",\"SVGNODE~{\\\"gId\\\":\\\"g1_outline\\\",\\\"nodeName\\\":\\\"g\\\",\\\"nodeType\\\":1,\\\"layerid\\\":\\\"19\\\",\\\"attrs\\\":{\\\"c_width\\\":\\\"7.874\\\",\\\"c_height\\\":\\\"5.1181\\\",\\\"c_rotation\\\":\\\"0,0,0\\\",\\\"z\\\":\\\"0\\\",\\\"c_origin\\\":\\\"3994.437,3000\\\",\\\"uuid\\\":\\\"b87ab0c5465a48b3a1c9a6dac8d30bc5\\\",\\\"c_etype\\\":\\\"outline3D\\\",\\\"id\\\":\\\"g1_outline\\\",\\\"title\\\":\\\"C0805_L2.0-W1.3-H1.3\\\",\\\"layerid\\\":\\\"19\\\",\\\"transform\\\":\\\"scale(1) translate(0, 0)\\\"},\\\"childNodes\\\":[{\\\"gId\\\":\\\"g1_outline_line0\\\",\\\"nodeName\\\":\\\"polyline\\\",\\\"nodeType\\\":1,\\\"attrs\\\":{\\\"fill\\\":\\\"none\\\",\\\"id\\\":\\\"g1_outline_line0\\\",\\\"c_shapetype\\\":\\\"line\\\",\\\"points\\\":\\\"3996.063 2997.5984 3996.063 2997.6377 3996.063 3002.3621 3996.063 3002.4015 3996.1024 3002.4409 3996.1024 3002.5196 3996.1811 3002.5196 3996.2599 3002.559 3997.6772 3002.559 3997.7165 3002.559 3997.8347 3002.559 3997.9528 3002.559 3997.9921 3002.559 3998.0315 3002.559 3998.0315 3002.4802 4001.9685 3002.4802 4001.9685 3002.559 4002.0079 3002.559 4002.0472 3002.559 4002.1654 3002.559 4002.2835 3002.559 4002.3228 3002.559 4003.7795 3002.559 4003.8583 3002.5196 4003.8976 3002.5196 4003.8976 3002.4409 4003.937 3002.4015 4003.937 3002.3621 4003.937 2997.6377 4003.937 2997.5984 4003.8976 2997.5196 4003.8976 2997.4803 4003.8583 2997.4803 4003.7402 2997.4409 4003.0315 2997.4409 4002.3228 2997.4409 4002.2835 2997.4409 4002.1654 2997.4409 4002.0472 2997.4409 4002.0079 2997.4409 4001.9685 2997.4409 4001.9685 2997.5196 3998.0315 2997.5196 3998.0315 2997.4409 3997.9921 2997.4409 3997.9528 2997.4409 3997.8347 2997.4409 3997.7165 2997.4409 3997.6772 2997.4409 3996.9685 2997.4409 3996.2205 2997.4409 3996.1811 2997.4803 3996.1024 2997.4803 3996.1024 2997.5196 3996.063 2997.5984 3996.063 2997.5984\\\"}}]}\"],\"layers\":[\"1~TopLayer~#FF0000~true~false~true~\",\"2~BottomLayer~#0000FF~true~false~true~\",\"3~TopSilkLayer~#FFCC00~true~false~true~\",\"4~BottomSilkLayer~#66CC33~true~false~true~\",\"5~TopPasteMaskLayer~#808080~true~true~true~\",\"6~BottomPasteMaskLayer~#800000~true~false~true~\",\"7~TopSolderMaskLayer~#800080~true~false~true~0.3\",\"8~BottomSolderMaskLayer~#AA00FF~true~false~true~0.3\",\"9~Ratlines~#6464FF~true~false~true~\",\"10~BoardOutLine~#FF00FF~true~false~true~\",\"11~Multi-Layer~#FFFFFF~true~false~true~0.5\",\"12~Document~#FFFFFF~true~false~true~\",\"13~TopAssembly~#33CC99~true~false~true~\",\"14~BottomAssembly~#5555FF~true~false~true~\",\"15~Mechanical~#F022F0~true~false~true~\",\"19~3DModel~#66CCFF~true~false~true~\",\"21~Inner1~#800000~false~false~false~~\",\"22~Inner2~#008000~false~false~false~~\",\"23~Inner3~#00FF00~false~false~false~~\",\"24~Inner4~#BC8E00~false~false~false~~\",\"25~Inner5~#70DBFA~false~false~false~~\",\"26~Inner6~#00CC66~false~false~false~~\",\"27~Inner7~#9966FF~false~false~false~~\",\"28~Inner8~#800080~false~false~false~~\",\"29~Inner9~#008080~false~false~false~~\",\"30~Inner10~#15935F~false~false~false~~\",\"31~Inner11~#000080~false~false~false~~\",\"32~Inner12~#00B400~false~false~false~~\",\"33~Inner13~#2E4756~false~false~false~~\",\"34~Inner14~#99842F~false~false~false~~\",\"35~Inner15~#FFFFAA~false~false~false~~\",\"36~Inner16~#99842F~false~false~false~~\",\"37~Inner17~#2E4756~false~false~false~~\",\"38~Inner18~#3535FF~false~false~false~~\",\"39~Inner19~#8000BC~false~false~false~~\",\"40~Inner20~#43AE5F~false~false~false~~\",\"41~Inner21~#C3ECCE~false~false~false~~\",\"42~Inner22~#728978~false~false~false~~\",\"43~Inner23~#39503F~false~false~false~~\",\"44~Inner24~#0C715D~false~false~false~~\",\"45~Inner25~#5A8A80~false~false~false~~\",\"46~Inner26~#2B937E~false~false~false~~\",\"47~Inner27~#23999D~false~false~false~~\",\"48~Inner28~#45B4E3~false~false~false~~\",\"49~Inner29~#215DA1~false~false~false~~\",\"50~Inner30~#4564D7~false~false~false~~\",\"51~Inner31~#6969E9~false~false~false~~\",\"52~Inner32~#9069E9~false~false~false~~\",\"99~ComponentShapeLayer~#00CCCC~true~false~true~0.4\",\"100~LeadShapeLayer~#CC9999~true~false~true~\",\"101~ComponentPolarityLayer~#66FFCC~true~false~true~\",\"Hole~Hole~#222222~false~false~true~\",\"DRCError~DRCError~#FAD609~false~false~true~\"],\"objects\":[\"All~true~false\",\"Component~true~true\",\"Prefix~true~true\",\"Name~true~false\",\"Track~true~true\",\"Pad~true~true\",\"Via~true~true\",\"Hole~true~true\",\"Copper_Area~true~true\",\"Circle~true~true\",\"Arc~true~true\",\"Solid_Region~true~true\",\"Text~true~true\",\"Image~true~true\",\"Rect~true~true\",\"Dimension~true~true\",\"Protractor~true~true\"],\"BBox\":{\"x\":3992.3,\"y\":2996.4,\"width\":15.5,\"height\":7.1},\"netColors\":[]}}}}}",
+      "id": "sha256:fac7c295d74c60b33cd57238b664281effc5d6bb3ffb9770380e74ceb2960ac8"
+    }
+  ],
+  "gates": [
+    {
+      "gate": "erc",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "unreviewed",
+          "severity": "warning",
+          "where": "tps63001-usb-5v-3v3",
+          "message": "Agent/human draft cannot promote itself; independent review is separate"
+        }
+      ]
+    },
+    {
+      "gate": "power",
+      "ok": true,
+      "issues": [
+        {
+          "rule": "thermal-assumption",
+          "severity": "warning",
+          "where": "tps63001-usb-5v-3v3.V3V3",
+          "message": "Thermal model is a declared board/ambient assumption, not measured hardware performance"
+        }
+      ]
+    },
+    {
+      "gate": "verify",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "gate": "power",
+      "ok": true,
+      "measurements": [
+        {
+          "name": "CCM inductor peak plus20% margin",
+          "measured": 1.3044428571428572,
+          "target": 2.3,
+          "unit": "A",
+          "where": "tps63001-usb-5v-3v3",
+          "tolerance": 0,
+          "ok": true
+        },
+        {
+          "name": "CCM inductor RMS versus25C20C-rise reference",
+          "measured": 0.8169841902337137,
+          "target": 1.2,
+          "unit": "A",
+          "where": "tps63001-usb-5v-3v3",
+          "tolerance": 0,
+          "ok": true
+        },
+        {
+          "name": "Continuous modeled junction temperature",
+          "measured": 48.847352941176474,
+          "target": 110,
+          "unit": "C",
+          "where": "tps63001-usb-5v-3v3",
+          "tolerance": 0,
+          "ok": true
+        },
+        {
+          "name": "800mA rail input allocation plus quiescent",
+          "measured": 686.6634674922601,
+          "target": 1500,
+          "unit": "mA",
+          "where": "tps63001-usb-5v-3v3",
+          "tolerance": 0,
+          "ok": true
+        }
+      ],
+      "issues": [
+        {
+          "rule": "usb-buck-author-allocation",
+          "severity": "warning",
+          "message": "Buck-only screening at4.75–5.25V, Lmin1.76uH, fmin1.25MHz: ripple0.574071A, peak1.087036A. TI1.6A switch-limit minimum is tested at3.6V/25C, not a fullUSB/fulltemperature output guarantee;1.2A buck headline supports derating, not guaranteed hardware performance."
+        },
+        {
+          "rule": "effective-capacitance-unverified",
+          "severity": "warning",
+          "message": "Five actual10uF16V X7R capacitors give20uF input/30uF output nominal. Murata part sheet has no DC-bias curve; tolerance/bias/temperature effective capacitance, ESR and local loops require qualification. No guaranteed effective22uF claim."
+        },
+        {
+          "rule": "hardware-power-unverified",
+          "severity": "warning",
+          "message": "650mAcontinuous/800mApeak are declared engineering allocations at25C,85% assumed efficiency, thetaJA60C/W author model (TI reference table46.8C/W). Native DRC, independent schematic review, thermal copper/EP, startup/load-step/EMI and measured efficiency/current/temperature remain separate gates. No battery/1.8V boost guarantee."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Data-only unreviewed candidate; pure ERC/reference/current arithmetic are not native routing or measured hardware acceptance.",
+    "Link usb.VBUS -> buck.VBUS, buck.V3V3 -> loads, and shared GND. Qualified USB supply must maintain4.75–5.25V at the board and support aggregate demand.",
+    "Existing tps63001-usb-sys-3v3@1 is unchanged; this new variant does not widen any old input domain.",
+    "Manufacturer references: TI SLVS520C, complete SLVA358A, Coilcraft LPS4012, retained Murata exact-part sheet. Exact supplier/importer captures and geometry receipts travel with this bundle."
+  ]
+}

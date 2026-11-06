@@ -1,0 +1,1030 @@
+[
+ {
+  "schema": "moki.block/1",
+  "version": 1,
+  "params": [],
+  "provenance": {
+   "author": "agent",
+   "authorId": "chip_live",
+   "reviews": []
+  },
+  "id": "usb-c-power-only",
+  "title": "USB-C power, 5 V",
+  "summary": "USB-C sink for 5 V only: no data lines and no ESD chip, for a board with nothing to talk to. Needs a known 5 V supply; no PD negotiation.",
+  "class": "usb",
+  "parts": [
+   {
+    "ref": "J1",
+    "mpn": "TYPE-C-31-M-12",
+    "lcsc": "C165948",
+    "catalogReceipt": "sha256:7bd08b687d8d0b901fb91b86a3c834972bd938733d5aa21c71da3e88ff3990ee",
+    "pinout": "verified",
+    "pins": {
+     "A1B12": {
+      "pad": "A1B12",
+      "role": "passive",
+      "required": true
+     },
+     "B1A12": {
+      "pad": "B1A12",
+      "role": "passive",
+      "required": true
+     },
+     "A4B9": {
+      "pad": "A4B9",
+      "role": "passive",
+      "required": true
+     },
+     "B4A9": {
+      "pad": "B4A9",
+      "role": "passive",
+      "required": true
+     },
+     "CC1": {
+      "pad": "A5",
+      "role": "passive",
+      "required": true
+     },
+     "CC2": {
+      "pad": "B5",
+      "role": "passive",
+      "required": true
+     },
+     "A6": {
+      "pad": "A6",
+      "role": "nc"
+     },
+     "A7": {
+      "pad": "A7",
+      "role": "nc"
+     },
+     "A8": {
+      "pad": "A8",
+      "role": "nc"
+     },
+     "B6": {
+      "pad": "B6",
+      "role": "nc"
+     },
+     "B7": {
+      "pad": "B7",
+      "role": "nc"
+     },
+     "B8": {
+      "pad": "B8",
+      "role": "nc"
+     },
+     "SHELL4": {
+      "pad": "4",
+      "role": "passive"
+     },
+     "SHELL3": {
+      "pad": "3",
+      "role": "passive"
+     },
+     "SHELL2": {
+      "pad": "2",
+      "role": "passive"
+     },
+     "SHELL1": {
+      "pad": "1",
+      "role": "passive"
+     }
+    },
+    "datasheet": {
+     "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2205251630_Korean-Hroparts-Elec-TYPE-C-31-M-12_C165948.pdf",
+     "pages": "1",
+     "note": "USB-C receptacle pinout."
+    },
+    "at": {
+     "x": 0,
+     "y": 4,
+     "rotation": 180
+    }
+   },
+   {
+    "ref": "R1",
+    "mpn": "0603WAF5101T5E",
+    "lcsc": "C23186",
+    "catalogReceipt": "sha256:4d6005af8e9f76cf0d52bc983a547a10aba5f3917460ac5483c3b3c2b333aa14",
+    "pinout": "verified",
+    "pins": {
+     "1": {
+      "pad": "1",
+      "role": "passive",
+      "required": true
+     },
+     "2": {
+      "pad": "2",
+      "role": "passive",
+      "required": true
+     }
+    },
+    "datasheet": {
+     "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010116_UNI-ROYAL-Uniroyal-Elec-0603WAF5101T5E_C23186.pdf",
+     "pages": "2",
+     "note": "Thick film chip resistor, 0603."
+    },
+    "at": {
+     "x": -5,
+     "y": -3,
+     "rotation": 90
+    },
+    "value": "5.1k",
+    "valueWhy": {
+     "url": "https://community.infineon.com/t5/Knowledge-Base-Articles/USB-Type-C-connector-Rp-Rd-and-Ra-termination-resistors/ta-p/253544",
+     "note": "Manufacturer KBA: a sink has a fixed 5.1 kohm Rd on each CC pin."
+    }
+   },
+   {
+    "ref": "R2",
+    "mpn": "0603WAF5101T5E",
+    "lcsc": "C23186",
+    "catalogReceipt": "sha256:4d6005af8e9f76cf0d52bc983a547a10aba5f3917460ac5483c3b3c2b333aa14",
+    "pinout": "verified",
+    "pins": {
+     "1": {
+      "pad": "1",
+      "role": "passive",
+      "required": true
+     },
+     "2": {
+      "pad": "2",
+      "role": "passive",
+      "required": true
+     }
+    },
+    "datasheet": {
+     "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010116_UNI-ROYAL-Uniroyal-Elec-0603WAF5101T5E_C23186.pdf",
+     "pages": "2",
+     "note": "Thick film chip resistor, 0603."
+    },
+    "at": {
+     "x": 5,
+     "y": -3,
+     "rotation": 90
+    },
+    "value": "5.1k",
+    "valueWhy": {
+     "url": "https://community.infineon.com/t5/Knowledge-Base-Articles/USB-Type-C-connector-Rp-Rd-and-Ra-termination-resistors/ta-p/253544",
+     "note": "Manufacturer KBA: a sink has a fixed 5.1 kohm Rd on each CC pin."
+    }
+   },
+   {
+    "ref": "C1",
+    "mpn": "CL21A106KAYNNNE",
+    "lcsc": "C15850",
+    "catalogReceipt": "sha256:11ec74db3a2079acce893cd34c19c715ab1e496e94b7d5bd0169470034eab0ae",
+    "pinout": "verified",
+    "pins": {
+     "1": {
+      "pad": "1",
+      "role": "passive",
+      "required": true
+     },
+     "2": {
+      "pad": "2",
+      "role": "passive",
+      "required": true
+     }
+    },
+    "datasheet": {
+     "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+     "pages": "1",
+     "note": "10 uF, 25 V, X5R, 0805."
+    },
+    "at": {
+     "x": 0,
+     "y": -3
+    },
+    "value": "10uF",
+    "valueWhy": {
+     "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf",
+     "pages": "1",
+     "note": "Bulk capacitance at the power input. The value is a design choice, not from a datasheet."
+    }
+   }
+  ],
+  "nets": [
+   {
+    "name": "GND",
+    "pins": [
+     "J1.A1B12",
+     "J1.B1A12",
+     "J1.SHELL4",
+     "J1.SHELL3",
+     "J1.SHELL2",
+     "J1.SHELL1",
+     "R1.2",
+     "R2.2",
+     "C1.2"
+    ]
+   },
+   {
+    "name": "V5",
+    "pins": [
+     "J1.A4B9",
+     "J1.B4A9",
+     "C1.1"
+    ]
+   },
+   {
+    "name": "CC1",
+    "pins": [
+     "J1.CC1",
+     "R1.1"
+    ]
+   },
+   {
+    "name": "CC2",
+    "pins": [
+     "J1.CC2",
+     "R2.1"
+    ]
+   }
+  ],
+  "ports": [
+   {
+    "id": "GND",
+    "label": "GND",
+    "kind": "ground",
+    "terminal": "net:GND"
+   },
+   {
+    "id": "V5",
+    "label": "5 V out",
+    "kind": "power-out",
+    "terminal": "net:V5",
+    "volts": {
+     "min": 4.75,
+     "max": 5.25
+    }
+   }
+  ],
+  "power": {
+   "sources": [
+    {
+     "port": "V5",
+     "volts": 5,
+     "maxMa": 1500,
+     "mode": "external"
+    }
+   ],
+   "sinks": []
+  },
+  "constraints": [
+   {
+    "kind": "usb-c-sink",
+    "connector": "J1",
+    "cc1": "CC1",
+    "cc2": "CC2",
+    "resistors": [
+     "R1",
+     "R2"
+    ],
+    "ohms": 5100,
+    "citation": {
+     "url": "https://community.infineon.com/t5/Knowledge-Base-Articles/USB-Type-C-connector-Rp-Rd-and-Ra-termination-resistors/ta-p/253544",
+     "note": "Manufacturer KBA: a sink has a fixed 5.1 kohm Rd on each CC pin."
+    }
+   }
+  ],
+  "contentHash": "028a733731d649610ffb306a940fd27ec6b9cf71a888ea44df4a70687a3603f7",
+  "status": "unreviewed"
+ },
+ {
+  "schema": "moki.block/1",
+  "version": 1,
+  "params": [],
+  "provenance": {
+   "author": "agent",
+   "authorId": "chip_live",
+   "reviews": []
+  },
+  "id": "ldr-dark-detector",
+  "title": "Dark detector",
+  "summary": "Light sensor and resistor. DARK is low in room light and rises as it gets dark, enough to turn on a logic-level transistor. No code needed.",
+  "class": "light_sensor",
+  "parts": [
+   {
+    "ref": "R1",
+    "mpn": "GL5528(10-20)",
+    "lcsc": "C10081",
+    "catalogReceipt": "sha256:c3556981fc141b74fcadac7ff83352d691456192e4e4efc07861cf57f370b071",
+    "pinout": "verified",
+    "pins": {
+     "1": {
+      "pad": "1",
+      "role": "passive",
+      "required": true
+     },
+     "2": {
+      "pad": "2",
+      "role": "passive",
+      "required": true
+     }
+    },
+    "datasheet": {
+     "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_JCHL-Shenzhen-Jing-Chuang-He-Li-Tech-GL5528-10-20_C10081.pdf",
+     "pages": "1",
+     "note": "GL5528: 8 to 20 kohm at 10 lux, 1 Mohm in the dark. The 10 lux check uses the middle of that range, 14 kohm."
+    },
+    "at": {
+     "x": 0,
+     "y": 0
+    }
+   },
+   {
+    "ref": "R2",
+    "mpn": "0603WAF1003T5E",
+    "lcsc": "C25803",
+    "catalogReceipt": "sha256:492631a1c5290df166fc2c8e36384868fef36a4a5d1e643e31cdd8070017c851",
+    "pinout": "verified",
+    "pins": {
+     "1": {
+      "pad": "1",
+      "role": "passive",
+      "required": true
+     },
+     "2": {
+      "pad": "2",
+      "role": "passive",
+      "required": true
+     }
+    },
+    "datasheet": {
+     "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010045_UNI-ROYAL-Uniroyal-Elec-0603WAF1003T5E_C25803.pdf",
+     "pages": "2",
+     "note": "Thick film chip resistor, 0603."
+    },
+    "at": {
+     "x": 5.5,
+     "y": 0,
+     "rotation": 90
+    },
+    "value": "100k",
+    "valueWhy": {
+     "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Jiangsu-Changjing-Electronics-Technology-Co---Ltd--2N7002_C8545.pdf",
+     "pages": "2",
+     "note": "Sets the switch point: at 10 lux the worst-case 20 kohm sensor gives 0.83 V, under the 1 V minimum threshold. In the dark, 1 Mohm gives 4.5 V, over the threshold."
+    }
+   }
+  ],
+  "nets": [
+   {
+    "name": "V5",
+    "pins": [
+     "R2.1"
+    ]
+   },
+   {
+    "name": "DARK",
+    "pins": [
+     "R2.2",
+     "R1.1"
+    ]
+   },
+   {
+    "name": "GND",
+    "pins": [
+     "R1.2"
+    ]
+   }
+  ],
+  "ports": [
+   {
+    "id": "V5",
+    "label": "5 V",
+    "kind": "power-in",
+    "terminal": "net:V5",
+    "volts": {
+     "min": 4.5,
+     "max": 5.5
+    }
+   },
+   {
+    "id": "GND",
+    "label": "GND",
+    "kind": "ground",
+    "terminal": "net:GND"
+   },
+   {
+    "id": "DARK",
+    "label": "High when dark",
+    "kind": "analog",
+    "terminal": "net:DARK"
+   }
+  ],
+  "power": {
+   "sources": [],
+   "sinks": [
+    {
+     "port": "V5",
+     "typicalMa": 0.05,
+     "peakMa": 0.5
+    }
+   ]
+  },
+  "constraints": [],
+  "spiceChecks": [
+   {
+    "kind": "divider",
+    "name": "DARK at 10 lux, under the 1 V threshold",
+    "upper": "R2",
+    "lower": "R1",
+    "lowerOhm": 14000,
+    "inputV": 5,
+    "target": 0.61,
+    "tolerance": 0.1,
+    "citation": {
+     "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_JCHL-Shenzhen-Jing-Chuang-He-Li-Tech-GL5528-10-20_C10081.pdf",
+     "pages": "1",
+     "note": "GL5528: 8 to 20 kohm at 10 lux, 1 Mohm in the dark. The 10 lux check uses the middle of that range, 14 kohm."
+    }
+   },
+   {
+    "kind": "divider",
+    "name": "DARK in the dark, over the threshold",
+    "upper": "R2",
+    "lower": "R1",
+    "lowerOhm": 1000000,
+    "inputV": 5,
+    "target": 4.55,
+    "tolerance": 0.1,
+    "citation": {
+     "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_JCHL-Shenzhen-Jing-Chuang-He-Li-Tech-GL5528-10-20_C10081.pdf",
+     "pages": "1",
+     "note": "GL5528: 8 to 20 kohm at 10 lux, 1 Mohm in the dark. The 10 lux check uses the middle of that range, 14 kohm."
+    }
+   }
+  ],
+  "contentHash": "1b0882957854a0dd9e5c24bf37b68fb26a05f2a50f758625fcefe43558fb003b",
+  "status": "unreviewed"
+ },
+ {
+  "schema": "moki.block/1",
+  "version": 1,
+  "params": [],
+  "provenance": {
+   "author": "agent",
+   "authorId": "chip_live",
+   "reviews": []
+  },
+  "id": "two-wire-probe",
+  "title": "Two-wire probe",
+  "summary": "Two wires in a screw terminal. OUT goes high when something conducts between them, such as water or a closed circuit. No code needed.",
+  "class": "probe",
+  "parts": [
+   {
+    "ref": "J1",
+    "mpn": "KF127S-5.08-2P",
+    "lcsc": "C2974924",
+    "catalogReceipt": "sha256:f728be64e91eaecbf9bd07edd129ef6ab400b1887f2af7971f26aabaa2f64f1a",
+    "pinout": "verified",
+    "pins": {
+     "1": {
+      "pad": "1",
+      "role": "passive",
+      "required": true
+     },
+     "2": {
+      "pad": "2",
+      "role": "passive",
+      "required": true
+     }
+    },
+    "datasheet": {
+     "url": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2203031730_Cixi-Kefa-Elec-KF127S-5-08-2P_C2974924.pdf",
+     "pages": "1",
+     "note": "2-way 5.08 mm screw terminal."
+    },
+    "at": {
+     "x": 0,
+     "y": 0
+    }
+   },
+   {
+    "ref": "R1",
+    "mpn": "0603WAF1004T5E",
+    "lcsc": "C22935",
+    "catalogReceipt": "sha256:4dd763fd292efab458397edc77122e8731cef906365e4ac5e3c880bd7812085c",
+    "pinout": "verified",
+    "pins": {
+     "1": {
+      "pad": "1",
+      "role": "passive",
+      "required": true
+     },
+     "2": {
+      "pad": "2",
+      "role": "passive",
+      "required": true
+     }
+    },
+    "datasheet": {
+     "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010130_UNI-ROYAL-Uniroyal-Elec-0603WAF1004T5E_C22935.pdf",
+     "pages": "2",
+     "note": "Thick film chip resistor, 0603."
+    },
+    "at": {
+     "x": 8.5,
+     "y": 2
+    },
+    "value": "1M",
+    "valueWhy": {
+     "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Jiangsu-Changjing-Electronics-Technology-Co---Ltd--2N7002_C8545.pdf",
+     "pages": "2",
+     "note": "Holds the gate low with the wires apart. Gate leakage is 80 nA at most, so this stays well under the 1 V threshold."
+    }
+   },
+   {
+    "ref": "R2",
+    "mpn": "0603WAF1002T5E",
+    "lcsc": "C25804",
+    "catalogReceipt": "sha256:684444546d17907d39d04ac6b80352c1fc0781b2c5506a050033afb282119a7b",
+    "pinout": "verified",
+    "pins": {
+     "1": {
+      "pad": "1",
+      "role": "passive",
+      "required": true
+     },
+     "2": {
+      "pad": "2",
+      "role": "passive",
+      "required": true
+     }
+    },
+    "datasheet": {
+     "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010045_UNI-ROYAL-Uniroyal-Elec-0603WAF1002T5E_C25804.pdf",
+     "pages": "2",
+     "note": "Thick film chip resistor, 0603."
+    },
+    "at": {
+     "x": 8.5,
+     "y": -2
+    },
+    "value": "10k",
+    "valueWhy": {
+     "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Jiangsu-Changjing-Electronics-Technology-Co---Ltd--2N7002_C8545.pdf",
+     "pages": "2",
+     "note": "Limits current into the gate from static on long wires. The gate takes no DC current, so it adds no error."
+    }
+   }
+  ],
+  "nets": [
+   {
+    "name": "V5",
+    "pins": [
+     "J1.1"
+    ]
+   },
+   {
+    "name": "SENSE",
+    "pins": [
+     "J1.2",
+     "R1.1",
+     "R2.1"
+    ]
+   },
+   {
+    "name": "OUT",
+    "pins": [
+     "R2.2"
+    ]
+   },
+   {
+    "name": "GND",
+    "pins": [
+     "R1.2"
+    ]
+   }
+  ],
+  "ports": [
+   {
+    "id": "V5",
+    "label": "5 V",
+    "kind": "power-in",
+    "terminal": "net:V5",
+    "volts": {
+     "min": 4.5,
+     "max": 5.5
+    }
+   },
+   {
+    "id": "GND",
+    "label": "GND",
+    "kind": "ground",
+    "terminal": "net:GND"
+   },
+   {
+    "id": "OUT",
+    "label": "High when the wires conduct",
+    "kind": "analog",
+    "terminal": "net:OUT"
+   }
+  ],
+  "power": {
+   "sources": [],
+   "sinks": [
+    {
+     "port": "V5",
+     "typicalMa": 0.01,
+     "peakMa": 0.5
+    }
+   ]
+  },
+  "constraints": [],
+  "spiceChecks": [
+   {
+    "kind": "divider",
+    "name": "OUT with an assumed 200 kohm between the wires, over the threshold",
+    "upper": "J1",
+    "upperOhm": 200000,
+    "lower": "R1",
+    "series": "R2",
+    "inputV": 5,
+    "target": 4.17,
+    "tolerance": 0.1,
+    "citation": {
+     "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Jiangsu-Changjing-Electronics-Technology-Co---Ltd--2N7002_C8545.pdf",
+     "pages": "2",
+     "note": "Threshold from 1 V; the catalog lists 2.5 V at most. 200 kohm is an assumption about water between two wires, not a measurement."
+    }
+   }
+  ],
+  "contentHash": "c8119ec9d6bd18cb90b55443e916807bb4f06e8f91f251859ed0df2d0fc3611f",
+  "status": "unreviewed"
+ },
+ {
+  "schema": "moki.block/1",
+  "version": 1,
+  "params": [],
+  "provenance": {
+   "author": "agent",
+   "authorId": "chip_live",
+   "reviews": []
+  },
+  "id": "led-switch",
+  "title": "Warm white LED and switch",
+  "summary": "A warm white LED and its resistor, switched by a transistor from IN. No code needed.",
+  "class": "led",
+  "parts": [
+   {
+    "ref": "Q1",
+    "mpn": "2N7002",
+    "lcsc": "C8545",
+    "catalogReceipt": "sha256:d6803ca592ee2b0964252a891d2802dbc0b07e9312e771f313b4ae706a2889e7",
+    "pinout": "verified",
+    "pins": {
+     "G": {
+      "pad": "1",
+      "role": "input",
+      "required": true
+     },
+     "S": {
+      "pad": "2",
+      "role": "ground",
+      "required": true
+     },
+     "D": {
+      "pad": "3",
+      "role": "passive",
+      "required": true
+     }
+    },
+    "datasheet": {
+     "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Jiangsu-Changjing-Electronics-Technology-Co---Ltd--2N7002_C8545.pdf",
+     "pages": "1-2",
+     "note": "SOT-23: 1 gate, 2 source, 3 drain. 60 V, 115 mA. Threshold from 1 V; the catalog lists 2.5 V as its maximum. At 5 V gate drive, on-resistance is 7 ohm at most at 50 mA."
+    },
+    "at": {
+     "x": 0,
+     "y": -3
+    }
+   },
+   {
+    "ref": "R1",
+    "mpn": "0603WAF1500T5E",
+    "lcsc": "C22808",
+    "catalogReceipt": "sha256:6c40ebd097f7e0b047cd2e352d7a1b7062883bc1fb758f618292527541441ced",
+    "pinout": "verified",
+    "pins": {
+     "1": {
+      "pad": "1",
+      "role": "passive",
+      "required": true
+     },
+     "2": {
+      "pad": "2",
+      "role": "passive",
+      "required": true
+     }
+    },
+    "datasheet": {
+     "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010130_UNI-ROYAL-Uniroyal-Elec-0603WAF1500T5E_C22808.pdf",
+     "pages": "2",
+     "note": "Thick film chip resistor, 0603."
+    },
+    "at": {
+     "x": 0,
+     "y": 1
+    },
+    "value": "150",
+    "valueWhy": {
+     "url": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2402181501_XINGLIGHT-XL-4008WWC_C5440667.pdf",
+     "pages": "3-4",
+     "note": "Forward voltage 2.7 to 3.3 V at 20 mA, 20 mA at most. 150 ohm keeps it under 20 mA with the lowest forward voltage on a 5.25 V supply."
+    }
+   },
+   {
+    "ref": "D1",
+    "mpn": "XL-4008WWC",
+    "lcsc": "C5440667",
+    "catalogReceipt": "sha256:499b8e7e4a8bc4a195f6762ae1409c7bd1f8aeaed429891dc7dfad309c9fbb55",
+    "pinout": "verified",
+    "pins": {
+     "A": {
+      "pad": "1",
+      "role": "passive",
+      "required": true
+     },
+     "K": {
+      "pad": "2",
+      "role": "passive",
+      "required": true
+     }
+    },
+    "datasheet": {
+     "url": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2402181501_XINGLIGHT-XL-4008WWC_C5440667.pdf",
+     "pages": "3-4",
+     "note": "XL-4008WWC warm white, 20 mA at most, 2.7 to 3.3 V."
+    },
+    "at": {
+     "x": 0,
+     "y": 4
+    }
+   }
+  ],
+  "nets": [
+   {
+    "name": "V5",
+    "pins": [
+     "R1.1"
+    ]
+   },
+   {
+    "name": "ANODE",
+    "pins": [
+     "R1.2",
+     "D1.A"
+    ]
+   },
+   {
+    "name": "SW",
+    "pins": [
+     "D1.K",
+     "Q1.D"
+    ]
+   },
+   {
+    "name": "IN",
+    "pins": [
+     "Q1.G"
+    ]
+   },
+   {
+    "name": "GND",
+    "pins": [
+     "Q1.S"
+    ]
+   }
+  ],
+  "ports": [
+   {
+    "id": "V5",
+    "label": "5 V",
+    "kind": "power-in",
+    "terminal": "net:V5",
+    "volts": {
+     "min": 4.5,
+     "max": 5.5
+    }
+   },
+   {
+    "id": "GND",
+    "label": "GND",
+    "kind": "ground",
+    "terminal": "net:GND"
+   },
+   {
+    "id": "IN",
+    "label": "High turns the LED on",
+    "kind": "analog",
+    "terminal": "net:IN"
+   }
+  ],
+  "power": {
+   "sources": [],
+   "sinks": [
+    {
+     "port": "V5",
+     "typicalMa": 13,
+     "peakMa": 20
+    }
+   ]
+  },
+  "constraints": [],
+  "spiceChecks": [
+   {
+    "kind": "led-current",
+    "name": "LED current with the transistor on",
+    "resistor": "R1",
+    "supplyV": 5,
+    "forwardV": 3,
+    "switch": "Q1",
+    "switchDropV": 0.05,
+    "target": 13,
+    "tolerance": 2,
+    "citation": {
+     "url": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2402181501_XINGLIGHT-XL-4008WWC_C5440667.pdf",
+     "pages": "3-4",
+     "note": "Forward voltage 2.7 to 3.3 V, 20 mA at most. The transistor drop is 0.05 V typical at 50 mA, from the 2N7002 sheet."
+    }
+   }
+  ],
+  "contentHash": "2e131ccb6545fd39aa50b73a4c63138adac080eb357a7cd03c033abd449adbad",
+  "status": "unreviewed"
+ },
+ {
+  "schema": "moki.block/1",
+  "version": 1,
+  "params": [],
+  "provenance": {
+   "author": "agent",
+   "authorId": "chip_live",
+   "reviews": []
+  },
+  "id": "buzzer-switch",
+  "title": "Buzzer and switch",
+  "summary": "A 5 V buzzer with its own oscillator, switched by a transistor from IN, with a diode across it. It sounds whenever IN is high. No code needed.",
+  "class": "buzzer",
+  "parts": [
+   {
+    "ref": "Q1",
+    "mpn": "2N7002",
+    "lcsc": "C8545",
+    "catalogReceipt": "sha256:d6803ca592ee2b0964252a891d2802dbc0b07e9312e771f313b4ae706a2889e7",
+    "pinout": "verified",
+    "pins": {
+     "G": {
+      "pad": "1",
+      "role": "input",
+      "required": true
+     },
+     "S": {
+      "pad": "2",
+      "role": "ground",
+      "required": true
+     },
+     "D": {
+      "pad": "3",
+      "role": "passive",
+      "required": true
+     }
+    },
+    "datasheet": {
+     "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Jiangsu-Changjing-Electronics-Technology-Co---Ltd--2N7002_C8545.pdf",
+     "pages": "1-2",
+     "note": "SOT-23: 1 gate, 2 source, 3 drain. 60 V, 115 mA. Threshold from 1 V; the catalog lists 2.5 V as its maximum. At 5 V gate drive, on-resistance is 7 ohm at most at 50 mA."
+    },
+    "at": {
+     "x": 10,
+     "y": 3
+    }
+   },
+   {
+    "ref": "BZ1",
+    "mpn": "TMB12A05",
+    "lcsc": "C96093",
+    "catalogReceipt": "sha256:1360a6fb4e6174d7f5c739e2212a0eee23f9161e117047af0ce2dae4c8f29e43",
+    "pinout": "verified",
+    "pins": {
+     "POS": {
+      "pad": "1",
+      "role": "passive",
+      "required": true
+     },
+     "NEG": {
+      "pad": "2",
+      "role": "passive",
+      "required": true
+     }
+    },
+    "datasheet": {
+     "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_2405280932_Jiangsu-Huaneng-Elec-TMB12A05_C96093.pdf",
+     "pages": "2",
+     "note": "TMB12A05: rated 5 V, 3 to 7 V, 30 mA at most."
+    },
+    "at": {
+     "x": 0,
+     "y": 0
+    }
+   },
+   {
+    "ref": "D1",
+    "mpn": "1N4148W",
+    "lcsc": "C81598",
+    "catalogReceipt": "sha256:97fe39354e7db0512046b29366013710aad702dd3e7ac7890d4dcd1f0e50ba2d",
+    "pinout": "verified",
+    "pins": {
+     "A": {
+      "pad": "2",
+      "role": "passive",
+      "required": true
+     },
+     "K": {
+      "pad": "1",
+      "role": "passive",
+      "required": true
+     }
+    },
+    "datasheet": {
+     "url": "https://www.lcsc.com/datasheet/lcsc_datasheet_1811061725_ST-Semtech-1N4148W_C81598.pdf",
+     "pages": "1",
+     "note": "1N4148W: 75 V, 150 mA. Takes the buzzer coil’s kick when the transistor turns off."
+    },
+    "at": {
+     "x": 10,
+     "y": -3
+    }
+   }
+  ],
+  "nets": [
+   {
+    "name": "V5",
+    "pins": [
+     "BZ1.POS",
+     "D1.K"
+    ]
+   },
+   {
+    "name": "SW",
+    "pins": [
+     "BZ1.NEG",
+     "D1.A",
+     "Q1.D"
+    ]
+   },
+   {
+    "name": "IN",
+    "pins": [
+     "Q1.G"
+    ]
+   },
+   {
+    "name": "GND",
+    "pins": [
+     "Q1.S"
+    ]
+   }
+  ],
+  "ports": [
+   {
+    "id": "V5",
+    "label": "5 V",
+    "kind": "power-in",
+    "terminal": "net:V5",
+    "volts": {
+     "min": 4.5,
+     "max": 5.5
+    }
+   },
+   {
+    "id": "GND",
+    "label": "GND",
+    "kind": "ground",
+    "terminal": "net:GND"
+   },
+   {
+    "id": "IN",
+    "label": "High sounds the buzzer",
+    "kind": "analog",
+    "terminal": "net:IN"
+   }
+  ],
+  "power": {
+   "sources": [],
+   "sinks": [
+    {
+     "port": "V5",
+     "typicalMa": 30,
+     "peakMa": 30
+    }
+   ]
+  },
+  "constraints": [],
+  "contentHash": "f59d88937811094c8ac9a62b8a0ae1c163cb1ae814878fdae17c38c9a0b068e6",
+  "status": "unreviewed"
+ }
+]

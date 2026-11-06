@@ -1,0 +1,142 @@
+[
+ {
+  "name": "saved: the written message is still there",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "saved: no Looks right on zero checks",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "saved: one error, not two",
+  "ok": true,
+  "detail": 1
+ },
+ {
+  "name": "saved: a human sentence",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "saved: no raw or lost-contact words",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "saved: offers Try again",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "retry: goes ahead, with no second failure",
+  "ok": true,
+  "detail": "The closest buildable device is a USB-powered ESP32 knob-controlled timer with an OLED display; it cannot drive a motor."
+ },
+ {
+  "name": "retry: builds nothing it can't",
+  "ok": true,
+  "detail": "That didn’t go through, and nothing was built."
+ },
+ {
+  "name": "new: one written message, no Looks right",
+  "ok": true,
+  "detail": "The RP2040 and motor-driver hardware aren't available here, so I can't build the controller you requested. Chip-level mode will cover those missing chips, but it isn't on here yet. The closest thing I could build here is a USB-powered ESP32 board with a knob and screen to set and display a control value, without driving a motor."
+ },
+ {
+  "name": "new: says what is missing",
+  "ok": true,
+  "detail": "The RP2040 and motor-driver hardware aren't available here, so I can't build the controller you requested. Chip-level mode will cover those missing chips, but it isn't on here yet. The closest thing I could build here is a USB-powered ESP32 board with a knob and screen to set and display a control value, without driving a motor."
+ },
+ {
+  "name": "new: says chip-level will cover it",
+  "ok": true,
+  "detail": "The RP2040 and motor-driver hardware aren't available here, so I can't build the controller you requested. Chip-level mode will cover those missing chips, but it isn't on here yet. The closest thing I could build here is a USB-powered ESP32 board with a knob and screen to set and display a control value, without driving a motor."
+ },
+ {
+  "name": "new: offers the closest",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "new: no sideways scroll at 390",
+  "ok": true,
+  "detail": 390
+ },
+ {
+  "name": "refused 400: one error",
+  "ok": true,
+  "detail": 1
+ },
+ {
+  "name": "refused 400: the right words",
+  "ok": true,
+  "detail": "That didn’t go through, and nothing was built."
+ },
+ {
+  "name": "refused 400: no lost contact",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "refused 400: the spinner stops",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "refused 400: Try again is there",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "refused 400: the question is still open",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "refused 400: nothing dumped in the box",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "refused 429: one error",
+  "ok": true,
+  "detail": 1
+ },
+ {
+  "name": "refused 429: the right words",
+  "ok": true,
+  "detail": "Another agent turn is running. Try again when it lands."
+ },
+ {
+  "name": "refused 429: no lost contact",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "refused 429: the spinner stops",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "refused 429: Try again is there",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "refused 429: the question is still open",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "refused 429: nothing dumped in the box",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no uncaught errors in the page",
+  "ok": true,
+  "detail": []
+ }
+]

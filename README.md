@@ -23,7 +23,7 @@ Moki turns a description of a device into a schematic, a routed PCB, a printable
 
 ## Architecture
 
-![Moki architecture: a browser reaches the server through a private gateway; agents share one plan with code gates; subprocess workers produce the board, case and firmware; datasheet parsing on Modal is being integrated and micro-VMs on Fly.io are proposed](docs/media/architecture.png)
+![Moki architecture: a browser reaches the server through a private gateway; agents share one plan with code gates; subprocess workers produce the board, case and firmware; datasheet parsing on Modal is being integrated and micro-VMs on Fly.io are proposed](docs/media/architecture-2026-11.png)
 
 Models decide; code builds and checks. The agents share one plan instead of talking to each other, and the PCB, case and firmware are all regenerated from it. Code owns everything measurable, including board size, placement legality, prices and the gates, and each turn has a $2 budget cap. Every model call crosses one seam, `src/agents/model.ts`. OpenAI `gpt-6.1-sol` is the provider in use, and an Anthropic adapter and a replay adapter for tests sit at the same seam.
 

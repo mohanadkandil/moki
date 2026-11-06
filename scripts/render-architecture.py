@@ -3,7 +3,7 @@
 Run from anywhere: python3 scripts/render-architecture.py
 
 Writes web/public/architecture/index.html, docs/diagrams/moki-architecture.svg and
-docs/media/architecture.png. The PNG needs a Chromium binary: set MOKI_CHROME, or have one on
+docs/media/architecture-2026-11.png. The PNG needs a Chromium binary: set MOKI_CHROME, or have one on
 PATH or in the Playwright cache. The script makes no model or network calls.
 
 The layout is drawn for a 1200-unit width because GitHub shows the PNG about 830 px wide, so 16
@@ -19,7 +19,7 @@ ASSETS = ROOT / 'docs/diagrams/assets'
 FONT = ROOT / 'node_modules/@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2'
 OUT_HTML = ROOT / 'web/public/architecture/index.html'
 OUT_SVG = ROOT / 'docs/diagrams/moki-architecture.svg'
-OUT_PNG = ROOT / 'docs/media/architecture.png'
+OUT_PNG = ROOT / 'docs/media/architecture-2026-11.png'
 
 WIDTH, HEIGHT = 1200, 1236
 PAPER, PAPER_2, INK, MUTED, LINE, CONNECTOR, BLUE, BLUE_TINT = (

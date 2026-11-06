@@ -1,0 +1,24 @@
+{
+ "/app/moki": [
+  303,
+  "/app/moki/"
+ ],
+ "/app/moki/": [
+  200,
+  true
+ ],
+ "create": 201,
+ "projectPage": [
+  200,
+  true
+ ],
+ "list": "Desk humidity display",
+ "rename": 200,
+ "get": "Renamed",
+ "largeSave": 200,
+ "deleteDenied": 404,
+ "workshopDenied": 404,
+ "foreignOrigin": 403,
+ "image": 200,
+ "asset": 200
+}

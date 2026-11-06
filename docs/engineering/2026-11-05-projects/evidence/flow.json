@@ -1,0 +1,39 @@
+{
+ "landing path": "/app/moki/",
+ "landing is the blue one": true,
+ "picker not clipped": {
+  "top": 585.84375,
+  "bottom": 800.40625,
+  "vh": 900
+ },
+ "shell shows the brief at once": "A 25 minute focus timer with a small screen and a knob",
+ "no interstitial text": true,
+ "project url": "/studio/02bab9c1-b2ef-4f62-947e-4fec10f35bf1",
+ "verifier message": "I'll build a 25-minute focus timer with a small screen and a knob. Before I start, I'll check that it has a screen and a knob. Does that sound right?",
+ "no form labels": true,
+ "after reload the message and button stay": true,
+ "reload mid-build says the agent stopped": true,
+ "renamed survives reload": "My desk timer",
+ "turn count same after reload": [
+  6,
+  6
+ ],
+ "recent": "Your workshopsPick up where you left off.My desk timerA 25 minute focus timer with a small screen and a knobBuilt, not doneJust now",
+ "opening recent shows no interstitial": true,
+ "restored turns from recent": 6,
+ "browser back": "/app/moki/",
+ "back shows the blue landing": true,
+ "/studio goes to": "/app/moki/",
+ "/studio shows the blue landing": true,
+ "unknown id": "Project not found",
+ "landing overflow 390": true,
+ "picker 390": {
+  "left": 81,
+  "right": 381,
+  "bottom": 733.2734375,
+  "vw": 390,
+  "vh": 844
+ },
+ "project overflow 390": true,
+ "FAILED": "TypeError: Cannot read properties of undefined (reading 'data')"
+}

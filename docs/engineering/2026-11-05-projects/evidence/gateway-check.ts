@@ -1,0 +1,25 @@
+// The real gateway code in front of a real production preview. No model is called.
+import { mkdirSync } from 'node:fs';
+import { createAppsServer } from '/home/sogo/projects/sogo-apps/src/app';
+import { MokiCapability } from '/home/sogo/projects/sogo-apps/src/moki';
+const [dir, previewPort] = [process.argv[2]!, Number(process.argv[3])]; mkdirSync(dir, { recursive: true });
+await new MokiCapability(`${dir}/s`, `${dir}/r`).prepare('localhost');
+const units = { state: async (u: string) => (u === 'moki.service' ? 'active' : 'inactive'), start: async () => {}, stop: async () => {} };
+const app = createAppsServer({ passwordHash: 'x:' + '0'.repeat(128), sessionSecret: 'fixture-session-secret-with-thirty-two-characters', dataDir: `${dir}/s`, runtimeDir: `${dir}/r`, units, apps: [{ id: 'moki', title: 'Moki', description: '', unit: 'moki.service', port: previewPort, path: '/app/moki', healthPath: '/app/moki/api/board/jobs' }] });
+const port = await app.listen(0), origin = `http://127.0.0.1:${port}`, Cookie = 'sogo_apps_session=' + app.auth.session();
+const out: Record<string, unknown> = {};
+const call = (path: string, init: RequestInit = {}) => fetch(origin + path, { redirect: 'manual', ...init, headers: { Cookie, Origin: origin, 'content-type': 'application/json', ...(init.headers as object) } });
+const bare = await call('/app/moki'); out['/app/moki'] = [bare.status, bare.headers.get('location')];
+const root = await call('/app/moki/'); out['/app/moki/'] = [root.status, (await root.text()).includes('id="root"')];
+const created = await call('/app/moki/api/projects', { method: 'POST', body: JSON.stringify({ brief: 'A desk humidity display', effort: 'fast' }) }); const { projectId } = await created.json() as { projectId: string }; out.create = created.status;
+const page = await call(`/app/moki/studio/${projectId}`); out.projectPage = [page.status, (await page.text()).includes('id="root"')];
+out.list = ((await (await call('/app/moki/api/projects')).json()) as { projects: { title: string }[] }).projects[0]?.title;
+out.rename = (await call(`/app/moki/api/projects/${projectId}`, { method: 'PATCH', body: JSON.stringify({ title: 'Renamed' }) })).status;
+out.get = ((await (await call(`/app/moki/api/projects/${projectId}`)).json()) as { title: string }).title;
+out.largeSave = (await call(`/app/moki/api/projects/${projectId}`, { method: 'PATCH', body: JSON.stringify({ state: { turns: [{ id: 't', kind: 'brief', text: 'x'.repeat(1_000_000) }], session: { revisions: [], rejected: null }, canvasJobId: null } }) })).status;
+out.deleteDenied = (await call(`/app/moki/api/projects/${projectId}`, { method: 'DELETE' })).status;
+out.workshopDenied = (await call('/app/moki/workshop')).status;
+out.foreignOrigin = (await call('/app/moki/api/projects', { method: 'POST', body: '{"brief":"x"}', headers: { Origin: 'https://attacker.example' } })).status;
+const asset = /src="([^"]+\.js)"/.exec(await (await call('/app/moki/')).text())?.[1]; out.asset = asset ? (await call(asset)).status : 'no asset found';
+console.log(JSON.stringify(out, null, 1));
+app.server.closeAllConnections(); await app.close(); process.exit(0);
